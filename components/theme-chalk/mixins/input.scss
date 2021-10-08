@@ -1,0 +1,58 @@
+@mixin input-size($fontSize, $width, $height, $paddingH, $paddingV: 0) {
+  $iconWidth: $height;
+  $lineIconWidth: ceil(($iconWidth - $fontSize)/2 + $fontSize);
+
+  width: $width;
+  height: $height;
+  font-size: $fontSize;
+  .#{$B}{
+    padding: $paddingV $paddingH;
+
+    &-prefix-inner{
+      width: $iconWidth;
+      line-height: $height;
+      font-size: $fontSize + 2px;
+    }
+    &-suffix-inner{
+      width: $iconWidth;
+      line-height: $height;
+      font-size: $fontSize + 2px;
+    }
+    &-group-append, &-group-prepend{
+      font-size: $fontSize;
+    }
+  }
+  &.#{$B + '-prefix'} {
+    .#{$B} {
+      padding-left: $iconWidth;
+    }
+  }
+  &.#{$B + '-suffix'}{
+    .#{$B} {
+      padding-right: $iconWidth;
+    }
+  }
+
+
+  &.#{$B + '-line'} {
+    .#{$B + '-prefix-inner'}, .#{$B + '-suffix-inner'} {
+      width: $lineIconWidth;
+    }
+    .#{$B + '-prefix-inner'} {
+      text-align: left;
+    }
+    .#{$B + '-suffix-inner'}{
+      text-align: right;
+    }
+    &.#{$B + '-prefix'} {
+      .#{$B} {
+        padding-left: $lineIconWidth;
+      }
+    }
+    &.#{$B + '-suffix'}{
+      .#{$B} {
+        padding-right: $lineIconWidth;
+      }
+    }
+  }
+}

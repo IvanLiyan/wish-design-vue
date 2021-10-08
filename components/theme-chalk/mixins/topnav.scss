@@ -1,0 +1,8 @@
+@import "../common/var";
+
+@mixin topnav-icon($width, $height) {
+  display: inline-block;
+  vertical-align: middle;
+  width: $width;
+  height: $height;
+}

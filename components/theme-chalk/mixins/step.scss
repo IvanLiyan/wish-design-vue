@@ -1,0 +1,84 @@
+@mixin step-status(
+  $color, $bgc, $borderColor,
+  $statusColor, $lineColor,
+  $descriptionColor, $iconColor
+) {
+  > .#{$prefix}-step-head-number{
+    color: $color;
+    border: $steps-circle-border-width solid $borderColor;
+    background-color: $bgc;
+  }
+
+  > .#{$prefix}-step-main-title{
+    color: $statusColor;
+  }
+  > .#{$prefix}-step-head-line{
+    background-color: $lineColor;
+  }
+  > .#{$prefix}-step-main-description {
+    color: $descriptionColor;
+  }
+  > .#{$prefix}-step-head-icon {
+    color: $iconColor;
+  }
+}
+
+@mixin step-dot($size) {
+  .#{$prefix}-step-head-dot{
+    width: $size;
+    height: $size;
+  }
+}
+
+@mixin step-direction($size, $lineHeight, $dotSize) {
+  display: flex;
+  flex-flow: column;
+  .#{$prefix}-step-head{
+    flex-grow: 0;
+    width: $size;
+    height: 100%;
+    left: 0;
+    margin: 0;
+    &-line{
+      position: absolute;
+      width: $steps-line-size;
+      height: calc(100% - #{$size + $steps-line-padding-horizontal*2});
+      top: -100%;
+      bottom: 0;
+      left: ($size - $steps-line-size)/2;
+      margin-top: $size + $steps-line-padding-horizontal;
+      padding: 0;
+    }
+  }
+  .#{$prefix}-step-main {
+    text-align: left;
+    position: absolute;
+    top: $size/2 - $lineHeight/2 - $steps-horizontal-statustext-margin-vertical;
+    left: $size + $steps-vertical-statustext-margin-horizontal;
+    margin: 0;
+    &-title,
+    &-description{
+      padding-left: 0;
+      padding-right: 0;
+    }
+    &-description {
+      font-size: $steps-vertical-circel-description-font-size;
+      line-height: $steps-vertical-circel-description-line-height;
+      font-weight: $steps-vertical-circel-description-font-weight;
+      padding: $steps-vertical-description-margin-vertical $steps-vertical-description-margin-horizontal;
+    }
+  }
+  .#{$prefix}-step-dot{
+    .#{$prefix}-step-head-line{
+      height: calc(100% - #{$dotSize + $steps-line-padding-horizontal*2});
+      margin-top: $dotSize + $steps-line-padding-horizontal*2;
+      width: $steps-dot-line-size;
+      left: ($size - $steps-dot-line-size)/2;
+    }
+    .#{$prefix}-step-main-description {
+      font-size: $steps-vertical-dot-description-font-size;
+      line-height: $steps-vertical-dot-description-line-height;
+      font-weight: $steps-vertical-dot-description-font-weight;
+    }
+  }
+}

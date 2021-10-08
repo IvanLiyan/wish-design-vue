@@ -1,0 +1,7 @@
+@mixin announcement-color($color, $bgc, $iconColor) {
+  background-color: $bgc;
+  color: $color;
+  .#{$prefix}-announcement-icon{
+    color: $iconColor;
+  }
+}

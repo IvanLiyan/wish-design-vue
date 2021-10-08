@@ -1,0 +1,42 @@
+@mixin tag-light-color ($color) {
+  $hoverColor: rgba($tag-color-current, .2);
+  $borderColor: rgba($tag-color-current, .5);
+  $aplhaBgc: rgba($tag-color-current, .1);
+}
+
+@mixin tag-color ($color, $bc, $bgc) {
+  color: $color;
+  border-color: $bc;
+  background-color: $bgc;
+
+  &.#{$prefix}-tag-text{
+    background-color: transparent;
+    border-color: transparent;
+    color: $color;
+  }
+}
+@mixin tag-pure-color ($color, $bgc) {
+  // 色块模式
+  &.#{$prefix}-tag-pure {
+    background-color: $bgc;
+    color: $color;
+    border-color: $bgc;
+  }
+}
+
+@mixin tag-size($fontSize, $minWidth, $maxWidth, $height, $padding, $border-radius, $close-margin-left) {
+  height: $height;
+  padding: 0 $padding;
+  line-height: $height - 2px;
+  min-width: $minWidth;
+  max-width: $maxWidth;
+  border-radius: $border-radius;
+
+  .#{$prefix}-tag-content{
+    font-size: $fontSize;
+  }
+  .#{$prefix}-tag-close{
+    font-size: $fontSize;
+    margin-left: $close-margin-left;
+  }
+}

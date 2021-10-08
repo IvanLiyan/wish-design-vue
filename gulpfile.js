@@ -2,7 +2,6 @@ const gulp = require('gulp');
 const sass = require('gulp-sass');
 const postcss = require('gulp-postcss');
 const cssmin = require('gulp-cssmin');
-const { themes } = require('./config');
 const output = './lib/';
 
 gulp.task('compile:theme-chalk', function () {
@@ -28,6 +27,7 @@ gulp.task('preview:theme-chalk', function () {
 gulp.task('compile:theme2', function () {
   return gulp.src('./components/theme2/*.scss')
     .pipe(sass.sync())
+    
     .pipe(postcss())
     .pipe(cssmin())
     .pipe(gulp.dest(`${output}/theme2`));

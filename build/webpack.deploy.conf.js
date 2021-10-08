@@ -1,5 +1,5 @@
 'use strict';
-const merge = require('webpack-merge');
+const { merge } = require('webpack-merge');
 const demoWebpackConfig = require('./webpack.demo.conf');
 const TerserPlugin = require('terser-webpack-plugin');
 const VueLoaderPlugin = require('vue-loader/lib/plugin')

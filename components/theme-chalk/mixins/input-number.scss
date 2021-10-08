@@ -1,0 +1,40 @@
+@mixin input-number-size(
+  $fontSize,
+  $fontWeight,
+  $width,
+  $height,
+  $paddingH,
+  $paddingV: 0
+) {
+  $iconWidth: $height - $input-number-border-width * 2;
+  $halfIconWidth: $iconWidth / 2;
+
+  width: $width;
+  height: $height;
+  font-size: $fontSize;
+
+  .#{$B} {
+    padding: $paddingV $paddingH;
+    font-weight: $fontWeight;
+
+    &-handle {
+      width: $iconWidth;
+      height: $iconWidth;
+      font-size: $fontSize;
+      line-height: $iconWidth;
+    }
+  }
+
+  &.#{$B}-controls-right {
+    .#{$B}-handle {
+      width: $iconWidth;
+      height: $halfIconWidth;
+      font-size: $fontSize;
+      line-height: $halfIconWidth;
+    }
+
+    .#{$B}-handle-down {
+      top: $halfIconWidth;
+    }
+  }
+}

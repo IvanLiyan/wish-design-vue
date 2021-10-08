@@ -1,0 +1,10 @@
+@mixin radio-button-size($minWidth, $height, $padding, $fontSize, $borderWidth) {
+  min-width: $minWidth;
+  height: $height;
+  padding: 0px $padding;
+  font-size: $fontSize;
+  line-height: $height - 2*$borderWidth;
+  &:after {
+    height: $height;
+  }
+}

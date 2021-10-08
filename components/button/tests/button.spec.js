@@ -5,8 +5,8 @@ describe('Button', function () {
   it('disabled', function () {
     const wrapper = mount(Button, {
       propsData: {
-        disabled: true
-      }
+        disabled: true,
+      },
     });
     expect(wrapper.attributes().disabled).to.equal('disabled');
 
@@ -19,8 +19,8 @@ describe('Button', function () {
     sizes.forEach((size) => {
       const wrapper = mount(Button, {
         propsData: {
-          size
-        }
+          size,
+        },
       });
       expect(wrapper.classes()).to.include(`mtd-btn-${size}`);
     });
@@ -33,27 +33,27 @@ describe('Button', function () {
     const types = [
       'submit',
       'reset',
-      'button'
+      'button',
     ];
 
     types.forEach((type) => {
       const sbBtn = mount(Button, {
         propsData: {
-          htmlType: type
-        }
+          htmlType: type,
+        },
       });
       expect(sbBtn.attributes().type).to.equal(type);
-    })
+    });
   });
 
   it('loading', function () {
     const wrapper = mount(Button, {
       propsData: {
-        loading: true
-      }
+        loading: true,
+      },
     });
     expect(wrapper.classes()).to.include('mtd-btn-loading');
-    expect(wrapper.classes()).to.not.include('mtd-btn-disabled')
+    expect(wrapper.classes()).to.not.include('mtd-btn-disabled');
     expect(wrapper.attributes().disabled).to.equal('disabled');
 
     wrapper.trigger('click');
@@ -65,18 +65,18 @@ describe('Button', function () {
   it('icon', function () {
     const wrapper = mount(Button, {
       propsData: {
-        icon: 'mtdicon-settings'
-      }
+        icon: 'mtdicon-settings',
+      },
     });
     expect(wrapper.find('.mtdicon-settings').exists()).to.be.true;
   });
 
-  it ('should replace icon to loading when loading and has icon', function () {
+  it('should replace icon to loading when loading and has icon', function () {
     const wrapper = mount(Button, {
       propsData: {
         icon: 'mtdicon-settings',
-        loading: true
-      }
+        loading: true,
+      },
     });
     expect(wrapper.find('.mtdicon-settings').exists()).to.not.be.true;
     // todo 判断 loading 元素加载
@@ -86,8 +86,8 @@ describe('Button', function () {
     function createButton (type) {
       return mount(Button, {
         propsData: {
-          type
-        }
+          type,
+        },
       });
     };
     function createIt (type) {
@@ -100,15 +100,15 @@ describe('Button', function () {
       'text-secondary',
       'success',
       'warning',
-      'danger'
+      'danger',
     ].map(createIt);
   });
 
   it('dashed', function () {
     const wrapper = mount(Button, {
       propsData: {
-        dashed: true
-      }
+        dashed: true,
+      },
     });
     expect(wrapper.classes()).to.include('mtd-btn-dashed');
   });

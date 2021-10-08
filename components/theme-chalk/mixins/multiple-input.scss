@@ -1,0 +1,36 @@
+@mixin multiple-input-size (
+  $fontSize, $height, $paddingH, $tagHeight
+) {
+  $paddingV: ($height - $tagHeight)/2 - 1px;
+
+  $iconWidth: $height;
+  $lineIconWidth: ($iconWidth - $fontSize)/2 + $fontSize;
+
+  padding: 0 $paddingH $paddingV;
+  font-size: $fontSize;
+  min-height: $height;
+  .#{$B + '-rendered'} {
+    > * {
+      margin-top: $paddingV;
+      line-height: $tagHeight;
+    }
+  }
+  .#{$B}{
+    &-prefix-inner{
+      width: $iconWidth;
+      height: $height;
+      font-size: $fontSize + 2px;
+    }
+    &-suffix-inner{
+      width: $iconWidth;
+      height: $height;
+      font-size: $fontSize + 2px;
+    }
+  }
+  &.#{$B + '-prefix'} {
+    padding-left: $iconWidth;
+  }
+  &.#{$B + '-suffix'}{
+    padding-right: $iconWidth;
+  }
+}

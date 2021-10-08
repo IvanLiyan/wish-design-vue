@@ -1,0 +1,10 @@
+/build/
+/config/
+/list/
+/test/unit/coverage/
+*.spec.js
+examples/singularity-system
+/locale/
+/src/locale/
+/src/utils/date.js
+*.md

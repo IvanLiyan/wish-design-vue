@@ -1,0 +1,13 @@
+@mixin pagination-size($fontSize, $iconSize, $widthHeight, $margin) {
+  font-size: $fontSize;
+  min-width: $widthHeight;
+  height: $widthHeight;
+  line-height: $widthHeight - 2;
+  margin-left: $margin;
+  &.#{$prefix}-pager-prev,
+  &.#{$prefix}-pager-quickprev,
+  &.#{$prefix}-pager-next,
+  &.#{$prefix}-pager-quicknext {
+    font-size: $iconSize;
+  }
+}

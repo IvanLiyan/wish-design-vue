@@ -1,0 +1,96 @@
+@mixin navbar-item () {
+  height: 100%;
+  box-sizing: border-box;
+  float: left;
+  cursor: pointer;
+  position: relative;
+}
+
+@mixin navbar-dark-theme ($color, $bgc, $shadow, $activeColor, $activeBgc) {
+
+  color: $color;
+  background-color: $bgc;
+  box-shadow: $shadow;
+  @include e('brand', true) {
+    color: $color;
+    &:hover, &.hover, &:focus{
+      color: $activeColor;
+    }
+  }
+  @include e('item-link', true) {
+    &:hover, &.hover,
+    &:focus{
+      background: $activeBgc;
+      color: $activeColor;
+    }
+  }
+  @include e('item', true) {
+    @include when('active') {
+      @include e('item-link', true) {
+        color: $activeColor;
+      }
+    }
+  }
+}
+
+@mixin navbar-light-theme (
+  $color, $bgc, $shadow,
+  $activeColor, $activeBgc) {
+  @include navbar-dark-theme($color, $bgc, $shadow, $activeColor, $activeBgc);
+}
+
+@mixin navbar-dark-search-theme($color, $bgc, $activeColor, $activeIconColor, $activeBgc) {
+  $searchSelector: $B+'-search';
+  $searchActiveSelector: $searchSelector + '-active';
+  .#{$searchSelector} {
+    color: $color;
+    ::placeholder{
+      color: $color;
+    }
+    &-input{
+      background-color: $bgc;
+      border-color: $bgc;
+      color: $activeColor;
+      &:hover, &.hover{
+        background-color: $activeBgc;
+        border-color: $activeBgc;
+      }
+    }
+    .#{$icon-prefix} {
+      &:hover, &.hover{
+        color: $activeIconColor;
+      }
+    }
+  }
+  .#{$searchActiveSelector} {
+    .#{$searchSelector + '-input'} {
+      background-color: $activeBgc;
+      border-color: $activeBgc;
+    }
+  }
+}
+
+@mixin navbar-light-search-theme(
+  $color, $bgc, $borderColor,
+  $activeColor, $activeIconColor, $activeBorderColor, $activeBgc
+) {
+  @include navbar-dark-search-theme($color, $bgc,
+    $activeColor, $activeIconColor, $activeBgc
+  );
+
+  $searchSelector: $B+'-search';
+  $searchActiveSelector: $searchSelector + '-active';
+
+  .#{$searchSelector} {
+    &-input{
+      border-color: $borderColor;
+    }
+  }
+
+  .#{$searchActiveSelector} {
+    .#{$searchSelector + '-input'} {
+      background-color: $activeBgc;
+      border-color: $activeBorderColor;
+    }
+  }
+}

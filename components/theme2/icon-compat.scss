@@ -1,0 +1,38 @@
+@charset 'utf-8';
+@import './common/var.scss';
+@import './fonts/icon.scss';
+
+.#{$icon-prefix}-cards-view{
+  @extend .#{$icon-prefix}-theme!optional;
+}
+.#{$icon-prefix}-code{
+  @extend .#{$icon-prefix}-code-on!optional;
+}
+.#{$icon-prefix}-link{
+  @extend .#{$icon-prefix}-link-o!optional;
+}
+.#{$icon-prefix}-paste-o, .#{$icon-prefix}-paste{
+  @extend .#{$icon-prefix}-copy-o!optional;
+}
+.#{$icon-prefix}-undo{
+  @extend .#{$icon-prefix}-undo-o!optional;
+}
+.#{$icon-prefix}-triangle{
+  @extend .#{$icon-prefix}-triangle-down!optional;
+}
+.#{$icon-prefix}-visibility-off{
+  @extend .#{$icon-prefix}-visibility-off-o!optional;
+}
+// remove thick
+.#{$icon-prefix}-close-thick{
+  @extend .#{$icon-prefix}-close!optional;
+}
+.#{$icon-prefix}-add-thick{
+  @extend .#{$icon-prefix}-add!optional;
+}
+.#{$icon-prefix}-success-circle-thick{
+  @extend .#{$icon-prefix}-success-o!optional;
+}
+.#{$icon-prefix}-error-circle-thick-o{
+  @extend .#{$icon-prefix}-error-o!optional;
+}
