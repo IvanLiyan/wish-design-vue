@@ -26,6 +26,6 @@ if (typeof window !== 'undefined' && window.Vue) {
 export { Button, CollapseTransition };
 
 export default {
-  version: '1.0.1-alpha.1',
+  version: '1.0.1-alpha.2',
   install: install
 };

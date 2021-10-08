@@ -82,7 +82,7 @@ async function main() {
   
   /* TODO change  info start  */
 
-  const { stdout } = await execa('npm', ['--registry=http://r.npm.sankuai.com',
+  const { stdout } = await execa('npm', ['--registry=https://registry.npmjs.org',
     '--cache=$HOME/.npm',
     '--userconfig=$HOME/.npmrc',
     'publish',
