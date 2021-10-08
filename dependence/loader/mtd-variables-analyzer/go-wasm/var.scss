@@ -1,0 +1,334 @@
+// 命名规则见 README.md
+
+// @module base
+/**
+ * 基础变量
+ * 参见: https://km.sankuai.com/page/147289627
+**/
+
+// @type screen 屏幕尺寸
+// @category base
+$screen-xs: 480px!default;
+$screen-sm: 576px !default;
+$screen-md: 768px !default;
+$screen-lg: 992px !default;
+$screen-xl: 1200px !default;
+$screen-xxl: 1600px !default;
+// @end category
+// @end type
+
+// @ignore
+$breakpoints: (
+        'xs' : (max-width: $screen-sm),
+        'sm' : (min-width: $screen-sm),
+        'md' : (min-width: $screen-md),
+        'lg' : (min-width: $screen-lg),
+        'xl' : (min-width: $screen-xl),
+        'xxl' : (min-width: $screen-xxl)
+);
+// @end ignore
+
+
+// @type color
+// @category primary 主色
+$color-black: #000;
+$color-white: #fff;
+// @name 多彩的主色
+$color-primary: #1C6CDC!default;
+// @end category
+
+// @category text 文字
+$color-text-1: rgba(0, 0, 0, .87)!default; // 含义
+$color-text-2: rgba(0, 0, 0, .75)!default;
+$color-text-3: rgba(0, 0, 0, .60)!default;
+$color-text-4: rgba(0, 0, 0, .38)!default;
+$color-text-5: rgba(0, 0, 0, .24)!default;
+
+// @hide
+$color-text-6: transparent!default;
+$color-text-7: transparent!default;
+$color-text-8: transparent!default;
+$color-text-9: transparent!default;
+// @end hide
+$color-text-10: transparent!default;
+
+// @end category
+
+// @category line 线条
+$color-line-1: rgba(0, 0, 0, .13)!default;
+$color-line-2: rgba(0, 0, 0, .07)!default;
+$color-line-3: transparent!default;
+$color-line-4: transparent!default;
+$color-line-5: transparent!default;
+$color-line-6: transparent!default;
+$color-line-7: transparent!default;
+$color-line-8: transparent!default;
+$color-line-9: transparent!default;
+$color-line-10: transparent!default;
+// @end category
+
+// @category fill 填充
+$color-fill-1: #F7F7F7!default;
+$color-fill-2: transparent!default;
+$color-fill-3: transparent!default;
+$color-fill-4: transparent!default;
+$color-fill-5: transparent!default;
+$color-fill-6: transparent!default;
+$color-fill-7: transparent!default;
+$color-fill-8: transparent!default;
+$color-fill-9: transparent!default;
+$color-fill-10: transparent!default;
+// @end category
+
+// @category link 链接
+$color-link: #1C6CDC!default;
+$color-link-hover: #3D91F2!default;
+$color-link-pressed: #1253B5!default;
+$color-link-active: #B0D6FF!default;
+// @end category
+
+// @category success
+$color-success-1: #24BD78!default;
+$color-success-2: #D2FAE6!default;
+$color-success-3: #63D6A0!default;
+$color-success-4: #17A369!default;
+$color-success-5: #A6EDCA!default;
+// @end category
+
+// @category danger
+$color-danger-1: #FF5F57!default;
+$color-danger-2: #FFE9E6!default;
+$color-danger-3: #FF8F85!default;
+$color-danger-4: #D9443F!default;
+$color-danger-5: #FFC0B8!default;
+// @end category
+
+// @category warning
+$color-warning-1: #F5BA31!default;
+$color-warning-2: #FEF1CA!default;
+$color-warning-3: #F9D272!default;
+$color-warning-4: #CC8C16!default;
+$color-warning-5: #FCE3A2!default;
+// @end category
+
+// @end type
+
+// @type font
+// @category famliy
+$font-family: Helvetica Neue, Helvetica, Arial, "PingFang SC","Heiti SC","Hiragino Sans GB","Microsoft YaHei","sans-serif"!default;
+$code-family: Menlo, Monaco, Consolas, "Courier New", monospace !default;
+// @end category
+
+// @category weight
+$font-weight-regular: 400!default;
+$font-weight-medium: 500!default;
+$font-weight-semi-bold: 600!default;
+$font-weight-bold: 700!default;
+// @end category
+
+// @category size
+$font-size-1: 12px!default;
+$font-size-2: 14px!default;
+$font-size-3: 16px!default;
+$font-size-4: 18px!default;
+$font-size-5: 20px!default;
+$font-size-6: 24px!default;
+$font-size-7: 30px!default;
+// @end category
+
+// @end type
+
+// @type line-height 行高
+// @category base
+$line-height-1: 20px!default;
+$line-height-2: 22px!default;
+$line-height-3: 24px!default;
+$line-height-4: 26px!default;
+$line-height-5: 28px!default;
+$line-height-6: 32px!default;
+$line-height-7: 38px!default;
+// @end category
+// @end type
+
+// @type size 尺寸
+// @category base 基础尺寸
+$s-base: 4px!default; // 基础尺寸
+$s-increase: $s-base!default; // 每档递增量
+// @end category
+
+// @category hide
+// @unconfigurable
+$s-0: 0 !default;
+$s-1: $s-base !default;
+$s-2: $s-1 + $s-increase !default;
+$s-3: $s-2 + $s-increase !default;
+$s-4: $s-3 + $s-increase !default;
+$s-5: $s-4 + $s-increase !default;
+$s-6: $s-5 + $s-increase !default;
+$s-7: $s-6 + $s-increase !default;
+$s-8: $s-7 + $s-increase !default;
+$s-9: $s-8 + $s-increase !default;
+$s-10: $s-9 + $s-increase !default;
+$s-11: $s-10 + $s-increase !default;
+$s-12: $s-11 + $s-increase !default;
+$s-13: $s-12 + $s-increase !default;
+$s-14: $s-13 + $s-increase !default;
+$s-15: $s-14 + $s-increase !default;
+$s-16: $s-15 + $s-increase !default;
+$s-17: $s-16 + $s-increase !default;
+$s-18: $s-17 + $s-increase !default;
+$s-19: $s-18 + $s-increase !default;
+$s-20: $s-19 + $s-increase !default;
+// @end unconfigurable
+// @end category
+
+// @end type
+
+// @type height 高度
+// @category base
+$h-1: $s-6!default;
+$h-2: $s-8!default;
+$h-3: $s-10!default;
+// @end category
+// @end type
+
+
+// @type border-width 边框
+// @category base
+$border-width-1: 1px!default;
+$border-width-2: 2px!default;
+// @end category
+// @end type
+
+// @type border-radius
+// @category base
+$border-radius-1: 2px!default;
+$border-radius-2: 4px!default;
+$border-raidus-3: 10px!default;
+$border-radius-infinite: 2000px!default; // 常用于制造圆角为高度的一半
+// @end category
+// @end type
+
+// @type shadow 阴影
+// @category base
+$shadow-1: 0 2px 4px 0 rgba(0, 0, 0,.01), 0 3px 6px 3px rgba(0, 0, 0,.01), 0 2px 6px 0 rgba(0, 0, 0,.03)!default;
+$shadow-2: 0 2px 4px 0 rgba(0, 0, 0,.02), 0 4px 6px 6px rgba(0, 0, 0,.02), 0 4x 6px 0 rgba(0, 0, 0,.02)!default;
+$shadow-3: 0 4px 8px 0 rgba(0, 0, 0,.04), 0 8px 12px 12px rgba(0, 0, 0,.04), 0 8px 10px 0 rgba(0, 0, 0,.08)!default;
+$shadow-4: 0 8px 14px 0 rgba(0, 0, 0,.04), 0 14px 16px 16px rgba(0, 0, 0,.04), 0 12px 116px 0 rgba(0, 0, 0,.04)!default;
+// @end category
+// @end type
+
+
+// @end module
+
+
+
+// 基础
+// @module component
+/**
+ * Button 组件
+ * 参见: https://km.sankuai.com/page/159255593
+**/
+
+// @component button 按钮
+// @include input, table
+// @category base
+// @propsValue base
+$btn-font-weight: $font-weight-regular !default;
+$btn-border-radius: $border-radius-3 !default;
+$btn-border-width: $border-width-1 !default;
+// @end propsValue
+// @end category
+
+// @category size
+// @propsValue large
+$btn-large-width: 80px!default;
+$btn-large-height: $h-3!default;
+$btn-large-padding-horizontal: $s-5!default;
+// @value 20px
+$btn-large-font-size: $font-size-3!default;
+// @dom before
+$btn-large-before-margin-right: $s-2!default;
+$btn-large-before-font-size: $font-size-4!default;
+// @end dom
+// @end propsValue
+
+// @propsValue default
+$btn-width: 66px!default;
+// @refer height/base
+$btn-height: $h-2!default;
+$btn-padding-horizontal: $s-3!default;
+$btn-font-size: $font-size-2!default;
+// @dom before
+$btn-before-margin-right: $s-1!default;
+$btn-before-font-size: $font-size-3!default;
+// @end dom
+// @end propsValue
+
+// @propsValue small
+$btn-small-width: 48px!default;
+$btn-small-height: $h-1!default;
+$btn-small-padding-horizontal: $s-2 !default;
+$btn-small-font-size: $font-size-1!default;
+// @dom before
+$btn-small-before-margin-right: $s-1!default;
+$btn-small-before-font-size: $font-size-2!default;
+// @state loading
+$btn-small-before-loading-font-size: $font-size-2!default;
+// @end state
+// @end dom
+// @end propsValue
+
+// @end category
+
+// @category type
+// @propsValue primary
+$btn-primary-disabled-opacity: 0.45!default;
+$btn-primary-color: $color-white!default;
+$btn-primary-bgc: $color-primary!default;
+
+// @state hover
+$btn-primary-hover-color: $btn-primary-color!default;
+$btn-primary-hover-bgc: $color-link-hover!default;
+// @end state
+
+// @state focus
+$btn-primary-focus-color: $btn-primary-focus-color!default;
+$btn-primary-focus-bgc: $color-link-pressed!default;
+// @end state
+
+// @state disabled
+$btn-primary-disable-color: $btn-primary-color!default;
+$btn-primary-disabled-bgc: $btn-primary-bgc!default;
+// @end state
+
+// @state loading
+$btn-primary-loading-color: $btn-primary-color!default;
+$btn-primary-loading-bgc: $color-link-active!default;
+// @end state
+
+// @end propsValue
+
+// @propsValue default 次要按钮
+$btn-disabled-opacity: 0.45!default;
+$btn-color: $color-primary!default;
+$btn-hover-color: $btn-color!default;
+$btn-focus-color: $btn-hover-color!default;
+$btn-disabled-color: $btn-color!default;
+$btn-loading-color: $color-link-active!default;
+$btn-bgc: $color-white!default;
+$btn-hover-bgc: #EEF6FF!default;
+$btn-focus-bgc: $btn-hover-bgc!default;
+$btn-disabled-bgc: $btn-bgc!default;
+$btn-loading-bgc: $btn-bgc!default;
+$btn-border-color: $color-primary!default;
+$btn-hover-border-color: $btn-border-color!default;
+$btn-focus-border-color: $btn-hover-border-color!default;
+$btn-disabled-border-color: $btn-border-color!default;
+$btn-loading-border-color: $color-link-active!default;
+// @end propsValue
+
+// @end category
+// @end component
+// @end module
+

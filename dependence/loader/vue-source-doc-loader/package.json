@@ -1,0 +1,55 @@
+{
+  "_from": "@bfe/vue-source-doc-loader@0.0.9",
+  "_id": "@bfe/vue-source-doc-loader@0.0.9",
+  "_inBundle": false,
+  "_integrity": "sha1-WkyxlWGGz4tE8pgO378O/zwlXzM=",
+  "_location": "/@bfe/vue-source-doc-loader",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "@bfe/vue-source-doc-loader@0.0.9",
+    "name": "@bfe/vue-source-doc-loader",
+    "escapedName": "@bfe%2fvue-source-doc-loader",
+    "scope": "@bfe",
+    "rawSpec": "0.0.9",
+    "saveSpec": null,
+    "fetchSpec": "0.0.9"
+  },
+  "_requiredBy": [
+    "#DEV:/"
+  ],
+  "_resolved": "http://r.npm.sankuai.com/@bfe/vue-source-doc-loader/download/@bfe/vue-source-doc-loader-0.0.9.tgz",
+  "_shasum": "5a4cb1956186cf8b44f2980edfbf0eff3c255f33",
+  "_spec": "@bfe/vue-source-doc-loader@0.0.9",
+  "_where": "/Users/yumei/Desktop/基础建设/mtd-vue",
+  "author": {
+    "name": "zhangyizheng",
+    "email": "zhangyizheng@maituan.com"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "generate source code doc for MTDUI system",
+  "directories": {
+    "lib": "lib"
+  },
+  "files": [
+    "lib",
+    "util"
+  ],
+  "homepage": "",
+  "license": "ISC",
+  "main": "lib/index.js",
+  "name": "@bfe/vue-source-doc-loader",
+  "publishConfig": {
+    "registry": "http://r.npm.sankuai.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@git.sankuai.com/ss/mtd-component-manage.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "version": "0.0.9"
+}
