@@ -1,8 +1,8 @@
 {
   "name": "meimei-vue-component",
-  "version": "1.0.1-alpha.2",
+  "version": "1.0.1-alpha.3",
   "description": "vue、component",
-  "main": "index.js",
+  "main": "lib/mtd-vue.common.js",
   "scripts": {
     "build": "cross-env NODE_ENV=production npm run build:all",
     "build:all": "npm run clean && npm run build:file && npm run build:component && npm run build:common && npm run build:utils && npm run build:index && npm run build:es && npm run build:css && npm run build:theme && npm run build:types && npm run copy:types",
