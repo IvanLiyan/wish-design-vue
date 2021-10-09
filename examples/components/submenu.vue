@@ -1,17 +1,16 @@
 <template>
   <div class="submenu">
-    <VersionSelector tag="@ss/mtd-vue" />
-    <StyleSelector @theme="handleTheme" />
+    asdf
   </div>
 </template>
 <script>
-import StyleSelector from './style-select';
-import VersionSelector from './version-select';
+// import StyleSelector from './style-select';
+// import VersionSelector from './version-select';
 
 export default {
   components: {
-    StyleSelector,
-    VersionSelector,
+    // StyleSelector,
+    // VersionSelector,
   },
   provide () {
     return {

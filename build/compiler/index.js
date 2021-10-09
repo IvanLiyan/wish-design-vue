@@ -5,15 +5,15 @@ const compileSfc = require('./compile-sfc');
 const { writeFile, copyFile, ROOT } = require('./output');
 const fs = require('fs');
 
-const sep = path.sep;
+// const sep = path.sep;
 function resolve (dir) {
   return path.join(__dirname, '../..', dir);
 }
 
 const SFC_REGEXP = /\.(vue)$/;
 const JS_REGEXP = /\.(js)$/;
-const DEMO_REGEXP = new RegExp('\\' + sep + 'demo$');
-const TEST_REGEXP = new RegExp('\\' + sep + 'test$');
+// const DEMO_REGEXP = new RegExp('\\' + sep + 'demo$');
+// const TEST_REGEXP = new RegExp('\\' + sep + 'test$');
 
 function isSFC (filePath) {
   return SFC_REGEXP.test(filePath);

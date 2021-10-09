@@ -53,15 +53,18 @@ module.exports = {
       },
       {
         test: /\.vue$/,
-        use: isTest ? [{
+        use: isTest ? 
+        [{
           loader: 'vue-loader',
           options: {
             compilerOptions: {
-              whitespace: 'condense',
-              preserveWhitespace: false,
+              // whitespace: 'condense',
+              // preserveWhitespace: false,
             },
           },
-        }] : [{
+        }] 
+        : 
+        [{
           loader: 'vue-loader',
           options: {
             compilerOptions: {
@@ -70,7 +73,7 @@ module.exports = {
             },
           },
         },
-        path.join(resolve('dependence/loader/vue-source-doc-loader/lib/index.js')),
+        path.join(resolve('dependence/loader/vue-source-doc-loader/index.js')),
         ],
       },
       {
@@ -174,10 +177,10 @@ module.exports = {
     hot: true,
     contentBase: false, // since we use CopyWebpackPlugin.
     compress: true,
-    host: '0.0.0.0',
+    host: '127.0.0.1',
     port: config.port,
     open: false,
     publicPath: '/'
-    // quiet: true, // necessary for FriendlyErrorsPlugin
+    
   }
 };

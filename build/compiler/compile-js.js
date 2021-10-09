@@ -4,9 +4,9 @@ const path = require('path');
 const { writeFile } = require('./output');
 
 
-function resolve (dir) {
-  return path.join(__dirname, '../..', dir);
-}
+// function resolve (dir) {
+//   return path.join(__dirname, '../..', dir);
+// }
 
 // https://regexr.com/47jlq
 const IMPORT_RE = /import\s+?(?:(?:(?:[\w*\s{},]*)\s+from(\s+)?)|)(?:(?:".*?")|(?:'.*?'))[\s]*?(?:;|$|)/g;

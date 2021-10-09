@@ -1,4 +1,3 @@
-const pkg = require('../package.json');
 const isProd = process.env.NODE_ENV === 'production';
 
 module.exports = {

@@ -1,7 +1,7 @@
 'use strict';
 const utils = require('./utils');
 const webpack = require('webpack');
-const { merge } = require('webpack-merge');
+const merge = require('webpack-merge');
 const path = require('path');
 const baseWebpackConfig = require('./webpack.base.conf');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -53,7 +53,6 @@ const plugins = [
   new webpack.NoEmitOnErrorsPlugin(),
   new HtmlWebpackPlugin({
     template: resolve('examples/index.html'),
-    chunksSortMode: 'dependency',
     inject: true,
     minify: {
       collapseWhitespace: true
@@ -64,12 +63,15 @@ const plugins = [
     {
       from: resolve('examples/assets/favicon.png'),
       to: resolve('dist'),
-      ignore: ['.*']
+      globOptions:{
+        ignore: ['.*']
+      }
+      
     },
   ]),
   new FriendlyErrorsPlugin({
     compilationSuccessInfo: {
-      messages: [`Your application is running here: http://0.0.0.0:${port}`]
+      messages: [`Your application is running here: http://127.0.0.1:${port}`]
     },
     onErrors: utils.createNotifierCallback()
   })
@@ -219,7 +221,7 @@ const demoWebpackConfig = merge(overrideEntryConfig, {
   },
   optimization: {
     splitChunks: {
-      name: true,
+      name: false,
       cacheGroups: {
         vendors: {
           test: /[\\/]node_modules[\\/]/,

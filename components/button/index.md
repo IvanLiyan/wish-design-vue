@@ -77,4 +77,5 @@
 
 ## API
 <api-doc name="Button" :doc="require('./api.json')"></api-doc>
-<api-doc name="IconButton" :doc="require('./../icon-button/api.json')"></api-doc>
+<!-- TODO 打开注释 -->
+<!-- <api-doc name="IconButton" :doc="require('./../icon-button/api.json')"></api-doc> -->

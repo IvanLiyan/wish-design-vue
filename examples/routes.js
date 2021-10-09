@@ -3,7 +3,7 @@ import VueRouter from 'vue-router';
 import navConfig from './nav.config.json';
 import eventhub from './utils/eventhub';
 import SidebarExample from './pages/sidebar-example.vue';
-import DocsPage from './pages/docs.vue';
+// import DocsPage from './pages/docs.vue';
 
 const originalPush = VueRouter.prototype.push;
 VueRouter.prototype.push = function push (location) {
@@ -101,56 +101,10 @@ const routes = navRoute.concat([{
 }, {
   path: '*',
   redirect: defaultPath,
-}, {
-  path: '/doc',
-  component: DocsPage,
-  redirect: '/doc/getting-started',
-  name: 'doc',
-  meta: {
-    navbar: 'doc',
-  },
-  children: [{
-    path: 'getting-started',
-    name: 'getting-started',
-    component: (r) => {
-      require.ensure([], () =>
-        r(require('../wiki/getting-started.md')),
-      'started');
-    },
-  }, {
-    path: 'customize-theme',
-    name: 'customize-theme',
-    component: (r) => {
-      require.ensure([], () =>
-        r(require('../wiki/customize-theme.md')),
-      'started');
-    },
-  }, {
-    path: 'changelog',
-    name: 'changelog',
-    component: (r) => {
-      require.ensure([], () =>
-        r(require('../CHANGELOG.md')),
-      'started');
-    },
-  }, {
-    path: 'compatibility',
-    name: 'compatibility',
-    component: (r) => {
-      require.ensure([], () =>
-        r(require('../wiki/compatibility.md')),
-      'started');
-    },
-  }, {
-    path: 'recommendation',
-    name: 'recommendation',
-    component: (r) => {
-      require.ensure([], () =>
-        r(require('../wiki/recommendation.md')),
-      'started');
-    },
-  }],
 }]);
+
+console.log('======');
+console.log(routes);
 
 const router = new VueRouter({
   mode: 'history',
