@@ -4,8 +4,6 @@ import MTD from '@/index.js';
 import router from './routes';
 import App from './app';
 import DemoBlok from './components/demo-block';
-import DesignTag from './components/design-tag.vue';
-import VersionTag from './components/version-tag.vue';
 import VueHighlightJS from 'vue-highlight.js';
 import css from 'highlight.js/lib/languages/css';
 import javascript from 'highlight.js/lib/languages/javascript';
@@ -16,8 +14,6 @@ import ApiDoc from './components/api-doc';
 Vue.config.devtools = true;
 Vue.use(MTD);
 Vue.component('demo-block', DemoBlok);
-Vue.component('design-tag', DesignTag);
-Vue.component('version-tag', VersionTag);
 Vue.component('api-doc', ApiDoc);
 Vue.use(VueHighlightJS, {
   // Register only languages that you want
@@ -52,11 +48,11 @@ if (window.MTD_Frame) {
         },
       },
     },
-    feedback: {
-      feedback: 'https://tt.sankuai.com/ticket/create?cid=112&tid=2189&iid=9445',
-      feedback_list: 'https://tt.sankuai.com/ticket/handle?filter=createdBy',
-      dxQRCode: 'https://msstest.sankuai.com/v1/mss_d895c43e068542d6986e312787d9109d/test/ss-home/qrcode.png',
-    },
+    // feedback: {
+    //   feedback: 'https://tt.sankuai.com/ticket/create?cid=112&tid=2189&iid=9445',
+    //   feedback_list: 'https://tt.sankuai.com/ticket/handle?filter=createdBy',
+    //   dxQRCode: 'https://msstest.sankuai.com/v1/mss_d895c43e068542d6986e312787d9109d/test/ss-home/qrcode.png',
+    // },
     env: process.env.NODE_ENV,
     sso: true,
     onSuccess: () => {

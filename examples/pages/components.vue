@@ -5,9 +5,10 @@
   }" v-show="!hideSidebar">
     <div class="sidebar">
       <div class="sidebar-content">
-        <div class="sidebar-search-wrap">
-          <search-input :components="components" />
-        </div>
+        <!--
+          <div class="sidebar-search-wrap">
+            <search-input :components="components" />
+          </div> -->
         <div class="sidebar-navs">
           <ul class="sidebar-nav">
             <li class="sidebar-nav-item"
@@ -39,9 +40,10 @@
       'no-sidebar': hideSidebar,
     }"
   >
-    <Page>
+     <Page>
       <router-view />
-      <page-turn :navs="navs" />
+      <!--
+      <page-turn :navs="navs" /> -->
     </Page>
   </div>
   <mtd-button
@@ -57,10 +59,8 @@
 <script>
 import Nav from '../components/nav';
 import Page from '../components/page';
-import searchInput from '../components/search-input.vue';
-// import flatComponent from '../components/flat-component.vue';
-// import fadeTransition from '../components/fade-transition.vue';
-import pageTurn from '../components/page-turn.vue';
+// import searchInput from '../components/search-input.vue';
+// import pageTurn from '../components/page-turn.vue';
 
 import navConfig from '../nav.config.json';
 
@@ -73,10 +73,8 @@ export default {
   components: {
     Nav,
     Page,
-    searchInput,
-    // flatComponent,
-    // fadeTransition,
-    pageTurn,
+    // searchInput,
+    // pageTurn,
   },
   inject: {
     app: 'app',

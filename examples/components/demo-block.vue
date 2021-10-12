@@ -12,14 +12,14 @@
       </div>
     </demo-transition>
     <div class="demo-block-control" ref="control" :class="classObj" @click="handleClickControl">
-      <mtd-tooltip content="复制代码" placement="top">
+      <!-- <mtd-tooltip content="复制代码" placement="top">
         <mtd-icon-button
           icon="icon icon-copy"
           class="demo-btn-copy"
           type="secondary"
           @click.stop="handleClickCopy"
         />
-      </mtd-tooltip>
+      </mtd-tooltip> -->
       <div class="code-bar">
         <i class="mtdicon mtdicon-code-off" v-if="showCode" />
         <i class="mtdicon mtdicon-code" v-else />

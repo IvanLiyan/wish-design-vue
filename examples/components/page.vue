@@ -1,13 +1,14 @@
 <template>
 <div class="page-mk">
   <div class="mk-content"><slot /></div>
-  <ex-an-click v-if="htitles.length" :usedata="htitles" />
+  <!-- docs右侧定位导航
+   <ex-an-click v-if="htitles.length" :usedata="htitles" />-->
   <hr class="bottom-divider">
 </div>
 </template>
 
 <script>
-import ExAnClick from './anclick.vue';
+// import ExAnClick from './anclick.vue';
 import { scrollTop } from '@/utils/util';
 
 function getTitle (element) {
@@ -21,7 +22,7 @@ function getHref (element) {
 
 export default {
   components: {
-    ExAnClick,
+    // ExAnClick,
   },
   data () {
     return {

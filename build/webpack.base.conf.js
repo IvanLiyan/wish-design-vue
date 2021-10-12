@@ -73,7 +73,7 @@ module.exports = {
             },
           },
         },
-        path.join(resolve('dependence/loader/vue-source-doc-loader/index.js')),
+        path.join(resolve('dependence/vue-source-doc-loader/index.js')),
         ],
       },
       {

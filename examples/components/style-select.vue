@@ -47,6 +47,7 @@ export default {
       immediate: true,
       handler (theme) {
         // eslint-disable-next-line
+        // whatchout important 在这里设置了样式的引入
         import(`!css-loader!postcss-loader!sass-loader?modules!@components/${theme}/index.scss`).then((file) => {
           const style = file.default.toString(); // eslint-disable-line
           setStyle(style, theme);

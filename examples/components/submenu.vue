@@ -1,7 +1,5 @@
 <template>
-  <div class="submenu">
-    asdf
-  </div>
+  <div class="submenu">submenu</div>
 </template>
 <script>
 // import StyleSelector from './style-select';

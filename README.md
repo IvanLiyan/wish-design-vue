@@ -35,6 +35,9 @@ babel-cli、webpack、webpack-cli -g
 11、npm run build:deploy ———— 0 操作后，构建部署服务（用于生产）
 
 
+添加types下组件对应**.d.ts文件、添加component主题文件夹下（theme2、theme-chalk）组件对应**.d.ts文件
+
+
 
 
 

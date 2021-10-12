@@ -103,9 +103,6 @@ const routes = navRoute.concat([{
   redirect: defaultPath,
 }]);
 
-console.log('======');
-console.log(routes);
-
 const router = new VueRouter({
   mode: 'history',
   base: BASE_URL,
