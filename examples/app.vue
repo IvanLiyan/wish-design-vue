@@ -153,34 +153,6 @@ export default {
 .hide-top-nav{
   padding-top: 0;
 }
-// reset
-// ::-webkit-scrollbar{
-//   background-color: transparent;
-//   z-index: 11;
-//   &:horizontal{
-//     height: 6px;
-//   }
-//   // &:vertical{
-//     width: 6px;
-//   // }
-//   &-thumb {
-//     background-color: $color-line-2;
-//     border-radius: 1px;
-//   }
-
-//   &-corner {
-//     background: transparent;
-//   }
-
-//   &-track {
-//     background: transparent;
-
-//     &-piece {
-//       background: transparent;
-//       width: 6px;
-//     }
-//   }
-// }
 html, body {
   // height: 100%;
   min-width: $min-width;

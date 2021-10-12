@@ -17,30 +17,5 @@
   </head>
   <body>
     <div id="app"></div>
-    <!-- built files will be auto injected -->
-    <script type="text/javascript" >
-      !(function (win, doc, ns) {
-          var cacheFunName = '_MeiTuanALogObject';
-          win[cacheFunName] = ns;
-          if (!win[ns]) {
-              var _LX = function () {
-                  _LX.q.push(arguments);
-                  return _LX;
-              };
-              _LX.q = _LX.q || [];
-              _LX.l = +new Date();
-              win[ns] = _LX; }
-          })(window, document, 'LXAnalytics');
-
-      LXAnalytics("config", "useQR", true);
-      LXAnalytics("config", "onWebviewAppearAutoPV", false);
-    </script>
-    <script type="text/javascript" src="//lx.meituan.net/lx.js" async></script>
-
-    <% if (!process.env.DEPLOY_ENV || process.env.DEPLOY_ENV === 'production') { %>
-        <script crossorigin="anonymous" src="//s3plus.meituan.net/v1/mss_55f12fa2cfcf4ec080d69868a087b2c0/mtdframe/index.js"></script>
-    <% } else { %>
-        <script crossorigin="anonymous" src="//s3plus.meituan.net/v1/mss_55f12fa2cfcf4ec080d69868a087b2c0/mtdframe-test/index.js"></script>
-    <% } %>
     </body>
 </html>

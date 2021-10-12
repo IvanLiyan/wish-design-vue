@@ -24,45 +24,45 @@ Vue.use(VueHighlightJS, {
   },
 });
 
-if (window.MTD_Frame) {
-  window.MTD_Frame.mount({
-    project: 'component-vue',
-    nav: {
-      subBar: {
-        tabs: {
-          activeValue: '',
-          list: [{
-            title: '组件示例',
-            value: 'components',
-          },
-          {
-            title: '开发文档',
-            value: 'doc',
-          },
-          {
-            title: '代码仓库 <i class="mtdicon mtdicon-forward-o"></i>',
-            value: 'code',
-            href: 'https://dev.sankuai.com/code/repo-detail/ss/mtd-vue/file/list',
-            target: '_blank',
-          }],
-        },
-      },
-    },
-    // feedback: {
-    //   feedback: 'https://tt.sankuai.com/ticket/create?cid=112&tid=2189&iid=9445',
-    //   feedback_list: 'https://tt.sankuai.com/ticket/handle?filter=createdBy',
-    //   dxQRCode: 'https://msstest.sankuai.com/v1/mss_d895c43e068542d6986e312787d9109d/test/ss-home/qrcode.png',
-    // },
-    env: process.env.NODE_ENV,
-    sso: true,
-    onSuccess: () => {
-      new Vue({ // eslint-disable-line
-        render: h => h(App),
-        router,
-      }).$mount('#app');
-    },
-    onError: (error) => {
-      console.error(error);
-    },
-  });
-}
+new Vue({ // eslint-disable-line
+  render: h => h(App),
+  router,
+}).$mount('#app');
+
+// if (window.MTD_Frame) {
+//   window.MTD_Frame.mount({
+//     project: 'component-vue',
+//     nav: {
+//       subBar: {
+//         tabs: {
+//           activeValue: '',
+//           list: [{
+//             title: '组件示例',
+//             value: 'components',
+//           },
+//           {
+//             title: '开发文档',
+//             value: 'doc',
+//           },
+//           {
+//             title: '代码仓库 <i class="mtdicon mtdicon-forward-o"></i>',
+//             value: 'code',
+//             href: 'https://dev.sankuai.com/code/repo-detail/ss/mtd-vue/file/list',
+//             target: '_blank',
+//           }],
+//         },
+//       },
+//     },
+//     env: process.env.NODE_ENV,
+//     sso: true,
+//     onSuccess: () => {
+//       new Vue({ // eslint-disable-line
+//         render: h => h(App),
+//         router,
+//       }).$mount('#app');
+//     },
+//     onError: (error) => {
+//       console.error(error);
+//     },
+//   });
+// }
