@@ -1,7 +1,7 @@
 # vue-component
 vue、component
 
-babel-cli、webpack、webpack-cli -g
+# 全局安装 babel-cli、webpack、webpack-cli -g
 
 
 # 脚本作用

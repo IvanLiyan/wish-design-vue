@@ -1,6 +1,6 @@
 {
-  "name": "meimei-vue-component",
-  "version": "1.0.1-alpha.4",
+  "name": "@wish/wish-design-vue",
+  "version": "1.0.1-alpha.5",
   "description": "vue、component",
   "main": "lib/mtd-vue.common.js",
   "scripts": {
@@ -28,7 +28,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/meimei777/vue-component.git"
+    "url": "git+https://github.com/ContextLogic/wish-design-vue.git"
   },
   "keywords": [
     "vue",
@@ -37,9 +37,9 @@
   "author": "rose",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/meimei777/vue-component/issues"
+    "url": "https://github.com/ContextLogic/wish-design-vue/issues"
   },
-  "homepage": "https://github.com/meimei777/vue-component#readme",
+  "homepage": "https://github.com/ContextLogic/wish-design-vue#readme",
   "devDependencies": {
     "@vue/component-compiler-utils": "^3.2.2",
     "@vue/test-utils": "^1.2.2",

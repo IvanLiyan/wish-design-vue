@@ -80,16 +80,14 @@ async function main() {
   const tag = semver.prerelease(targetVersion);
   step(`\nPublishing ${tag ? tag[0] : 'lastest'} packages...`)
   
-  /* TODO change  info start  */
 
-  const { stdout } = await execa('npm', ['--registry=https://registry.npmjs.org',
+  const { stdout } = await execa('npm', ['--registry=http://wnpm.bjs.i.wish.com',
     '--cache=$HOME/.npm',
     '--userconfig=$HOME/.npmrc',
     'publish',
     ...(tag ? ['--tag', tag[0]] : [])
   ], { shell: true })
 
-  /* TODO change  info end  */
 
   console.log(stdout);
   success('Publishing Success')
