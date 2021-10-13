@@ -12,9 +12,9 @@ npm i  @wish/wd-vue
 ## 示例
 ```
 import Vue from 'vue'
-import MTD from '@wish/wd-vue'
+import WD from '@wish/wd-vue'
 
-Vue.use(MTD)
+Vue.use(WD)
 ```
 引入样式
 ```
