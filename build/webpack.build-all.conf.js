@@ -6,7 +6,7 @@ const config = require('../config');
 module.exports = merge(baseWebpackConfig, {
   entry: './src/index.js',
   output: {
-    filename: `${config.pkgName}.common.js`,
+    filename: `index.js`,
     libraryTarget: 'umd'
   }
 });

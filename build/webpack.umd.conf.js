@@ -1,6 +1,7 @@
 'use strict';
 const webpack = require('webpack');
 const merge = require('webpack-merge');
+const path = require('path');
 const baseWebpackConfig = require('./webpack.base.conf');
 const TerserPlugin = require('terser-webpack-plugin');
 
@@ -9,7 +10,8 @@ module.exports = merge(baseWebpackConfig, {
   entry: './src/index.js',
   output: {
     publicPath: '/',
-    filename: 'index.js',
+    path: path.join(__dirname, '../publish/dist', ),
+    filename: 'wd-vue.min.js',
     chunkFilename: '[id].js',
     libraryTarget: 'umd',
     libraryExport: 'default',
