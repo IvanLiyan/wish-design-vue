@@ -80,7 +80,7 @@ async function main() {
   const tag = semver.prerelease(targetVersion);
   step(`\nPublishing ${tag ? tag[0] : 'lastest'} packages...`)
   
-  await execa('cd ../publish');
+  await execa('cd publish');
 
   const { stdout } = await execa('npm', ['--registry=http://npm.bjs.i.wish.com',
     '--cache=$HOME/.npm',
