@@ -1,12 +1,10 @@
 {
   "name": "@wish/wd-vue",
-  "version": "0.0.2-alpha.8",
+  "version": "0.0.2-alpha.9",
   "description": "vue、component",
   "main": "lib/wd-vue.common.js",
   "types": "types/wd-vue.d.ts",
-  "scripts": {
-    "release": "node script/release.js"
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ContextLogic/wish-design-vue.git"

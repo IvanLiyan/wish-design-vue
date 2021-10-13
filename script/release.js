@@ -83,13 +83,14 @@ async function main() {
   console.log('__dirname======', __dirname)
   
   
-  await execa('cd',['publish']);
+
 
   console.log('__dirname++++++', __dirname)
 
   const { stdout } = await execa('npm', ['--registry=http://npm.bjs.i.wish.com',
     '--cache=$HOME/.npm',
     '--userconfig=$HOME/.npmrc',
+    'publish',
     'publish',
     ...(tag ? ['--tag', tag[0]] : [])
   ], { shell: true })
