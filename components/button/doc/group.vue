@@ -2,26 +2,26 @@
   <div
     class="demo-btn-group"
     style="">
-    <mtd-button-group>
-      <mtd-button type="text" icon="mtdicon mtdicon-file-add-o">添加</mtd-button>
-      <mtd-button type="text" icon="mtdicon mtdicon-delete-o">删除</mtd-button>
-      <mtd-button type="text" icon="mtdicon mtdicon-edit-o">编辑</mtd-button>
-    </mtd-button-group>
+    <wd-button-group>
+      <wd-button type="text" icon="wdicon wdicon-file-add-o">添加</wd-button>
+      <wd-button type="text" icon="wdicon wdicon-delete-o">删除</wd-button>
+      <wd-button type="text" icon="wdicon wdicon-edit-o">编辑</wd-button>
+    </wd-button-group>
 
-    <mtd-button-group>
-      <mtd-icon-button type="secondary" icon="mtdicon mtdicon-piechart" />
-      <mtd-icon-button type="secondary" icon="mtdicon mtdicon-barschart" />
-      <mtd-icon-button type="secondary" icon="mtdicon mtdicon-areachart" />
-    </mtd-button-group>
+    <wd-button-group>
+      <wd-icon-button type="secondary" icon="wdicon wdicon-piechart" />
+      <wd-icon-button type="secondary" icon="wdicon wdicon-barschart" />
+      <wd-icon-button type="secondary" icon="wdicon wdicon-areachart" />
+    </wd-button-group>
     <div>
-      <mtd-icon-button
+      <wd-icon-button
         type="secondary"
         class="float-icon-button"
-        icon="mtdicon mtdicon-left-thick" />
-      <mtd-icon-button
+        icon="wdicon wdicon-left-thick" />
+      <wd-icon-button
         type="secondary"
         class="float-icon-button"
-        icon="mtdicon mtdicon-right-thick" />
+        icon="wdicon wdicon-right-thick" />
     </div>
   </div>
 </template>
@@ -31,7 +31,7 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
-    .mtd-btn{
+    .wd-btn{
       margin-left: 0;
     }
   }

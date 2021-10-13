@@ -3,11 +3,11 @@
 
 @font-face {
   font-family: "#{$icon-font-family}";
-  src: url('#{$icon-font-path}/mtdicon.ttf?t=1601378279197');
+  src: url('#{$icon-font-path}/wdicon.ttf?t=1601378279197');
   /* IE9*/
-  src: url('#{$icon-font-path}/mtdicon.ttf?t=1601378279197') format('truetype'),
-  url('#{$icon-font-path}/mtdicon.woff?t=1601378279197') format('woff'),
-  url('#{$icon-font-path}/mtdicon.svg?t=1601378279197#mtdicon') format('svg'); /* iOS 4.1- */
+  src: url('#{$icon-font-path}/wdicon.ttf?t=1601378279197') format('truetype'),
+  url('#{$icon-font-path}/wdicon.woff?t=1601378279197') format('woff'),
+  url('#{$icon-font-path}/wdicon.svg?t=1601378279197#wdicon') format('svg'); /* iOS 4.1- */
 }
 
 .#{$icon-prefix}-flame:before { content: "\e000"; }

@@ -46,13 +46,13 @@
       <page-turn :navs="navs" /> -->
     </Page>
   </div>
-  <mtd-button
+  <wd-button
     class="narrow-scrren-expand-bar"
     :class="{ 'expanded': isExpandWhenNarrowScreen }"
     @click="isExpandWhenNarrowScreen = !isExpandWhenNarrowScreen"
   >
     {{ isExpandWhenNarrowScreen ? '收起' : '展开' }}
-  </mtd-button>
+  </wd-button>
 </div>
 </template>
 

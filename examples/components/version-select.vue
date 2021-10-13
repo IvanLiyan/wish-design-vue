@@ -1,22 +1,22 @@
 <template>
-  <mtd-input-group class="select-wrap">
+  <wd-input-group class="select-wrap">
     <span class="tag" slot="prepend">{{ tag }}</span>
-    <mtd-select class="select" v-model="version" style="width: 150px">
-      <mtd-option
+    <wd-select class="select" v-model="version" style="width: 150px">
+      <wd-option
         v-for="item in versions"
         :key="item.value"
         :label="item.label"
         :value="item.value" />
-    </mtd-select>
-  </mtd-input-group>
+    </wd-select>
+  </wd-input-group>
 </template>
 
 <script>
-import MTD from '@/index.js';
+import WD from '@/index.js';
 
 const versions = [
-  { href: '/mtd/vue', label: MTD.version, value: MTD.version },
-  { href: '/mtd/vue-next', label: 'Vue 3.x', value: 'Vue 3.x' },
+  { href: '/wd/vue', label: WD.version, value: WD.version },
+  { href: '/wd/vue-next', label: 'Vue 3.x', value: 'Vue 3.x' },
 ];
 
 export default {
@@ -53,10 +53,10 @@ export default {
 .select-wrap {
   width: auto;
   /deep/ {
-    .mtd-input-group-prepend{
+    .wd-input-group-prepend{
       background-color: #fff;
     }
-    .mtd-input{
+    .wd-input{
       border-top-left-radius: 0;
       border-bottom-left-radius: 0;
     }

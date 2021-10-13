@@ -35,7 +35,7 @@ import { CONFIG_PROVIDER,
 } from '@/utils/config';
 
 export default {
-  name: 'MtdButton',
+  name: 'WdButton',
   inheritAttrs: false,
   props: {
     href: String,

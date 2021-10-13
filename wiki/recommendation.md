@@ -2,9 +2,7 @@
 ## 推荐工具
 | 类型 | 推荐产品 |
 | ---- | ---- |
-| 迁移工具 | [IView 迁移 MTD](https://km.sankuai.com/page/695336093) 、[Element 迁移 MTD](http://dev.sankuai.com/code/repo-detail/OTCFE/ele2mtd/file/list?codeArea=bj)
 | 组件托管 | [业务组件平台](https://component.sankuai.com/)
-| 主题定制 | [MTD 主题工具](http://mtd.meituan.com/theme)
 
 <style lang="scss">
 .page-recommendation{

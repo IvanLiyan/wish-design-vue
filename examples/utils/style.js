@@ -25,9 +25,9 @@ export function setStyle (style, theme) {
       document.head.appendChild(styleEl);
     }
   }
-  if (window.MTD_THEME !== theme) {
-    Cookies.set('MTD_THEME', theme, { expires: 365 });
-    window.MTD_THEME = theme;
+  if (window.WD_THEME !== theme) {
+    Cookies.set('WD_THEME', theme, { expires: 365 });
+    window.WD_THEME = theme;
   }
   clearLink();
 }

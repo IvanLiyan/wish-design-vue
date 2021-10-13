@@ -240,7 +240,7 @@ $border: 1px solid $color-line-2;
       max-width: 200px;
     }
   }
-  .mtdicon-link{
+  .wdicon-link{
     font-size: 12px;
   }
 }

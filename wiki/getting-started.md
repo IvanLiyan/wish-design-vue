@@ -2,52 +2,52 @@
 ## NPM 安装
 使用 mnpm 的方式安装。
 ```
-mnpm i @ss/mtd-vue
+mnpm i @wish/wd-vue
 ```
 
-在项目代码中引入组件并使用 MTDUI 2.0 样式
+在项目代码中引入组件并使用 WDUI 2.0 样式
 ```
-// 引入 MTDUI 2.0 样式
-import '@ss/mtd-vue/lib/theme2/index.css'
+// 引入 WDUI 2.0 样式
+import '@wish/wd-vue/lib/theme2/index.css'
 
 // 引入组件库
 import Vue from 'vue'
-import MTD from '@ss/mtd-vue'
+import WD from '@wish/wd-vue'
 
-Vue.use(MTD)
+Vue.use(WD)
 
 // or
-import '@ss/mtd-vue/lib/theme2/button.css'
-import Button from '@ss/mtd-vue/lib/button.js'
+import '@wish/wd-vue/lib/theme2/button.css'
+import Button from '@wish/wd-vue/lib/button.js'
 Vue.component(Button.name, Button)
 ```
 
 
-在项目代码中引入组件并使用 MTDUI 1.0 样式，只需要将上文的 `theme2` 更改为 `theme-chalk`。
+在项目代码中引入组件并使用 WDUI 1.0 样式，只需要将上文的 `theme2` 更改为 `theme-chalk`。
 ```
-// 引入 MTDUI 1.0 样式
-import '@ss/mtd-vue/lib/theme-chalk/index.css'
+// 引入 WDUI 1.0 样式
+import '@wish/wd-vue/lib/theme-chalk/index.css'
 
 // 引入组件库
 import Vue from 'vue'
-import MTD from '@ss/mtd-vue'
+import WD from '@wish/wd-vue'
 
-Vue.use(MTD)
+Vue.use(WD)
 
 // or
-import '@ss/mtd-vue/lib/theme-chalk/button.css'
-import Button from '@ss/mtd-vue/lib/button.js'
+import '@wish/wd-vue/lib/theme-chalk/button.css'
+import Button from '@wish/wd-vue/lib/button.js'
 Vue.component(Button.name, Button)
 ```
 ## CDN
 目前已接入 [BURST](https://static.sankuai.com/public) 系统，可通过以下地址引入
 ```
 <!-- 引入 theme2 样式 -->
-<link rel="stylesheet" href="https://static.meituan.net/bs/@ss/mtd-vue/latest/theme2/index.css">
+<link rel="stylesheet" href="https://static.meituan.net/bs/@wish/wd-vue/latest/theme2/index.css">
 <!-- 引入组件库 -->
-<script src="https://static.meituan.net/bs/@ss/mtd-vue/latest/index.js"></script>
+<script src="https://static.meituan.net/bs/@wish/wd-vue/latest/index.js"></script>
 ```
-也可将路径中的 `latest` 改为具体的版本号，如: `0.3.8` 来锁定版本，避免将来 mtd-vue  升级时受到非兼容性更新的影响。
+也可将路径中的 `latest` 改为具体的版本号，如: `0.3.8` 来锁定版本，避免将来 wd-vue  升级时受到非兼容性更新的影响。
 
 **注：需要通过 CDN 的方式将 Vue 提前引入**
 
@@ -73,8 +73,8 @@ npm run build
 
 你可以手动通过以下写法来实现按需加载
 ```
-import '@ss/mtd-vue/lib/theme2/button.css'
-import Button from '@ss/mtd-vue/lib/button.js'
+import '@wish/wd-vue/lib/theme2/button.css'
+import Button from '@wish/wd-vue/lib/button.js'
 ```
 如果使用`babel`,也可以通过 [babel-plugin-component](https://github.com/ElementUI/babel-plugin-component) 插件来实现按需加载
 在 `.babelrc` 中加入这个插件
@@ -84,7 +84,7 @@ import Button from '@ss/mtd-vue/lib/button.js'
     [
       "component",
       {
-        "libraryName": "@ss/mtd-vue",
+        "libraryName": "@wish/wd-vue",
         "styleLibraryName": "theme2"
       }
     ]
@@ -93,7 +93,7 @@ import Button from '@ss/mtd-vue/lib/button.js'
 ```
 之后你仍可以这样写，达到按需加载
 ```
-import { Button } from '@ss/mtd-vue'
+import { Button } from '@wish/wd-vue'
 ```
 
 ## 兼容性

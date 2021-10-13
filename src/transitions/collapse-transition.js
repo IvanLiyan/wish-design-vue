@@ -57,7 +57,7 @@ function createTransition (listeners) {
 };
 
 export default {
-  name: 'MtdCollapseTransition',
+  name: 'WdCollapseTransition',
   functional: true,
   render (h, context) {
     const { children, listeners } = context;

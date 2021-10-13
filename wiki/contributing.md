@@ -1,5 +1,5 @@
 # 贡献指南
-内网 [仓库地址](http://git.sankuai.com/v1/bj/projects/ss/repos/mtd-vue/browse)
+内网 [仓库地址](http://git.sankuai.com/v1/bj/projects/ss/repos/wd-vue/browse)
 
 ## Pull Request 规范
 - fork 一份到自己的项目下，不要直接在仓库下建分支

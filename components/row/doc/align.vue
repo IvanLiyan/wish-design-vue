@@ -1,42 +1,42 @@
 <template>
   <div class="source demo-row">
-    <mtd-row type="flex" class="row-bg">
-      <mtd-col :span="6"><div class="grid-content bg-purple" /></mtd-col>
-      <mtd-col :span="6"><div class="grid-content bg-purple-light" /></mtd-col>
-      <mtd-col :span="6"><div class="grid-content bg-purple" /></mtd-col>
-    </mtd-row>
-    <mtd-row type="flex" class="row-bg" justify="center">
-      <mtd-col :span="6"><div class="grid-content bg-purple" /></mtd-col>
-      <mtd-col :span="6"><div class="grid-content bg-purple-light" /></mtd-col>
-      <mtd-col :span="6"><div class="grid-content bg-purple" /></mtd-col>
-    </mtd-row>
-    <mtd-row type="flex" class="row-bg" justify="end">
-      <mtd-col :span="6"><div class="grid-content bg-purple" /></mtd-col>
-      <mtd-col :span="6"><div class="grid-content bg-purple-light" /></mtd-col>
-      <mtd-col :span="6"><div class="grid-content bg-purple" /></mtd-col>
-    </mtd-row>
-    <mtd-row type="flex" class="row-bg" justify="space-between">
-      <mtd-col :span="6"><div class="grid-content bg-purple" /></mtd-col>
-      <mtd-col :span="6"><div class="grid-content bg-purple-light" /></mtd-col>
-      <mtd-col :span="6"><div class="grid-content bg-purple" /></mtd-col>
-    </mtd-row>
-    <mtd-row type="flex" class="row-bg" justify="space-around">
-      <mtd-col :span="6"><div class="grid-content bg-purple" /></mtd-col>
-      <mtd-col :span="6"><div class="grid-content bg-purple-light" /></mtd-col>
-      <mtd-col :span="6"><div class="grid-content bg-purple" /></mtd-col>
-    </mtd-row>
+    <wd-row type="flex" class="row-bg">
+      <wd-col :span="6"><div class="grid-content bg-purple" /></wd-col>
+      <wd-col :span="6"><div class="grid-content bg-purple-light" /></wd-col>
+      <wd-col :span="6"><div class="grid-content bg-purple" /></wd-col>
+    </wd-row>
+    <wd-row type="flex" class="row-bg" justify="center">
+      <wd-col :span="6"><div class="grid-content bg-purple" /></wd-col>
+      <wd-col :span="6"><div class="grid-content bg-purple-light" /></wd-col>
+      <wd-col :span="6"><div class="grid-content bg-purple" /></wd-col>
+    </wd-row>
+    <wd-row type="flex" class="row-bg" justify="end">
+      <wd-col :span="6"><div class="grid-content bg-purple" /></wd-col>
+      <wd-col :span="6"><div class="grid-content bg-purple-light" /></wd-col>
+      <wd-col :span="6"><div class="grid-content bg-purple" /></wd-col>
+    </wd-row>
+    <wd-row type="flex" class="row-bg" justify="space-between">
+      <wd-col :span="6"><div class="grid-content bg-purple" /></wd-col>
+      <wd-col :span="6"><div class="grid-content bg-purple-light" /></wd-col>
+      <wd-col :span="6"><div class="grid-content bg-purple" /></wd-col>
+    </wd-row>
+    <wd-row type="flex" class="row-bg" justify="space-around">
+      <wd-col :span="6"><div class="grid-content bg-purple" /></wd-col>
+      <wd-col :span="6"><div class="grid-content bg-purple-light" /></wd-col>
+      <wd-col :span="6"><div class="grid-content bg-purple" /></wd-col>
+    </wd-row>
   </div>
 </template>
 
 <style lang='scss'>
   .demo-row {
-    .mtd-row {
+    .wd-row {
       margin-bottom: 20px;
       &:last-child {
         margin-bottom: 0;
       }
     }
-    .mtd-col {
+    .wd-col {
       border-radius: 4px;
     }
     .bg-purple-dark {

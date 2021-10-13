@@ -1,4 +1,4 @@
-$prefix: 'mtd' !default;
+$prefix: 'wd' !default;
 // component
 @mixin c($component) {
   $B: $prefix + '-' + $component !global;

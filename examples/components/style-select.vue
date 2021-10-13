@@ -1,12 +1,12 @@
 <template>
-  <mtd-select class="select" v-model="theme"
+  <wd-select class="select" v-model="theme"
     style="width: 150px">
-    <mtd-option
+    <wd-option
       v-for="item in themes"
       :key="item.value"
       :label="item.label"
       :value="item.value" />
-  </mtd-select>
+  </wd-select>
 </template>
 
 <script>
@@ -16,8 +16,8 @@ import {
 } from '../utils/style';
 
 const themes = [
-  { value: 'theme-chalk', label: 'MTDUI 1.0 主题' },
-  { value: 'theme2', label: 'MTDUI 2.0 主题' },
+  { value: 'theme-chalk', label: 'WDUI 1.0 主题' },
+  { value: 'theme2', label: 'WDUI 2.0 主题' },
 ];
 export default {
   name: 'StyleSelector',

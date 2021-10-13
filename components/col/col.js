@@ -4,7 +4,7 @@ import {
 } from '@/utils/config';
 
 export default {
-  name: 'MtdCol',
+  name: 'WdCol',
 
   props: {
     span: {

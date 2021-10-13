@@ -12,17 +12,17 @@
       </div>
     </demo-transition>
     <div class="demo-block-control" ref="control" :class="classObj" @click="handleClickControl">
-      <!-- <mtd-tooltip content="复制代码" placement="top">
-        <mtd-icon-button
+      <!-- <wd-tooltip content="复制代码" placement="top">
+        <wd-icon-button
           icon="icon icon-copy"
           class="demo-btn-copy"
           type="secondary"
           @click.stop="handleClickCopy"
         />
-      </mtd-tooltip> -->
+      </wd-tooltip> -->
       <div class="code-bar">
-        <i class="mtdicon mtdicon-code-off" v-if="showCode" />
-        <i class="mtdicon mtdicon-code" v-else />
+        <i class="wdicon wdicon-code-off" v-if="showCode" />
+        <i class="wdicon wdicon-code" v-else />
         <span>{{ controlText }}</span>
       </div>
     </div>
@@ -72,7 +72,7 @@ export default {
     handleClickCopy () {
       const code = this.$el.querySelector('.demo-desc .hljs');
       dom.copy(code.textContent);
-      this.$mtd.message({
+      this.$wd.message({
         message: '复制成功',
         type: 'success',
         duration: 1000,
@@ -175,7 +175,7 @@ $color-text-2: rgba(0, 0, 0, .75);
   border-top: 1px solid $color-line-2;
   line-height: $demo-control-height;
 
-  .mtd-tooltip-rel {
+  .wd-tooltip-rel {
     float: right;
     margin-left: 12px;
   }

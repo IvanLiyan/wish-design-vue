@@ -1,8 +1,8 @@
-import MtdCol from './col';
+import WdCol from './col';
 
 /* istanbul ignore next */
-MtdCol.install = function (Vue) {
-  Vue.component(MtdCol.name, MtdCol);
+WdCol.install = function (Vue) {
+  Vue.component(WdCol.name, WdCol);
 };
 
-export default MtdCol;
+export default WdCol;

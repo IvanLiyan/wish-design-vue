@@ -9,7 +9,7 @@ export default {
 
 </script>
 # 常见下拉框配置说明
-mtd-vue 默认情况下会使用以下配置
+wd-vue 默认情况下会使用以下配置
 ```
 popperOptions = {
   computeStyle: {
@@ -34,7 +34,7 @@ popperOptions = {
 ```html
 <template>
 <div id="demo-default">
-  <mtd-date-picker type="datetimerange"
+  <wd-date-picker type="datetimerange"
     v-model="value1"
     placeholder="选择时间"
     :popper-options="{
@@ -53,7 +53,7 @@ popperOptions = {
 ```html
 <template>
 <div id="demo-flip-disabled">
-  <mtd-date-picker type="datetimerange"
+  <wd-date-picker type="datetimerange"
     v-model="value1"
     placeholder="选择时间"
     :popper-options="{
@@ -71,7 +71,7 @@ popperOptions = {
 ```html
 <template>
 <div id="demo-together-disabled">
-  <mtd-date-picker type="datetimerange"
+  <wd-date-picker type="datetimerange"
     v-model="value1"
     placeholder="选择时间"
     :append-to-container="false"

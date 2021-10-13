@@ -37,9 +37,9 @@
       ],
       "plugins": [
         ["module-resolver", {
-          "root": ["@ss/mtd-vue"],
+          "root": ["@wish/wd-vue"],
           "alias": {
-            "@": "@ss/mtd-vue/lib",
+            "@": "@wish/wd-vue/lib",
             "popper.js/dist/esm/popper": "popper.js/dist/umd/popper"
           }
         }]

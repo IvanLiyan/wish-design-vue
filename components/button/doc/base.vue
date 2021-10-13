@@ -1,3 +1,3 @@
 <template>
-  <mtd-button type="primary">基础按钮</mtd-button>
+  <wd-button type="primary">基础按钮</wd-button>
 </template>

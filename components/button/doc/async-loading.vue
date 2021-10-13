@@ -1,5 +1,5 @@
 <template>
-  <mtd-button @click="handleClick" type="primary">提交</mtd-button>
+  <wd-button @click="handleClick" type="primary">提交</wd-button>
 </template>
 <script>
 export default {

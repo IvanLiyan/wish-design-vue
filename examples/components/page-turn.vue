@@ -3,14 +3,14 @@
     <div class="page-turn-item page-prev"
       v-show="prev" @click="goPrev"
 >
-      <i class="mtdicon mtdicon-arrow-left" />
+      <i class="wdicon wdicon-arrow-left" />
       <span>{{ prev }}</span>
     </div>
     <div class="page-turn-item page-next"
                 v-show="next" @click="goNext"
 >
       <span>{{ next }}</span>
-      <i class="mtdicon mtdicon-arrow-right" />
+      <i class="wdicon wdicon-arrow-right" />
     </div>
   </div>
 </template>

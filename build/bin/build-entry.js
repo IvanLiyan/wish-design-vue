@@ -43,13 +43,13 @@ export function install (Vue) {
     Vue.component(component.name, component);
   });
 
-  const $mtd = {
+  const $wd = {
     // confirm: Confirm,
     // notify: Notification,
     // message: Message,
   };
 
-  Vue.prototype.$mtd = $mtd;
+  Vue.prototype.$wd = $wd;
 };
 
 /* istanbul ignore if */

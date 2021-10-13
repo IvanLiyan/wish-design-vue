@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import 'babel-polyfill';
-import MTD from '@/index.js';
+import WD from '@/index.js';
 import router from './routes';
 import App from './app';
 import DemoBlok from './components/demo-block';
@@ -12,7 +12,7 @@ import 'highlight.js/styles/default.css';
 import ApiDoc from './components/api-doc';
 
 Vue.config.devtools = true;
-Vue.use(MTD);
+Vue.use(WD);
 Vue.component('demo-block', DemoBlok);
 Vue.component('api-doc', ApiDoc);
 Vue.use(VueHighlightJS, {

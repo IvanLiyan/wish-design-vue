@@ -9,7 +9,7 @@ yarn-debug.log*
 yarn-error.log*
 /test/unit/coverage/
 coverage
-examples/mtd-vue
+examples/wd-vue
 token.json
 # Editor directories and files
 .idea

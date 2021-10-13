@@ -13,7 +13,7 @@ module.exports = merge(baseWebpackConfig, {
     chunkFilename: '[id].js',
     libraryTarget: 'umd',
     libraryExport: 'default',
-    library: 'MTD',
+    library: 'WD',
     umdNamedDefine: true,
   },
   externals: {

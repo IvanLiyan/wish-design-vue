@@ -1,6 +1,6 @@
 <style lang='scss'>
 .demo-dropdown-btn-group {
-  .mtd-dropdown + .mtd-dropdown {
+  .wd-dropdown + .wd-dropdown {
     margin-left: 80px;
   }
 }
@@ -8,50 +8,50 @@
 <template>
   <div>
     <div class="demo-dropdown-btn-group source">
-      <mtd-dropdown>
-        <mtd-button type="text">
+      <wd-dropdown>
+        <wd-button type="text">
           <span style="margin-right: 4px;">更多</span>
-          <i class="mtdicon mtdicon-down" />
-        </mtd-button>
-        <mtd-dropdown-menu slot="dropdown">
-          <mtd-dropdown-menu-item>添加</mtd-dropdown-menu-item>
-          <mtd-dropdown-menu-item>删除</mtd-dropdown-menu-item>
-          <mtd-dropdown-menu-item>复制</mtd-dropdown-menu-item>
-        </mtd-dropdown-menu>
-      </mtd-dropdown>
-      <mtd-dropdown>
-        <mtd-button type="text">
-          <i class="mtdicon mtdicon-edit-o" style="margin-right: 4px;" />
-          <i class="mtdicon mtdicon-down" />
-        </mtd-button>
-        <mtd-dropdown-menu slot="dropdown">
-          <mtd-dropdown-menu-item>添加</mtd-dropdown-menu-item>
-          <mtd-dropdown-menu-item>删除</mtd-dropdown-menu-item>
-          <mtd-dropdown-menu-item>复制</mtd-dropdown-menu-item>
-        </mtd-dropdown-menu>
-      </mtd-dropdown>
-      <mtd-dropdown>
-        <mtd-button type="primary">
+          <i class="wdicon wdicon-down" />
+        </wd-button>
+        <wd-dropdown-menu slot="dropdown">
+          <wd-dropdown-menu-item>添加</wd-dropdown-menu-item>
+          <wd-dropdown-menu-item>删除</wd-dropdown-menu-item>
+          <wd-dropdown-menu-item>复制</wd-dropdown-menu-item>
+        </wd-dropdown-menu>
+      </wd-dropdown>
+      <wd-dropdown>
+        <wd-button type="text">
+          <i class="wdicon wdicon-edit-o" style="margin-right: 4px;" />
+          <i class="wdicon wdicon-down" />
+        </wd-button>
+        <wd-dropdown-menu slot="dropdown">
+          <wd-dropdown-menu-item>添加</wd-dropdown-menu-item>
+          <wd-dropdown-menu-item>删除</wd-dropdown-menu-item>
+          <wd-dropdown-menu-item>复制</wd-dropdown-menu-item>
+        </wd-dropdown-menu>
+      </wd-dropdown>
+      <wd-dropdown>
+        <wd-button type="primary">
           更多
-          <i class="mtdicon mtdicon-down" />
-        </mtd-button>
-        <mtd-dropdown-menu slot="dropdown">
-          <mtd-dropdown-menu-item>添加</mtd-dropdown-menu-item>
-          <mtd-dropdown-menu-item>删除</mtd-dropdown-menu-item>
-          <mtd-dropdown-menu-item>复制</mtd-dropdown-menu-item>
-        </mtd-dropdown-menu>
-      </mtd-dropdown>
-      <mtd-dropdown>
-        <mtd-button>
-          <i class="mtdicon mtdicon-edit-o" style="margin-right: 4px;" />
-          <i class="mtdicon mtdicon-down" />
-        </mtd-button>
-        <mtd-dropdown-menu slot="dropdown">
-          <mtd-dropdown-menu-item>添加</mtd-dropdown-menu-item>
-          <mtd-dropdown-menu-item>删除</mtd-dropdown-menu-item>
-          <mtd-dropdown-menu-item>复制</mtd-dropdown-menu-item>
-        </mtd-dropdown-menu>
-      </mtd-dropdown>
+          <i class="wdicon wdicon-down" />
+        </wd-button>
+        <wd-dropdown-menu slot="dropdown">
+          <wd-dropdown-menu-item>添加</wd-dropdown-menu-item>
+          <wd-dropdown-menu-item>删除</wd-dropdown-menu-item>
+          <wd-dropdown-menu-item>复制</wd-dropdown-menu-item>
+        </wd-dropdown-menu>
+      </wd-dropdown>
+      <wd-dropdown>
+        <wd-button>
+          <i class="wdicon wdicon-edit-o" style="margin-right: 4px;" />
+          <i class="wdicon wdicon-down" />
+        </wd-button>
+        <wd-dropdown-menu slot="dropdown">
+          <wd-dropdown-menu-item>添加</wd-dropdown-menu-item>
+          <wd-dropdown-menu-item>删除</wd-dropdown-menu-item>
+          <wd-dropdown-menu-item>复制</wd-dropdown-menu-item>
+        </wd-dropdown-menu>
+      </wd-dropdown>
     </div>
   </div>
 </template>

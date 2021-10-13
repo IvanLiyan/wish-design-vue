@@ -6,7 +6,7 @@
 ## 脚本作用
 
 
-0、npm run create ———— 初始化新组建需要创建和更新的文件（更新coponents.json、examples/nac.config.json，types/mtd-vue.d.ts，生成components下新组建的**.md,index.js、tests、**.vue、types下的*.d.ts、主题文件下的scss）
+0、npm run create ———— 初始化新组建需要创建和更新的文件（更新coponents.json、examples/nac.config.json，types/wd-vue.d.ts，生成components下新组建的**.md,index.js、tests、**.vue、types下的*.d.ts、主题文件下的scss）
 
 1、npm run clean ———— 删除 lib es dist test/**/coverage 文件
 

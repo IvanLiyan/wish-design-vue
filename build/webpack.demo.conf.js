@@ -236,7 +236,7 @@ const demoWebpackConfig = merge(overrideEntryConfig, {
             if (!r) { return false }
             return !/(doc|demo|\.json)/.test(module.resource);
           },
-          name: 'mtd-vue',
+          name: 'wd-vue',
           chunks: 'all'
         },
       },

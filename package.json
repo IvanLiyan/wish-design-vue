@@ -2,7 +2,7 @@
   "name": "@wish/wish-design-vue",
   "version": "0.0.2-alpha.0",
   "description": "vue、component",
-  "main": "lib/mtd-vue.common.js",
+  "main": "lib/wd-vue.common.js",
   "scripts": {
     "start": "npm run dev",
     "create": "node build/bin/create.js",

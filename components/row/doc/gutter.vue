@@ -1,23 +1,23 @@
 <template>
   <div class="source demo-row">
-    <mtd-row :gutter="20">
-      <mtd-col :span="6"><div class="grid-content bg-purple" /></mtd-col>
-      <mtd-col :span="6"><div class="grid-content bg-purple" /></mtd-col>
-      <mtd-col :span="6"><div class="grid-content bg-purple" /></mtd-col>
-      <mtd-col :span="6"><div class="grid-content bg-purple" /></mtd-col>
-    </mtd-row>
+    <wd-row :gutter="20">
+      <wd-col :span="6"><div class="grid-content bg-purple" /></wd-col>
+      <wd-col :span="6"><div class="grid-content bg-purple" /></wd-col>
+      <wd-col :span="6"><div class="grid-content bg-purple" /></wd-col>
+      <wd-col :span="6"><div class="grid-content bg-purple" /></wd-col>
+    </wd-row>
   </div>
 </template>
 
 <style lang='scss'>
   .demo-row {
-    .mtd-row {
+    .wd-row {
       margin-bottom: 20px;
       &:last-child {
         margin-bottom: 0;
       }
     }
-    .mtd-col {
+    .wd-col {
       border-radius: 4px;
     }
     .bg-purple {

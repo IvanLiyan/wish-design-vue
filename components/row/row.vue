@@ -14,7 +14,7 @@ import { CONFIG_PROVIDER,
 } from '@/utils/config';
 
 export default {
-  name: 'MtdRow',
+  name: 'WdRow',
 
   props: {
     tag: {

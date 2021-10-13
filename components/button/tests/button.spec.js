@@ -22,7 +22,7 @@ describe('Button', function () {
           size,
         },
       });
-      expect(wrapper.classes()).to.include(`mtd-btn-${size}`);
+      expect(wrapper.classes()).to.include(`wd-btn-${size}`);
     });
   });
 
@@ -52,8 +52,8 @@ describe('Button', function () {
         loading: true,
       },
     });
-    expect(wrapper.classes()).to.include('mtd-btn-loading');
-    expect(wrapper.classes()).to.not.include('mtd-btn-disabled');
+    expect(wrapper.classes()).to.include('wd-btn-loading');
+    expect(wrapper.classes()).to.not.include('wd-btn-disabled');
     expect(wrapper.attributes().disabled).to.equal('disabled');
 
     wrapper.trigger('click');
@@ -65,20 +65,20 @@ describe('Button', function () {
   it('icon', function () {
     const wrapper = mount(Button, {
       propsData: {
-        icon: 'mtdicon-settings',
+        icon: 'wdicon-settings',
       },
     });
-    expect(wrapper.find('.mtdicon-settings').exists()).to.be.true;
+    expect(wrapper.find('.wdicon-settings').exists()).to.be.true;
   });
 
   it('should replace icon to loading when loading and has icon', function () {
     const wrapper = mount(Button, {
       propsData: {
-        icon: 'mtdicon-settings',
+        icon: 'wdicon-settings',
         loading: true,
       },
     });
-    expect(wrapper.find('.mtdicon-settings').exists()).to.not.be.true;
+    expect(wrapper.find('.wdicon-settings').exists()).to.not.be.true;
     // todo 判断 loading 元素加载
   });
 
@@ -92,7 +92,7 @@ describe('Button', function () {
     };
     function createIt (type) {
       const btn = createButton(type);
-      expect(btn.classes()).to.include(`mtd-btn-${type}`);
+      expect(btn.classes()).to.include(`wd-btn-${type}`);
     };
     [
       'primary',
@@ -110,6 +110,6 @@ describe('Button', function () {
         dashed: true,
       },
     });
-    expect(wrapper.classes()).to.include('mtd-btn-dashed');
+    expect(wrapper.classes()).to.include('wd-btn-dashed');
   });
 });

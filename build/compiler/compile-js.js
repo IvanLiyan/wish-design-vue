@@ -32,8 +32,8 @@ function compileJs(filePath, file, option) {
   let code = fs.readFileSync(filePath, { encoding: 'utf-8' });
 
   code = replaceScriptImportExt(code, '.vue', '');
-  code = replaceScriptImportExt(code, '@/', '@ss/mtd-vue/es/');
-  code = replaceScriptImportExt(code, '@components', '@ss/mtd-vue/es/components');
+  code = replaceScriptImportExt(code, '@/', '@wish/wd-vue/es/');
+  code = replaceScriptImportExt(code, '@components', '@wish/wd-vue/es/components');
 
   const result = babel.transform(code, {
     filename: filePath,

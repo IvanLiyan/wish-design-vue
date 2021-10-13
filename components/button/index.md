@@ -1,17 +1,17 @@
 <style lang="scss">
   .demo-btns{
-    .mtd-btn + .mtd-btn{
+    .wd-btn + .wd-btn{
       margin-left: 90px;
     }
   }
   .demo-btn-group {
     display: inline-block;
-    .mtd-btn + .mtd-btn{
+    .wd-btn + .wd-btn{
       margin-left: 18px;
     }
   }
   .demo-button{
-    .mtd-btn + .mtd-btn{
+    .wd-btn + .wd-btn{
       margin-left: 8px;
     }
   }
@@ -31,7 +31,7 @@
 根据场景的需要，不同按钮类型可表达操作的重要程度等级。
 :::include(src="./doc/type.vue")
 :::
-> 文字按钮的形式和链接的形式非常像但用法不同,请参考 [链接/Link <i class="mtdicon mtdicon-link-o"></i>](/components/link)
+> 文字按钮的形式和链接的形式非常像但用法不同,请参考 [链接/Link <i class="wdicon wdicon-link-o"></i>](/components/link)
 ### 状态 
 以常规按钮为例，按钮状态有正常状态、hover 状态、激活状态、禁用状态、加载状态。
 :::include(src="./doc/status.vue")

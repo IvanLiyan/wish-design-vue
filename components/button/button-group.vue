@@ -9,7 +9,7 @@ import { CONFIG_PROVIDER,
 } from '@/utils/config';
 
 export default {
-  name: 'MtdButtonGroup',
+  name: 'WdButtonGroup',
   inject: {
     config: {
       from: CONFIG_PROVIDER,

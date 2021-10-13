@@ -1,9 +1,9 @@
 <template>
   <div>
-    <mtd-button class="btn-demo-item" type="text" icon="mtdicon mtdicon-theme-o">主题</mtd-button>
-    <mtd-button class="btn-demo-item" type="text" icon="mtdicon mtdicon-export-o">导出</mtd-button>
-    <mtd-button class="btn-demo-item" type="primary" icon="mtdicon mtdicon-calendar-o">日期</mtd-button>
-    <mtd-button class="btn-demo-item" type="primary" icon="mtdicon mtdicon-visibility-off">隐藏</mtd-button>
-    <mtd-button class="btn-demo-item" icon="mtdicon mtdicon-cart-o">加入购物车</mtd-button>
+    <wd-button class="btn-demo-item" type="text" icon="wdicon wdicon-theme-o">主题</wd-button>
+    <wd-button class="btn-demo-item" type="text" icon="wdicon wdicon-export-o">导出</wd-button>
+    <wd-button class="btn-demo-item" type="primary" icon="wdicon wdicon-calendar-o">日期</wd-button>
+    <wd-button class="btn-demo-item" type="primary" icon="wdicon wdicon-visibility-off">隐藏</wd-button>
+    <wd-button class="btn-demo-item" icon="wdicon wdicon-cart-o">加入购物车</wd-button>
   </div>
 </template>

@@ -1,6 +1,6 @@
 <template>
   <div class="search-input">
-    <mtd-select icon="mtdicon mtdicon-search"
+    <wd-select icon="wdicon wdicon-search"
       placeholder="搜索"
       filterable
       @focus="handleFocus"
@@ -9,9 +9,9 @@
       @input="handleSearch"
       popper-class="search-dropdown"
     >
-      <mtd-option v-for="nav in components" :key="nav.path"
+      <wd-option v-for="nav in components" :key="nav.path"
         :label="`${nav.cnName} / ${nav.name}`" :value="nav.path" />
-    </mtd-select>
+    </wd-select>
   </div>
 </template>
 <script>
@@ -50,12 +50,12 @@ $icon-width: 34px;
   display: inline-block;
   display: flex;
 
-  .mtd-select {
+  .wd-select {
     width: 156px;
     flex: 1;
   }
-  .mtd-select-search-focus{
-    .mtd-input-suffix-inner{
+  .wd-select-search-focus{
+    .wd-input-suffix-inner{
       i{
         transform: none;
       }
@@ -66,7 +66,7 @@ $icon-width: 34px;
   &[x-placement^="bottom"]{
     margin-top: 4px;
   }
-  .mtd-dropdown-menu{
+  .wd-dropdown-menu{
     margin: 4px 0px;
     padding: 0px;
   }

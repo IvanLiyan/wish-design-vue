@@ -1,11 +1,11 @@
-export const CONFIG_PROVIDER = 'MTDConfig';
+export const CONFIG_PROVIDER = 'WDConfig';
 
 let zIndex = 2000;
 const stack = [];
 
 const DEFAULT_CONFIG = {
-  prefixCls: 'mtd',
-  iconPrefixCls: 'mtdicon',
+  prefixCls: 'wd',
+  iconPrefixCls: 'wdicon',
 
   getPopupContainer: function () {
     return document.body;
