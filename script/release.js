@@ -81,7 +81,7 @@ async function main() {
   step(`\nPublishing ${tag ? tag[0] : 'lastest'} packages...`)
   
 
-  const { stdout } = await execa('npm', ['--registry=http://wnpm.bjs.i.wish.com',
+  const { stdout } = await execa('npm', ['--registry=http://npm.bjs.i.wish.com',
     '--cache=$HOME/.npm',
     '--userconfig=$HOME/.npmrc',
     'publish',
