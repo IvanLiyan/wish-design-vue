@@ -19,7 +19,7 @@
     "build:index": "webpack --config build/webpack.umd.conf.js",
     "build:es": "node ./build/compiler/index.js",
     "build:css": "node build/bin/build-css.js",
-    "build:theme": "gulp --gulpfile gulpfile.js build",
+    "build:theme": "gulp --gulpfile script/gulpfile.js build",
     "build:types": "node build/bin/build-ts.js",
     "copy:types": "mkdir -p publish/types && cp -r types/*.d.ts publish/types",
     "precommit": "lint-staged",
