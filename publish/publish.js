@@ -104,9 +104,12 @@ async function main() {
 
 function updateVersions(version) {
   // 1. update publish package.json
+  console.log('------------start')
   updatePackage(path.resolve(__dirname, '..'), version);
+  console.log('------------publish json end')
   // 2. update root package.json
   updatePackage(path.resolve(__dirname, '../'), version);
+  console.log('------------root json end')
 }
 
 function updatePackage(pkgRoot, version) {
