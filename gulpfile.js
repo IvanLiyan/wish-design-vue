@@ -2,7 +2,7 @@ const gulp = require('gulp');
 const sass = require('gulp-sass');
 const postcss = require('gulp-postcss');
 const cssmin = require('gulp-cssmin');
-const output = './lib/';
+const output = './publish/';
 
 gulp.task('compile:theme-chalk', function () {
   return gulp.src('./components/theme-chalk/*.scss')

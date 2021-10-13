@@ -1,0 +1,31 @@
+{
+  "name": "@wish/wd-vue",
+  "version": "0.0.2-alpha.1",
+  "description": "vue、component",
+  "main": "lib/wd-vue.common.js",
+  "types": "types/wd-vue.d.ts",
+  "scripts": {
+    "release": "node script/release.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ContextLogic/wish-design-vue.git"
+  },
+  "keywords": [
+    "vue",
+    "component"
+  ],
+  "author": "rose",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ContextLogic/wish-design-vue/issues"
+  },
+  "homepage": "https://github.com/ContextLogic/wish-design-vue#readme",
+  "dependencies": {
+    "popper.js": "^1.16.0",
+    "async-validator": "^1.12.2"
+  },
+  "peerDependencies": {
+    "vue": "^2.5.2"
+  }
+}

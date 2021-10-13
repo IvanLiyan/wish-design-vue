@@ -1,6 +1,6 @@
 {
-  "name": "@wish/wish-design-vue",
-  "version": "0.0.2-alpha.0",
+  "name": "@wish/wd-vue",
+  "version": "0.0.2-alpha.1",
   "description": "vue、component",
   "main": "lib/wd-vue.common.js",
   "scripts": {
@@ -11,19 +11,19 @@
     "release": "node script/release.js",
     "build": "cross-env NODE_ENV=production npm run build:all",
     "build:all": "npm run clean && npm run build:file && npm run build:component && npm run build:common && npm run build:utils && npm run build:index && npm run build:es && npm run build:css && npm run build:theme && npm run build:types && npm run copy:types",
-    "clean": "rimraf lib es dist test/**/coverage",
+    "clean": "cd publish && rimraf lib es dist types test/**/coverage",
     "build:file": "node build/bin/build-entry.js",
     "build:component": "webpack --config build/webpack.build.conf.js",
     "build:common": "webpack --config build/webpack.build-all.conf.js",
-    "build:utils": "cross-env BABEL_ENV=utils babel src --out-dir lib --ignore src/index.js",
+    "build:utils": "cross-env BABEL_ENV=utils babel src --out-dir publish/lib --ignore src/index.js",
     "build:index": "webpack --config build/webpack.umd.conf.js",
     "build:es": "node ./build/compiler/index.js",
     "build:css": "node build/bin/build-css.js",
     "build:theme": "gulp --gulpfile gulpfile.js build",
     "build:types": "node build/bin/build-ts.js",
-    "copy:types": "cp -r types/*.d.ts lib",
+    "copy:types": "mkdir -p publish/types && cp -r types/*.d.ts publish/types",
     "precommit": "lint-staged",
-    "lint": "eslint --ext .js,.vue src components examples",
+    "lint": "eslint --ext .js,.vue src components site",
     "lint:fix": "npm run lint -- --fix"
   },
   "repository": {

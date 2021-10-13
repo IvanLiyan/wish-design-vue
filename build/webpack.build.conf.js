@@ -39,7 +39,8 @@ transitionList.forEach(function (file) {
 module.exports = merge(baseWebpackConfig, {
   entry: Components,
   output: {
-    libraryTarget: 'commonjs2'
+    libraryTarget: 'commonjs2',
+    
   },
   externals: externals
 });

@@ -61,8 +61,8 @@ async function main() {
   if (!yes) {
     return
   }
-  step('\nRunning tests...')
-  await execa('npm', ['run', 'test'])
+  // step('\nRunning tests...')
+  // await execa('npm', ['run', 'test'])
 
   step('\nUpdating cross dependencies...')
   updateVersions(targetVersion)
@@ -80,6 +80,7 @@ async function main() {
   const tag = semver.prerelease(targetVersion);
   step(`\nPublishing ${tag ? tag[0] : 'lastest'} packages...`)
   
+  await execa('cd ../publish');
 
   const { stdout } = await execa('npm', ['--registry=http://npm.bjs.i.wish.com',
     '--cache=$HOME/.npm',
@@ -92,6 +93,7 @@ async function main() {
   console.log(stdout);
   success('Publishing Success')
 
+
   step('\nPushing to Code...')
   await execa('git', ['tag', `v${targetVersion}`])
   await execa('git', ['push', 'origin', `refs/tags/v${targetVersion}`])
@@ -103,6 +105,8 @@ async function main() {
 function updateVersions(version) {
   // 1. update root package.json
   updatePackage(path.resolve(__dirname, '..'), version);
+  // 2. update publish package.json
+  updatePackage(path.resolve(__dirname, '../publish'), version);
 }
 
 function updatePackage(pkgRoot, version) {

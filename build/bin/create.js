@@ -127,7 +127,7 @@ Files.forEach(file => {
 });
 
 // 添加到 nav.config.json
-const navConfigFile = require('../../examples/nav.config.json');
+const navConfigFile = require('../../site/nav.config.json');
 
 function findComponentConfig (navConfig) {
   return navConfig.find((nav) => nav.path === '/components');
@@ -143,7 +143,7 @@ groups[groups.length - 1].list.push({
 });
 
 saveFile(
-  resolve('examples/nav.config.json'),
+  resolve('site/nav.config.json'),
   JSON.stringify(navConfigFile, null, '  ')
 );
 require('./build-ts');

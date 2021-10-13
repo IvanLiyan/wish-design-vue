@@ -5,7 +5,7 @@ function resolve (dir) {
   return path.join(__dirname, '../..', dir);
 }
 
-const ROOT_DIR = 'es';
+const ROOT_DIR = 'publish/es';
 const ROOT = resolve(ROOT_DIR);
 
 function writeFile (file, content, options = {}) {

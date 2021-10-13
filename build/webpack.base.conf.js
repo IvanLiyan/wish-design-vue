@@ -14,7 +14,7 @@ module.exports = {
   stats: 'errors-warnings',
   mode: 'none',
   output: {
-    path: resolve('lib'),
+    path: resolve('publish/lib'),
     filename: '[name].js',
     publicPath: '/',
     globalObject: 'this',
@@ -28,7 +28,7 @@ module.exports = {
       '@components': resolve('components'),
       '@dependence': resolve('dependence'),
       '@test': resolve('test/unit'),
-      '@examples': resolve('examples'),
+      '@site': resolve('site'),
       [fullName]: resolve(''),
       [pkgName]: resolve('')
     }
@@ -48,7 +48,7 @@ module.exports = {
           resolve('src'),
           resolve('test'),
           resolve('components'),
-          resolve('examples')
+          resolve('site')
         ],
       },
       {
@@ -73,7 +73,7 @@ module.exports = {
             },
           },
         },
-        path.join(resolve('dependence/vue-source-doc-loader/index.js')),
+        path.join(resolve('build/dependence/vue-source-doc-loader/index.js')),
         ],
       },
       {
@@ -82,7 +82,7 @@ module.exports = {
         include: [
           resolve('src'),
           resolve('test'),
-          resolve('examples'),
+          resolve('site'),
           resolve('components'),
         ]
       },

@@ -34,7 +34,7 @@ function attrRemove (token, attrName) {
 
 const overrideEntryConfig = Object.assign({}, baseWebpackConfig, {
   entry: {
-    docs: resolve('examples/index.js')
+    docs: resolve('site/index.js')
   },
   externals: {}
 });
@@ -52,7 +52,7 @@ const plugins = [
   }),
   new webpack.NoEmitOnErrorsPlugin(),
   new HtmlWebpackPlugin({
-    template: resolve('examples/index.html'),
+    template: resolve('site/index.html'),
     inject: true,
     minify: {
       collapseWhitespace: true
@@ -61,7 +61,7 @@ const plugins = [
   // copy ico
   new CopyWebpackPlugin([
     {
-      from: resolve('examples/assets/favicon.png'),
+      from: resolve('site/assets/favicon.png'),
       to: resolve('dist'),
       globOptions:{
         ignore: ['.*']

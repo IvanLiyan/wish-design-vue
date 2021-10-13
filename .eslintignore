@@ -3,7 +3,7 @@
 /list/
 /test/unit/coverage/
 *.spec.js
-examples/singularity-system
+site/singularity-system
 /locale/
 /src/locale/
 /src/utils/date.js

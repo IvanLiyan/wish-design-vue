@@ -2,7 +2,7 @@
 ```
 ├── build # 编译配置及脚本
 ├── config # 配置
-├── examples # demo 项目
+├── site # demo 项目
 ├── components # 组件源码
 ├── src # 公共模块源码
 ├── test # 测试相关配置及结果
