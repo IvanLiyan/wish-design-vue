@@ -79,9 +79,6 @@ npm run create <componentName> [chineseName]
 
 
 
-todo dist 下生成wd-vue.min.css 去除theme2主体下的index.css 将主题文件放到lib下的style中
-
-
 
 
 
