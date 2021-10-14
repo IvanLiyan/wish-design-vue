@@ -28,6 +28,6 @@ if (typeof window !== 'undefined' && window.Vue) {
 export { Button, Row, Col, CollapseTransition };
 
 export default {
-  version: '0.0.2-alpha.13',
+  version: '0.0.2-alpha.14',
   install: install
 };

@@ -1,6 +1,6 @@
 {
   "name": "@wish/wd-vue",
-  "version": "0.0.2-alpha.13",
+  "version": "0.0.2-alpha.14",
   "description": "vue、component",
   "main": "lib/wd-vue.common.js",
   "scripts": {
@@ -20,7 +20,7 @@
     "build:utils": "cross-env BABEL_ENV=utils babel src --out-dir publish/lib --ignore src/index.js",
     "build:style": "gulp --gulpfile script/gulpfile.js build",
     "build:es": "node ./build/compiler/index.js",
-    "copy:types": "mkdir -p publish/types && cp -r types/*.d.ts publish/types",
+    "copy:types": "cp -r types/*.d.ts  publish/lib && mkdir -p publish/types && cp -r types/*.d.ts publish/types",
     "build:distIndex": "webpack --config build/webpack.umd.conf.js",
     "precommit": "lint-staged",
     "lint": "eslint --ext .js,.vue src components site",

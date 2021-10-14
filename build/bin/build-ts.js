@@ -4,7 +4,7 @@ const fs = require('fs');
 const uppercamelcase = require('uppercamelcase');
 const pkg = require('../../package.json');
 
-const OUTPUT_PATH = path.join(__dirname, '../../types/wd-vue.d.ts');
+const OUTPUT_PATH = path.join(__dirname, '../../types/index.d.ts');
 const basepath = path.join(__dirname, '../../types/');
 const importComponentTemplate = [];
 const listTemplate = []
