@@ -5,7 +5,7 @@ WORKDIR /
 COPY / ./
 RUN npm install -g yarn@1.22.5
 RUN npm install
-RUN npm run prod
+RUN npm run build:deploy
 
 FROM nginx:1.19.4
 COPY --from=build /dist /home/nginx/static/dist
