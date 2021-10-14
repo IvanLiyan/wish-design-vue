@@ -1,9 +1,9 @@
 {
   "name": "@wish/wd-vue",
-  "version": "0.0.2-alpha.12",
+  "version": "0.0.2-alpha.13",
   "description": "vue、component",
   "main": "lib/index.js",
-  "types": "types/wd-vue.d.ts",
+  "typings": "types/wd-vue.d.ts",
   "scripts": {},
   "repository": {
     "type": "git",
