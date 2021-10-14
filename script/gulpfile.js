@@ -36,7 +36,8 @@ gulp.task('compile:theme2', function () {
 gulp.task('copyfont:theme2', function () {
   return gulp.src('../components/theme2/fonts/**')
     .pipe(cssmin())
-    .pipe(gulp.dest(`${output}/theme2/fonts`));
+    .pipe(gulp.dest(`${output}/theme2/fonts`))
+    .pipe(gulp.dest(`../publish/dist/fonts`));
 });
 
 // gulp.task('preview:theme2', function () {
