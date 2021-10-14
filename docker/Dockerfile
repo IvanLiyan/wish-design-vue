@@ -1,9 +1,10 @@
 # build environment
-FROM node:9.11.2 as build
+FROM node:10.16.0 as build
 WORKDIR /tmp
 # ENV PATH /app/node_modules/.bin:$PATH
 COPY . ./
 RUN npm install
+RUN npm rebuild node-sass
 RUN npm run build:deploy
 
 FROM nginx:1.19.4
