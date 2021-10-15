@@ -4,7 +4,6 @@
   </transition>
 </template>
 <script>
-// import dom from '../utils/dom';
 export default {
   name: 'FadeTransition',
 };

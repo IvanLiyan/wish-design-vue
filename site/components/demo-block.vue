@@ -69,15 +69,15 @@ export default {
       this.showCode = !this.showCode;
       this.checkScroll();
     },
-    handleClickCopy () {
-      const code = this.$el.querySelector('.demo-desc .hljs');
-      dom.copy(code.textContent);
-      this.$wd.message({
-        message: '复制成功',
-        type: 'success',
-        duration: 1000,
-      });
-    },
+    // handleClickCopy () {
+    //   const code = this.$el.querySelector('.demo-desc .hljs');
+    //   dom.copy(code.textContent);
+    //   this.$wd.message({
+    //     message: '复制成功',
+    //     type: 'success',
+    //     duration: 1000,
+    //   });
+    // },
     checkScroll () {
       this.$nextTick(() => {
         if (

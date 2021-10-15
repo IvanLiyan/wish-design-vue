@@ -11,5 +11,5 @@ module.exports = {
   ],
   isProd: isProd,
   isTest: process.env.BABEL_ENV === 'test',
-  publicPath: isProd ? '/wd/vue/' : '/'
+  publicPath: isProd ? '/' : '/'
 };
