@@ -62,13 +62,6 @@ export default {
         if (this.submenu) {
           this.submenu.route = n;
         }
-        if (!v || v.name !== n.name) {
-          window.LXAnalytics('pageView', {
-            custom: {
-              name: n.name,
-            },
-          }, null, 'c_techportal_k457sylz');
-        }
       },
     },
     '$route.query': {

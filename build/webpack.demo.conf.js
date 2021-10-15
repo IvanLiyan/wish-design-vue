@@ -63,10 +63,7 @@ const plugins = [
     {
       from: resolve('site/assets/favicon.png'),
       to: resolve('dist'),
-      globOptions:{
-        ignore: ['.*']
-      }
-      
+      ignore: ['.*']
     },
   ]),
   new FriendlyErrorsPlugin({

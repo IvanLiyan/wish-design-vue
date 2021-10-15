@@ -45,8 +45,8 @@ npm run create <componentName> [chineseName]
 ```
 
 
-todo ts没有提示
 
+todo 未支持按需加载，若支持需要lib里面以组件文件夹形式存放组件相关内容
 
 
 
