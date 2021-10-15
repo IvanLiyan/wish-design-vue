@@ -76,7 +76,7 @@ export default {
     //     message: '复制成功',
     //     type: 'success',
     //     duration: 1000,
-    //   });
+    //   }); //
     // },
     checkScroll () {
       this.$nextTick(() => {
