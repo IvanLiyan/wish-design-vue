@@ -1,6 +1,6 @@
 
 # @wish/wd-vue
-> 一套 Vue.js 的组件库. http://***
+> 一套 Vue.js 的组件库. http://wd-vue.dev.bjs.i.wish.com/
 ## 1.0 计划
 目前仍在规划中
 ## 支持环境
