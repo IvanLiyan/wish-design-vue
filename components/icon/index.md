@@ -470,9 +470,9 @@ export default {
 
 ### 图标集合
 **注: wdUI 2.0包含更多的图标资源**
-<p v-if="theme && theme === 'theme2'">
+<!-- <p v-if="theme && theme === 'theme2'">
   <a href="https://km.sankuai.com/page/147771037" target="_blank">wdUI 2.0 图标更新日志</a>
-</p>
+</p> -->
 <ul class='icon-list'>
   <li v-for='icon in icons' :key='icon' class='icon-item'>
     <wd-icon :name='icon'></wd-icon>

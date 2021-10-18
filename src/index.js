@@ -3,6 +3,8 @@ import Button from 'components/button';
 import Row from 'components/row';
 import Col from 'components/col';
 import Icon from 'components/icon';
+import IconButton from 'components/icon-button';
+import ButtonGroup from 'components/button-group';
 import CollapseTransition from './transitions/collapse-transition';
 
 const components = [
@@ -10,6 +12,8 @@ const components = [
   Row,
   Col,
   Icon,
+  IconButton,
+  ButtonGroup,
   CollapseTransition,
 ];
 
@@ -38,10 +42,12 @@ export {
   Row,
   Col,
   Icon,
+  IconButton,
+  ButtonGroup,
   CollapseTransition,
 };
 
 export default {
-  version: '0.0.2-alpha.20',
+  version: '0.0.2-alpha.21',
   install,
 };

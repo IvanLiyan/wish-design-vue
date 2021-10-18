@@ -1,5 +1,4 @@
 import Button from './button.vue';
-import ButtonGroup from './button-group.vue';
 
 /* istanbul ignore next */
 Button.install = function (Vue) {
@@ -7,7 +6,3 @@ Button.install = function (Vue) {
 };
 
 export default Button;
-export {
-  Button,
-  ButtonGroup,
-};

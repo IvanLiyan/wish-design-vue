@@ -48,38 +48,35 @@
 
 ### 图标型
 当图标为大众熟知时可直接使用，用法与文字按钮一致。如需突出重点可配置默认态为主色，无需突出可配置辅色使用。
-<!-- :::include(src="./doc/icon.vue") -->
+:::include(src="./doc/icon.vue")
 :::
 ### 图标 + 文字
 当图标的表意不是很明确或者需要强调操作时可以图标结合文字一起使用。
 :::include(src="./doc/text.vue")
 :::
 
-### 菜单型
+<!-- ### 菜单型
 按钮与下拉箭头之间无分割线，两者作为一个整体进行点击，展开折叠操作。
-<!--:::include(src="./doc/menu.vue")-->
-
-:::
+:::include(src="./doc/menu.vue")::: -->
 
 ### 按钮组
 一组相关联的操作聚合在一起成为按钮组，方便快捷操作。
-<!--:::include(src="./doc/group.vue")-->
+:::include(src="./doc/group.vue")
 
 :::
 
 ### 链接型
 以链接的形式渲染按钮
-<!--:::include(src="./doc/link.vue")-->
+:::include(src="./doc/link.vue")
 
 :::
 
 ### 异步按钮
 点击后按钮进入 loading 状态，当异步结束后恢复正常
-<!--:::include(src="./doc/async-loading.vue")-->
+:::include(src="./doc/async-loading.vue")
 
 :::
 
 ## API
 <api-doc name="Button" :doc="require('./api.json')"></api-doc>
-<!-- TODO 打开注释 -->
-<!-- <api-doc name="IconButton" :doc="require('./../icon-button/api.json')"></api-doc> -->
+<api-doc name="IconButton" :doc="require('./../icon-button/api.json')"></api-doc>
