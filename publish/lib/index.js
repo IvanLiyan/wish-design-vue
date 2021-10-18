@@ -132,7 +132,8 @@ function install(Vue) {
     // message: Message,
   };
 
-  Vue.prototype.$wd = $wd;
+  if (Vue.prototype) Vue.prototype.$wd = $wd;
+  if (Vue.config) Vue.config.globalProperties.$wd = $wd;
 };
 
 /* istanbul ignore if */
@@ -143,7 +144,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  version: '0.0.2-alpha.18',
+  version: '0.0.2-alpha.19',
   install: install
 });
 
