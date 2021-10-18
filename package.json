@@ -22,7 +22,6 @@
     "build:es": "node ./build/compiler/index.js",
     "copy:types": "mkdir -p publish/types && cp -r types/*.d.ts publish/types",
     "build:distIndex": "webpack --config build/webpack.umd.conf.js",
-    "precommit": "lint-staged",
     "lint": "eslint --ext .js,.vue src components site",
     "lint:fix": "npm run lint -- --fix"
   },
@@ -113,5 +112,17 @@
   },
   "peerDependencies": {
     "vue": "^2.5.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "{src,examples,components}/**/*.{js,vue}": [
+      "prettier --write",
+      "eslint --fix",
+      "git add"
+    ]
   }
 }

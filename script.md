@@ -39,8 +39,6 @@
 14、npm run build:deploy ———— 0 操作后，构建部署服务（用于生产）
 
 
-todo ts没有提示
-
 
 
 

@@ -8,9 +8,19 @@
         "groupName": "通用",
         "list": [
           {
+            "path": "icon",
+            "name": "Icon",
+            "cnName": "图标"
+          },
+          {
             "path": "button",
             "name": "Button",
             "cnName": "按钮"
+          },
+          {
+            "path": "row",
+            "name": "Grid",
+            "cnName": "布局"
           }
         ]
       }

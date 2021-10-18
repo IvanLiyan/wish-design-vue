@@ -2,12 +2,14 @@
 import Button from 'components/button';
 import Row from 'components/row';
 import Col from 'components/col';
+import Icon from 'components/icon';
 import CollapseTransition from './transitions/collapse-transition';
 
 const components = [
   Button,
   Row,
   Col,
+  Icon,
   CollapseTransition,
 ];
 
@@ -23,7 +25,7 @@ export function install (Vue) {
   };
 
   if (Vue.prototype) Vue.prototype.$wd = $wd;
-  if (Vue.config) Vue.config.globalProperties.$wd = $wd;
+  if (Vue.config.globalProperties) Vue.config.globalProperties.$wd = $wd;
 };
 
 /* istanbul ignore if */
@@ -35,6 +37,7 @@ export {
   Button,
   Row,
   Col,
+  Icon,
   CollapseTransition,
 };
 

@@ -1,5 +1,8 @@
 <template>
-  <component :href="href" :to="to" :is="tag"
+  <component
+    :href="href"
+    :to="to"
+    :is="tag"
     :class="[
       prefix,
       type ? `${prefix}-${type}` : '',
@@ -12,27 +15,23 @@
         [`${prefix}-ghost`]: ghost,
         [`${prefix}-round`]: round,
         [`${prefix}-circle`]: circle,
-      }
+      },
     ]"
     :type="htmlType"
     :disabled="disabled || _loading"
     v-on="listen"
     v-bind="$attrs"
   >
-    <i :class="`${prefix}-before ${prefix}-spin`"
-      v-if="_loading" /><span
-      :class="`${prefix}-before`" v-if="!_loading && (icon || $slots.icon)"
-    >
-      <slot name="icon"><i :class="icon" /></slot>
-    </span><span><slot /></span>
+    <i :class="`${prefix}-before ${prefix}-spin`" v-if="_loading" />
+    <span :class="`${prefix}-before`" v-if="!_loading && (icon || $slots.icon)">
+      <slot name="icon"><i :class="icon" /></slot> </span
+    ><span><slot /></span>
   </component>
 </template>
 <script>
 import { isPromise, isArray } from '@/utils/type';
 import { hasProps } from '@/utils/vnode';
-import { CONFIG_PROVIDER,
-  getPrefixCls,
-} from '@/utils/config';
+import { CONFIG_PROVIDER, getPrefixCls } from '@/utils/config';
 
 export default {
   name: 'WdButton',
@@ -98,7 +97,9 @@ export default {
     handleClick (e) {
       clearTimeout(this.timeout);
       this.clicked = true;
-      this.timeout = setTimeout(() => { this.clicked = false; }, 500);
+      this.timeout = setTimeout(() => {
+        this.clicked = false;
+      }, 500);
 
       const onClick = this.$listeners.click;
       const handler = () => {

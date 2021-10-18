@@ -50,7 +50,7 @@ export function install (Vue) {
   };
 
   if (Vue.prototype) Vue.prototype.$wd = $wd;
-  if (Vue.config) Vue.config.globalProperties.$wd = $wd;
+  if (Vue.config.globalProperties) Vue.config.globalProperties.$wd = $wd;
 };
 
 /* istanbul ignore if */
