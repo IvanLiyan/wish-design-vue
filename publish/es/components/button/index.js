@@ -1,5 +1,4 @@
 import Button from './button';
-import ButtonGroup from './button-group';
 
 /* istanbul ignore next */
 Button.install = function (Vue) {
@@ -7,4 +6,3 @@ Button.install = function (Vue) {
 };
 
 export default Button;
-export { Button, ButtonGroup };

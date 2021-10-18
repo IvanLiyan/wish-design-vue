@@ -3,9 +3,11 @@ import Button from './components/button';
 import Row from './components/row';
 import Col from './components/col';
 import Icon from './components/icon';
+import IconButton from './components/icon-button';
+import ButtonGroup from './components/button-group';
 import CollapseTransition from './transitions/collapse-transition';
 
-var components = [Button, Row, Col, Icon, CollapseTransition];
+var components = [Button, Row, Col, Icon, IconButton, ButtonGroup, CollapseTransition];
 
 export function install(Vue) {
   components.map(function (component) {
@@ -27,9 +29,9 @@ if (typeof window !== 'undefined' && window.Vue) {
   install(window.Vue);
 }
 
-export { Button, Row, Col, Icon, CollapseTransition };
+export { Button, Row, Col, Icon, IconButton, ButtonGroup, CollapseTransition };
 
 export default {
-  version: '0.0.2-alpha.21',
+  version: '0.0.2-alpha.24',
   install: install
 };
