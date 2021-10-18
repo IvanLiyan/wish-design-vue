@@ -1,11 +1,10 @@
 import _extends from 'babel-runtime/helpers/extends';
-import Vue from 'vue';
+
 import PopperJS from 'popper.js/dist/esm/popper';
 import { on, off } from '../dom';
 import PopupManage from './popup-manage';
 import { deepCopy, mergeDeep } from '@wish/wd-vue/es/utils/util';
 import { getConfig, CONFIG_PROVIDER } from '@wish/wd-vue/es/utils/config';
-var isServer = Vue.prototype.$isServer;
 
 var defaultPopperOptions = {
   computeStyle: {
@@ -176,7 +175,7 @@ export default {
       this.popperJS = new PopperJS(reference, drop, options);
     },
     updatePopper: function updatePopper() {
-      if (isServer || !this.visible) {
+      if (!this.visible) {
         // 存在 nextTick 中调用 updatePopper 的情况，此时 visible 有出现 false 的可能
         return;
       }

@@ -3,19 +3,11 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.on = exports.off = undefined;
 exports.hasClass = hasClass;
 exports.addClass = addClass;
 exports.removeClass = removeClass;
 exports.getStyle = getStyle;
 
-var _vue = require('vue');
-
-var _vue2 = _interopRequireDefault(_vue);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var isServer = _vue2.default.prototype.$isServer;
 var defaultOptions = {
   capture: false,
   passive: false
@@ -25,7 +17,7 @@ function noop() {}
 
 /* istanbul ignore next */
 var off = exports.off = function () {
-  if (!isServer && document.removeEventListener) {
+  if (document.removeEventListener) {
     return function (node, event, handler) {
       // 判断 node 为 vnode
       var element = node && node.$el ? node.$el : node;
@@ -45,7 +37,7 @@ var off = exports.off = function () {
 
 /* istanbul ignore next */
 var on = exports.on = function () {
-  if (!isServer && document.addEventListener) {
+  if (document.addEventListener) {
     return function (node, event, handler) {
       // 判断 node 为 vnode
       var element = node && node.$el ? node.$el : node;
@@ -123,7 +115,6 @@ function removeClass(el, className) {
 }
 
 function getStyle(el, styleName) {
-  if (isServer) return;
   if (!el) {
     return {};
   }

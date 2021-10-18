@@ -9,10 +9,6 @@ var _extends2 = require('babel-runtime/helpers/extends');
 
 var _extends3 = _interopRequireDefault(_extends2);
 
-var _vue = require('vue');
-
-var _vue2 = _interopRequireDefault(_vue);
-
 var _popper = require('popper.js/dist/umd/popper');
 
 var _popper2 = _interopRequireDefault(_popper);
@@ -28,8 +24,6 @@ var _util = require('@wish/wd-vue/lib/utils/util');
 var _config = require('@wish/wd-vue/lib/utils/config');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var isServer = _vue2.default.prototype.$isServer;
 
 var defaultPopperOptions = {
   computeStyle: {
@@ -199,7 +193,7 @@ exports.default = {
       this.popperJS = new _popper2.default(reference, drop, options);
     },
     updatePopper: function updatePopper() {
-      if (isServer || !this.visible) {
+      if (!this.visible) {
         // 存在 nextTick 中调用 updatePopper 的情况，此时 visible 有出现 false 的可能
         return;
       }

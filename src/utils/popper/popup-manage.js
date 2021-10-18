@@ -1,4 +1,4 @@
-import Vue from 'vue';
+
 import { getConfig } from '@/utils/config';
 
 const Manager = {
@@ -19,15 +19,13 @@ const Manager = {
   },
 };
 
-if (!Vue.prototype.$isServer) {
-  window.addEventListener('keydown', function (event) {
-    // keyCode is deprecated
-    if (event.key === 'Escape' || event.keyCode === 27) {
-      const topPopup = Manager.getLastPopup();
-      if (topPopup) {
-        topPopup.$emit('esc');
-      }
+window.addEventListener('keydown', function (event) {
+  // keyCode is deprecated
+  if (event.key === 'Escape' || event.keyCode === 27) {
+    const topPopup = Manager.getLastPopup();
+    if (topPopup) {
+      topPopup.$emit('esc');
     }
-  });
-}
+  }
+});
 export default Manager;

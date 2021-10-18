@@ -1,6 +1,4 @@
-import Vue from 'vue';
 
-const isServer = Vue.prototype.$isServer;
 const defaultOptions = {
   capture: false,
   passive: false,
@@ -10,7 +8,7 @@ function noop () {}
 
 /* istanbul ignore next */
 export const off = (function () {
-  if (!isServer && document.removeEventListener) {
+  if (document.removeEventListener) {
     return function (node, event, handler) {
       // 判断 node 为 vnode
       const element = node && node.$el ? node.$el : node;
@@ -30,7 +28,7 @@ export const off = (function () {
 
 /* istanbul ignore next */
 export const on = (function () {
-  if (!isServer && document.addEventListener) {
+  if (document.addEventListener) {
     return function (node, event, handler) {
       // 判断 node 为 vnode
       const element = node && node.$el ? node.$el : node;
@@ -104,7 +102,6 @@ export function removeClass (el, className) {
 }
 
 export function getStyle (el, styleName) {
-  if (isServer) return;
   if (!el) {
     return {};
   }

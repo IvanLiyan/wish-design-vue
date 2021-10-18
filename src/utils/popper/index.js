@@ -1,10 +1,9 @@
-import Vue from 'vue';
+
 import PopperJS from 'popper.js/dist/esm/popper';
 import { on, off } from '../dom';
 import PopupManage from './popup-manage';
 import { deepCopy, mergeDeep } from '@/utils/util';
 import { getConfig, CONFIG_PROVIDER } from '@/utils/config';
-const isServer = Vue.prototype.$isServer;
 
 const defaultPopperOptions = {
   computeStyle: {
@@ -176,7 +175,7 @@ export default {
     },
 
     updatePopper () {
-      if (isServer || !this.visible) {
+      if (!this.visible) {
         // 存在 nextTick 中调用 updatePopper 的情况，此时 visible 有出现 false 的可能
         return;
       }

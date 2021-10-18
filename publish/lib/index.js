@@ -1,13 +1,13 @@
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory(require("vue"));
+		module.exports = factory();
 	else if(typeof define === 'function' && define.amd)
-		define(["vue"], factory);
+		define([], factory);
 	else {
-		var a = typeof exports === 'object' ? factory(require("vue")) : factory(root["vue"]);
+		var a = factory();
 		for(var i in a) (typeof exports === 'object' ? exports : root)[i] = a[i];
 	}
-})(this, function(__WEBPACK_EXTERNAL_MODULE__131__) {
+})(this, function() {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -143,7 +143,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  version: '0.0.2-alpha.17',
+  version: '0.0.2-alpha.18',
   install: install
 });
 
@@ -3785,11 +3785,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addClass", function() { return addClass; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "removeClass", function() { return removeClass; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getStyle", function() { return getStyle; });
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(131);
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);
 
-
-var isServer = vue__WEBPACK_IMPORTED_MODULE_0___default.a.prototype.$isServer;
 var defaultOptions = {
   capture: false,
   passive: false
@@ -3799,7 +3795,7 @@ function noop() {}
 
 /* istanbul ignore next */
 var off = function () {
-  if (!isServer && document.removeEventListener) {
+  if (document.removeEventListener) {
     return function (node, event, handler) {
       // 判断 node 为 vnode
       var element = node && node.$el ? node.$el : node;
@@ -3819,7 +3815,7 @@ var off = function () {
 
 /* istanbul ignore next */
 var on = function () {
-  if (!isServer && document.addEventListener) {
+  if (document.addEventListener) {
     return function (node, event, handler) {
       // 判断 node 为 vnode
       var element = node && node.$el ? node.$el : node;
@@ -3897,7 +3893,6 @@ function removeClass(el, className) {
 }
 
 function getStyle(el, styleName) {
-  if (isServer) return;
   if (!el) {
     return {};
   }
@@ -3908,12 +3903,6 @@ function getStyle(el, styleName) {
     return el.style[styleName];
   }
 }
-
-/***/ }),
-/* 131 */
-/***/ (function(module, exports) {
-
-module.exports = __WEBPACK_EXTERNAL_MODULE__131__;
 
 /***/ })
 /******/ ]);

@@ -1,4 +1,4 @@
-import Vue from 'vue';
+
 import { on } from './dom';
 
 var nodeList = [];
@@ -7,11 +7,11 @@ var ctx = '@@clickoutsideContext';
 var startClick = void 0;
 var seed = 0;
 
-!Vue.prototype.$isServer && on(document, 'mousedown', function (e) {
+on(document, 'mousedown', function (e) {
   return startClick = e;
 });
 
-!Vue.prototype.$isServer && on(document, 'mouseup', function (e) {
+on(document, 'mouseup', function (e) {
   nodeList.forEach(function (node) {
     return node[ctx].documentHandler(e, startClick);
   });

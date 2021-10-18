@@ -1,4 +1,4 @@
-import Vue from 'vue';
+
 const defaultOptions = {
   capture: false,
   passive: false,
@@ -60,7 +60,7 @@ const on = (function () {
 })();
 
 const off = (function () {
-  if ( document.removeEventListener) {
+  if (document.removeEventListener) {
     return function (node, event, handler) {
       // 判断 node 为 vnode
       const element = node && node.$el ? node.$el : node;
