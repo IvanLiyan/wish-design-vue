@@ -5,12 +5,12 @@ const cssmin = require('gulp-cssmin');
 var rename = require('gulp-rename');
 const output = '../publish/lib/style';
 
-gulp.task('compile:theme-chalk', function () {
-  return gulp.src('../components/theme-chalk/*.scss')
+gulp.task('compile:theme', function () {
+  return gulp.src('../components/theme/*.scss')
     .pipe(sass.sync())
     .pipe(postcss())
     .pipe(cssmin())
-    .pipe(gulp.dest(`${output}/theme-chalk`));
+    .pipe(gulp.dest(`${output}/theme`));
 });
 
 
@@ -34,10 +34,7 @@ gulp.task('build:dist', function () {
     .pipe(gulp.dest(`../publish/dist`));
 });
 
-
-
-gulp.task('build:theme-chalk', gulp.series('compile:theme-chalk'));
-gulp.task('build:theme2', gulp.series('compile:theme2'));
+gulp.task('build:theme', gulp.series('compile:theme'));
 gulp.task('build:dist');
 
-gulp.task('build', gulp.series('build:theme-chalk', 'build:theme2', 'build:dist'));
+gulp.task('build', gulp.series('build:theme', 'build:dist'));

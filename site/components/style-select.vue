@@ -16,8 +16,7 @@ import {
 } from '../utils/style';
 
 const themes = [
-  { value: 'theme-chalk', label: 'WDUI 1.0 主题' },
-  { value: 'theme2', label: 'WDUI 2.0 主题' },
+  { value: 'theme', label: 'WDUI 1.0 主题' },
 ];
 export default {
   name: 'StyleSelector',

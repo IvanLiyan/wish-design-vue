@@ -7,7 +7,7 @@
 
 2、npm run build:srcIndex ———— 生成src入口文件index.js
 
-3、npm run build:themeIndex ———— 生成components下主题(theme-chalk、theme2)的index.scss
+3、npm run build:themeIndex ———— 生成components下主题(theme)的index.scss
 
 4、npm run build:typesIndex ———— 生成types下的wd-vue.d.ts文件
 
@@ -19,7 +19,7 @@
 
 7、npm run build:utils ———— 将src中除了index.js的文件夹拷贝到publish/lib下
 
-8、npm run build:style ———— 将components下主题文件编译成css文件，并输出到lib的publish/lib/style下生成对应的主题文件(theme-chalk、theme2),并输出dist下的wd-vue.min.css
+8、npm run build:style ———— 将components下主题文件编译成css文件，并输出到lib的publish/lib/style下生成对应的主题文件(theme),并输出dist下的wd-vue.min.css
 
 
 

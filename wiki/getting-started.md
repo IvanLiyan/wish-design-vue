@@ -26,7 +26,7 @@ Vue.component(Button.name, Button)
 在项目代码中引入组件并使用 WDUI 1.0 样式，只需要将上文的 `theme2` 更改为 `theme-chalk`。
 ```
 // 引入 WDUI 1.0 样式
-import '@wish/wd-vue/lib/theme-chalk/index.css'
+import '@wish/wd-vue/lib/theme/index.css'
 
 // 引入组件库
 import Vue from 'vue'
@@ -35,7 +35,7 @@ import WD from '@wish/wd-vue'
 Vue.use(WD)
 
 // or
-import '@wish/wd-vue/lib/theme-chalk/button.css'
+import '@wish/wd-vue/lib/theme/button.css'
 import Button from '@wish/wd-vue/lib/button.js'
 Vue.component(Button.name, Button)
 ```

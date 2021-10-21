@@ -71,7 +71,7 @@ export default {
 };
 </script>
 <style lang="scss">
-@import '../../components/theme2/common/var.scss';
+@import '../../components/theme/common/var.scss';
 $width: 44px;
 .page-turn {
   %ic {

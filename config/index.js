@@ -6,8 +6,7 @@ module.exports = {
   fullName: '@wish/wd-vue',
   port: 8081,
   themes: [
-    'theme-chalk',
-    'theme2'
+    'theme'
   ],
   isProd: isProd,
   isTest: process.env.BABEL_ENV === 'test',

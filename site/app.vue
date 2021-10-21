@@ -15,7 +15,7 @@ import eventhub from './utils/eventhub';
 
 import Vue from 'vue';
 import Submenu from './components/submenu.vue';
-import '@components/theme2/index.scss';
+import '@components/theme/index.scss';
 
 function parseSearch (search) {
   if (!search) return {};
