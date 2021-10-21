@@ -1,6 +1,5 @@
 @charset 'utf-8';
 @import './common/var.scss';
-@import './fonts/icon.scss';
 
 .#{$icon-prefix}-cards-view{
   @extend .#{$icon-prefix}-theme!optional;

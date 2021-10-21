@@ -135,7 +135,6 @@ export default {
 };
 </script>
 <style lang='scss'>
-@import './styles/icon.scss';
 @import './styles/var.scss';
 .app{
   height: 100vh;

@@ -1,8 +1,9 @@
 <template>
-  <i :class="iconPrefix(name)" v-on="$listeners" />
+  <i v-on="$listeners" v-html="feather.icons[name].toSvg()" />
 </template>
 <script>
 import { CONFIG_PROVIDER, getPrefixCls, getIconCls } from '@/utils/config';
+const feather = require('feather-icons');
 
 export default {
   name: 'WdIcon',
@@ -21,10 +22,10 @@ export default {
       },
     },
   },
-  computed: {
-    iconPrefix () {
-      return this.config.getIconCls;
-    },
+  data: function () {
+    return {
+      feather,
+    };
   },
 };
 </script>

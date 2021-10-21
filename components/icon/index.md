@@ -1,421 +1,6 @@
 <script>
 const icons = [
-  'areachart',
-  'arrow-up',
-  'arrow-right',
-  'arrow-down',
-  'arrow-left',
-  'add',
-  'add-thick',
-  'avatar-o',
-  'barschart',
-  'bell',
-  'bell-o',
-  'calculator-o',
-  'calendar',
-  'calculator',
-  'calendar-o',
-  'cards-view',
-  'checkbox-checked',
-  'check-thick',
-  'cart',
-  'checkbox-indetermina',
-  'checkbox-unchecked',
-  'cart-o',
-  'close',
-  'close-thick',
-  'code',
-  'code-off',
-  'copy-o',
-  'copy',
-  'customer',
-  'customer-o',
-  'delete',
-  'database-o',
-  'delete-o',
-  'download-o',
-  'edit-o',
-  'drill-down-o',
-  'edit',
-  'ellipsis',
-  'error-circle',
-  'error-circle-thick-o',
-  'export-o',
-  'exit-fullscreen-o',
-  'fast-backward',
-  'fast-forward',
-  'file-add-o',
-  'file-add',
-  'filter-o',
-  'filter',
-  'fullscreen-o',
-  'home',
-  'home-o',
-  'hierarchy-o',
-  'info-circle',
-  'info-circle-o',
-  'up',
-  'up-thick',
-  'right',
-  'right-thick',
-  'down',
-  'down-thick',
-  'left',
-  'left-thick',
-  'link-o',
-  'link',
-  'list-view',
-  'loading',
-  'location-o',
-  'location',
-  'paste-code-o',
-  'paste-o',
-  'menus-o',
-  'piechart',
-  'paste',
-  'question-circle-o',
-  'question-circle',
-  'question-mark',
-  'refresh-o',
-  'save',
-  'save-o',
-  'search',
-  'share',
-  'share-o',
-  'smile',
-  'smile-o',
-  'star',
-  'star-o',
-  'success-circle-thick',
-  'success-o',
-  'success-circle',
-  'theme',
-  'theme-o',
-  'time',
-  'time-o',
-  'triangle',
-  'triangle-down',
-  'triangle-right',
-  'undo-o',
-  'undo',
-  'warning',
-  'warning-circle-o',
-  'warning-circle',
-  'visibility-off-o',
-  'visibility-off',
-  'wifi-o',
-  'remove',
-  'collapse',
-  'expand'
-];
-// 2.0
-const icons2 = [
-  'avatar-fill',
-  'avatar-o',
-  'avatar-group-fill',
-  'avatar-group',
-  'avatar-add',
-  'avatar-add-fill',
-
-  'align-justify',
-  'align-center',
-  'align-right',
-  'align-left',
-
-  'arrow-up',
-  'arrow-right',
-  'arrow-down',
-  'arrow-left',
-
-  'up',
-  'right',
-  'down',
-  'left',
-
-  'up-thick',
-  'right-thick',
-  'down-thick',
-  'left-thick',
-  'fast-backward',
-  'fast-forward',
-
-  'triangle-left',
-  'triangle-down',
-  'triangle-up',
-  'triangle-right',
-
-  'meh-o',
-  'meh',
-  'sad-o',
-  'sad',
-  'smile-o',
-  'smile',
-
-  'checkbox-unchecked',
-  'checkbox-checked-o',
-  'checkbox-checked',
-
-  'add',
-  'check',
-  'close',
-  'customer-o',
-  'share-o',
-  'code-on',
-  'delete-o',
-  'ellipsis',
-  'copy-o',
-  'cloud-o',
-  'filter-o',
-  'download-o',
-  'error-o',
-  'error-circle',
-  'error',
-  'success-circle',
-  'success-o',
-  'question-mark',
-  'question-circle',
-  'question-circle-o',
-  'warning',
-  'warning-circle',
-  'warning-circle-o',
-  'info-circle-o',
-
-
-
-  'list-view',
-  'mail-o',
-  'home-o',
-  'bell-o',
-  'code-off',
-  'edit-o',
-  'remove',
-  'refresh-o',
-  'sortupanddown-o',
-  'share-2',
-  'theme-o',
-
-  'link-o',
-  'wifi-o',
-
-  'time-o',
-  'lock-o',
-  'menus-o',
-  'star-o',
-  'setting',
-  'visibility-on-o',
-
-
-  'database-o',
-  'import-export-o',
-  'exit-fullscreen-o',
-  'fullscreen-o',
-  'hierarchy-o',
-  'drill-down-o',
-  'cart-o',
-  'invoice-o',
-  'paste-code-o',
-  'export-o',
-  'save-o',
-  'undo-o',
-  'visibility-off-o',
-  'location-o',
-  'calculator-o',
-
-  'file-o',
-  'bell',
-  'location',
-  'share',
-  'home',
-  'filter',
-
-  'cart',
-  'save',
-
-  'calculator',
-  'time',
-  'theme',
-  'star',
-
-  'refresh',
-  'calendar',
-  'calendar-o',
-  'file-add',
-  'file-add-o',
-
-  'areachart',
-  'areachart-o',
-  'barschart',
-  'barschart-o',
-  'piechart',
-  'piechart-o',
-
-
-  'minus',
-  'camera-fill',
-  'contacts-fill',
-  'cloud-fill',
-  'customer',
-  'drill-down-fill',
-  'fabulous-fill',
-
-  'database-fill',
-  'file-export-fill',
-  'file-send-fill',
-  'file-fill',
-  'lock-fill',
-  'invoice-fill',
-  'hierarchy-fill',
-  'lookup-fill',
-  'mail-fill',
-  'picture-fill',
-  'paste-code-fill',
-  'printing-fill',
-  'schedule-fill',
-  'setting-fill',
-  'telephone-fill',
-  'star-half',
-  'play-fill',
-
-  'cleaner-format',
-  'delete-selectedcolumn',
-  'formatbold',
-  'delete-selected-row',
-  'form',
-  'color-fill',
-  'list-bulleted',
-  'italic',
-  'list-numbered',
-  'serikeethrough',
-  'paint',
-  'unmerge-cells',
-  'merge-cells',
-  'underlined',
-  'toc',
-  'colorfont',
-  'comment-fill',
-  'fabulous',
-  'camera',
-
-  'contacts',
-  'folder-fill',
-  'mosaic',
-  'file',
-  'file-send',
-  'file-export',
-  'play',
-  'lookup',
-  'rotate',
-  'tailoring',
-  'folder',
-  'shape',
-  'schedule',
-  'picture',
-  'comment',
-  'telephone',
-  'load',
-  'add-square-o',
-  'checkbox-indetermina-o',
-  'checkbox-indetermina',
-  'add-square-fill',
-  'info-circle',
-  'bankcard',
-
-  'delete',
-  'copy',
-  'visibility-on-fill',
-  'invoice',
-  'bank-card-fill',
-  'h1',
-  'h2',
-  'sort',
-  'file-import',
-  'file-import-fill',
-
-  'insert-row-up',
-  'insert-row-down',
-  'insert-column-left',
-  'insert-column-right',
-  'header-line',
-  'header-column',
-
-  'enlarge',
-  'search',
-  'micrify',
-  'more',
-  'radio-unchecked',
-  'top',
-  'edit',
-  'printing',
-  'template',
-  'unlock',
-  'redo',
-  'originalsize',
-  'unlock-fill',
-  'history',
-  'newfolde',
-
-  'check-thick',
-  'point',
-  'handle',
-  'warningmini',
-  'closemini',
-  'questionmini',
-  'checkmini',
-  'compress',
-  'collapse',
-  'expand',
-  'like',
-  'like-fill',
-  'quote',
-  'annex',
-  'at',
-  'bar-chart-fill',
-  'alphabetically',
-  'bell-slash-fill',
-  'bar-chart',
-  'demonstration',
-  'funnel-chart-fill',
-  'adaptation-screen',
-  'floor-fill',
-  'education',
-  'nosign',
-  'funnel-chart',
-  'laser-pen',
-  'education-fill',
-  'log-out',
-  'paperplane',
-  'globe',
-  'keyboard',
-  'paperplane-fill',
-  'shield',
-  'id-card',
-  'shield-fill',
-  'shield-success-fill',
-  'shield-success',
-  'floor',
-  'qrcode',
-  'table',
-  'monitor',
-  'original',
-  'square-stack-up-fill',
-  'phone',
-  'table-fill',
-  'slider-settings',
-  'square-stack-up',
-  'trophy',
-  'trophy-fill',
-  'jigsaw-fill',
-  'jigsaw',
-  'bolt-fill',
-  'bolt',
-  'badge',
-  'flame-fill',
-  'flame',
-  'add-message',
-  'add-message-fill',
-
-  'cancel-circle',
-  'more-circle',
+  "activity","airplay","alert-circle","alert-octagon","alert-triangle","align-center","align-justify","align-left","align-right","anchor","aperture","archive","arrow-down-circle","arrow-down-left","arrow-down-right","arrow-down","arrow-left-circle","arrow-left","arrow-right-circle","arrow-right","arrow-up-circle","arrow-up-left","arrow-up-right","arrow-up","at-sign","award","bar-chart-2","bar-chart","battery-charging","battery","bell-off","bell","bluetooth","bold","book-open","book","bookmark","box","briefcase","calendar","camera-off","camera","cast","check-circle","check-square","check","chevron-down","chevron-left","chevron-right","chevron-up","chevrons-down","chevrons-left","chevrons-right","chevrons-up","chrome","circle","clipboard","clock","cloud-drizzle","cloud-lightning","cloud-off","cloud-rain","cloud-snow","cloud","code","codepen","codesandbox","coffee","columns","command","compass","copy","corner-down-left","corner-down-right","corner-left-down","corner-left-up","corner-right-down","corner-right-up","corner-up-left","corner-up-right","cpu","credit-card","crop","crosshair","database","delete","disc","divide-circle","divide-square","divide","dollar-sign","download-cloud","download","dribbble","droplet","edit-2","edit-3","edit","external-link","eye-off","eye","facebook","fast-forward","feather","figma","file-minus","file-plus","file-text","file","film","filter","flag","folder-minus","folder-plus","folder","framer","frown","gift","git-branch","git-commit","git-merge","git-pull-request","github","gitlab","globe","grid","hard-drive","hash","headphones","heart","help-circle","hexagon","home","image","inbox","info","instagram","italic","key","layers","layout","life-buoy","link-2","link","linkedin","list","loader","lock","log-in","log-out","mail","map-pin","map","maximize-2","maximize","meh","menu","message-circle","message-square","mic-off","mic","minimize-2","minimize","minus-circle","minus-square","minus","monitor","moon","more-horizontal","more-vertical","mouse-pointer","move","music","navigation-2","navigation","octagon","package","paperclip","pause-circle","pause","pen-tool","percent","phone-call","phone-forwarded","phone-incoming","phone-missed","phone-off","phone-outgoing","phone","pie-chart","play-circle","play","plus-circle","plus-square","plus","pocket","power","printer","radio","refresh-ccw","refresh-cw","repeat","rewind","rotate-ccw","rotate-cw","rss","save","scissors","search","send","server","settings","share-2","share","shield-off","shield","shopping-bag","shopping-cart","shuffle","sidebar","skip-back","skip-forward","slack","slash","sliders","smartphone","smile","speaker","square","star","stop-circle","sun","sunrise","sunset","tablet","tag","target","terminal","thermometer","thumbs-down","thumbs-up","toggle-left","toggle-right","tool","trash-2","trash","trello","trending-down","trending-up","triangle","truck","tv","twitch","twitter","type","umbrella","underline","unlock","upload-cloud","upload","user-check","user-minus","user-plus","user-x","user","users","video-off","video","voicemail","volume-1","volume-2","volume-x","volume","watch","wifi-off","wifi","wind","x-circle","x-octagon","x-square","x","youtube","zap-off","zap","zoom-in","zoom-out"
 ];
 export default {
   inject: ['app'],
@@ -429,54 +14,35 @@ export default {
       return this.app.theme;
     },
   },
-  watch: {
-    theme: {
-      immediate: true,
-      handler (t) {
-        this.icons = t === 'theme-chalk' ? icons : icons2;
-      },
-    }
-  },
+  // watch: {
+  //   theme: {
+  //     immediate: true,
+  //     handler (t) {
+  //       this.icons = t === 'theme-chalk' ? icons : icons2;
+  //     },
+  //   }
+  // },
 }
 </script>
 # 图标 / Icon
-## 图标的命名规范
-我们为每个图标赋予了语义化的命名，命名规则如下:
-
-实心和描线图标保持同名，用 `-o` 来区分，比如 `question-circle`（实心） 和 `question-circle-o`（描线）；
-
-命名顺序：`[图标名]-[形状?]-[描线?]-[方向?]`。
-
-> `?`为可选参数
 ## 基础样式
-直接通过设置类名为 `wdicon-iconName` 来使用即可。例如：
+可以使用 `wd-icon` 组件来使用，例如:
 :::demo
 ```html
-<i class='wdicon wdicon-question-circle-o'></i>
-<i class='wdicon wdicon-bell-o'></i>
-<i class='wdicon wdicon-calculator-o'></i>
-<i class='wdicon wdicon-cart-o'></i>
-```
-:::
-也可以使用 `wd-icon` 组件来使用（**推荐**），例如:
-:::demo
-```html
-<wd-icon name='question-circle-o'></wd-icon>
-<wd-icon name='bell-o'></wd-icon>
-<wd-icon name='calculator-o'></wd-icon>
-<wd-icon name='cart-o'></wd-icon>
+<wd-icon name='arrow-right'></wd-icon>
+<wd-icon name='bar-chart'></wd-icon>
+<wd-icon name='alert-circle'></wd-icon>
+<wd-icon name='camera'></wd-icon>
 ```
 :::
 
 ### 图标集合
-**注: wdUI 2.0包含更多的图标资源**
-<!-- <p v-if="theme && theme === 'theme2'">
-  <a href="https://km.sankuai.com/page/147771037" target="_blank">wdUI 2.0 图标更新日志</a>
-</p> -->
+**注: 查看更多Feature 图标资源**  <a href="https://feathericons.com/" target="_blank">Feature-v4.28.0</a>
+
 <ul class='icon-list'>
   <li v-for='icon in icons' :key='icon' class='icon-item'>
     <wd-icon :name='icon'></wd-icon>
-    <span class='icon-name'>wdicon-{{icon}}</span>
+    <span class='icon-name'>{{icon}}</span>
   </li>
 </ul>
 
@@ -490,14 +56,10 @@ export default {
     display: inline-block;
     vertical-align: middle;
     padding: 10px;
-    width: 25%;
+    width: 20%;
     text-align: center;
     margin-bottom: 10px;
     padding: 20px;
-  }
-  .icon-item .wdicon{
-    font-size: 32px;
-    margin-bottom: 20px;
   }
   .icon-name{
     display: block;

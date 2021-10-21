@@ -18,7 +18,7 @@
     "build:component": "webpack --config build/webpack.build-component.conf.js",
     "build:index": "webpack --config build/webpack.build-all.conf.js",
     "build:utils": "cross-env BABEL_ENV=utils babel src --out-dir publish/lib --ignore src/index.js",
-    "build:style": "gulp --gulpfile script/gulpfile.js build",
+    "build:style": "gulp --gulpfile script/gulpfileCss.js build",
     "build:es": "node ./build/compiler/index.js",
     "copy:types": "mkdir -p publish/types && cp -r types/*.d.ts publish/types",
     "build:distIndex": "webpack --config build/webpack.umd.conf.js",
@@ -72,6 +72,7 @@
     "eslint-plugin-standard": "^3.1.0",
     "eslint-plugin-vue": "^6.0.1",
     "execa": "^5.1.1",
+    "feather-icons": "^4.28.0",
     "file-loader": "^6.2.0",
     "friendly-errors-webpack-plugin": "^1.7.0",
     "gulp": "^4.0.2",
@@ -108,8 +109,9 @@
     "webpack-merge": "^4.2.2"
   },
   "dependencies": {
+    "async-validator": "^1.12.2",
     "popper.js": "^1.16.0",
-    "async-validator": "^1.12.2"
+    "vue-feather-icons": "^5.1.0"
   },
   "peerDependencies": {
     "vue": "^2.5.2"
