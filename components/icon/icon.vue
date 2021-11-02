@@ -1,17 +1,20 @@
 <template>
   <i
+    :class="prefix"
     v-on="$listeners"
     v-html="
-    feather.icons[name].toSvg({
-      color,
-      width,
-      height,
-      'stroke-width':strokeWidth})
-      "
-    />
+      feather.icons[name].toSvg({
+        color,
+        width,
+        height,
+        'stroke-width': strokeWidth,
+      })
+    "
+  />
 </template>
 <script>
 import { CONFIG_PROVIDER, getPrefixCls, getIconCls } from '@/utils/config';
+
 const feather = require('feather-icons');
 
 export default {
@@ -45,7 +48,6 @@ export default {
     //   type: String,
     //   default: 'miter', // arcs | bevel |miter | miter-clip | round
     // },
-
   },
   inject: {
     config: {
@@ -60,6 +62,11 @@ export default {
     return {
       feather,
     };
+  },
+  computed: {
+    prefix() {
+      return this.config.getPrefixCls('icon');
+    },
   },
 };
 </script>

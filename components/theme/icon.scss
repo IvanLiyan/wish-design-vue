@@ -1,34 +1,5 @@
-@charset 'utf-8';
-@import 'common/var';
-
-@keyframes rotating {
-  0%{
-    transform: rotate(0);
-  }
-  100%{
-    transform: rotate(360deg);
-  }
-}
-.#{$icon-prefix}-loading{
+@include c(icon) {
   display: inline-block;
-  &::before{
-    display: none;
-  }
-  &::after{
-    animation: rotating linear 1s infinite;
-    content: ' ';
-    display: block;
-    width: 1em;
-    height: 1em;
-    border: 2px solid transparent;
-    border-top-color: currentColor;
-    border-right-color: currentColor;
-    border-bottom-color: currentColor;
-    border-radius: 50%;
-  }
+  font-size: 0;
+  line-height: 1;
 }
-
-.#{$icon-prefix}{
-  display: inline-block;
-}
-

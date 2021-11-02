@@ -2,7 +2,11 @@ import { CONFIG_PROVIDER, getPrefixCls, getIconCls } from '@wish/wd-vue/es/utils
 var feather = require('feather-icons');
 
 var __vue_render__ = function __vue_render__() {
-  var _vm = this;var _h = _vm.$createElement;var _c = _vm._self._c || _h;return _c('i', _vm._g({ domProps: { "innerHTML": _vm._s(_vm.feather.icons[_vm.name].toSvg()) } }, _vm.$listeners));
+  var _vm = this;var _h = _vm.$createElement;var _c = _vm._self._c || _h;return _c('i', _vm._g({ domProps: { "innerHTML": _vm._s(_vm.feather.icons[_vm.name].toSvg({
+        color: _vm.color,
+        width: _vm.width,
+        height: _vm.height,
+        'stroke-width': _vm.strokeWidth })) } }, _vm.$listeners));
 };
 var __vue_staticRenderFns__ = [];
 
@@ -16,7 +20,32 @@ export default {
     name: {
       type: String,
       required: true
+    },
+    color: {
+      type: String
+    },
+    width: {
+      type: Number,
+      default: 24
+    },
+    height: {
+      type: Number,
+      default: 24
+    },
+
+    strokeWidth: {
+      type: Number,
+      default: 2
     }
+    // strokeLinecap: {
+    //   type: String,
+    //   default: 'butt', // butt | round | square
+    // },
+    // strokeLinejoin: {
+    //   type: String,
+    //   default: 'miter', // arcs | bevel |miter | miter-clip | round
+    // },
+
   },
   inject: {
     config: {

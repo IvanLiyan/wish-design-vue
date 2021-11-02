@@ -21,44 +21,57 @@ export default {
   },
 }
 </script>
+
 # 图标 / Icon
+
 ## 基础样式
+
 :::demo
+
 ```html
-<wd-icon name='arrow-right'></wd-icon>
-<wd-icon name='bar-chart'></wd-icon>
-<wd-icon name='alert-circle'></wd-icon>
-<wd-icon name='camera'></wd-icon>
+<wd-icon name="arrow-right"></wd-icon>
+<wd-icon name="bar-chart"></wd-icon>
+<wd-icon name="alert-circle"></wd-icon>
+<wd-icon name="camera"></wd-icon>
 ```
+
 :::
 
 ## 类型和用法
+
 ### 颜色
+
 :::demo
+
 ```html
-<wd-icon name='arrow-right' color='royalblue'></wd-icon>
-<wd-icon name='bar-chart' color='#5abb3c'></wd-icon>
-<wd-icon name='alert-circle' color='rgb(255, 152, 1)'></wd-icon>
-<wd-icon name='camera' color='hsl(360,60%,60%)'></wd-icon>
+<wd-icon name="arrow-right" color="royalblue"></wd-icon>
+<wd-icon name="bar-chart" color="#5abb3c"></wd-icon>
+<wd-icon name="alert-circle" color="rgb(255, 152, 1)"></wd-icon>
+<wd-icon name="camera" color="hsl(360,60%,60%)"></wd-icon>
 ```
+
 :::
 
 ### 大小&粗细
+
 :::demo
+
 ```html
-<wd-icon name='arrow-right' :stroke-width='1' :width='18' :height='18'></wd-icon>
-<wd-icon name='bar-chart' :stroke-width='2'></wd-icon>
-<wd-icon name='alert-circle' :stroke-width='2' :width='35' :height='35'></wd-icon>
-<wd-icon name='camera' :stroke-width='3'  :width='40' :height='40'></wd-icon>
+<wd-icon name="arrow-right" :stroke-width="1" :width="18" :height="18"></wd-icon>
+<wd-icon name="bar-chart" :stroke-width="2" :width="24" :height="24"></wd-icon>
+<wd-icon name="alert-circle" :stroke-width="2" :width="35" :height="35"></wd-icon>
+<wd-icon name="camera" :stroke-width="3" :width="40" :height="40"></wd-icon>
 ```
+
 :::
 
 ## API
+
 <api-doc name="Icon" :doc="require('./api.json')"></api-doc>
 
-
 ### 图标集合
-**注: 查看更多Feature 图标资源**  <a href="https://feathericons.com/" target="_blank">Feature-v4.28.0</a>
+
+**注: 查看更多 Feather 图标资源** <a href="https://feathericons.com/" target="_blank">Feather-v4.28.0</a>
 
 <ul class='icon-list'>
   <li v-for='icon in icons' :key='icon' class='icon-item'>

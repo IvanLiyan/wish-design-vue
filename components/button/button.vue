@@ -5,16 +5,11 @@
     :is="tag"
     :class="[
       prefix,
-      type ? `${prefix}-${type}` : '',
-      size ? `${prefix}-${size}` : '',
+      `${prefix}-${type}`,
       {
-        [`${prefix}-dashed`]: dashed,
+        [`${prefix}-icon`]: !$slots.default && icon,
         [`${prefix}-disabled`]: disabled,
         [`${prefix}-loading`]: _loading,
-        [`${prefix}-clicked`]: clicked,
-        [`${prefix}-ghost`]: ghost,
-        [`${prefix}-round`]: round,
-        [`${prefix}-circle`]: circle,
       },
     ]"
     :type="htmlType"
@@ -23,23 +18,27 @@
     v-bind="$attrs"
   >
     <i :class="`${prefix}-before ${prefix}-spin`" v-if="_loading" />
-    <span :class="`${prefix}-before`" v-if="!_loading && (icon || $slots.icon)">
-      <slot name="icon"><i :class="icon" /></slot> </span
-    ><span><slot /></span>
+    <Icon :name="icon" v-if="!_loading && icon" :width="18" :height="18" />
+    <span :class="`${prefix}-content`" v-if="$slots.default && !_loading"><slot /></span>
   </component>
 </template>
+
 <script>
 import { isPromise, isArray } from '@/utils/type';
 import { hasProps } from '@/utils/vnode';
 import { CONFIG_PROVIDER, getPrefixCls } from '@/utils/config';
+import Icon from '@components/icon';
 
 export default {
   name: 'WdButton',
+  components: {
+    Icon,
+  },
   inheritAttrs: false,
   props: {
     href: String,
     to: [String, Object],
-    ghost: Boolean,
+
     disabled: Boolean,
     size: String,
     htmlType: {
@@ -48,14 +47,14 @@ export default {
     },
     loading: Boolean,
     icon: String,
-    type: String,
-    dashed: Boolean,
-    circle: Boolean,
-    round: Boolean,
+    type: {
+      type: String,
+      default: 'primary',
+    },
   },
-  data () {
+
+  data() {
     return {
-      clicked: false,
       innerLoading: false,
     };
   },
@@ -68,39 +67,32 @@ export default {
     },
   },
   computed: {
-    prefix () {
+    prefix() {
       return this.config.getPrefixCls('btn');
     },
-    listen () {
+    listen() {
       return {
         ...this.$listeners,
         click: this.handleClick,
       };
     },
-    tag () {
-      if (this.to !== undefined) {
-        return 'router-link';
-      } else if (this.href !== undefined) {
+    tag() {
+      if (this.href !== undefined) {
         return 'a';
       } else {
         return 'button';
       }
     },
-    _loading () {
+    _loading() {
       return hasProps(this, 'loading') ? this.loading : this.innerLoading;
     },
   },
-  beforeDestroy () {
+  beforeDestroy() {
     clearTimeout(this.timeout);
   },
   methods: {
-    handleClick (e) {
+    handleClick(e) {
       clearTimeout(this.timeout);
-      this.clicked = true;
-      this.timeout = setTimeout(() => {
-        this.clicked = false;
-      }, 500);
-
       const onClick = this.$listeners.click;
       const handler = () => {
         this.innerLoading = false;
@@ -116,12 +108,6 @@ export default {
           r.then(handler, handler);
         }
       }
-    },
-    focus () {
-      this.$el.focus();
-    },
-    blur () {
-      this.$el.blur();
     },
   },
 };

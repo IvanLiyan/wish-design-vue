@@ -3,6 +3,5 @@
   "row": "components/row",
   "col": "components/col",
   "icon": "components/icon",
-  "icon-button": "components/icon-button",
   "button-group": "components/button-group"
 }
