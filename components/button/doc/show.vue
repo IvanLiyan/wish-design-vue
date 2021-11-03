@@ -1,5 +1,5 @@
 <template>
-  <body>
+  <div>
     <div>
       <wd-button type="primary">按钮</wd-button>
       <wd-button type="primary" loading>loading 按钮</wd-button>
@@ -29,11 +29,11 @@
       <wd-button type="ghost" icon="plus" />
     </div>
     <div>
-      <wd-button type="dash">按钮</wd-button>
-      <wd-button type="dash" loading>loading 按钮</wd-button>
-      <wd-button type="dash" disabled>disabled 按钮</wd-button>
-      <wd-button type="dash" icon="plus">按钮按钮按钮按钮按钮按钮按钮</wd-button>
-      <wd-button type="dash" icon="plus" />
+      <wd-button type="dashed">按钮</wd-button>
+      <wd-button type="dashed" loading>loading 按钮</wd-button>
+      <wd-button type="dashed" disabled>disabled 按钮</wd-button>
+      <wd-button type="dashed" icon="plus">按钮按钮按钮按钮按钮按钮按钮</wd-button>
+      <wd-button type="dashed" icon="plus" />
     </div>
     <div>
       <wd-button type="text">按钮</wd-button>
@@ -63,7 +63,7 @@
       <wd-button type="success" icon="plus">按钮按钮按钮按钮按钮按钮按钮</wd-button>
       <wd-button type="success" icon="plus" />
     </div>
-  </body>
+  </div>
 </template>
 
 <style scoped>

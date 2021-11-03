@@ -3,10 +3,9 @@
     <slot />
   </div>
 </template>
+
 <script>
-import { CONFIG_PROVIDER,
-  getPrefixCls,
-} from '@/utils/config';
+import { CONFIG_PROVIDER, getPrefixCls } from '@/utils/config';
 
 export default {
   name: 'WdButtonGroup',
@@ -18,10 +17,18 @@ export default {
       },
     },
   },
+
   computed: {
-    prefix () {
+    prefix() {
       return this.config.getPrefixCls('btn-group');
     },
+  },
+  created: function () {
+    const buttons = this.$slots.default;
+    if (buttons && buttons.length > 0) {
+      buttons.forEach((button) => (button.componentOptions.propsData.type = 'third'));
+      this.$slots.default = buttons;
+    }
   },
 };
 </script>

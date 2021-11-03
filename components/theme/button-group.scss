@@ -3,8 +3,15 @@
 
 @include c('btn-group') {
   font-size: 0; // 清除写法中空格对样式的影响
+  border: solid 1px $color-line-1;
+  border-radius: $border-radius-2;
+
   @include c('btn') {
     border-width: 0;
+    border-right-width: 1px;
+    &:last-child {
+      border-right-width: 0px;
+    }
   }
 
   // &:before, &:after{
