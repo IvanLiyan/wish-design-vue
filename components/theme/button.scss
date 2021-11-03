@@ -36,10 +36,7 @@
   background: $bgc;
   border-color: $borderColor;
   &:hover,
-  &.hover,
-  &:focus,
-  &:active,
-  &.active {
+  &.hover {
     color: $hoverColor;
     background: $hoverBgc;
     border-color: $hoverBorderColor;
@@ -79,6 +76,9 @@
   }
   .wd-icon {
     vertical-align: middle;
+    & + span {
+      margin-left: 2px;
+    }
   }
 
   &.#{$prefix}-btn-icon {

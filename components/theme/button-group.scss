@@ -9,6 +9,7 @@
   @include c('btn') {
     border-width: 0;
     border-right-width: 1px;
+    border-radius: 0;
     &:last-child {
       border-right-width: 0px;
     }
