@@ -4,17 +4,13 @@
       margin-left: 10px;
     }
   }
+  
   .demo-btn-group {
-    
     .wd-btn + .wd-btn{
       margin-left: 0px;
     }
   }
-  .demo-button{
-    .wd-btn + .wd-btn{
-      margin-left: 8px;
-    }
-  }
+ 
 </style>
 
 # Button / 按钮

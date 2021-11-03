@@ -21,8 +21,5 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-  .wd-btn {
-    margin-left: 0;
-  }
 }
 </style>
