@@ -6,33 +6,35 @@ import SidebarExample from './pages/sidebar-example.vue';
 // import DocsPage from './pages/docs.vue';
 
 const originalPush = VueRouter.prototype.push;
-VueRouter.prototype.push = function push (location) {
-  return originalPush.call(this, location).catch(err => err);
+VueRouter.prototype.push = function push(location) {
+  return originalPush.call(this, location).catch((err) => err);
 };
 
-function loadDocs (component) {
+function loadDocs(component) {
   return (r) => {
-    require.ensure([], () => {
-      let comp;
-      try {
-        comp = require(`../components/${component}/index.md`);
-      } catch (e) {
-        // try {
-        //   comp = require(`../components/${component}/doc/demo.vue`);
-        // } catch (e) {
-        console.error(`不能获取到组件 ${component} 的文档`, e);
-        // }
-      }
-      r(comp);
-    }, 'demo');
+    require.ensure(
+      [],
+      () => {
+        let comp;
+        try {
+          comp = require(`../components/${component}/index.md`);
+        } catch (e) {
+          // try {
+          //   comp = require(`../components/${component}/doc/demo.vue`);
+          // } catch (e) {
+          console.error(`不能获取到组件 ${component} 的文档`, e);
+          // }
+        }
+        r(comp);
+      },
+      'demo',
+    );
   };
 }
 
-function loadPage (component) {
+function loadPage(component) {
   return (r) => {
-    require.ensure([], () =>
-      r(require(`./pages/${component}.vue`)),
-    'demo');
+    require.ensure([], () => r(require(`./pages/${component}.vue`)), 'demo');
   };
 }
 
@@ -44,19 +46,20 @@ function loadPage (component) {
  *   child: registerRoute(navConfig)
  * }
  */
-function toRoute (navs) {
-  function createRoute (page, { isPage } = {}) {
+function toRoute(navs) {
+  function createRoute(page, { isPage } = {}) {
     const { path } = page;
     const componentName = path.charAt('0') === '/' ? path.substr(1) : path;
-    const component = isPage ? loadPage(componentName)
-      : loadDocs(componentName);
+    const component = isPage ? loadPage(componentName) : loadDocs(componentName);
     let children;
     if (componentName === 'sidebar') {
-      children = [{
-        path: ':name',
-        name: 'sidebar-example',
-        component: SidebarExample,
-      }];
+      children = [
+        {
+          path: ':name',
+          name: 'sidebar-example',
+          component: SidebarExample,
+        },
+      ];
     }
     return {
       ...page,
@@ -77,10 +80,13 @@ function toRoute (navs) {
       route.meta.navbar = nav.name;
       if (nav.groups) {
         const children = [];
-        nav.groups.forEach(group => {
-          Array.prototype.push.apply(children, group.list.map(nav => {
-            return createRoute(nav);
-          }));
+        nav.groups.forEach((group) => {
+          Array.prototype.push.apply(
+            children,
+            group.list.map((nav) => {
+              return createRoute(nav);
+            }),
+          );
         });
         route.children = children;
       }
@@ -95,13 +101,16 @@ Vue.use(VueRouter);
 const navRoute = toRoute(navConfig);
 
 const defaultPath = '/components';
-const routes = navRoute.concat([{
-  path: '/',
-  redirect: defaultPath,
-}, {
-  path: '*',
-  redirect: defaultPath,
-}]);
+const routes = navRoute.concat([
+  {
+    path: '/',
+    redirect: defaultPath,
+  },
+  // {
+  //   path: '*',
+  //   redirect: defaultPath,
+  // }
+]);
 
 const router = new VueRouter({
   mode: 'history',

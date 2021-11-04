@@ -63,7 +63,7 @@
   overflow: hidden;
   min-width: 80px;
   max-width: 120px;
-  padding: 8px 16px;
+  padding: 0 16px;
   border-width: 1px;
   border-style: solid;
   &:hover,
@@ -71,21 +71,25 @@
     text-decoration: none;
   }
 
-  .#{$prefix}-btn-content {
+  &-content {
     vertical-align: middle;
   }
-  .wd-icon {
+  .#{$prefix}-icon {
     vertical-align: middle;
     & + span {
       margin-left: 2px;
     }
   }
 
-  &.#{$prefix}-btn-icon {
+  &-icon {
     width: 36px;
     height: 36px;
     min-width: auto;
     padding: 0;
+  }
+  &-text-icon {
+    max-width: 140px;
+    min-width: 104px;
   }
 
   &-loading {

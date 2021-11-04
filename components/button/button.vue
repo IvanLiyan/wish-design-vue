@@ -8,6 +8,7 @@
       `${prefix}-${type}`,
       {
         [`${prefix}-icon`]: !$slots.default && icon,
+        [`${prefix}-text-icon`]: $slots.default && icon,
         [`${prefix}-disabled`]: disabled,
         [`${prefix}-loading`]: _loading,
       },
