@@ -85,6 +85,10 @@ const docs = [
     name: '更新日志',
     path: '/doc/changelog',
   },
+  {
+    name: '问题反馈',
+    path: '/doc/feedback',
+  },
 ];
 
 export default {

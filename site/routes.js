@@ -126,28 +126,28 @@ const routes = navRoute.concat([
         path: 'customize-theme',
         name: 'customize-theme',
         component: (r) => {
-          require.ensure([], () => r(require('../wiki/customize-theme.md')), 'started');
+          require.ensure([], () => r(require('../wiki/customize-theme.md')), 'theme');
         },
       },
       {
         path: 'changelog',
         name: 'changelog',
         component: (r) => {
-          require.ensure([], () => r(require('../CHANGELOG.md')), 'started');
+          require.ensure([], () => r(require('../CHANGELOG.md')), 'changelog');
         },
       },
       {
         path: 'compatibility',
         name: 'compatibility',
         component: (r) => {
-          require.ensure([], () => r(require('../wiki/compatibility.md')), 'started');
+          require.ensure([], () => r(require('../wiki/compatibility.md')), 'compatibility');
         },
       },
       {
-        path: 'recommendation',
-        name: 'recommendation',
+        path: 'feedback',
+        name: 'feedback',
         component: (r) => {
-          require.ensure([], () => r(require('../wiki/recommendation.md')), 'started');
+          require.ensure([], () => r(require('../wiki/feedback.md')), 'feedback');
         },
       },
     ],
