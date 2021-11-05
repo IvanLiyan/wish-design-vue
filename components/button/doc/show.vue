@@ -43,11 +43,14 @@
       <wd-button type="text" icon="plus" />
     </div>
     <div>
-      <wd-button type="link">按钮</wd-button>
-      <wd-button type="link" loading>loading 按钮</wd-button>
+      <wd-button type="link">链接按钮</wd-button>
       <wd-button type="link" disabled>disabled 按钮</wd-button>
       <wd-button type="link">按钮按钮按钮按钮按钮按钮按钮</wd-button>
-      <wd-button type="link" />
+    </div>
+    <div>
+      <wd-button type="link" link-size="small">小号链接按钮</wd-button>
+      <wd-button type="link" link-size="small" disabled>disabled 按钮</wd-button>
+      <wd-button type="link" link-size="small">按钮按钮按钮按钮按钮按钮按钮</wd-button>
     </div>
     <div>
       <wd-button type="danger">按钮</wd-button>

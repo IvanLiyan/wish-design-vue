@@ -60,6 +60,14 @@
       "version": ""
     },
     {
+      "name": "link-size",
+      "desc": "类型为'link'时，设置链接文字的大小",
+      "type": "string",
+      "optionalValue": ["normal", "small"],
+      "default": "normal",
+      "version": ""
+    },
+    {
       "name": "html-type",
       "desc": "设置 button 原生的 type 类型",
       "type": "string",

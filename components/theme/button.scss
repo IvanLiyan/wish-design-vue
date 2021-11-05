@@ -46,6 +46,7 @@
   }
   $bd: $B + '-disabled';
   &.#{$bd} {
+    cursor: not-allowed;
     color: $disabledColor;
     background: $disabledBgc;
     border-color: $disabledBorderColor;
@@ -227,6 +228,9 @@
     &:hover {
       text-decoration: underline;
     }
+  }
+  &-link-small {
+    font-size: 12px;
   }
   &-dashed {
     border-style: dashed;
