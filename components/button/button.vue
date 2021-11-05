@@ -19,7 +19,7 @@
     v-bind="$attrs"
   >
     <i :class="`${prefix}-before ${prefix}-spin`" v-if="_loading" />
-    <Icon :name="icon" v-if="!_loading && icon" :width="18" :height="18" />
+    <Icon :name="icon" v-if="!_loading && icon" :width="20" :height="20" />
     <span :class="`${prefix}-content`" v-if="$slots.default && !_loading"><slot /></span>
   </component>
 </template>

@@ -125,7 +125,7 @@
     }
   }
 
-  // type
+  // button props type
   &-primary {
     @include btn-color(
       // 正常
@@ -205,6 +205,28 @@
       $color-transparent,
       $color-transparent
     );
+  }
+  &-link {
+    @include btn-color(
+      // 正常
+      $color-primary-1,
+      $color-transparent,
+      $color-transparent,
+      // hover & press 时bg border color
+      rgba($color-primary-1, 0.6),
+      $color-transparent,
+      $color-transparent,
+      // disabled font bg boder color
+      $color-text-6,
+      $color-transparent,
+      $color-transparent
+    );
+    min-width: auto;
+    padding: 0;
+    line-height: $line-height-2;
+    &:hover {
+      text-decoration: underline;
+    }
   }
   &-dashed {
     border-style: dashed;

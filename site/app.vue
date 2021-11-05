@@ -7,8 +7,8 @@
     ref="scroll"
   >
     <div class="app-menu">
-      <router-link to="/doc/getting-started">组件示例</router-link>
-      <router-link to="/doc/getting-started">开发文档</router-link>
+      <router-link to="/components">组件示例</router-link>
+      <router-link to="/doc">开发文档</router-link>
     </div>
     <router-view />
   </div>
@@ -168,6 +168,25 @@ export default {
   border-bottom: 1px solid rgba(0, 0, 0, 0.06);
   padding: 0 24px;
   flex-direction: row-reverse;
+
+  font-size: $font-size-2;
+  a {
+    margin-right: 20px;
+    line-height: 48px;
+    height: 48px;
+    box-sizing: border-box;
+    display: inline-block;
+    color: $color-text-1;
+    text-decoration: none;
+    &:hover {
+      color: $color-primary-1;
+    }
+    &.router-link-active {
+      font-weight: $font-weight-medium;
+      color: $color-primary-1;
+      border-bottom: solid $color-primary-1 4px;
+    }
+  }
 }
 .hide-top-nav {
   padding-top: 0;

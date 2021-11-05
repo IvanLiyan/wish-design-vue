@@ -8,11 +8,13 @@ $icon-loading-spacing: 0px !default;
 // @end ignore
 // 命名规则见 README.md
 
-// @module base
-/**
-* 基础变量
-* 参见: https://km.sankuai.com/page/147289627
-**/
+// @type font-family 字体
+// @category base
+$font-family: Noto Sans SC, Avenir, -apple-system, BlinkMacSystemFont, segoe ui, Roboto, helvetica neue, Arial,
+  noto sans, sans-serif !default;
+$code-family: Menlo, Monaco, Consolas, Courier New, monospace !default;
+// @end category
+// @end type
 // @type screen 屏幕尺寸
 // @category base
 $screen-xs: 480px !default;
@@ -21,40 +23,6 @@ $screen-md: 768px !default;
 $screen-lg: 992px !default;
 $screen-xl: 1200px !default;
 $screen-xxl: 1600px !default;
-// @end category
-// @end type
-
-// @ignore
-$breakpoints: (
-  'xs': (
-    max-width: $screen-sm,
-  ),
-  'sm': (
-    min-width: $screen-sm,
-  ),
-  'md': (
-    min-width: $screen-md,
-  ),
-  'lg': (
-    min-width: $screen-lg,
-  ),
-  'xl': (
-    min-width: $screen-xl,
-  ),
-  'xxl': (
-    min-width: $screen-xxl,
-  ),
-);
-// @end ignore
-
-// @type font-family 字体
-// @category base
-$font-family: Noto Sans SC, Avenir, -apple-system, BlinkMacSystemFont, segoe ui, Roboto, helvetica neue, Arial,
-  noto sans, sans-serif !default;
-$code-family: Menlo, Monaco, Consolas, Courier New, monospace !default;
-// @end category
-// @end type
-
 // @type font-weight 字重
 // @category base
 // @name 继承父级

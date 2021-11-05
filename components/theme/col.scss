@@ -1,7 +1,32 @@
-@import "./common/var.scss";
-@import "./mixins/mixins.scss";
+@import './common/var.scss';
+@import './mixins/mixins.scss';
 
-[class*="#{$prefix}-col-"] {
+// @end category
+// @end type
+
+// @ignore
+$breakpoints: (
+  'xs': (
+    max-width: $screen-sm,
+  ),
+  'sm': (
+    min-width: $screen-sm,
+  ),
+  'md': (
+    min-width: $screen-md,
+  ),
+  'lg': (
+    min-width: $screen-lg,
+  ),
+  'xl': (
+    min-width: $screen-xl,
+  ),
+  'xxl': (
+    min-width: $screen-xxl,
+  ),
+);
+
+[class*='#{$prefix}-col-'] {
   float: left;
   box-sizing: border-box;
 }
@@ -30,9 +55,9 @@
   }
 }
 
-@mixin res-mixin ($breakpoint) {
+@mixin res-mixin($breakpoint) {
   @include res($breakpoint) {
-    .#{$prefix}-col-#{$breakpoint}-0{
+    .#{$prefix}-col-#{$breakpoint}-0 {
       display: none;
     }
     @for $i from 0 through 24 {
@@ -58,5 +83,5 @@
 }
 
 @each $name in map_keys($breakpoints) {
-  @include res-mixin($name)
+  @include res-mixin($name);
 }

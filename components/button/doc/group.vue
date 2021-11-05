@@ -15,11 +15,13 @@
   </div>
 </template>
 
+//
 <style lang="scss" scoped>
-.demo-btn-group {
-  text-align: left;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-}
+// .demo-btn-group {
+//   text-align: left;
+//   display: flex;
+//   align-items: center;
+//   justify-content: space-around;
+// }
+//
 </style>

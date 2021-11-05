@@ -6,5 +6,6 @@
     <wd-button type="ghost">幽灵按钮</wd-button>
     <wd-button type="dashed">虚线按钮</wd-button>
     <wd-button type="text">文字按钮</wd-button>
+    <wd-button type="link">链接按钮</wd-button>
   </div>
 </template>
