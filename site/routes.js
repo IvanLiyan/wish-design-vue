@@ -153,7 +153,7 @@ const routes = navRoute.concat([
     ],
   },
   {
-    path: '*',
+    path: '/*',
     redirect: defaultPath,
   },
 ]);

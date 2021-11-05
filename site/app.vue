@@ -9,6 +9,15 @@
     <div class="app-menu">
       <router-link to="/components">组件示例</router-link>
       <router-link to="/doc">开发文档</router-link>
+      <a key="code" href="https://github.com/ContextLogic/wish-design-vue" target="_blank"
+        ><span>代码仓库</span><wd-icon name="external-link" :stroke-width="1.5" width="14" height="14"
+      /></a>
+      <a
+        key="design"
+        href="https://www.figma.com/file/MYiBNyNKoXtYWF4nnOOYyj/%F0%9F%8C%B1-Wishpost-Style-%26-Components"
+        target="_blank"
+        ><span>设计</span><wd-icon name="external-link" :stroke-width="1.5" width="14" height="14"
+      /></a>
     </div>
     <router-view />
   </div>
@@ -178,8 +187,19 @@ export default {
     display: inline-block;
     color: $color-text-1;
     text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+
+    align-items: center;
+    & > i {
+      color: #ccc;
+      margin-left: 2px;
+    }
     &:hover {
       color: $color-primary-1;
+      & > i {
+        color: $color-primary-1;
+      }
     }
     &.router-link-active {
       font-weight: $font-weight-medium;

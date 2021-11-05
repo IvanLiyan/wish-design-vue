@@ -1,32 +1,40 @@
 {
-  "props": [{
-    "name": "name",
-    "desc": "icon名称",
-    "type": "string",
-    "optionalValue": ["参考图标集合"],
-    "default": "",
-    "version": ""
-  },
-  {
-    "name": "color",
-    "desc": "颜色",
-    "type": "string",
-    "default": "#000",
-    "version": ""
-  },
-  {
-    "name": "width",
-    "desc": "宽",
-    "type": "number",
-    "default": "24",
-    "version": ""
-  },
-  {
-    "name": "height",
-    "desc": "高",
-    "type": "number",
-    "default": "24",
-    "version": ""
-  }
-]
+  "props": [
+    {
+      "name": "name",
+      "desc": "icon名称",
+      "type": "string",
+      "optionalValue": ["参考图标集合"],
+      "default": "",
+      "version": ""
+    },
+    {
+      "name": "color",
+      "desc": "颜色",
+      "type": "string",
+      "default": "#000",
+      "version": ""
+    },
+    {
+      "name": "width",
+      "desc": "宽",
+      "type": "number",
+      "default": "24",
+      "version": ""
+    },
+    {
+      "name": "height",
+      "desc": "高",
+      "type": "number",
+      "default": "24",
+      "version": ""
+    },
+    {
+      "name": "strokeWidth",
+      "desc": "线条粗细",
+      "type": "number",
+      "default": "2",
+      "version": ""
+    }
+  ]
 }

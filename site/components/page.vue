@@ -3,7 +3,7 @@
     <div class="mk-content"><slot /></div>
     <!-- docs右侧定位导航
    <ex-an-click v-if="htitles.length" :usedata="htitles" />-->
-    <hr class="bottom-divider" />
+    <hr class="bottom-divider">
   </div>
 </template>
 
