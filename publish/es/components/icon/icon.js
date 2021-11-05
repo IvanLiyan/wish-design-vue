@@ -1,12 +1,14 @@
 import { CONFIG_PROVIDER, getPrefixCls, getIconCls } from '@wish/wd-vue/es/utils/config';
+
 var feather = require('feather-icons');
 
 var __vue_render__ = function __vue_render__() {
-  var _vm = this;var _h = _vm.$createElement;var _c = _vm._self._c || _h;return _c('i', _vm._g({ domProps: { "innerHTML": _vm._s(_vm.feather.icons[_vm.name].toSvg({
+  var _vm = this;var _h = _vm.$createElement;var _c = _vm._self._c || _h;return _c('i', _vm._g({ class: _vm.prefix, domProps: { "innerHTML": _vm._s(_vm.feather.icons[_vm.name].toSvg({
         color: _vm.color,
         width: _vm.width,
         height: _vm.height,
-        'stroke-width': _vm.strokeWidth })) } }, _vm.$listeners));
+        'stroke-width': _vm.strokeWidth
+      })) } }, _vm.$listeners));
 };
 var __vue_staticRenderFns__ = [];
 
@@ -45,7 +47,6 @@ export default {
     //   type: String,
     //   default: 'miter', // arcs | bevel |miter | miter-clip | round
     // },
-
   },
   inject: {
     config: {
@@ -60,5 +61,10 @@ export default {
     return {
       feather: feather
     };
+  },
+  computed: {
+    prefix: function prefix() {
+      return this.config.getPrefixCls('icon');
+    }
   }
 };

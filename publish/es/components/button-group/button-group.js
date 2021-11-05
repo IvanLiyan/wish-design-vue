@@ -19,9 +19,28 @@ export default {
       }
     }
   },
+
   computed: {
     prefix: function prefix() {
       return this.config.getPrefixCls('btn-group');
+    }
+  },
+
+  created: function created() {
+    this.setType();
+  },
+  beforeUpdate: function beforeUpdate() {
+    this.setType();
+  },
+  methods: {
+    setType: function setType() {
+      var buttons = this.$slots.default;
+      if (buttons && buttons.length > 0) {
+        buttons.forEach(function (button) {
+          return button.componentOptions.propsData.type = 'third';
+        });
+        this.$slots.default = buttons;
+      }
     }
   }
 };

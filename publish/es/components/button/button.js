@@ -3,12 +3,11 @@ import _extends from 'babel-runtime/helpers/extends';
 import { isPromise, isArray } from '@wish/wd-vue/es/utils/type';
 import { hasProps } from '@wish/wd-vue/es/utils/vnode';
 import { CONFIG_PROVIDER, getPrefixCls } from '@wish/wd-vue/es/utils/config';
+import Icon from '@wish/wd-vue/es/components/icon';
 
 var __vue_render__ = function __vue_render__() {
-  var _obj;
-  var _vm = this;var _h = _vm.$createElement;var _c = _vm._self._c || _h;return _c(_vm.tag, _vm._g(_vm._b({ tag: "component", class: [_vm.prefix, _vm.type ? _vm.prefix + "-" + _vm.type : '', _vm.size ? _vm.prefix + "-" + _vm.size : '', (_obj = {}, _obj[_vm.prefix + "-dashed"] = _vm.dashed, _obj[_vm.prefix + "-disabled"] = _vm.disabled, _obj[_vm.prefix + "-loading"] = _vm._loading, _obj[_vm.prefix + "-clicked"] = _vm.clicked, _obj[_vm.prefix + "-ghost"] = _vm.ghost, _obj[_vm.prefix + "-round"] = _vm.round, _obj[_vm.prefix + "-circle"] = _vm.circle, _obj)], attrs: { "href": _vm.href, "to": _vm.to, "type": _vm.htmlType, "disabled": _vm.disabled || _vm._loading } }, 'component', _vm.$attrs, false), _vm.listen), [_vm._loading ? _c('i', { class: _vm.prefix + "-before " + _vm.prefix + "-spin" }) : _vm._e(), _vm._v(" "), !_vm._loading && (_vm.icon || _vm.$slots.icon) ? _c('span', { class: _vm.prefix + "-before" }, [_vm._t("icon", function () {
-    return [_c('i', { class: _vm.icon })];
-  })], 2) : _vm._e(), _c('span', [_vm._t("default")], 2)]);
+  var _obj, _obj$1;
+  var _vm = this;var _h = _vm.$createElement;var _c = _vm._self._c || _h;return _c(_vm.tag, _vm._g(_vm._b({ tag: "component", class: [_vm.prefix, _vm.prefix + "-" + _vm.type, (_obj = {}, _obj[_vm.prefix + "-icon"] = !_vm.$slots.default && _vm.icon, _obj[_vm.prefix + "-text-icon"] = _vm.$slots.default && _vm.icon, _obj[_vm.prefix + "-disabled"] = _vm.disabled, _obj[_vm.prefix + "-loading"] = _vm._loading, _obj)], attrs: { "href": _vm.href, "to": _vm.to, "type": _vm.htmlType, "disabled": _vm.disabled || _vm._loading } }, 'component', _vm.$attrs, false), _vm.listen), [_vm._loading ? _c('i', { class: _vm.prefix + "-before " + _vm.prefix + "-spin" }) : _vm._e(), _vm._v(" "), !_vm._loading && _vm.icon ? _c('Icon', { attrs: { "name": _vm.icon, "width": 20, "height": 20 } }) : _vm._e(), _vm._v(" "), _vm.$slots.default && !_vm._loading ? _c('span', { class: [_vm.prefix + "-content", (_obj$1 = {}, _obj$1[_vm.prefix + "-link-small"] = _vm.linkSize === 'small', _obj$1)] }, [_vm._t("default")], 2) : _vm._e()], 1);
 };
 var __vue_staticRenderFns__ = [];
 
@@ -18,27 +17,46 @@ export default {
   staticRenderFns: __vue_staticRenderFns__,
 
   name: 'WdButton',
+  components: {
+    Icon: Icon
+  },
   inheritAttrs: false,
   props: {
-    href: String,
-    to: [String, Object],
-    ghost: Boolean,
+    // 按钮类型
+    type: {
+      type: String,
+      default: 'primary',
+      validator: function validator(val) {
+        return ['primary', 'secondary', 'third', 'ghost', 'text', 'link', 'dashed', 'success', 'warning', 'danger'].includes(val);
+      }
+    },
+    // 按钮icon
+    icon: String,
+    // 按钮loading状态
+    loading: Boolean,
+    // 按钮disabled状态
     disabled: Boolean,
-    size: String,
+    // 按钮跳转地址
+    href: String,
+    // 按钮跳转路由地址
+    to: [String, Object],
+    // 链接按钮 文字大小
+    linkSize: {
+      type: String,
+      default: 'normal',
+      validator: function validator(val) {
+        return ['normal', 'small'].includes(val);
+      }
+    },
+    // 按钮原生html type
     htmlType: {
       type: String,
       default: 'button'
-    },
-    loading: Boolean,
-    icon: String,
-    type: String,
-    dashed: Boolean,
-    circle: Boolean,
-    round: Boolean
+    }
   },
+
   data: function data() {
     return {
-      clicked: false,
       innerLoading: false
     };
   },
@@ -61,9 +79,7 @@ export default {
       });
     },
     tag: function tag() {
-      if (this.to !== undefined) {
-        return 'router-link';
-      } else if (this.href !== undefined) {
+      if (this.href !== undefined) {
         return 'a';
       } else {
         return 'button';
@@ -82,11 +98,6 @@ export default {
       var _this = this;
 
       clearTimeout(this.timeout);
-      this.clicked = true;
-      this.timeout = setTimeout(function () {
-        _this.clicked = false;
-      }, 500);
-
       var onClick = this.$listeners.click;
       var handler = function handler() {
         _this.innerLoading = false;
@@ -104,12 +115,6 @@ export default {
           _r.then(handler, handler);
         }
       }
-    },
-    focus: function focus() {
-      this.$el.focus();
-    },
-    blur: function blur() {
-      this.$el.blur();
     }
   }
 };
