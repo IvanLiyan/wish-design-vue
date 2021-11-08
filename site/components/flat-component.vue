@@ -5,7 +5,7 @@
                    active-class="active-component">
         <div class="flat-component" @click="handleClick"
              :class="$route.name === item.name && 'component-active'">
-          <div class="flat-bg" :class="`component-${item.name.toLowerCase()}`" />
+          <div class="flat-bg" :class="`component-${item.name.toLowerCase()}`"></div>
           <div class="flat-text">
             <div v-if="!item.cnName">
               {{ item.name }}

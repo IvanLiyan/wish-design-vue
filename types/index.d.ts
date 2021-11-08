@@ -4,6 +4,7 @@ import { Row } from './row';
 import { Col } from './col';
 import { Icon } from './icon';
 import { ButtonGroup } from './button-group';
+import { Input } from './input';
 import { Confirm as WDConfirm } from './confirm';
 import {
   Message as WDMessage,
@@ -26,6 +27,7 @@ export {
   Col,
   Icon,
   ButtonGroup,
+  Input,
   FormRule,
   FormRules,
   NotificationOptions,

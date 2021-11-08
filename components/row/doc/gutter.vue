@@ -1,10 +1,10 @@
 <template>
   <div class="source demo-row">
     <wd-row :gutter="20">
-      <wd-col :span="6"><div class="grid-content bg-purple" /></wd-col>
-      <wd-col :span="6"><div class="grid-content bg-purple" /></wd-col>
-      <wd-col :span="6"><div class="grid-content bg-purple" /></wd-col>
-      <wd-col :span="6"><div class="grid-content bg-purple" /></wd-col>
+      <wd-col :span="6"><div class="grid-content bg-purple"></div></wd-col>
+      <wd-col :span="6"><div class="grid-content bg-purple"></div></wd-col>
+      <wd-col :span="6"><div class="grid-content bg-purple"></div></wd-col>
+      <wd-col :span="6"><div class="grid-content bg-purple"></div></wd-col>
     </wd-row>
   </div>
 </template>

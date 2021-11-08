@@ -1,6 +1,6 @@
 <template>
   <div :class="prefix">
-    <slot />
+    <slot></slot>
   </div>
 </template>
 

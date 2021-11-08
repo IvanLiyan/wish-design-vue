@@ -21,6 +21,11 @@
             "path": "row",
             "name": "Grid",
             "cnName": "布局"
+          },
+          {
+            "path": "input",
+            "name": "Input",
+            "cnName": "文本输入框"
           }
         ]
       }

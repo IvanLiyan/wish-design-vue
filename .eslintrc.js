@@ -51,7 +51,18 @@ module.exports = {
     'vue/no-unused-components': 'off',
     'template-curly-spacing': 'off',
     'vue/require-prop-types': 0,
-
+    'vue/html-self-closing': [
+      'error',
+      {
+        html: {
+          void: 'always',
+          normal: 'never',
+          component: 'always',
+        },
+        svg: 'always',
+        math: 'always',
+      },
+    ],
     indent: [
       'error',
       2,

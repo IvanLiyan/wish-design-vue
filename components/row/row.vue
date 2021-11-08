@@ -5,7 +5,7 @@
     align !== 'top' ? `${prefix}-align-${align}` : '',
     { [`${prefix}-flex`]: type === 'flex' }
   ]">
-    <slot />
+    <slot></slot>
   </div>
 </template>
 <script>

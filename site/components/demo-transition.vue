@@ -6,7 +6,7 @@
     @before-leave="beforeLeave"
     @leave="leave"
     @afterLeave="afterLeave">
-    <slot />
+    <slot></slot>
   </transition>
 </template>
 <script>

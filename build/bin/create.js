@@ -17,17 +17,17 @@ const execSync = require('child_process').execSync;
 const componentName = process.argv[2];
 const chineseName = process.argv[3] || '';
 
-function resolve (...dirs) {
+function resolve(...dirs) {
   return path.join(__dirname, '../../', ...dirs);
 }
 
-function createComponentPackage (name) {
+function createComponentPackage(name) {
   return function (...dirs) {
     return resolve('components', name, ...dirs);
   };
 }
 
-function saveFile (file, content) {
+function saveFile(file, content) {
   const dir = path.dirname(file);
   if (!fs.existsSync(dir)) {
     fs.mkdirSync(dir);
@@ -46,10 +46,7 @@ if (ComponentsFile[componentName]) {
 }
 // 添加到 components.json
 ComponentsFile[componentName] = `components/${componentName}`;
-saveFile(
-  resolve('components.json'),
-  JSON.stringify(ComponentsFile, null, '  ')
-);
+saveFile(resolve('components.json'), JSON.stringify(ComponentsFile, null, '  '));
 
 // 初始化组件相关文件
 const Files = [
@@ -66,7 +63,7 @@ const Files = [
 
 | 事件名称 | 说明 | 回调参数 |
 |--- |--- |--- |
-| — | — | — |`
+| — | — | — |`,
   },
   {
     file: resolvePackage('index.js'),
@@ -75,7 +72,7 @@ const Files = [
 ${exportName}.install = function (Vue) {
   Vue.component(${exportName}.name, ${exportName});
 };
-export default ${exportName};`
+export default ${exportName};`,
   },
   {
     file: resolvePackage('tests', `${componentName}.spec.js`),
@@ -87,7 +84,7 @@ describe('${exportName}', function () {
     const wrapper = mount(${exportName});
     expect(wrapper.vm).to.exist;
   });
-});`
+});`,
   },
   {
     file: resolvePackage(`${componentName}.vue`),
@@ -98,7 +95,7 @@ describe('${exportName}', function () {
 export default {
   name: '${uppercamelcase(componentClassName)}',
 };
-</script>`
+</script>`,
   },
   {
     file: resolve(`types/${componentName}.d.ts`),
@@ -109,8 +106,8 @@ export declare class ${exportName} extends Vue {
 }
 
 export default ${exportName};
-`
-  }
+`,
+  },
 ];
 
 themes.forEach((theme) => {
@@ -118,18 +115,18 @@ themes.forEach((theme) => {
     file: resolve('components', theme, `${componentName}.scss`),
     content: `@import "./common/var.scss";
 @import "./mixins/mixins.scss";
-@include c(${componentName}){\n}`
+@include c(${componentName}){\n}`,
   });
 });
 
-Files.forEach(file => {
+Files.forEach((file) => {
   saveFile(file.file, file.content);
 });
 
 // 添加到 nav.config.json
 const navConfigFile = require('../../site/nav.config.json');
 
-function findComponentConfig (navConfig) {
+function findComponentConfig(navConfig) {
   return navConfig.find((nav) => nav.path === '/components');
 }
 
@@ -142,12 +139,9 @@ groups[groups.length - 1].list.push({
   cnName: chineseName,
 });
 
-saveFile(
-  resolve('site/nav.config.json'),
-  JSON.stringify(navConfigFile, null, '  ')
-);
+saveFile(resolve('site/nav.config.json'), JSON.stringify(navConfigFile, null, '  '));
 require('./build-ts');
-execSync('npm run build:file');
-execSync('npm run build:css');
+execSync('npm run build:srcIndex');
+execSync('npm run build:themeIndex');
 
 console.log('DONE!');

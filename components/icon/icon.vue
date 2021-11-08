@@ -10,7 +10,7 @@
         'stroke-width': strokeWidth,
       })
     "
-  />
+  ></i>
 </template>
 <script>
 import { CONFIG_PROVIDER, getPrefixCls, getIconCls } from '@/utils/config';

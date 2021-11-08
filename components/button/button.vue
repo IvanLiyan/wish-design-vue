@@ -18,13 +18,13 @@
     v-on="listen"
     v-bind="$attrs"
   >
-    <i :class="`${prefix}-before ${prefix}-spin`" v-if="_loading" />
+    <i :class="`${prefix}-before ${prefix}-spin`" v-if="_loading"></i>
     <Icon :name="icon" v-if="!_loading && icon" :width="20" :height="20" />
     <span
       :class="[`${prefix}-content`, { [`${prefix}-link-small`]: linkSize === 'small' }]"
       v-if="$slots.default && !_loading"
       ><slot
-    /></span>
+    ></slot></span>
   </component>
 </template>
 

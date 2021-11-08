@@ -2,60 +2,60 @@
   <div class="source demo-row">
     <wd-row>
       <wd-col :span="24">
-        <div class="grid-content bg-purple-dark" />
+        <div class="grid-content bg-purple-dark"></div>
       </wd-col>
     </wd-row>
     <wd-row>
       <wd-col :span="12">
-        <div class="grid-content bg-purple" />
+        <div class="grid-content bg-purple"></div>
       </wd-col>
       <wd-col :span="12">
-        <div class="grid-content bg-purple-light" />
+        <div class="grid-content bg-purple-light"></div>
       </wd-col>
     </wd-row>
     <wd-row>
       <wd-col :span="8">
-        <div class="grid-content bg-purple" />
+        <div class="grid-content bg-purple"></div>
       </wd-col>
       <wd-col :span="8">
-        <div class="grid-content bg-purple-light" />
+        <div class="grid-content bg-purple-light"></div>
       </wd-col>
       <wd-col :span="8">
-        <div class="grid-content bg-purple" />
+        <div class="grid-content bg-purple"></div>
       </wd-col>
     </wd-row>
     <wd-row>
       <wd-col :span="6">
-        <div class="grid-content bg-purple" />
+        <div class="grid-content bg-purple"></div>
       </wd-col>
       <wd-col :span="6">
-        <div class="grid-content bg-purple-light" />
+        <div class="grid-content bg-purple-light"></div>
       </wd-col>
       <wd-col :span="6">
-        <div class="grid-content bg-purple" />
+        <div class="grid-content bg-purple"></div>
       </wd-col>
       <wd-col :span="6">
-        <div class="grid-content bg-purple-light" />
+        <div class="grid-content bg-purple-light"></div>
       </wd-col>
     </wd-row>
     <wd-row>
       <wd-col :span="4">
-        <div class="grid-content bg-purple" />
+        <div class="grid-content bg-purple"></div>
       </wd-col>
       <wd-col :span="4">
-        <div class="grid-content bg-purple-light" />
+        <div class="grid-content bg-purple-light"></div>
       </wd-col>
       <wd-col :span="4">
-        <div class="grid-content bg-purple" />
+        <div class="grid-content bg-purple"></div>
       </wd-col>
       <wd-col :span="4">
-        <div class="grid-content bg-purple-light" />
+        <div class="grid-content bg-purple-light"></div>
       </wd-col>
       <wd-col :span="4">
-        <div class="grid-content bg-purple" />
+        <div class="grid-content bg-purple"></div>
       </wd-col>
       <wd-col :span="4">
-        <div class="grid-content bg-purple-light" />
+        <div class="grid-content bg-purple-light"></div>
       </wd-col>
     </wd-row>
   </div>

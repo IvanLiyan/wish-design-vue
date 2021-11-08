@@ -1,29 +1,29 @@
 <template>
   <div class="source demo-row">
     <wd-row type="flex" class="row-bg">
-      <wd-col :span="6"><div class="grid-content bg-purple" /></wd-col>
-      <wd-col :span="6"><div class="grid-content bg-purple-light" /></wd-col>
-      <wd-col :span="6"><div class="grid-content bg-purple" /></wd-col>
+      <wd-col :span="6"><div class="grid-content bg-purple"></div></wd-col>
+      <wd-col :span="6"><div class="grid-content bg-purple-light"></div></wd-col>
+      <wd-col :span="6"><div class="grid-content bg-purple"></div></wd-col>
     </wd-row>
     <wd-row type="flex" class="row-bg" justify="center">
-      <wd-col :span="6"><div class="grid-content bg-purple" /></wd-col>
-      <wd-col :span="6"><div class="grid-content bg-purple-light" /></wd-col>
-      <wd-col :span="6"><div class="grid-content bg-purple" /></wd-col>
+      <wd-col :span="6"><div class="grid-content bg-purple"></div></wd-col>
+      <wd-col :span="6"><div class="grid-content bg-purple-light"></div></wd-col>
+      <wd-col :span="6"><div class="grid-content bg-purple"></div></wd-col>
     </wd-row>
     <wd-row type="flex" class="row-bg" justify="end">
-      <wd-col :span="6"><div class="grid-content bg-purple" /></wd-col>
-      <wd-col :span="6"><div class="grid-content bg-purple-light" /></wd-col>
-      <wd-col :span="6"><div class="grid-content bg-purple" /></wd-col>
+      <wd-col :span="6"><div class="grid-content bg-purple"></div></wd-col>
+      <wd-col :span="6"><div class="grid-content bg-purple-light"></div></wd-col>
+      <wd-col :span="6"><div class="grid-content bg-purple"></div></wd-col>
     </wd-row>
     <wd-row type="flex" class="row-bg" justify="space-between">
-      <wd-col :span="6"><div class="grid-content bg-purple" /></wd-col>
-      <wd-col :span="6"><div class="grid-content bg-purple-light" /></wd-col>
-      <wd-col :span="6"><div class="grid-content bg-purple" /></wd-col>
+      <wd-col :span="6"><div class="grid-content bg-purple"></div></wd-col>
+      <wd-col :span="6"><div class="grid-content bg-purple-light"></div></wd-col>
+      <wd-col :span="6"><div class="grid-content bg-purple"></div></wd-col>
     </wd-row>
     <wd-row type="flex" class="row-bg" justify="space-around">
-      <wd-col :span="6"><div class="grid-content bg-purple" /></wd-col>
-      <wd-col :span="6"><div class="grid-content bg-purple-light" /></wd-col>
-      <wd-col :span="6"><div class="grid-content bg-purple" /></wd-col>
+      <wd-col :span="6"><div class="grid-content bg-purple"></div></wd-col>
+      <wd-col :span="6"><div class="grid-content bg-purple-light"></div></wd-col>
+      <wd-col :span="6"><div class="grid-content bg-purple"></div></wd-col>
     </wd-row>
   </div>
 </template>

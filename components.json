@@ -3,5 +3,6 @@
   "row": "components/row",
   "col": "components/col",
   "icon": "components/icon",
-  "button-group": "components/button-group"
+  "button-group": "components/button-group",
+  "input": "components/input"
 }

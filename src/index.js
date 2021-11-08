@@ -4,6 +4,7 @@ import Row from 'components/row';
 import Col from 'components/col';
 import Icon from 'components/icon';
 import ButtonGroup from 'components/button-group';
+import Input from 'components/input';
 import CollapseTransition from './transitions/collapse-transition';
 
 const components = [
@@ -12,6 +13,7 @@ const components = [
   Col,
   Icon,
   ButtonGroup,
+  Input,
   CollapseTransition,
 ];
 
@@ -41,6 +43,7 @@ export {
   Col,
   Icon,
   ButtonGroup,
+  Input,
   CollapseTransition,
 };
 

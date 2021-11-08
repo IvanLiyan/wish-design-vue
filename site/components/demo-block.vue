@@ -1,14 +1,14 @@
 <template>
   <div class="demo-block" :class="blockClass">
     <div class="demo-source">
-      <slot name="source" />
+      <slot name="source"></slot>
     </div>
     <demo-transition>
       <div class="demo-highlight" v-show="showCode" ref="highlight">
         <div class="demo-desc" v-if="$slots.default">
-          <slot />
+          <slot></slot>
         </div>
-        <slot name="highlight" />
+        <slot name="highlight"></slot>
       </div>
     </demo-transition>
     <div class="demo-block-control" ref="control" :class="classObj" @click="handleClickControl">
@@ -21,8 +21,8 @@
         />
       </wd-tooltip> -->
       <div class="code-bar">
-        <i class="wdicon wdicon-code-off" v-if="showCode" />
-        <i class="wdicon wdicon-code" v-else />
+        <i class="wdicon wdicon-code-off" v-if="showCode"></i>
+        <i class="wdicon wdicon-code" v-else></i>
         <span>{{ controlText }}</span>
       </div>
     </div>

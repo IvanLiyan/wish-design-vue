@@ -1,9 +1,9 @@
 <template>
   <div class="page-mk">
-    <div class="mk-content"><slot /></div>
+    <div class="mk-content"><slot></slot></div>
     <!-- docs右侧定位导航
    <ex-an-click v-if="htitles.length" :usedata="htitles" />-->
-    <hr class="bottom-divider">
+    <hr class="bottom-divider" />
   </div>
 </template>
 

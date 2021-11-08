@@ -3,7 +3,7 @@
     <li v-if="!empty">
       <h3 v-if="name" :id="idName">{{ name }}</h3>
       <slot name="desc" v-if="desc || $slots.desc">
-        <div v-html="desc" />
+        <div v-html="desc"></div>
       </slot>
       <div v-if="doc.props && doc.props.length > 0">
         <h3 :id="`${idName}-props`">{{ name }} Props
@@ -23,22 +23,22 @@
           <tbody>
             <tr v-for="(props, index) in doc.props" :key="index">
               <td class="td-name">{{ props.name }}</td>
-              <td v-html="props.desc" />
+              <td v-html="props.desc"></td>
               <td class="td-type"
-                v-html="Array.isArray(props.type) ? props.type.join(' / ') : props.type" />
+                v-html="Array.isArray(props.type) ? props.type.join(' / ') : props.type"></td>
               <td class="td-option">
                 {{ props.optionalValue
                   ? (Array.isArray(props.optionalValue) ? props.optionalValue.join(' / ') : props.optionalValue)
                   : '-'
                 }}
               </td>
-              <td class="td-default" v-html="props.default || '-'" />
+              <td class="td-default" v-html="props.default || '-'"></td>
               <td class="td-version">{{ props.version || '-' }}</td>
             </tr>
           </tbody>
         </table>
       </div>
-      <slot name="props-desc" v-if="$slots['props-desc']" />
+      <slot name="props-desc" v-if="$slots['props-desc']"></slot>
       <div v-if="doc.params && doc.params.length > 0">
         <h3 :id="`${idName}-params`">{{ name }} Params
           <a :href="`#${idName}-params`" class="anchor">#</a>
@@ -57,7 +57,7 @@
           <tbody>
             <tr v-for="(param, index) in doc.params" :key="index">
               <td class="td-name">{{ param.name }}</td>
-              <td v-html="param.desc" />
+              <td v-html="param.desc"></td>
               <td class="td-type">
                 {{ Array.isArray(param.type) ? param.type.join(' / ') : param.type }}
               </td>
@@ -88,7 +88,7 @@
           <tbody>
             <tr v-for="(slot, index) in doc.slots" :key="index">
               <td>{{ slot.name }}</td>
-              <td v-html="slot.desc" />
+              <td v-html="slot.desc"></td>
               <td class="td-version">{{ slot.version || '-' }}</td>
             </tr>
           </tbody>
@@ -110,8 +110,8 @@
           <tbody>
             <tr v-for="(slot, index) in doc.scopedSlots" :key="index">
               <td>{{ slot.name }}</td>
-              <td v-html="slot.desc" />
-              <td v-html="slot.args" />
+              <td v-html="slot.desc"></td>
+              <td v-html="slot.args"></td>
               <td class="td-version">{{ slot.version }}</td>
             </tr>
           </tbody>
@@ -134,7 +134,7 @@
           <tbody>
             <tr v-for="(event, index) in doc.events" :key="index">
               <td>{{ event.name }}</td>
-              <td v-html="event.desc" />
+              <td v-html="event.desc"></td>
               <td>{{ event.signature }}</td>
               <td>{{ event.args || '-' }}</td>
               <td>{{ event.version || '-' }}</td>

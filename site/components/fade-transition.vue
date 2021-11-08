@@ -1,6 +1,6 @@
 <template>
   <transition name="fade">
-    <slot />
+    <slot></slot>
   </transition>
 </template>
 <script>
