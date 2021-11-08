@@ -31,6 +31,6 @@ if (typeof window !== 'undefined' && window.Vue) {
 export { Button, Row, Col, Icon, ButtonGroup, CollapseTransition };
 
 export default {
-  version: '0.0.2-alpha.27',
+  version: '0.0.2-alpha.28',
   install: install
 };
