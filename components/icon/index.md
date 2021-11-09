@@ -29,10 +29,10 @@ export default {
 :::demo
 
 ```html
-<wd-icon name="arrow-right"></wd-icon>
-<wd-icon name="bar-chart"></wd-icon>
-<wd-icon name="alert-circle"></wd-icon>
-<wd-icon name="camera"></wd-icon>
+<wt-icon name="arrow-right"></wt-icon>
+<wt-icon name="bar-chart"></wt-icon>
+<wt-icon name="alert-circle"></wt-icon>
+<wt-icon name="camera"></wt-icon>
 ```
 
 :::
@@ -44,10 +44,10 @@ export default {
 :::demo
 
 ```html
-<wd-icon name="arrow-right" color="royalblue"></wd-icon>
-<wd-icon name="bar-chart" color="#5abb3c"></wd-icon>
-<wd-icon name="alert-circle" color="rgb(255, 152, 1)"></wd-icon>
-<wd-icon name="camera" color="hsl(360,60%,60%)"></wd-icon>
+<wt-icon name="arrow-right" color="royalblue"></wt-icon>
+<wt-icon name="bar-chart" color="#5abb3c"></wt-icon>
+<wt-icon name="alert-circle" color="rgb(255, 152, 1)"></wt-icon>
+<wt-icon name="camera" color="hsl(360,60%,60%)"></wt-icon>
 ```
 
 :::
@@ -57,10 +57,10 @@ export default {
 :::demo
 
 ```html
-<wd-icon name="arrow-right" :stroke-width="1" :width="18" :height="18"></wd-icon>
-<wd-icon name="bar-chart" :stroke-width="2" :width="24" :height="24"></wd-icon>
-<wd-icon name="alert-circle" :stroke-width="2" :width="35" :height="35"></wd-icon>
-<wd-icon name="camera" :stroke-width="3" :width="40" :height="40"></wd-icon>
+<wt-icon name="arrow-right" :stroke-width="1" :width="18" :height="18"></wt-icon>
+<wt-icon name="bar-chart" :stroke-width="2" :width="24" :height="24"></wt-icon>
+<wt-icon name="alert-circle" :stroke-width="2" :width="35" :height="35"></wt-icon>
+<wt-icon name="camera" :stroke-width="3" :width="40" :height="40"></wt-icon>
 ```
 
 :::
@@ -75,7 +75,7 @@ export default {
 
 <ul class='icon-list'>
   <li v-for='icon in icons' :key='icon' class='icon-item'>
-    <wd-icon :name='icon'></wd-icon>
+    <wt-icon :name='icon'></wt-icon>
     <span class='icon-name'>{{icon}}</span>
   </li>
 </ul>

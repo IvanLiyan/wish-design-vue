@@ -28,7 +28,7 @@ gulp.task('build:dist', function () {
     .pipe(cssmin())
     .pipe(
       rename({
-        basename: 'wd-vue',
+        basename: 'wt-vue',
         suffix: '.min',
       }),
     )

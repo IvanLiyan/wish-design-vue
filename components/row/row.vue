@@ -1,20 +1,21 @@
 <template>
-  <div :is="tag" :class="[
-    prefix,
-    justify !== 'start' ? `${prefix}-justify-${justify}` : '',
-    align !== 'top' ? `${prefix}-align-${align}` : '',
-    { [`${prefix}-flex`]: type === 'flex' }
-  ]">
+  <div
+    :is="tag"
+    :class="[
+      prefix,
+      justify !== 'start' ? `${prefix}-justify-${justify}` : '',
+      align !== 'top' ? `${prefix}-align-${align}` : '',
+      { [`${prefix}-flex`]: type === 'flex' },
+    ]"
+  >
     <slot></slot>
   </div>
 </template>
 <script>
-import { CONFIG_PROVIDER,
-  getPrefixCls,
-} from '@/utils/config';
+import { CONFIG_PROVIDER, getPrefixCls } from '@/utils/config';
 
 export default {
-  name: 'WdRow',
+  name: 'WtRow',
 
   props: {
     tag: {
@@ -32,7 +33,7 @@ export default {
       default: 'top',
     },
   },
-  provide () {
+  provide() {
     return { row: this };
   },
   inject: {
@@ -44,10 +45,10 @@ export default {
     },
   },
   computed: {
-    prefix () {
+    prefix() {
       return this.config.getPrefixCls('row');
     },
-    style () {
+    style() {
       const ret = {};
 
       if (this.gutter) {

@@ -3,7 +3,7 @@ import Cookies from 'js-cookie';
 const StyleElID = 'theme-style';
 const LinkElID = 'theme-link';
 
-export function createStyle () {
+export function createStyle() {
   const style = document.createElement('style');
   style.rel = 'stylesheet';
   style.type = 'text/css';
@@ -11,7 +11,7 @@ export function createStyle () {
   return style;
 }
 
-export function setStyle (style, theme) {
+export function setStyle(style, theme) {
   let styleEl = document.getElementById(StyleElID);
   const needAppend = !styleEl;
 
@@ -25,21 +25,21 @@ export function setStyle (style, theme) {
       document.head.appendChild(styleEl);
     }
   }
-  if (window.WD_THEME !== theme) {
-    Cookies.set('WD_THEME', theme, { expires: 365 });
-    window.WD_THEME = theme;
+  if (window.WT_THEME !== theme) {
+    Cookies.set('WT_THEME', theme, { expires: 365 });
+    window.WT_THEME = theme;
   }
   clearLink();
 }
 
-export function clearStyle () {
+export function clearStyle() {
   const styleEl = document.getElementById(StyleElID);
   if (styleEl) {
     styleEl.parentNode.removeChild(styleEl);
   }
 }
 
-export function createLink () {
+export function createLink() {
   const link = document.createElement('link');
   link.rel = 'stylesheet';
   link.type = 'text/css';
@@ -47,7 +47,7 @@ export function createLink () {
   return link;
 }
 
-export function setLink (src) {
+export function setLink(src) {
   let linkEl = document.getElementById(LinkElID);
   const needAppend = !linkEl;
 
@@ -60,7 +60,7 @@ export function setLink (src) {
   clearStyle();
 }
 
-export function clearLink () {
+export function clearLink() {
   const linkEl = document.getElementById(LinkElID);
   if (linkEl) {
     linkEl.parentNode.removeChild(linkEl);

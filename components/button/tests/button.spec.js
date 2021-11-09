@@ -22,7 +22,7 @@ describe('Button', function () {
           size,
         },
       });
-      expect(wrapper.classes()).to.include(`wd-btn-${size}`);
+      expect(wrapper.classes()).to.include(`wt-btn-${size}`);
     });
   });
 
@@ -30,11 +30,7 @@ describe('Button', function () {
     const btn = mount(Button);
     expect(btn.attributes().type, 'default is button').to.equal('button');
 
-    const types = [
-      'submit',
-      'reset',
-      'button',
-    ];
+    const types = ['submit', 'reset', 'button'];
 
     types.forEach((type) => {
       const sbBtn = mount(Button, {
@@ -52,8 +48,8 @@ describe('Button', function () {
         loading: true,
       },
     });
-    expect(wrapper.classes()).to.include('wd-btn-loading');
-    expect(wrapper.classes()).to.not.include('wd-btn-disabled');
+    expect(wrapper.classes()).to.include('wt-btn-loading');
+    expect(wrapper.classes()).to.not.include('wt-btn-disabled');
     expect(wrapper.attributes().disabled).to.equal('disabled');
 
     wrapper.trigger('click');
@@ -65,43 +61,36 @@ describe('Button', function () {
   it('icon', function () {
     const wrapper = mount(Button, {
       propsData: {
-        icon: 'wdicon-settings',
+        icon: 'wticon-settings',
       },
     });
-    expect(wrapper.find('.wdicon-settings').exists()).to.be.true;
+    expect(wrapper.find('.wticon-settings').exists()).to.be.true;
   });
 
   it('should replace icon to loading when loading and has icon', function () {
     const wrapper = mount(Button, {
       propsData: {
-        icon: 'wdicon-settings',
+        icon: 'wticon-settings',
         loading: true,
       },
     });
-    expect(wrapper.find('.wdicon-settings').exists()).to.not.be.true;
+    expect(wrapper.find('.wticon-settings').exists()).to.not.be.true;
     // todo 判断 loading 元素加载
   });
 
   it('type', function () {
-    function createButton (type) {
+    function createButton(type) {
       return mount(Button, {
         propsData: {
           type,
         },
       });
-    };
-    function createIt (type) {
+    }
+    function createIt(type) {
       const btn = createButton(type);
-      expect(btn.classes()).to.include(`wd-btn-${type}`);
-    };
-    [
-      'primary',
-      'text',
-      'text-secondary',
-      'success',
-      'warning',
-      'danger',
-    ].map(createIt);
+      expect(btn.classes()).to.include(`wt-btn-${type}`);
+    }
+    ['primary', 'text', 'text-secondary', 'success', 'warning', 'danger'].map(createIt);
   });
 
   it('dashed', function () {
@@ -110,6 +99,6 @@ describe('Button', function () {
         dashed: true,
       },
     });
-    expect(wrapper.classes()).to.include('wd-btn-dashed');
+    expect(wrapper.classes()).to.include('wt-btn-dashed');
   });
 });

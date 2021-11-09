@@ -1,16 +1,12 @@
 <template>
   <div class="page-turn">
-    <div class="page-turn-item page-prev"
-      v-show="prev" @click="goPrev"
->
-      <i class="wdicon wdicon-arrow-left"></i>
+    <div class="page-turn-item page-prev" v-show="prev" @click="goPrev">
+      <i class="wticon wticon-arrow-left"></i>
       <span>{{ prev }}</span>
     </div>
-    <div class="page-turn-item page-next"
-                v-show="next" @click="goNext"
->
+    <div class="page-turn-item page-next" v-show="next" @click="goNext">
       <span>{{ next }}</span>
-      <i class="wdicon wdicon-arrow-right"></i>
+      <i class="wticon wticon-arrow-right"></i>
     </div>
   </div>
 </template>
@@ -22,7 +18,7 @@ export default {
       default: () => [],
     },
   },
-  data () {
+  data() {
     const components = this.navs.reduce((com, nav) => {
       com = com.concat(nav.list);
       return com;
@@ -33,7 +29,7 @@ export default {
     };
   },
   computed: {
-    currentIndex () {
+    currentIndex() {
       if (this.$route.name) {
         for (let i = 0; i < this.len; i++) {
           if (this.$route.name === this.components[i].name) {
@@ -43,28 +39,26 @@ export default {
       }
       return undefined;
     },
-    prev () {
+    prev() {
       if (this.currentIndex) {
         const prev = this.components[this.currentIndex - 1];
-        return prev && prev.cnName
-          ? `${prev.cnName} / ${prev.name}` : prev.name;
+        return prev && prev.cnName ? `${prev.cnName} / ${prev.name}` : prev.name;
       }
       return undefined;
     },
-    next () {
+    next() {
       if (this.currentIndex < this.len - 1) {
         const next = this.components[this.currentIndex + 1];
-        return next && next.cnName
-          ? `${next.cnName} / ${next.name}` : next.name;
+        return next && next.cnName ? `${next.cnName} / ${next.name}` : next.name;
       }
       return undefined;
     },
   },
   methods: {
-    goPrev () {
+    goPrev() {
       this.$router.push(this.components[this.currentIndex - 1].path);
     },
-    goNext () {
+    goNext() {
       this.$router.push(this.components[this.currentIndex + 1].path);
     },
   },
@@ -83,7 +77,7 @@ $width: 44px;
     background: #f1f6ff;
     font-size: 20px;
     text-align: center;
-    color: #4E73FF;
+    color: #4e73ff;
     font-weight: $font-weight-bold;
     // transition: text-indent .2s ease;
   }
@@ -93,8 +87,8 @@ $width: 44px;
     cursor: pointer;
     span {
       vertical-align: top;
-      &:hover{
-        color: #4E73FF;
+      &:hover {
+        color: #4e73ff;
       }
     }
   }
@@ -103,9 +97,9 @@ $width: 44px;
     i {
       @extend %ic;
       margin-right: 20px;
-      transform: background-color linear .3s;
-      &:hover{
-        background-color: #E8EFFC;
+      transform: background-color linear 0.3s;
+      &:hover {
+        background-color: #e8effc;
       }
     }
   }
@@ -114,16 +108,17 @@ $width: 44px;
     i {
       @extend %ic;
       margin-left: 20px;
-      transform: background-color linear .3s;
-      &:hover{
-        background-color: #E8EFFC;
+      transform: background-color linear 0.3s;
+      &:hover {
+        background-color: #e8effc;
       }
     }
     &::before {
       display: none;
     }
   }
-  &::before, &::after {
+  &::before,
+  &::after {
     content: '';
     display: table;
   }
@@ -131,5 +126,4 @@ $width: 44px;
     clear: both;
   }
 }
-
 </style>

@@ -23,8 +23,8 @@
     <span
       :class="[`${prefix}-content`, { [`${prefix}-link-small`]: linkSize === 'small' }]"
       v-if="$slots.default && !_loading"
-      ><slot
-    ></slot></span>
+      ><slot></slot
+    ></span>
   </component>
 </template>
 
@@ -35,7 +35,7 @@ import { CONFIG_PROVIDER, getPrefixCls } from '@/utils/config';
 import Icon from '@components/icon';
 
 export default {
-  name: 'WdButton',
+  name: 'WtButton',
   components: {
     Icon,
   },

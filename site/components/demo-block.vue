@@ -12,17 +12,17 @@
       </div>
     </demo-transition>
     <div class="demo-block-control" ref="control" :class="classObj" @click="handleClickControl">
-      <!-- <wd-tooltip content="复制代码" placement="top">
-        <wd-icon-button
+      <!-- <wt-tooltip content="复制代码" placement="top">
+        <wt-icon-button
           icon="icon icon-copy"
           class="demo-btn-copy"
           type="secondary"
           @click.stop="handleClickCopy"
         />
-      </wd-tooltip> -->
+      </wt-tooltip> -->
       <div class="code-bar">
-        <i class="wdicon wdicon-code-off" v-if="showCode"></i>
-        <i class="wdicon wdicon-code" v-else></i>
+        <i class="wticon wticon-code-off" v-if="showCode"></i>
+        <i class="wticon wticon-code" v-else></i>
         <span>{{ controlText }}</span>
       </div>
     </div>
@@ -38,7 +38,7 @@ export default {
   components: {
     DemoTransition,
   },
-  data () {
+  data() {
     return {
       hovering: false,
       showCode: false,
@@ -47,44 +47,40 @@ export default {
     };
   },
   computed: {
-    blockClass () {
+    blockClass() {
       return `demo-${this.$route.path.split('/').pop()}`;
     },
-    controlText () {
+    controlText() {
       return this.showCode ? '隐藏代码' : '显示代码';
     },
-    classObj () {
+    classObj() {
       return { onfixed: this.onfixed };
     },
   },
-  mounted () {
+  mounted() {
     eventhub.$on('check-scroll', this.checkScroll);
     this.controlHeight = this.$refs.control.scrollHeight;
   },
-  beforeDestroy () {
+  beforeDestroy() {
     eventhub.$off('check-scroll', this.checkScroll);
   },
   methods: {
-    handleClickControl () {
+    handleClickControl() {
       this.showCode = !this.showCode;
       this.checkScroll();
     },
     // handleClickCopy () {
     //   const code = this.$el.querySelector('.demo-desc .hljs');
     //   dom.copy(code.textContent);
-    //   this.$wd.message({
+    //   this.$wt.message({
     //     message: '复制成功',
     //     type: 'success',
     //     duration: 1000,
     //   }); //
     // },
-    checkScroll () {
+    checkScroll() {
       this.$nextTick(() => {
-        if (
-          this.onfixed !==
-          (this.showCode &&
-            dom.appear(this.$refs.highlight, this.controlHeight))
-        ) {
+        if (this.onfixed !== (this.showCode && dom.appear(this.$refs.highlight, this.controlHeight))) {
           this.onfixed = !this.onfixed;
         }
       });
@@ -92,14 +88,14 @@ export default {
   },
 };
 </script>
-<style lang='scss'>
+<style lang="scss">
 $content-width: 960px;
 $demo-control-padding: 8px;
 $demo-control-height: 50px;
 $color-line-2: #edf0f7;
 $text-color: #464646;
 $color-silvery900: #808ab1;
-$color-text-2: rgba(0, 0, 0, .75);
+$color-text-2: rgba(0, 0, 0, 0.75);
 .demo-btn-copy {
   font-size: 18px;
 }
@@ -168,14 +164,14 @@ $color-text-2: rgba(0, 0, 0, .75);
 .demo-block-control {
   position: relative;
   padding: 0px $demo-control-padding;
-  color: #808AB1;
+  color: #808ab1;
   background: #fff;
   cursor: pointer;
   text-align: center;
   border-top: 1px solid $color-line-2;
   line-height: $demo-control-height;
 
-  .wd-tooltip-rel {
+  .wt-tooltip-rel {
     float: right;
     margin-left: 12px;
   }

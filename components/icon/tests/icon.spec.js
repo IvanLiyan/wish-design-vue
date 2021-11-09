@@ -5,9 +5,9 @@ describe('Icon', function () {
   it('create', () => {
     const wrapper = mount(Icon, {
       propsData: {
-        name: 'add'
-      }
+        name: 'add',
+      },
     });
-    expect(wrapper.find('.wdicon-add').exists()).to.be.true;
+    expect(wrapper.find('.wticon-add').exists()).to.be.true;
   });
 });

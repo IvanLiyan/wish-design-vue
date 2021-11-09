@@ -8,7 +8,7 @@
 import { CONFIG_PROVIDER, getPrefixCls } from '@/utils/config';
 
 export default {
-  name: 'WdButtonGroup',
+  name: 'WtButtonGroup',
   inject: {
     config: {
       from: CONFIG_PROVIDER,

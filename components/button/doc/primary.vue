@@ -1,5 +1,5 @@
 <template>
   <div>
-    <wd-button>主按钮</wd-button>
+    <wt-button>主按钮</wt-button>
   </div>
 </template>

@@ -1,6 +1,7 @@
 <template>
   <div class="search-input">
-    <wd-select icon="wdicon wdicon-search"
+    <wt-select
+      icon="wticon wticon-search"
       placeholder="搜索"
       filterable
       @focus="handleFocus"
@@ -9,9 +10,8 @@
       @input="handleSearch"
       popper-class="search-dropdown"
     >
-      <wd-option v-for="nav in components" :key="nav.path"
-        :label="`${nav.cnName} / ${nav.name}`" :value="nav.path" />
-    </wd-select>
+      <wt-option v-for="nav in components" :key="nav.path" :label="`${nav.cnName} / ${nav.name}`" :value="nav.path" />
+    </wt-select>
   </div>
 </template>
 <script>
@@ -19,24 +19,26 @@ export default {
   props: {
     components: Array,
   },
-  data () {
+  data() {
     return {
       focused: false,
       search: '',
     };
   },
   methods: {
-    handleFocus () {
+    handleFocus() {
       this.focused = true;
     },
-    handleBlur () {
+    handleBlur() {
       this.focused = false;
     },
-    handleSearch (v) {
+    handleSearch(v) {
       this.search = v;
       if (this.search) {
         this.$router.push(`/components/${this.search}`);
-        this.$nextTick(() => { this.search = ''; });
+        this.$nextTick(() => {
+          this.search = '';
+        });
       }
     },
   },
@@ -50,23 +52,23 @@ $icon-width: 34px;
   display: inline-block;
   display: flex;
 
-  .wd-select {
+  .wt-select {
     width: 156px;
     flex: 1;
   }
-  .wd-select-search-focus{
-    .wd-input-suffix-inner{
-      i{
+  .wt-select-search-focus {
+    .wt-input-suffix-inner {
+      i {
         transform: none;
       }
     }
   }
 }
-.search-dropdown{
-  &[x-placement^="bottom"]{
+.search-dropdown {
+  &[x-placement^='bottom'] {
     margin-top: 4px;
   }
-  .wd-dropdown-menu{
+  .wt-dropdown-menu {
     margin: 4px 0px;
     padding: 0px;
   }

@@ -8,13 +8,11 @@ const OUTPUT_PATH = path.join(__dirname, '../../src/index.js');
 
 const importComponentTemplate = [];
 const installTemplate = [];
-const listTemplate = []
-Object.keys(Components).forEach(name => {
+const listTemplate = [];
+Object.keys(Components).forEach((name) => {
   const componentName = uppercamelcase(name);
-  const path = Components[name]
-  importComponentTemplate.push(
-    `import ${componentName} from '${path}';`
-  );
+  const path = Components[name];
+  importComponentTemplate.push(`import ${componentName} from '${path}';`);
 
   listTemplate.push(componentName);
 
@@ -43,14 +41,14 @@ export function install (Vue) {
     Vue.component(component.name, component);
   });
 
-  const $wd = {
+  const $wt = {
     // confirm: Confirm,
     // notify: Notification,
     // message: Message,
   };
 
-  if (Vue.prototype) Vue.prototype.$wd = $wd;
-  if (Vue.config.globalProperties) Vue.config.globalProperties.$wd = $wd;
+  if (Vue.prototype) Vue.prototype.$wt = $wt;
+  if (Vue.config.globalProperties) Vue.config.globalProperties.$wt = $wt;
 };
 
 /* istanbul ignore if */

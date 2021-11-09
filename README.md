@@ -1,4 +1,4 @@
-# @wish/wd-vue
+# @wish/wt-vue
 
 ## 全局安装 babel-cli、webpack、webpack-cli
 

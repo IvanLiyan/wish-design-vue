@@ -1,16 +1,16 @@
 <template>
   <div class="demo-btn-group">
-    <wd-button-group>
-      <wd-button>添加</wd-button>
-      <wd-button>删除</wd-button>
-      <wd-button>编辑</wd-button>
-    </wd-button-group>
+    <wt-button-group>
+      <wt-button>添加</wt-button>
+      <wt-button>删除</wt-button>
+      <wt-button>编辑</wt-button>
+    </wt-button-group>
 
-    <wd-button-group>
-      <wd-button icon="plus" />
-      <wd-button icon="edit" />
-      <wd-button icon="search" />
-      <wd-button icon="delete" />
-    </wd-button-group>
+    <wt-button-group>
+      <wt-button icon="plus" />
+      <wt-button icon="edit" />
+      <wt-button icon="search" />
+      <wt-button icon="delete" />
+    </wt-button-group>
   </div>
 </template>

@@ -247,7 +247,7 @@ $border: 1px solid $color-line-1;
       max-width: 200px;
     }
   }
-  .wdicon-link {
+  .wticon-link {
     font-size: 12px;
   }
 }

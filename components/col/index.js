@@ -1,8 +1,8 @@
-import WdCol from './col';
+import WtCol from './col';
 
 /* istanbul ignore next */
-WdCol.install = function (Vue) {
-  Vue.component(WdCol.name, WdCol);
+WtCol.install = function (Vue) {
+  Vue.component(WtCol.name, WtCol);
 };
 
-export default WdCol;
+export default WtCol;

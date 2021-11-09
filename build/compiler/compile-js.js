@@ -3,7 +3,6 @@ const fs = require('fs');
 const path = require('path');
 const { writeFile } = require('./output');
 
-
 // function resolve (dir) {
 //   return path.join(__dirname, '../..', dir);
 // }
@@ -27,18 +26,16 @@ function replaceScriptImportExt(code, from, to) {
   return code;
 }
 
-
 function compileJs(filePath, file, option) {
   let code = fs.readFileSync(filePath, { encoding: 'utf-8' });
 
   code = replaceScriptImportExt(code, '.vue', '');
-  code = replaceScriptImportExt(code, '@/', '@wish/wd-vue/es/');
-  code = replaceScriptImportExt(code, '@components', '@wish/wd-vue/es/components');
+  code = replaceScriptImportExt(code, '@/', '@wish/wt-vue/es/');
+  code = replaceScriptImportExt(code, '@components', '@wish/wt-vue/es/components');
 
   const result = babel.transform(code, {
     filename: filePath,
     extends: path.join(__dirname, '../../.babelrc'),
-
   });
   writeFile(file, result.code, option);
 }

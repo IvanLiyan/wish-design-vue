@@ -1,58 +1,58 @@
-export const CONFIG_PROVIDER = 'WDConfig';
+export const CONFIG_PROVIDER = 'WTConfig';
 
 let zIndex = 2000;
 const stack = [];
 
 const DEFAULT_CONFIG = {
-  prefixCls: 'wd',
-  iconPrefixCls: 'wdicon',
+  prefixCls: 'wt',
+  iconPrefixCls: 'wticon',
 
   getPopupContainer: function () {
     return document.body;
   },
 
-  getNextZIndex () {
+  getNextZIndex() {
     return zIndex++;
   },
-  addPopup (instance) {
+  addPopup(instance) {
     if (stack.indexOf(instance) === -1) {
       stack.push(instance);
     }
   },
-  removePopup (instance) {
+  removePopup(instance) {
     const index = stack.lastIndexOf(instance);
     if (index > -1) {
       stack.splice(index, 1);
     }
   },
-  getLastPopup () {
+  getLastPopup() {
     if (stack.length > 0) {
       return stack[stack.length - 1];
     }
   },
 };
 
-export function getConfig () {
+export function getConfig() {
   return DEFAULT_CONFIG;
 }
 
-export function getPrefix () {
+export function getPrefix() {
   return DEFAULT_CONFIG.prefixCls;
 }
 
-export function getIconPrefix () {
+export function getIconPrefix() {
   return DEFAULT_CONFIG.iconPrefixCls;
 }
 
-export function getPrefixCls (suffixCls, customizePrefixCls) {
+export function getPrefixCls(suffixCls, customizePrefixCls) {
   return customizePrefixCls || `${DEFAULT_CONFIG.prefixCls}-${suffixCls}`;
 }
 
-export function getIconCls (suffixCls, customizePrefixCls) {
+export function getIconCls(suffixCls, customizePrefixCls) {
   const { iconPrefixCls } = DEFAULT_CONFIG;
   return customizePrefixCls || `${iconPrefixCls} ${iconPrefixCls}-${suffixCls || ''}`;
 }
 
-export function config (options) {
+export function config(options) {
   return Object.assign(DEFAULT_CONFIG, options);
 }

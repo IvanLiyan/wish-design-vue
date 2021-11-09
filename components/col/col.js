@@ -1,10 +1,7 @@
-import {
-  CONFIG_PROVIDER,
-  getPrefixCls,
-} from '@/utils/config';
+import { CONFIG_PROVIDER, getPrefixCls } from '@/utils/config';
 
 export default {
-  name: 'WdCol',
+  name: 'WtCol',
 
   props: {
     span: {
@@ -37,14 +34,14 @@ export default {
     },
   },
   computed: {
-    prefix () {
+    prefix() {
       return this.config.getPrefixCls('col');
     },
-    gutter () {
+    gutter() {
       return this.row ? this.row.gutter : 0;
     },
   },
-  render (h) {
+  render(h) {
     const classList = [];
     const style = {};
 
@@ -53,34 +50,32 @@ export default {
       style.paddingRight = style.paddingLeft;
     }
 
-    ['span', 'offset', 'pull', 'push'].forEach(prop => {
+    ['span', 'offset', 'pull', 'push'].forEach((prop) => {
       if (this[prop] || this[prop] === 0) {
-        classList.push(
-          prop !== 'span'
-            ? `${this.prefix}-${prop}-${this[prop]}`
-            : `${this.prefix}-${this[prop]}`,
-        );
+        classList.push(prop !== 'span' ? `${this.prefix}-${prop}-${this[prop]}` : `${this.prefix}-${this[prop]}`);
       }
     });
 
-    ['xs', 'sm', 'md', 'lg', 'xl', 'xxl'].forEach(size => {
+    ['xs', 'sm', 'md', 'lg', 'xl', 'xxl'].forEach((size) => {
       if (typeof this[size] === 'number') {
         classList.push(`${this.prefix}-${size}-${this[size]}`);
       } else if (typeof this[size] === 'object') {
         const props = this[size];
-        Object.keys(props).forEach(prop => {
+        Object.keys(props).forEach((prop) => {
           classList.push(
-            prop !== 'span'
-              ? `${this.prefix}-${size}-${prop}-${props[prop]}`
-              : `${this.prefix}-${size}-${props[prop]}`,
+            prop !== 'span' ? `${this.prefix}-${size}-${prop}-${props[prop]}` : `${this.prefix}-${size}-${props[prop]}`,
           );
         });
       }
     });
 
-    return h(this.tag, {
-      class: [this.prefix, classList],
-      style,
-    }, this.$slots.default);
+    return h(
+      this.tag,
+      {
+        class: [this.prefix, classList],
+        style,
+      },
+      this.$slots.default,
+    );
   },
 };

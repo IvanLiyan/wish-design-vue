@@ -1,20 +1,9 @@
 <template>
-  <wd-anchor class="title-wrap" container=".app"
-    :offset-top="180" :scroll-offset="108"
-    :affix="false"
-  >
-    <wd-anchor-link
-      v-for="h2 in usedata"
-      :href="h2.href"
-      :title="h2.title"
-      :key="h2.href">
-      <wd-anchor-link
-        v-for="h3 in h2.children"
-        :href="h3.href"
-        :title="h3.title"
-        :key="h3.href" />
-    </wd-anchor-link>
-  </wd-anchor>
+  <wt-anchor class="title-wrap" container=".app" :offset-top="180" :scroll-offset="108" :affix="false">
+    <wt-anchor-link v-for="h2 in usedata" :href="h2.href" :title="h2.title" :key="h2.href">
+      <wt-anchor-link v-for="h3 in h2.children" :href="h3.href" :title="h3.title" :key="h3.href" />
+    </wt-anchor-link>
+  </wt-anchor>
 </template>
 
 <script>
@@ -41,9 +30,9 @@ export default {
 }
 </style>
 <style lang="scss">
-  .hide-top-nav{
-    .title-wrap{
-      top: 32px;
-    }
+.hide-top-nav {
+  .title-wrap {
+    top: 32px;
   }
+}
 </style>

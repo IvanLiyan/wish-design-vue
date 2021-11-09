@@ -52,7 +52,7 @@
     border-color: $disabledBorderColor;
   }
 }
-// start defined wd-btn
+// start defined wt-btn
 @include c(btn) {
   @include reset-btn();
   position: relative; // to set button-effect animte visible in button-group

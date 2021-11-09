@@ -18,7 +18,7 @@ import { CONFIG_PROVIDER, getPrefixCls, getIconCls } from '@/utils/config';
 const feather = require('feather-icons');
 
 export default {
-  name: 'WdIcon',
+  name: 'WtIcon',
   props: {
     name: {
       type: String,

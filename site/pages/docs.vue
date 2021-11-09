@@ -38,13 +38,13 @@
         <router-view />
       </Page>
     </div>
-    <wd-button
+    <wt-button
       class="narrow-scrren-expand-bar"
       :class="{ expanded: isExpandWhenNarrowScreen }"
       @click="isExpandWhenNarrowScreen = !isExpandWhenNarrowScreen"
     >
       {{ isExpandWhenNarrowScreen ? '收起' : '展开' }}
-    </wd-button>
+    </wt-button>
   </div>
 </template>
 

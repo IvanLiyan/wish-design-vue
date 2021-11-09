@@ -1,59 +1,62 @@
 <template>
-<div class="container">
-  <div class="aside" :class="{
-    'narrow-screen-expanded': isExpandWhenNarrowScreen,
-  }" v-show="!hideSidebar">
-    <div class="sidebar">
-      <div class="sidebar-content">
-        <!--
+  <div class="container">
+    <div
+      class="aside"
+      :class="{
+        'narrow-screen-expanded': isExpandWhenNarrowScreen,
+      }"
+      v-show="!hideSidebar"
+    >
+      <div class="sidebar">
+        <div class="sidebar-content">
+          <!--
           <div class="sidebar-search-wrap">
             <search-input :components="components" />
           </div> -->
-        <div class="sidebar-navs">
-          <ul class="sidebar-nav">
-            <li class="sidebar-nav-item"
-              v-for="(group, index) in navs" :key="index">
-              <div class="sidebar-nav-item-text" v-if="group.groupName">
-                {{ group.groupName }}
-              </div>
-              <ul class="sidebar-nest-nav" v-if="group.list">
-                <li class="sidebar-nest-nav-item"
-                  v-for="item in group.list" :key="item.path">
-                  <router-link :to="{
-                    path: `/components/${item.path}`,
-                    query: $route.query,
-                  }">
-                  {{ item.cnName
-                    ? `${item.name} / ${item.cnName}` : item.name }}
-                  </router-link>
-                </li>
-              </ul>
-            </li>
-          </ul>
+          <div class="sidebar-navs">
+            <ul class="sidebar-nav">
+              <li class="sidebar-nav-item" v-for="(group, index) in navs" :key="index">
+                <div class="sidebar-nav-item-text" v-if="group.groupName">
+                  {{ group.groupName }}
+                </div>
+                <ul class="sidebar-nest-nav" v-if="group.list">
+                  <li class="sidebar-nest-nav-item" v-for="item in group.list" :key="item.path">
+                    <router-link
+                      :to="{
+                        path: `/components/${item.path}`,
+                        query: $route.query,
+                      }"
+                    >
+                      {{ item.cnName ? `${item.name} / ${item.cnName}` : item.name }}
+                    </router-link>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <div
-    class="page-content"
-    :class="{
-      'no-sidebar': hideSidebar,
-    }"
-  >
-     <Page>
-      <router-view />
-      <!--
+    <div
+      class="page-content"
+      :class="{
+        'no-sidebar': hideSidebar,
+      }"
+    >
+      <Page>
+        <router-view />
+        <!--
       <page-turn :navs="navs" /> -->
-    </Page>
+      </Page>
+    </div>
+    <wt-button
+      class="narrow-scrren-expand-bar"
+      :class="{ expanded: isExpandWhenNarrowScreen }"
+      @click="isExpandWhenNarrowScreen = !isExpandWhenNarrowScreen"
+    >
+      {{ isExpandWhenNarrowScreen ? '收起' : '展开' }}
+    </wt-button>
   </div>
-  <wd-button
-    class="narrow-scrren-expand-bar"
-    :class="{ 'expanded': isExpandWhenNarrowScreen }"
-    @click="isExpandWhenNarrowScreen = !isExpandWhenNarrowScreen"
-  >
-    {{ isExpandWhenNarrowScreen ? '收起' : '展开' }}
-  </wd-button>
-</div>
 </template>
 
 <script>
@@ -64,7 +67,7 @@ import Page from '../components/page';
 
 import navConfig from '../nav.config.json';
 
-function getComponentNav (navs) {
+function getComponentNav(navs) {
   return navs.find((nav) => nav.path === '/components');
 }
 
@@ -79,19 +82,21 @@ export default {
   inject: {
     app: 'app',
   },
-  data () {
+  data() {
     const navs = getComponentNav(navConfig).groups;
     navs.forEach((nav) => {
       nav.list = nav.list.sort((a, b) => {
         return a.name > b.name ? 1 : -1;
       });
     });
-    const components = navs.reduce((com, nav) => {
-      com = com.concat(nav.list);
-      return com;
-    }, []).sort((a, b) => {
-      return a.name > b.name ? 1 : -1;
-    });
+    const components = navs
+      .reduce((com, nav) => {
+        com = com.concat(nav.list);
+        return com;
+      }, [])
+      .sort((a, b) => {
+        return a.name > b.name ? 1 : -1;
+      });
 
     return {
       navs: navs,
@@ -100,7 +105,7 @@ export default {
     };
   },
   computed: {
-    hideSidebar () {
+    hideSidebar() {
       return this.app.hideSidebar;
     },
   },

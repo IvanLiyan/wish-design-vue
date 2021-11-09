@@ -1,6 +1,6 @@
 <style lang="scss">
   .demo-button{
-    .wd-btn + .wd-btn{
+    .wt-btn + .wt-btn{
       margin-left: 10px;
     }
   }
@@ -10,7 +10,7 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
-    .wd-btn + .wd-btn{
+    .wt-btn + .wt-btn{
       margin-left: 0px;
     }
   }
@@ -60,7 +60,7 @@
 :::include(src="./doc/group.vue")
 :::
 
-<!-- > 文字按钮的形式和链接的形式非常像但用法不同,请参考 [链接/Link <i class="wdicon wdicon-link-o"></i>](/components/link) -->
+<!-- > 文字按钮的形式和链接的形式非常像但用法不同,请参考 [链接/Link <i class="wticon wticon-link-o"></i>](/components/link) -->
 
 ### 异步按钮
 

@@ -22,14 +22,14 @@ export function install (Vue) {
     Vue.component(component.name, component);
   });
 
-  const $wd = {
+  const $wt = {
     // confirm: Confirm,
     // notify: Notification,
     // message: Message,
   };
 
-  if (Vue.prototype) Vue.prototype.$wd = $wd;
-  if (Vue.config.globalProperties) Vue.config.globalProperties.$wd = $wd;
+  if (Vue.prototype) Vue.prototype.$wt = $wt;
+  if (Vue.config.globalProperties) Vue.config.globalProperties.$wt = $wt;
 };
 
 /* istanbul ignore if */

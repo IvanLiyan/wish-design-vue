@@ -2,17 +2,21 @@
 @import 'mixins/mixins';
 
 $legend-padding: 2px;
-$legend-height: $font-size-4 + 2 * $legend-padding;
+$legend-height: $font-size-4 + $legend-padding * 2;
 $input-height: 36px;
 
 @mixin reset-input() {
   box-sizing: border-box;
   font-size: $font-size-default;
   font-weight: $font-weight-regular;
-  padding: 8px;
   border: none;
-  width: 100%;
-  height: $input-height;
+  outline: none;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 0;
+  padding-right: 0;
+  color: $color-text-1;
+  background-color: transparent;
   &::placeholder {
     color: $color-text-6;
   }
@@ -23,47 +27,93 @@ $input-height: 36px;
   margin: 0;
 }
 
-// start defined wd-input
+// start defined wt-input
 @include c(input) {
   @include reset-input();
-  //   position: absolute;
-  left: 0;
-  top: 0;
-  background-color: transparent;
-  position: absolute;
-  top: $legend-height/2;
-  left: 0;
-  outline: none;
-
+  flex: 1;
+  $ic: $B + '-con';
   &-wrapper {
+    @include reset-form;
     text-align: left;
     position: relative;
     width: 240px;
-    // height: 36px;
-    fieldset {
-      @include reset-form;
-      font-size: $font-size-2;
-      line-height: $line-height-2;
-      color: $color-text-1;
-      border: solid $border-width-1 $color-line-1;
-
-      border-radius: $border-radius-2;
-      height: $input-height + $legend-height/2;
-    }
+    font-size: $font-size-2;
+    line-height: $line-height-2;
+    color: $color-text-1;
+    border: solid $border-width-1 $color-line-1;
+    border-radius: $border-radius-2;
+    height: $input-height + $legend-height/2;
     legend {
       @include reset-form;
-      margin-left: 8px;
-      padding: $legend-padding;
-      color: currentColor;
       font-size: $font-size-4;
+      margin-left: 8px;
+      color: $color-text-3;
+      padding: $legend-padding;
       line-height: 1;
-      height: $legend-height;
+    }
+    &.no-label-field {
+      height: $input-height;
     }
   }
+
   &-focused {
-    fieldset {
-      border-color: $color-line-2;
-      color: $color-line-2;
+    border-color: $color-line-2;
+    color: $color-line-2;
+    legend {
+      color: currentColor;
+    }
+  }
+
+  &-disabled {
+    background-color: $color-fill-2;
+    .#{$B} {
+      color: $color-text-3;
+      cursor: not-allowed;
+    }
+  }
+
+  &-invalid {
+    border-color: $color-danger-1;
+    legend {
+      color: $color-danger-1;
+    }
+  }
+
+  &-linetype {
+    border-width: 0;
+    border-bottom-width: 1px;
+    border-radius: 0;
+    .#{$ic} {
+      padding-left: 0;
+      padding-right: 0;
+    }
+    legend {
+      margin-left: 0;
+      padding: 0;
+    }
+  }
+  &-con {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding-left: 8px;
+    padding-right: 8px;
+    height: $input-height;
+    box-sizing: border-box;
+    color: $color-text-1;
+    .prefix {
+      margin-left: 10px;
+    }
+    .#{$prefix}-icon {
+      svg {
+        width: 20px;
+        height: 20px;
+        stroke-width: 1px;
+        color: $color-text-1;
+      }
     }
   }
 }

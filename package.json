@@ -1,8 +1,8 @@
 {
-  "name": "@wish/wd-vue",
+  "name": "@wish/wt-vue",
   "version": "0.0.2-alpha.29",
   "description": "vue、component",
-  "main": "lib/wd-vue.common.js",
+  "main": "lib/wt-vue.common.js",
   "scripts": {
     "start": "npm run dev",
     "create": "node build/bin/create.js",

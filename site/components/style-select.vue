@@ -1,32 +1,22 @@
 <template>
-  <wd-select class="select" v-model="theme"
-    style="width: 150px">
-    <wd-option
-      v-for="item in themes"
-      :key="item.value"
-      :label="item.label"
-      :value="item.value" />
-  </wd-select>
+  <wt-select class="select" v-model="theme" style="width: 150px">
+    <wt-option v-for="item in themes" :key="item.value" :label="item.label" :value="item.value" />
+  </wt-select>
 </template>
 
 <script>
 import Cookies from 'js-cookie';
-import {
-  setStyle,
-} from '../utils/style';
+import { setStyle } from '../utils/style';
 
-const themes = [
-  { value: 'theme', label: 'WDUI 1.0 主题' },
-];
+const themes = [{ value: 'theme', label: 'WTUI 1.0 主题' }];
 export default {
   name: 'StyleSelector',
   inheritAttrs: false,
-  props: {
-  },
+  props: {},
   inject: {
     router: {
       from: 'router',
-      default () {
+      default() {
         return {
           route: { query: {} },
           $router: function () {},
@@ -34,7 +24,7 @@ export default {
       },
     },
   },
-  data () {
+  data() {
     window.MTD_THEME = this.router.route.query.theme || Cookies.get('MTD_THEME');
     return {
       themes,
@@ -44,7 +34,7 @@ export default {
   watch: {
     theme: {
       immediate: true,
-      handler (theme) {
+      handler(theme) {
         // eslint-disable-next-line
         // whatchout important 在这里设置了样式的引入
         import(`!css-loader!postcss-loader!sass-loader?modules!@components/${theme}/index.scss`).then((file) => {

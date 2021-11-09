@@ -1,22 +1,18 @@
 <template>
-  <wd-input-group class="select-wrap">
+  <wt-input-group class="select-wrap">
     <span class="tag" slot="prepend">{{ tag }}</span>
-    <wd-select class="select" v-model="version" style="width: 150px">
-      <wd-option
-        v-for="item in versions"
-        :key="item.value"
-        :label="item.label"
-        :value="item.value" />
-    </wd-select>
-  </wd-input-group>
+    <wt-select class="select" v-model="version" style="width: 150px">
+      <wt-option v-for="item in versions" :key="item.value" :label="item.label" :value="item.value" />
+    </wt-select>
+  </wt-input-group>
 </template>
 
 <script>
-import WD from '@/index.js';
+import WT from '@/index.js';
 
 const versions = [
-  { href: '/wd/vue', label: WD.version, value: WD.version },
-  { href: '/wd/vue-next', label: 'Vue 3.x', value: 'Vue 3.x' },
+  { href: '/wt/vue', label: WT.version, value: WT.version },
+  { href: '/wt/vue-next', label: 'Vue 3.x', value: 'Vue 3.x' },
 ];
 
 export default {
@@ -28,7 +24,7 @@ export default {
       required: true,
     },
   },
-  data () {
+  data() {
     return {
       versions,
       version: versions[0].value,
@@ -37,26 +33,24 @@ export default {
   watch: {
     version: {
       immediate: false,
-      handler (version) {
-        window.location.href = versions.find(ele => {
+      handler(version) {
+        window.location.href = versions.find((ele) => {
           return ele.value === version;
         }).href;
       },
     },
   },
-  methods: {
-
-  },
+  methods: {},
 };
 </script>
 <style lang="scss" scoped>
 .select-wrap {
   width: auto;
   /deep/ {
-    .wd-input-group-prepend{
+    .wt-input-group-prepend {
       background-color: #fff;
     }
-    .wd-input{
+    .wt-input {
       border-top-left-radius: 0;
       border-bottom-left-radius: 0;
     }

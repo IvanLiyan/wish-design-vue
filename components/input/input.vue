@@ -1,27 +1,29 @@
 <template>
-  <div
+  <fieldset
     :class="{
-      [`${prefix}-wrapper`]: true,
-      [`${prefix}-disabled`]: disabled,
-      [`${prefix}-readonly`]: readonly,
-      [`${prefix}-invalid`]: invalid,
-      [`${prefix}-focused`]: focused,
+      [`${inpuPrefix}-wrapper`]: true,
+      [`${inpuPrefix}-linetype`]: type === 'line',
+      [`${inpuPrefix}-disabled`]: disabled,
+      [`${inpuPrefix}-invalid`]: invalid,
+      [`${inpuPrefix}-focused`]: focused,
+      [`no-label-field`]: !label,
     }"
     :style="fullWidth ? { width: '100%' } : {}"
   >
-    <fieldset>
-      <legend v-if="label">{{ label }}</legend>
+    <legend v-if="label">{{ label }}</legend>
+    <div :class="`${inpuPrefix}-con`">
+      <slot name="prefix"></slot>
       <input
         v-bind="$attrs"
         :value="inputValue"
-        :readonly="readonly"
         :disabled="disabled"
-        :class="prefix"
+        :class="inpuPrefix"
         ref="input"
         v-on="inputLisenters"
       />
-    </fieldset>
-  </div>
+      <slot name="suffix"></slot>
+    </div>
+  </fieldset>
 </template>
 <script>
 import Icon from '@components/icon';
@@ -29,7 +31,7 @@ import { CONFIG_PROVIDER, getPrefixCls } from '@/utils/config';
 import { isKey } from '@/utils/key-codes';
 
 export default {
-  name: 'WdInput',
+  name: 'WtInput',
   components: {
     Icon,
   },
@@ -43,11 +45,12 @@ export default {
     },
   },
   props: {
-    readonly: Boolean,
+    type: String,
     disabled: Boolean,
     invalid: Boolean,
     fullWidth: Boolean,
     label: String,
+    value: [String, Number],
   },
   data() {
     return {
@@ -58,11 +61,14 @@ export default {
   },
 
   computed: {
-    prefix() {
+    inpuPrefix() {
       return this.config.getPrefixCls('input');
     },
     inputValue() {
       return this.hasValue ? this.value : '';
+    },
+    hasValue() {
+      return this.value === 0 || !!this.value;
     },
     inputLisenters() {
       const lisenters = Object.assign({}, this.$listeners, {
@@ -109,7 +115,7 @@ export default {
     setNativeInput() {
       const { input } = this.$refs;
       if (input && input.value !== this.value) {
-        input.value = this.inputValue;
+        this.value = input.value;
       }
     },
     focus() {

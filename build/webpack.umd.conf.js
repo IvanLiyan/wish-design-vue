@@ -10,12 +10,12 @@ module.exports = merge(baseWebpackConfig, {
   entry: './src/index.js',
   output: {
     publicPath: '/',
-    path: path.join(__dirname, '../publish/dist', ),
-    filename: 'wd-vue.min.js',
+    path: path.join(__dirname, '../publish/dist'),
+    filename: 'wt-vue.min.js',
     chunkFilename: '[id].js',
     libraryTarget: 'umd',
     libraryExport: 'default',
-    library: 'WD',
+    library: 'WT',
     umdNamedDefine: true,
   },
   externals: {
@@ -23,8 +23,8 @@ module.exports = merge(baseWebpackConfig, {
       root: 'Vue',
       commonjs: 'vue',
       commonjs2: 'vue',
-      amd: 'vue'
-    }
+      amd: 'vue',
+    },
   },
   devtool: false,
   optimization: {
@@ -35,13 +35,13 @@ module.exports = merge(baseWebpackConfig, {
         parallel: true,
         sourceMap: false, // Must be set to true if using source-maps in production
       }),
-    ]
+    ],
   },
   plugins: [
     new webpack.DefinePlugin({
       'process.env': {
-        NODE_ENV: '"development"'
-      }
+        NODE_ENV: '"development"',
+      },
     }),
   ],
 });

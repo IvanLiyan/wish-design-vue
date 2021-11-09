@@ -1,15 +1,15 @@
 import { addClass, removeClass } from '../utils/dom';
 
-function createTransition (listeners) {
+function createTransition(listeners) {
   return {
-    'before-enter' (el) {
+    'before-enter'(el) {
       addClass(el, 'collapse-transition');
       el.style.height = '0';
       const fn = listeners['before-enter'];
       fn && fn();
     },
 
-    'enter' (el) {
+    enter(el) {
       if (el.scrollHeight !== 0) {
         el.style.height = el.scrollHeight + 'px';
       } else {
@@ -20,7 +20,7 @@ function createTransition (listeners) {
       fn && fn();
     },
 
-    'after-enter' (el) {
+    'after-enter'(el) {
       // for safari: remove class then reset height is necessary
       removeClass(el, 'collapse-transition collapse-overflow');
       el.style.height = '';
@@ -28,7 +28,7 @@ function createTransition (listeners) {
       fn && fn();
     },
 
-    beforeLeave (el) {
+    beforeLeave(el) {
       if (!el.dataset) el.dataset = {};
       el.style.height = el.scrollHeight + 'px';
       addClass(el, 'collapse-overflow');
@@ -36,7 +36,7 @@ function createTransition (listeners) {
       fn && fn();
     },
 
-    leave (el) {
+    leave(el) {
       if (el.scrollHeight !== 0) {
         // for safari: add class after set height,
         // or it will jump to zero height suddenly, weired
@@ -47,19 +47,19 @@ function createTransition (listeners) {
       fn && fn();
     },
 
-    'after-leave' (el) {
+    'after-leave'(el) {
       removeClass(el, 'collapse-transition collapse-overflow');
       el.style.height = '';
       const fn = listeners['after-leave'];
       fn && fn();
     },
   };
-};
+}
 
 export default {
-  name: 'WdCollapseTransition',
+  name: 'WtCollapseTransition',
   functional: true,
-  render (h, context) {
+  render(h, context) {
     const { children, listeners } = context;
     const data = {
       on: createTransition(listeners),

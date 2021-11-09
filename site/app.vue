@@ -10,13 +10,13 @@
       <router-link to="/components">组件示例</router-link>
       <router-link to="/doc">开发文档</router-link>
       <a key="code" href="https://github.com/ContextLogic/wish-design-vue" target="_blank"
-        ><span>代码仓库</span><wd-icon name="external-link" :stroke-width="1.5" :width="14" :height="14"
+        ><span>代码仓库</span><wt-icon name="external-link" :stroke-width="1.5" :width="14" :height="14"
       /></a>
       <a
         key="design"
         href="https://www.figma.com/file/MYiBNyNKoXtYWF4nnOOYyj/%F0%9F%8C%B1-Wishpost-Style-%26-Components"
         target="_blank"
-        ><span>设计</span><wd-icon name="external-link" :stroke-width="1.5" :width="14" :height="14"
+        ><span>设计</span><wt-icon name="external-link" :stroke-width="1.5" :width="14" :height="14"
       /></a>
     </div>
     <router-view />
