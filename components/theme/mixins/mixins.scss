@@ -145,6 +145,13 @@ $prefix: 'wt' !default;
   white-space: nowrap;
 }
 
+// 垂直居中
+@mixin verticle-middle() {
+  position: absolute;
+  transform: translateY(-50%);
+  top: 50%;
+}
+
 @mixin res($key, $map: $breakpoints) {
   // 循环断点Map，如果存在则返回
   @if map-has-key($map, $key) {

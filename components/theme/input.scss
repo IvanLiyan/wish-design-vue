@@ -4,6 +4,7 @@
 $legend-padding: 2px;
 $legend-height: $font-size-4 + $legend-padding * 2;
 $input-height: 36px;
+$padding: 8px;
 
 @mixin reset-input() {
   box-sizing: border-box;
@@ -31,7 +32,11 @@ $input-height: 36px;
 @include c(input) {
   @include reset-input();
   flex: 1;
+  height: $input-height;
   $ic: $B + '-con';
+  $il: $B + '-with-label';
+  $it: $B + '-tip';
+
   &-wrapper {
     @include reset-form;
     text-align: left;
@@ -42,7 +47,7 @@ $input-height: 36px;
     color: $color-text-1;
     border: solid $border-width-1 $color-line-1;
     border-radius: $border-radius-2;
-    height: $input-height + $legend-height/2;
+    height: $input-height;
     legend {
       @include reset-form;
       font-size: $font-size-4;
@@ -51,8 +56,52 @@ $input-height: 36px;
       padding: $legend-padding;
       line-height: 1;
     }
-    &.no-label-field {
-      height: $input-height;
+  }
+  &-with-label {
+    height: $input-height + $legend-height/2;
+    .#{$ic} {
+      margin-top: -$legend-height/2;
+    }
+  }
+  &-line {
+    border-top-color: transparent !important;
+    border-left-color: transparent !important;
+    border-right-color: transparent !important;
+    border-bottom-color: $color-line-1;
+    border-radius: 0;
+    &.#{$il} {
+      .#{$ic} {
+        margin-top: -$font-size-4 / 2;
+      }
+    }
+    .#{$ic} {
+      padding-left: 0;
+      padding-right: 0;
+    }
+    legend {
+      margin-left: 0;
+      padding: 0;
+    }
+  }
+  &-textarea {
+    height: auto;
+
+    .#{$B} {
+      height: auto;
+      resize: vertical;
+    }
+    .#{$ic} {
+      padding: $padding;
+    }
+  }
+
+  &-invalid {
+    border-color: $color-danger-1;
+    legend {
+      color: $color-danger-1;
+    }
+    & + .#{$it} {
+      color: $color-danger-1;
     }
   }
 
@@ -72,40 +121,20 @@ $input-height: 36px;
     }
   }
 
-  &-invalid {
-    border-color: $color-danger-1;
-    legend {
-      color: $color-danger-1;
-    }
-  }
-
-  &-linetype {
-    border-width: 0;
-    border-bottom-width: 1px;
-    border-radius: 0;
-    .#{$ic} {
-      padding-left: 0;
-      padding-right: 0;
-    }
-    legend {
-      margin-left: 0;
-      padding: 0;
-    }
-  }
   &-con {
-    position: absolute;
-    left: 0;
-    bottom: 0;
     display: flex;
     align-items: center;
     width: 100%;
-    padding-left: 8px;
-    padding-right: 8px;
-    height: $input-height;
+    padding-left: $padding;
+    padding-right: $padding;
     box-sizing: border-box;
     color: $color-text-1;
-    .prefix {
-      margin-left: 10px;
+    * + .#{$B} {
+      margin-left: 5px;
+    }
+    .#{$B} {
+      padding-top: 0;
+      padding-bottom: 0;
     }
     .#{$prefix}-icon {
       svg {
@@ -114,6 +143,19 @@ $input-height: 36px;
         stroke-width: 1px;
         color: $color-text-1;
       }
+    }
+  }
+  &-tip {
+    font-size: $font-size-4;
+    line-height: $line-height-4;
+    margin-top: 2px;
+    padding-left: $padding;
+    position: relative;
+    min-height: 18px;
+    text-align: left;
+    em {
+      @include verticle-middle;
+      right: $padding;
     }
   }
 }
