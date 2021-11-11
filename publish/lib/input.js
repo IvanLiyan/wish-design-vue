@@ -879,7 +879,7 @@ _input_vue__WEBPACK_IMPORTED_MODULE_0__["default"].install = function (Vue) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _input_vue_vue_type_template_id_5aa61b47___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(132);
+/* harmony import */ var _input_vue_vue_type_template_id_07adc51f___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(132);
 /* harmony import */ var _input_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(134);
 /* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(88);
 
@@ -891,8 +891,8 @@ __webpack_require__.r(__webpack_exports__);
 
 var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
   _input_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _input_vue_vue_type_template_id_5aa61b47___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _input_vue_vue_type_template_id_5aa61b47___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _input_vue_vue_type_template_id_07adc51f___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _input_vue_vue_type_template_id_07adc51f___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
   null,
@@ -908,10 +908,10 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_input_vue_vue_type_template_id_5aa61b47___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(133);
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_input_vue_vue_type_template_id_5aa61b47___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_input_vue_vue_type_template_id_07adc51f___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(133);
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_input_vue_vue_type_template_id_07adc51f___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_input_vue_vue_type_template_id_5aa61b47___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_input_vue_vue_type_template_id_07adc51f___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
@@ -925,7 +925,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
 var render = function () {
 var _obj;
-var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{class:( _obj = {}, _obj[(_vm.prefix + "-wrapper")] = true, _obj[(_vm.prefix + "-disabled")] = _vm.disabled, _obj[(_vm.prefix + "-readonly")] = _vm.readonly, _obj[(_vm.prefix + "-invalid")] = _vm.invalid, _obj[(_vm.prefix + "-focused")] = _vm.focused, _obj ),style:(_vm.fullWidth ? { width: '100%' } : {})},[_c('fieldset',[_c('legend',{style:(!_vm.label ? { padding: 0 } : {})},[_vm._v(_vm._s(_vm.focused ? _vm.label : ''))]),_c('input',_vm._g(_vm._b({ref:"input",class:_vm.prefix,attrs:{"readonly":_vm.readonly,"disabled":_vm.disabled},domProps:{"value":_vm.inputValue}},'input',_vm.$attrs,false),_vm.inputLisenters))])])}
+var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('fieldset',{class:( _obj = {}, _obj[(_vm.inputPrefix + "-wrapper")] = true, _obj[(_vm.inputPrefix + "-" + _vm.type)] = _vm.type, _obj[(_vm.inputPrefix + "-with-label")] = _vm.label, _obj[(_vm.inputPrefix + "-disabled")] = _vm.disabled, _obj[(_vm.inputPrefix + "-invalid")] = _vm.isInvalid && !_vm.focused, _obj[(_vm.inputPrefix + "-focused")] = _vm.focused, _obj ),style:(_vm.fullWidth ? { width: '100%' } : {})},[(_vm.label)?_c('legend',[_vm._v(_vm._s(_vm.label))]):_vm._e(),_c('div',{class:(_vm.inputPrefix + "-con")},[_vm._t("prefix"),(_vm.type === 'textarea')?_c('textarea',_vm._g(_vm._b({ref:"input",class:_vm.inputPrefix,style:(_vm.textareaCalcStyle),attrs:{"disabled":_vm.disabled},domProps:{"value":_vm.inputValue}},'textarea',_vm.$attrs,false),_vm.inputLisenters)):_c('input',_vm._g(_vm._b({ref:"input",class:_vm.inputPrefix,attrs:{"disabled":_vm.disabled},domProps:{"value":_vm.inputValue}},'input',_vm.$attrs,false),_vm.inputLisenters)),_vm._t("suffix")],2)]),_c('div',{class:(_vm.inputPrefix + "-tip")},[(_vm.isInvalid && !_vm.focused)?_c('span',[_vm._v(_vm._s(_vm.validation || '请填写正确的内容'))]):_vm._e(),(_vm.type === 'textarea')?_c('em',[_vm._v(" "+_vm._s(_vm.inputValue.length)+"/ "+_vm._s(_vm.maxLength))]):_vm._e()])])}
 var staticRenderFns = []
 
 
@@ -953,6 +953,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _utils_config__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_utils_config__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _utils_key_codes__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(136);
 /* harmony import */ var _utils_key_codes__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_utils_key_codes__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _calcNodeHeight__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(137);
 
 //
 //
@@ -979,6 +980,26 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 
 
 
@@ -999,27 +1020,49 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   props: {
-    readonly: Boolean,
+    type: {
+      type: String,
+      validator: function validator(val) {
+        return ['line', 'textarea'].includes(val);
+      }
+    },
     disabled: Boolean,
     invalid: Boolean,
     fullWidth: Boolean,
-    label: String
+    label: String,
+    value: [String, Number],
+    validation: String,
+    autosize: {
+      type: [Boolean, Object],
+      default: false
+    },
+    maxLength: {
+      type: Number,
+      default: 100
+    }
   },
   data: function data() {
     return {
       focused: false,
       hovering: false,
-      isComposing: false
+      isComposing: false,
+      textareaCalcStyle: {}
     };
   },
 
 
   computed: {
-    prefix: function prefix() {
+    inputPrefix: function inputPrefix() {
       return this.config.getPrefixCls('input');
     },
     inputValue: function inputValue() {
       return this.hasValue ? this.value : '';
+    },
+    hasValue: function hasValue() {
+      return this.value === 0 || !!this.value;
+    },
+    isInvalid: function isInvalid() {
+      return this.type === 'textarea' && this.value && this.value.length > this.maxLength || this.invalid;
     },
     inputLisenters: function inputLisenters() {
       var lisenters = babel_runtime_core_js_object_assign__WEBPACK_IMPORTED_MODULE_0___default()({}, this.$listeners, {
@@ -1038,9 +1081,24 @@ __webpack_require__.r(__webpack_exports__);
       return lisenters;
     }
   },
+  watch: {
+    value: function value(val) {
+      if (this.type === 'textarea') {
+        this.$nextTick(this.resizeTextarea);
+      }
+    }
+  },
+  mounted: function mounted() {
+    this.resizeTextarea();
+  },
+
   methods: {
+    /**
+     * 输入框内容改变handle
+     */
     handleInput: function handleInput(event, options) {
       var value = event.target.value;
+      // 输入中触发
 
       if (value !== this.value) {
         this.$emit('input', value);
@@ -1048,10 +1106,15 @@ __webpack_require__.r(__webpack_exports__);
           this.$nextTick(this.setNativeInput);
         }
       }
+      // 输入结束后触发
       if (!this.isComposing || options && options.change) {
         this.$emit('change', value);
       }
     },
+
+    /**
+     * 处理事件集合
+     */
     handleComposition: function handleComposition(e) {
       var type = e.type;
 
@@ -1065,21 +1128,37 @@ __webpack_require__.r(__webpack_exports__);
         this.isComposing = true;
       }
     },
+
+    /**
+     * 设置input值
+     */
     setNativeInput: function setNativeInput() {
       var input = this.$refs.input;
 
       if (input && input.value !== this.value) {
-        input.value = this.inputValue;
+        this.value = input.value;
       }
     },
+
+    /**
+     * 获得焦点
+     */
     focus: function focus() {
       this.focused = true;
       this.$refs.input.focus();
     },
+
+    /**
+     * 失去焦点
+     */
     blur: function blur() {
       this.focused = false;
       this.$refs.input.blur();
     },
+
+    /**
+     * 处理键盘事件
+     */
     handleKeyup: function handleKeyup(e) {
       if (this.$listeners.keyup) {
         this.$emit('keyup', e);
@@ -1087,6 +1166,26 @@ __webpack_require__.r(__webpack_exports__);
       if (Object(_utils_key_codes__WEBPACK_IMPORTED_MODULE_3__["isKey"])(e, 'enter') && !this.isComposing) {
         this.$emit('enter', e);
       }
+    },
+
+    /**
+     * 设置textarea自适应高度
+     */
+    resizeTextarea: function resizeTextarea() {
+      if (this.$isServer) return;
+      if (!this.autosize) {
+        this.textareaCalcStyle = {
+          minHeight: Object(_calcNodeHeight__WEBPACK_IMPORTED_MODULE_4__["default"])(this.$refs.input).minHeight
+        };
+        return;
+      }
+      var _autosize = this.autosize,
+          _autosize$minRows = _autosize.minRows,
+          minRows = _autosize$minRows === undefined ? 2 : _autosize$minRows,
+          _autosize$maxRows = _autosize.maxRows,
+          maxRows = _autosize$maxRows === undefined ? 6 : _autosize$maxRows;
+
+      this.textareaCalcStyle = Object(_calcNodeHeight__WEBPACK_IMPORTED_MODULE_4__["default"])(this.$refs.input, minRows, maxRows);
     }
   }
 });
@@ -1096,6 +1195,94 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports) {
 
 module.exports = require("@wish/wt-vue/lib/utils/key-codes");
+
+/***/ }),
+/* 137 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return calcNodeHeight; });
+var HIDDEN_TEXTAREA_STYLE = '\n  min-height:0 !important;\n  max-height:none !important;\n  height:0 !important;\n  visibility:hidden !important;\n  overflow:hidden !important;\n  position:absolute !important;\n  z-index:-1000 !important;\n  top:0 !important;\n  right:0 !important\n';
+
+var SIZING_STYLE = ['letter-spacing', 'line-height', 'padding-top', 'padding-bottom', 'font-family', 'font-weight', 'font-size', 'font-variant', 'text-rendering', 'text-transform', 'width', 'text-indent', 'padding-left', 'padding-right', 'border-width', 'box-sizing'];
+
+var hiddenTextarea = void 0;
+
+function getNodeFloatAttr(nodeStyle, attr) {
+  return parseFloat(nodeStyle.getPropertyValue(attr) || 0);
+}
+
+function calcNodeStyling(node) {
+  var style = window.getComputedStyle(node);
+  var boxSizing = style.getPropertyValue('box-sizing');
+  var paddingSize = getNodeFloatAttr(style, 'padding-bottom') + getNodeFloatAttr(style, 'padding-top');
+  var borderSize = getNodeFloatAttr(style, 'border-bottom-width') + getNodeFloatAttr(style, 'border-top-width');
+
+  var sizingStyle = SIZING_STYLE.map(function (name) {
+    return name + ':' + style.getPropertyValue(name);
+  }).join(';');
+
+  return { boxSizing: boxSizing, paddingSize: paddingSize, borderSize: borderSize, sizingStyle: sizingStyle };
+};
+
+function calcNodeHeight(node) {
+  var minRows = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1;
+  var maxRows = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : null;
+
+  if (!hiddenTextarea) {
+    hiddenTextarea = document.createElement('textarea');
+    document.body.appendChild(hiddenTextarea);
+  }
+
+  var _calcNodeStyling = calcNodeStyling(node),
+      boxSizing = _calcNodeStyling.boxSizing,
+      paddingSize = _calcNodeStyling.paddingSize,
+      borderSize = _calcNodeStyling.borderSize,
+      sizingStyle = _calcNodeStyling.sizingStyle;
+
+  hiddenTextarea.setAttribute('style', sizingStyle + ';' + HIDDEN_TEXTAREA_STYLE);
+  hiddenTextarea.value = node.value || node.placeholder || '';
+
+  var height = hiddenTextarea.scrollHeight;
+
+  if (boxSizing === 'border-box') {
+    height = height + borderSize;
+  } else if (boxSizing === 'content-box') {
+    height = height - paddingSize;
+  }
+
+  hiddenTextarea.value = 'x';
+
+  var result = {};
+  var singleRowHeight = hiddenTextarea.scrollHeight - paddingSize;
+
+  if (minRows !== null) {
+    var minHeight = singleRowHeight * minRows;
+
+    if (boxSizing === 'border-box') {
+      minHeight = minHeight + paddingSize + borderSize;
+    }
+
+    height = Math.max(minHeight, height);
+    result.minHeight = minHeight + 'px';
+  }
+  if (maxRows !== null) {
+    var maxHeight = singleRowHeight * maxRows;
+
+    if (boxSizing === 'border-box') {
+      maxHeight = maxHeight + paddingSize + borderSize;
+    }
+
+    height = Math.min(maxHeight, height);
+  }
+
+  result.height = height + 'px';
+  hiddenTextarea.parentNode && hiddenTextarea.parentNode.removeChild(hiddenTextarea);
+  hiddenTextarea = null;
+
+  return result;
+};
 
 /***/ })
 /******/ ]);
