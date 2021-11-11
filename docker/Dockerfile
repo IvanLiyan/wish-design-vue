@@ -1,5 +1,5 @@
 # build environment
-FROM node:10.16.0 as build
+FROM node:14.17.6 as build
 WORKDIR /tmp
 # ENV PATH /app/node_modules/.bin:$PATH
 COPY . ./
