@@ -3,12 +3,12 @@ import { CONFIG_PROVIDER, getPrefixCls, getIconCls } from '@wish/wt-vue/es/utils
 var feather = require('feather-icons');
 
 var __vue_render__ = function __vue_render__() {
-  var _vm = this;var _h = _vm.$createElement;var _c = _vm._self._c || _h;return _c('i', _vm._g({ class: _vm.prefix, domProps: { "innerHTML": _vm._s(_vm.feather.icons[_vm.name].toSvg({
+  var _vm = this;var _h = _vm.$createElement;var _c = _vm._self._c || _h;return _c('i', _vm._g(_vm._b({ class: _vm.prefix + " " + _vm.prefix + "-" + _vm.name, domProps: { "innerHTML": _vm._s(_vm.feather.icons[_vm.name].toSvg({
         color: _vm.color,
         width: _vm.width,
         height: _vm.height,
         'stroke-width': _vm.strokeWidth
-      })) } }, _vm.$listeners));
+      })) } }, 'i', _vm.$attrs, false), _vm.$listeners));
 };
 var __vue_staticRenderFns__ = [];
 
