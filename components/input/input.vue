@@ -33,6 +33,7 @@
           ref="input"
           v-on="inputLisenters"
         />
+        <Icon v-if="showClearIcon" name="x-circle" @click.stop="handleClear" />
         <slot name="suffix"></slot>
       </div>
     </fieldset>
@@ -73,6 +74,7 @@ export default {
     label: String,
     value: [String, Number],
     validation: String,
+    clearable: Boolean,
     autosize: {
       type: [Boolean, Object],
       default: false,
@@ -94,6 +96,9 @@ export default {
   computed: {
     inputPrefix() {
       return this.config.getPrefixCls('input');
+    },
+    showClearIcon() {
+      return this.clearable && this.value && !this.disabled;
     },
     inputValue() {
       return this.hasValue ? this.value : '';
@@ -137,15 +142,17 @@ export default {
      */
     handleInput(event, options) {
       const { value } = event.target;
+
       // 输入中触发
       if (value !== this.value) {
         this.$emit('input', value);
         if (!this.isComposing) {
-          this.$nextTick(this.setNativeInput);
+          this.$nextTick(() => this.setNativeInput(value));
         }
       }
       // 输入结束后触发
       if (!this.isComposing || (options && options.change)) {
+        console.log('emit change');
         this.$emit('change', value);
       }
     },
@@ -167,10 +174,9 @@ export default {
     /**
      * 设置input值
      */
-    setNativeInput() {
-      const { input } = this.$refs;
-      if (input && input.value !== this.value) {
-        this.value = input.value;
+    setNativeInput(value) {
+      if (value !== this.value) {
+        this.value = value;
       }
     },
     /**
@@ -211,6 +217,13 @@ export default {
       }
       const { minRows = 2, maxRows = 6 } = this.autosize;
       this.textareaCalcStyle = calcNodeHeight(this.$refs.input, minRows, maxRows);
+    },
+    /**
+     * 清楚输入框文本内容
+     */
+    handleClear() {
+      this.$emit('clear');
+      this.handleInput({ target: { value: '' } });
     },
   },
 };

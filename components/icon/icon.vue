@@ -1,6 +1,7 @@
 <template>
   <i
-    :class="prefix"
+    :class="`${prefix} ${prefix}-${name}`"
+    v-bind="$attrs"
     v-on="$listeners"
     v-html="
       feather.icons[name].toSvg({

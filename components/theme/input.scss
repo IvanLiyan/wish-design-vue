@@ -92,6 +92,11 @@ $padding: 8px;
     }
     .#{$ic} {
       padding: $padding;
+      .#{$prefix}-icon-x-circle {
+        position: absolute;
+        top: 0;
+        right: 4px;
+      }
     }
   }
 
@@ -142,6 +147,20 @@ $padding: 8px;
         height: 20px;
         stroke-width: 2px;
         color: $color-text-1;
+      }
+    }
+    .#{$prefix}-icon-x-circle {
+      margin-left: 5px;
+      padding-left: 4px;
+      padding-top: 4px;
+      padding-bottom: 4px;
+      & + * {
+        margin-left: 5px;
+      }
+      svg {
+        color: $color-text-4;
+        width: 14px;
+        height: 14px;
       }
     }
   }
