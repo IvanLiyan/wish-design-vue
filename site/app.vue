@@ -177,7 +177,7 @@ export default {
   border-bottom: 1px solid rgba(0, 0, 0, 0.06);
   padding: 0 24px;
   flex-direction: row-reverse;
-
+  z-index: 999;
   font-size: $font-size-2;
   a {
     margin-right: 20px;

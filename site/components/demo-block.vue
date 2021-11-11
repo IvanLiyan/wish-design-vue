@@ -89,7 +89,7 @@ export default {
 };
 </script>
 <style lang="scss">
-$content-width: 960px;
+$content-width: 1100px;
 $demo-control-padding: 8px;
 $demo-control-height: 50px;
 $color-line-2: #edf0f7;

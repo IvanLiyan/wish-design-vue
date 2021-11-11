@@ -151,7 +151,6 @@ $border: 1px solid $color-line-1;
 }
 .page-mk {
   padding: 0 20px;
-  padding-right: 150px;
 }
 // reset markdown page css
 .mk-content {

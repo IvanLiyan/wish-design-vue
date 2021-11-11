@@ -29,3 +29,5 @@
 13、npm run start ———— 本地启动组件 web 服务
 
 14、npm run build:deploy ———— 0 操作后，构建部署服务（用于生产）
+
+本地镜像模拟：docker build . --file ./docker/Dockerfile
