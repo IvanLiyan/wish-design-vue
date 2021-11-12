@@ -62,7 +62,7 @@
 
 ## API
 
-<api-doc name="Button" :doc="require('./api.json')"></api-doc>
+<api-doc name="Input" :doc="require('./api.json')"></api-doc>
 
 ### Show all, for UI check
 
