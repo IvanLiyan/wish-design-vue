@@ -17,9 +17,9 @@
         <textarea
           v-if="type === 'textarea'"
           v-bind="$attrs"
-          :value="inputValue"
           :disabled="disabled"
           :class="inputPrefix"
+          :value="inputValue"
           ref="input"
           v-on="inputLisenters"
           :style="textareaCalcStyle"
@@ -27,9 +27,9 @@
         <input
           v-else
           v-bind="$attrs"
-          :value="inputValue"
           :disabled="disabled"
           :class="inputPrefix"
+          :value="inputValue"
           ref="input"
           v-on="inputLisenters"
         />
@@ -54,6 +54,7 @@ export default {
   components: {
     Icon,
   },
+
   inheritAttrs: false,
   inject: {
     config: {
@@ -66,7 +67,7 @@ export default {
   props: {
     type: {
       type: String,
-      validator: (val) => ['line', 'textarea'].includes(val),
+      validator: (val) => !val || ['line', 'textarea'].includes(val),
     },
     disabled: Boolean,
     invalid: Boolean,
@@ -90,6 +91,8 @@ export default {
       hovering: false,
       isComposing: false,
       textareaCalcStyle: {},
+      nativeValue: '',
+      noModel: false,
     };
   },
 
@@ -101,7 +104,7 @@ export default {
       return this.clearable && this.value && !this.disabled;
     },
     inputValue() {
-      return this.hasValue ? this.value : '';
+      return this.noModel ? this.nativeValue : this.value || '';
     },
     hasValue() {
       return this.value === 0 || !!this.value;
@@ -112,6 +115,7 @@ export default {
     inputLisenters() {
       const lisenters = Object.assign({}, this.$listeners, {
         input: this.handleInput,
+
         focus: this.focus,
         blur: this.blur,
         keyup: this.handleKeyup,
@@ -134,7 +138,9 @@ export default {
     },
   },
   mounted() {
-    this.resizeTextarea();
+    if (this.type === 'textarea') {
+      this.resizeTextarea();
+    }
   },
   methods: {
     /**
@@ -142,22 +148,18 @@ export default {
      */
     handleInput(event, options) {
       const { value } = event.target;
-
       // 输入中触发
       if (value !== this.value) {
         this.$emit('input', value);
         if (!this.isComposing) {
           this.$nextTick(() => this.setNativeInput(value));
+          this.$emit('change', value);
         }
       }
-      // 输入结束后触发
-      if (!this.isComposing || (options && options.change)) {
-        console.log('emit change');
-        this.$emit('change', value);
-      }
     },
+
     /**
-     * 处理事件集合
+     * 处理输入中文的合成事件
      */
     handleComposition(e) {
       const { type } = e;
@@ -166,7 +168,7 @@ export default {
       }
       if (type === 'compositionend') {
         this.isComposing = false;
-        this.handleInput(e, { change: true });
+        this.handleInput(e);
       } else {
         this.isComposing = true;
       }
@@ -175,22 +177,27 @@ export default {
      * 设置input值
      */
     setNativeInput(value) {
-      if (value !== this.value) {
-        this.value = value;
+      const { input } = this.$refs;
+      if (input && input.value !== this.value) {
+        // 若没有v-model，则两个值会不同
+        this.noModel = true;
+        this.nativeValue = input.value;
       }
     },
     /**
      * 获得焦点
      */
-    focus() {
+    focus(e) {
       this.focused = true;
+      this.$emit('focus', e);
       this.$refs.input.focus();
     },
     /**
      * 失去焦点
      */
-    blur() {
+    blur(e) {
       this.focused = false;
+      this.$emit('blur', e);
       this.$refs.input.blur();
     },
     /**

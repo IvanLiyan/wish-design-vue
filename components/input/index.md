@@ -60,15 +60,9 @@
 
 ### Attributes
 
-| 参数 | 说明 | 类型 | 可选值 | 默认值 |
-| ---- | ---- | ---- | ------ | ------ |
-| —    | —    | —    | —      | —      |
+## API
 
-### Events
-
-| 事件名称 | 说明 | 回调参数 |
-| -------- | ---- | -------- |
-| —        | —    | —        |
+<api-doc name="Button" :doc="require('./api.json')"></api-doc>
 
 ### Show all, for UI check
 

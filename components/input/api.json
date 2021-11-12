@@ -1,0 +1,87 @@
+{
+  "props": [
+    {
+      "name": "type",
+      "desc": "类型",
+      "type": "string",
+      "optionalValue": ["不设置", "line", "textarea"],
+      "default": "不设置",
+      "version": ""
+    },
+
+    {
+      "name": "clearable",
+      "desc": "是否有清空按钮",
+      "type": "boolean",
+      "optionalValue": "",
+      "default": "false",
+      "version": ""
+    },
+    {
+      "name": "invalid",
+      "desc": "是否是错误状态",
+      "type": "boolean",
+      "optionalValue": "",
+      "default": "",
+      "version": ""
+    },
+    {
+      "name": "disabled",
+      "desc": "是否禁用",
+      "type": "boolean",
+      "optionalValue": "",
+      "default": "false",
+      "version": ""
+    },
+
+    {
+      "name": "value(v-model)",
+      "desc": "输入框的内容,若需要双向数据绑定，请使用v-model",
+      "type": "string",
+      "optionalValue": "",
+      "default": "",
+      "version": ""
+    },
+    {
+      "name": "autosize",
+      "desc": "自适应内容高度, 可传入对象，如，{ minRows: 2, maxRows: 6 }",
+      "type": ["boolean", "object"],
+      "optionalValue": "",
+      "default": "{ minRows: 2, maxRows: 6 }",
+      "version": ""
+    }
+  ],
+  "slots": [
+    {
+      "name": "prefix",
+      "desc": "输入框头部图标插槽"
+    },
+    {
+      "name": "suffix",
+      "desc": "输入框尾部图标插槽"
+    }
+  ],
+  "events": [
+    {
+      "name": "input",
+      "desc": "当输入值改变时触发",
+      "args": "(value: string)"
+    },
+    {
+      "name": "change",
+      "desc": "当输入值改变时触发，拼音输入过程中将不再触发，如有需要可使用 input 事件",
+      "args": "(value: string)"
+    },
+    {
+      "name": "clear",
+      "desc": "当点击清空按钮时触发",
+      "args": ""
+    },
+    {
+      "name": "enter",
+      "desc": "用户按下回车时触发，在中文输入过程中按下回车不会触发",
+      "args": "(event: Event)",
+      "version": "0.3.5"
+    }
+  ]
+}
