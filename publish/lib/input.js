@@ -879,7 +879,7 @@ _input_vue__WEBPACK_IMPORTED_MODULE_0__["default"].install = function (Vue) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _input_vue_vue_type_template_id_3464609a___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(132);
+/* harmony import */ var _input_vue_vue_type_template_id_43ffb341___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(132);
 /* harmony import */ var _input_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(134);
 /* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(88);
 
@@ -891,8 +891,8 @@ __webpack_require__.r(__webpack_exports__);
 
 var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
   _input_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _input_vue_vue_type_template_id_3464609a___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _input_vue_vue_type_template_id_3464609a___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _input_vue_vue_type_template_id_43ffb341___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _input_vue_vue_type_template_id_43ffb341___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
   null,
@@ -908,10 +908,10 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_input_vue_vue_type_template_id_3464609a___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(133);
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_input_vue_vue_type_template_id_3464609a___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_input_vue_vue_type_template_id_43ffb341___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(133);
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_input_vue_vue_type_template_id_43ffb341___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_input_vue_vue_type_template_id_3464609a___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_input_vue_vue_type_template_id_43ffb341___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
@@ -925,7 +925,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
 var render = function () {
 var _obj;
-var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('fieldset',{class:( _obj = {}, _obj[(_vm.inputPrefix + "-wrapper")] = true, _obj[(_vm.inputPrefix + "-" + _vm.type)] = _vm.type, _obj[(_vm.inputPrefix + "-with-label")] = _vm.label, _obj[(_vm.inputPrefix + "-disabled")] = _vm.disabled, _obj[(_vm.inputPrefix + "-invalid")] = _vm.isInvalid && !_vm.focused, _obj[(_vm.inputPrefix + "-focused")] = _vm.focused, _obj ),style:(_vm.fullWidth ? { width: '100%' } : {})},[(_vm.label)?_c('legend',[_vm._v(_vm._s(_vm.label))]):_vm._e(),_c('div',{class:(_vm.inputPrefix + "-con")},[_vm._t("prefix"),(_vm.type === 'textarea')?_c('textarea',_vm._g(_vm._b({ref:"input",class:_vm.inputPrefix,style:(_vm.textareaCalcStyle),attrs:{"disabled":_vm.disabled},domProps:{"value":_vm.inputValue}},'textarea',_vm.$attrs,false),_vm.inputLisenters)):_c('input',_vm._g(_vm._b({ref:"input",class:_vm.inputPrefix,attrs:{"disabled":_vm.disabled},domProps:{"value":_vm.inputValue}},'input',_vm.$attrs,false),_vm.inputLisenters)),(_vm.showClearIcon)?_c('Icon',{attrs:{"name":"x-circle"},on:{"click":function($event){$event.stopPropagation();return _vm.handleClear.apply(null, arguments)}}}):_vm._e(),_vm._t("suffix")],2)]),_c('div',{class:(_vm.inputPrefix + "-tip")},[(_vm.isInvalid && !_vm.focused)?_c('span',[_vm._v(_vm._s(_vm.validation || '请填写正确的内容'))]):_vm._e(),(_vm.type === 'textarea')?_c('em',[_vm._v(" "+_vm._s(_vm.inputValue.length)+"/ "+_vm._s(_vm.maxLength))]):_vm._e()])])}
+var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('fieldset',{class:( _obj = {}, _obj[(_vm.inputPrefix + "-wrapper")] = true, _obj[(_vm.inputPrefix + "-" + _vm.type)] = _vm.type, _obj[(_vm.inputPrefix + "-with-label")] = _vm.label, _obj[(_vm.inputPrefix + "-disabled")] = _vm.disabled, _obj[(_vm.inputPrefix + "-invalid")] = _vm.isInvalid && !_vm.focused, _obj[(_vm.inputPrefix + "-focused")] = _vm.focused, _obj ),style:(_vm.fullWidth ? { width: '100%' } : {})},[(_vm.label)?_c('legend',[_vm._v(_vm._s(_vm.label))]):_vm._e(),_c('div',{class:(_vm.inputPrefix + "-con")},[_vm._t("prefix"),(_vm.type === 'textarea')?_c('textarea',_vm._g(_vm._b({ref:"input",class:_vm.inputPrefix,style:(_vm.textareaCalcStyle),attrs:{"disabled":_vm.disabled},domProps:{"value":_vm.inputValue}},'textarea',_vm.$attrs,false),_vm.inputLisenters)):_c('input',_vm._g(_vm._b({ref:"input",class:_vm.inputPrefix,attrs:{"disabled":_vm.disabled},domProps:{"value":_vm.inputValue}},'input',_vm.$attrs,false),_vm.inputLisenters)),(_vm.showClearIcon)?_c('Icon',{attrs:{"name":"x-circle"},on:{"click":function($event){$event.stopPropagation();return _vm.handleClear.apply(null, arguments)}}}):_vm._e(),_vm._t("suffix")],2)]),_c('div',{class:(_vm.inputPrefix + "-tip")},[(_vm.isInvalid && !_vm.focused)?_c('span',[_vm._v(_vm._s(_vm.validationText))]):_vm._e(),(_vm.type === 'textarea')?_c('em',[_vm._v(" "+_vm._s(_vm.inputValue.length)+"/ "+_vm._s(_vm.maxLength))]):_vm._e()])])}
 var staticRenderFns = []
 
 
@@ -1011,6 +1011,7 @@ __webpack_require__.r(__webpack_exports__);
   components: {
     Icon: _components_icon__WEBPACK_IMPORTED_MODULE_1___default.a
   },
+
   inheritAttrs: false,
   inject: {
     config: {
@@ -1024,7 +1025,7 @@ __webpack_require__.r(__webpack_exports__);
     type: {
       type: String,
       validator: function validator(val) {
-        return ['line', 'textarea'].includes(val);
+        return !val || ['line', 'textarea'].includes(val);
       }
     },
     disabled: Boolean,
@@ -1047,8 +1048,10 @@ __webpack_require__.r(__webpack_exports__);
     return {
       focused: false,
       hovering: false,
-      isComposing: false,
-      textareaCalcStyle: {}
+      isComposing: false, // 是否在拼音拼写中
+      textareaCalcStyle: {},
+      nativeValue: '', // input自身值
+      noModel: false // 没有双向绑定
     };
   },
 
@@ -1058,16 +1061,24 @@ __webpack_require__.r(__webpack_exports__);
       return this.config.getPrefixCls('input');
     },
     showClearIcon: function showClearIcon() {
-      return this.clearable && this.value && !this.disabled;
+      return this.clearable && this.inputValue && !this.disabled;
+    },
+    validationText: function validationText() {
+      var tip = this.validation || '请填写正确的内容';
+      if (this.inputValue.length > this.maxLength) {
+        tip = '字数超过限制最大长度';
+      }
+      return tip;
     },
     inputValue: function inputValue() {
-      return this.hasValue ? this.value : '';
-    },
-    hasValue: function hasValue() {
-      return this.value === 0 || !!this.value;
+      var value = this.noModel ? this.nativeValue : this.value || '';
+      if (this.type !== 'textarea') {
+        value = value.slice(0, this.maxLength);
+      }
+      return value;
     },
     isInvalid: function isInvalid() {
-      return this.type === 'textarea' && this.value && this.value.length > this.maxLength || this.invalid;
+      return this.type === 'textarea' && this.inputValue && this.inputValue.length > this.maxLength || this.invalid;
     },
     inputLisenters: function inputLisenters() {
       var lisenters = babel_runtime_core_js_object_assign__WEBPACK_IMPORTED_MODULE_0___default()({}, this.$listeners, {
@@ -1094,7 +1105,9 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   mounted: function mounted() {
-    this.resizeTextarea();
+    if (this.type === 'textarea') {
+      this.resizeTextarea();
+    }
   },
 
   methods: {
@@ -1102,29 +1115,20 @@ __webpack_require__.r(__webpack_exports__);
      * 输入框内容改变handle
      */
     handleInput: function handleInput(event, options) {
-      var _this = this;
-
       var value = event.target.value;
-
-      // 输入中触发
 
       if (value !== this.value) {
         this.$emit('input', value);
         if (!this.isComposing) {
-          this.$nextTick(function () {
-            return _this.setNativeInput(value);
-          });
+          this.setNativeInput(value);
+          this.$emit('change', value);
         }
-      }
-      // 输入结束后触发
-      if (!this.isComposing || options && options.change) {
-        console.log('emit change');
-        this.$emit('change', value);
       }
     },
 
+
     /**
-     * 处理事件集合
+     * 处理输入中文的合成事件
      */
     handleComposition: function handleComposition(e) {
       var type = e.type;
@@ -1134,7 +1138,7 @@ __webpack_require__.r(__webpack_exports__);
       }
       if (type === 'compositionend') {
         this.isComposing = false;
-        this.handleInput(e, { change: true });
+        this.handleInput(e);
       } else {
         this.isComposing = true;
       }
@@ -1144,24 +1148,30 @@ __webpack_require__.r(__webpack_exports__);
      * 设置input值
      */
     setNativeInput: function setNativeInput(value) {
-      if (value !== this.value) {
-        this.value = value;
+      var input = this.$refs.input;
+
+      if (input && input.value !== this.value) {
+        // 若没有v-model，则两个值会不同
+        this.noModel = true;
+        this.nativeValue = input.value;
       }
     },
 
     /**
      * 获得焦点
      */
-    focus: function focus() {
+    focus: function focus(e) {
       this.focused = true;
+      this.$emit('focus', e);
       this.$refs.input.focus();
     },
 
     /**
      * 失去焦点
      */
-    blur: function blur() {
+    blur: function blur(e) {
       this.focused = false;
+      this.$emit('blur', e);
       this.$refs.input.blur();
     },
 
@@ -1203,6 +1213,8 @@ __webpack_require__.r(__webpack_exports__);
     handleClear: function handleClear() {
       this.$emit('clear');
       this.handleInput({ target: { value: '' } });
+      // 防止组件没有model绑定，需要额外设置input的值为''
+      this.nativeValue = '';
     }
   }
 });
