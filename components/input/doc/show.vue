@@ -200,7 +200,6 @@
     <h3>input、change、focus事件</h3>
     <div class="demo-input-container">
       <wt-input
-        type="textarea"
         placeholder="请输入"
         clearable
         autosize
@@ -214,7 +213,6 @@
     <div class="demo-input-container">
       <wt-input
         type="textarea"
-        invalid
         placeholder="请输入"
         validation="请输入正确的内容"
         clearable

@@ -33,6 +33,14 @@
       "default": "false",
       "version": ""
     },
+    {
+      "name": "max-length",
+      "desc": "限制输入的最大长度",
+      "type": "Number",
+      "optionalValue": "",
+      "default": "100",
+      "version": ""
+    },
 
     {
       "name": "value(v-model)",

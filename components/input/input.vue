@@ -38,7 +38,7 @@
       </div>
     </fieldset>
     <div :class="`${inputPrefix}-tip`">
-      <span v-if="isInvalid && !focused">{{ validation || '请填写正确的内容' }}</span>
+      <span v-if="isInvalid && !focused">{{ validationText }}</span>
       <em v-if="type === 'textarea'"> {{ inputValue.length }}/ {{ maxLength }}</em>
     </div>
   </div>
@@ -89,10 +89,10 @@ export default {
     return {
       focused: false,
       hovering: false,
-      isComposing: false,
+      isComposing: false, // 是否在拼音拼写中
       textareaCalcStyle: {},
-      nativeValue: '',
-      noModel: false,
+      nativeValue: '', // input自身值
+      noModel: false, // 没有双向绑定
     };
   },
 
@@ -101,21 +101,28 @@ export default {
       return this.config.getPrefixCls('input');
     },
     showClearIcon() {
-      return this.clearable && this.value && !this.disabled;
+      return this.clearable && this.inputValue && !this.disabled;
+    },
+    validationText() {
+      let tip = this.validation || '请填写正确的内容';
+      if (this.inputValue.length > this.maxLength) {
+        tip = '字数超过限制最大长度';
+      }
+      return tip;
     },
     inputValue() {
-      return this.noModel ? this.nativeValue : this.value || '';
-    },
-    hasValue() {
-      return this.value === 0 || !!this.value;
+      let value = this.noModel ? this.nativeValue : this.value || '';
+      if (this.type !== 'textarea') {
+        value = value.slice(0, this.maxLength);
+      }
+      return value;
     },
     isInvalid() {
-      return (this.type === 'textarea' && this.value && this.value.length > this.maxLength) || this.invalid;
+      return (this.type === 'textarea' && this.inputValue && this.inputValue.length > this.maxLength) || this.invalid;
     },
     inputLisenters() {
       const lisenters = Object.assign({}, this.$listeners, {
         input: this.handleInput,
-
         focus: this.focus,
         blur: this.blur,
         keyup: this.handleKeyup,
@@ -148,11 +155,10 @@ export default {
      */
     handleInput(event, options) {
       const { value } = event.target;
-      // 输入中触发
       if (value !== this.value) {
         this.$emit('input', value);
         if (!this.isComposing) {
-          this.$nextTick(() => this.setNativeInput(value));
+          this.setNativeInput(value);
           this.$emit('change', value);
         }
       }
@@ -231,6 +237,8 @@ export default {
     handleClear() {
       this.$emit('clear');
       this.handleInput({ target: { value: '' } });
+      // 防止组件没有model绑定，需要额外设置input的值为''
+      this.nativeValue = '';
     },
   },
 };
