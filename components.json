@@ -4,5 +4,6 @@
   "col": "components/col",
   "icon": "components/icon",
   "button-group": "components/button-group",
-  "input": "components/input"
+  "input": "components/input",
+  "radio": "components/radio"
 }

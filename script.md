@@ -31,3 +31,5 @@
 14、npm run build:deploy ———— 0 操作后，构建部署服务（用于生产）
 
 本地镜像模拟：docker build . --file ./docker/Dockerfile
+
+"build": "cross-env NODE_ENV=production npm run build:all",

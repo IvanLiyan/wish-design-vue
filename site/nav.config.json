@@ -26,6 +26,11 @@
             "path": "input",
             "name": "Input",
             "cnName": "文本输入框"
+          },
+          {
+            "path": "radio",
+            "name": "Radio",
+            "cnName": "单选框"
           }
         ]
       }

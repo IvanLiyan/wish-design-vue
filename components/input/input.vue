@@ -158,7 +158,7 @@ export default {
       if (value !== this.value) {
         this.$emit('input', value);
         if (!this.isComposing) {
-          this.setNativeInput(value);
+          this.$nextTick(() => this.setNativeInput(value));
           this.$emit('change', value);
         }
       }
@@ -183,11 +183,10 @@ export default {
      * 设置input值
      */
     setNativeInput(value) {
-      const { input } = this.$refs;
-      if (input && input.value !== this.value) {
+      if (value !== this.value) {
         // 若没有v-model，则两个值会不同
         this.noModel = true;
-        this.nativeValue = input.value;
+        this.nativeValue = value;
       }
     },
     /**
@@ -235,10 +234,9 @@ export default {
      * 清楚输入框文本内容
      */
     handleClear() {
-      this.$emit('clear');
       this.handleInput({ target: { value: '' } });
-      // 防止组件没有model绑定，需要额外设置input的值为''
       this.nativeValue = '';
+      this.$emit('clear');
     },
   },
 };

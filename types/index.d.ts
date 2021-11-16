@@ -5,6 +5,7 @@ import { Col } from './col';
 import { Icon } from './icon';
 import { ButtonGroup } from './button-group';
 import { Input } from './input';
+import { Radio } from './radio';
 import { Confirm as WTConfirm } from './confirm';
 import {
   Message as WTMessage,
@@ -28,6 +29,7 @@ export {
   Icon,
   ButtonGroup,
   Input,
+  Radio,
   FormRule,
   FormRules,
   NotificationOptions,

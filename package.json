@@ -10,7 +10,7 @@
     "build:deploy": "npm run clean && npm run build:themeIndex && cross-env NODE_ENV=production webpack --progress --config build/webpack.deploy.conf.js",
     "release": "node script/release.js",
     "clean": "cd publish && rimraf lib es dist types test/**/coverage",
-    "build": "cross-env NODE_ENV=production npm run build:all",
+    "build": " npm run build:all",
     "build:all": "npm run clean && npm run build:srcIndex && npm run build:component && npm run build:index && npm run build:utils && npm run build:distIndex && npm run build:es && npm run build:themeIndex && npm run build:style && npm run build:typesIndex && npm run copy:types",
     "build:srcIndex": "node build/bin/build-entry.js",
     "build:themeIndex": "node build/bin/build-theme-index.js",
