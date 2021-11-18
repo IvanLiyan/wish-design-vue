@@ -1,6 +1,13 @@
+import { withRadioGroup } from '../radio-group';
 import Radio from './radio.vue';
+
+export { Radio };
+
+const RadioCom = withRadioGroup(Radio.name, Radio);
+
 /* istanbul ignore next */
-Radio.install = function (Vue) {
-  Vue.component(Radio.name, Radio);
+RadioCom.install = function (Vue) {
+  Vue.component(RadioCom.name, RadioCom);
 };
-export default Radio;
+
+export default RadioCom;

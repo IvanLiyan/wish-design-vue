@@ -1,25 +1,38 @@
 <style lang="scss">
-  .demo-input-container,.demo-input-group{
+  .demo-radio-container,.demo-input-group{
     display:flex;
     justify-content: center;
     margin-bottom:20px;
-    &>div{
+    label{
         margin-right:10px;
         &:last-child{
             margin-right:0;
         }
     }
   }
-  .demo-input-group{
-      justify-content: start;
-  }
+ 
 </style>
 
 # 单选框 / Radio
 
 用于多个选项（一般一组不超过 5 个）的选择输入，状态的切换。
 
-基本使用，可自定义内置标题，占位符，图标，标签，提示和验证。
-
-:::include(src="./doc/base-radio.vue")
+:::include(src="./doc/status-radio.vue")
 :::
+
+:::include(src="./doc/horizontal-radio.vue")
+:::
+
+:::include(src="./doc/vertical-radio.vue")
+:::
+
+### show all for qa test
+
+:::include(src="./doc/show.vue")
+:::
+
+## API
+
+<api-doc name="Radio" :doc="require('./api.json')"></api-doc>
+
+<api-doc name="RadioGroup" :doc="require('../radio-group/api.json')"></api-doc>

@@ -6,6 +6,7 @@ import Icon from 'components/icon';
 import ButtonGroup from 'components/button-group';
 import Input from 'components/input';
 import Radio from 'components/radio';
+import RadioGroup from 'components/radio-group';
 import CollapseTransition from './transitions/collapse-transition';
 
 const components = [
@@ -16,6 +17,7 @@ const components = [
   ButtonGroup,
   Input,
   Radio,
+  RadioGroup,
   CollapseTransition,
 ];
 
@@ -47,6 +49,7 @@ export {
   ButtonGroup,
   Input,
   Radio,
+  RadioGroup,
   CollapseTransition,
 };
 

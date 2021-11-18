@@ -1,0 +1,35 @@
+{
+  "props": [
+    {
+      "name": "disabled",
+      "desc": "禁用状态",
+      "type": "boolean",
+      "optionalValue": "",
+      "default": "false",
+      "version": ""
+    },
+    {
+      "name": "value",
+      "desc": "当前选中的值",
+      "type": "any",
+      "optionalValue": "",
+      "default": "",
+      "version": ""
+    },
+    {
+      "name": "name",
+      "desc": "RadioGroup 下所有 input[type='radio'] 的 name 属性",
+      "type": "string",
+      "optionalValue": "",
+      "default": "",
+      "version": ""
+    }
+  ],
+  "events": [
+    {
+      "name": "input",
+      "desc": "在选项状态发生改变时触发，返回当前状态。",
+      "args": "(value: any)"
+    }
+  ]
+}

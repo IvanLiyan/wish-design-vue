@@ -158,6 +158,7 @@ export default {
       if (value !== this.value) {
         this.$emit('input', value);
         if (!this.isComposing) {
+          this.setNativeInput(value);
           this.$nextTick(() => this.setNativeInput(value));
           this.$emit('change', value);
         }

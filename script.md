@@ -33,3 +33,5 @@
 本地镜像模拟：docker build . --file ./docker/Dockerfile
 
 deploy.conf 文件里面的代码压缩和 source map 打开
+
+代码高亮功能打开 highlight.js

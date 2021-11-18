@@ -1,8 +1,9 @@
 <template>
-  <label :class="wrapperCls">
-    <input type="radio" />
+  <label :class="wrapperCls" @click.prevent="handleClick">
+    <input type="radio" style="display: none" :name="name" />
     <span :class="`${prefix}-inner`"></span>
     <span :class="`${prefix}-text`"><slot></slot></span>
+    <span :class="`${prefix}-hint`"><slot name="hint"></slot></span>
   </label>
 </template>
 <script>
@@ -20,9 +21,17 @@ export default {
     },
   },
   props: {
-    value: [String, Number],
-    checked: Boolean,
-    disabled: Boolean,
+    value: [String, Number, Boolean, Function, Object, Array, Symbol],
+    checked: {
+      type: Boolean,
+      default: false,
+    },
+    disabled: {
+      type: Boolean,
+      default: false,
+    },
+    name: String,
+    hint: String,
   },
   computed: {
     prefix() {
@@ -37,6 +46,16 @@ export default {
           [`${prefix}-disabled`]: this.disabled,
         },
       ];
+    },
+  },
+  methods: {
+    handleClick($event) {
+      if (!this.disabled && !this.checked) {
+        this.$emit('input', true);
+      }
+      if (!this.disabled) {
+        this.$emit('click', $event);
+      }
     },
   },
 };

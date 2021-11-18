@@ -1,8 +1,70 @@
 @import './common/var.scss';
 @import './mixins/mixins.scss';
+
+$radio-width: 18px;
+$radio-inner-width: 10px;
+$radio-border-width: 2px;
+
 @include c(radio) {
-  &-checked {
+  font-size: $font-size-2;
+  line-height: $line-height-2;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+
+  $ri: $B + '-inner';
+  $rh: $B + '-hint';
+
+  @include e('inner') {
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    width: $radio-width;
+    height: $radio-width;
+    flex: 0 0 auto;
+    color: $color-text-1;
+    border-radius: 50%;
+    transition: all 0.5s ease-in-out;
+    background-color: $color-white;
+    border: $radio-border-width solid $color-text-1;
+
+    &::after {
+      $radio-checked-after-offset: ($radio-width - 2 * $radio-border-width - $radio-inner-width) / 2;
+      position: absolute;
+      content: '';
+      top: $radio-checked-after-offset;
+      left: $radio-checked-after-offset;
+      width: $radio-inner-width;
+      height: $radio-inner-width;
+      border-radius: 50%;
+      background-color: $color-text-1;
+      transform: scale(0);
+    }
+  }
+  @include e('text') {
+    margin-left: 5px;
+  }
+
+  @include e('hint') {
+    color: $color-text-3;
+    margin-left: 4px;
+  }
+
+  &-checked &-inner:after {
+    transform: scale(1);
+    transition: transform 0.1s ease-in-out;
   }
   &-disabled {
+    color: $color-text-6;
+    cursor: not-allowed;
+    .#{$ri} {
+      border-color: $color-fill-4;
+      &::after {
+        background-color: $color-fill-4;
+      }
+    }
+    .#{$rh} {
+      color: $color-text-6;
+    }
   }
 }
