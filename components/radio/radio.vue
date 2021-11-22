@@ -3,7 +3,7 @@
     <input type="radio" style="display: none" :name="name" />
     <span :class="`${prefix}-inner`"></span>
     <span :class="`${prefix}-text`"><slot></slot></span>
-    <span :class="`${prefix}-hint`"><slot name="hint"></slot></span>
+    <span :class="`${prefix}-hint`" v-if="$slots.hint"><slot name="hint"></slot></span>
   </label>
 </template>
 <script>

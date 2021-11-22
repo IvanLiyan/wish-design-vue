@@ -7,11 +7,9 @@ $radio-border-width: 2px;
 
 @include c(radio) {
   font-size: $font-size-2;
-  line-height: $line-height-2;
   display: flex;
   align-items: center;
   cursor: pointer;
-
   $ri: $B + '-inner';
   $rh: $B + '-hint';
 
@@ -48,6 +46,7 @@ $radio-border-width: 2px;
   @include e('hint') {
     color: $color-text-3;
     margin-left: 4px;
+    line-height: normal;
   }
 
   &-checked &-inner:after {
