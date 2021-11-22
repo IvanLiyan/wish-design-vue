@@ -31,11 +31,6 @@
             "path": "radio",
             "name": "Radio",
             "cnName": "单选框"
-          },
-          {
-            "path": "checkbox",
-            "name": "Checkbox",
-            "cnName": "多选框"
           }
         ]
       }
