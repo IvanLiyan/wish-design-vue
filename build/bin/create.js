@@ -89,7 +89,7 @@ describe('${exportName}', function () {
   {
     file: resolvePackage(`${componentName}.vue`),
     content: `<template>
-  <div class="${componentClassName}" />
+  <div class="${componentClassName}" ></div>
 </template>
 <script>
 export default {

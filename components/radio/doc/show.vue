@@ -30,7 +30,7 @@ export default {
       this.checked = val;
     },
     handleGroupRadioInput: function (val) {
-      console.log('handleRadioInput', val);
+      console.log('handleGroupRadioInput', val);
     },
   },
 };
