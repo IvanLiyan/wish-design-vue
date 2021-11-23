@@ -7,6 +7,8 @@ import ButtonGroup from 'components/button-group';
 import Input from 'components/input';
 import Radio from 'components/radio';
 import RadioGroup from 'components/radio-group';
+import Checkbox from 'components/checkbox';
+import CheckboxGroup from 'components/checkbox-group';
 import CollapseTransition from './transitions/collapse-transition';
 
 const components = [
@@ -18,6 +20,8 @@ const components = [
   Input,
   Radio,
   RadioGroup,
+  Checkbox,
+  CheckboxGroup,
   CollapseTransition,
 ];
 
@@ -50,6 +54,8 @@ export {
   Input,
   Radio,
   RadioGroup,
+  Checkbox,
+  CheckboxGroup,
   CollapseTransition,
 };
 

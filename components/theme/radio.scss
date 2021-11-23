@@ -57,9 +57,9 @@ $radio-border-width: 2px;
     color: $color-text-6;
     cursor: not-allowed;
     .#{$ri} {
-      border-color: $color-fill-4;
+      border-color: $color-fill-5;
       &::after {
-        background-color: $color-fill-4;
+        background-color: $color-fill-5;
       }
     }
     .#{$rh} {

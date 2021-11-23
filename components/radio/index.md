@@ -1,18 +1,3 @@
-<style lang="scss">
-  .demo-radio-container,.demo-input-group{
-    display:flex;
-    justify-content: center;
-    margin-bottom:20px;
-    label{
-        margin-right:10px;
-        &:last-child{
-            margin-right:0;
-        }
-    }
-  }
- 
-</style>
-
 # 单选框 / Radio
 
 用于多个选项（一般一组不超过 5 个）的选择输入，状态的切换。

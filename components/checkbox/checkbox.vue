@@ -1,16 +1,30 @@
 <template>
-  <label :class="wrapperCls" @click.prevent="handleClick">
-    <input type="radio" style="display: none" :name="name" />
-    <span :class="`${prefix}-inner`"></span>
+  <label :class="wrapperCls" @click.prevent="handleChange">
+    <input type="checkbox" style="display: none" :name="name" />
+    <span :class="`${prefix}-inner`"
+      ><Icon
+        v-if="checked"
+        name="check"
+        :width="10"
+        :height="10"
+        color="#fff"
+        :stroke-width="3"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+    /></span>
     <span :class="`${prefix}-text`"><slot></slot></span>
     <span :class="`${prefix}-hint`" v-if="$slots.hint"><slot name="hint"></slot></span>
   </label>
 </template>
 <script>
 import { CONFIG_PROVIDER, getPrefixCls } from '@/utils/config';
+import Icon from '@components/icon';
 
 export default {
-  name: 'WtRadio',
+  name: 'WtCheckbox',
+  components: {
+    Icon,
+  },
   inheritAttrs: false,
   inject: {
     config: {
@@ -21,7 +35,7 @@ export default {
     },
   },
   props: {
-    // value: [String, Number, Boolean, Function, Object, Array, Symbol],
+    value: [String, Number, Boolean, Function, Object, Array, Symbol],
     checked: {
       type: Boolean,
       default: false,
@@ -35,7 +49,7 @@ export default {
   },
   computed: {
     prefix() {
-      return this.config.getPrefixCls('radio');
+      return this.config.getPrefixCls('checkbox');
     },
     wrapperCls() {
       const { prefix } = this;
@@ -49,12 +63,10 @@ export default {
     },
   },
   methods: {
-    handleClick($event) {
-      if (!this.disabled && !this.checked) {
-        this.$emit('input', true);
-      }
+    handleChange($event) {
       if (!this.disabled) {
-        this.$emit('click', $event);
+        this.$emit('input', !this.checked);
+        this.$emit('change', !this.checked);
       }
     },
   },

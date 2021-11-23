@@ -8,7 +8,10 @@
         color,
         width,
         height,
+
         'stroke-width': strokeWidth,
+        'stroke-line-cap': strokeLinecap,
+        'stroke-linejoin': strokeLinejoin,
       })
     "
   ></i>
@@ -41,14 +44,14 @@ export default {
       type: Number,
       default: 2,
     },
-    // strokeLinecap: {
-    //   type: String,
-    //   default: 'butt', // butt | round | square
-    // },
-    // strokeLinejoin: {
-    //   type: String,
-    //   default: 'miter', // arcs | bevel |miter | miter-clip | round
-    // },
+    strokeLinecap: {
+      type: String,
+      default: 'butt', // butt | round | square
+    },
+    strokeLinejoin: {
+      type: String,
+      default: 'miter', // arcs | bevel |miter | miter-clip | round
+    },
   },
   inject: {
     config: {

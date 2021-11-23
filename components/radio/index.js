@@ -1,7 +1,5 @@
-import { withRadioGroup } from '../radio-group';
+import { withRadioGroup } from '@components/radio-group';
 import Radio from './radio.vue';
-
-export { Radio };
 
 const RadioCom = withRadioGroup(Radio.name, Radio);
 

@@ -1,0 +1,60 @@
+@import './common/var.scss';
+@import './mixins/mixins.scss';
+
+$checkbox-width: 16px;
+$radio-border-width: 2px;
+
+@include c(checkbox) {
+  font-size: $font-size-2;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  $ri: $B + '-inner';
+  $rh: $B + '-hint';
+  $ch: $B + '-checked';
+
+  @include e('inner') {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: $checkbox-width;
+    height: $checkbox-width;
+    color: $color-text-1;
+    border-radius: 2px;
+    transition: all 0.5s ease-in-out;
+    background-color: $color-white;
+    border: $radio-border-width solid $color-fill-5;
+  }
+  @include e('text') {
+    margin-left: 5px;
+  }
+
+  @include e('hint') {
+    color: $color-text-3;
+    margin-left: 4px;
+    line-height: normal;
+  }
+
+  &-checked &-inner {
+    background-color: $color-text-1;
+    border-color: $color-text-1;
+    transition: transform 0.1s ease-in-out;
+  }
+
+  &-disabled {
+    color: $color-text-6;
+    cursor: not-allowed;
+    &.#{$ch} {
+      .#{$ri} {
+        background-color: $color-fill-5;
+      }
+    }
+
+    .#{$ri} {
+      border-color: $color-fill-5;
+    }
+    .#{$rh} {
+      color: $color-text-6;
+    }
+  }
+}

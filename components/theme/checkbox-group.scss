@@ -1,0 +1,24 @@
+@import './common/var.scss';
+@import './mixins/mixins.scss';
+@include c(checkbox-group) {
+  @include e('horizontal') {
+    display: flex;
+    flex-direction: row;
+  }
+  @include e('vertical') {
+    display: flex;
+    flex-direction: column;
+    @include c(checkbox) {
+      margin-bottom: 24px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+  @include c(checkbox) {
+    margin-right: 25px;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

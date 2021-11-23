@@ -1,6 +1,6 @@
-function noop () {}
+function noop() {}
 
-export default function createHoc (controlComponent = {}, options = {}) {
+export default function createHoc(controlComponent = {}, options = {}) {
   return function (Component) {
     const definedProps = {
       ...controlComponent.props,
@@ -25,7 +25,7 @@ export default function createHoc (controlComponent = {}, options = {}) {
     let WrappedComponent = Component;
     while (WrappedComponent.WrappedComponent) {
       WrappedComponent = WrappedComponent.WrappedComponent;
-    };
+    }
 
     return {
       ...controlComponent,
@@ -34,7 +34,8 @@ export default function createHoc (controlComponent = {}, options = {}) {
       name: controlComponent.name || `wrapper-${Component.name}`,
       WrappedComponent: WrappedComponent,
       inheritAttrs: false,
-      render (h) {
+
+      render(h) {
         const childrens = Object.keys(this.$slots).map((name) => {
           const slot = this.$slots[name];
           if (name === 'default') {
@@ -50,26 +51,30 @@ export default function createHoc (controlComponent = {}, options = {}) {
         const on = mapToLisenter(this);
 
         // 注入 v-model 绑定的属性
+
         if (modelProp && !_props.hasOwnProperty(modelProp)) {
           _props[modelProp] = this[modelProp];
         }
 
-        const scopedSlots = getScopedSlots ? getScopedSlots(this,
-          this.$scopedSlots) : this.$scopedSlots;
+        const scopedSlots = getScopedSlots ? getScopedSlots(this, this.$scopedSlots) : this.$scopedSlots;
         const attrs = {
           ...this.$attrs,
           ..._props,
         };
-        return h(Component, {
-          ref: options.withRef ? 'wrappedInstance' : undefined,
-          key: getKey(attrs),
-          attrs: attrs,
-          on: {
-            ...this.$listeners,
-            ...on,
+        return h(
+          Component,
+          {
+            ref: options.withRef ? 'wrappedInstance' : undefined,
+            key: getKey(attrs),
+            attrs: attrs,
+            on: {
+              ...this.$listeners,
+              ...on,
+            },
+            scopedSlots: scopedSlots,
           },
-          scopedSlots: scopedSlots,
-        }, childrens);
+          childrens,
+        );
       },
     };
   };

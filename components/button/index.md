@@ -14,6 +14,18 @@
       margin-left: 0px;
     }
   }
+  .demo-container{
+    display:flex;
+    justify-content: center;
+    margin-bottom:20px;
+    label{
+        margin-right:10px;
+        &:last-child{
+            margin-right:0;
+        }
+    }
+  }
+  
 </style>
 
 # Button / 按钮

@@ -1,5 +1,5 @@
 <template>
-  <div class="demo-radio-container">
+  <div class="demo-container">
     <wt-radio-group v-model="value" arrange="vertical">
       <wt-radio value="item1">项目内容</wt-radio>
       <wt-radio value="item2">项目内容</wt-radio>

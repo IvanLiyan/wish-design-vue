@@ -6,5 +6,7 @@
   "button-group": "components/button-group",
   "input": "components/input",
   "radio": "components/radio",
-  "radio-group": "components/radio-group"
+  "radio-group": "components/radio-group",
+  "checkbox": "components/checkbox",
+  "checkbox-group": "components/checkbox-group"
 }

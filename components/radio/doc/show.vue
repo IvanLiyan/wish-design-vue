@@ -6,7 +6,7 @@
     </div>
 
     <h6>单选框组事件反馈，请打开控制台查看</h6>
-    <div class="demo-radio-container">
+    <div class="demo-container">
       <wt-radio-group v-model="groupRadioValue" arrange="vertical" @input="handleGroupRadioInput">
         <wt-radio value="item1">项目内容</wt-radio>
         <wt-radio value="item2">项目内容</wt-radio>
