@@ -22,8 +22,6 @@ export default {
     },
     disabled: Boolean,
     name: String,
-    min: Number,
-    max: Number,
   },
   provide() {
     return {
@@ -58,10 +56,6 @@ export default {
         nextValue.push(value);
       } else if (index !== -1) {
         nextValue.splice(index, 1);
-      }
-      const length = nextValue.length;
-      if ((checked && this.max && length > this.max) || (!checked && this.min && length < this.min)) {
-        return;
       }
       this.$emit('input', nextValue);
       this.$emit('change', nextValue);

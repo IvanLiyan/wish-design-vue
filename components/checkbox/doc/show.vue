@@ -2,7 +2,7 @@
   <div>
     <h6>Checkbox-group disabled</h6>
     <div class="demo-container">
-      <wt-checkbox-group v-model="groupValue" disabled>
+      <wt-checkbox-group v-model="groupValue1" disabled>
         <wt-checkbox value="1">选项</wt-checkbox>
         <wt-checkbox value="2">选项</wt-checkbox>
         <wt-checkbox value="3">选项</wt-checkbox>
@@ -14,7 +14,7 @@
     </div>
 
     <div class="demo-container">
-      <wt-checkbox-group v-model="groupValue" @input="handleGroupCheck">
+      <wt-checkbox-group v-model="groupValue2" @input="handleGroupCheck">
         <wt-checkbox value="1">选项</wt-checkbox>
         <wt-checkbox value="2">选项</wt-checkbox>
         <wt-checkbox value="3">选项</wt-checkbox>
@@ -27,7 +27,8 @@ export default {
   data() {
     return {
       checkedValue: true,
-      groupValue: ['1'],
+      groupValue1: ['1', '2'],
+      groupValue2: ['1'],
     };
   },
   methods: {
