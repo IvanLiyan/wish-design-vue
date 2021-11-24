@@ -76,6 +76,7 @@ async function main() {
   step('\nCommitting changes...');
   await execa('git', ['add', '.']);
   await execa('git', ['commit', '-m', `release: v${targetVersion}`]);
+  await execa('git', ['push']);
 
   const tag = semver.prerelease(targetVersion);
   step(`\nPublishing ${tag ? tag[0] : 'lastest'} packages...`);
@@ -99,7 +100,7 @@ async function main() {
   step('\nPushing to Code...');
   await execa('git', ['tag', `v${targetVersion}`]);
   await execa('git', ['push', 'origin', `refs/tags/v${targetVersion}`]);
-  await execa('git', ['push']);
+  // await execa('git', ['push']);
   success('Pushing Success');
   success('Release Success');
 }
