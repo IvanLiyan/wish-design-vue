@@ -19,7 +19,7 @@
     justify-content: center;
     margin-bottom:20px;
     label{
-        margin-right:10px;
+        margin-right:30px;
         &:last-child{
             margin-right:0;
         }
