@@ -15,7 +15,7 @@ npm i nrm -g
 ```
 nrm add wnpm http://npm.bjs.i.wish.com/
 nrm use wnpm
-nrm login     -用户名：admin  密码：admin123
+nrm login     - 若还没有用账号请先添加：npm adduser
 ```
 
 3、安装组件库
