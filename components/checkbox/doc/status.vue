@@ -14,13 +14,5 @@ export default {
       checked2: false,
     };
   },
-  methods: {
-    handleRadioInput: function (val) {
-      console.log('handleCheckInput', val);
-    },
-    handleGroupRadioInput: function (val) {
-      console.log('handleGroupRadioInput', val);
-    },
-  },
 };
 </script>

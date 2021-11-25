@@ -18,7 +18,7 @@
     display:flex;
     justify-content: center;
     margin-bottom:20px;
-    label{
+    &>*{
         margin-right:30px;
         &:last-child{
             margin-right:0;

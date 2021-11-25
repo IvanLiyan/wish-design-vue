@@ -44,11 +44,10 @@ export default function withCheckboxGroup(name, Component) {
       },
       mapMethodToListener(context) {
         return {
-          input(checked) {
+          change(checked) {
             if (context.checkboxGroup) {
               context.checkboxGroup.$emit('checkboxChange', checked, context.value);
             } else {
-              context.$emit('input', checked);
               context.$emit('change', checked);
             }
           },

@@ -10,11 +10,11 @@
     </div>
     <h6>单选框组事件反馈，请打开控制台查看</h6>
     <div class="demo-container">
-      <wt-checkbox v-model="checkedValue" @input="handleCheck">项目内容</wt-checkbox>
+      <wt-checkbox v-model="checkedValue" @change="handleCheck">项目内容</wt-checkbox>
     </div>
 
     <div class="demo-container">
-      <wt-checkbox-group v-model="groupValue2" @input="handleGroupCheck">
+      <wt-checkbox-group v-model="groupValue2" @change="handleGroupCheck">
         <wt-checkbox value="1">选项</wt-checkbox>
         <wt-checkbox value="2">选项</wt-checkbox>
         <wt-checkbox value="3">选项</wt-checkbox>

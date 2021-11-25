@@ -1,0 +1,59 @@
+{
+  "props": [
+    {
+      "name": "disabled",
+      "desc": "是否禁用",
+      "type": "boolean",
+      "optionalValue": "",
+      "default": "false",
+      "version": ""
+    },
+
+    {
+      "name": "name",
+      "desc": "switch 组件的 name 属性",
+      "type": "string",
+      "optionalValue": "",
+      "default": "",
+      "version": ""
+    },
+
+    {
+      "name": "value",
+      "desc": "支持 <code>v-model</code>，用于设置开关是否选中，使用 <code>value === trueValue</code> 来判断是否打开",
+      "type": "any",
+      "optionalValue": "",
+      "default": "",
+      "version": "0.3.10"
+    },
+    {
+      "name": "true-value",
+      "desc": "switch 打开时的值",
+      "type": "any",
+      "optionalValue": "",
+      "default": "true",
+      "version": "0.3.12"
+    },
+    {
+      "name": "false-value",
+      "desc": "switch 关闭时的值",
+      "type": "any",
+      "optionalValue": "",
+      "default": "false",
+      "version": "0.3.12"
+    }
+  ],
+  "events": [
+    {
+      "name": "change",
+      "desc": "开关变化时触发，返回当前的状态",
+      "args": "(actived: boolean)"
+    }
+  ],
+  "slots": [
+    {
+      "name": "loading",
+      "desc": "自定义 loading 内容"
+    }
+  ]
+}

@@ -101,7 +101,6 @@ async function main() {
   await execa('git', ['tag', `v${targetVersion}`]);
   await execa('git', ['push', 'origin', `refs/tags/v${targetVersion}`]);
   // await execa('git', ['push']);
-  //
   success('Pushing Success');
   success('Release Success');
 }

@@ -26,9 +26,6 @@ export default function withRadioGroup(name, Component) {
         inputName() {
           return this.radioGroup ? this.radioGroup.name : this.name;
         },
-        // _size () {
-        //   return this.radioGroup ? this.radioGroup.size : this.size;
-        // },
       },
     },
     {
@@ -42,11 +39,11 @@ export default function withRadioGroup(name, Component) {
       },
       mapMethodToListener(context) {
         return {
-          input(v) {
+          change(v) {
             if (context.radioGroup) {
               context.radioGroup.$emit('radioChange', context.value);
             } else {
-              context.$emit('input', v);
+              context.$emit('change', v);
             }
           },
         };

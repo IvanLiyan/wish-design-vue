@@ -19,7 +19,7 @@
   ],
   "events": [
     {
-      "name": "input",
+      "name": "change",
       "desc": "在选项状态发生改变时触发，返回当前状态。",
       "args": "当前选中 value 值"
     }

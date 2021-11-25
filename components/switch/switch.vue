@@ -1,16 +1,19 @@
 <template>
-  <label :class="wrapperCls" @click.prevent="handleClick">
-    <input type="radio" style="display: none" :name="name" />
-    <span :class="`${prefix}-inner`"></span>
+  <span :class="wrapperCls" @click.prevent="handleClick">
+    <span :class="`${prefix}-btn`"></span>
     <span :class="`${prefix}-text`"><slot></slot></span>
     <span :class="`${prefix}-hint`" v-if="$slots.hint"><slot name="hint"></slot></span>
-  </label>
+  </span>
 </template>
 <script>
 import { CONFIG_PROVIDER, getPrefixCls } from '@/utils/config';
+import Icon from '@components/icon';
 
 export default {
-  name: 'WtRadio',
+  name: 'WtSwitch',
+  components: {
+    Icon,
+  },
   inheritAttrs: false,
   inject: {
     config: {
@@ -21,9 +24,11 @@ export default {
     },
   },
   props: {
-    // value: [String, Number, Boolean, Function, Object, Array, Symbol],
-    checked: {
-      type: Boolean,
+    value: {},
+    trueValue: {
+      default: true,
+    },
+    falseValue: {
       default: false,
     },
     disabled: {
@@ -35,28 +40,30 @@ export default {
   },
   computed: {
     prefix() {
-      return this.config.getPrefixCls('radio');
+      return this.config.getPrefixCls('switch');
+    },
+    checked() {
+      return this.value === this.trueValue;
     },
     wrapperCls() {
       const { prefix } = this;
       return [
         prefix,
         {
-          [`${prefix}-checked`]: this.checked,
+          [`${prefix}-active`]: this.checked,
           [`${prefix}-disabled`]: this.disabled,
         },
       ];
     },
   },
   methods: {
-    handleClick($event) {
-      if (!this.disabled && !this.checked) {
-        this.$emit('change', true);
-        this.$emit('input', true);
+    handleClick(e) {
+      if (this.disabled || this.loading) {
+        return false;
       }
-      if (!this.disabled) {
-        this.$emit('click', $event);
-      }
+      const value = this.checked ? this.falseValue : this.trueValue;
+      this.$emit('change', value);
+      this.$emit('input', value);
     },
   },
 };

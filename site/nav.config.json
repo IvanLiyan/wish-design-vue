@@ -36,6 +36,11 @@
             "path": "checkbox",
             "name": "Checkbox",
             "cnName": "多选框"
+          },
+          {
+            "path": "switch",
+            "name": "Switch",
+            "cnName": "开关"
           }
         ]
       }

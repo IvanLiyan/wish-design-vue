@@ -1,0 +1,76 @@
+@import './common/var.scss';
+@import './mixins/mixins.scss';
+
+$checkbox-width: 16px;
+$radio-border-width: 2px;
+$gap-width: 2px;
+$btn-height: 20px;
+$btn-width: 36px;
+$circle-width: $btn-height - $gap-width * 2;
+@include c(switch) {
+  display: flex;
+  cursor: pointer;
+  $btn: $B + '-btn';
+  $rh: $B + '-hint';
+  $ch: $B + '-checked';
+  cursor: pointer;
+
+  @include e('btn') {
+    position: relative;
+    display: inline-block;
+    width: $btn-width;
+    height: $btn-height;
+    color: #000;
+    background-color: $color-fill-5;
+    border-radius: $btn-height/2;
+
+    user-select: none;
+    transition: background-color 0.1s;
+    &::after {
+      content: '';
+      width: $circle-width;
+      height: $circle-width;
+      background-color: #fff;
+      border-radius: 50%;
+      position: absolute;
+      top: $gap-width;
+      right: $btn-width - $gap-width - $circle-width;
+      transition: right 0.1s;
+    }
+  }
+  @include e('text') {
+    margin-left: 5px;
+  }
+
+  @include e('hint') {
+    color: $color-text-3;
+    margin-left: 4px;
+    line-height: normal;
+  }
+
+  &-active {
+    .#{$btn} {
+      background-color: $color-text-1;
+      &::after {
+        right: $gap-width;
+      }
+    }
+  }
+
+  &-disabled {
+    color: $color-text-6;
+    cursor: not-allowed;
+    &.#{$ch} {
+      .#{$btn} {
+        background-color: $color-fill-5;
+      }
+    }
+
+    .#{$btn} {
+      background-color: $color-fill-5;
+    }
+    .#{$rh} {
+      color: $color-text-6;
+    }
+  }
+}
