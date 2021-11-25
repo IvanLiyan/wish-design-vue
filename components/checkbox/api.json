@@ -33,6 +33,16 @@
       "version": ""
     }
   ],
+  "slots": [
+    {
+      "name": "default",
+      "desc": "默认 vue slot"
+    },
+    {
+      "name": "hint",
+      "desc": "注释内容"
+    }
+  ],
   "events": [
     {
       "name": "change",

@@ -20,7 +20,7 @@
 
     {
       "name": "value",
-      "desc": "支持 <code>v-model</code>，用于设置开关是否选中，使用 <code>value === trueValue</code> 来判断是否打开",
+      "desc": "支持 <code>v-model</code>，用于设置开关是否选中，使用 <code>value === true-value</code> 来判断是否打开",
       "type": "any",
       "optionalValue": "",
       "default": "",
@@ -43,17 +43,21 @@
       "version": "0.3.12"
     }
   ],
+  "slots": [
+    {
+      "name": "default",
+      "desc": "默认 vue slot"
+    },
+    {
+      "name": "hint",
+      "desc": "注释内容"
+    }
+  ],
   "events": [
     {
       "name": "change",
       "desc": "开关变化时触发，返回当前的状态",
       "args": "(actived: boolean)"
-    }
-  ],
-  "slots": [
-    {
-      "name": "loading",
-      "desc": "自定义 loading 内容"
     }
   ]
 }
