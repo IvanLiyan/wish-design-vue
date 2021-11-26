@@ -41,6 +41,11 @@
             "path": "switch",
             "name": "Switch",
             "cnName": "开关"
+          },
+          {
+            "path": "tag",
+            "name": "Tag",
+            "cnName": "标签"
           }
         ]
       }

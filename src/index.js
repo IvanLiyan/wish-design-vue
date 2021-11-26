@@ -10,6 +10,7 @@ import RadioGroup from 'components/radio-group';
 import Checkbox from 'components/checkbox';
 import CheckboxGroup from 'components/checkbox-group';
 import Switch from 'components/switch';
+import Tag from 'components/tag';
 import CollapseTransition from './transitions/collapse-transition';
 
 const components = [
@@ -24,6 +25,7 @@ const components = [
   Checkbox,
   CheckboxGroup,
   Switch,
+  Tag,
   CollapseTransition,
 ];
 
@@ -59,6 +61,7 @@ export {
   Checkbox,
   CheckboxGroup,
   Switch,
+  Tag,
   CollapseTransition,
 };
 

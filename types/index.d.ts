@@ -10,6 +10,7 @@ import { RadioGroup } from './radio-group';
 import { Checkbox } from './checkbox';
 import { CheckboxGroup } from './checkbox-group';
 import { Switch } from './switch';
+import { Tag } from './tag';
 import { Confirm as WTConfirm } from './confirm';
 import {
   Message as WTMessage,
@@ -38,6 +39,7 @@ export {
   Checkbox,
   CheckboxGroup,
   Switch,
+  Tag,
   FormRule,
   FormRules,
   NotificationOptions,

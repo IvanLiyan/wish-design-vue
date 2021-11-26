@@ -9,5 +9,6 @@
   "radio-group": "components/radio-group",
   "checkbox": "components/checkbox",
   "checkbox-group": "components/checkbox-group",
-  "switch": "components/switch"
+  "switch": "components/switch",
+  "tag": "components/tag"
 }
