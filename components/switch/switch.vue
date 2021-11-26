@@ -7,13 +7,9 @@
 </template>
 <script>
 import { CONFIG_PROVIDER, getPrefixCls } from '@/utils/config';
-import Icon from '@components/icon';
 
 export default {
   name: 'WtSwitch',
-  components: {
-    Icon,
-  },
   inheritAttrs: false,
   inject: {
     config: {

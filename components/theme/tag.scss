@@ -1,4 +1,75 @@
-@import "./common/var.scss";
-@import "./mixins/mixins.scss";
-@include c(tag){
+@import './common/var.scss';
+@import './mixins/mixins.scss';
+@include c(tag) {
+  padding-left: 8px;
+  padding-right: 8px;
+  background-color: $color-fill-2;
+  display: inline-flex;
+  align-items: center;
+
+  $iconx: $prefix + '-icon-x';
+
+  .#{$iconx} {
+    cursor: pointer;
+    svg {
+      width: 16px;
+      height: 16px;
+      margin-left: 4px;
+    }
+  }
+
+  @include e('normal') {
+    font-size: $font-size-4;
+    line-height: $line-height-4;
+    padding-top: 2px;
+    padding-bottom: 2px;
+  }
+  @include e('large') {
+    font-size: $font-size-2;
+    line-height: $line-height-2;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    .#{$iconx} svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+  @include e('round') {
+    border-radius: 10px;
+    &.#{$B}-default {
+      color: $color-text-1;
+    }
+  }
+
+  @include e('default') {
+    color: $color-text-3;
+  }
+  @include e('primary') {
+    color: $color-info-1;
+    background-color: $color-info-3;
+  }
+
+  @include e('success') {
+    color: $color-success-1;
+    background-color: $color-success-3;
+  }
+  @include e('danger') {
+    color: $color-danger-1;
+    background-color: $color-danger-3;
+  }
+  @include e('warning') {
+    color: $color-warning-1;
+    background-color: $color-warning-3;
+  }
+  @include e('clickable') {
+    cursor: pointer;
+  }
+  @include e('disabled') {
+    background-color: $color-fill-3;
+    color: $color-text-5 !important;
+    cursor: not-allowed;
+    .#{$iconx} {
+      cursor: not-allowed;
+    }
+  }
 }

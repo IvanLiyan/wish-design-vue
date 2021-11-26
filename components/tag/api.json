@@ -1,0 +1,58 @@
+{
+  "props": [
+    {
+      "name": "size",
+      "desc": "尺寸",
+      "type": "string",
+      "optionalValue": ["normal", "large"],
+      "default": "normal",
+      "version": ""
+    },
+    {
+      "name": "type",
+      "desc": "类型",
+      "type": "string   ",
+      "optionalValue": ["default", "primary", "success", "danger", "warning"],
+      "default": "default",
+      "version": ""
+    },
+    {
+      "name": "rounded",
+      "desc": "是否是圆形",
+      "type": "boolean",
+      "optionalValue": "",
+      "default": "false",
+      "version": ""
+    },
+    {
+      "name": "closable",
+      "desc": "是否可以关闭",
+      "type": "boolean",
+      "optionalValue": "",
+      "default": "false",
+      "version": ""
+    },
+    {
+      "name": "disabled",
+      "desc": "是否禁用",
+      "type": "boolean",
+      "optionalValue": "",
+      "default": "false",
+      "version": ""
+    }
+  ],
+  "events": [
+    {
+      "name": "click",
+      "desc": "点击事件的回调",
+      "signature": "function (event)",
+      "args": ""
+    },
+    {
+      "name": "close",
+      "desc": "关闭事件的回调",
+      "signature": "function (event)",
+      "args": ""
+    }
+  ]
+}

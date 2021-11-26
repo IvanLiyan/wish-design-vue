@@ -1,12 +1,22 @@
-# 标签 / Tag
-### Attributes
+# 开关 / Switch
 
-| 参数 | 说明 | 类型 | 可选值 | 默认值 |
-|--- |--- |--- |--- |--- |
-| —  | —    | —   | — | — |
+用于展示分类和标记属性。可操作标签为圆角，纯展示标签为直角。
 
-### Events
+## 可操作标签
 
-| 事件名称 | 说明 | 回调参数 |
-|--- |--- |--- |
-| — | — | — |
+:::include(src="./doc/operate.vue")
+:::
+
+## 不可操作标签
+
+:::include(src="./doc/un-operate.vue")
+:::
+
+## API
+
+<api-doc name="Tag" :doc="require('./api.json')"></api-doc>
+
+## show all for qa test
+
+:::include(src="./doc/show.vue")
+:::
