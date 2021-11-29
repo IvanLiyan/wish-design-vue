@@ -1,13 +1,18 @@
 @import './common/var.scss';
 @import './mixins/mixins.scss';
+
+$normal-height: 20px;
+$large-height: 28px;
+
 @include c(tag) {
   padding-left: 8px;
   padding-right: 8px;
   background-color: $color-fill-2;
   display: inline-flex;
   align-items: center;
-
   $iconx: $prefix + '-icon-x';
+  height: $normal-height;
+  box-sizing: border-box;
 
   .#{$iconx} {
     cursor: pointer;
@@ -20,24 +25,23 @@
 
   @include e('normal') {
     font-size: $font-size-4;
-    line-height: $line-height-4;
-    padding-top: 2px;
-    padding-bottom: 2px;
   }
   @include e('large') {
     font-size: $font-size-2;
-    line-height: $line-height-2;
-    padding-top: 4px;
-    padding-bottom: 4px;
+
+    height: $large-height;
     .#{$iconx} svg {
       width: 20px;
       height: 20px;
     }
   }
   @include e('round') {
-    border-radius: 10px;
+    border-radius: $normal-height/2;
     &.#{$B}-default {
       color: $color-text-1;
+    }
+    &.#{$B}-large {
+      border-radius: $large-height/2;
     }
   }
 
