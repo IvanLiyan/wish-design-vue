@@ -13,7 +13,6 @@ $large-height: 28px;
   $iconx: $prefix + '-icon-x';
   height: $normal-height;
   box-sizing: border-box;
-  line-height: 1;
 
   .#{$iconx} {
     cursor: pointer;
@@ -26,6 +25,7 @@ $large-height: 28px;
 
   @include e('normal') {
     font-size: $font-size-4;
+    line-height: $normal-height;
   }
   @include e('large') {
     font-size: $font-size-2;
@@ -43,6 +43,7 @@ $large-height: 28px;
     }
     &.#{$B}-large {
       border-radius: $large-height/2;
+      line-height: $large-height;
     }
   }
 
