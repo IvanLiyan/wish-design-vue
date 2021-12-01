@@ -55,8 +55,8 @@ export default {
   methods: {
     handleChange: function handleChange(radioValue) {
       if (this.value !== radioValue) {
-        this.$emit('input', radioValue);
         this.$emit('change', radioValue);
+        this.$emit('input', radioValue);
       }
     }
   }

@@ -38,11 +38,11 @@ export default function withRadioGroup(name, Component) {
     },
     mapMethodToListener: function mapMethodToListener(context) {
       return {
-        input: function input(v) {
+        change: function change(v) {
           if (context.radioGroup) {
             context.radioGroup.$emit('radioChange', context.value);
           } else {
-            context.$emit('input', v);
+            context.$emit('change', v);
           }
         }
       };

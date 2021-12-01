@@ -1390,7 +1390,7 @@ _radio_group_vue__WEBPACK_IMPORTED_MODULE_0__["default"].install = function (Vue
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _radio_group_vue_vue_type_template_id_1d01dbe6___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(151);
+/* harmony import */ var _radio_group_vue_vue_type_template_id_17360e32___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(151);
 /* harmony import */ var _radio_group_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(153);
 /* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(88);
 
@@ -1402,8 +1402,8 @@ __webpack_require__.r(__webpack_exports__);
 
 var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
   _radio_group_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _radio_group_vue_vue_type_template_id_1d01dbe6___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _radio_group_vue_vue_type_template_id_1d01dbe6___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _radio_group_vue_vue_type_template_id_17360e32___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _radio_group_vue_vue_type_template_id_17360e32___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
   null,
@@ -1419,10 +1419,10 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_radio_group_vue_vue_type_template_id_1d01dbe6___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(152);
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_radio_group_vue_vue_type_template_id_1d01dbe6___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_radio_group_vue_vue_type_template_id_17360e32___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(152);
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_radio_group_vue_vue_type_template_id_17360e32___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_radio_group_vue_vue_type_template_id_1d01dbe6___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_radio_group_vue_vue_type_template_id_17360e32___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
@@ -1512,8 +1512,8 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     handleChange: function handleChange(radioValue) {
       if (this.value !== radioValue) {
-        this.$emit('input', radioValue);
         this.$emit('change', radioValue);
+        this.$emit('input', radioValue);
       }
     }
   }
@@ -1570,11 +1570,11 @@ function withRadioGroup(name, Component) {
     },
     mapMethodToListener: function mapMethodToListener(context) {
       return {
-        input: function input(v) {
+        change: function change(v) {
           if (context.radioGroup) {
             context.radioGroup.$emit('radioChange', context.value);
           } else {
-            context.$emit('input', v);
+            context.$emit('change', v);
           }
         }
       };

@@ -51,6 +51,7 @@ export default {
   methods: {
     handleClick: function handleClick($event) {
       if (!this.disabled && !this.checked) {
+        this.$emit('change', true);
         this.$emit('input', true);
       }
       if (!this.disabled) {

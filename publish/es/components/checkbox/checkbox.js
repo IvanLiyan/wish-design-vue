@@ -56,8 +56,8 @@ export default {
   methods: {
     handleChange: function handleChange($event) {
       if (!this.disabled) {
-        this.$emit('input', !this.checked);
         this.$emit('change', !this.checked);
+        this.$emit('input', !this.checked);
       }
     }
   }
