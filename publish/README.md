@@ -4,7 +4,7 @@
 
 ## 1.0 计划
 
-目前仍在规划中
+目前仍在一期组件开发中，具体组件规划安排请参考文档：https://wiki.wish.site/display/WF/wish-design-vue#wishdesignvue-Plan
 
 ## 支持环境
 
@@ -46,7 +46,7 @@ import '@wish/wt-vue/dist/wt-vue.min.css'
 
 ```
 import Vue from 'vue'
-import WT from '@wish/wt-vue'
+import WT from '@wish/wt-vue@alpha'
 
 Vue.use(WT)
 ```

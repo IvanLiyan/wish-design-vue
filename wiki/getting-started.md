@@ -36,7 +36,7 @@ import '@wish/wt-vue/dist/wt-vue.min.css'
 
 ```
 import Vue from 'vue'
-import WT from '@wish/wt-vue'
+import WT from '@wish/wt-vue@alpha'
 
 Vue.use(WT)
 ```
