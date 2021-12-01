@@ -20,13 +20,26 @@
       "name": "placement",
       "desc": "显示的位置",
       "type": "string",
-      "optionalValue": ["top", "top-start", "top-end", "bottom", "bottom-start", "bottom-end", "left", "left-start", "left-end", "right", "right-start", "right-end"],
+      "optionalValue": [
+        "top",
+        "top-start",
+        "top-end",
+        "bottom",
+        "bottom-start",
+        "bottom-end",
+        "left",
+        "left-start",
+        "left-end",
+        "right",
+        "right-start",
+        "right-end"
+      ],
       "default": "bottom-start",
       "version": ""
     },
     {
       "name": "popper-class",
-      "desc": "为 Dropdown 的 popper 添加类名，0.3.18 支持 Object、Array 类型",
+      "desc": "为 Dropdown 的 popper 添加类名",
       "type": "string",
       "optionalValue": "",
       "default": "",

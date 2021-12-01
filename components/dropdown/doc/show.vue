@@ -1,10 +1,17 @@
 <template>
   <div>
-    <h4>default</h4>
+    <h4>触发事件，打开控制台查看</h4>
     <div class="demo-container">
-      <wt-dropdown trigger="click" placement="right">
+      <wt-dropdown
+        v-model="visible"
+        trigger="click"
+        placement="right"
+        @input="handleInput"
+        @clickoutside="handleClickOutside"
+      >
         <wt-button type="text">
-          <span style="margin-right: 4px">hover</span>
+          <span style="margin-right: 4px">更多</span>
+          <wt-icon name="chevron-down" />
         </wt-button>
         <wt-dropdown-menu slot="dropdown">
           <wt-dropdown-menu-item>网络</wt-dropdown-menu-item>
@@ -20,16 +27,15 @@
 export default {
   data() {
     return {
-      // value1: true,
-      // value2: false,
+      visible: true,
     };
   },
   methods: {
-    handleClick: function (e) {
-      console.log('handleClick', e);
+    handleInput: function (visible) {
+      console.log('handleInput', visible);
     },
-    handleClose: function (e) {
-      console.log('handleClose', e);
+    handleClickOutside: function (e) {
+      console.log('handleClickOutside', e);
     },
   },
 };

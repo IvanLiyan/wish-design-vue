@@ -1,4 +1,4 @@
-# 下拉 / Dropdown
+# 下拉面板 / Dropdown
 
 向下弹出的列表，用于归纳同类型的项目。
 
@@ -24,9 +24,13 @@
 :::
 下拉内容分类展示
 :::include(src="./doc/define-type.vue")
+
+## API
+
+<api-doc name="Dropdown" :doc="require('./api.json')"></api-doc>
 :::
 
-## 可操作标签
+## show all
 
 :::include(src="./doc/show.vue")
 :::

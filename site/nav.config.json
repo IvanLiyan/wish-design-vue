@@ -21,7 +21,22 @@
             "path": "row",
             "name": "Grid",
             "cnName": "布局"
-          },
+          }
+        ]
+      },
+      {
+        "groupName": "导航",
+        "list": [
+          {
+            "path": "dropdown",
+            "name": "Dropdown",
+            "cnName": "下拉"
+          }
+        ]
+      },
+      {
+        "groupName": "数据录入",
+        "list": [
           {
             "path": "input",
             "name": "Input",
@@ -51,6 +66,16 @@
             "path": "dropdown",
             "name": "Dropdown",
             "cnName": "下拉"
+          }
+        ]
+      },
+      {
+        "groupName": "数据展示",
+        "list": [
+          {
+            "path": "tag",
+            "name": "Tag",
+            "cnName": "标签"
           }
         ]
       }
