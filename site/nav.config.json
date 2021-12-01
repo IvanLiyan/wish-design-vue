@@ -56,16 +56,6 @@
             "path": "switch",
             "name": "Switch",
             "cnName": "开关"
-          },
-          {
-            "path": "tag",
-            "name": "Tag",
-            "cnName": "标签"
-          },
-          {
-            "path": "dropdown",
-            "name": "Dropdown",
-            "cnName": "下拉"
           }
         ]
       },
