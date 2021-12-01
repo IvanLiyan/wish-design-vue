@@ -46,6 +46,11 @@
             "path": "tag",
             "name": "Tag",
             "cnName": "标签"
+          },
+          {
+            "path": "dropdown",
+            "name": "Dropdown",
+            "cnName": "下拉"
           }
         ]
       }

@@ -10,5 +10,9 @@
   "checkbox": "components/checkbox",
   "checkbox-group": "components/checkbox-group",
   "switch": "components/switch",
-  "tag": "components/tag"
+  "tag": "components/tag",
+  "dropdown": "components/dropdown",
+  "dropdown-menu": "components/dropdown-menu",
+  "dropdown-menu-item": "components/dropdown-menu-item",
+  "popper": "components/popper"
 }

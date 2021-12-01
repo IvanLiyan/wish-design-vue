@@ -11,6 +11,7 @@ import { Checkbox } from './checkbox';
 import { CheckboxGroup } from './checkbox-group';
 import { Switch } from './switch';
 import { Tag } from './tag';
+import { Dropdown } from './dropdown';
 import { Confirm as WTConfirm } from './confirm';
 import {
   Message as WTMessage,
@@ -40,6 +41,7 @@ export {
   CheckboxGroup,
   Switch,
   Tag,
+  Dropdown,
   FormRule,
   FormRules,
   NotificationOptions,

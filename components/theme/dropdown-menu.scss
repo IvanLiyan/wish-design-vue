@@ -1,0 +1,18 @@
+@import './common/var.scss';
+@import './mixins/mixins.scss';
+
+@mixin dropdown-menu-size($font-size, $max-height, $min-width) {
+  max-height: $max-height;
+  min-width: $min-width;
+  font-size: $font-size;
+}
+
+@include c(dropdown-menu) {
+  list-style-type: none;
+  margin: 0;
+  padding: 4px 0px;
+  overflow: auto;
+  border-radius: 4px;
+  // border: 1px solid #000;
+  @include dropdown-menu-size(14px, 300px, 128px);
+}

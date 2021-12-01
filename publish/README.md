@@ -25,7 +25,7 @@ npm i nrm -g
 ```
 nrm add wnpm http://npm.bjs.i.wish.com/
 nrm use wnpm
-nrm login     -用户名：admin  密码：admin123
+nrm login     - 若还没有用账号请先添加：npm adduser
 ```
 
 3、安装组件库
@@ -34,7 +34,15 @@ nrm login     -用户名：admin  密码：admin123
 npm i  @wish/wt-vue
 ```
 
-## 示例
+## 使用
+
+1、引入 默认主题 样式
+
+```
+import '@wish/wt-vue/dist/wt-vue.min.css'
+```
+
+2、引入组件库
 
 ```
 import Vue from 'vue'
@@ -43,8 +51,8 @@ import WT from '@wish/wt-vue'
 Vue.use(WT)
 ```
 
-引入样式
+3、使用组件
 
 ```
-import '@wish/wt-vue/dist/wt-vue.min.css'
+<wt-button>基础按钮</wt-button>
 ```

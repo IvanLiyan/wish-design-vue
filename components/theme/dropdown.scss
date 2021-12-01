@@ -1,0 +1,24 @@
+@import './common/var.scss';
+@import './mixins/mixins.scss';
+@include c(dropdown) {
+  display: inline-block;
+  vertical-align: middle;
+
+  .#{$prefix}-icon-chevron-down {
+    // color: $dropdown-icon-color;
+    transform: rotate(0deg);
+    transition: transform 0.3s linear;
+  }
+
+  &-popper {
+    // box-shadow: $dropdown-menu-shadow;
+    box-shadow: 0px 1px 5px 0px #192a321f, 0px 2px 2px 0px #192a3224, 0px 3px 1px -2px #192a3233;
+  }
+
+  &-expended {
+    .#{$prefix}-icon-chevron-down {
+      transform: rotate(180deg);
+      // color:
+    }
+  }
+}

@@ -11,6 +11,10 @@ import Checkbox from 'components/checkbox';
 import CheckboxGroup from 'components/checkbox-group';
 import Switch from 'components/switch';
 import Tag from 'components/tag';
+import Dropdown from 'components/dropdown';
+import DropdownMenu from 'components/dropdown-menu';
+import DropdownMenuItem from 'components/dropdown-menu-item';
+import Popper from 'components/popper';
 import CollapseTransition from './transitions/collapse-transition';
 
 const components = [
@@ -26,6 +30,10 @@ const components = [
   CheckboxGroup,
   Switch,
   Tag,
+  Dropdown,
+  DropdownMenu,
+  DropdownMenuItem,
+  Popper,
   CollapseTransition,
 ];
 
@@ -62,6 +70,10 @@ export {
   CheckboxGroup,
   Switch,
   Tag,
+  Dropdown,
+  DropdownMenu,
+  DropdownMenuItem,
+  Popper,
   CollapseTransition,
 };
 

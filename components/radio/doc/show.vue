@@ -2,7 +2,7 @@
   <div>
     <h6>单个单选框事件反馈，请打开控制台查看</h6>
     <div class="demo-container">
-      <wt-radio value="item1" @change="handleRadio" :checked="checked">项目内容</wt-radio>
+      <wt-radio value="item1" @change="handleRadio" :checked="checked">项目内容</wt-radio>{{ checked }}
     </div>
 
     <h6>单选框组事件反馈，请打开控制台查看</h6>
