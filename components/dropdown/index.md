@@ -4,7 +4,8 @@
 
 ## 基础样式
 
-下拉由下拉项目组成。下拉项目可分为主菜单栏和次菜单栏。下拉可以含有图标，文字和展开按钮，或者为纯文字。多个层级的下拉见级联选择 Cascader。
+下拉由下拉项目组成。下拉项目内容可以自定义，可以含有图标，文字和展开按钮，或者为纯文字。
+多个层级的下拉见级联选择 Cascader。
 
 :::include(src="./doc/base.vue")
 :::
@@ -14,7 +15,12 @@
 :::include(src="./doc/trigger.vue")
 :::
 
-## 类型
+## 弹出位置
+
+:::include(src="./doc/placement.vue")
+:::
+
+## 应用
 
 基础下拉
 :::include(src="./doc/base-type.vue")

@@ -1,5 +1,20 @@
 <template>
   <div>
+    <h4>禁止状态</h4>
+    <div class="demo-container">
+      <wt-dropdown disabled>
+        <wt-button type="text" disabled>
+          <span style="margin-right: 4px">更多</span>
+          <wt-icon name="chevron-down" />
+        </wt-button>
+        <wt-dropdown-menu slot="dropdown">
+          <wt-dropdown-menu-item>网络</wt-dropdown-menu-item>
+          <wt-dropdown-menu-item>存储</wt-dropdown-menu-item>
+          <wt-dropdown-menu-item>数据库</wt-dropdown-menu-item>
+          <wt-dropdown-menu-item disabled>计算</wt-dropdown-menu-item>
+        </wt-dropdown-menu>
+      </wt-dropdown>
+    </div>
     <h4>触发事件，打开控制台查看</h4>
     <div class="demo-container">
       <wt-dropdown
