@@ -21,7 +21,7 @@ nrm login     - 若还没有用账号请先添加：npm adduser
 3、安装组件库
 
 ```
-npm i  @wish/wt-vue
+npm i  @wish/wt-vue@alpha
 ```
 
 ## 使用
@@ -36,7 +36,7 @@ import '@wish/wt-vue/dist/wt-vue.min.css'
 
 ```
 import Vue from 'vue'
-import WT from '@wish/wt-vue@alpha'
+import WT from '@wish/wt-vue'
 
 Vue.use(WT)
 ```
