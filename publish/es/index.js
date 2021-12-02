@@ -42,6 +42,6 @@ if (typeof window !== 'undefined' && window.Vue) {
 export { Button, Row, Col, Icon, ButtonGroup, Input, Radio, RadioGroup, Checkbox, CheckboxGroup, Switch, Tag, Dropdown, DropdownMenu, DropdownMenuItem, Popper, CollapseTransition };
 
 export default {
-  version: '0.0.1-alpha.10',
+  version: '0.0.1-alpha.11',
   install: install
 };

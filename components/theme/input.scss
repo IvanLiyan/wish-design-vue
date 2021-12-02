@@ -41,7 +41,7 @@ $padding: 8px;
     @include reset-form;
     text-align: left;
     position: relative;
-    width: 240px;
+    min-width: 240px;
     font-size: $font-size-2;
     line-height: $line-height-2;
     color: $color-text-1;
