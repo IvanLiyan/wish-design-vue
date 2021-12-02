@@ -1,27 +1,25 @@
 <template>
   <div class="demo-container">
     <wt-dropdown trigger="click">
-      <wt-button type="text">
-        <span style="margin-right: 4px">点击</span>
-        <wt-icon name="chevron-down" />
+      <wt-button type="third">
+        <span style="margin-right: 4px">click</span>
+        <wt-icon name='more-vertical' :width='16' :height='16' />
       </wt-button>
       <wt-dropdown-menu slot="dropdown">
-        <wt-dropdown-menu-item disabled>计算</wt-dropdown-menu-item>
-        <wt-dropdown-menu-item>网络</wt-dropdown-menu-item>
-        <wt-dropdown-menu-item>存储</wt-dropdown-menu-item>
-        <wt-dropdown-menu-item>数据库</wt-dropdown-menu-item>
+        <wt-dropdown-menu-item disabled>删除</wt-dropdown-menu-item>
+        <wt-dropdown-menu-item>添加</wt-dropdown-menu-item>
+        <wt-dropdown-menu-item>编辑</wt-dropdown-menu-item>
       </wt-dropdown-menu>
     </wt-dropdown>
-    <wt-dropdown trigger="hover">
-      <wt-button type="text">
-        <span style="margin-right: 4px">悬浮</span>
-        <wt-icon name="chevron-down" />
+   <wt-dropdown trigger="hover">
+      <wt-button type="third">
+        <span style="margin-right: 4px">hover</span>
+        <wt-icon name='more-vertical' :width='16' :height='16' />
       </wt-button>
       <wt-dropdown-menu slot="dropdown">
-        <wt-dropdown-menu-item disabled>计算</wt-dropdown-menu-item>
-        <wt-dropdown-menu-item>网络</wt-dropdown-menu-item>
-        <wt-dropdown-menu-item>存储</wt-dropdown-menu-item>
-        <wt-dropdown-menu-item>数据库</wt-dropdown-menu-item>
+        <wt-dropdown-menu-item disabled>删除</wt-dropdown-menu-item>
+        <wt-dropdown-menu-item>添加</wt-dropdown-menu-item>
+        <wt-dropdown-menu-item>编辑</wt-dropdown-menu-item>
       </wt-dropdown-menu>
     </wt-dropdown>
   </div>

@@ -74,6 +74,9 @@
 
   &-content {
     vertical-align: middle;
+    & > * {
+      vertical-align: middle;
+    }
   }
   .#{$prefix}-icon {
     vertical-align: middle;

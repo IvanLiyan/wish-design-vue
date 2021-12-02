@@ -1,10 +1,10 @@
 <template>
   <div>
-    <h4>禁止状态</h4>
+    <h4>disabled status</h4>
     <div class="demo-container">
       <wt-dropdown disabled>
         <wt-button type="text" disabled>
-          <span style="margin-right: 4px">更多</span>
+          <span style="margin-right: 4px">more</span>
           <wt-icon name="chevron-down" />
         </wt-button>
         <wt-dropdown-menu slot="dropdown">
@@ -15,17 +15,11 @@
         </wt-dropdown-menu>
       </wt-dropdown>
     </div>
-    <h4>触发事件，打开控制台查看</h4>
+    <h4>Please open console panel check the trigger event response</h4>
     <div class="demo-container">
-      <wt-dropdown
-        v-model="visible"
-        trigger="click"
-        placement="right"
-        @input="handleInput"
-        @clickoutside="handleClickOutside"
-      >
+      <wt-dropdown v-model="visible" trigger="click" @input="handleInput" @clickoutside="handleClickOutside">
         <wt-button type="text">
-          <span style="margin-right: 4px">更多</span>
+          <span style="margin-right: 4px">more</span>
           <wt-icon name="chevron-down" />
         </wt-button>
         <wt-dropdown-menu slot="dropdown">
