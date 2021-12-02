@@ -5,7 +5,7 @@
     "redirect": "/components/button",
     "groups": [
       {
-        "groupName": "通用",
+        "groupName": "Common",
         "list": [
           {
             "path": "icon",
@@ -25,7 +25,7 @@
         ]
       },
       {
-        "groupName": "导航",
+        "groupName": "Navigation",
         "list": [
           {
             "path": "dropdown",
@@ -35,7 +35,7 @@
         ]
       },
       {
-        "groupName": "数据录入",
+        "groupName": "Data Entry",
         "list": [
           {
             "path": "input",
@@ -60,7 +60,7 @@
         ]
       },
       {
-        "groupName": "数据展示",
+        "groupName": "Data display",
         "list": [
           {
             "path": "tag",
