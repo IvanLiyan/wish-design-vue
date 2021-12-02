@@ -1,9 +1,9 @@
 <template>
   <div class="demo-btn-group">
     <wt-button-group>
-      <wt-button>添加</wt-button>
-      <wt-button>删除</wt-button>
-      <wt-button>编辑</wt-button>
+      <wt-button>add</wt-button>
+      <wt-button>delete</wt-button>
+      <wt-button>edit</wt-button>
     </wt-button-group>
 
     <wt-button-group>

@@ -1,17 +1,18 @@
 <template>
   <div>
-    <h6>单个单选框事件反馈，请打开控制台查看</h6>
+    <h6>Please open console panel check the radio trigger event response</h6>
     <div class="demo-container">
-      <wt-radio value="item1" @change="handleRadio" :checked="checked">项目内容</wt-radio>{{ checked }}
+      <wt-radio value="item1" @change="handleRadio" :checked="checked">item content </wt-radio>{{ checked }}
     </div>
 
-    <h6>单选框组事件反馈，请打开控制台查看</h6>
+    <h6>Please open console panel check the radio group trigger event response</h6>
+
     <div class="demo-container">
       <wt-radio-group v-model="groupRadioValue" arrange="vertical" @change="handleGroupRadio">
-        <wt-radio value="item1">项目内容</wt-radio>
-        <wt-radio value="item2">项目内容</wt-radio>
-        <wt-radio value="item3">项目内容</wt-radio>
-        <wt-radio value="item4">项目内容</wt-radio>
+        <wt-radio value="item1">item content</wt-radio>
+        <wt-radio value="item2">item content</wt-radio>
+        <wt-radio value="item3">item content</wt-radio>
+        <wt-radio value="item4">item content</wt-radio>
       </wt-radio-group>
     </div>
   </div>

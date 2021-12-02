@@ -51,7 +51,7 @@ export default {
       return `demo-${this.$route.path.split('/').pop()}`;
     },
     controlText() {
-      return this.showCode ? '隐藏代码' : '显示代码';
+      return this.showCode ? 'hide code' : 'show code';
     },
     classObj() {
       return { onfixed: this.onfixed };

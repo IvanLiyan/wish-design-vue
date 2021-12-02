@@ -1,7 +1,7 @@
 <template>
   <div>
-    <wt-button>基础按钮</wt-button>
-    <wt-button icon="plus">图标文字</wt-button>
+    <wt-button>text</wt-button>
+    <wt-button icon="plus">icon+text</wt-button>
     <wt-button icon="plus" />
   </div>
 </template>

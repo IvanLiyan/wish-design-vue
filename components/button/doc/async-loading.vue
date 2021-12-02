@@ -1,5 +1,5 @@
 <template>
-  <wt-button @click="handleClick" type="primary">提交</wt-button>
+  <wt-button @click="handleClick" type="primary">submit</wt-button>
 </template>
 <script>
 export default {

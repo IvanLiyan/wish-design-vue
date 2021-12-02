@@ -2,77 +2,80 @@
   <div>
     <h4>default</h4>
     <div class="demo-container">
-      <wt-tag rounded>项目内容</wt-tag>
-      <wt-tag size="large" rounded>项目内容</wt-tag>
-      <wt-tag>项目内容</wt-tag>
-      <wt-tag size="large">项目内容</wt-tag>
-      <wt-tag rounded clearable>项目内容</wt-tag>
-      <wt-tag rounded clearable size="large">项目内容</wt-tag>
+      <wt-tag rounded>item content</wt-tag>
+      <wt-tag size="large" rounded>item content</wt-tag>
+      <wt-tag>item content</wt-tag>
+      <wt-tag size="large">item content</wt-tag>
+      <wt-tag rounded clearable>item content</wt-tag>
+      <wt-tag rounded clearable size="large">item content</wt-tag>
     </div>
     <h4>primary</h4>
     <div class="demo-container">
-      <wt-tag type="primary" rounded>项目内容</wt-tag>
-      <wt-tag type="primary" size="large" rounded>项目内容</wt-tag>
-      <wt-tag type="primary">项目内容</wt-tag>
-      <wt-tag type="primary" size="large">项目内容</wt-tag>
-      <wt-tag type="primary" clearable rounded>项目内容</wt-tag>
-      <wt-tag type="primary" size="large" clearable rounded>项目内容</wt-tag>
+      <wt-tag type="primary" rounded>item content</wt-tag>
+      <wt-tag type="primary" size="large" rounded>item content</wt-tag>
+      <wt-tag type="primary">item content</wt-tag>
+      <wt-tag type="primary" size="large">item content</wt-tag>
+      <wt-tag type="primary" clearable rounded>item content</wt-tag>
+      <wt-tag type="primary" size="large" clearable rounded>item content</wt-tag>
     </div>
     <h4>success</h4>
     <div class="demo-container">
-      <wt-tag type="success" rounded>项目内容</wt-tag>
-      <wt-tag type="success" size="large" rounded>项目内容</wt-tag>
-      <wt-tag type="success">项目内容</wt-tag>
-      <wt-tag type="success" size="large">项目内容</wt-tag>
-      <wt-tag type="success" clearable rounded>项目内容</wt-tag>
-      <wt-tag type="success" size="large" clearable rounded>项目内容</wt-tag>
+      <wt-tag type="success" rounded>item content</wt-tag>
+      <wt-tag type="success" size="large" rounded>item content</wt-tag>
+      <wt-tag type="success">item content</wt-tag>
+      <wt-tag type="success" size="large">item content</wt-tag>
+      <wt-tag type="success" clearable rounded>item content</wt-tag>
+      <wt-tag type="success" size="large" clearable rounded>item content</wt-tag>
     </div>
     <h4>danger</h4>
     <div class="demo-container">
-      <wt-tag type="danger" rounded>项目内容</wt-tag>
-      <wt-tag type="danger" size="large" rounded>项目内容</wt-tag>
-      <wt-tag type="danger">项目内容</wt-tag>
-      <wt-tag type="danger" size="large">项目内容</wt-tag>
-      <wt-tag type="danger" clearable rounded>项目内容</wt-tag>
-      <wt-tag type="danger" size="large" clearable rounded>项目内容</wt-tag>
+      <wt-tag type="danger" rounded>item content</wt-tag>
+      <wt-tag type="danger" size="large" rounded>item content</wt-tag>
+      <wt-tag type="danger">item content</wt-tag>
+      <wt-tag type="danger" size="large">item content</wt-tag>
+      <wt-tag type="danger" clearable rounded>item content</wt-tag>
+      <wt-tag type="danger" size="large" clearable rounded>item content</wt-tag>
     </div>
     <h4>warning</h4>
     <div class="demo-container">
-      <wt-tag type="warning" rounded>项目内容</wt-tag>
-      <wt-tag type="warning" size="large" rounded>项目内容</wt-tag>
-      <wt-tag type="warning">项目内容</wt-tag>
-      <wt-tag type="warning" size="large">项目内容</wt-tag>
-      <wt-tag type="warning" clearable rounded>项目内容</wt-tag>
-      <wt-tag type="warning" size="large" clearable rounded>项目内容</wt-tag>
+      <wt-tag type="warning" rounded>item content</wt-tag>
+      <wt-tag type="warning" size="large" rounded>item content</wt-tag>
+      <wt-tag type="warning">item content</wt-tag>
+      <wt-tag type="warning" size="large">item content</wt-tag>
+      <wt-tag type="warning" clearable rounded>item content</wt-tag>
+      <wt-tag type="warning" size="large" clearable rounded>item content</wt-tag>
     </div>
     <h4>disabled</h4>
     <div class="demo-container">
-      <wt-tag type="warning" disabled rounded>项目内容</wt-tag>
-      <wt-tag type="warning" size="large" disabled rounded>项目内容</wt-tag>
-      <wt-tag type="warning" disabled>项目内容</wt-tag>
-      <wt-tag type="warning" size="large" disabled>项目内容</wt-tag>
-      <wt-tag type="warning" @close="handleClose" clearable disabled>项目内容</wt-tag>
-      <wt-tag type="warning" size="large" @close="handleClose" clearable disabled rounded>项目内容</wt-tag>
+      <wt-tag type="warning" disabled rounded>item content</wt-tag>
+      <wt-tag type="warning" size="large" disabled rounded>item content</wt-tag>
+      <wt-tag type="warning" disabled>item content</wt-tag>
+      <wt-tag type="warning" size="large" disabled>item content</wt-tag>
+      <wt-tag type="warning" @close="handleClose" clearable disabled>item content</wt-tag>
+      <wt-tag type="warning" size="large" @close="handleClose" clearable disabled rounded>item content</wt-tag>
     </div>
-    <h4>打开控制台查看触发事件反馈</h4>
-    <h6>正常</h6>
+
+    <h4>Please open console panel check the trigger event response</h4>
+    <h6>normal</h6>
     <div class="demo-container">
-      <wt-tag type="warning" @click="handleClick" rounded>项目内容</wt-tag>
-      <wt-tag type="warning" size="large" @click="handleClick" rounded>项目内容</wt-tag>
-      <wt-tag type="warning" @click="handleClick">项目内容</wt-tag>
-      <wt-tag type="warning" size="large" @click="handleClick">项目内容</wt-tag>
-      <wt-tag type="warning" @click="handleClick" @close="handleClose" clearable rounded>项目内容</wt-tag>
-      <wt-tag type="warning" size="large" @click="handleClick" @close="handleClose" clearable rounded>项目内容</wt-tag>
+      <wt-tag type="warning" @click="handleClick" rounded>item content</wt-tag>
+      <wt-tag type="warning" size="large" @click="handleClick" rounded>item content</wt-tag>
+      <wt-tag type="warning" @click="handleClick">item content</wt-tag>
+      <wt-tag type="warning" size="large" @click="handleClick">item content</wt-tag>
+      <wt-tag type="warning" @click="handleClick" @close="handleClose" clearable rounded>item content</wt-tag>
+      <wt-tag type="warning" size="large" @click="handleClick" @close="handleClose" clearable rounded
+        >item content</wt-tag
+      >
     </div>
-    <h6>disabled 的点击</h6>
+    <h6>disabled</h6>
     <div class="demo-container">
-      <wt-tag type="warning" @click="handleClick" disabled rounded>项目内容</wt-tag>
-      <wt-tag type="warning" size="large" @click="handleClick" disabled rounded>项目内容</wt-tag>
-      <wt-tag type="warning" @click="handleClick" disabled>项目内容</wt-tag>
-      <wt-tag type="warning" size="large" @click="handleClick" disabled>项目内容</wt-tag>
-      <wt-tag type="warning" @click="handleClick" @close="handleClose" clearable disabled rounded>项目内容</wt-tag>
+      <wt-tag type="warning" @click="handleClick" disabled rounded>item content</wt-tag>
+      <wt-tag type="warning" size="large" @click="handleClick" disabled rounded>item content</wt-tag>
+      <wt-tag type="warning" @click="handleClick" disabled>item content</wt-tag>
+      <wt-tag type="warning" size="large" @click="handleClick" disabled>item content</wt-tag>
+      <wt-tag type="warning" @click="handleClick" @close="handleClose" clearable disabled rounded>item content</wt-tag>
       <wt-tag type="warning" size="large" @click="handleClick" @close="handleClose" clearable disabled rounded
-        >项目内容</wt-tag
+        >item content</wt-tag
       >
     </div>
   </div>

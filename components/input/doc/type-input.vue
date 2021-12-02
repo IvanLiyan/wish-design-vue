@@ -1,55 +1,55 @@
 <template>
   <div>
     <div class="demo-input-group">
-      <wt-input placeholder="邮箱" />
-      <wt-input type="line" placeholder="邮箱" />
+      <wt-input placeholder="email" />
+      <wt-input type="line" placeholder="email" />
     </div>
     <div class="demo-input-group">
-      <wt-input label="邮箱" placeholder="如xxx@gmail.com" />
-      <wt-input label="邮箱" type="line" placeholder="如xxx@gmail.com" />
-    </div>
-
-    <div class="demo-input-group">
-      <wt-input placeholder="用户名">
-        <wt-icon name="user" slot="prefix" />
-      </wt-input>
-      <wt-input placeholder="用户名">
-        <wt-icon name="eye" slot="suffix" />
-      </wt-input>
-      <wt-input type="line" placeholder="用户名">
-        <wt-icon name="user" slot="prefix" />
-      </wt-input>
-      <wt-input type="line" placeholder="用户名">
-        <wt-icon name="eye" slot="suffix" />
-      </wt-input>
+      <wt-input label="email" placeholder="xxx@gmail.com" />
+      <wt-input label="email" type="line" placeholder="xxx@gmail.com" />
     </div>
 
     <div class="demo-input-group">
-      <wt-input placeholder="金额">
+      <wt-input placeholder="user name">
+        <wt-icon name="user" slot="prefix" />
+      </wt-input>
+      <wt-input placeholder="user name">
+        <wt-icon name="eye" slot="suffix" />
+      </wt-input>
+      <wt-input type="line" placeholder="user name">
+        <wt-icon name="user" slot="prefix" />
+      </wt-input>
+      <wt-input type="line" placeholder="user name">
+        <wt-icon name="eye" slot="suffix" />
+      </wt-input>
+    </div>
+
+    <div class="demo-input-group">
+      <wt-input placeholder="money">
         <span slot="prefix">¥</span>
       </wt-input>
-      <wt-input placeholder="金额">
+      <wt-input placeholder="money">
         <span slot="suffix">RMB</span>
       </wt-input>
-      <wt-input type="line" placeholder="金额">
+      <wt-input type="line" placeholder="money">
         <span slot="prefix">¥</span>
       </wt-input>
-      <wt-input type="line" placeholder="金额">
+      <wt-input type="line" placeholder="money">
         <span slot="suffix">RMB</span>
       </wt-input>
     </div>
 
     <div class="demo-input-group">
-      <wt-input placeholder="用户名" clearable>
+      <wt-input placeholder="user name" clearable>
         <wt-icon name="user" slot="prefix" />
       </wt-input>
-      <wt-input placeholder="用户名" clearable>
+      <wt-input placeholder="user name" clearable>
         <wt-icon name="eye" slot="suffix" />
       </wt-input>
-      <wt-input type="line" placeholder="用户名" clearable>
+      <wt-input type="line" placeholder="user name" clearable>
         <wt-icon name="user" slot="prefix" />
       </wt-input>
-      <wt-input type="line" placeholder="用户名" clearable>
+      <wt-input type="line" placeholder="user name" clearable>
         <wt-icon name="eye" slot="suffix" />
       </wt-input>
     </div>

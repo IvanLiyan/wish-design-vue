@@ -1,7 +1,7 @@
 <template>
   <div>
-    <wt-button>按钮</wt-button>
-    <wt-button loading>loading 按钮</wt-button>
-    <wt-button disabled>disabled 按钮</wt-button>
+    <wt-button>btn</wt-button>
+    <wt-button loading>loading btn</wt-button>
+    <wt-button disabled>disabled btn</wt-button>
   </div>
 </template>

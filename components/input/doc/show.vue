@@ -2,195 +2,220 @@
   <div>
     <h3>Normal</h3>
     <div class="demo-input-container">
-      <wt-input label="联系人" placeholder="请输入">
+      <wt-input label="contactor" placeholder="please enter">
         <wt-icon name="user" slot="prefix" />
       </wt-input>
-      <wt-input label="联系人" disabled placeholder="请输入">
+      <wt-input label="contactor" disabled placeholder="please enter">
         <wt-icon name="user" slot="prefix" />
       </wt-input>
-      <wt-input label="联系人" invalid validation="请输入正确的内容" placeholder="请输入">
-        <wt-icon name="user" slot="prefix" />
-      </wt-input>
-    </div>
-
-    <div class="demo-input-container">
-      <wt-input placeholder="请输入" />
-      <wt-input disabled placeholder="请输入" />
-      <wt-input invalid validation="请输入正确的内容" placeholder="请输入" />
-    </div>
-
-    <div class="demo-input-container">
-      <wt-input placeholder="请输入">
-        <span slot="prefix">¥</span>
-      </wt-input>
-      <wt-input disabled placeholder="请输入">
-        <span slot="prefix">¥</span>
-      </wt-input>
-      <wt-input invalid validation="请输入正确的内容" placeholder="请输入">
-        <span slot="prefix">¥</span>
-      </wt-input>
-    </div>
-
-    <div class="demo-input-container">
-      <wt-input placeholder="请输入">
-        <span slot="suffix">RMB</span>
-      </wt-input>
-      <wt-input disabled placeholder="请输入">
-        <span slot="suffix">RMB</span>
-      </wt-input>
-      <wt-input invalid validation="请输入正确的内容" placeholder="请输入">
-        <span slot="suffix">RMB</span>
-      </wt-input>
-    </div>
-
-    <div class="demo-input-container">
-      <wt-input type="line" label="联系人" placeholder="请输入">
-        <wt-icon name="user" slot="prefix" />
-      </wt-input>
-      <wt-input type="line" label="联系人" disabled placeholder="请输入">
-        <wt-icon name="user" slot="prefix" />
-      </wt-input>
-      <wt-input type="line" label="联系人" invalid validation="请输入正确的内容" placeholder="请输入">
+      <wt-input label="contactor" invalid validation="please enter the right content" placeholder="please enter">
         <wt-icon name="user" slot="prefix" />
       </wt-input>
     </div>
 
     <div class="demo-input-container">
-      <wt-input type="line" placeholder="请输入" />
-      <wt-input type="line" disabled placeholder="请输入" />
-      <wt-input type="line" invalid validation="请输入正确的内容" placeholder="请输入" />
+      <wt-input placeholder="please enter" />
+      <wt-input disabled placeholder="please enter" />
+      <wt-input invalid validation="please enter the right content" placeholder="please enter" />
     </div>
 
     <div class="demo-input-container">
-      <wt-input type="line" placeholder="请输入">
+      <wt-input placeholder="please enter">
         <span slot="prefix">¥</span>
       </wt-input>
-      <wt-input type="line" disabled placeholder="请输入">
+      <wt-input disabled placeholder="please enter">
         <span slot="prefix">¥</span>
       </wt-input>
-      <wt-input type="line" invalid validation="请输入正确的内容" placeholder="请输入">
+      <wt-input invalid validation="please enter the right content" placeholder="please enter">
         <span slot="prefix">¥</span>
-      </wt-input>
-    </div>
-
-    <div class="demo-input-container">
-      <wt-input type="line" placeholder="请输入">
-        <span slot="suffix">RMB</span>
-      </wt-input>
-      <wt-input type="line" disabled placeholder="请输入">
-        <span slot="suffix">RMB</span>
-      </wt-input>
-      <wt-input type="line" invalid validation="请输入正确的内容" placeholder="请输入">
-        <span slot="suffix">RMB</span>
       </wt-input>
     </div>
 
     <div class="demo-input-container">
-      <wt-input type="textarea" placeholder="请输入" />
-      <wt-input type="textarea" disabled placeholder="请输入" />
-      <wt-input type="textarea" invalid placeholder="请输入" validation="请输入正确的内容" />
+      <wt-input placeholder="please enter">
+        <span slot="suffix">RMB</span>
+      </wt-input>
+      <wt-input disabled placeholder="please enter">
+        <span slot="suffix">RMB</span>
+      </wt-input>
+      <wt-input invalid validation="please enter the right content" placeholder="please enter">
+        <span slot="suffix">RMB</span>
+      </wt-input>
+    </div>
+
+    <div class="demo-input-container">
+      <wt-input type="line" label="contactor" placeholder="please enter">
+        <wt-icon name="user" slot="prefix" />
+      </wt-input>
+      <wt-input type="line" label="contactor" disabled placeholder="please enter">
+        <wt-icon name="user" slot="prefix" />
+      </wt-input>
+      <wt-input
+        type="line"
+        label="contactor"
+        invalid
+        validation="please enter the right content"
+        placeholder="please enter"
+      >
+        <wt-icon name="user" slot="prefix" />
+      </wt-input>
+    </div>
+
+    <div class="demo-input-container">
+      <wt-input type="line" placeholder="please enter" />
+      <wt-input type="line" disabled placeholder="please enter" />
+      <wt-input type="line" invalid validation="please enter the right content" placeholder="please enter" />
+    </div>
+
+    <div class="demo-input-container">
+      <wt-input type="line" placeholder="please enter">
+        <span slot="prefix">¥</span>
+      </wt-input>
+      <wt-input type="line" disabled placeholder="please enter">
+        <span slot="prefix">¥</span>
+      </wt-input>
+      <wt-input type="line" invalid validation="please enter the right content" placeholder="please enter">
+        <span slot="prefix">¥</span>
+      </wt-input>
+    </div>
+
+    <div class="demo-input-container">
+      <wt-input type="line" placeholder="please enter">
+        <span slot="suffix">RMB</span>
+      </wt-input>
+      <wt-input type="line" disabled placeholder="please enter">
+        <span slot="suffix">RMB</span>
+      </wt-input>
+      <wt-input type="line" invalid validation="please enter the right content" placeholder="please enter">
+        <span slot="suffix">RMB</span>
+      </wt-input>
+    </div>
+
+    <div class="demo-input-container">
+      <wt-input type="textarea" placeholder="please enter" />
+      <wt-input type="textarea" disabled placeholder="please enter" />
+      <wt-input type="textarea" invalid placeholder="please enter" validation="please enter the right content" />
     </div>
 
     <h3>允许autosize</h3>
     <div class="demo-input-container">
-      <wt-input type="textarea" placeholder="请输入" autosize />
-      <wt-input type="textarea" disabled placeholder="请输入" autosize />
-      <wt-input type="textarea" invalid placeholder="请输入" validation="请输入正确的内容" autosize />
+      <wt-input type="textarea" placeholder="please enter" autosize />
+      <wt-input type="textarea" disabled placeholder="please enter" autosize />
+      <wt-input
+        type="textarea"
+        invalid
+        placeholder="please enter"
+        validation="please enter the right content"
+        autosize
+      />
     </div>
 
     <h3>允许clearable</h3>
     <div class="demo-input-container">
-      <wt-input label="联系人" placeholder="请输入" clearable>
+      <wt-input label="contactor" placeholder="please enter" clearable>
         <wt-icon name="user" slot="prefix" />
       </wt-input>
-      <wt-input label="联系人" disabled placeholder="请输入" clearable>
+      <wt-input label="contactor" disabled placeholder="please enter" clearable>
         <wt-icon name="user" slot="prefix" />
       </wt-input>
-      <wt-input label="联系人" invalid validation="请输入正确的内容" placeholder="请输入" clearable>
-        <wt-icon name="user" slot="prefix" />
-      </wt-input>
-    </div>
-
-    <div class="demo-input-container">
-      <wt-input placeholder="请输入" clearable />
-      <wt-input disabled placeholder="请输入" clearable />
-      <wt-input invalid validation="请输入正确的内容" placeholder="请输入" clearable />
-    </div>
-
-    <div class="demo-input-container">
-      <wt-input placeholder="请输入" clearable>
-        <span slot="prefix">¥</span>
-      </wt-input>
-      <wt-input disabled placeholder="请输入" clearable>
-        <span slot="prefix">¥</span>
-      </wt-input>
-      <wt-input invalid validation="请输入正确的内容" placeholder="请输入" clearable>
-        <span slot="prefix">¥</span>
-      </wt-input>
-    </div>
-
-    <div class="demo-input-container">
-      <wt-input placeholder="请输入" clearable>
-        <span slot="suffix">RMB</span>
-      </wt-input>
-      <wt-input disabled placeholder="请输入" clearable>
-        <span slot="suffix">RMB</span>
-      </wt-input>
-      <wt-input invalid validation="请输入正确的内容" placeholder="请输入" clearable>
-        <span slot="suffix">RMB</span>
-      </wt-input>
-    </div>
-
-    <div class="demo-input-container">
-      <wt-input type="line" label="联系人" placeholder="请输入" clearable>
-        <wt-icon name="user" slot="prefix" />
-      </wt-input>
-      <wt-input type="line" label="联系人" disabled placeholder="请输入" clearable>
-        <wt-icon name="user" slot="prefix" />
-      </wt-input>
-      <wt-input type="line" label="联系人" invalid validation="请输入正确的内容" placeholder="请输入" clearable>
+      <wt-input
+        label="contactor"
+        invalid
+        validation="please enter the right content"
+        placeholder="please enter"
+        clearable
+      >
         <wt-icon name="user" slot="prefix" />
       </wt-input>
     </div>
 
     <div class="demo-input-container">
-      <wt-input type="line" placeholder="请输入" clearable />
-      <wt-input type="line" disabled placeholder="请输入" clearable />
-      <wt-input type="line" invalid validation="请输入正确的内容" placeholder="请输入" clearable />
+      <wt-input placeholder="please enter" clearable />
+      <wt-input disabled placeholder="please enter" clearable />
+      <wt-input invalid validation="please enter the right content" placeholder="please enter" clearable />
     </div>
 
     <div class="demo-input-container">
-      <wt-input type="line" placeholder="请输入" clearable>
+      <wt-input placeholder="please enter" clearable>
         <span slot="prefix">¥</span>
       </wt-input>
-      <wt-input type="line" disabled placeholder="请输入" clearable>
+      <wt-input disabled placeholder="please enter" clearable>
         <span slot="prefix">¥</span>
       </wt-input>
-      <wt-input type="line" invalid validation="请输入正确的内容" placeholder="请输入" clearable>
+      <wt-input invalid validation="please enter the right content" placeholder="please enter" clearable>
         <span slot="prefix">¥</span>
-      </wt-input>
-    </div>
-
-    <div class="demo-input-container">
-      <wt-input type="line" placeholder="请输入" clearable @focus="focus" @enter="enter">
-        <span slot="suffix">RMB</span>
-      </wt-input>
-      <wt-input type="line" disabled placeholder="请输入" clearable>
-        <span slot="suffix">RMB</span>
-      </wt-input>
-      <wt-input type="line" invalid validation="请输入正确的内容" placeholder="请输入" clearable>
-        <span slot="suffix">RMB</span>
       </wt-input>
     </div>
 
     <div class="demo-input-container">
-      <wt-input type="textarea" placeholder="请输入" clearable autosize />
-      <wt-input type="textarea" disabled placeholder="请输入" clearable autosize />
+      <wt-input placeholder="please enter" clearable>
+        <span slot="suffix">RMB</span>
+      </wt-input>
+      <wt-input disabled placeholder="please enter" clearable>
+        <span slot="suffix">RMB</span>
+      </wt-input>
+      <wt-input invalid validation="please enter the right content" placeholder="please enter" clearable>
+        <span slot="suffix">RMB</span>
+      </wt-input>
+    </div>
+
+    <div class="demo-input-container">
+      <wt-input type="line" label="contactor" placeholder="please enter" clearable>
+        <wt-icon name="user" slot="prefix" />
+      </wt-input>
+      <wt-input type="line" label="contactor" disabled placeholder="please enter" clearable>
+        <wt-icon name="user" slot="prefix" />
+      </wt-input>
+      <wt-input
+        type="line"
+        label="contactor"
+        invalid
+        validation="please enter the right content"
+        placeholder="please enter"
+        clearable
+      >
+        <wt-icon name="user" slot="prefix" />
+      </wt-input>
+    </div>
+
+    <div class="demo-input-container">
+      <wt-input type="line" placeholder="please enter" clearable />
+      <wt-input type="line" disabled placeholder="please enter" clearable />
+      <wt-input type="line" invalid validation="please enter the right content" placeholder="please enter" clearable />
+    </div>
+
+    <div class="demo-input-container">
+      <wt-input type="line" placeholder="please enter" clearable>
+        <span slot="prefix">¥</span>
+      </wt-input>
+      <wt-input type="line" disabled placeholder="please enter" clearable>
+        <span slot="prefix">¥</span>
+      </wt-input>
+      <wt-input type="line" invalid validation="please enter the right content" placeholder="please enter" clearable>
+        <span slot="prefix">¥</span>
+      </wt-input>
+    </div>
+
+    <div class="demo-input-container">
+      <wt-input type="line" placeholder="please enter" clearable @focus="focus" @enter="enter">
+        <span slot="suffix">RMB</span>
+      </wt-input>
+      <wt-input type="line" disabled placeholder="please enter" clearable>
+        <span slot="suffix">RMB</span>
+      </wt-input>
+      <wt-input type="line" invalid validation="please enter the right content" placeholder="please enter" clearable>
+        <span slot="suffix">RMB</span>
+      </wt-input>
+    </div>
+
+    <div class="demo-input-container">
+      <wt-input type="textarea" placeholder="please enter" clearable autosize />
+      <wt-input type="textarea" disabled placeholder="please enter" clearable autosize />
       <wt-input
         type="textarea"
         invalid
-        placeholder="请输入"
-        validation="请输入正确的内容"
+        placeholder="please enter"
+        validation="please enter the right content"
         clearable
         :autosize="{ minRows: 4, maxRows: 10 }"
       />
@@ -200,7 +225,7 @@
     <h3>input、change、focus事件</h3>
     <div class="demo-input-container">
       <wt-input
-        placeholder="请输入"
+        placeholder="please enter"
         clearable
         autosize
         @change="handleChange"
@@ -213,8 +238,8 @@
     <div class="demo-input-container">
       <wt-input
         type="textarea"
-        placeholder="请输入"
-        validation="请输入正确的内容"
+        placeholder="please enter"
+        validation="please enter the right content"
         clearable
         :autosize="{ minRows: 4, maxRows: 10 }"
         @change="handleChange"
@@ -230,7 +255,7 @@
 export default {
   data() {
     return {
-      inputData: '初始化value',
+      inputData: 'initial val',
     };
   },
   methods: {

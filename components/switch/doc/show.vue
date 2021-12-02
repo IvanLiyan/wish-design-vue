@@ -2,17 +2,17 @@
   <div>
     <h3>打开控制台查看</h3>
 
-    <h6>默认返回值为true false</h6>
+    <h6>default return value is true or false</h6>
     <div class="demo-container">
-      <wt-switch v-model="value1" @change="handleSwitch"> 项目内容 </wt-switch>
+      <wt-switch v-model="value1" @change="handleSwitch">item content</wt-switch>
     </div>
-    <h6>自定义设置返回值</h6>
+    <h6>define return value</h6>
     <div class="demo-container">
-      <wt-switch v-model="value2" @change="handleSwitch" true-value="开" false-value="关"> 项目内容 </wt-switch>
+      <wt-switch v-model="value2" @change="handleSwitch" true-value="开" false-value="关">item content</wt-switch>
     </div>
-    <h6>不可点击</h6>
+    <h6>disabled</h6>
     <div class="demo-container">
-      <wt-switch v-model="value3" disabled> 项目内容 <span slot="hint">注释不要太长</span> </wt-switch>
+      <wt-switch v-model="value3" disabled>item content<span slot="hint">desc should be short</span> </wt-switch>
     </div>
   </div>
 </template>

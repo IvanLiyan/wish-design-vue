@@ -1,7 +1,13 @@
 <template>
   <div class="demo-input-container">
-    <wt-input type="textarea" label="多行输入标题" placeholder="请输入" />
-    <wt-input type="textarea" label="多行输入标题" placeholder="请输入" disabled />
-    <wt-input type="textarea" label="多行输入标题" placeholder="请输入" invalid validation="请输入正确的内容" />
+    <wt-input type="textarea" label="multiple input title" placeholder="please enter" />
+    <wt-input type="textarea" label="multiple input title" placeholder="please enter" disabled />
+    <wt-input
+      type="textarea"
+      label="multiple input title"
+      placeholder="please enter"
+      invalid
+      validation="please enter valid content"
+    />
   </div>
 </template>

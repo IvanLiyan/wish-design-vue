@@ -1,10 +1,10 @@
 <template>
   <div class="demo-container">
     <wt-radio-group v-model="value" arrange="horizontal">
-      <wt-radio value="item1">项目内容</wt-radio>
-      <wt-radio value="item2">项目内容</wt-radio>
-      <wt-radio value="item3">项目内容</wt-radio>
-      <wt-radio value="item4">项目内容</wt-radio>
+      <wt-radio value="item1">item content</wt-radio>
+      <wt-radio value="item2">item content</wt-radio>
+      <wt-radio value="item3">item content</wt-radio>
+      <wt-radio value="item4">item content</wt-radio>
     </wt-radio-group>
   </div>
 </template>
