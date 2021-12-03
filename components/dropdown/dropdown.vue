@@ -98,10 +98,12 @@ export default {
     },
     updateVisible(v) {
       this.$emit('input', v);
+      this.$emit('change', v);
     },
     handleMenuItemClick() {
       if (!this.visibleOnMenuItemClick) {
         this.$emit('input', false);
+        this.$emit('change', false);
       }
     },
     updatePopper() {

@@ -84,7 +84,7 @@
   ],
   "event": [
     {
-      "name": "input",
+      "name": "change",
       "desc": "下拉框出现/隐藏时触发",
       "signature": "function (visible: Boolean)",
       "args": "点击事件对象"
@@ -93,8 +93,7 @@
       "name": "clickoutside",
       "desc": "trigger 为 click 时，点击下拉框外部时触发",
       "signature": "function (e: MouseEvent)",
-      "args": "点击事件对象",
-      "version": "0.3.14"
+      "args": "点击事件对象"
     }
   ]
 }

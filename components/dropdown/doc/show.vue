@@ -17,7 +17,7 @@
     </div>
     <h4>Please open console panel check the trigger event response</h4>
     <div class="demo-container">
-      <wt-dropdown v-model="visible" trigger="click" @input="handleInput" @clickoutside="handleClickOutside">
+      <wt-dropdown v-model="visible" trigger="click" @change="handleChange" @clickoutside="handleClickOutside">
         <wt-button type="text">
           <span style="margin-right: 4px">more</span>
           <wt-icon name="chevron-down" />
@@ -40,11 +40,11 @@ export default {
     };
   },
   methods: {
-    handleInput: function (visible) {
-      console.log('handleInput', visible);
-    },
     handleClickOutside: function (e) {
       console.log('handleClickOutside', e);
+    },
+    handleChange: function (val) {
+      console.log('handleChange', val);
     },
   },
 };

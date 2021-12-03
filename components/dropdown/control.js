@@ -34,6 +34,12 @@ export default function (name, Component) {
             this.vs = v;
           }
         },
+        handleChange(v) {
+          this.$emit('change', v);
+          if (!this.isControlled) {
+            this.vs = v;
+          }
+        },
         updatePopper() {
           const { wrappedInstance } = this.$refs;
           wrappedInstance && wrappedInstance.updatePopper();
@@ -50,6 +56,7 @@ export default function (name, Component) {
       mapMethodToListener(context) {
         return {
           input: context.handleInput,
+          change: context.handleChange,
         };
       },
     },
