@@ -21,6 +21,7 @@
       <a key="wnpm" href="http://npm.bjs.i.wish.com/-/web/detail/@wish/wt-vue" target="_blank"
         ><span>npm源</span><wt-icon name="external-link" :stroke-width="1.5" :width="14" :height="14"
       /></a>
+      {{ $t('message.hello') }}
     </div>
     <router-view />
   </div>

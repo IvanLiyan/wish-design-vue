@@ -9,10 +9,32 @@ import DemoBlok from './components/demo-block';
 // import javascript from 'highlight.js/lib/languages/javascript';
 // import vue from 'vue-highlight.js/lib/languages/vue';
 import 'highlight.js/styles/default.css';
+import VueI18n from 'vue-i18n';
 import ApiDoc from './components/api-doc';
+
+const messages = {
+  en: {
+    message: {
+      hello: 'hello world',
+    },
+  },
+  ja: {
+    message: {
+      hello: 'こんにちは、世界',
+    },
+  },
+};
+
+Vue.use(VueI18n);
+
+const i18n = new VueI18n({
+  locale: 'ja', // set locale
+  messages, // set locale messages
+});
 
 Vue.config.devtools = true;
 Vue.use(WT);
+
 Vue.component('demo-block', DemoBlok);
 Vue.component('api-doc', ApiDoc);
 // Vue.use(VueHighlightJS, {
@@ -28,6 +50,7 @@ new Vue({
   // eslint-disable-line
   render: (h) => h(App),
   router,
+  i18n,
 }).$mount('#app');
 
 // if (window.MTD_Frame) {
