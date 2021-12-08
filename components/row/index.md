@@ -25,7 +25,9 @@
 :::include(src="./doc/mix.vue")
 :::
 
-5
+### <span>{{$t('grid.module2.subtitle3')}}</span>
+
+<span>{{$t('grid.module2.desc3')}}</span>
 
 :::include(src="./doc/offset.vue")
 :::
