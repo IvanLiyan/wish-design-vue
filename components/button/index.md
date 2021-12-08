@@ -84,8 +84,3 @@
 ## API
 
 <api-doc name="Button" :doc="require('./api.json')"></api-doc>
-
-## show all, for UI check
-
-:::include(src="./doc/show.vue")
-:::

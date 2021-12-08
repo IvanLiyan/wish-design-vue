@@ -16,8 +16,3 @@
 <api-doc name="Radio" :doc="require('./api.json')"></api-doc>
 
 <api-doc name="RadioGroup" :doc="require('../radio-group/api.json')"></api-doc>
-
-### show all for qa test
-
-:::include(src="./doc/show.vue")
-:::

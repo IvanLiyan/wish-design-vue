@@ -15,8 +15,3 @@
 ## API
 
 <api-doc name="Tag" :doc="require('./api.json')"></api-doc>
-
-## show all for qa test
-
-:::include(src="./doc/show.vue")
-:::

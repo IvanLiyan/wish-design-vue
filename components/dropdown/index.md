@@ -34,8 +34,3 @@
 
 <api-doc name="Dropdown" :doc="require('./api.json')"></api-doc>
 :::
-
-## show all
-
-:::include(src="./doc/show.vue")
-:::

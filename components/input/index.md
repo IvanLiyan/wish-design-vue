@@ -67,8 +67,3 @@
 ## API
 
 <api-doc name="Input" :doc="require('./api.json')"></api-doc>
-
-### Show all, for UI check
-
-:::include(src="./doc/show.vue")
-:::

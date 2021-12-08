@@ -15,8 +15,3 @@
 
 <api-doc name="Checkbox" :doc="require('./api.json')"></api-doc>
 <api-doc name="CheckboxGroup" :doc="require('../checkbox-group/api.json')"></api-doc>
-
-## show all for qa test
-
-:::include(src="./doc/show.vue")
-:::

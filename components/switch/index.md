@@ -8,8 +8,3 @@
 ## API
 
 <api-doc name="Switch" :doc="require('./api.json')"></api-doc>
-
-## show all for qa test
-
-:::include(src="./doc/show.vue")
-:::
