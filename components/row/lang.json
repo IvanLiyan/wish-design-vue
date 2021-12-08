@@ -1,0 +1,42 @@
+{
+  "chinese": {
+    "componnent_desc": "通过基础的 24 分栏，迅速简便地创建布局",
+    "module1": {
+      "title": "基础布局",
+      "desc1": "使用单一分栏创建基础的栅格布局。 通过 row 和 col 组件，并通过 col 组件的 span 属性我们就可以自由地组合布局"
+    },
+    "module2": {
+      "title": "类型与用法",
+      "subtitle1": "分栏间隔",
+      "desc1": "分栏之间存在间隔。 Row 组件 提供 gutter 属性来指定每一栏之间的间隔，默认间隔为 0",
+      "subtitle2": "混合布局",
+      "desc2": "通过基础的 1/24 分栏任意扩展组合形成较为复杂的混合布局",
+      "subtitle3": "分栏偏移",
+      "desc3": "支持偏移指定的栏数。 通过制定 col 组件的 offset 属性可以指定分栏偏移的栏数",
+      "subtitle4": "对齐方式",
+      "desc4": "通过 flex 布局来对分栏进行灵活的对齐。 将 type 属性赋值为 'flex'，可以启用 flex 布局，并可通过 justify 属性来指定 start, center, end, space-between, space-around 其中的值来定义子元素的排版方式",
+      "subtitle5": "响应式布局",
+      "desc5": "参照了 Bootstrap 的 响应式设计，预设了六个响应尺寸：xs、sm、md、lg、xl、xxl"
+    }
+  },
+  "english": {
+    "componnent_desc": "Use the 24-column system to create layout easily.",
+    "module1": {
+      "title": "Basic Grid",
+      "desc1": "Use row to create simple horizontal containers. Within row, use col and span to create different combinations of elements that span any number of columns."
+    },
+    "module2": {
+      "title": "Type and Use Cases",
+      "subtitle1": "Gutter",
+      "desc1": "Gutters exist between columns。 You can set gutters under row component, the default gutter is 0.",
+      "subtitle2": "Mixed Grid",
+      "desc2": "By mixing columns with differnt span under the 24-grid system, you can easily create different layout.",
+      "subtitle3": "Offset",
+      "desc3": "Support column starting from specific position by specifying offset.",
+      "subtitle4": "Alignment",
+      "desc4": "Use flex property to have flexible alginment, by adding flex as well as justify value (start, center, end, space-between, space-around), you can define the layout alignment as shown below.",
+      "subtitle5": "Responsive",
+      "desc5": "Tetris grid system referes to Bootstrap Responsive Design，and have 6 responsive presets：xs、sm、md、lg、xl、xxl。"
+    }
+  }
+}

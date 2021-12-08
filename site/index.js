@@ -11,7 +11,7 @@ import DemoBlok from './components/demo-block';
 import 'highlight.js/styles/default.css';
 import VueI18n from 'vue-i18n';
 import ApiDoc from './components/api-doc';
-import LangMessage from './lang';
+import LangMessage from './lang.json';
 
 Vue.use(VueI18n);
 

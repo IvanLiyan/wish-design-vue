@@ -1,0 +1,40 @@
+{
+  "chinese": {
+    "componnent_desc": "向下弹出的列表，用于归纳同类型的项目",
+    "module1": {
+      "title": "基础样式",
+      "desc1": "下拉由下拉项目组成。下拉项目内容可以自定义，可以含有图标，文字和展开按钮，或者为纯文字。 多个层级的下拉见级联选择 Cascader"
+    },
+    "module2": {
+      "title": "呼出方式"
+    },
+    "module3": {
+      "title": "弹出位置"
+    },
+    "module4": {
+      "title": "应用",
+      "desc1": "基础下拉",
+      "desc2": "图标型下拉",
+      "desc3": "下拉内容分类展示"
+    }
+  },
+  "english": {
+    "componnent_desc": "Use for expanding a list of similar types of content downwards",
+    "module1": {
+      "title": "Basic Style",
+      "desc1": "Dropdown is made of dropdown content. You can customize dropdown content, with icon, text, button, etc. If you need multiple layers, you can use Cascader."
+    },
+    "module2": {
+      "title": "Trigger"
+    },
+    "module3": {
+      "title": "Position"
+    },
+    "module4": {
+      "title": "Use Cases",
+      "desc1": "Basic Dropdown",
+      "desc2": "Icon Dropdown",
+      "desc3": "Customized Dropdown"
+    }
+  }
+}
