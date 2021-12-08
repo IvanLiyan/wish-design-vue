@@ -1,21 +1,23 @@
 <template>
-  <div class="submenu">submenu</div>
+  <div class="submenu"><LangSelector @theme="handleTheme" /></div>
 </template>
 <script>
 // import StyleSelector from './style-select';
 // import VersionSelector from './version-select';
+import LangSelector from './lang-select';
 
 export default {
   components: {
     // StyleSelector,
     // VersionSelector,
+    LangSelector,
   },
-  provide () {
+  provide() {
     return {
       router: this,
     };
   },
-  data () {
+  data() {
     return {
       route: undefined,
       $router: undefined,
@@ -23,18 +25,18 @@ export default {
     };
   },
   methods: {
-    handleTheme (theme) {
+    handleTheme(theme) {
       this.theme = theme;
     },
   },
 };
 </script>
 <style lang="scss">
-  .submenu{
-    display: flex;
-    align-items: center;
-    >div{
-      margin-left: 12px;
-    }
+.submenu {
+  display: flex;
+  align-items: center;
+  > div {
+    margin-left: 12px;
   }
+}
 </style>

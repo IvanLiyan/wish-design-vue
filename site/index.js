@@ -11,25 +11,13 @@ import DemoBlok from './components/demo-block';
 import 'highlight.js/styles/default.css';
 import VueI18n from 'vue-i18n';
 import ApiDoc from './components/api-doc';
-
-const messages = {
-  en: {
-    message: {
-      hello: 'hello world',
-    },
-  },
-  ja: {
-    message: {
-      hello: 'こんにちは、世界',
-    },
-  },
-};
+import LangMessage from './lang';
 
 Vue.use(VueI18n);
 
 const i18n = new VueI18n({
-  locale: 'ja', // set locale
-  messages, // set locale messages
+  locale: 'chinese', // set locale
+  messages: LangMessage, // set locale messages
 });
 
 Vue.config.devtools = true;
@@ -52,41 +40,3 @@ new Vue({
   router,
   i18n,
 }).$mount('#app');
-
-// if (window.MTD_Frame) {
-//   window.MTD_Frame.mount({
-//     project: 'component-vue',
-//     nav: {
-//       subBar: {
-//         tabs: {
-//           activeValue: '',
-//           list: [{
-//             title: '组件示例',
-//             value: 'components',
-//           },
-//           {
-//             title: '开发文档',
-//             value: 'doc',
-//           },
-//           {
-//             title: '代码仓库 <i class="mtdicon mtdicon-forward-o"></i>',
-//             value: 'code',
-//             href: 'https://dev.sankuai.com/code/repo-detail/ss/mtd-vue/file/list',
-//             target: '_blank',
-//           }],
-//         },
-//       },
-//     },
-//     env: process.env.NODE_ENV,
-//     sso: true,
-//     onSuccess: () => {
-//       new Vue({ // eslint-disable-line
-//         render: h => h(App),
-//         router,
-//       }).$mount('#app');
-//     },
-//     onError: (error) => {
-//       console.error(error);
-//     },
-//   });
-// }

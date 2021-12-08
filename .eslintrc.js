@@ -34,7 +34,7 @@ module.exports = {
     'prefer-promise-reject-errors': 'off',
     // allow debugger during development
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-    'max-len': [2, 120, 2],
+    'max-len': [2, 300, 2],
     'vue/max-attributes-per-line': 'off',
     'vue/html-indent': 'off',
     'vue/require-default-prop': 'off',

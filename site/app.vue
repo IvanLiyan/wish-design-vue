@@ -7,22 +7,26 @@
     ref="scroll"
   >
     <div class="app-menu">
-      <router-link to="/components">组件示例</router-link>
-      <router-link to="/doc">开发文档</router-link>
-      <a key="code" href="https://github.com/ContextLogic/wish-design-vue" target="_blank"
-        ><span>代码仓库</span><wt-icon name="external-link" :stroke-width="1.5" :width="14" :height="14"
-      /></a>
-      <a
-        key="design"
-        href="https://www.figma.com/file/MYiBNyNKoXtYWF4nnOOYyj/%F0%9F%8C%B1-Wishpost-Style-%26-Components"
-        target="_blank"
-        ><span>设计</span><wt-icon name="external-link" :stroke-width="1.5" :width="14" :height="14"
-      /></a>
-      <a key="wnpm" href="http://npm.bjs.i.wish.com/-/web/detail/@wish/wt-vue" target="_blank"
-        ><span>npm源</span><wt-icon name="external-link" :stroke-width="1.5" :width="14" :height="14"
-      /></a>
-      {{ $t('message.hello') }}
+      <div>
+        <router-link to="/components">组件示例</router-link>
+        <router-link to="/doc">开发文档</router-link>
+        <a key="code" href="https://github.com/ContextLogic/wish-design-vue" target="_blank"
+          ><span>代码仓库</span><wt-icon name="external-link" :stroke-width="1.5" :width="14" :height="14"
+        /></a>
+        <a
+          key="design"
+          href="https://www.figma.com/file/MYiBNyNKoXtYWF4nnOOYyj/%F0%9F%8C%B1-Wishpost-Style-%26-Components"
+          target="_blank"
+          ><span>设计</span><wt-icon name="external-link" :stroke-width="1.5" :width="14" :height="14"
+        /></a>
+        <a key="wnpm" href="http://npm.bjs.i.wish.com/-/web/detail/@wish/wt-vue" target="_blank"
+          ><span>npm源</span><wt-icon name="external-link" :stroke-width="1.5" :width="14" :height="14"
+        /></a>
+      </div>
+
+      <Submenu />
     </div>
+
     <router-view />
   </div>
 </template>
@@ -50,7 +54,9 @@ function parseSearch(search) {
 
 export default {
   name: 'App',
-  components: {},
+  components: {
+    Submenu: Submenu,
+  },
   provide() {
     return {
       app: this,
@@ -180,9 +186,10 @@ export default {
   background-color: #fff;
   border-bottom: 1px solid rgba(0, 0, 0, 0.06);
   padding: 0 24px;
-  flex-direction: row-reverse;
   z-index: 999;
   font-size: $font-size-2;
+  display: flex;
+  justify-content: space-between;
   a {
     margin-right: 20px;
     line-height: 48px;
@@ -214,6 +221,9 @@ export default {
 }
 .hide-top-nav {
   padding-top: 0;
+}
+.right-menu {
+  float: right;
 }
 html,
 body {

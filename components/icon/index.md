@@ -24,7 +24,9 @@ export default {
 
 # 图标 / Icon
 
-## 基础样式
+<span>{{$t('icon.componnent_desc')}}</span>
+
+## <span>{{$t('button.module1.title')}}</span>
 
 :::demo
 
@@ -37,9 +39,9 @@ export default {
 
 :::
 
-## 类型和用法
+## <span>{{$t('icon.module2.title')}}</span>
 
-### 颜色
+### <span>{{$t('icon.module2.subtitle1')}}</span>
 
 :::demo
 
@@ -52,7 +54,7 @@ export default {
 
 :::
 
-### 大小&粗细
+### <span>{{$t('icon.module2.subtitle2')}}</span>
 
 :::demo
 
