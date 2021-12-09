@@ -1,0 +1,8 @@
+{
+  "chinese": {
+    "componnent_desc": "表达同一行为两种互斥状态之间的切换"
+  },
+  "english": {
+    "componnent_desc": "Show the boolean status change of the same action."
+  }
+}

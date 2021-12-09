@@ -1,6 +1,6 @@
 # 开关 / Switch
 
-表达同一行为两种互斥状态之间的切换。
+<span>{{$t('switch.componnent_desc')}}</span>
 
 :::include(src="./doc/status.vue")
 :::

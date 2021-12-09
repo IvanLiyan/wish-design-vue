@@ -1,0 +1,8 @@
+{
+  "chinese": {
+    "componnent_desc": "用于展示分类和标记属性，可操作标签为圆角，纯展示标签为直角"
+  },
+  "english": {
+    "componnent_desc": "Use for showing/tagging category & property. The clickable tag has a rounded border while the display tag has a square border."
+  }
+}

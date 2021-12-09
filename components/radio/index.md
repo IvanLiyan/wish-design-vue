@@ -1,6 +1,6 @@
 # 单选框 / Radio
 
-用于多个选项（一般一组不超过 5 个）的选择输入，状态的切换。
+<span>{{$t('radio.componnent_desc')}}</span>
 
 :::include(src="./doc/status-radio.vue")
 :::
