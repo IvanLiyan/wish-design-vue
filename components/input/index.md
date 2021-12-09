@@ -17,47 +17,43 @@
 
 # 文本输入框 / Input
 
-用于收集用户通过鼠标或键盘提供的信息。
+<span>{{$t('input.componnent_desc')}}</span>
 
-## 单行文本
+## <span>{{$t('input.module1.title')}}</span>
 
-### 基础样式
+### <span>{{$t('input.module1.subtitle1')}}</span>
 
-基本使用，可自定义内置标题，占位符，图标，标签，提示和验证。
+<span>{{$t('input.module1.desc1')}}</span>
 
 :::include(src="./doc/base-input.vue")
 :::
 
-### 状态变化
+### <span>{{$t('input.module1.subtitle2')}}</span>
 
-输入框的聚焦、点击状态，不可编辑状态，以及报错状态。
+<span>{{$t('input.module1.desc2')}}</span>
 
 :::include(src="./doc/active-input.vue")
 :::
 
-### 应用
+### <span>{{$t('input.module1.subtitle3')}}</span>
 
-1、纯输入框
-2、带标题的输入框
-3、带图标的输入框
-4、带前后缀的输入框
-5、可以清除内容的输入框
+<span>{{$t('input.module1.desc3')}}</span>
 
 :::include(src="./doc/type-input.vue")
 :::
 
-## 多行文本
+## <span>{{$t('input.module2.title')}}</span>
 
-### 基础样式
+### <span>{{$t('input.module2.subtitle1')}}</span>
 
-用于收集用户输入的大量信息。
+<span>{{$t('input.module2.desc1')}}</span>
 
 :::include(src="./doc/base-textarea.vue")
 :::
 
-### 状态变化
+### <span>{{$t('input.module2.subtitle2')}}</span>
 
-输入框的聚焦、点击状态，不可编辑状态，以及报错状态。
+<span>{{$t('input.module2.desc2')}}</span>
 
 :::include(src="./doc/active-textarea.vue")
 :::

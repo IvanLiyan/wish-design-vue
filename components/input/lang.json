@@ -1,0 +1,40 @@
+{
+  "chinese": {
+    "componnent_desc": "用于收集用户通过鼠标或键盘提供的信息",
+    "module1": {
+      "title": "单行文本",
+      "subtitle1": "基础样式",
+      "desc1": "基本使用，可自定义内置标题，占位符，图标，标签，提示和验证",
+      "subtitle2": "状态变化",
+      "desc2": "输入框的聚焦、点击状态，不可编辑状态，以及报错状态",
+      "subtitle3": "应用",
+      "desc3": "1、纯输入框 2、带标题的输入框 3、带图标的输入框 4、带前后缀的输入框 5、可以清除内容的输入框"
+    },
+    "module2": {
+      "title": "多行文本",
+      "subtitle1": "基础样式",
+      "desc1": "用于收集用户输入的大量信息",
+      "subtitle2": "状态变化",
+      "desc2": "输入框的聚焦、点击状态，不可编辑状态，以及报错状态"
+    }
+  },
+  "english": {
+    "componnent_desc": "Use for collecting mouse/keyboard input from user.",
+    "module1": {
+      "title": "Single-line Input",
+      "subtitle1": "Basic Style",
+      "desc1": "Basic usage, you can customize label, placeholder, icon, prefix & suffix, hint, and validation.",
+      "subtitle2": "Status",
+      "desc2": "Single-line Input has focused, clicked, disabled, and invalid status.",
+      "subtitle3": "Use Cases",
+      "desc3": "1. Text Input 2. Input with label 3. Input with Icon 4. Input with prefix/suffix 5. Input with clear function."
+    },
+    "module2": {
+      "title": "Multi-line Input",
+      "subtitle1": "Basic Style",
+      "desc1": "Use for collecting large quantity data from user.",
+      "subtitle2": "Status",
+      "desc2": "Multi-line Input has focused, clicked, disabled, and invalid status."
+    }
+  }
+}

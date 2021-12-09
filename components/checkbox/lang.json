@@ -1,0 +1,8 @@
+{
+  "chinese": {
+    "componnent_desc": "用于多个选项（一般一组不超过 5 个）的选择输入，状态的切换"
+  },
+  "english": {
+    "componnent_desc": "Use for multi-choice input (normally no more than 5) or change of status"
+  }
+}
