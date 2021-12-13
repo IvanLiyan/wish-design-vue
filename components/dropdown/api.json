@@ -2,7 +2,7 @@
   "props": [
     {
       "name": "show-arrow",
-      "desc": "是否显示箭头",
+      "desc": "$t('dropdown.api.show-arrow')",
       "type": "boolean",
       "optionalValue": "",
       "default": "false",
@@ -10,7 +10,7 @@
     },
     {
       "name": "visible",
-      "desc": "手动控制是否显示 Dropdown, 支持 v-model",
+      "desc": "$t('dropdown.api.visible')",
       "type": "boolean",
       "optionalValue": "",
       "default": "false",
@@ -18,7 +18,7 @@
     },
     {
       "name": "placement",
-      "desc": "显示的位置",
+      "desc": "$t('dropdown.api.placement')",
       "type": "string",
       "optionalValue": [
         "top",
@@ -39,7 +39,7 @@
     },
     {
       "name": "popper-class",
-      "desc": "为 Dropdown 的 popper 添加类名",
+      "desc": "$t('dropdown.api.poppper-class')",
       "type": "string",
       "optionalValue": "",
       "default": "",
@@ -47,7 +47,7 @@
     },
     {
       "name": "disabled",
-      "desc": "是否禁用",
+      "desc": "$t('dropdown.api.disabled')",
       "type": "boolean",
       "optionalValue": "",
       "default": "false",
@@ -55,7 +55,7 @@
     },
     {
       "name": "trigger",
-      "desc": "触发行为",
+      "desc": "$t('dropdown.api.trigger')",
       "type": "string",
       "optionalValue": ["hover", "click", "focus"],
       "default": "click",
@@ -63,7 +63,7 @@
     },
     {
       "name": "popper-options",
-      "desc": "自定义 popper.js 的配置项，具体配置查看 <a target='_blank' href='https://popper.js.org/docs/v1/#modifiers--codeobjectcode'>popper.js 文档</a>",
+      "desc": "$t('dropdown.api.popper-options')",
       "type": "object",
       "optionalValue": "",
       "default": "",
@@ -73,27 +73,28 @@
   "slots": [
     {
       "name": "dropdown",
-      "desc": "下拉显示的内容"
+      "desc": "$t('dropdown.api.dropdown')"
     }
   ],
   "methods": [
     {
       "name": "updatePopper()",
-      "desc": "手动更新下拉面板位置"
+      "desc": "$t('dropdown.api.updatePopper')"
     }
   ],
-  "event": [
+
+  "events": [
     {
       "name": "change",
-      "desc": "下拉框出现/隐藏时触发",
+      "desc": "$t('dropdown.api.change')",
       "signature": "function (visible: Boolean)",
-      "args": "点击事件对象"
+      "args": "(event: Event)"
     },
     {
       "name": "clickoutside",
-      "desc": "trigger 为 click 时，点击下拉框外部时触发",
+      "desc": "$t('dropdown.api.clickoutside')",
       "signature": "function (e: MouseEvent)",
-      "args": "点击事件对象"
+      "args": "(event: Event)"
     }
   ]
 }

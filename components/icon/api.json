@@ -2,7 +2,7 @@
   "props": [
     {
       "name": "name",
-      "desc": "icon名称",
+      "desc": "$t('icon.api.name')",
       "type": "string",
       "optionalValue": ["参考图标集合"],
       "default": "",
@@ -10,28 +10,28 @@
     },
     {
       "name": "color",
-      "desc": "颜色",
+      "desc": "$t('icon.api.color')",
       "type": "string",
       "default": "#000",
       "version": ""
     },
     {
       "name": "width",
-      "desc": "宽",
+      "desc": "$t('icon.api.width')",
       "type": "number",
       "default": "24",
       "version": ""
     },
     {
       "name": "height",
-      "desc": "高",
+      "desc": "$t('icon.api.height')",
       "type": "number",
       "default": "24",
       "version": ""
     },
     {
       "name": "strokeWidth",
-      "desc": "线条粗细",
+      "desc": "$t('icon.api.strokeWidth')",
       "type": "number",
       "default": "2",
       "version": ""

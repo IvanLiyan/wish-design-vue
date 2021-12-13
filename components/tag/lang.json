@@ -1,8 +1,26 @@
 {
   "chinese": {
-    "componnent_desc": "用于展示分类和标记属性，可操作标签为圆角，纯展示标签为直角"
+    "componnent_desc": "用于展示分类和标记属性，可操作标签为圆角，纯展示标签为直角",
+    "api": {
+      "size": "尺寸",
+      "type": "类型",
+      "rounded": "是否是圆形",
+      "closable": "是否可以关闭",
+      "disabled": "是否禁用",
+      "click": "点击事件的回调",
+      "close": "关闭事件的回调"
+    }
   },
   "english": {
-    "componnent_desc": "Use for showing/tagging category & property. The clickable tag has a rounded border while the display tag has a square border."
+    "componnent_desc": "Use for showing/tagging category & property. The clickable tag has a rounded border while the display tag has a square border.",
+    "api": {
+      "size": "The size property",
+      "type": "The type property",
+      "rounded": "Whether the border-radius is rounded",
+      "closable": "Whether the tag is closable",
+      "disabled": "Whether the tag is disabled",
+      "click": "The return value of the click event",
+      "close": "The return value of the close event"
+    }
   }
 }

@@ -2,7 +2,7 @@
   "props": [
     {
       "name": "disabled",
-      "desc": "禁用状态",
+      "desc": "$t('checkbox-group.api.disabled')",
       "type": "boolean",
       "optionalValue": "",
       "default": "false",
@@ -10,7 +10,7 @@
     },
     {
       "name": "value",
-      "desc": "当前选中的值，支持 v-model",
+      "desc": "$t('checkbox-group.api.value')",
       "type": "any",
       "optionalValue": "",
       "default": "",
@@ -20,7 +20,7 @@
   "events": [
     {
       "name": "change",
-      "desc": "在选项状态发生改变时触发，返回当前状态。",
+      "desc": "$t('checkbox-group.api.change')",
       "args": "当前选中 value 值"
     }
   ]

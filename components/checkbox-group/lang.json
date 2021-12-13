@@ -1,0 +1,16 @@
+{
+  "chinese": {
+    "api": {
+      "disabled": "禁用状态",
+      "value": "当前选中的值，支持 v-model",
+      "change": "在选项状态发生改变时触发，返回当前状态。"
+    }
+  },
+  "english": {
+    "api": {
+      "disabled": "Disabled status",
+      "value": "Current selected value, supports v-model",
+      "change": "Triggered when status change, return current status"
+    }
+  }
+}

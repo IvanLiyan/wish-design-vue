@@ -14,7 +14,20 @@
       "desc1": "用不同的颜色（红，黄，绿）来表示三种不同的强调含义（危险，警告，成功）"
     },
     "module5": { "title": "按钮组合", "desc1": "一组相关联的操作聚合在一起成为按钮组，方便快捷操作" },
-    "module6": { "title": "异步状态", "desc1": "点击后按钮进入 loading 状态，当异步结束后恢复正常" }
+    "module6": { "title": "异步状态", "desc1": "点击后按钮进入 loading 状态，当异步结束后恢复正常" },
+
+    "api": {
+      "type": "类型",
+      "loading": "是否加载中状态",
+      "disabled": "是否是禁用状态",
+      "icon": "设置按钮左侧图标类型",
+      "href": "点击跳转的地址，指定此属性将用 a 标签渲染组件",
+      "to": "同 router-link 组件 <a href='https://router.vuejs.org/zh/api/#to' target='blank'>to 属性</a>，指定此属性将使用 router-link 渲染组件",
+      "link-size": "类型为'link'时，设置链接文字的大小",
+      "html-type": "设置 button 原生的 type 类型",
+      "target": "相当于 a 链接的 target 属性，href 存在时生效",
+      "click": "click 事件 handler"
+    }
   },
   "english": {
     "componnent_desc": "Button is used for starting an action. The button label text should reflect the action.",
@@ -40,6 +53,18 @@
     "module6": {
       "title": "Loading Status",
       "desc1": "You can also add a loading status to a clicked button to imform the user the system is running, after the loading complete, the button is back to normal status."
+    },
+    "api": {
+      "type": "Button Type",
+      "loading": "Whether to show loading status",
+      "disabled": "Whether to show disabled status",
+      "icon": "Set the left-side icon type",
+      "href": "Set the redirect link after clicking the button, this property uses tag a render property",
+      "to": "Same as 'to' property in router-link component, this property uses router-link render property",
+      "link-size": "Set the font size of 'link' type button",
+      "html-type": "Set the original html type of the button",
+      "target": "Similar to tag a target property, this property exist when href detected",
+      "click": "Set the click event handler"
     }
   }
 }

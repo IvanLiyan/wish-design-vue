@@ -1,8 +1,28 @@
 {
   "chinese": {
-    "componnent_desc": "表达同一行为两种互斥状态之间的切换"
+    "componnent_desc": "表达同一行为两种互斥状态之间的切换",
+    "api": {
+      "disabled": "是否禁用",
+      "name": "switch 组件的 name 属性",
+      "value": "支持 v-model，用于设置开关是否选中，使用 value === true-value 来判断是否打开",
+      "true-value": "switch 打开时的值",
+      "false-value": "switch 关闭时的值",
+      "default": "默认 vue slot",
+      "hint": "注释内容",
+      "change": "开关变化时触发，返回当前的状态"
+    }
   },
   "english": {
-    "componnent_desc": "Show the boolean status change of the same action."
+    "componnent_desc": "Show the boolean status change of the same action.",
+    "api": {
+      "disabled": "Whether disabled",
+      "name": "The name property of the switch component",
+      "value": "Support v-model, used for setting whether the switch is turned on, use value === true-value to check if it is turned on",
+      "true-value": "The value when the switch is turned on",
+      "false-value": "The value when the switch is turned off",
+      "default": "default vue slot",
+      "hint": "Set the hint text property",
+      "change": "Triggered when status change, return current status"
+    }
   }
 }

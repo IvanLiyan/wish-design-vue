@@ -1,8 +1,26 @@
 {
   "chinese": {
-    "componnent_desc": "用于多个选项（一般一组不超过 5 个）的选择输入，状态的切换"
+    "componnent_desc": "用于多个选项（一般一组不超过 5 个）的选择输入，状态的切换",
+    "api": {
+      "value": "Checkbox 的 value",
+      "disabled": "禁用状态，可继承 CheckboxGroup 组件的 disabled 值",
+      "name": "Checkbox 的 name，可继承 CheckboxGroup 组件的 name 值",
+      "checked": "是否选中,支持 v-model,如果在 CheckboxGroup 中将根据 value 值判断得出",
+      "default": "默认 vue slot",
+      "hint": "注释内容",
+      "change": "在选项状态发生改变时触发，返回当前状态。"
+    }
   },
   "english": {
-    "componnent_desc": "Use for multi-choice input (normally no more than 5) or change of status"
+    "componnent_desc": "Use for multi-choice input (normally no more than 5) or change of status",
+    "api": {
+      "value": "Set the checkbox value property",
+      "disabled": "Disable property, can inherit CheckboxGroup component disabled property",
+      "name": "Name property, can inherit CheckboxGroup component name property",
+      "checked": "Checked status, supports v-model. If checkbox is part of a CheckboxGroup, it will be defined by the value property",
+      "default": "default vue slot",
+      "hint": "Set the hint text property",
+      "change": "Triggered when status change, return current status"
+    }
   }
 }

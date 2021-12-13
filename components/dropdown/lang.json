@@ -16,6 +16,19 @@
       "desc1": "基础下拉",
       "desc2": "图标型下拉",
       "desc3": "下拉内容分类展示"
+    },
+    "api": {
+      "show-arrow": "是否显示箭头",
+      "visible": "手动控制是否显示 Dropdown, 支持 v-model",
+      "placement": "显示的位置",
+      "poppper-class": "为 Dropdown 的 popper 添加类名",
+      "disabled": "是否禁用",
+      "trigger": "触发行为",
+      "popper-options": "自定义 popper.js 的配置项，具体配置查看 <a target='_blank' href='https://popper.js.org/docs/v1/#modifiers--codeobjectcode'>popper.js 文档</a>",
+      "dropdown": "下拉显示的内容",
+      "updatePopper": "手动更新下拉面板位置",
+      "change": "下拉框出现/隐藏时触发",
+      "clickoutside": "trigger 为 click 时，点击下拉框外部时触发"
     }
   },
   "english": {
@@ -35,6 +48,19 @@
       "desc1": "Basic Dropdown",
       "desc2": "Icon Dropdown",
       "desc3": "Customized Dropdown"
+    },
+    "api": {
+      "show-arrow": "Whether to show arrow",
+      "visible": "Whether to show dropdown, support v-model",
+      "placement": "The placement of the dropdown",
+      "poppper-class": "Add the category name of the dropdown popper",
+      "disabled": "Whether disabled",
+      "trigger": "The trigger behavior of the dropdown",
+      "popper-options": "The customized popper.js config, please read <a target='_blank' href='https://popper.js.org/docs/v1/#modifiers--codeobjectcode'>popper.js</a> for more details",
+      "dropdown": "The content of the dropdown",
+      "updatePopper": "Update popper content manually",
+      "change": "Triggered when dropdown shows/hides",
+      "clickoutside": "When triggered by clicking, triggered by clicking the outside area of dropdown"
     }
   }
 }

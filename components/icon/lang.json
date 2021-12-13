@@ -2,7 +2,14 @@
   "chinese": {
     "componnent_desc": "Tetris主要使用线性图标",
     "module1": { "title": "基础样式" },
-    "module2": { "title": "类型与用法", "subtitle1": "颜色", "subtitle2": "大小&粗细" }
+    "module2": { "title": "类型与用法", "subtitle1": "颜色", "subtitle2": "大小&粗细" },
+    "api": {
+      "name": "icon名称",
+      "color": "颜色",
+      "width": "宽",
+      "height": "高",
+      "strokeWidth": "线条粗细"
+    }
   },
   "english": {
     "componnent_desc": "Tetris mainly uses line icon.",
@@ -13,6 +20,13 @@
       "title": "Type and Use Cases",
       "subtitle1": "Color",
       "subtitle2": "Size & Thickness"
+    },
+    "api": {
+      "name": "The name of the icon",
+      "color": "The color of the icon",
+      "width": "The width of the icon",
+      "height": "The height of the icon",
+      "strokeWidth": "The line thickness of the icon"
     }
   }
 }

@@ -1,0 +1,18 @@
+{
+  "chinese": {
+    "api": {
+      "disabled": "禁用状态",
+      "value": "当前选中的值",
+      "name": "RadioGroup 下所有 input[type='radio'] 的 name 属性",
+      "change": "在选项状态发生改变时触发，返回当前状态。"
+    }
+  },
+  "english": {
+    "api": {
+      "disabled": "Disabled status",
+      "value": "Current selected value",
+      "name": "All the input [type='radio'] name properties under RadioGroup",
+      "change": "Triggered when status change, return current status"
+    }
+  }
+}

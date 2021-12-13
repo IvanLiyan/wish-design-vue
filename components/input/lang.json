@@ -16,6 +16,21 @@
       "desc1": "用于收集用户输入的大量信息",
       "subtitle2": "状态变化",
       "desc2": "输入框的聚焦、点击状态，不可编辑状态，以及报错状态"
+    },
+    "api": {
+      "type": "类型",
+      "clearable": "是否有清空按钮",
+      "invalid": "是否是错误状态",
+      "disabled": "是否禁用",
+      "max-length": "限制输入的最大长度",
+      "value": "输入框的内容,若需要双向数据绑定，请使用v-model",
+      "autosize": "自适应内容高度, 可传入对象，如，{ minRows: 2, maxRows: 6 }",
+      "prefix": "输入框头部图标插槽",
+      "suffix": "输入框尾部图标插槽",
+      "input": "当输入值改变时触发",
+      "change": "当输入值改变时触发，拼音输入过程中将不再触发，如有需要可使用 input 事件",
+      "clear": "当点击清空按钮时触发",
+      "enter": "用户按下回车时触发，在中文输入过程中按下回车不会触发"
     }
   },
   "english": {
@@ -35,6 +50,21 @@
       "desc1": "Use for collecting large quantity data from user.",
       "subtitle2": "Status",
       "desc2": "Multi-line Input has focused, clicked, disabled, and invalid status."
+    },
+    "api": {
+      "type": "Type property",
+      "clearable": "Whether to show clear button",
+      "invalid": "Whether the input is invalid",
+      "disabled": "Whether disabled",
+      "max-length": "The max length of the input value",
+      "value": "The content of the input, please use v-model if two-way data bind is required",
+      "autosize": "Responsive height, support object, for example, {minRows: 2, maxRows: 6}",
+      "prefix": "The icon slot before input value",
+      "suffix": "The icon slot after input value",
+      "input": "Triggered when input value changed",
+      "change": "Trigged when input value changed but won't trigger during Chinese Pinyin input. Please use input if trigger is needed",
+      "clear": "Triggered when clicking clear button",
+      "enter": "Triggered when press keyboard 'enter', won't trigger during Chinese Pinyin input "
     }
   }
 }

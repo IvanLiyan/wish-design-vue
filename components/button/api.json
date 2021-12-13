@@ -2,7 +2,7 @@
   "props": [
     {
       "name": "type",
-      "desc": "类型",
+      "desc": "$t('button.api.type')",
       "type": "string",
       "optionalValue": [
         "primary",
@@ -21,7 +21,7 @@
     },
     {
       "name": "loading",
-      "desc": "是否加载中状态",
+      "desc": "$t('button.api.loading')",
       "type": "boolean",
       "optionalValue": "",
       "default": "false",
@@ -29,7 +29,7 @@
     },
     {
       "name": "disabled",
-      "desc": "是否是禁用状态",
+      "desc": "$t('button.api.disabled')",
       "type": "boolean",
       "optionalValue": "",
       "default": "false",
@@ -37,7 +37,7 @@
     },
     {
       "name": "icon",
-      "desc": "设置按钮左侧图标类型",
+      "desc": "$t('button.api.icon')",
       "type": "string",
       "optionalValue": "",
       "default": "",
@@ -45,7 +45,8 @@
     },
     {
       "name": "href",
-      "desc": "点击跳转的地址，指定此属性将用 a 标签渲染组件",
+      "desc": "$t('button.api.href')",
+
       "type": "string",
       "optionalValue": "",
       "default": "",
@@ -53,7 +54,7 @@
     },
     {
       "name": "to",
-      "desc": "同 router-link 组件 <a href='https://router.vuejs.org/zh/api/#to' target='_blank'>to 属性</a>，指定此属性将使用 router-link 渲染组件",
+      "desc": "$t('button.api.to')",
       "type": ["string", "object"],
       "optionalValue": "",
       "default": "",
@@ -61,7 +62,7 @@
     },
     {
       "name": "link-size",
-      "desc": "类型为'link'时，设置链接文字的大小",
+      "desc": "$t('button.api.link-size')",
       "type": "string",
       "optionalValue": ["normal", "small"],
       "default": "normal",
@@ -69,7 +70,7 @@
     },
     {
       "name": "html-type",
-      "desc": "设置 button 原生的 type 类型",
+      "desc": "$t('button.api.html-type')",
       "type": "string",
       "optionalValue": ["button", "submit", "reset"],
       "default": "button",
@@ -77,7 +78,7 @@
     },
     {
       "name": "target",
-      "desc": "相当于 a 链接的 target 属性，href 存在时生效",
+      "desc": "$t('button.api.target')",
       "type": "string",
       "optionalValue": "",
       "default": "",
@@ -87,9 +88,9 @@
   "events": [
     {
       "name": "click",
-      "desc": "click 事件 handler",
+      "desc": "$t('button.api.click')",
       "signature": "function (event: Event)",
-      "args": "点击事件对象"
+      "args": "(event: Event)"
     }
   ]
 }

@@ -1,0 +1,32 @@
+{
+  "chinese": {
+    "api": {
+      "span": "栅格占据的列数",
+      "offset": "栅格左侧的间隔格数",
+      "push": "栅格向右移动格数",
+      "pull": "栅格向左移动格数",
+      "xs": "< 576px 响应式栅格数或者栅格属性对象",
+      "sm": "≥ 576px 响应式栅格数或者栅格属性对象",
+      "md": "≥ 768px 响应式栅格数或者栅格属性对象",
+      "lg": "≥ 992px 响应式栅格数或者栅格属性对象",
+      "xl": "≥ 1200px 响应式栅格数或者栅格属性对象",
+      "xxl": "≥ 1620px 响应式栅格数或者栅格属性对象",
+      "coltag": "自定义元素标签"
+    }
+  },
+  "english": {
+    "api": {
+      "span": "The number of columns one raster occupied",
+      "offset": "The number of columns to offset raster from left",
+      "push": "The number of columns that raster is moved to the right",
+      "pull": "The number of columns that raster is moved to the left",
+      "xs": "< 576px, could be a span value or an object containing above props",
+      "sm": "≥ 576px, could be a span value or an object containing above props",
+      "md": "≥ 768px, could be a span value or an object containing above props",
+      "lg": "≥ 992px, could be a span value or an object containing above props",
+      "xl": "≥ 1200px, could be a span value or an object containing above props",
+      "xxl": "≥ 1620px, could be a span value or an object containing above props",
+      "coltag": "Customized element tag"
+    }
+  }
+}

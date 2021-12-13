@@ -2,7 +2,7 @@
   "props": [
     {
       "name": "disabled",
-      "desc": "是否禁用",
+      "desc": "$t('switch.api.disabled')",
       "type": "boolean",
       "optionalValue": "",
       "default": "false",
@@ -11,7 +11,7 @@
 
     {
       "name": "name",
-      "desc": "switch 组件的 name 属性",
+      "desc": "$t('switch.api.name')",
       "type": "string",
       "optionalValue": "",
       "default": "",
@@ -20,7 +20,7 @@
 
     {
       "name": "value",
-      "desc": "支持 <code>v-model</code>，用于设置开关是否选中，使用 <code>value === true-value</code> 来判断是否打开",
+      "desc": "$t('switch.api.name')",
       "type": "any",
       "optionalValue": "",
       "default": "",
@@ -28,7 +28,7 @@
     },
     {
       "name": "true-value",
-      "desc": "switch 打开时的值",
+      "desc": "$t('switch.api.true-value')",
       "type": "any",
       "optionalValue": "",
       "default": "true",
@@ -36,7 +36,7 @@
     },
     {
       "name": "false-value",
-      "desc": "switch 关闭时的值",
+      "desc": "$t('switch.api.false-value')",
       "type": "any",
       "optionalValue": "",
       "default": "false",
@@ -46,17 +46,17 @@
   "slots": [
     {
       "name": "default",
-      "desc": "默认 vue slot"
+      "desc": "$t('switch.api.default')"
     },
     {
       "name": "hint",
-      "desc": "注释内容"
+      "desc": "$t('switch.api.hint')"
     }
   ],
   "events": [
     {
       "name": "change",
-      "desc": "开关变化时触发，返回当前的状态",
+      "desc": "$t('switch.api.change')",
       "args": "(actived: boolean)"
     }
   ]

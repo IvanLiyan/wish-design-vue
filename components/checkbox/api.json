@@ -2,7 +2,7 @@
   "props": [
     {
       "name": "value",
-      "desc": "Checkbox 的 value",
+      "desc": "$t('checkbox.api.value')",
       "type": "any",
       "optionalValue": "",
       "default": "",
@@ -10,7 +10,7 @@
     },
     {
       "name": "disabled",
-      "desc": "禁用状态，可继承 CheckboxGroup 组件的 disabled 值",
+      "desc": "$t('checkbox.api.disabled')",
       "type": "boolean",
       "optionalValue": "",
       "default": "false",
@@ -18,7 +18,7 @@
     },
     {
       "name": "name",
-      "desc": "Checkbox 的 name，继承 CheckboxGroup 组件的 name 值",
+      "desc": "$t('checkbox.api.name')",
       "type": "string",
       "optionalValue": "",
       "default": "",
@@ -26,7 +26,7 @@
     },
     {
       "name": "checked",
-      "desc": "是否选中,支持 v-model,如果在 CheckboxGroup 中将根据 value 值判断得出",
+      "desc": "$t('checkbox.api.checked')",
       "type": "boolean",
       "optionalValue": "",
       "default": "false",
@@ -36,17 +36,17 @@
   "slots": [
     {
       "name": "default",
-      "desc": "默认 vue slot"
+      "desc": "$t('checkbox.api.default')"
     },
     {
       "name": "hint",
-      "desc": "注释内容"
+      "desc": "$t('checkbox.api.hint')"
     }
   ],
   "events": [
     {
       "name": "change",
-      "desc": "在选项状态发生改变时触发，返回当前状态。",
+      "desc": "$t('checkbox.api.change')",
       "args": "true/false"
     }
   ]

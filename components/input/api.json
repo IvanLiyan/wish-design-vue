@@ -2,7 +2,7 @@
   "props": [
     {
       "name": "type",
-      "desc": "类型",
+      "desc": "$t('input.api.type')",
       "type": "string",
       "optionalValue": ["不设置", "line", "textarea"],
       "default": "不设置",
@@ -11,7 +11,7 @@
 
     {
       "name": "clearable",
-      "desc": "是否有清空按钮",
+      "desc": "$t('input.api.clearable')",
       "type": "boolean",
       "optionalValue": "",
       "default": "false",
@@ -19,7 +19,7 @@
     },
     {
       "name": "invalid",
-      "desc": "是否是错误状态",
+      "desc": "$t('input.api.invalid')",
       "type": "boolean",
       "optionalValue": "",
       "default": "",
@@ -27,7 +27,7 @@
     },
     {
       "name": "disabled",
-      "desc": "是否禁用",
+      "desc": "$t('input.api.disabled')",
       "type": "boolean",
       "optionalValue": "",
       "default": "false",
@@ -35,7 +35,7 @@
     },
     {
       "name": "max-length",
-      "desc": "限制输入的最大长度",
+      "desc": "$t('input.api.max-length')",
       "type": "Number",
       "optionalValue": "",
       "default": "100",
@@ -44,7 +44,7 @@
 
     {
       "name": "value(v-model)",
-      "desc": "输入框的内容,若需要双向数据绑定，请使用v-model",
+      "desc": "$t('input.api.value')",
       "type": "string",
       "optionalValue": "",
       "default": "",
@@ -52,7 +52,7 @@
     },
     {
       "name": "autosize",
-      "desc": "自适应内容高度, 可传入对象，如，{ minRows: 2, maxRows: 6 }",
+      "desc": "$t('input.api.autosize')",
       "type": ["boolean", "object"],
       "optionalValue": "",
       "default": "{ minRows: 2, maxRows: 6 }",
@@ -62,32 +62,33 @@
   "slots": [
     {
       "name": "prefix",
-      "desc": "输入框头部图标插槽"
+      "desc": "$t('input.api.prefix')"
     },
     {
       "name": "suffix",
-      "desc": "输入框尾部图标插槽"
+      "desc": "$t('input.api.suffix')"
     }
   ],
   "events": [
     {
       "name": "input",
-      "desc": "当输入值改变时触发",
+      "desc": "$t('input.api.input')",
       "args": "(value: string)"
     },
     {
       "name": "change",
-      "desc": "当输入值改变时触发，拼音输入过程中将不再触发，如有需要可使用 input 事件",
+      "desc": "$t('input.api.change')",
       "args": "(value: string)"
     },
     {
       "name": "clear",
-      "desc": "当点击清空按钮时触发",
+
+      "desc": "$t('input.api.clear')",
       "args": ""
     },
     {
       "name": "enter",
-      "desc": "用户按下回车时触发，在中文输入过程中按下回车不会触发",
+      "desc": "$t('input.api.enter')",
       "args": "(event: Event)",
       "version": "0.3.5"
     }

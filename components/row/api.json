@@ -2,7 +2,8 @@
   "props": [
     {
       "name": "gutter",
-      "desc": "栅格间隔",
+
+      "desc": "$t('row.api.gutter')",
       "type": "number",
       "optionalValue": "",
       "default": "0",
@@ -10,7 +11,7 @@
     },
     {
       "name": "type",
-      "desc": "布局模式，现代浏览器下有效",
+      "desc": "$t('row.api.type')",
       "type": "string",
       "optionalValue": ["flex"],
       "default": "",
@@ -18,7 +19,7 @@
     },
     {
       "name": "justify",
-      "desc": "flex布局下的水平排列方式",
+      "desc": "$t('row.api.justify')",
       "type": "string",
       "optionalValue": ["start", "end", "center", "space-around", "space-between"],
       "default": "start",
@@ -26,7 +27,7 @@
     },
     {
       "name": "align",
-      "desc": "flex 布局下的垂直排列方式",
+      "desc": "$t('row.api.align')",
       "type": "string",
       "optionalValue": ["top", "middle", "bottom"],
       "default": "top",
@@ -34,7 +35,7 @@
     },
     {
       "name": "tag",
-      "desc": "自定义元素标签",
+      "desc": "$t('row.api.tag')",
       "type": "string",
       "optionalValue": "",
       "default": "div",

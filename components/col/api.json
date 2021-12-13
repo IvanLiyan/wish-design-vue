@@ -2,7 +2,7 @@
   "props": [
     {
       "name": "span",
-      "desc": "栅格占据的列数",
+      "desc": "$t('radio.api.span')",
       "type": "number",
       "optionalValue": "",
       "default": "24",
@@ -10,7 +10,7 @@
     },
     {
       "name": "offset",
-      "desc": "栅格左侧的间隔格数",
+      "desc": "$t('radio.api.offset')",
       "type": "number",
       "optionalValue": "",
       "default": "0",
@@ -18,7 +18,7 @@
     },
     {
       "name": "push",
-      "desc": "栅格向右移动格数",
+      "desc": "$t('radio.api.push')",
       "type": "number",
       "optionalValue": "",
       "default": "0",
@@ -26,7 +26,7 @@
     },
     {
       "name": "pull",
-      "desc": "栅格向左移动格数",
+      "desc": "$t('radio.api.pull')",
       "type": "number",
       "optionalValue": "",
       "default": "0",
@@ -34,7 +34,7 @@
     },
     {
       "name": "xs",
-      "desc": "< 576px 响应式栅格数或者栅格属性对象",
+      "desc": "$t('radio.api.xs')",
       "type": "number / { span: number, offset: number }",
       "optionalValue": "",
       "default": "",
@@ -42,7 +42,7 @@
     },
     {
       "name": "sm",
-      "desc": "≥ 576px 响应式栅格数或者栅格属性对象",
+      "desc": "$t('radio.api.sm')",
       "type": "number / { span: number, offset: number }",
       "optionalValue": "",
       "default": "",
@@ -50,7 +50,7 @@
     },
     {
       "name": "md",
-      "desc": "≥ 768px 响应式栅格数或者栅格属性对象",
+      "desc": "$t('radio.api.md')",
       "type": "number / { span: number, offset: number }",
       "optionalValue": "",
       "default": "",
@@ -58,7 +58,7 @@
     },
     {
       "name": "lg",
-      "desc": "≥ 992px 响应式栅格数或者栅格属性对象",
+      "desc": "$t('radio.api.lg')",
       "type": "number / { span: number, offset: number }",
       "optionalValue": "",
       "default": "",
@@ -66,7 +66,7 @@
     },
     {
       "name": "xl",
-      "desc": "≥ 1200px 响应式栅格数或者栅格属性对象",
+      "desc": "$t('radio.api.xl')",
       "type": "number / { span: number, offset: number }",
       "optionalValue": "",
       "default": "",
@@ -74,7 +74,7 @@
     },
     {
       "name": "xxl",
-      "desc": "≥ 1620px 响应式栅格数或者栅格属性对象",
+      "desc": "$t('radio.api.xxl')",
       "type": "number/ { span:number, offset:number }",
       "optionalValue": "",
       "default": "",
@@ -82,7 +82,7 @@
     },
     {
       "name": "tag",
-      "desc": "自定义元素标签",
+      "desc": "$t('radio.api.tag')",
       "type": "string",
       "optionalValue": "",
       "default": "div",
