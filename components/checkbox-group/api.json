@@ -21,7 +21,7 @@
     {
       "name": "change",
       "desc": "$t('checkbox-group.api.change')",
-      "args": "当前选中 value 值"
+      "args": "(value: any)"
     }
   ]
 }

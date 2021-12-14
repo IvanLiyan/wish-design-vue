@@ -13,12 +13,12 @@
         <table class="table-props">
           <thead>
             <tr>
-              <th class="th-name">名称</th>
-              <th class="th-desc">说明</th>
-              <th class="th-type">类型</th>
-              <th class="th-option">可选值</th>
-              <th class="th-default">默认值</th>
-              <th class="th-version">版本</th>
+              <th class="th-name">{{ $t('api-head.name') }}</th>
+              <th class="th-desc">{{ $t('api-head.desc') }}</th>
+              <th class="th-type">{{ $t('api-head.type') }}</th>
+              <th class="th-option">{{ $t('api-head.option') }}</th>
+              <th class="th-default">{{ $t('api-head.default') }}</th>
+              <th class="th-version">{{ $t('api-head.version') }}</th>
             </tr>
           </thead>
           <tbody>
@@ -50,12 +50,12 @@
         <table class="table-props">
           <thead>
             <tr>
-              <th class="th-name">名称</th>
-              <th class="th-desc">说明</th>
-              <th class="th-type">类型</th>
-              <th class="th-option">可选值</th>
-              <th class="th-default">默认值</th>
-              <th class="th-version">版本</th>
+              <th class="th-name">{{ $t('api-head.name') }}</th>
+              <th class="th-desc">{{ $t('api-head.desc') }}</th>
+              <th class="th-type">{{ $t('api-head.type') }}</th>
+              <th class="th-option">{{ $t('api-head.option') }}</th>
+              <th class="th-default">{{ $t('api-head.default') }}</th>
+              <th class="th-version">{{ $t('api-head.version') }}</th>
             </tr>
           </thead>
           <tbody>
@@ -88,9 +88,9 @@
         <table class="table-slots">
           <thead>
             <tr>
-              <th>名称</th>
-              <th>说明</th>
-              <th class="th-version">版本</th>
+              <th>{{ $t('api-head.name') }}</th>
+              <th>{{ $t('api-head.desc') }}</th>
+              <th class="th-version">{{ $t('api-head.version') }}</th>
             </tr>
           </thead>
           <tbody>
@@ -110,10 +110,10 @@
         <table class="table-scoped-slots">
           <thead>
             <tr>
-              <th>名称</th>
-              <th>含义</th>
-              <th>参数</th>
-              <th class="th-version">版本</th>
+              <th>{{ $t('api-head.name') }}</th>
+              <th>{{ $t('api-head.mean') }}</th>
+              <th>{{ $t('api-head.param') }}</th>
+              <th class="th-version">{{ $t('api-head.version') }}</th>
             </tr>
           </thead>
           <tbody>
@@ -134,11 +134,11 @@
         <table class="table-events">
           <thead>
             <tr>
-              <th>事件名称</th>
-              <th>说明</th>
-              <th>事件签名</th>
-              <th>参数</th>
-              <th class="th-version">版本</th>
+              <th>{{ $t('api-head.event-name') }}</th>
+              <th>{{ $t('api-head.desc') }}</th>
+              <th>{{ $t('api-head.event-signature') }}</th>
+              <th>{{ $t('api-head.param') }}</th>
+              <th class="th-version">{{ $t('api-head.version') }}</th>
             </tr>
           </thead>
           <tbody>
@@ -160,11 +160,11 @@
         <table class="table-methods">
           <thead>
             <tr>
-              <th>方法名称</th>
-              <th>说明</th>
+              <th>{{ $t('api-head.method-name') }}</th>
+              <th>{{ $t('api-head.desc') }}</th>
               <!-- <th>方法签名</th> -->
-              <th>参数</th>
-              <th class="th-version">版本</th>
+              <th>{{ $t('api-head.param') }}</th>
+              <th class="th-version">{{ $t('api-head.version') }}</th>
             </tr>
           </thead>
           <tbody>
@@ -186,11 +186,11 @@
         <table class="table-methods">
           <thead>
             <tr>
-              <th>方法名称</th>
-              <th>说明</th>
+              <th>{{ $t('api-head.method-name') }}</th>
+              <th>{{ $t('api-head.desc') }}</th>
               <!-- <th>方法签名</th> -->
-              <th>参数</th>
-              <th class="th-version">版本</th>
+              <th>{{ $t('api-head.param') }}</th>
+              <th class="th-version">{{ $t('api-head.version') }}</th>
             </tr>
           </thead>
           <tbody>

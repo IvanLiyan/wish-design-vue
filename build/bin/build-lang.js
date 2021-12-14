@@ -7,8 +7,36 @@ const pkg = require('../../package.json');
 const OUTPUT_PATH = path.join(__dirname, '../../site/lang.json');
 const basepath = path.join(__dirname, '../../components/');
 const langContent = {
-  chinese: {},
-  english: {},
+  chinese: {
+    'api-head': {
+      name: '名称',
+      desc: '说明',
+      type: '类型',
+      option: '可选值',
+      default: '默认值',
+      version: '版本',
+      mean: '含义',
+      param: '参数',
+      'event-name': '事件名称',
+      'event-signature': '事件签名',
+      'method-name': '方法名称',
+    },
+  },
+  english: {
+    'api-head': {
+      name: 'name',
+      desc: 'desc',
+      type: 'type',
+      option: 'option',
+      default: 'default',
+      version: 'version',
+      mean: 'mean',
+      param: 'param',
+      'event-name': 'event-name',
+      'event-signature': 'event-signature',
+      'method-name': 'method-name',
+    },
+  },
 };
 
 // const listTemplate = [];
