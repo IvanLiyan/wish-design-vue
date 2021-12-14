@@ -227,7 +227,6 @@
     padding: 20px 10px;
     line-height: 20px;
     border-bottom: 1px solid #edf0f7;
-    word-break: break-all;
   }
 }
 

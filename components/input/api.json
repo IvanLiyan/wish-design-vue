@@ -4,8 +4,8 @@
       "name": "type",
       "desc": "$t('input.api.type')",
       "type": "string",
-      "optionalValue": ["不设置", "line", "textarea"],
-      "default": "不设置",
+      "optionalValue": ["-", "line", "textarea"],
+      "default": "-",
       "version": ""
     },
 

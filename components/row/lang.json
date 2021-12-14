@@ -46,7 +46,7 @@
     "module2": {
       "title": "Type and Use Cases",
       "subtitle1": "Gutter",
-      "desc1": "Gutters exist between columns。 You can set gutters under row component, the default gutter is 0.",
+      "desc1": "Gutters exist between columns. You can set gutters under row component, the default gutter is 0.",
       "subtitle2": "Mixed Grid",
       "desc2": "By mixing columns with differnt span under the 24-grid system, you can easily create different layout.",
       "subtitle3": "Offset",
