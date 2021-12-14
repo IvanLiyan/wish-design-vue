@@ -110,9 +110,9 @@
         <table class="table-scoped-slots">
           <thead>
             <tr>
-              <th>{{ $t('api-head.name') }}</th>
+              <th class="th-name">{{ $t('api-head.name') }}</th>
               <th>{{ $t('api-head.mean') }}</th>
-              <th>{{ $t('api-head.param') }}</th>
+              <th class="th-param">{{ $t('api-head.param') }}</th>
               <th class="th-version">{{ $t('api-head.version') }}</th>
             </tr>
           </thead>
@@ -136,18 +136,18 @@
             <tr>
               <th>{{ $t('api-head.event-name') }}</th>
               <th>{{ $t('api-head.desc') }}</th>
-              <th>{{ $t('api-head.event-signature') }}</th>
-              <th>{{ $t('api-head.param') }}</th>
+              <!-- <th>{{ $t('api-head.event-signature') }}</th> -->
+              <th class="th-param">{{ $t('api-head.param') }}</th>
               <th class="th-version">{{ $t('api-head.version') }}</th>
             </tr>
           </thead>
           <tbody>
             <tr v-for="(event, index) in doc.events" :key="index">
-              <td>{{ event.name }}</td>
+              <td class="td-name">{{ event.name }}</td>
               <td v-html="getTranslateContent(event.desc)"></td>
-              <td>{{ event.signature }}</td>
-              <td>{{ event.args || '-' }}</td>
-              <td>{{ event.version || '-' }}</td>
+              <!-- <td>{{ event.signature }}</td> -->
+              <td class="td-param">{{ event.args || '-' }}</td>
+              <td class="td-version">{{ event.version || '-' }}</td>
             </tr>
           </tbody>
         </table>
@@ -160,20 +160,20 @@
         <table class="table-methods">
           <thead>
             <tr>
-              <th>{{ $t('api-head.method-name') }}</th>
+              <th class="th-name">{{ $t('api-head.method-name') }}</th>
               <th>{{ $t('api-head.desc') }}</th>
               <!-- <th>方法签名</th> -->
-              <th>{{ $t('api-head.param') }}</th>
+              <th class="th-param">{{ $t('api-head.param') }}</th>
               <th class="th-version">{{ $t('api-head.version') }}</th>
             </tr>
           </thead>
           <tbody>
             <tr v-for="(method, index) in doc.methods" :key="index">
-              <td>{{ method.name }}</td>
+              <td class="td-name">{{ method.name }}</td>
               <td v-html="getTranslateContent(method.desc)"></td>
               <!-- <td>{{ method.signature }}</td> -->
-              <td>{{ method.args || '-' }}</td>
-              <td>{{ method.version || '-' }}</td>
+              <td class="td-param">{{ method.args || '-' }}</td>
+              <td class="td-version">{{ method.version || '-' }}</td>
             </tr>
           </tbody>
         </table>
@@ -186,19 +186,19 @@
         <table class="table-methods">
           <thead>
             <tr>
-              <th>{{ $t('api-head.method-name') }}</th>
+              <th class="th-name">{{ $t('api-head.method-name') }}</th>
               <th>{{ $t('api-head.desc') }}</th>
               <!-- <th>方法签名</th> -->
-              <th>{{ $t('api-head.param') }}</th>
+              <th class="th-param">{{ $t('api-head.param') }}</th>
               <th class="th-version">{{ $t('api-head.version') }}</th>
             </tr>
           </thead>
           <tbody>
             <tr v-for="(method, index) in doc.staticMethods" :key="index">
-              <td>{{ method.name }}</td>
+              <td class="td-name">{{ method.name }}</td>
               <td v-html="getTranslateContent(method.desc)"></td>
               <!-- <td>{{ method.signature }}</td> -->
-              <td>{{ method.args || '-' }}</td>
+              <td class="td-param">{{ method.args || '-' }}</td>
               <td class="td-version">{{ method.version || '-' }}</td>
             </tr>
           </tbody>
@@ -230,24 +230,25 @@
     word-break: break-all;
   }
 }
+
+.th-option,
+.td-option {
+  // max-width: 170px;
+}
+
 .th-name,
 .td-name {
   width: 120px;
 }
-.th-desc,
-.td-desc {
-}
 .th-type,
 .td-type {
-  width: 130px;
+  width: 150px;
 }
-.th-option,
-.td-option {
-  max-width: 170px;
-}
+.th-param,
+.td-param,
 .th-default,
 .td-default {
-  width: 120px;
+  width: 200px;
 }
 .th-version,
 .td-version {
