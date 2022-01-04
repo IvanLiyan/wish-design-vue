@@ -66,7 +66,12 @@
             "path": "tag",
             "name": "Tag",
             "cnName": "标签"
-          }
+          },
+		  {
+		    "path": "card",
+		    "name": "Card",
+		    "cnName": "卡片"
+		  }
         ]
       }
     ]

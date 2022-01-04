@@ -1,0 +1,39 @@
+@import "./common/var.scss";
+@import "./mixins/mixins.scss";
+@include c(card){
+  border: $card-border-width solid $card-border-color;
+  border-radius: $card-border-radius;
+  box-sizing: border-box;
+  position: relative;
+  text-align: left;
+  background-color: $card-bgc;
+  box-shadow: $card-shadow;
+  padding: $card-padding-vertical $card-padding-horizontal;
+  &-caption {
+    font-size: $card-caption-font-size;
+    font-weight: $card-caption-font-weight;
+    line-height: $card-caption-line-height;
+    color: $card-caption-color;
+	margin-bottom: $card-caption-margin-vertical;
+  }
+  
+  &-title {
+    font-size: $card-title-font-size;
+    font-weight: $card-title-font-weight;
+    line-height: $card-title-line-height;
+    color: $card-title-color;
+	margin-bottom: $card-title-margin-vertical;
+  }
+  
+  &-subtitle {
+    font-size: $card-subtitle-font-size;
+    font-weight: $card-subtitle-font-weight;
+    line-height: $card-subtitle-line-height;
+    color: $card-subtitle-color;
+	margin-bottom: $card-subtitle-margin-vertical;
+  }
+
+  &-body {
+	font-weight: $card-content-font-weight;
+  }
+}

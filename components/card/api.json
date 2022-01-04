@@ -1,0 +1,31 @@
+{
+  "props": [{
+    "name": "title",
+    "desc": "$t('card.api.title')",
+    "type": "string",
+    "optionalValue": "",
+    "default": "",
+    "version": ""
+  },{
+    "name": "subtitle",
+    "desc": "$t('card.api.subtitle')",
+    "type": "string",
+    "optionalValue": "",
+    "default": "",
+    "version": ""
+  },{
+    "name": "caption",
+    "desc": "$t('card.api.caption')",
+    "type": "string",
+    "optionalValue": "",
+    "default": "",
+    "version": ""
+  },{
+    "name": "body-class",
+    "desc": "$t('card.api.body-class')",
+    "type": "string",
+    "optionalValue": "",
+    "default": "",
+    "version": ""
+  }]
+}

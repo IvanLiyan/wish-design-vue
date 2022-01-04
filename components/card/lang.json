@@ -1,0 +1,30 @@
+{
+  "chinese": {
+    "componnent_desc": "基础卡片容器，用于承载文字、列表、图片、表格等信息。",
+    "module1": {
+		"title": "基本样式",
+		"desc1": "卡片的组成分为顶部注释文字，卡片标题，卡片副标题，卡片内容，以及卡片操作和链接。",
+		"desc2": "卡片内容可包括文字、列表、图片、表格等。" 
+	},
+    "api": {
+      "title": "设置标题",
+      "subtitle": "设置副标题",
+      "caption": "设置说明文字",
+	  "body-class": "设置card-body的class"
+    }
+  },
+  "english": {
+    "componnent_desc": "",
+    "module1": {
+    	"title": "",
+    	"desc1": "",
+    	"desc2": "" 
+    },
+    "api": {
+      "title": "",
+      "subtitle": "",
+      "caption": "",
+	  "body-class": ""
+    }
+  }
+}

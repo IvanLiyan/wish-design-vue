@@ -1,5 +1,6 @@
 {
   "button": "components/button",
+  "card": "components/card",
   "row": "components/row",
   "col": "components/col",
   "icon": "components/icon",
