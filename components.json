@@ -15,5 +15,9 @@
   "dropdown": "components/dropdown",
   "dropdown-menu": "components/dropdown-menu",
   "dropdown-menu-item": "components/dropdown-menu-item",
-  "popper": "components/popper"
+  "popper": "components/popper",
+  "datepicker": "components/datepicker",
+  "timepicker": "components/timepicker",
+  "form": "components/form",
+  "form-item": "components/form-item"
 }

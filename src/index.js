@@ -16,6 +16,10 @@ import Dropdown from 'components/dropdown';
 import DropdownMenu from 'components/dropdown-menu';
 import DropdownMenuItem from 'components/dropdown-menu-item';
 import Popper from 'components/popper';
+import Datepicker from 'components/datepicker';
+import Timepicker from 'components/timepicker';
+import Form from 'components/form';
+import FormItem from 'components/form-item';
 import CollapseTransition from './transitions/collapse-transition';
 
 const components = [
@@ -36,6 +40,10 @@ const components = [
   DropdownMenu,
   DropdownMenuItem,
   Popper,
+  Datepicker,
+  Timepicker,
+  Form,
+  FormItem,
   CollapseTransition,
 ];
 
@@ -77,6 +85,10 @@ export {
   DropdownMenu,
   DropdownMenuItem,
   Popper,
+  Datepicker,
+  Timepicker,
+  Form,
+  FormItem,
   CollapseTransition,
 };
 

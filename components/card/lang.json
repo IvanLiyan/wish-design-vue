@@ -2,7 +2,7 @@
   "chinese": {
     "componnent_desc": "基础卡片容器，用于承载文字、列表、图片、表格等信息。",
     "module1": {
-		"title": "基本样式",
+		"title": "基础样式",
 		"desc1": "卡片的组成分为顶部注释文字，卡片标题，卡片副标题，卡片内容，以及卡片操作和链接。",
 		"desc2": "卡片内容可包括文字、列表、图片、表格等。" 
 	},
@@ -14,17 +14,17 @@
     }
   },
   "english": {
-    "componnent_desc": "",
+    "componnent_desc": "Basic container, use for holding content like text, list, picture, table, etc.",
     "module1": {
-    	"title": "",
-    	"desc1": "",
-    	"desc2": "" 
+    	"title": "Basic Style",
+    	"desc1": "Default card contains description, title, subtitle, card content, action items, and links.",
+    	"desc2": "Card content could be text, list, picture, table, etc." 
     },
     "api": {
-      "title": "",
-      "subtitle": "",
-      "caption": "",
-	  "body-class": ""
+      "title": "Set Title",
+      "subtitle": "Set Sub-Title",
+      "caption": "Set Description",
+	  "body-class": "Set card-body class"
     }
   }
 }

@@ -1,0 +1,43 @@
+{
+  "chinese": {
+    "componnent_desc": "用于时间的选择。",
+    "module1": {
+      "title": "基础样式"
+	  },
+    "module2": {
+      "title": "选择当前时间",
+      "desc": "支持快速选择当前时刻"
+	  },
+    "module3": {
+      "title": "选择时间范围",
+      "desc": "支持起止时刻的选择"
+	  },
+    "api": {
+      "title": "设置标题",
+      "subtitle": "设置副标题",
+      "caption": "设置说明文字",
+	    "body-class": "设置card-body的class"
+    }
+  },
+  "english": {
+    "componnent_desc": "",
+    "module1": {
+      "title": "",
+      "desc": ""
+	  },
+    "module2": {
+      "title": "",
+      "desc": ""
+	  },
+    "module3": {
+      "title": "",
+      "desc": ""
+	  },
+    "api": {
+      "title": "",
+      "subtitle": "",
+      "caption": "",
+	    "body-class": ""
+    }
+  }
+}

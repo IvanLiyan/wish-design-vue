@@ -1,0 +1,33 @@
+{
+  "chinese": {
+    "componnent_desc": "用于日期和时间的选择",
+    "module1": {
+      "title": "基础样式",
+      "desc1": "包含日期选择，月份选择，年份选择， 支持手动输入。支持格式yyyy/mm/dd, yyyymmdd, yyyy-mm-dd。"
+    },
+    "module2": {
+      "title": "应用场景",
+      "desc1": "包含日期选择，月份选择，年份选择， 支持手动输入。支持格式yyyy/mm/dd, yyyymmdd, yyyy-mm-dd。"
+    },
+    "api": {
+      "title": "设置标题",
+      "subtitle": "设置副标题",
+      "caption": "设置说明文字",
+	  "body-class": "设置card-body的class"
+    }
+  },
+  "english": {
+    "componnent_desc": "",
+    "module1": {
+    	"title": "",
+    	"desc1": "",
+    	"desc2": "" 
+    },
+    "api": {
+      "title": "",
+      "subtitle": "",
+      "caption": "",
+	  "body-class": ""
+    }
+  }
+}

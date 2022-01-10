@@ -1,0 +1,584 @@
+<template>
+<Popper tag="div" :visible="open" @update:visible="handleOpenChange"
+  :class="wrapperClasses" :placement="placement" trigger="click"
+  :popper-disabled="disabled"
+  :toggle-on-reference-click="false"
+  :append-to-container="appendToContainer"
+  :get-popup-container="getPopupContainer"
+  :popper-options="popperOptions"
+  ref="popper"
+>
+  <Reference>
+    <PickerInput :id="elementId"
+      :class="[prefix + '-editor']"
+      :readonly="type === 'week' || (!editable || readonly)"
+      :disabled="disabled"
+      :size="size"
+      :placeholder="placeholder"
+      :current-value="visualValue"
+      :name="name"
+      :clearable="clearable"
+      clearable-on-readonly
+      ref="input"
+      :suffix-icon="suffixIcon"
+      :invalid="invalid"
+      :loading="loading"
+      :genre="genre"
+      @input="handleInputChange"
+      @clear="handleClear"
+      @focus="handleInputFocus"
+      @blur="handleInputBlur"
+      @enter="handleInputEnter"
+    />
+  </Reference>
+  <Drop :class="popperClass">
+    <component
+      :is="panel"
+      ref="pickerPanel"
+      :show-time="type === 'datetime' || type === 'datetimerange'"
+      :default-time="defaultTime"
+      :show-btn-now="showBtnNow"
+      :confirm="needConfirm"
+      :selection-mode="selectionMode"
+      :steps="steps"
+      :format="format"
+      :value="internalValue"
+      :start-date="startDate"
+      :split-panels="splitPanels"
+      :show-week-numbers="showWeekNumbers"
+      :week-start="weekStart"
+      :picker-type="type"
+      :multiple="multiple"
+      :focused-date="focusedDate"
+      :visible="open"
+      :time-picker-options="timePickerOptions"
+
+      v-bind="ownPickerProps"
+
+      @pick="onPick"
+      @pick-click-now="handleClickNow"
+      @pick-success="onPickSuccess"
+      @pick-range="hanldePickRange"
+      @pick-time-range="handleTimeRange"
+      @canel="handleCancel"
+      @current-view-change="updatePopper"
+    >
+      <slot name="shortcuts" slot="shortcuts"></slot>
+      <template slot-scope="scope" slot="cell">
+        <slot :cell="scope.cell" name="cell">{{ scope.cell.desc }}</slot>
+      </template>
+
+      <template slot="confirm" v-if="$slots.confirm">
+        <slot name="confirm"></slot>
+      </template>
+    </component>
+  </Drop>
+</Popper>
+</template>
+<script>
+import {
+  CONFIG_PROVIDER,
+  getPrefixCls,
+  getIconCls,
+} from '@/utils/config';
+import {
+  Popper,
+  Drop,
+  Reference,
+} from '@components/popper';
+import {
+  DEFAULT_FORMATS,
+  RANGE_SEPARATOR,
+  TYPE_VALUE_RESOLVER_MAP,
+} from '@/utils/date';
+import {
+  isDate,
+  isString,
+  isArray,
+} from '@/utils/type';
+import { hasProps } from '@/utils/vnode';
+import {
+  error,
+} from '@/utils/console';
+
+import Input from './input.js';
+
+const isEmptyArray = (val) => {
+  return val.reduce((isEmpty, str) => {
+    return isEmpty && (!str ||
+      (typeof str === 'string' && str.trim() === ''));
+  }, true);
+};
+
+function eql (a, b) {
+  const aValue = JSON.stringify(a);
+  const bValue = JSON.stringify(b);
+  return (!a && !b) || (aValue === bValue && typeof a === typeof b);
+}
+
+function arrayEql (a, b) {
+  return (a === b) || (a && b && (a.length === b.length && a.every((v1, i) => {
+    const v2 = b[i];
+    return (!v1 && !v2) || v1 === v2;
+  })));
+}
+
+export default {
+  components: {
+    Popper,
+    Drop,
+    Reference,
+    PickerInput: Input,
+  },
+  props: {
+    format: {
+      type: String,
+    },
+    valueFormat: {
+      // 如果没有配置则默认按照当前 value 属性推断
+      type: String,
+      validator (v) {
+        if (v && /w/i.test(v)) {
+          error('DatePicker', 'w、W 格式仅 format 属性可用');
+          return false;
+        }
+        return true;
+      },
+    },
+    readonly: {
+      type: Boolean,
+      default: false,
+    },
+    editable: {
+      type: Boolean,
+      default: true,
+    },
+    disabled: {
+      type: Boolean,
+      default: false,
+    },
+    clearable: {
+      type: Boolean,
+      default: false,
+    },
+    confirm: {
+      type: Boolean,
+      default: false,
+    },
+    open: {
+      type: Boolean,
+      default: null,
+    },
+    multiple: {
+      type: Boolean,
+      default: false,
+    },
+    timePickerOptions: {
+      default: () => ({}),
+      type: Object,
+    },
+    splitPanels: {
+      type: Boolean,
+      default: true,
+    },
+    showWeekNumbers: {
+      type: Boolean,
+      default: false,
+    },
+    startDate: {
+      type: Date,
+    },
+    size: {
+      type: String,
+    },
+    placeholder: {
+      type: String,
+      default: '',
+    },
+    placement: {
+      type: String,
+    },
+    name: {
+      type: String,
+    },
+    elementId: {
+      type: String,
+    },
+    steps: {
+      type: Array,
+      default: () => [],
+    },
+    value: {
+      type: [Date, String, Array, Number],
+    },
+    options: {
+      type: Object,
+      default: () => ({}),
+    },
+    icon: String,
+    appendToContainer: {
+      type: Boolean,
+      default: true,
+    },
+    getPopupContainer: Function,
+    invalid: Boolean,
+    loading: Boolean,
+    genre: String,
+    showBtnNow: {
+      type: Boolean,
+      default: true,
+    },
+    popperClass: String,
+
+    defaultTime: {
+      type: [Array, String],
+    },
+    popperOptions: Object,
+    formatter: Function,
+    weekStart: {
+      type: Number,
+      default: 1,
+      validator (v) {
+        return v >= 0 && v <= 6;
+      },
+    },
+  },
+  provide () {
+    return {
+      CalendarPicker: this,
+    };
+  },
+  inject: {
+    config: {
+      from: CONFIG_PROVIDER,
+      default: {
+        getPrefixCls,
+        getIconCls,
+      },
+    },
+  },
+  data () {
+    const { value } = this;
+    // 不可抽成 computed 属性，computed 在 data 之后赋值
+    const isRange = (this.type.indexOf('range') > -1);
+    const emptyArray = isRange ? [null, null] : [null];
+    const initialValue = isEmptyArray(
+      (isRange ? value : [value]) || [],
+    ) ? emptyArray
+      : this.parseDate(value);
+    return {
+      internalValue: initialValue,
+      selectionMode: this.onSelectionModeChange(this.type),
+      isFocused: false,
+      focusedDate: initialValue[0] || this.startDate || new Date(),
+      selecting: false, // 目前仅用在 timerange 中，表示是否在选择中
+    };
+  },
+  computed: {
+    prefix () {
+      return this.config.getPrefixCls('date-picker');
+    },
+    iconPrefix () {
+      return this.config.getIconCls;
+    },
+    wrapperClasses () {
+      return [this.prefix, {
+        [this.prefix + '-focused']: this.isFocused,
+      }];
+    },
+    visualValue () {
+      const text = this.formatDate(this.internalValue);
+      if (this.formatter) {
+        return this.formatter(this.value, text) || '';
+      }
+      return text;
+    },
+    publicVModelValue () {
+      if (this.multiple) {
+        return this.internalValue.slice();
+      } else {
+        const isRange = (this.type.indexOf('range') > -1);
+        const val = this.internalValue.map((date) => {
+          return isDate(date) ? new Date(date) : (date || '');
+        });
+        return isRange ? val : val[0];
+      }
+    },
+    needConfirm () {
+      return this.confirm ||
+        (['datetime', 'datetimerange'].indexOf(this.type) > -1) ||
+        this.multiple;
+    },
+    suffixIcon () {
+      return hasProps(this, 'icon') ? this.icon
+        : ((['time', 'timerange'].indexOf(this.type) > -1) ? this.iconPrefix('time-o')
+          : this.iconPrefix('calendar-o'));
+    },
+    shouldFormatValue () {
+      return isArray(this.value) ? isString(this.value[0])
+        : isString(this.value);
+    },
+  },
+  watch: {
+    value (val) {
+      this.internalValue = this.parseDate(val);
+    },
+    type (type) {
+      this.onSelectionModeChange(type);
+    },
+    publicVModelValue (now, before) {
+      if (this.selecting) {
+        return;
+      }
+      const arrayValue = isArray(now) ? now : [now];
+      const parseValues = this.parseDate(this.value);
+      const shouldEmitInput = !arrayEql(arrayValue, parseValues) && !eql(now, this.value) &&
+        !eql(arrayValue, parseValues) && !eql(now, before);
+
+      if (shouldEmitInput) {
+        const inputValue = this.formatToInput(now);
+        this.$emit('input', inputValue);
+        this.$emit('change', inputValue);
+      }
+    },
+    selecting (now, before) {
+      if (before && !now) {
+        const parseValues = this.parseDate(this.value);
+        const shouldEmitInput = !arrayEql(this.internalValue, parseValues);
+        if (shouldEmitInput) {
+          const sortedDates = this.publicVModelValue.sort((a, b) => a.getTime() - b.getTime());
+          const inputValue = this.formatToInput(sortedDates);
+          this.$emit('input', inputValue);
+          this.$emit('change', inputValue);
+        }
+      }
+    },
+    open (now, old) {
+      if (now) {
+        this.onSelectionModeChange(this.type);
+        this.reset();
+      }
+    },
+  },
+  mounted () {
+    this.$on('focus-input', () => this.focus());
+  },
+  methods: {
+    formatToInput (date) {
+      const isRange = (this.type.indexOf('range') > -1);
+      if (isArray(this.value) || this.multiple || isRange) {
+        return (date || []).map(this.formatValue)
+          .filter((d) => this.valueFormat ? !!d : d !== undefined);
+      }
+      return this.formatValue(date);
+    },
+    formatValue (date) {
+      if (this.valueFormat === 'timestamp') {
+        return date ? date.getTime() : undefined;
+      } else if (this.valueFormat || this.shouldFormatValue) {
+        return this.formatDate(date, this.valueFormat || this.format);
+      } else {
+        return date || undefined;
+      }
+    },
+    handleOpenChange (v) {
+      if (this.readonly || this.disabled) {
+        return;
+      }
+      this.$emit('update:open', v);
+      if (v) {
+        this.$emit('focus');
+      } else {
+        this.selecting = false;
+        this.$emit('blur');
+      }
+    },
+    handleInputFocus () {
+      this.isFocused = true;
+    },
+
+    handleInputBlur () {
+      this.isFocused = false;
+    },
+    handleInputEnter () {
+      this.handleOpenChange(false);
+    },
+    onSelectionModeChange (type) {
+      if (this.readonly || this.disabled) {
+        return;
+      }
+      if (type.match(/^date/) || type.match(/^week/)) type = 'date';
+      if (type.match(/^month/)) type = 'month';
+      if (['year', 'month', 'date', 'time'].indexOf(type) > -1) {
+        this.selectionMode = type;
+      }
+      this.$nextTick(this.updatePopper);
+      return this.selectionMode;
+    },
+    reset () {
+      this.$refs.pickerPanel && this.$refs.pickerPanel.reset &&
+        this.$refs.pickerPanel.reset();
+    },
+    handleInputChange (newValue) {
+      // const isArrayValue = this.type.indexOf('range') > -1 || this.multiple;
+      const oldValue = this.formatDate(this.internalValue);
+      const newDate = this.parseDate(newValue, true);
+      const disabledDateFn = this.options &&
+        typeof this.options.disabledDate === 'function' &&
+        this.options.disabledDate;
+      // const valueToTest = isArrayValue ? newDate : newDate[0];
+      const isValidDate = newDate.reduce((valid, date) => {
+        return valid && date instanceof Date && !isNaN(date.getTime());
+      }, true);
+      if (!isValidDate) {
+        return;
+      }
+
+      const isDisabled = disabledDateFn && newDate.some(disabledDateFn);
+      if (newValue !== oldValue && !isDisabled) {
+        this.internalValue = newDate.sort((a, b) => a.getTime() - b.getTime());
+      }
+    },
+    handleClickNow () {
+      const dates = this.multiple ? new Date()
+        : this.internalValue.map(() => new Date());
+      this.$emit('click-now');
+      this.onPick(dates);
+      this.handleOpenChange(false);
+      // this.reset();
+    },
+    handleClear () {
+      this.$emit('clear');
+      this.internalValue = this.internalValue.map(() => '');
+    },
+    hanldePickRange (rangeState) {
+      this.$emit('pick-range', rangeState);
+    },
+    // 格式化 val 为 Date[]
+    // 当为输入框手动输入内容时，将强制使用 format 进行格式化
+    parseDate (val, forceFormat) {
+      const { type, valueFormat } = this;
+      const isRange = this.type.indexOf('range') > -1;
+
+      if (!forceFormat && valueFormat === 'timestamp') {
+        if (isRange && (!val || !val.length)) {
+          val = [null, null];
+        } else if (!isArray(val)) {
+          val = [val];
+        }
+        return val.map((v) => v ? new Date(parseInt(v)) : v);
+      }
+
+      const parser = (
+        TYPE_VALUE_RESOLVER_MAP[type] ||
+        TYPE_VALUE_RESOLVER_MAP['default']
+      ).parser;
+      const format = this.valueFormat || this.format || DEFAULT_FORMATS[type];
+      const multipleParser = TYPE_VALUE_RESOLVER_MAP['multiple'].parser;
+
+      if (this.multiple && val) {
+        val = multipleParser(val, format);
+      } else if (isRange) {
+        if (!val) {
+          val = [null, null];
+        } else {
+          if (typeof val === 'string') {
+            val = parser(val, format);
+          } else {
+            const [start, end] = val;
+            if (!start || !end) {
+              val = [null, null];
+            } else if (isDate(start) && isDate(end)) {
+              val = val.map(date => new Date(date));
+            } else if (isString(start) && isString(end)) {
+              val = parser(val.join(RANGE_SEPARATOR), format);
+            }
+          }
+        }
+      } else if (val && !isDate(val)) {
+        val = parser(val, format) || null;
+      }
+      return (isRange || this.multiple) ? (val || []) : [val];
+    },
+    formatDate (value, format = this.format) {
+      const defaultFormat = DEFAULT_FORMATS[this.type];
+      if (this.multiple) {
+        const formatter = TYPE_VALUE_RESOLVER_MAP.multiple.formatter;
+        return formatter(isArray(value) ? value : [value],
+          format || defaultFormat, { weekStart: this.weekStart });
+      } else {
+        const {formatter} = (
+          TYPE_VALUE_RESOLVER_MAP[this.type] ||
+          TYPE_VALUE_RESOLVER_MAP['default']
+        );
+        return formatter(value, format || defaultFormat, { weekStart: this.weekStart });
+      }
+    },
+    onPick (dates, visible = false) {
+      if (isArray(dates)) {
+        dates = dates.sort((a, b) => a.getTime() - b.getTime());
+      }
+      if (this.multiple) {
+        const pickedTimeStamp = dates.getTime();
+        const indexOfPickedDate = this.internalValue.findIndex((date) => {
+          return date && date.getTime() === pickedTimeStamp;
+        });
+        const allDates = [...this.internalValue, dates].filter(Boolean);
+        const timeStamps = allDates.map(date => date.getTime())
+          .filter((ts, i, arr) => {
+            return arr.indexOf(ts) === i && i !== indexOfPickedDate;
+          }); // filter away duplicates
+        this.internalValue = timeStamps.map(ts => new Date(ts));
+      } else {
+        this.internalValue = Array.isArray(dates) ? dates : [dates];
+      }
+
+      if (this.internalValue[0]) {
+        this.focusedDate = this.multiple
+          ? this.internalValue[this.internalValue.length - 1] || this.internalValue[0]
+          : this.internalValue[0];
+      }
+
+      // reset the selectionMode
+      if (!this.needConfirm) {
+        this.onSelectionModeChange(this.type);
+        if (this.open !== visible) {
+          this.handleOpenChange(visible);
+        }
+      }
+    },
+    onPickSuccess () {
+      this.$emit('confirm');
+      this.handleOpenChange(false);
+      this.reset();
+    },
+    handleTimeRange (value) {
+      this.selecting = true;
+      this.internalValue = value;
+    },
+    handleCancel () {
+      this.internalValue = this.parseDate(this.value);
+      this.handleOpenChange(false);
+    },
+    focus () {
+      if (this.editable) {
+        this.$refs.input.focus();
+      }
+      this.handleOpenChange(true);
+    },
+    blur () {
+      this.$refs.input.blur();
+      this.handleOpenChange(false);
+    },
+    updatePopper () {
+      this.$nextTick(() => {
+        const { open } = this;
+        if (open) {
+          const { popper } = this.$refs;
+          popper.updatePopper();
+        }
+      });
+    },
+  },
+};
+</script>
