@@ -4,7 +4,6 @@
       <p>禁用时间</p>
       <wt-time-picker
         v-model="value"
-        placeholder="选择时间"
         :disabled-hours="[1,5,10]"
         :disabled-minutes="[0,10,20]" />
     </div>

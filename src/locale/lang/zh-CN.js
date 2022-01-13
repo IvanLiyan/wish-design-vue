@@ -3,9 +3,9 @@ export default {
     locale: 'zh-CN',
     datepicker: {
       selectDate: '选择日期',
-      selectTime: '选择时间',
-      startTime: '开始时间',
-      endTime: '结束时间',
+      selectTime: 'Select Time',
+      startTime: 'Start Time',
+      endTime: 'End Time',
       now: '此刻',
       ok: '确定',
       datePanelLabel: '[yyyy年] [M月]',

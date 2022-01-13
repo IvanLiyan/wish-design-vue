@@ -11,13 +11,12 @@
   <Reference>
     <PickerInput :id="elementId"
       :class="[prefix + '-editor']"
-      :readonly="type === 'week' || (!editable || readonly)"
+      :readonly="type === 'week' || (editable || !readonly)"
       :disabled="disabled"
       :size="size"
-      :placeholder="placeholder"
+      :placeholder="placeholder ? placeholder : (type === 'time' ? 'Select Time' : 'Select Time Range') "
       :current-value="visualValue"
       :name="name"
-      :clearable="clearable"
       clearable-on-readonly
       ref="input"
       :suffix-icon="suffixIcon"
@@ -29,7 +28,9 @@
       @focus="handleInputFocus"
       @blur="handleInputBlur"
       @enter="handleInputEnter"
-    />
+    >
+      <wt-icon v-show="pickerType" :name="pickerType" :width="12" :height="12" slot="suffix" />
+    </PickerInput>
   </Reference>
   <Drop :class="popperClass">
     <component
@@ -42,6 +43,7 @@
       :selection-mode="selectionMode"
       :steps="steps"
       :format="format"
+      :show-now="showNow"
       :value="internalValue"
       :start-date="startDate"
       :split-panels="splitPanels"
@@ -229,7 +231,6 @@ export default {
       default: true,
     },
     popperClass: String,
-
     defaultTime: {
       type: [Array, String],
     },
@@ -241,6 +242,10 @@ export default {
       validator (v) {
         return v >= 0 && v <= 6;
       },
+    },
+    showNow: {
+      type: Boolean,
+      default: false,
     },
   },
   provide () {
@@ -272,6 +277,7 @@ export default {
       isFocused: false,
       focusedDate: initialValue[0] || this.startDate || new Date(),
       selecting: false, // 目前仅用在 timerange 中，表示是否在选择中
+      pickerType: false, // 判断是日期选择器或时间选择器 time时间 calendar日期
     };
   },
   computed: {
@@ -311,8 +317,8 @@ export default {
     },
     suffixIcon () {
       return hasProps(this, 'icon') ? this.icon
-        : ((['time', 'timerange'].indexOf(this.type) > -1) ? this.iconPrefix('time-o')
-          : this.iconPrefix('calendar-o'));
+        : ((['time', 'timerange'].indexOf(this.type) > -1) ? this.getPickerType('time')
+          : this.getPickerType('calendar'));
     },
     shouldFormatValue () {
       return isArray(this.value) ? isString(this.value[0])
@@ -578,6 +584,13 @@ export default {
           popper.updatePopper();
         }
       });
+    },
+    getPickerType (pickerType) {
+      if (pickerType === 'calendar') {
+        this.pickerType = 'calendar';
+      } else if (pickerType === 'time') {
+        this.pickerType = 'clock';
+      }
     },
   },
 };

@@ -1,8 +1,10 @@
 <template>
   <div class="demo-picker-group">
     <div>
-      <wt-time-picker type="time"
-        v-model="value1"
+      <wt-time-picker
+        type="time"
+        v-model="value2"
+        show-now
     />
     </div>
   </div>
@@ -11,7 +13,7 @@
 export default {
   data () {
     return {
-      value1: '',
+      value2: '',
     };
   },
 };

@@ -4,10 +4,11 @@
 }
 .#{$prefix}-picker-panel-body {
   width: 242px;
-  border-bottom: 1px solid rgba(0,0,0,0.06);
+  // border-bottom: 1px solid rgba(0,0,0,0.06);
   .#{$prefix}-picker-panel-content{
     width: 100%;
     text-align: center;
+    border-bottom: 1px solid #F0F4F6;
     .#{$prefix}-time-picker-multiple-header {
       margin: 8px;
       font-size: 12px;
@@ -17,9 +18,7 @@
   }
 }
 .#{$prefix}-picker-panel-multiple-body {
-  padding: 0 12px 11px 12px;
-  border-bottom: 1px solid rgba(0,0,0,0.06);
-  .#{$prefix}-picker-panel-multiple-content{
+  .#{$prefix}-picker-panel-multiple-content {
     text-align: center;
     .#{$prefix}-time-picker-multiple-header {
       margin: 8px;
@@ -29,11 +28,14 @@
     }
   }
 }
+
 .#{$prefix}-picker-panel-multiple-content + .#{$prefix}-picker-panel-multiple-content {
   margin-left: 12px;
 }
-
-.#{$prefix}-time-picker-cells{
+.#{$prefix}-time-picker-with-range {
+  width: 496px;
+}
+.#{$prefix}-time-picker-cells {
   min-width: $time-picker-cells-width;
   &-with-minutes{
     min-width: 2*$time-picker-cells-width;
@@ -111,9 +113,9 @@
   height: 48px;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
   .btn {
-    font-family: PingFangSC-Regular;
+    font-family: Noto Sans SC;
     font-size: 14px;
     border-radius: 2px;
     width: 80px;
@@ -125,5 +127,18 @@
     line-height: 20px;
     background: #305BEF;
     border: 0;
+  }
+  .disabled {
+    background: #F7F9FA;
+    color: #BFCDD4;
+  }
+  .select-now {
+    margin-left: 8px;
+    font-family: Noto Sans SC;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    color: #305BEF;
+    cursor: pointer;
   }
 }

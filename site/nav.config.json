@@ -56,7 +56,18 @@
             "path": "switch",
             "name": "Switch",
             "cnName": "开关"
+          },
+          {
+            "path": "datepicker",
+            "name": "DatePicker",
+            "cnName": "日期选择框"
+          },
+          {
+            "path": "timepicker",
+            "name": "TimePicker",
+            "cnName": "时间选择框"
           }
+
         ]
       },
       {

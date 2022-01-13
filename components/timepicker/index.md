@@ -7,19 +7,15 @@
 
 ## <span>{{$t('timepicker.module2.title')}}</span>
 <span>{{$t('timepicker.module2.desc')}}</span>
-:::include(src="./doc/size.vue")
+:::include(src="./doc/now.vue")
 :::
 
 ## <span>{{$t('timepicker.module3.title')}}</span>
 <span>{{$t('timepicker.module3.desc')}}</span>
-:::include(src="./doc/steps.vue")
+:::include(src="./doc/range.vue")
 :::
 
-### 不可选择时间
-:::include(src="./doc/disabled.vue")
-:::
-
-### 日期格式
+<!-- ### 日期格式
 默认情况下，组件接受并返回 `Date` 对象。以下为可用的格式化字串，以 UTC 2017年1月2日 03:04:05 为例：
 
 | 格式 | 含义 | 备注 | 举例 |
@@ -33,7 +29,7 @@
 | `s`  | 秒 | 不补0 | 5 |
 | `ss` | 秒 | | 05 |
 | `A`  | AM/PM | 仅 `format` 可用，大写 | AM |
-| `a`  | am/pm | 仅 `format` 可用，小写 | am |
+| `a`  | am/pm | 仅 `format` 可用，小写 | am | -->
 
 ## API
 <api-doc name="TimePicker" :doc="require('./api.json')"></api-doc>

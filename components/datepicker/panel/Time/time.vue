@@ -23,12 +23,16 @@
         :show-btn-now="showBtnNow"
         @click-now="handlePickClickNow"
         @confirm="handlePickSuccess" />
-    </div>
-    <div :class="[panelPrefix + '-footer']">
-      <wt-button type="primary" class="btn"
-        @click="handleConfirm">
-        确认
-      </wt-button>
+      <div :class="[panelPrefix + '-footer']">
+        <span v-if="showNow" type="primary" class="select-now" @click="handleSelectNow">
+          当前时间
+        </span>
+        <span v-else></span>
+        <wt-button type="primary" :class="!confirmDisabled ? 'btn' : 'btn disabled'" :disabled="confirmDisabled"
+          @click="handleConfirm">
+          确认
+        </wt-button>
+      </div>
     </div>
   </div>
 </template>
@@ -74,11 +78,16 @@ export default {
       type: Array,
       required: true,
     },
+    showNow: {
+      type: Boolean,
+      default: false,
+    },
   },
   data () {
     return {
       date: this.value[0] || initTimeDate(),
       showDate: false,
+      confirmDisabled: true, // 确认按钮不可点击,
     };
   },
   computed: {
@@ -141,6 +150,7 @@ export default {
       let newVal = dates[0] || initTimeDate();
       newVal = new Date(newVal);
       this.date = newVal;
+      this.confirmDisabled = false;
     },
   },
   mounted () {
@@ -154,8 +164,17 @@ export default {
       Object.keys(date).forEach(
         type => newDate[`set${capitalize(type)}`](date[type]),
       );
-
       if (emit) this.$emit('pick', newDate, true);
+    },
+    handleConfirm () {
+      this.$parent.$parent.$parent.handleOpenChange(false);
+    },
+    handleSelectNow () {
+      const now = new Date();
+      Object.keys(now).forEach(
+        type => now[`set${capitalize(type)}`](now[type]),
+      );
+      this.$emit('pick', now, true);
     },
   },
 };

@@ -44,10 +44,7 @@
         @confirm="handlePickSuccess" />
     </div>
     <div :class="[panelPrefix + '-footer']">
-      <wt-button ghost class="btn cancelbtn"
-        @click="handleCancel">
-        取消
-      </wt-button>
+      <span></span>
       <wt-button type="primary" class="btn"
         @click="handleConfirm">
         确定
