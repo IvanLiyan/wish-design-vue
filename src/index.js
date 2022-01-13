@@ -15,6 +15,7 @@ import Dropdown from 'components/dropdown';
 import DropdownMenu from 'components/dropdown-menu';
 import DropdownMenuItem from 'components/dropdown-menu-item';
 import Popper from 'components/popper';
+import Select from 'components/select';
 import CollapseTransition from './transitions/collapse-transition';
 
 const components = [
@@ -34,6 +35,7 @@ const components = [
   DropdownMenu,
   DropdownMenuItem,
   Popper,
+  Select,
   CollapseTransition,
 ];
 
@@ -74,6 +76,7 @@ export {
   DropdownMenu,
   DropdownMenuItem,
   Popper,
+  Select,
   CollapseTransition,
 };
 

@@ -66,6 +66,11 @@
             "path": "tag",
             "name": "Tag",
             "cnName": "标签"
+          },
+          {
+            "path": "select",
+            "name": "Select",
+            "cnName": "选择器"
           }
         ]
       }

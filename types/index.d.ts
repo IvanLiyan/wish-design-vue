@@ -15,6 +15,7 @@ import { Dropdown } from './dropdown';
 import { DropdownMenu } from './dropdown-menu';
 import { DropdownMenuItem } from './dropdown-menu-item';
 import { Popper } from './popper';
+import { Select } from './select';
 import { Confirm as WTConfirm } from './confirm';
 import {
   Message as WTMessage,
@@ -48,6 +49,7 @@ export {
   DropdownMenu,
   DropdownMenuItem,
   Popper,
+  Select,
   FormRule,
   FormRules,
   NotificationOptions,
