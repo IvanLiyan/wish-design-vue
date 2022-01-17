@@ -4,7 +4,7 @@ WORKDIR /tmp
 # ENV PATH /app/node_modules/.bin:$PATH
 COPY . ./
 RUN npm install
-
+RUN npm rebuild node-sass
 RUN npm run build:deploy
 
 FROM nginx:1.19.4
