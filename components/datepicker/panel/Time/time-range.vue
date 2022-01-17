@@ -45,10 +45,10 @@
     </div>
     <div :class="[panelPrefix + '-footer']">
       <span></span>
-      <wt-button type="primary" class="btn"
-        @click="handleConfirm">
-        确定
-      </wt-button>
+        <wt-button type="primary" :class="!confirmDisabled ? 'btn' : 'btn disabled'" :disabled="confirmDisabled"
+          @click="handleConfirm">
+          确认
+        </wt-button>
     </div>
   </div>
 </template>
@@ -86,6 +86,7 @@ export default {
     return {
       dateStart: undefined,
       dateEnd: undefined,
+      confirmDisabled: true, // 确认按钮不可点击,
     };
   },
   computed: {
@@ -131,6 +132,7 @@ export default {
       this.$emit('canel');
     },
     handleChange (start, end) {
+      this.confirmDisabled = false;
       const dateStart = new Date(this.dateStart || initTimeDate());
       const dateEnd = new Date(this.dateEnd || initTimeDate());
 

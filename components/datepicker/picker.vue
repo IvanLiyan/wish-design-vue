@@ -29,7 +29,7 @@
       @blur="handleInputBlur"
       @enter="handleInputEnter"
     >
-      <wt-icon v-show="pickerType" :name="pickerType" :width="12" :height="12" slot="suffix" />
+      <wt-icon class="input-icon-suffix" v-show="pickerType" :name="pickerType" :stroke-width="1" :width="12" :height="12" slot="suffix" />
     </PickerInput>
   </Reference>
   <Drop :class="popperClass">
