@@ -15,5 +15,8 @@
   "dropdown-menu": "components/dropdown-menu",
   "dropdown-menu-item": "components/dropdown-menu-item",
   "popper": "components/popper",
-  "select": "components/select"
+  "select": "components/select",
+  "select-input": "components/select-input",
+  "option": "components/option",
+  "option-group": "components/option-group"
 }
