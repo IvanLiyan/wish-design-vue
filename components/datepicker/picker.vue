@@ -11,7 +11,7 @@
   <Reference>
     <PickerInput :id="elementId"
       :class="[prefix + '-editor']"
-      :readonly="type === 'week' || (editable || !readonly)"
+      :readonly="type === 'week' || (!editable || readonly)"
       :disabled="disabled"
       :size="size"
       :placeholder="placeholder ? placeholder : (type === 'time' ? 'Select Time' : 'Select Time Range') "
@@ -278,6 +278,7 @@ export default {
       focusedDate: initialValue[0] || this.startDate || new Date(),
       selecting: false, // 目前仅用在 timerange 中，表示是否在选择中
       pickerType: false, // 判断是日期选择器或时间选择器 time时间 calendar日期
+      inputValue: '', // 输入框内容
     };
   },
   computed: {
@@ -404,9 +405,11 @@ export default {
     },
 
     handleInputBlur () {
+      console.log('handleInputBlur');
       this.isFocused = false;
     },
     handleInputEnter () {
+      console.log('ENTER');
       this.handleOpenChange(false);
     },
     onSelectionModeChange (type) {
@@ -426,9 +429,12 @@ export default {
         this.$refs.pickerPanel.reset();
     },
     handleInputChange (newValue) {
+      console.log('handleInputChange');
       // const isArrayValue = this.type.indexOf('range') > -1 || this.multiple;
       const oldValue = this.formatDate(this.internalValue);
+      console.log('oldValue', oldValue);
       const newDate = this.parseDate(newValue, true);
+      console.log('newDate', newDate);
       const disabledDateFn = this.options &&
         typeof this.options.disabledDate === 'function' &&
         this.options.disabledDate;
@@ -521,6 +527,7 @@ export default {
       }
     },
     onPick (dates, visible = false) {
+      // 若是时间段则排序
       if (isArray(dates)) {
         dates = dates.sort((a, b) => a.getTime() - b.getTime());
       }

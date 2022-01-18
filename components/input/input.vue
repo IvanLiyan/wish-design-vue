@@ -143,6 +143,7 @@ export default {
   },
   watch: {
     value(val) {
+      this.nativeValue = val;
       if (this.type === 'textarea') {
         this.$nextTick(this.resizeTextarea);
       }

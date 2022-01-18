@@ -115,6 +115,10 @@ export default {
       immediate: true,
       handler (dates) {
         this.setDates(dates);
+        console.log('dates', dates[0]);
+        if (dates.length === 2 && (dates[0] !== null) && (dates[1] !== null)) {
+          this.confirmDisabled = false;
+        }
       },
     },
   },
@@ -132,6 +136,7 @@ export default {
       this.$emit('canel');
     },
     handleChange (start, end) {
+      console.log('handleChange');
       this.confirmDisabled = false;
       const dateStart = new Date(this.dateStart || initTimeDate());
       const dateEnd = new Date(this.dateEnd || initTimeDate());

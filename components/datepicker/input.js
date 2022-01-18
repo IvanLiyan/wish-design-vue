@@ -62,6 +62,7 @@ export default createHoc({
   mapMethodToListener (context) {
     return {
       input: context.handleInput,
+      change: context.handleInput,
       blur: context.handleBlur,
       focus: context.handleFocus,
       enter: context.handleEnter,

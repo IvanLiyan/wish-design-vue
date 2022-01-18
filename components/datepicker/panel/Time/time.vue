@@ -88,6 +88,7 @@ export default {
       date: this.value[0] || initTimeDate(),
       showDate: false,
       confirmDisabled: true, // 确认按钮不可点击,
+      newDate: '',
     };
   },
   computed: {
@@ -161,12 +162,14 @@ export default {
   methods: {
     handleChange (date, emit = true) {
       const newDate = new Date(this.date);
+      this.newDate = newDate;
       Object.keys(date).forEach(
         type => newDate[`set${capitalize(type)}`](date[type]),
       );
       if (emit) this.$emit('pick', newDate, true);
     },
     handleConfirm () {
+      console.log('confirm', this.newDate);
       this.$parent.$parent.$parent.handleOpenChange(false);
     },
     handleSelectNow () {
