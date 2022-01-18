@@ -118,6 +118,8 @@ export default {
         console.log('dates', dates[0]);
         if (dates.length === 2 && (dates[0] !== null) && (dates[1] !== null)) {
           this.confirmDisabled = false;
+        } else {
+          this.confirmDisabled = true;
         }
       },
     },

@@ -20,7 +20,7 @@ function converFormat (f) {
   return f.replace(/y/g, 'Y').replace(/d/g, 'D').replace(/W/g, 'w');
 }
 
-export const RANGE_SEPARATOR = ' - ';
+export const RANGE_SEPARATOR = '-';
 
 export const DEFAULT_FORMATS = {
   date: 'yyyy-MM-dd',
@@ -137,6 +137,7 @@ const RANGE_PARSER = function (
   }
   return [];
 };
+// Time Range 的文本转日期规则
 const TIME_RANGE_PARSER = function (
   text,
   format,
@@ -148,8 +149,10 @@ const TIME_RANGE_PARSER = function (
   let array = [];
   if (isArray(text)) {
     array = text;
+  } else if (isString(text) && text.length === 12) {
+    array = [text.substr(0, 6), text.substr(6, 6)]
   } else if (isString(text)) {
-    array = text.split(SEPARATOR);
+    array = text.split(SEPARATOR); // 用"-"分割
   }
   if (array.length === 2) {
     // 时间范围的长度为2，当长度非法时判定整体格式错误
