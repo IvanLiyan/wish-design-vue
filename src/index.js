@@ -15,6 +15,7 @@ import Dropdown from 'components/dropdown';
 import DropdownMenu from 'components/dropdown-menu';
 import DropdownMenuItem from 'components/dropdown-menu-item';
 import Popper from 'components/popper';
+import Notification from 'components/notification';
 import CollapseTransition from './transitions/collapse-transition';
 
 const components = [
@@ -34,6 +35,7 @@ const components = [
   DropdownMenu,
   DropdownMenuItem,
   Popper,
+  Notification,
   CollapseTransition,
 ];
 
@@ -44,7 +46,7 @@ export function install (Vue) {
 
   const $wt = {
     // confirm: Confirm,
-    // notify: Notification,
+    notify: Notification,
     // message: Message,
   };
 
@@ -74,6 +76,7 @@ export {
   DropdownMenu,
   DropdownMenuItem,
   Popper,
+  Notification,
   CollapseTransition,
 };
 

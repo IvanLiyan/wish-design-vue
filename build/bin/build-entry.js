@@ -16,9 +16,9 @@ Object.keys(Components).forEach((name) => {
 
   listTemplate.push(componentName);
 
-  if (['message', 'notification', 'confirm'].includes(name)) {
-    return;
-  }
+  // if (['message', 'notification', 'confirm'].includes(name)) {
+  //   return;
+  // }
   installTemplate.push(componentName);
 });
 
@@ -43,7 +43,7 @@ export function install (Vue) {
 
   const $wt = {
     // confirm: Confirm,
-    // notify: Notification,
+    notify: Notification,
     // message: Message,
   };
 

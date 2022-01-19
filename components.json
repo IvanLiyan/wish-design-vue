@@ -14,5 +14,6 @@
   "dropdown": "components/dropdown",
   "dropdown-menu": "components/dropdown-menu",
   "dropdown-menu-item": "components/dropdown-menu-item",
-  "popper": "components/popper"
+  "popper": "components/popper",
+  "notification": "components/notification"
 }
