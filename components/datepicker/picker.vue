@@ -415,7 +415,9 @@ export default {
       this.isFocused = false;
     },
     handleInputEnter () {
-      if (this.internalValue[0] !== null) {
+      console.log('handleInputEnter');
+      console.log('internalValue', this.internalValue);
+      if (this.internalValue.length !== 0 && this.internalValue[0] !== null) {
         this.handleOpenChange(true);
         const that = this;
         setTimeout(function () {
