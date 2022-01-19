@@ -405,12 +405,24 @@ export default {
     },
 
     handleInputBlur () {
-      console.log('handleInputBlur');
+      // this.handleOpenChange(true);
+      // const that = this;
+      // setTimeout(function () {
+      //   that.handleOpenChange(false);
+      // },
+      // 1250);
+      console.log('THIS', this);
       this.isFocused = false;
     },
     handleInputEnter () {
-      console.log('ENTER');
-      this.handleOpenChange(false);
+      if (this.internalValue[0] !== null) {
+        this.handleOpenChange(true);
+        const that = this;
+        setTimeout(function () {
+          that.handleOpenChange(false);
+        },
+        1250);
+      };
     },
     onSelectionModeChange (type) {
       if (this.readonly || this.disabled) {
@@ -429,6 +441,7 @@ export default {
         this.$refs.pickerPanel.reset();
     },
     handleInputChange (newValue) {
+      this.inputValue = newValue;
       console.log('handleInputChange, newValue:', newValue);
       // const isArrayValue = this.type.indexOf('range') > -1 || this.multiple;
       const oldValue = this.formatDate(this.internalValue);

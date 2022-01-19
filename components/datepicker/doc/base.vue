@@ -5,7 +5,6 @@
         type="date"
         v-model="value1"
         :open="true"
-        :append-to-container="false"
         placeholder="选择时间" />
     </div>
     <div class="demo-picker-group">
