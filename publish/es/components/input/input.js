@@ -32,14 +32,18 @@ export default {
     }
   },
   props: {
+    // 类型
     type: {
       type: String,
       validator: function validator(val) {
         return !val || ['line', 'textarea'].includes(val);
       }
     },
+    // 禁止状态
     disabled: Boolean,
+    // 校验不通过
     invalid: Boolean,
+
     fullWidth: Boolean,
     label: String,
     value: [String, Number],

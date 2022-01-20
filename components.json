@@ -19,5 +19,6 @@
   "datepicker": "components/datepicker",
   "timepicker": "components/timepicker",
   "form": "components/form",
-  "form-item": "components/form-item"
+  "form-item": "components/form-item",
+  "notification": "components/notification"
 }

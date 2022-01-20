@@ -1,0 +1,28 @@
+{
+  "params": [
+    {
+      "name": "message",
+      "desc": "说明文字",
+      "type": ["string"],
+      "optionalValue": "",
+      "default": "",
+      "version": ""
+    },
+    {
+      "name": "type",
+      "desc": "主题样式，如果不在可选值内将被忽略",
+      "type": "string",
+      "optionalValue": ["success", "warning", "info", "danger"],
+      "default": "",
+      "version": ""
+    },
+    {
+      "name": "duration",
+      "desc": "显示时间, 毫秒。设为 0 则不会自动关闭",
+      "type": "number",
+      "optionalValue": "",
+      "default": "5000",
+      "version": ""
+    }
+  ]
+}

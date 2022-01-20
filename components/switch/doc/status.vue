@@ -1,11 +1,9 @@
 <template>
-  <div>
-    <div class="demo-container">
-      <wt-switch v-model="value1">item content<span slot="hint">desc</span> </wt-switch>
-      <wt-switch v-model="value2">item content<span slot="hint">desc</span> </wt-switch>
-      <wt-switch v-model="value3" disabled>item content<span slot="hint">desc</span> </wt-switch>
-      <wt-switch v-model="value4" disabled>item content<span slot="hint">desc</span> </wt-switch>
-    </div>
+  <div class="demo-container">
+    <wt-switch v-model="value1">item content<span slot="hint">desc</span> </wt-switch>
+    <wt-switch v-model="value2">item content<span slot="hint">desc</span> </wt-switch>
+    <wt-switch v-model="value3" disabled>item content<span slot="hint">desc</span> </wt-switch>
+    <wt-switch v-model="value4" disabled>item content<span slot="hint">desc</span> </wt-switch>
   </div>
 </template>
 <script>

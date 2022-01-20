@@ -15,9 +15,10 @@ import Dropdown from './components/dropdown';
 import DropdownMenu from './components/dropdown-menu';
 import DropdownMenuItem from './components/dropdown-menu-item';
 import Popper from './components/popper';
+import Notification from './components/notification';
 import CollapseTransition from './transitions/collapse-transition';
 
-var components = [Button, Row, Col, Icon, ButtonGroup, Input, Radio, RadioGroup, Checkbox, CheckboxGroup, Switch, Tag, Dropdown, DropdownMenu, DropdownMenuItem, Popper, CollapseTransition];
+var components = [Button, Row, Col, Icon, ButtonGroup, Input, Radio, RadioGroup, Checkbox, CheckboxGroup, Switch, Tag, Dropdown, DropdownMenu, DropdownMenuItem, Popper, Notification, CollapseTransition];
 
 export function install(Vue) {
   components.map(function (component) {
@@ -26,7 +27,7 @@ export function install(Vue) {
 
   var $wt = {
     // confirm: Confirm,
-    // notify: Notification,
+    notify: Notification
     // message: Message,
   };
 
@@ -39,7 +40,7 @@ if (typeof window !== 'undefined' && window.Vue) {
   install(window.Vue);
 }
 
-export { Button, Row, Col, Icon, ButtonGroup, Input, Radio, RadioGroup, Checkbox, CheckboxGroup, Switch, Tag, Dropdown, DropdownMenu, DropdownMenuItem, Popper, CollapseTransition };
+export { Button, Row, Col, Icon, ButtonGroup, Input, Radio, RadioGroup, Checkbox, CheckboxGroup, Switch, Tag, Dropdown, DropdownMenu, DropdownMenuItem, Popper, Notification, CollapseTransition };
 
 export default {
   version: '0.0.1-alpha.11',

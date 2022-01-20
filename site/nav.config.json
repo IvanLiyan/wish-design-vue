@@ -71,6 +71,16 @@
         ]
       },
       {
+        "groupName": "Feedback",
+        "list": [
+          {
+            "path": "notification",
+            "name": "Notification",
+            "cnName": "通知"
+          }
+        ]
+      },
+      {
         "groupName": "Data display",
         "list": [
           {

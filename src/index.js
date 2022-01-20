@@ -20,6 +20,7 @@ import Datepicker from 'components/datepicker';
 import Timepicker from 'components/timepicker';
 import Form from 'components/form';
 import FormItem from 'components/form-item';
+import Notification from 'components/notification';
 import CollapseTransition from './transitions/collapse-transition';
 
 const components = [
@@ -44,6 +45,7 @@ const components = [
   Timepicker,
   Form,
   FormItem,
+  Notification,
   CollapseTransition,
 ];
 
@@ -54,7 +56,7 @@ export function install (Vue) {
 
   const $wt = {
     // confirm: Confirm,
-    // notify: Notification,
+    notify: Notification,
     // message: Message,
   };
 
@@ -89,6 +91,7 @@ export {
   Timepicker,
   Form,
   FormItem,
+  Notification,
   CollapseTransition,
 };
 

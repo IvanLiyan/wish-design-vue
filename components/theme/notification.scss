@@ -1,0 +1,68 @@
+@import 'common/var';
+@import 'mixins/mixins';
+
+$notification-width: 240px;
+$notification-shadow: 0 1px 10px 0 rgba(25, 42, 50, 0.12), 0 2px 5px 0 rgba(25, 42, 50, 0.14),
+  0px 2px 4px -1px rgba(25, 42, 50, 0.2);
+
+@include c(notification) {
+  width: $notification-width;
+  padding: 17px;
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+  box-sizing: border-box;
+  position: fixed;
+  background-color: $color-white;
+  box-shadow: $notification-shadow;
+  transition: opacity 0.3s, transform 0.3s, left 0.3s, right 0.3s, top 0.4s, bottom 0.3s;
+  overflow: hidden;
+  &.right {
+    right: 20px;
+  }
+  &.left {
+    left: 20px;
+  }
+
+  @include e(title) {
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1.4;
+    color: #000;
+  }
+
+  @include e(content) {
+    font-size: $font-size-2;
+    color: $color-white;
+    margin-left: 8px;
+  }
+
+  &-success {
+    background-color: $color-success;
+  }
+  &-danger {
+    background-color: $color-danger;
+  }
+  &-info {
+    background-color: $color-info;
+  }
+  &-warning {
+    background-color: $color-warning-2;
+  }
+}
+
+.#{$prefix}-notification-fade-enter {
+  &.right {
+    right: 0;
+    transform: translateX(100%);
+  }
+
+  &.left {
+    left: 0;
+    transform: translateX(-100%);
+  }
+}
+
+.#{$prefix}-notification-fade-leave-active {
+  opacity: 0;
+}
