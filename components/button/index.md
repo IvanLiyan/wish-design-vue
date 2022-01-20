@@ -18,9 +18,9 @@
     display:flex;
     align-items: center;
     justify-content: center;
-    margin-bottom:20px;
+    margin-bottom: 20px;
     &>*{
-        margin-right:30px;
+        margin-right: 30px;
         &:last-child{
             margin-right:0;
         }
