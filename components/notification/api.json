@@ -1,5 +1,5 @@
 {
-  "params": [
+  "props": [
     {
       "name": "message",
       "desc": "说明文字",
