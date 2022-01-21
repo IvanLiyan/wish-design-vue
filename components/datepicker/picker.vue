@@ -14,7 +14,7 @@
       :readonly="type === 'week' || (!editable || readonly)"
       :disabled="disabled"
       :size="size"
-      :placeholder="placeholder ? placeholder : (type === 'time' ? 'Select Time' : 'Select Time Range') "
+      :placeholder="placeholder ? placeholder : (type === 'time' ? 'Select Time' : 'Start - End') "
       :current-value="visualValue"
       :name="name"
       clearable-on-readonly
@@ -405,18 +405,9 @@ export default {
     },
 
     handleInputBlur () {
-      // this.handleOpenChange(true);
-      // const that = this;
-      // setTimeout(function () {
-      //   that.handleOpenChange(false);
-      // },
-      // 1250);
-      console.log('THIS', this);
       this.isFocused = false;
     },
     handleInputEnter () {
-      console.log('handleInputEnter');
-      console.log('internalValue', this.internalValue);
       if (this.internalValue.length !== 0 && this.internalValue[0] !== null) {
         this.handleOpenChange(true);
         const that = this;
@@ -444,12 +435,9 @@ export default {
     },
     handleInputChange (newValue) {
       this.inputValue = newValue;
-      console.log('handleInputChange, newValue:', newValue);
       // const isArrayValue = this.type.indexOf('range') > -1 || this.multiple;
       const oldValue = this.formatDate(this.internalValue);
-      console.log('oldValue', oldValue);
       const newDate = this.parseDate(newValue, true);
-      console.log('newDate', newDate);
       const disabledDateFn = this.options &&
         typeof this.options.disabledDate === 'function' &&
         this.options.disabledDate;
@@ -485,10 +473,7 @@ export default {
     // 当为输入框手动输入内容时，将强制使用 format 进行格式化
     parseDate (val, forceFormat) { // 假设这里的val为120000130000
       const { type, valueFormat } = this;
-      console.log('type', type); // timerange
-      console.log('valueFormat', valueFormat); // undefined
       const isRange = this.type.indexOf('range') > -1;
-      console.log('isRange', isRange); // true
 
       if (!forceFormat && valueFormat === 'timestamp') {
         if (isRange && (!val || !val.length)) {

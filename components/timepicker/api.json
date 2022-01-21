@@ -9,14 +9,6 @@
 			"version": ""
 		},
 		{
-			"name": "format",
-			"desc": "展示的日期格式",
-			"type": "string",
-			"optionalValue": "",
-			"default": "HH:mm:ss",
-			"version": ""
-		},
-		{
 			"name": "readonly",
 			"desc": "是否只读",
 			"type": "boolean",
@@ -33,19 +25,11 @@
 			"version": ""
 		},
 		{
-			"name": "open",
-			"desc": "非必须，同 DatePicker，是否显示下方面板，支持 .sync",
-			"type": "boolean",
-			"optionalValue": "",
-			"default": "false",
-			"version": ""
-		},
-		{
 			"name": "placeholder",
 			"desc": "空内容时的占位内容",
 			"type": "string",
 			"optionalValue": "",
-			"default": "Select Time / Select Time Range",
+			"default": "Select Time / Start - End",
 			"version": ""
 		},
 		{
@@ -68,14 +52,6 @@
 			"name": "value",
 			"desc": "当前选中的值，当多选或者时间段时为数组",
 			"type": ["Date", "Date[]"],
-			"optionalValue": "",
-			"default": "",
-			"version": ""
-		},
-		{
-			"name": "value-format",
-			"desc": "绑定值的格式。不指定则根据当前 value 值的类型进行推断",
-			"type": "string",
 			"optionalValue": "",
 			"default": "",
 			"version": ""
@@ -112,5 +88,17 @@
 			"default": "",
 			"version": " "
 		}
-	]
+	],
+	"events": [{
+		"name": "update:open",
+		"desc": "当面板显示隐藏时触发",
+		"signature": "function (open: boolean)",
+		"args": ""
+	},
+	{
+		"name": "input",
+		"desc": "当前 value 发生改变时触发",
+		"signature": "function (value: date)",
+		"args": ""
+	}]
 }
