@@ -1,5 +1,12 @@
 @import "./common/var.scss";
 @import "./mixins/mixins.scss";
+.#{$prefix}-date-picker {
+  width: 240px;
+  .#{$prefix}-input-tip {
+    min-height: 0 !important;
+  }
+}
+
 .#{$prefix}-picker-panel-body-wrapper {
 }
 .#{$prefix}-picker-panel-body {
