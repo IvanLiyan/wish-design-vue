@@ -6,8 +6,12 @@
       "desc1": "包含日期选择，月份选择，年份选择， 支持手动输入。支持格式yyyy/mm/dd, yyyymmdd, yyyy-mm-dd。"
     },
     "module2": {
-      "title": "应用场景",
-      "desc1": "包含日期选择，月份选择，年份选择， 支持手动输入。支持格式yyyy/mm/dd, yyyymmdd, yyyy-mm-dd。"
+      "title": "选择日期区间",
+      "desc1": "可以选择开始和结束日期"
+    },
+    "module3": {
+      "title": "选择日期时间区间",
+      "desc1": "可以选择开始和结束日期与时间"
     },
     "api": {
       "title": "设置标题",

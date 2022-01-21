@@ -14,7 +14,7 @@
       :readonly="type === 'week' || (!editable || readonly)"
       :disabled="disabled"
       :size="size"
-      :placeholder="placeholder ? placeholder : (type === 'time' ? 'Select Time' : 'Start - End') "
+      :placeholder="getPlaceHolder"
       :current-value="visualValue"
       :name="name"
       clearable-on-readonly
@@ -104,6 +104,7 @@ import {
 } from '@/utils/console';
 
 import Input from './input.js';
+import PICKER_TYPE_ENUM from './PICKER_TYPE_ENUM';
 
 const isEmptyArray = (val) => {
   return val.reduce((isEmpty, str) => {
@@ -283,6 +284,7 @@ export default {
   },
   computed: {
     prefix () {
+      console.log('this.type', this.type);
       return this.config.getPrefixCls('date-picker');
     },
     iconPrefix () {
@@ -324,6 +326,21 @@ export default {
     shouldFormatValue () {
       return isArray(this.value) ? isString(this.value[0])
         : isString(this.value);
+    },
+    getPlaceHolder () {
+      if (this.type === 'date') {
+        return PICKER_TYPE_ENUM.date;
+      } else if (this.type === 'month') {
+        return PICKER_TYPE_ENUM.month;
+      } else if (this.type === 'year') {
+        return PICKER_TYPE_ENUM.year;
+      } else if (this.type === 'time') {
+        return PICKER_TYPE_ENUM.time;
+      } else if (this.type === 'timerange') {
+        return PICKER_TYPE_ENUM.timerange;
+      } else {
+        return 'Select';
+      }
     },
   },
   watch: {
