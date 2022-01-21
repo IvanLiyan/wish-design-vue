@@ -10,28 +10,30 @@
     <div>
       <h2>duration time</h2>
       <div class="demo-container">
-        <wt-button type="success" @click="click5">0s</wt-button>
-        <wt-button type="warning" @click="click6">3s</wt-button>
-        <wt-button type="danger" @click="click7">5s</wt-button>
-        <wt-button type="secondary" @click="click8">7s</wt-button>
+        <wt-button @click="click5">0s</wt-button>
+        <wt-button @click="click6">3s</wt-button>
+        <wt-button @click="click7">5s</wt-button>
+        <wt-button @click="click8">7s</wt-button>
       </div>
     </div>
     <div>
       <h2>position</h2>
       <div class="demo-container">
-        <wt-button type="success" @click="click9">top-left</wt-button>
-        <wt-button type="warning" @click="click10">top-right</wt-button>
-        <wt-button type="danger" @click="click11">top-center</wt-button>
-        <wt-button type="secondary" @click="click12">bottom-center</wt-button>
+        <wt-button @click="click9">top-left</wt-button>
+        <wt-button @click="click11">top-center</wt-button>
+        <wt-button @click="click10">top-right</wt-button>
+        <wt-button @click="click12">bottom-left</wt-button>
+        <wt-button @click="click17">bottom-center</wt-button>
+        <wt-button @click="click18">bottom-right</wt-button>
       </div>
     </div>
     <div>
       <h2>offset</h2>
       <div class="demo-container">
-        <wt-button type="success" @click="click13">0px</wt-button>
-        <wt-button type="warning" @click="click14">30px</wt-button>
-        <wt-button type="danger" @click="click15">50px</wt-button>
-        <wt-button type="secondary" @click="click16">100px</wt-button>
+        <wt-button @click="click13">0px</wt-button>
+        <wt-button @click="click14">30px</wt-button>
+        <wt-button @click="click15">50px</wt-button>
+        <wt-button @click="click16">100px</wt-button>
       </div>
     </div>
   </div>
@@ -118,7 +120,21 @@ export default {
       this.$wt.notify({
         type: 'info',
         message: 'I am a info notification',
+        position: 'bottom-left',
+      });
+    },
+    click17: function (e) {
+      this.$wt.notify({
+        type: 'info',
+        message: 'I am a info notification',
         position: 'bottom-center',
+      });
+    },
+    click18: function (e) {
+      this.$wt.notify({
+        type: 'info',
+        message: 'I am a info notification',
+        position: 'bottom-right',
       });
     },
     click13: function (e) {

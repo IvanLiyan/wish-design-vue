@@ -28,7 +28,7 @@
       "name": "position",
       "desc": "配置位置选项",
       "type": "string",
-      "optionalValue": ["top-left", "top-right", "top-center", "bottom-center"],
+      "optionalValue": ["top-left", "top-center", "top-right", "bottom-left", "bottom-center", "bottom-right"],
       "default": "top-right",
       "version": ""
     },
