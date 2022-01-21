@@ -6,9 +6,9 @@
 :::include(src="./doc/base.vue")
 :::
 
-## 类型与用法
-### 大小 <design-tag></design-tag>
-:::include(src="./doc/size.vue")
+## {{$t('datepicker.module2.title')}}
+<span>{{$t('datepicker.module2.desc1')}}</span>
+:::include(src="./doc/range.vue")
 :::
 
 ### 选择日期点
@@ -16,7 +16,7 @@
 :::
 
 ### 选择日期段
-:::include(src="./doc/range.vue")
+:::include(src="./doc/range2.vue")
 :::
 
 ### 选择其他颗粒度

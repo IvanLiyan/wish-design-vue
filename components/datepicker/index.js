@@ -1,23 +1,8 @@
 import DatePicker from './picker/datepicker';
 import CreateComponent from './control';
-import { withFormItem } from '@components/form-item';
 import RangeDatePickerPanel from './panel/Date/date-range.vue';
 
-const WtDatePicker = withFormItem(
-  'WtDatePicker',
-  CreateComponent('DatePickerWrapper', DatePicker),
-  {
-    withRef: true,
-    methods: {
-      focus () {
-        this.$refs.wrappedInstance.$refs.wrappedInstance.focus();
-      },
-      blur () {
-        this.$refs.wrappedInstance.$refs.wrappedInstance.blur();
-      },
-    },
-  },
-);
+const WtDatePicker = CreateComponent('WtDatePicker', DatePicker);
 
 /* istanbul ignore next */
 WtDatePicker.install = function (Vue) {
