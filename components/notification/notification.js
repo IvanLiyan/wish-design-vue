@@ -46,12 +46,14 @@ const Notification = function (options) {
   PopupManage.open(instance);
 
   let verticalOffset = options.offset || 0;
-  instances
-    .filter((item) => item.position === position)
-    .forEach((item) => {
+
+  const samePosInstances = instances.filter((item) => item.position === position);
+  if (samePosInstances.length > 0) {
+    samePosInstances.forEach((item) => {
       verticalOffset += item.$el.offsetHeight + spacing;
     });
-  verticalOffset += spacing;
+  }
+
   instance.verticalOffset = verticalOffset;
   instances.push(instance);
   return instance;

@@ -84,3 +84,6 @@
 ## API
 
 <api-doc name="Button" :doc="require('./api.json')"></api-doc>
+
+:::include(src="./doc/show.vue")
+:::

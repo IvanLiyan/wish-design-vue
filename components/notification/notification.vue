@@ -34,7 +34,7 @@ export default {
     return {
       visible: false,
       message: '',
-      duration: 5000,
+      duration: 3000,
       type: 'info',
       className: '',
       onClose: null,
@@ -57,9 +57,13 @@ export default {
     },
 
     computedClass() {
-      const posclass = this.position.indexOf('right') > -1 ? 'right' : 'left';
+      // const onRight = this.position.indexOf('right') > -1;
+      // const onTop = this.position.indexOf('top') > -1;
+
+      // const posHorizontalClass = onRight ? 'right' : 'center';
+      // const postVertivalClass = onTop ? 'top' : 'bottom';
       const typeClass = this.type ? `${this.prefix}-${this.type}` : '';
-      return [this.className, posclass, typeClass];
+      return [this.className, this.position, typeClass];
     },
 
     verticalProperty() {

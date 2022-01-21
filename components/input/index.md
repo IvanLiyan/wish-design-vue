@@ -63,3 +63,6 @@
 ## API
 
 <api-doc name="Input" :doc="require('./api.json')"></api-doc>
+
+:::include(src="./doc/show.vue")
+:::
