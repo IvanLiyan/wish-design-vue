@@ -67,7 +67,6 @@
             "name": "TimePicker",
             "cnName": "时间选择框"
           }
-
         ]
       },
       {
@@ -76,7 +75,7 @@
           {
             "path": "notification",
             "name": "Notification",
-            "cnName": "通知"
+            "cnName": "提示"
           }
         ]
       },
