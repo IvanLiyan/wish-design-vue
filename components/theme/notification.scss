@@ -6,7 +6,7 @@ $notification-shadow: 0 1px 10px 0 rgba(25, 42, 50, 0.12), 0 2px 5px 0 rgba(25, 
   0px 2px 4px -1px rgba(25, 42, 50, 0.2);
 
 @include c(notification) {
-  width: $notification-width;
+  min-width: $notification-width;
   padding: 17px;
   display: flex;
   align-items: center;
@@ -29,13 +29,6 @@ $notification-shadow: 0 1px 10px 0 rgba(25, 42, 50, 0.12), 0 2px 5px 0 rgba(25, 
   &.bottom-center {
     left: 50%;
     transform: translateX(-50%);
-  }
-
-  @include e(title) {
-    font-size: 16px;
-    font-weight: bold;
-    line-height: 1.4;
-    color: #000;
   }
 
   @include e(content) {

@@ -45,7 +45,7 @@ export default {
     click1: function (e) {
       this.$wt.notify({
         type: 'success',
-        message: 'I am a success notification',
+        message: 'I am a warning notification',
       });
     },
     click2: function (e) {
