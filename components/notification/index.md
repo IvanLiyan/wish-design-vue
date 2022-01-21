@@ -15,3 +15,6 @@ import { Notification } from '@ss/mtd-vue';
 ```
 
 <api-doc name="Notification" :doc="require('./api.json')"></api-doc>
+
+:::include(src="./doc/show.vue")
+:::

@@ -6,7 +6,7 @@ $notification-shadow: 0 1px 10px 0 rgba(25, 42, 50, 0.12), 0 2px 5px 0 rgba(25, 
   0px 2px 4px -1px rgba(25, 42, 50, 0.2);
 
 @include c(notification) {
-  width: $notification-width;
+  min-width: $notification-width;
   padding: 17px;
   display: flex;
   align-items: center;
@@ -17,18 +17,18 @@ $notification-shadow: 0 1px 10px 0 rgba(25, 42, 50, 0.12), 0 2px 5px 0 rgba(25, 
   box-shadow: $notification-shadow;
   transition: opacity 0.3s, transform 0.3s, left 0.3s, right 0.3s, top 0.4s, bottom 0.3s;
   overflow: hidden;
-  &.right {
-    right: 20px;
-  }
-  &.left {
+  &.top-left,
+  &.bottom-left {
     left: 20px;
   }
-
-  @include e(title) {
-    font-size: 16px;
-    font-weight: bold;
-    line-height: 1.4;
-    color: #000;
+  &.top-right,
+  &.bottom-right {
+    right: 20px;
+  }
+  &.top-center,
+  &.bottom-center {
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   @include e(content) {
@@ -51,15 +51,28 @@ $notification-shadow: 0 1px 10px 0 rgba(25, 42, 50, 0.12), 0 2px 5px 0 rgba(25, 
   }
 }
 
+/*
+notification 动画之前的位置style
+*/
+
 .#{$prefix}-notification-fade-enter {
-  &.right {
+  &.top-left,
+  &.bottom-left {
+    left: 0;
+    transform: translateX(-100%);
+  }
+  &.top-right,
+  &.bottom-right {
     right: 0;
     transform: translateX(100%);
   }
-
-  &.left {
-    left: 0;
-    transform: translateX(-100%);
+  &.top-center {
+    left: 50%;
+    transform: translate(-50%, -100%);
+  }
+  &.bottom-center {
+    left: 50%;
+    transform: translate(-50%, 100%);
   }
 }
 
