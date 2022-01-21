@@ -11,6 +11,7 @@ import { hasProps } from '@wish/wt-vue/es/utils/vnode';
 import { error } from '@wish/wt-vue/es/utils/console';
 
 import Input from './input.js';
+import PICKER_TYPE_ENUM from './PICKER_TYPE_ENUM';
 
 var isEmptyArray = function isEmptyArray(val) {
   return val.reduce(function (isEmpty, str) {
@@ -32,7 +33,7 @@ function arrayEql(a, b) {
 }
 
 var __vue_render__ = function __vue_render__() {
-  var _vm = this;var _h = _vm.$createElement;var _c = _vm._self._c || _h;return _c('Popper', { ref: "popper", class: _vm.wrapperClasses, attrs: { "tag": "div", "visible": _vm.open, "placement": _vm.placement, "trigger": "click", "popper-disabled": _vm.disabled, "toggle-on-reference-click": false, "append-to-container": _vm.appendToContainer, "get-popup-container": _vm.getPopupContainer, "popper-options": _vm.popperOptions }, on: { "update:visible": _vm.handleOpenChange } }, [_c('Reference', [_c('PickerInput', { ref: "input", class: [_vm.prefix + '-editor'], attrs: { "id": _vm.elementId, "readonly": _vm.type === 'week' || !_vm.editable || _vm.readonly, "disabled": _vm.disabled, "size": _vm.size, "placeholder": _vm.placeholder ? _vm.placeholder : _vm.type === 'time' ? 'Select Time' : 'Start - End', "current-value": _vm.visualValue, "name": _vm.name, "clearable-on-readonly": "", "suffix-icon": _vm.suffixIcon, "invalid": _vm.invalid, "loading": _vm.loading, "genre": _vm.genre }, on: { "input": _vm.handleInputChange, "clear": _vm.handleClear, "focus": _vm.handleInputFocus, "blur": _vm.handleInputBlur, "enter": _vm.handleInputEnter } }, [_c('wt-icon', { directives: [{ name: "show", rawName: "v-show", value: _vm.pickerType, expression: "pickerType" }], staticClass: "input-icon-suffix", attrs: { "slot": "suffix", "name": _vm.pickerType, "stroke-width": 1, "width": 12, "height": 12 }, slot: "suffix" })], 1)], 1), _vm._v(" "), _c('Drop', { class: _vm.popperClass }, [_c(_vm.panel, _vm._b({ ref: "pickerPanel", tag: "component", attrs: { "show-time": _vm.type === 'datetime' || _vm.type === 'datetimerange', "default-time": _vm.defaultTime, "show-btn-now": _vm.showBtnNow, "confirm": _vm.needConfirm, "selection-mode": _vm.selectionMode, "steps": _vm.steps, "format": _vm.format, "show-now": _vm.showNow, "value": _vm.internalValue, "start-date": _vm.startDate, "split-panels": _vm.splitPanels, "show-week-numbers": _vm.showWeekNumbers, "week-start": _vm.weekStart, "picker-type": _vm.type, "multiple": _vm.multiple, "focused-date": _vm.focusedDate, "visible": _vm.open, "time-picker-options": _vm.timePickerOptions }, on: { "pick": _vm.onPick, "pick-click-now": _vm.handleClickNow, "pick-success": _vm.onPickSuccess, "pick-range": _vm.hanldePickRange, "pick-time-range": _vm.handleTimeRange, "canel": _vm.handleCancel, "current-view-change": _vm.updatePopper }, scopedSlots: _vm._u([{ key: "cell", fn: function fn(scope) {
+  var _vm = this;var _h = _vm.$createElement;var _c = _vm._self._c || _h;return _c('Popper', { ref: "popper", class: _vm.wrapperClasses, attrs: { "tag": "div", "visible": _vm.open, "placement": _vm.placement, "trigger": "click", "popper-disabled": _vm.disabled, "toggle-on-reference-click": false, "append-to-container": _vm.appendToContainer, "get-popup-container": _vm.getPopupContainer, "popper-options": _vm.popperOptions }, on: { "update:visible": _vm.handleOpenChange } }, [_c('Reference', [_c('PickerInput', { ref: "input", class: [_vm.prefix + '-editor'], attrs: { "id": _vm.elementId, "readonly": _vm.type === 'week' || !_vm.editable || _vm.readonly, "disabled": _vm.disabled, "size": _vm.size, "placeholder": _vm.getPlaceHolder, "current-value": _vm.visualValue, "name": _vm.name, "clearable-on-readonly": "", "suffix-icon": _vm.suffixIcon, "invalid": _vm.invalid, "loading": _vm.loading, "genre": _vm.genre }, on: { "input": _vm.handleInputChange, "clear": _vm.handleClear, "focus": _vm.handleInputFocus, "blur": _vm.handleInputBlur, "enter": _vm.handleInputEnter } }, [_c('wt-icon', { directives: [{ name: "show", rawName: "v-show", value: _vm.pickerType, expression: "pickerType" }], staticClass: "input-icon-suffix", attrs: { "slot": "suffix", "name": _vm.pickerType, "stroke-width": 1, "width": 12, "height": 12 }, slot: "suffix" })], 1)], 1), _vm._v(" "), _c('Drop', { class: _vm.popperClass }, [_c(_vm.panel, _vm._b({ ref: "pickerPanel", tag: "component", attrs: { "show-time": _vm.type === 'datetime' || _vm.type === 'datetimerange', "default-time": _vm.defaultTime, "show-btn-now": _vm.showBtnNow, "confirm": _vm.needConfirm, "selection-mode": _vm.selectionMode, "steps": _vm.steps, "format": _vm.format, "show-now": _vm.showNow, "value": _vm.internalValue, "start-date": _vm.startDate, "split-panels": _vm.splitPanels, "show-week-numbers": _vm.showWeekNumbers, "week-start": _vm.weekStart, "picker-type": _vm.type, "multiple": _vm.multiple, "focused-date": _vm.focusedDate, "visible": _vm.open, "time-picker-options": _vm.timePickerOptions }, on: { "pick": _vm.onPick, "pick-click-now": _vm.handleClickNow, "pick-success": _vm.onPickSuccess, "pick-range": _vm.hanldePickRange, "pick-time-range": _vm.handleTimeRange, "canel": _vm.handleCancel, "current-view-change": _vm.updatePopper }, scopedSlots: _vm._u([{ key: "cell", fn: function fn(scope) {
         return [_vm._t("cell", function () {
           return [_vm._v(_vm._s(scope.cell.desc))];
         }, { "cell": scope.cell })];
@@ -208,6 +209,7 @@ export default {
 
   computed: {
     prefix: function prefix() {
+      console.log('this.type', this.type);
       return this.config.getPrefixCls('date-picker');
     },
     iconPrefix: function iconPrefix() {
@@ -242,6 +244,21 @@ export default {
     },
     shouldFormatValue: function shouldFormatValue() {
       return isArray(this.value) ? isString(this.value[0]) : isString(this.value);
+    },
+    getPlaceHolder: function getPlaceHolder() {
+      if (this.type === 'date') {
+        return PICKER_TYPE_ENUM.date;
+      } else if (this.type === 'month') {
+        return PICKER_TYPE_ENUM.month;
+      } else if (this.type === 'year') {
+        return PICKER_TYPE_ENUM.year;
+      } else if (this.type === 'time') {
+        return PICKER_TYPE_ENUM.time;
+      } else if (this.type === 'timerange') {
+        return PICKER_TYPE_ENUM.timerange;
+      } else {
+        return 'Select';
+      }
     }
   },
   watch: {
