@@ -21,13 +21,13 @@
 - 增加 Modal 组件 enable-click-through 属性，用于设置是否允许点击 Modal 下方元素 [TT](https://tt.sankuai.com/ticket/detail?id=40402170)
 
   ```
-  $icon-font-path: '~@ss/mtd-vue/packages/theme-chalk/fonts';
-  @import "@ss/mtd-vue/packages/theme-chalk/index.scss";
+  $icon-font-path: '~@ss/wt-vue/packages/theme-chalk/fonts';
+  @import "@ss/wt-vue/packages/theme-chalk/index.scss";
   ```
 
   改为
 
   ```
-  $icon-font-path: '~@ss/mtd-vue/components/theme-chalk/fonts';
-  @import "@ss/mtd-vue/components/theme-chalk/index.scss";
+  $icon-font-path: '~@ss/wt-vue/components/theme-chalk/fonts';
+  @import "@ss/wt-vue/components/theme-chalk/index.scss";
   ``` -->

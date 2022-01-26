@@ -21,6 +21,10 @@ import Timepicker from 'components/timepicker';
 import Form from 'components/form';
 import FormItem from 'components/form-item';
 import Notification from 'components/notification';
+import Select from 'components/select';
+import SelectInput from 'components/select-input';
+import Option from 'components/option';
+import OptionGroup from 'components/option-group';
 import CollapseTransition from './transitions/collapse-transition';
 
 const components = [
@@ -46,6 +50,10 @@ const components = [
   Form,
   FormItem,
   Notification,
+  Select,
+  SelectInput,
+  Option,
+  OptionGroup,
   CollapseTransition,
 ];
 
@@ -92,6 +100,10 @@ export {
   Form,
   FormItem,
   Notification,
+  Select,
+  SelectInput,
+  Option,
+  OptionGroup,
   CollapseTransition,
 };
 

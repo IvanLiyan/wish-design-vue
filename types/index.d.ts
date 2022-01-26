@@ -20,15 +20,10 @@ import { Datepicker } from './datepicker';
 import { Timepicker } from './timepicker';
 import { Form } from './form';
 import { FormItem } from './form-item';
+import { Select } from './select';
 import { Confirm as WTConfirm } from './confirm';
-import {
-  Message as WTMessage,
-  MessageOptions
-} from './message';
-import {
-  Notification as WTNotification,
-  NotificationOptions
-} from './notification';
+import { Message as WTMessage, MessageOptions } from './message';
+import { Notification as WTNotification, NotificationOptions } from './notification';
 import { FormRule, FormRules } from './form';
 import CollapseTransition from './collapse-transition';
 
@@ -58,6 +53,7 @@ export {
   Timepicker,
   Form,
   FormItem,
+  Select,
   FormRule,
   FormRules,
   NotificationOptions,
@@ -70,9 +66,9 @@ export declare function install(vue: any): void;
 declare module 'vue/types/vue' {
   interface Vue {
     $wt: {
-      confirm: WTConfirm
-      message: WTMessage
-      notify: WTNotification
-    }
+      confirm: WTConfirm;
+      message: WTMessage;
+      notify: WTNotification;
+    };
   }
 }
