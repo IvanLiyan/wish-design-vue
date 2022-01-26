@@ -18,7 +18,8 @@
   >
     <span :class="`${prefix}-prefix-inner`" v-if="hasPrefix">
       <slot name="prefix">
-        <i :class="prefixIcon" @click="handlePrefixClick"></i>
+        <!-- <i :class="prefixIcon" @click="handlePrefixClick"></i> -->
+        <Icon :name="prefixIcon" @click="handlePrefixClick" />
       </slot>
     </span>
     <input
@@ -35,16 +36,20 @@
     <span :class="`${prefix}-suffix-inner`" v-if="hasSuffix">
       <i :class="`${prefix}-clear ${iconPrefix('error-circle')}`" @click.stop="handleClearClick" v-if="showClear"></i>
       <slot name="suffix" v-else>
-        <i :class="suffixIcon" @click="handleSuffixIconClick"></i>
+        <!-- <i :class="suffixIcon" @click="handleSuffixIconClick"></i> -->
+        <Icon :name="suffixIcon" @click="handlePrefixClick" />
       </slot>
     </span>
   </div>
 </template>
 <script>
 import { CONFIG_PROVIDER, getPrefixCls, getIconCls } from '@/utils/config';
-
+import Icon from '@components/icon';
 export default {
   name: 'WtSelectInput',
+  components: {
+    Icon,
+  },
   inheritAttrs: false,
   props: {
     type: {

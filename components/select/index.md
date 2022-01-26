@@ -1,53 +1,23 @@
 # 选择框 / Select
 
-用于使用户能够从预定义的列表中选择一个或多个选项
+下拉选择器，用于多个选项的选择输入，状态的切换。当选项少于 5 个时，建议用 Radio 或 Checkbox。
 
 ## 基础样式
 
+分为基本选择器和带标题选择器两种。
 :::include(src="./doc/base.vue")
 :::
 
-## 类型与用法
+## 不同状态
 
-### 大小
-
-:::include(src="./doc/size.vue")
-:::
-
-### 类型
-
-根据应用场景的需要，可以使用不同的选择框类型，来适应页面内不同的信息层级。
-:::include(src="./doc/type.vue")
-:::
-
-### 状态
-
-根据选择场景需要，选择框状态有正常状态、hover 状态、激活状态、禁用状态、错误状态。
 :::include(src="./doc/status.vue")
 :::
 
-### 长文本
+## 应用场景
 
-如果文字过多，超出选择框长度，常规方法为遮挡超出内容，如需查看全部内容可利用 文字提示/Tooltip 展示。
-:::include(src="./doc/tooltip.vue")
-:::
+### 单选
 
-### value 为对象
-
-某些场景下需要将 value 值设置为对象。
-:::include(src="./doc/value-object.vue")
-:::
-
-### 带搜索
-
-选项条目过多，可通过组件搜索，快速筛选完成选择。
-:::include(src="./doc/search.vue")
-:::
-
-### 搜索高亮
-
-通过 `vue-text-highlight` 结合自定义模板的方式实现搜索高亮
-:::include(src="./doc/highlight.vue")
+:::include(src="./doc/default.vue")
 :::
 
 ### 多选
@@ -55,27 +25,17 @@
 :::include(src="./doc/multiple.vue")
 :::
 
-> 标签用法, 请参考 [标签/Tag <i class="mtdicon mtdicon-link-o"></i>](/components/Tag)
+## 搜索选择
 
-### 自定义多选展示
-
-多选情况下自定义结果展示，鼠标移至选中结果后可显示 Tooltip
-:::include(src="./doc/custom-multiple.vue")
-:::
-
-### 分类下拉框
-
-:::include(src="./doc/group.vue")
-:::
-
-### 创建条目
-
-可以创建并选中选项中不存在的条目
-:::include(src="./doc/allow-create.vue")
+:::include(src="./doc/search.vue")
 :::
 
 ## API
 
 <api-doc name="Select" :doc="require('./api.json')"></api-doc>
-<api-doc name="OptionGroup" :doc="require('../option-group/api.json')"></api-doc>
 <api-doc name="Option" :doc="require('../option/api.json')"></api-doc>
+
+## show
+
+:::include(src="./doc/show.vue")
+:::

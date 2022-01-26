@@ -19,9 +19,7 @@ function vueSourceDocLoader(source) {
               <template>
               <demo-block>
                       <div slot="source">${content}</template> </div>
-                      <highlight-code lang="vue" >
                               <pre>${escapeDoubleCurlyBrace(escapeHTML(source))}</pre>
-                      </highlight-code>
               </demo-block>
               </div>
               </template>

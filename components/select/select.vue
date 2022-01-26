@@ -12,6 +12,9 @@
     @click="toggleMenu"
     v-clickoutside="handleClose"
   >
+    <legend v-if="label" :class="[{ [`${prefix}-invalid`]: invalid, [`${prefix}-focus`]: opened }]">
+      {{ label }}
+    </legend>
     <div
       :class="[
         `${prefix}-tags`,
@@ -79,36 +82,32 @@
           </div>
         </li>
         <li :class="`${prefix}-tags-li`" v-if="collapseTags && filteredSelected.length" ref="selectedItemTag">
-          <!-- <wt-tooltip
-            placement="top" theme="light"
-            :popper-class="`${prefix}-tags-popper`"
-          >
+          <!-- <wt-tooltip placement="top" theme="light" :popper-class="`${prefix}-tags-popper`">
             <div slot="content">
-              <ul :class="`${prefix}-tags-ul`"
-                :style="{ 'width': tooltipWidth + 'px' }"
-                >
-                <li :class="`${prefix}-choice`"
-                  v-for="(item, index) in filteredSelected"
-                  :key="index"
-                >
-                  <wt-tag theme="" :size="size"
+              <ul :class="`${prefix}-tags-ul`" :style="{ width: tooltipWidth + 'px' }">
+                <li :class="`${prefix}-choice`" v-for="(item, index) in filteredSelected" :key="index">
+                  <wt-tag
+                    theme=""
+                    :size="size"
                     :closable="!item.disabled && closableFn(item)"
-                    @close="handleClearClick(item)">
+                    @close="handleClearClick(item)"
+                  >
                     {{ formatterOption(item) }}
                   </wt-tag>
                 </li>
               </ul>
             </div>
             <span :class="`${prefix}-tags-text`">
-              <slot name="maxTagPlaceholder" :omitted-values="omittedValues"
-                :selected="filteredSelected">已选择{{ filteredSelected.length }}项</slot>
+              <slot name="maxTagPlaceholder" :omitted-values="omittedValues" :selected="filteredSelected"
+                >已选择{{ filteredSelected.length }}项</slot
+              >
             </span>
           </wt-tooltip> -->
         </li>
       </ul>
       <span :class="`${inputPrefix}-suffix-inner`">
-        <i :class="`${prefix}-clear ${iconPrefix('error-circle')}`" @click.stop="handleInputClear" v-if="showClear"></i>
-        <i :class="sIcon" v-else></i>
+        <Icon :name="`${prefix}-clear ${iconPrefix('error-circle')}`" @click.stop="handleInputClear" v-if="showClear" />
+        <Icon :name="sIcon" v-else />
       </span>
     </div>
     <popper
@@ -197,7 +196,7 @@ import NavigationMixin from './navigation-mixin';
 import scrollIntoView from '@/utils/scroll-into-view';
 import WtTag from '@components/tag';
 // import MtdTooltip from '@components/tooltip';
-// import debounce from 'throttle-debounce/debounce';
+import debounce from 'throttle-debounce/debounce';
 import { getValueByPath } from '@/utils/util';
 import { isFunction, isObject, isExist } from '@/utils/type';
 import WtOption from '@components/option';
@@ -207,6 +206,7 @@ import { hasProps } from '@/utils/vnode';
 import { notKeys } from '@/utils/key-codes';
 import ChoiceTag from './select-tag';
 import { CONFIG_PROVIDER, getPrefixCls, getIconCls } from '@/utils/config';
+import Icon from '@components/icon';
 
 function getRealValue(value, valueKey) {
   return isObject(value) && valueKey ? getValueByPath(value, valueKey) : value;
@@ -224,6 +224,7 @@ export default {
     WtTag,
     WtOption,
     ChoiceTag,
+    Icon,
   },
   directives: { Clickoutside },
   mixins: [NavigationMixin],
@@ -236,6 +237,7 @@ export default {
       default: true,
     },
     valueKey: String,
+    label: String,
     size: String,
     disabled: Boolean,
     placeholder: {
@@ -256,10 +258,10 @@ export default {
       type: [Boolean, Function],
       default: true,
     },
-    // debounce: {
-    //   type: Number,
-    //   default: 0,
-    // },
+    debounce: {
+      type: Number,
+      default: 0,
+    },
     filterMethod: {
       type: Function,
       default(query, value) {
@@ -290,7 +292,10 @@ export default {
       },
     },
     multiple: Boolean,
-    showCheckbox: Boolean,
+    showCheckbox: {
+      type: Boolean,
+      default: true,
+    },
     multipleLimit: {
       type: Number,
       default() {
@@ -372,7 +377,7 @@ export default {
       return this.config.getPrefixCls('dropdown');
     },
     sIcon() {
-      return hasProps(this, 'icon') ? this.icon : this.config.getIconCls('down-thick');
+      return hasProps(this, 'icon') ? this.icon : 'chevron-down';
     },
     canSelectAll() {
       return this.showSelectAll && this.multiple;
@@ -432,7 +437,6 @@ export default {
     },
     opened() {
       if (this.filterable && this.remote) {
-        // bug: 4075332
         return this.focused && !!(this.query || (this.options && this.options.length));
       }
       return this.focused;
@@ -532,7 +536,9 @@ export default {
     this.$on('removeOption', this.onOptionDestroy);
     this.$on('optionClick', this.handleOptionClick);
 
-    this.debouncedQueryChange = this.handleQueryChange;
+    this.debouncedQueryChange = this.debounce
+      ? debounce(this.debounce, this.handleQueryChange)
+      : this.handleQueryChange;
   },
   mounted() {
     this.isMounted = true;

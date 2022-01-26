@@ -1,8 +1,7 @@
 <template>
   <div>
     <div class="type-and-use-size">
-      <p>本地搜索</p>
-      <wt-select v-model="value" class="select-width" :filterable="true">
+      <wt-select v-model="value" class="select-width" :filterable="true" label="本地搜索" multiple>
         <wt-option
           v-for="item in options"
           :key="item.value"
@@ -13,7 +12,6 @@
       </wt-select>
     </div>
     <div class="type-and-use-size">
-      <p>异步搜索</p>
       <wt-select
         v-model="value2"
         class="select-width"
@@ -21,6 +19,8 @@
         :filterable="true"
         :remote="true"
         :remote-method="remoteMethod"
+        label="异步搜索"
+        multiple
       >
         <wt-option
           v-for="item in options2"
@@ -78,7 +78,7 @@ export default {
             return item.label.toLowerCase().indexOf(query && query.toLowerCase()) > -1;
           });
           this.loading = false;
-        }, 2000);
+        }, 1000);
       } else {
         this.options2 = this.options;
       }

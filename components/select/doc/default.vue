@@ -1,15 +1,6 @@
 <template>
   <div>
-    <wt-select v-model="value" style="margin-right: 50px" label="国家">
-      <wt-option
-        v-for="item in options"
-        :key="item.value"
-        :label="item.label"
-        :value="item.value"
-        :disabled="item.disabled"
-      />
-    </wt-select>
-    <wt-select v-model="value2" style="" placeholder="选择国家">
+    <wt-select v-model="value" label="渠道">
       <wt-option
         v-for="item in options"
         :key="item.value"
@@ -49,7 +40,6 @@ export default {
         },
       ],
       value: '',
-      value2: '',
     };
   },
 };

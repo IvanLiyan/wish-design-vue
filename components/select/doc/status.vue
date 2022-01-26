@@ -1,6 +1,6 @@
 <template>
   <div style="text-align: left; display: flex; align-items: baseline; justify-content: space-around">
-    <wt-select v-model="value4">
+    <wt-select v-model="value41" loading label="国家" placeholder="可多选">
       <wt-option
         v-for="item in options4"
         :key="item.value"
@@ -9,7 +9,7 @@
         :disabled="item.disabled"
       />
     </wt-select>
-    <wt-select v-model="value41" disabled>
+    <wt-select v-model="value42" disabled label="国家" placeholder="可多选">
       <wt-option
         v-for="item in options4"
         :key="item.value"
@@ -18,16 +18,7 @@
         :disabled="item.disabled"
       />
     </wt-select>
-    <wt-select v-model="value42" disabled>
-      <wt-option
-        v-for="item in options4"
-        :key="item.value"
-        :label="item.label"
-        :value="item.value"
-        :disabled="item.disabled"
-      />
-    </wt-select>
-    <wt-select v-model="value42" invalid>
+    <wt-select v-model="value42" invalid label="国家" placeholder="可多选">
       <wt-option
         v-for="item in options4"
         :key="item.value"
@@ -44,30 +35,29 @@ export default {
     return {
       options4: [
         {
-          value: '李白',
-          label: '李白',
+          value: '中国',
+          label: '中国',
         },
         {
-          value: '李贺',
-          label: '李贺',
+          value: '美国',
+          label: '美国',
         },
         {
-          value: '杜甫',
-          label: '杜甫',
+          value: '日本',
+          label: '日本',
           disabled: true,
         },
         {
-          value: '白居易',
-          label: '白居易',
+          value: '法国',
+          label: '法国',
         },
         {
-          value: '屈原',
-          label: '屈原',
+          value: '俄罗斯',
+          label: '俄罗斯',
         },
       ],
-      value4: '',
       value41: '',
-      value42: '李贺',
+      value42: '美国',
     };
   },
 };

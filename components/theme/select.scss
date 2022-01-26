@@ -1,4 +1,4 @@
-@import './common/var2.scss';
+@import './common/var.scss';
 @import './mixins/mixins.scss';
 @import './mixins/select.scss';
 @import './tag.scss';
@@ -7,23 +7,52 @@
 @import './dropdown-menu.scss';
 @import './dropdown-menu-item.scss';
 
+$legend-padding: 2px;
+$legend-height: $font-size-4 + $legend-padding * 2;
+
 $select-tags-padding-left: 4px;
 @include c(select) {
   position: relative;
   display: inline-block;
   vertical-align: top;
-  width: $input-width;
+  width: 240px;
   text-align: left;
   cursor: pointer;
   .#{$prefix}-input-wrapper {
     width: 100%;
     vertical-align: top;
   }
+  &-with-label {
+    height: $input-height + $legend-height/2;
+  }
+  legend {
+    @include reset-form;
+    font-size: $font-size-4;
+    margin-left: 8px;
+    color: $color-black;
+    line-height: 1;
+    display: block;
+    position: absolute;
+    background: $color-white;
+    top: -8px;
+    left: 0;
+    padding: 0 2px;
+    z-index: 10;
+    line-height: $line-height-4;
+    &.#{$prefix}-select-invalid {
+      color: $color-danger-1;
+    }
+    &.#{$prefix}-select-focus {
+      color: $color-primary-1 !important;
+    }
+  }
   .#{$prefix}-input {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
     cursor: pointer;
+    padding-left: 8px;
+    padding-right: 8px;
   }
   &-disabled,
   .#{$prefix}-input-disabled,
@@ -31,23 +60,24 @@ $select-tags-padding-left: 4px;
     cursor: not-allowed;
   }
   .#{$prefix}-input-suffix-inner {
+    position: absolute;
+    right: 10px;
+    top: 5px;
     > .#{$icon-prefix}-down,
-    > .#{$icon-prefix}-down-thick {
+    > .#{$icon-prefix}-chevron-down {
       display: inline-block;
       transition: transform 0.3s;
       transform: rotate(0deg);
-      &.#{$icon-prefix}-down-reverse {
+      &.#{$icon-prefix}-chevron-up {
         transform: rotate(180deg);
       }
     }
   }
   &-search-focus {
-    .#{$prefix}-input {
-      border-color: $input-focus-border-color;
-    }
+    border-color: $color-primary-1;
     .#{$prefix}-input-suffix-inner {
       > .#{$icon-prefix}-down,
-      > .#{$icon-prefix}-down-thick {
+      > .#{$icon-prefix}-chevron-down {
         transform: rotate(180deg);
       }
     }
@@ -60,11 +90,11 @@ $select-tags-padding-left: 4px;
     padding: 0;
   }
   &-group-title {
-    font-size: $select-group-title-font-size;
-    line-height: $select-group-title-height;
-    color: $select-group-title-color;
+    font-size: $font-size-4;
+    line-height: $line-height-4;
+    color: $color-black;
     letter-spacing: 0;
-    padding: 0 $dropdown-menu-item-padding-horizontal;
+    padding: 0 16px;
   }
   &-group {
     margin: 0;
@@ -75,27 +105,39 @@ $select-tags-padding-left: 4px;
   &-selected-check {
     float: right;
     line-height: inherit;
-    color: $select-check-selected-color;
+    color: $color-black;
   }
 
   &-dropdown-empty,
   &-dropdown-loading {
     text-align: center;
-    color: $select-empty-color;
+    color: $color-white;
   }
 
   &-multiple {
-    border: 1px solid $input-border-color;
-    border-radius: $input-border-radius;
+    border-radius: $border-radius-2;
+    // height: 36px;
+    line-height: 20px;
+
     &-line {
       border-width: 0px;
       border-bottom-width: 1px;
+      legend {
+        margin-left: 0;
+        padding: 0;
+      }
     }
     &-invalid {
-      border-color: $input-invalid-border-color;
+      border-color: $color-danger-1;
+      legend {
+        color: $color-danger-1;
+      }
     }
     &-focus {
-      border-color: $input-focus-border-color;
+      border-color: $color-primary-1;
+      legend {
+        color: $color-danger-1;
+      }
     }
     .#{$prefix}-select-input {
       position: absolute;
@@ -105,7 +147,7 @@ $select-tags-padding-left: 4px;
       height: 100%;
       width: 100%;
       max-width: 100%;
-      line-height: 1;
+      line-height: 36px;
       .#{$prefix}-input {
         border: none;
       }
@@ -113,8 +155,7 @@ $select-tags-padding-left: 4px;
   }
   // tags
   &-tags {
-    padding-left: $select-tags-padding-left;
-    padding-right: $input-height;
+    padding: 8px 4px;
     position: relative;
     z-index: 2;
     &-text {
@@ -135,81 +176,50 @@ $select-tags-padding-left: 4px;
   }
   &-choice {
     float: left;
-    line-height: $input-height - 2px; // 2 * border-width;
+    line-height: 22px - 2px; // 2 * border-width;
     font-size: 0; // clear white space
     max-width: 100%;
-    // .#{$prefix}-tag {
-    //   max-width: 100%;
-    //   margin-left: $select-tags-each-spacing;
-    //   margin-right: $select-tags-each-spacing;
-    //   $theme: '.#{$prefix}-tag-' + $select-tag-theme;
-    //   @extend #{$theme};
-    //   @if $select-tag-type {
-    //     $type: '.#{$prefix}-tag-' + $select-tag-type;
-    //     @extend #{$type};
-    //   }
-    //   border-width: 0px;
-    //   &.focus {
-    //     border-width: 1px;
-    //   }
-    // }
+    .#{$prefix}-tag {
+      max-width: 100%;
+      border-width: 0px;
+      &.focus {
+        border-width: 1px;
+        border-color: $color-primary-1;
+      }
+    }
   }
   &-tags-li {
     float: right;
-    line-height: $input-height - 2px;
-    font-size: $font-size-1;
-    color: $select-tags-text-color;
+    line-height: 22px - 2px;
+    font-size: $font-size-4;
+    color: $color-black;
     text-align: left;
+    padding: 2px;
   }
   &-search-field-wrap {
     display: inline-block;
   }
   &-search-field {
-    line-height: $input-height - 2px; // border-width;
+    line-height: 22px - 2px; // border-width;
     border: none;
     outline: none;
     padding: 0;
     margin: 0;
-    margin-left: $input-padding-horizontal - $select-tags-padding-left;
+    margin-left: 6px;
     background-color: transparent;
   }
   &-tags {
     .#{$prefix}-input-suffix-inner {
-      width: $input-height;
-      line-height: $input-height;
-      font-size: $input-font-size + 2px;
+      width: 22px;
+      line-height: 22px;
+      font-size: 12px + 2px;
     }
-  }
-  &-large {
-    width: $input-large-width;
-    .#{$prefix}-select-choice {
-      line-height: $input-large-height - 2px;
-    }
-    .#{$B}-tags {
-      .#{$prefix}-input-suffix-inner {
-        width: $input-large-height;
-        line-height: $input-large-height;
-        font-size: $input-large-font-size + 2px;
-      }
-    }
-    .#{$prefix}-tag-large {
-      height: 32px;
-      line-height: 30px;
-    }
-    @include select-tags-size($input-large-height, 32px);
   }
 
-  &-small {
-    width: $input-small-width;
-    .#{$prefix}-select-choice {
-      line-height: $input-small-height - 2px;
-    }
-    @include select-tags-size($input-small-height, $tag-small-height);
-    .#{$B}-tags {
-      .#{$prefix}-input-suffix-inner {
-        width: $input-small-height;
-        line-height: $input-small-height;
-        font-size: $input-small-font-size + 2px;
+  &-dropdown {
+    .#{$prefix}-dropdown-menu {
+      .#{$prefix}-dropdown-menu-item-selected {
+        color: $color-black !important;
       }
     }
   }

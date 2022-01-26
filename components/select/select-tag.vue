@@ -1,11 +1,10 @@
 <template>
   <li :class="`${prefix}-choice`">
-    <slot name="tag" :option="option" :size="size" :closable="closable" :disabled="disabled" :onClose="handleClose">
+    <slot name="tag" :option="option" :size="size" :clearable="clearable" :disabled="disabled" :onClose="handleClose">
       <wt-tag
         :class="{ focus: option.hitState }"
         :size="size"
-        :theme="theme"
-        :closable="closable"
+        :clearable="clearable"
         :disabled="disabled"
         @close="handleClose"
       >
@@ -24,13 +23,15 @@ export default {
     WtTag,
   },
   props: {
-    theme: String,
     size: String,
     option: {
       type: Object,
       required: true,
     },
-    closable: Boolean,
+    clearable: {
+      type: Boolean,
+      default: true,
+    },
     disabled: Boolean,
   },
   inject: {
