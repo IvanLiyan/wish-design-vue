@@ -25,6 +25,22 @@
       "version": ""
     },
     {
+      "name": "invalid",
+      "desc": "是否校验通过，用于非空校验",
+      "type": "boolean",
+      "optionalValue": "",
+      "default": "false",
+      "version": ""
+    },
+    {
+      "name": "validation-text",
+      "desc": "校验不通过时显示的文字",
+      "type": "string",
+      "optionalValue": "",
+      "default": "请进行选择操作",
+      "version": ""
+    },
+    {
       "name": "filterable",
       "desc": "是否可搜索",
       "type": "boolean",

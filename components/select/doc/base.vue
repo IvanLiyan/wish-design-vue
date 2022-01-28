@@ -9,7 +9,7 @@
         :disabled="item.disabled"
       />
     </wt-select>
-    <wt-select v-model="value2" style="" placeholder="选择国家">
+    <wt-select v-model="value2" placeholder="选择国家">
       <wt-option
         v-for="item in options"
         :key="item.value"

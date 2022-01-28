@@ -54,6 +54,10 @@ $select-tags-padding-left: 4px;
     padding-left: 8px;
     padding-right: 8px;
   }
+  .#{$prefix}-input-tip {
+    color: $color-danger-1;
+    line-height: $line-height-4;
+  }
   &-disabled,
   .#{$prefix}-input-disabled,
   .#{$prefix}-input-disabled .#{$prefix}-input {

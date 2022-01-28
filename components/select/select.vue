@@ -185,6 +185,9 @@
           </slot>
         </ul>
       </drop>
+      <div :class="`${inputPrefix}-tip`">
+        <span v-if="invalid && !focused">{{ validationText }}</span>
+      </div>
     </popper>
   </div>
 </template>
@@ -275,6 +278,12 @@ export default {
       type: String,
       default() {
         return '暂无搜索结果';
+      },
+    },
+    validationText: {
+      type: String,
+      default() {
+        return '请进行选择操作';
       },
     },
     loading: Boolean,

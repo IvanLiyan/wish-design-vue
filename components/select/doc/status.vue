@@ -1,26 +1,26 @@
 <template>
   <div style="text-align: left; display: flex; align-items: baseline; justify-content: space-around">
-    <wt-select v-model="value41" loading label="国家" placeholder="可多选">
+    <wt-select v-model="value1" loading label="国家" placeholder="可多选">
       <wt-option
-        v-for="item in options4"
+        v-for="item in options"
         :key="item.value"
         :label="item.label"
         :value="item.value"
         :disabled="item.disabled"
       />
     </wt-select>
-    <wt-select v-model="value42" disabled label="国家" placeholder="可多选">
+    <wt-select v-model="value2" disabled label="国家" placeholder="可多选">
       <wt-option
-        v-for="item in options4"
+        v-for="item in options"
         :key="item.value"
         :label="item.label"
         :value="item.value"
         :disabled="item.disabled"
       />
     </wt-select>
-    <wt-select v-model="value42" invalid label="国家" placeholder="可多选">
+    <wt-select v-model="value3" :invalid="isInvalid" label="国家" placeholder="可多选">
       <wt-option
-        v-for="item in options4"
+        v-for="item in options"
         :key="item.value"
         :label="item.label"
         :value="item.value"
@@ -33,7 +33,7 @@
 export default {
   data() {
     return {
-      options4: [
+      options: [
         {
           value: '中国',
           label: '中国',
@@ -56,9 +56,19 @@ export default {
           label: '俄罗斯',
         },
       ],
-      value41: '',
-      value42: '美国',
+      value1: '',
+      value2: '美国',
+      value3: '',
     };
+  },
+  computed: {
+    isInvalid() {
+      if (this.value3 !== '') {
+        return false;
+      } else {
+        return true;
+      }
+    },
   },
 };
 </script>

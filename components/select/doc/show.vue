@@ -24,7 +24,13 @@
         </wt-select>
       </div>
       <div class="type-and-use-size">
-        <wt-select v-model="value3" label="国家" invalid placeholder="选择国家">
+        <wt-select
+          v-model="value3"
+          validation-text="还没进行选择哦"
+          label="国家"
+          :invalid="isInvalid"
+          placeholder="选择国家"
+        >
           <wt-option
             v-for="item in options3"
             :key="item.value"
@@ -295,6 +301,15 @@ export default {
       value15: '',
       loading: false,
     };
+  },
+  computed: {
+    isInvalid() {
+      if (this.value3 !== '') {
+        return false;
+      } else {
+        return true;
+      }
+    },
   },
   methods: {
     remoteMethod(query) {
