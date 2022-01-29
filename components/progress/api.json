@@ -1,0 +1,52 @@
+{
+  "props": [
+    {
+      "name": "percentage",
+      "desc": "百分比",
+      "type": "number",
+      "optionalValue": "type为line时，>=0；type为circle时，[0, 100]",
+      "default": "0",
+      "version": ""
+    },
+    {
+      "name": "status",
+      "desc": "状态",
+      "type": "string",
+      "optionalValue": ["success", "error"],
+      "default": "",
+      "version": ""
+    },
+    {
+      "name": "type",
+      "desc": "类型",
+      "type": "string",
+      "optionalValue": ["line", "circle"],
+      "default": "line",
+      "version": ""
+    },
+    {
+      "name": "color",
+      "desc": "进度条背景色（会覆盖status状态颜色）",
+      "type": "string",
+      "optionalValue": "",
+      "default": "",
+      "version": ""
+    },
+    {
+      "name": "stroke-width",
+      "desc": "进度条大小",
+      "type": "string",
+      "optionalValue": "",
+      "default": "",
+      "version": ""
+    },
+    {
+      "name": "width",
+      "desc": "环形进度条画布宽度（只在type=circle时可用）",
+      "type": "number",
+      "optionalValue": "",
+      "default": "28",
+      "version": ""
+    }
+  ]
+}

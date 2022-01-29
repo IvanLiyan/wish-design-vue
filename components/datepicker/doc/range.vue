@@ -1,16 +1,32 @@
 <template>
-  <div>
-    <wt-date-picker type="daterange"
-      v-model="value1"
-      placeholder="选择时间" style="width: 240px;"
-    />
+  <div class="demo-picker-wrapper">
+    <div class="demo-picker-group">
+      <wt-date-picker type="daterange"
+        v-model="value4"
+        placeholder="选择时间" style="width: 240px;"
+      />
+    </div>
+    <div class="demo-picker-group">
+      <wt-date-picker type="monthrange"
+        v-model="value5"
+        placeholder="选择时间" style="width: 240px;"
+      />
+    </div>
+    <!-- <div class="demo-picker-group">
+      <wt-date-picker type="weekrange"
+        v-model="value6"
+        placeholder="选择时间" style="width: 240px;"
+      />
+    </div> -->
   </div>
 </template>
 <script>
 export default {
   data () {
     return {
-      value1: [],
+      value4: [],
+      value5: [],
+      value6: [],
     };
   },
 };

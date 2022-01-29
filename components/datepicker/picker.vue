@@ -38,7 +38,7 @@
       ref="pickerPanel"
       :show-time="type === 'datetime' || type === 'datetimerange'"
       :default-time="defaultTime"
-      :show-btn-now="showBtnNow"
+      :show-btn-now="false"
       :confirm="needConfirm"
       :selection-mode="selectionMode"
       :steps="steps"
@@ -296,7 +296,9 @@ export default {
       }];
     },
     visualValue () {
+      console.log('THIS.INTERNAMVALUE', this.internalValue);
       const text = this.formatDate(this.internalValue);
+      console.log('visualValue', text);
       if (this.formatter) {
         return this.formatter(this.value, text) || '';
       }
@@ -345,6 +347,7 @@ export default {
   },
   watch: {
     value (val) {
+      console.log('internalValue', val);
       this.internalValue = this.parseDate(val);
     },
     type (type) {
@@ -451,6 +454,7 @@ export default {
         this.$refs.pickerPanel.reset();
     },
     handleInputChange (newValue) {
+      console.log('newValue', newValue);
       this.inputValue = newValue;
       // const isArrayValue = this.type.indexOf('range') > -1 || this.multiple;
       const oldValue = this.formatDate(this.internalValue);
@@ -533,6 +537,10 @@ export default {
       return (isRange || this.multiple) ? (val || []) : [val];
     },
     formatDate (value, format = this.format) {
+      console.log('value', value);
+      console.log('format', format);
+      console.log('this.type', this.type);
+      console.log('this.multiple', this.multiple);
       const defaultFormat = DEFAULT_FORMATS[this.type];
       if (this.multiple) {
         const formatter = TYPE_VALUE_RESOLVER_MAP.multiple.formatter;

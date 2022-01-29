@@ -7,24 +7,8 @@
           @click="handleShortcutClick(shortcut)">{{ shortcut.text }}</div>
       </slot>
     </div>
-    <div :class="panelBodyClasses">
+    <div :class="panelBodyClasses" @click="clickHere">
       <div :class="[panelPrefix + '-content', panelPrefix + '-content-left']">
-        <div :class="`${prefix}-time-header`" v-if="showTime">
-          <picker-input :current-value="leftInput"
-            size="small" />
-          <time-picker
-            ref="timePicker"
-            v-bind="timePickerOptions"
-            size="small"
-            icon=""
-            :value="leftTime"
-            :open.sync="openLeftTime"
-            placement="bottom-end"
-            :disabled="timeDisabled"
-            @input="hanldeLeftTimeChange"
-            :append-to-container="false"
-          />
-        </div>
         <div :class="[prefix + '-header']">
           <span :class="iconBtnCls('prev', '-double')"
             @click="prevYear('left')">
@@ -74,23 +58,24 @@
             <slot :cell="scope.cell" name="cell"></slot>
           </template>
       </component>
+      <div :class="`${prefix}-time-header`" v-if="showTime">
+        <!-- <picker-input :current-value="leftInput"
+          size="small" /> -->
+        <time-picker
+          ref="timePicker"
+          v-bind="timePickerOptions"
+          size="small"
+          placement="bottom-start"
+          icon=""
+          :value="leftTime"
+          :open.sync="openLeftTime"
+          :disabled="false"
+          @input="hanldeLeftTimeChange"
+          :append-to-container="false"
+        />
+      </div>
       </div><div
         :class="[`${panelPrefix}-content`, `${panelPrefix}-content-right`]">
-        <div :class="`${prefix}-time-header`" v-if="showTime">
-          <picker-input :current-value="rightInput"
-            size="small" />
-          <time-picker
-            ref="timePicker"
-            v-bind="timePickerOptions"
-            size="small"
-            :value="rightTime"
-            :open.sync="openRightTime"
-            placement="bottom-end"
-            :disabled="timeDisabled"
-            @input="hanldeRightTimeChange"
-           :append-to-container="false"
-          />
-        </div>
         <div :class="[prefix + '-header']">
             <span
               v-if="splitPanels || currentView !== rightPickerTable.split('-')[0]"
@@ -141,6 +126,22 @@
             <slot :cell="scope.cell" name="cell"></slot>
           </template>
         </component>
+        <div :class="`${prefix}-time-header`" v-if="showTime">
+          <!-- <picker-input :current-value="rightInput"
+            size="small" /> -->
+          <time-picker
+            ref="timePicker"
+            v-bind="timePickerOptions"
+            size="small"
+            icon=""
+            :value="rightTime"
+            :open.sync="openRightTime"
+            placement="bottom-start"
+            :disabled="false"
+            @input="hanldeRightTimeChange"
+           :append-to-container="false"
+          />
+        </div>
       </div>
       <Confirm
         v-if="confirm"
@@ -346,6 +347,9 @@ export default {
     this.setPanelDates(this.leftPanelDate);
   },
   methods: {
+    clickHere () {
+      console.log('PROPS', this.$props);
+    },
     handleValueChange (newVal) {
       const minDate = newVal[0] ? toDate(newVal[0]) : null;
       const maxDate = newVal[1] ? toDate(newVal[1]) : null;

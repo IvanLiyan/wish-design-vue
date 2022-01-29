@@ -7,15 +7,23 @@
   // data-table
   display: inline-block;
   width: $date-picker-width;
+  .wt-picker-panel-sidebar+.wt-picker-panel-body {
+    margin-top: 100px;
+  }
+  &-editor {
+    .#{$prefix}-input-wrapper {
+      min-width: 216px;
+    }
+  }
   >.#{$prefix}-input-wrapper{
     width: 100%;
   }
   &-current{
     font-size: $font-size-1;
-    font-weight: $font-weight-medium;
+    font-weight: $font-weight-regular;
   }
   &-cells{
-    width: $date-picker-cells-width;
+    width: 228px;
     margin: $date-picker-cells-offset-vertical $date-picker-cells-offset-horizontal;
     white-space: normal;
     font-size: $date-picker-cell-font-size;
@@ -99,6 +107,13 @@
       }
     }
   }
+  // &-cells-focused {
+  //   border-radius: 3px;
+  //   background: #305BEF;
+  //   em {
+  //     color: #FFF;
+  //   }
+  // }
   // year cells
   &-cells{
     &-year &-cell{
@@ -113,11 +128,11 @@
     }
     &-month &-cell{
       $monthOffset: (($date-picker-cells-width / 4) - $date-picker-month-cell-width) / 2; // 4 列
-      height: $date-picker-year-cell-height;
-      line-height: $date-picker-year-cell-height;
+      height: $date-picker-month-cell-height;
+      line-height: $date-picker-month-cell-height;
       width: $date-picker-month-cell-width + 2 * $monthOffset;
-      padding: 0 $monthOffset;
-      margin: $monthOffset 0;
+      padding: 0;
+      margin: $date-picker-month-cell-margin-y $date-picker-month-cell-margin-x;
       em{
         width: 100%;
         height: 100%;
@@ -131,7 +146,7 @@
 
   &-time-header {
     padding: 8px 0px;
-    text-align: center;
+    text-align: left;
     border-bottom: 1px solid $date-picker-border-color;
     .#{$prefix}-input-wrapper{
       width: $date-picker-header-input-size;
@@ -175,7 +190,7 @@
     line-height: $date-picker-header-line-height;
     color: $date-picker-header-color;
     text-align: center;
-    border-bottom: 1px solid $date-picker-border-color;
+    // border-bottom: 1px solid $date-picker-border-color;
     padding: $date-picker-header-padding-vertical $date-picker-header-padding-horizontal;
     font-size: $date-picker-font-size;
     white-space: normal;
@@ -194,7 +209,7 @@
     float: right;
   }
 }
-.#{$prefix}-picker-panel{
+.#{$prefix}-picker-panel {
   position: relative;
   // sidebar
   &-sidebar{
@@ -202,26 +217,28 @@
     top: 0;
     bottom: 0;
     left: 0;
-    width: $date-picker-sidebar-width;
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
     border-right: $date-picker-sidebar-border-width solid $date-picker-sidebar-border-color;
     overflow: auto;
-    background-color: $date-picker-shortcut-bgc;
+    background-color: $color-white;
   }
   &-shortcut{
     padding: $date-picker-shortcut-padding-vertical $date-picker-shortcut-padding-horizontal;
     line-height: $date-picker-shortcut-line-height;
     text-align: left;
-    font-size: $font-size-1;
+    font-size: $font-size-2;
+    font-weight: $font-weight-regular;
+    color: $color-black;
     cursor: pointer;
-    &:hover, &.hover{
-      background-color: $date-picker-shortcut-hover-bgc;
-      color: $date-picker-shortcut-hover-color;
-    }
   }
 
   // body
   &-sidebar + &-body{
-    margin-left: $date-picker-sidebar-width;
+    margin-top: 40px;
   }
   &-body{
     display: inline-block;
@@ -234,6 +251,12 @@
     display: inline-block;
     vertical-align: top;
     font-size: $font-size-1;
+    .#{$prefix}-date-picker-cells-month, .#{$prefix}-date-picker-cells-year {
+      .#{$prefix}-date-picker-cells-cell{
+        margin: 8px 6px;
+        width: 64px;
+      }
+    }
   }
 
   &-icon-btn{
@@ -249,8 +272,18 @@
     }
   }
 }
+.#{$prefix}-picker-panel-body {
+  .#{$prefix}-picker-panel-content {
+    background: #FFF;
+  }
+}
+
+.#{$prefix}-date-picker-with-range {
+  width: 484px;
+}
 
 .#{$prefix}-picker-confirm{
+  width: 484px;
   clear: both;
   border-top: 1px solid $date-picker-border-color;
   padding: 8px 16px;
