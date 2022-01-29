@@ -2131,7 +2131,7 @@ module.exports = require("@wish/wt-vue/lib/popper");
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _picker_vue_vue_type_template_id_abb3c61a___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(233);
+/* harmony import */ var _picker_vue_vue_type_template_id_e3098dde___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(233);
 /* harmony import */ var _picker_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(235);
 /* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(88);
 
@@ -2143,8 +2143,8 @@ __webpack_require__.r(__webpack_exports__);
 
 var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
   _picker_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _picker_vue_vue_type_template_id_abb3c61a___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _picker_vue_vue_type_template_id_abb3c61a___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _picker_vue_vue_type_template_id_e3098dde___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _picker_vue_vue_type_template_id_e3098dde___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
   null,
@@ -2160,10 +2160,10 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_picker_vue_vue_type_template_id_abb3c61a___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(234);
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_picker_vue_vue_type_template_id_abb3c61a___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_picker_vue_vue_type_template_id_e3098dde___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(234);
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_picker_vue_vue_type_template_id_e3098dde___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_picker_vue_vue_type_template_id_abb3c61a___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_picker_vue_vue_type_template_id_e3098dde___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
@@ -2175,7 +2175,7 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('Popper',{ref:"popper",class:_vm.wrapperClasses,attrs:{"tag":"div","visible":_vm.open,"placement":_vm.placement,"trigger":"click","popper-disabled":_vm.disabled,"toggle-on-reference-click":false,"append-to-container":_vm.appendToContainer,"get-popup-container":_vm.getPopupContainer,"popper-options":_vm.popperOptions},on:{"update:visible":_vm.handleOpenChange}},[_c('Reference',[_c('PickerInput',{ref:"input",class:[_vm.prefix + '-editor'],attrs:{"id":_vm.elementId,"readonly":_vm.type === 'week' || (!_vm.editable || _vm.readonly),"disabled":_vm.disabled,"size":_vm.size,"placeholder":_vm.getPlaceHolder,"current-value":_vm.visualValue,"name":_vm.name,"clearable-on-readonly":"","suffix-icon":_vm.suffixIcon,"invalid":_vm.invalid,"loading":_vm.loading,"genre":_vm.genre},on:{"input":_vm.handleInputChange,"clear":_vm.handleClear,"focus":_vm.handleInputFocus,"blur":_vm.handleInputBlur,"enter":_vm.handleInputEnter}},[_c('wt-icon',{directives:[{name:"show",rawName:"v-show",value:(_vm.pickerType),expression:"pickerType"}],staticClass:"input-icon-suffix",attrs:{"slot":"suffix","name":_vm.pickerType,"stroke-width":1,"width":12,"height":12},slot:"suffix"})],1)],1),_c('Drop',{class:_vm.popperClass},[_c(_vm.panel,_vm._b({ref:"pickerPanel",tag:"component",attrs:{"show-time":_vm.type === 'datetime' || _vm.type === 'datetimerange',"default-time":_vm.defaultTime,"show-btn-now":_vm.showBtnNow,"confirm":_vm.needConfirm,"selection-mode":_vm.selectionMode,"steps":_vm.steps,"format":_vm.format,"show-now":_vm.showNow,"value":_vm.internalValue,"start-date":_vm.startDate,"split-panels":_vm.splitPanels,"show-week-numbers":_vm.showWeekNumbers,"week-start":_vm.weekStart,"picker-type":_vm.type,"multiple":_vm.multiple,"focused-date":_vm.focusedDate,"visible":_vm.open,"time-picker-options":_vm.timePickerOptions},on:{"pick":_vm.onPick,"pick-click-now":_vm.handleClickNow,"pick-success":_vm.onPickSuccess,"pick-range":_vm.hanldePickRange,"pick-time-range":_vm.handleTimeRange,"canel":_vm.handleCancel,"current-view-change":_vm.updatePopper},scopedSlots:_vm._u([{key:"cell",fn:function(scope){return [_vm._t("cell",function(){return [_vm._v(_vm._s(scope.cell.desc))]},{"cell":scope.cell})]}}],null,true)},'component',_vm.ownPickerProps,false),[_vm._t("shortcuts",null,{"slot":"shortcuts"}),(_vm.$slots.confirm)?_c('template',{slot:"confirm"},[_vm._t("confirm")],2):_vm._e()],2)],1)],1)}
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('Popper',{ref:"popper",class:_vm.wrapperClasses,attrs:{"tag":"div","visible":_vm.open,"placement":_vm.placement,"trigger":"click","popper-disabled":_vm.disabled,"toggle-on-reference-click":false,"append-to-container":_vm.appendToContainer,"get-popup-container":_vm.getPopupContainer,"popper-options":_vm.popperOptions},on:{"update:visible":_vm.handleOpenChange}},[_c('Reference',[_c('PickerInput',{ref:"input",class:[_vm.prefix + '-editor'],attrs:{"id":_vm.elementId,"readonly":_vm.type === 'week' || (!_vm.editable || _vm.readonly),"disabled":_vm.disabled,"size":_vm.size,"placeholder":_vm.getPlaceHolder,"current-value":_vm.visualValue,"name":_vm.name,"clearable-on-readonly":"","suffix-icon":_vm.suffixIcon,"invalid":_vm.invalid,"loading":_vm.loading,"genre":_vm.genre},on:{"input":_vm.handleInputChange,"clear":_vm.handleClear,"focus":_vm.handleInputFocus,"blur":_vm.handleInputBlur,"enter":_vm.handleInputEnter}},[_c('wt-icon',{directives:[{name:"show",rawName:"v-show",value:(_vm.pickerType),expression:"pickerType"}],staticClass:"input-icon-suffix",attrs:{"slot":"suffix","name":_vm.pickerType,"stroke-width":1,"width":12,"height":12},slot:"suffix"})],1)],1),_c('Drop',{class:_vm.popperClass},[_c(_vm.panel,_vm._b({ref:"pickerPanel",tag:"component",attrs:{"show-time":_vm.type === 'datetime' || _vm.type === 'datetimerange',"default-time":_vm.defaultTime,"show-btn-now":false,"confirm":_vm.needConfirm,"selection-mode":_vm.selectionMode,"steps":_vm.steps,"format":_vm.format,"show-now":_vm.showNow,"value":_vm.internalValue,"start-date":_vm.startDate,"split-panels":_vm.splitPanels,"show-week-numbers":_vm.showWeekNumbers,"week-start":_vm.weekStart,"picker-type":_vm.type,"multiple":_vm.multiple,"focused-date":_vm.focusedDate,"visible":_vm.open,"time-picker-options":_vm.timePickerOptions},on:{"pick":_vm.onPick,"pick-click-now":_vm.handleClickNow,"pick-success":_vm.onPickSuccess,"pick-range":_vm.hanldePickRange,"pick-time-range":_vm.handleTimeRange,"canel":_vm.handleCancel,"current-view-change":_vm.updatePopper},scopedSlots:_vm._u([{key:"cell",fn:function(scope){return [_vm._t("cell",function(){return [_vm._v(_vm._s(scope.cell.desc))]},{"cell":scope.cell})]}}],null,true)},'component',_vm.ownPickerProps,false),[_vm._t("shortcuts",null,{"slot":"shortcuts"}),(_vm.$slots.confirm)?_c('template',{slot:"confirm"},[_vm._t("confirm")],2):_vm._e()],2)],1)],1)}
 var staticRenderFns = []
 
 
@@ -2507,7 +2507,9 @@ function arrayEql(a, b) {
       return [this.prefix, babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_2___default()({}, this.prefix + '-focused', this.isFocused)];
     },
     visualValue: function visualValue() {
+      console.log('THIS.INTERNAMVALUE', this.internalValue);
       var text = this.formatDate(this.internalValue);
+      console.log('visualValue', text);
       if (this.formatter) {
         return this.formatter(this.value, text) || '';
       }
@@ -2551,6 +2553,7 @@ function arrayEql(a, b) {
   },
   watch: {
     value: function value(val) {
+      console.log('internalValue', val);
       this.internalValue = this.parseDate(val);
     },
     type: function type(_type) {
@@ -2663,6 +2666,7 @@ function arrayEql(a, b) {
       this.$refs.pickerPanel && this.$refs.pickerPanel.reset && this.$refs.pickerPanel.reset();
     },
     handleInputChange: function handleInputChange(newValue) {
+      console.log('newValue', newValue);
       this.inputValue = newValue;
       // const isArrayValue = this.type.indexOf('range') > -1 || this.multiple;
       var oldValue = this.formatDate(this.internalValue);
@@ -2759,6 +2763,10 @@ function arrayEql(a, b) {
     formatDate: function formatDate(value) {
       var format = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : this.format;
 
+      console.log('value', value);
+      console.log('format', format);
+      console.log('this.type', this.type);
+      console.log('this.multiple', this.multiple);
       var defaultFormat = _utils_date__WEBPACK_IMPORTED_MODULE_7__["DEFAULT_FORMATS"][this.type];
       if (this.multiple) {
         var formatter = _utils_date__WEBPACK_IMPORTED_MODULE_7__["TYPE_VALUE_RESOLVER_MAP"].multiple.formatter;
