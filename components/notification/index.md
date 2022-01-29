@@ -11,7 +11,7 @@
 你可以通过 this.$wt.notify 来直接调用组件，亦或者使用单独引用的方式调用组件
 
 ```
-import { Notification } from '@ss/mtd-vue';
+import { Notification } from '@wish/wt-vue';
 ```
 
 <api-doc name="Notification" :doc="require('./api.json')"></api-doc>

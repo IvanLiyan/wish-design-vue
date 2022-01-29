@@ -1,0 +1,151 @@
+{
+  "props": [
+    {
+      "name": "value",
+      "desc": "select 当前选中值,多选时为数组",
+      "type": ["string", "number", "object", "Array"],
+      "optionalValue": "",
+      "default": "",
+      "version": ""
+    },
+    {
+      "name": "value-key",
+      "desc": "仅当 value 值为 object、object[] 时生效，作为 value 唯一标识的键名",
+      "type": "string",
+      "optionalValue": "",
+      "default": "",
+      "version": ""
+    },
+    {
+      "name": "disabled",
+      "desc": "是否禁用",
+      "type": "boolean",
+      "optionalValue": "",
+      "default": "false",
+      "version": ""
+    },
+    {
+      "name": "invalid",
+      "desc": "是否校验通过，用于非空校验",
+      "type": "boolean",
+      "optionalValue": "",
+      "default": "false",
+      "version": ""
+    },
+    {
+      "name": "validation-text",
+      "desc": "校验不通过时显示的文字",
+      "type": "string",
+      "optionalValue": "",
+      "default": "请进行选择操作",
+      "version": ""
+    },
+    {
+      "name": "filterable",
+      "desc": "是否可搜索",
+      "type": "boolean",
+      "optionalValue": "",
+      "default": "false",
+      "version": ""
+    },
+    {
+      "name": "multiple",
+      "desc": "是否多选",
+      "type": "boolean",
+      "optionalValue": "",
+      "default": "false",
+      "version": ""
+    },
+    {
+      "name": "placeholder",
+      "desc": "占位符",
+      "type": "string",
+      "optionalValue": "",
+      "default": "请选择",
+      "version": ""
+    },
+    {
+      "name": "no-match-text",
+      "desc": "搜索条件无匹配时显示的文字",
+      "type": "string",
+      "optionalValue": "",
+      "default": "",
+      "version": ""
+    },
+    {
+      "name": "no-data-text",
+      "desc": "选项为空时显示的文字",
+      "type": "string",
+      "optionalValue": "",
+      "default": "",
+      "version": ""
+    },
+    {
+      "name": "remote",
+      "desc": "是否远程搜索",
+      "type": "boolean",
+      "optionalValue": "",
+      "default": "",
+      "version": ""
+    },
+    {
+      "name": "remote-method",
+      "desc": "远程搜索的方法",
+      "type": "function(query)",
+      "optionalValue": "",
+      "default": "",
+      "version": ""
+    },
+    {
+      "name": "loading",
+      "desc": "是否正在从远程获取数据",
+      "type": "boolean",
+      "optionalValue": "",
+      "default": "",
+      "version": ""
+    },
+    {
+      "name": "reserve-keyword",
+      "desc": "多选且可搜索时，是否在选中一个选项后保留当前的搜索关键词",
+      "type": "boolean",
+      "optionalValue": "",
+      "default": "false",
+      "version": "0.1.46"
+    },
+    {
+      "name": "show-select-all",
+      "desc": "多选时生效，是否显示全选",
+      "type": "boolean",
+      "optionalValue": "",
+      "default": "false",
+      "version": "0.3.12"
+    }
+  ],
+  "events": [
+    {
+      "name": "change",
+      "desc": "选中值发生变化时触发",
+      "args": "(value: any)"
+    },
+    {
+      "name": "update:visible",
+      "desc": "下拉框显示／隐藏状态变化时触发",
+      "args": "(visible: boolean)"
+    },
+    {
+      "name": "remove",
+      "desc": "多选模式下移除 tag 时触发",
+      "args": "(value: any)"
+    },
+    {
+      "name": "focus()",
+      "desc": "使选择框获取焦点，并打开选择框",
+      "version": ""
+    },
+    {
+      "name": "blur()",
+      "desc": "使选择框失去焦点，并关闭选择框",
+      "version": ""
+    }
+  ]
+}

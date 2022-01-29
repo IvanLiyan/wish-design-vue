@@ -1,6 +1,6 @@
 {
   "name": "@wish/wt-vue",
-  "version": "0.0.1-alpha.11",
+  "version": "0.0.1-alpha.13",
   "description": "vue、component",
   "main": "lib/index.js",
   "typings": "types/index.d.ts",

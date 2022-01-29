@@ -1,19 +1,16 @@
 import _defineProperty from 'babel-runtime/helpers/defineProperty';
-import { getPrefix, getIconPrefix } from '@wish/wt-vue/es/utils/config';
+import { getPrefix } from '@wish/wt-vue/es/utils/config';
+import Icon from '@wish/wt-vue/es/components/icon';
 
-var typeMap = {
-  success: 'success-circle',
-  info: 'info-circle',
-  warning: 'warning-circle',
-  error: 'error-circle'
+var iconTypeMap = {
+  success: 'check-circle',
+  info: 'alert-circle',
+  warning: 'alert-triangle',
+  danger: 'x-circle'
 };
 
 var __vue_render__ = function __vue_render__() {
-  var _vm = this;var _h = _vm.$createElement;var _c = _vm._self._c || _h;return _c('transition', { attrs: { "name": _vm.prefix + "-fade" } }, [_c('div', { directives: [{ name: "show", rawName: "v-show", value: _vm.visible, expression: "visible" }], class: [_vm.prefix, _vm.computedClass], style: _vm.positionStyle, on: { "mouseenter": _vm.clearTimer, "mouseleave": _vm.startTimer } }, [_vm.typeIcon ? _c('i', { class: [_vm.prefix + "-icon", _vm.iconPrefixCls, _vm.typeIcon] }) : _vm._e(), _vm._v(" "), _c('div', { class: _vm.prefix + "-group" }, [_c('div', { class: _vm.prefix + "-title", domProps: { "textContent": _vm._s(_vm.title) } }), _vm._v(" "), _c('div', { directives: [{ name: "show", rawName: "v-show", value: _vm.message, expression: "message" }], class: _vm.prefix + "-content" }, [_vm._t("default", function () {
-    return [!_vm.dangerouslyUseHTMLString ? _c('div', [_vm._v(_vm._s(_vm.message))]) : _c('div', { domProps: { "innerHTML": _vm._s(_vm.message) } })];
-  })], 2), _vm._v(" "), _vm.showClose ? _c('div', { class: _vm.prefix + "-close " + _vm.iconPrefixCls + " " + _vm.iconPrefixCls + "-close-thick", on: { "click": function click($event) {
-        $event.stopPropagation();return _vm.close.apply(null, arguments);
-      } } }) : _vm._e()])])]);
+  var _vm = this;var _h = _vm.$createElement;var _c = _vm._self._c || _h;return _c('transition', { attrs: { "name": _vm.prefix + "-fade" } }, [_c('div', { directives: [{ name: "show", rawName: "v-show", value: _vm.visible, expression: "visible" }], class: [_vm.prefix, _vm.computedClass], style: _vm.positionStyle, on: { "mouseenter": _vm.clearTimer, "mouseleave": _vm.startTimer } }, [_c('Icon', { attrs: { "name": _vm.iconName, "color": "#fff", "width": 20, "height": 20 } }), _vm._v(" "), _c('span', { directives: [{ name: "show", rawName: "v-show", value: _vm.message, expression: "message" }], class: _vm.prefix + "-content" }, [_vm._v(_vm._s(_vm.message))])], 1)]);
 };
 var __vue_staticRenderFns__ = [];
 
@@ -23,25 +20,25 @@ export default {
   staticRenderFns: __vue_staticRenderFns__,
 
   name: 'WtNotification',
+  components: {
+    Icon: Icon
+  },
 
   data: function data() {
     return {
       visible: false,
-      title: '',
       message: '',
       duration: 3000,
-      type: '',
-      showClose: true,
+      type: 'info',
       className: '',
-      icon: '',
       onClose: null,
       closed: false,
       verticalOffset: 0,
       timer: null,
       dangerouslyUseHTMLString: false,
       position: 'top-right',
-      prefixCls: getPrefix(),
-      iconPrefixCls: getIconPrefix()
+      prefixCls: getPrefix()
+      // iconPrefixCls: getIconPrefix(),
     };
   },
 
@@ -50,15 +47,17 @@ export default {
     prefix: function prefix() {
       return this.prefixCls + '-notification';
     },
-    typeIcon: function typeIcon() {
-      var iconPrefixCls = this.iconPrefixCls;
-
-      return this.icon || (this.type && typeMap[this.type] ? iconPrefixCls + '-' + typeMap[this.type] : '');
+    iconName: function iconName() {
+      return this.type && iconTypeMap[this.type] ? iconTypeMap[this.type] : '';
     },
     computedClass: function computedClass() {
-      var posclass = this.position.indexOf('right') > -1 ? 'right' : 'left';
+      // const onRight = this.position.indexOf('right') > -1;
+      // const onTop = this.position.indexOf('top') > -1;
+
+      // const posHorizontalClass = onRight ? 'right' : 'center';
+      // const postVertivalClass = onTop ? 'top' : 'bottom';
       var typeClass = this.type ? this.prefix + '-' + this.type : '';
-      return [this.className, posclass, typeClass];
+      return [this.className, this.position, typeClass];
     },
     verticalProperty: function verticalProperty() {
       return (/^top-/.test(this.position) ? 'top' : 'bottom'
@@ -78,9 +77,6 @@ export default {
     }
   },
 
-  created: function created() {
-    this.$on('esc', this.handleEsc);
-  },
   mounted: function mounted() {
     this.startTimer();
   },
@@ -111,11 +107,6 @@ export default {
             _this.close();
           }
         }, this.duration);
-      }
-    },
-    handleEsc: function handleEsc(e) {
-      if (!this.closed) {
-        this.close();
       }
     }
   }

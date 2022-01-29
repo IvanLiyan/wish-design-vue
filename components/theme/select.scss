@@ -1,0 +1,230 @@
+@import './common/var.scss';
+@import './mixins/mixins.scss';
+@import './mixins/select.scss';
+@import './tag.scss';
+@import './input.scss';
+@import './tag.scss';
+@import './dropdown-menu.scss';
+@import './dropdown-menu-item.scss';
+
+$legend-padding: 2px;
+$legend-height: $font-size-4 + $legend-padding * 2;
+
+$select-tags-padding-left: 4px;
+@include c(select) {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  width: 240px;
+  text-align: left;
+  cursor: pointer;
+  .#{$prefix}-input-wrapper {
+    width: 100%;
+    vertical-align: top;
+  }
+  &-with-label {
+    height: $input-height + $legend-height/2;
+  }
+  legend {
+    @include reset-form;
+    font-size: $font-size-4;
+    margin-left: 8px;
+    color: $color-black;
+    line-height: 1;
+    display: block;
+    position: absolute;
+    background: $color-white;
+    top: -8px;
+    left: 0;
+    padding: 0 2px;
+    z-index: 10;
+    line-height: $line-height-4;
+    &.#{$prefix}-select-invalid {
+      color: $color-danger-1;
+    }
+    &.#{$prefix}-select-focus {
+      color: $color-primary-1 !important;
+    }
+  }
+  .#{$prefix}-input {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+  .#{$prefix}-input-tip {
+    color: $color-danger-1;
+    line-height: $line-height-4;
+  }
+  &-disabled,
+  .#{$prefix}-input-disabled,
+  .#{$prefix}-input-disabled .#{$prefix}-input {
+    cursor: not-allowed;
+  }
+  .#{$prefix}-input-suffix-inner {
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    > .#{$icon-prefix}-down,
+    > .#{$icon-prefix}-chevron-down {
+      display: inline-block;
+      transition: transform 0.3s;
+      transform: rotate(0deg);
+      &.#{$icon-prefix}-chevron-up {
+        transform: rotate(180deg);
+      }
+    }
+  }
+  &-search-focus {
+    border-color: $color-primary-1;
+    .#{$prefix}-input-suffix-inner {
+      > .#{$icon-prefix}-down,
+      > .#{$icon-prefix}-chevron-down {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  &-group-wrap {
+    position: relative;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  &-group-title {
+    font-size: $font-size-4;
+    line-height: $line-height-4;
+    color: $color-black;
+    letter-spacing: 0;
+    padding: 0 16px;
+  }
+  &-group {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+
+  &-selected-check {
+    float: right;
+    line-height: inherit;
+    color: $color-black;
+  }
+
+  &-dropdown-empty,
+  &-dropdown-loading {
+    text-align: center;
+    color: $color-white;
+  }
+
+  &-multiple {
+    border-radius: $border-radius-2;
+    // height: 36px;
+    line-height: 20px;
+
+    &-line {
+      border-width: 0px;
+      border-bottom-width: 1px;
+      legend {
+        margin-left: 0;
+        padding: 0;
+      }
+    }
+    &-invalid {
+      border-color: $color-danger-1;
+      legend {
+        color: $color-danger-1;
+      }
+    }
+    &-focus {
+      border-color: $color-primary-1;
+      legend {
+        color: $color-danger-1;
+      }
+    }
+    .#{$prefix}-select-input {
+      position: absolute;
+      z-index: 0;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      max-width: 100%;
+      line-height: 36px;
+      .#{$prefix}-input {
+        border: none;
+      }
+    }
+  }
+  // tags
+  &-tags {
+    padding: 8px 4px;
+    position: relative;
+    z-index: 2;
+    &-text {
+      display: inline-block;
+      cursor: pointer;
+    }
+  }
+  &-tags-ul {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+    overflow: hidden;
+    max-width: 100%;
+  }
+  &-search-line {
+    float: left;
+    line-height: 1;
+  }
+  &-choice {
+    float: left;
+    line-height: 22px - 2px; // 2 * border-width;
+    font-size: 0; // clear white space
+    max-width: 100%;
+    .#{$prefix}-tag {
+      max-width: 100%;
+      border-width: 0px;
+      &.focus {
+        border-width: 1px;
+        border-color: $color-primary-1;
+      }
+    }
+  }
+  &-tags-li {
+    float: right;
+    line-height: 22px - 2px;
+    font-size: $font-size-4;
+    color: $color-black;
+    text-align: left;
+    padding: 2px;
+  }
+  &-search-field-wrap {
+    display: inline-block;
+  }
+  &-search-field {
+    line-height: 22px - 2px; // border-width;
+    border: none;
+    outline: none;
+    padding: 0;
+    margin: 0;
+    margin-left: 6px;
+    background-color: transparent;
+  }
+  &-tags {
+    .#{$prefix}-input-suffix-inner {
+      width: 22px;
+      line-height: 22px;
+      font-size: 12px + 2px;
+    }
+  }
+
+  &-dropdown {
+    .#{$prefix}-dropdown-menu {
+      .#{$prefix}-dropdown-menu-item-selected {
+        color: $color-black !important;
+      }
+    }
+  }
+}
