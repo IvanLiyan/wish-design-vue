@@ -43,14 +43,7 @@
     </div>
     <div class="line">
       <div class="type-and-use-size">
-        <wt-select
-          v-model="value4"
-          class="select-width"
-          :filterable="true"
-          :auto-clear-query="true"
-          multiple
-          label="本地搜索"
-        >
+        <wt-select v-model="value4" :filterable="true" :auto-clear-query="true" multiple label="本地搜索">
           <wt-option
             v-for="item in options"
             :key="item.value"
@@ -64,7 +57,6 @@
       <div class="type-and-use-size">
         <wt-select
           v-model="value5"
-          class="select-width"
           :loading="loading"
           :filterable="true"
           :remote="true"
@@ -82,7 +74,7 @@
         </wt-select>
       </div>
       <div class="type-and-use-size">
-        <wt-select v-model="value6" class="select-width" :filterable="true" multiple label="显示全选">
+        <wt-select v-model="value6" :filterable="true" multiple label="显示全选">
           <wt-option
             v-for="item in options"
             :key="item.value"
@@ -97,7 +89,6 @@
         <div class="type-and-use-size">
           <wt-select
             v-model="value7"
-            class="select-width"
             :filterable="true"
             :auto-clear-query="true"
             multiple
@@ -117,7 +108,6 @@
         <div class="type-and-use-size">
           <wt-select
             v-model="value8"
-            class="select-width"
             :loading="loading"
             :filterable="true"
             label="无匹配时显示的文字"
@@ -137,7 +127,6 @@
         <div class="type-and-use-size">
           <wt-select
             v-model="value9"
-            class="select-width"
             :loading="loading"
             :filterable="true"
             :remote="true"
@@ -162,7 +151,6 @@
         <div class="type-and-use-size">
           <wt-select
             v-model="value10"
-            class="select-width"
             :filterable="true"
             :auto-clear-query="true"
             multiple
@@ -182,7 +170,6 @@
         <div class="type-and-use-size">
           <wt-select
             v-model="value12"
-            class="select-width"
             :loading="loading"
             :filterable="true"
             :remote="true"
@@ -206,7 +193,6 @@
         <div class="type-and-use-size">
           <wt-select
             v-model="value11"
-            class="select-width"
             :loading="loading"
             :filterable="true"
             label="focus/blur事件"

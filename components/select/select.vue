@@ -185,8 +185,8 @@
           </slot>
         </ul>
       </drop>
-      <div :class="`${inputPrefix}-tip`">
-        <span v-if="invalid && !focused">{{ validationText }}</span>
+      <div :class="`${inputPrefix}-tip`" v-if="invalid && !focused">
+        <span>{{ validationText }}</span>
       </div>
     </popper>
   </div>
