@@ -119,9 +119,8 @@ $select-tags-padding-left: 4px;
 
   &-multiple {
     border-radius: $border-radius-2;
-    // height: 36px;
+    min-height: 36px;
     line-height: 20px;
-
     &-line {
       border-width: 0px;
       border-bottom-width: 1px;
@@ -158,7 +157,7 @@ $select-tags-padding-left: 4px;
   }
   // tags
   &-tags {
-    padding: 8px 4px;
+    padding: 8px 4px 4px 4px;
     position: relative;
     z-index: 2;
     &-text {
@@ -183,7 +182,7 @@ $select-tags-padding-left: 4px;
     height: 20px;
     font-size: 0; // clear white space
     max-width: 100%;
-    margin-right: 4px;
+    margin: 2px 2px 2px 0;
     .#{$prefix}-tag {
       max-width: 100%;
       border-width: 0px;
