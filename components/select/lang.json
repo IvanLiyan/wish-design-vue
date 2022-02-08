@@ -1,0 +1,78 @@
+{
+  "chinese": {
+    "componnent_desc": "下拉选择器，用于多个选项的选择输入，状态的切换。当选项少于 5 个时，建议用 Radio 或 Checkbox。",
+    "module1": {
+      "title": "基础样式",
+      "desc1": "分为基本选择器和带标题选择器两种。"
+    },
+    "module2": {
+      "title": "不同状态"
+    },
+    "module3": {
+      "title": "应用场景",
+      "subtitle1": "单选",
+      "subtitle2": "多选",
+      "subtitle3": "搜索选择"
+    },
+    "api": {
+      "value": "select当前选中值,多选时为数组",
+      "value-key": "仅当 value 值为 object、object[]时生效，作为value唯一标识的键名",
+      "disabled": "是否禁用",
+      "invalid": "是否校验通过，用于非空校验",
+      "validation-text": "校验不通过时显示的文字",
+      "filterable": "是否可搜索",
+      "multiple": "是否多选",
+      "placeholder": "占位符",
+      "no-match-text": "搜索条件无匹配时显示的文字",
+      "no-data-text": "选项为空时显示的文字",
+      "remote": "是否远程搜索",
+      "remote-method": "远程搜索的方法",
+      "loading": "是否正在从远程获取数据",
+      "reserve-keyword": "多选且可搜索时，是否在选中一个选项后保留当前的搜索关键词",
+      "show-select-all": "多选时生效，是否显示全选",
+      "change": "选中值发生变化时触发",
+      "update:visible": "下拉框显示／隐藏状态变化时触发",
+      "remove": "多选模式下移除 tag 时触发",
+      "focus()": "使选择框获取焦点，并打开选择框",
+      "blur()": "使选择框失去焦点，并关闭选择框"
+    }
+  },
+  "english": {
+    "componnent_desc": "Dropdown select, used for selecting from multiple options or states. If there are no more than 5 options, please use Radio or Checkbox instead.",
+    "module1": {
+      "title": "Basic Style",
+      "desc1": "Select with a title or pure select without title"
+    },
+    "module2": {
+      "title": "Different States"
+    },
+    "module3": {
+      "title": "Applications",
+      "subtitle1": "Single select",
+      "subtitle2": "Multiple select",
+      "subtitle3": "Search and select"
+    },
+    "api": {
+      "value": "Value of selected options, use array if multiple options get selected",
+      "value-key": "Only used when the value property is object/object[], as the key name",
+      "disabled": "Whether to disable the select",
+      "invalid": "Whether to bypass not empty validation",
+      "validation-text": "Error message showed when validation fails",
+      "filterable": "Whether to enable search in choices",
+      "multiple": "Whether to enable multiple select",
+      "placeholder": "Placeholder content text",
+      "no-match-text": "Message showed when there is no matched result",
+      "no-data-text": "Message showed when there is no opion",
+      "remote": "Whether to search remote data",
+      "remote-method": "Method of remote search",
+      "loading": "whether is searching remote data",
+      "reserve-keyword": "Use for multiple options search select, whether to keep the last searched word when select an option",
+      "show-select-all": "Use for multiple search, whether to show select-all",
+      "change": "Triggered when the selected option changes",
+      "update:visible": "Triggered when the dropdown menu show/hide changes",
+      "remove": "Use for multiple select, triggered when removing one selected tag",
+      "focus()": "Focus on the select and open its dropdown menu",
+      "blur()": "Select lost focus and close its dropdown menu"
+    }
+  }
+}

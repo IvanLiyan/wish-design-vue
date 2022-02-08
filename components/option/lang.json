@@ -1,0 +1,16 @@
+{
+  "chinese": {
+    "api": {
+      "value": "选项的值",
+      "label": "选项的展示内容，若不设置则默认使用 value.toString()",
+      "disabled": "是否禁用该选项"
+    }
+  },
+  "english": {
+    "api": {
+      "value": "Value of the option",
+      "label": "Text that represents label for option, might be different from value, default property is value.toString()",
+      "disabled": "Boolean, disabled the option"
+    }
+  }
+}

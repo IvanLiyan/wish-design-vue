@@ -74,7 +74,7 @@
         </wt-select>
       </div>
       <div class="type-and-use-size">
-        <wt-select v-model="value6" :filterable="true" multiple label="显示全选">
+        <wt-select v-model="value6" :filterable="true" :show-select-all="true" multiple label="显示全选">
           <wt-option
             v-for="item in options"
             :key="item.value"

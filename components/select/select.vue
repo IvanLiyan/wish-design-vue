@@ -326,7 +326,7 @@ export default {
     popperOptions: Object,
     showSelectAll: {
       type: Boolean,
-      // default: true,
+      default: false,
     },
     genre: String,
     collapseMaxSearchWidth: {
