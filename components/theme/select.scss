@@ -3,7 +3,6 @@
 @import './mixins/select.scss';
 @import './tag.scss';
 @import './input.scss';
-@import './tag.scss';
 @import './dropdown-menu.scss';
 @import './dropdown-menu-item.scss';
 
@@ -180,12 +179,18 @@ $select-tags-padding-left: 4px;
   }
   &-choice {
     float: left;
-    line-height: 22px - 2px; // 2 * border-width;
+    line-height: 20px;
+    height: 20px;
     font-size: 0; // clear white space
     max-width: 100%;
+    margin-right: 4px;
     .#{$prefix}-tag {
       max-width: 100%;
       border-width: 0px;
+      color: $color-black;
+      height: 20px;
+      background: #f7f9fa;
+      border-radius: 20px;
       &.focus {
         border-width: 1px;
         border-color: $color-primary-1;
