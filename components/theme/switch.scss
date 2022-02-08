@@ -10,6 +10,7 @@ $circle-width: $btn-height - $gap-width * 2;
 @include c(switch) {
   display: flex;
   cursor: pointer;
+  align-items: center;
   $btn: $B + '-btn';
   $rh: $B + '-hint';
   $ch: $B + '-checked';

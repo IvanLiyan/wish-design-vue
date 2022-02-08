@@ -1,5 +1,6 @@
 {
-  "props": [{
+  "props": [
+    {
       "name": "model",
       "desc": "表单数据对象",
       "type": "object",
@@ -78,27 +79,24 @@
       "optionalValue": "",
       "default": "",
       "version": "0.3.18"
-    }],
-  "methods": [{
-    "name": "validate(callback: function): Promise",
-    "desc": "对整个表单进行校验，参数为检验完的回调，会返回 Promise",
-    "args": ""
-  }, {
-    "name": "validateFields(props: string | string[], callback: function): void",
-    "desc": "对部分表单字段进行校验的方法, props 为需要校验的属性名",
-    "args": "0.3.18"
-  }, {
-    "name": "validateField(prop: string | string[], callback: function): void",
-    "desc": "对部分表单字段进行校验的方法, prop 为需要校验的属性名。0.3.18 后 prop 开始支持字符串数组，推荐使用 validateFields 方法",
-    "args": ""
-  }, {
-    "name": "resetFields(props?: string | string[])",
-    "desc": "对整个表单进行重置，将所有字段值重置为空并移除校验结果, 0.3.8 版本开始支持 props 参数，用于指定重置字段",
-    "args": ""
-  }, {
-    "name": "clearValidate(props?: string | string[])",
-    "desc": "移除表单项的校验结果。传入待移除的表单项的 prop 属性或者 prop 组成的数组，如不传则移除整个表单的校验结果",
-    "args": "",
-    "version": "0.1.39"
-  }]
+    }
+  ],
+  "methods": [
+    {
+      "name": "validateFields(props: string | string[]): boolean",
+      "desc": "对部分表单字段进行校验的方法, props 为需要校验的属性名",
+      "args": "0.3.18"
+    },
+    {
+      "name": "resetFields(props?: string | string[])",
+      "desc": "对整个表单进行重置，将所有字段值重置为空并移除校验结果, 0.3.8 版本开始支持 props 参数，用于指定重置字段",
+      "args": ""
+    },
+    {
+      "name": "clearValidate(props?: string | string[])",
+      "desc": "移除表单项的校验结果。传入待移除的表单项的 prop 属性或者 prop 组成的数组，如不传则移除整个表单的校验结果",
+      "args": "",
+      "version": "0.1.39"
+    }
+  ]
 }

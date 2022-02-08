@@ -1,19 +1,18 @@
 <template>
-  <form v-bind="$attrs" :class="classes"
-    :autocomplete="autocomplete"><slot></slot></form>
+  <form v-bind="$attrs" :class="classes" :autocomplete="autocomplete">
+    <h3 :class="`${prefix}-title`">{{ title }}</h3>
+    <slot></slot>
+  </form>
 </template>
 <script>
 import { isString } from '@/utils/type';
-import { deprecatedMethod } from '@/utils/console';
-import {
-  CONFIG_PROVIDER,
-  getPrefixCls,
-} from '@/utils/config';
+import { CONFIG_PROVIDER, getPrefixCls } from '@/utils/config';
 
-function noop () {}
+function noop() {}
 export default {
   name: 'WtForm',
   props: {
+    title: String,
     model: {
       type: Object,
     },
@@ -26,7 +25,7 @@ export default {
     },
     labelPosition: {
       type: String,
-      validator (value) {
+      validator(value) {
         return ['right', 'top'].indexOf(value) > -1;
       },
       default: 'right',
@@ -41,7 +40,7 @@ export default {
     },
     autocomplete: {
       type: String,
-      validator (value) {
+      validator(value) {
         return ['on', 'off'].indexOf(value) > -1;
       },
       default: 'off',
@@ -57,7 +56,7 @@ export default {
     disabled: Boolean, // use in form-item HOC
     labelSuffix: String,
   },
-  provide () {
+  provide() {
     return { form: this };
   },
   inject: {
@@ -68,16 +67,16 @@ export default {
       },
     },
   },
-  data () {
+  data() {
     return {
       fields: [],
     };
   },
   computed: {
-    prefix () {
+    prefix() {
       return this.config.getPrefixCls('form');
     },
-    classes () {
+    classes() {
       const { prefix } = this;
       return [
         prefix,
@@ -89,34 +88,35 @@ export default {
     },
   },
   watch: {
-    rules () {
+    rules() {
       if (this.validateOnRuleChange) {
         this.validate().catch(function (e) {});
       }
     },
   },
-  created () {
-    this.$on('addFormItem', field => {
+  created() {
+    this.$on('addFormItem', (field) => {
       if (field && field.prop) this.fields.push(field);
       return false;
     });
-    this.$on('removeFormItem', field => {
+    this.$on('removeFormItem', (field) => {
       if (field.prop) this.fields.splice(this.fields.indexOf(field), 1);
       return false;
     });
   },
   methods: {
-    resetFields (props) {
-      const fields = props && props.length
-        ? (isString(props)
-          ? this.fields.filter(field => props === field.prop)
-          : this.fields.filter(field => props.indexOf(field.prop) > -1)
-        ) : this.fields;
-      fields.forEach(field => {
+    resetFields(props) {
+      const fields =
+        props && props.length
+          ? isString(props)
+            ? this.fields.filter((field) => props === field.prop)
+            : this.fields.filter((field) => props.indexOf(field.prop) > -1)
+          : this.fields;
+      fields.forEach((field) => {
         field.resetField();
       });
     },
-    validate (callback) {
+    validate(callback) {
       const callbackFn = callback || noop;
       return new Promise((resolve, reject) => {
         this.validateFields(undefined, function (valid, errors) {
@@ -126,53 +126,43 @@ export default {
       });
     },
 
-    validateFields (props, callback) {
-      const fields = props && props.length
-        ? (isString(props)
-          ? this.fields.filter(field => props === field.prop)
-          : this.fields.filter(field => props.indexOf(field.prop) > -1)
-        ) : this.fields;
+    validateFields(props) {
+      const fields =
+        props && props.length
+          ? isString(props)
+            ? this.fields.filter((field) => props === field.prop)
+            : this.fields.filter((field) => props.indexOf(field.prop) > -1)
+          : this.fields;
       if (props && props.length && !fields.length) {
-        throw new Error(
-          '[warn]: must call validateField with valid prop string!',
-        );
+        throw new Error('[warn]: must call validateField with valid prop string!');
       }
-
-      const callbackFn = callback || noop;
 
       // run validate
       let valid = true;
-      let count = 0;
       const errors = {};
       if (!fields.length) {
-        callbackFn(valid);
+        return valid;
       }
-      fields.forEach(field => {
-        field.validate('', error => {
+      fields.forEach((field) => {
+        field.validate('', (error) => {
           if (error) {
             valid = false;
             errors[field.prop] = error;
             errors.$$wt = true;
           }
-          if (++count === fields.length) {
-            // all finish
-            callbackFn(valid, errors);
-          }
         });
       });
+      console.log('errors', errors);
+      return valid;
     },
 
-    validateField (prop, cb) {
-      deprecatedMethod('Form', 'validateField', 'Please replace validateField with method validateFields');
-      return this.validateFields(prop, cb);
-    },
-    clearValidate (props = []) {
+    clearValidate(props = []) {
       const fields = props.length
-        ? (isString(props)
-          ? this.fields.filter(field => props === field.prop)
-          : this.fields.filter(field => props.indexOf(field.prop) > -1)
-        ) : this.fields;
-      fields.forEach(field => {
+        ? isString(props)
+          ? this.fields.filter((field) => props === field.prop)
+          : this.fields.filter((field) => props.indexOf(field.prop) > -1)
+        : this.fields;
+      fields.forEach((field) => {
         field.clearValidate();
       });
     },

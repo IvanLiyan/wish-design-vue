@@ -104,6 +104,14 @@ $padding: 8px;
     }
   }
 
+  &-focused {
+    border-color: $color-line-2;
+    color: $color-line-2;
+    legend {
+      color: currentColor;
+    }
+  }
+
   &-invalid {
     border-color: $color-danger-1;
     legend {
@@ -111,14 +119,6 @@ $padding: 8px;
     }
     & + .#{$it} {
       color: $color-danger-1;
-    }
-  }
-
-  &-focused {
-    border-color: $color-line-2;
-    color: $color-line-2;
-    legend {
-      color: currentColor;
     }
   }
 

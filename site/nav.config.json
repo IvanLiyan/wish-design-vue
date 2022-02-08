@@ -66,6 +66,11 @@
             "path": "timepicker",
             "name": "TimePicker",
             "cnName": "时间选择框"
+          },
+          {
+            "path": "form",
+            "name": "Form",
+            "cnName": "表单"
           }
         ]
       },
