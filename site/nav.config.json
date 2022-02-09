@@ -71,6 +71,16 @@
             "path": "form",
             "name": "Form",
             "cnName": "表单"
+          },
+          {
+            "path": "upload",
+            "name": "Upload",
+            "cnName": "上传"
+          },
+          {
+            "path": "select",
+            "name": "Select",
+            "cnName": "选择器"
           }
         ]
       },

@@ -13,6 +13,7 @@ site/wt-vue
 token.json
 # Editor directories and files
 .idea
+.history
 *.suo
 *.ntvs*
 *.njsproj

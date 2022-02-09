@@ -1,0 +1,143 @@
+{
+  "props": [
+    {
+      "name": "value",
+      "desc": "$t('select.api.value')",
+      "type": ["string", "number", "object", "Array"],
+      "optionalValue": "",
+      "default": "",
+      "version": ""
+    },
+    {
+      "name": "value-key",
+      "desc": "$t('select.api.value-key')",
+      "type": "string",
+      "optionalValue": "",
+      "default": "",
+      "version": ""
+    },
+    {
+      "name": "disabled",
+      "desc": "$t('select.api.disabled')",
+      "type": "boolean",
+      "optionalValue": "",
+      "default": "false",
+      "version": ""
+    },
+    {
+      "name": "invalid",
+      "desc": "$t('select.api.invalid')",
+      "type": "boolean",
+      "optionalValue": "",
+      "default": "false",
+      "version": ""
+    },
+    {
+      "name": "filterable",
+      "desc": "$t('select.api.filterable')",
+      "type": "boolean",
+      "optionalValue": "",
+      "default": "false",
+      "version": ""
+    },
+    {
+      "name": "multiple",
+      "desc": "$t('select.api.multiple')",
+      "type": "boolean",
+      "optionalValue": "",
+      "default": "false",
+      "version": ""
+    },
+    {
+      "name": "placeholder",
+      "desc": "$t('select.api.placeholder')",
+      "type": "string",
+      "optionalValue": "",
+      "default": "请选择",
+      "version": ""
+    },
+    {
+      "name": "no-match-text",
+      "desc": "$t('select.api.no-match-text')",
+      "type": "string",
+      "optionalValue": "",
+      "default": "",
+      "version": ""
+    },
+    {
+      "name": "no-data-text",
+      "desc": "$t('select.api.no-data-text')",
+      "type": "string",
+      "optionalValue": "",
+      "default": "",
+      "version": ""
+    },
+    {
+      "name": "remote",
+      "desc": "$t('select.api.remote')",
+      "type": "boolean",
+      "optionalValue": "",
+      "default": "",
+      "version": ""
+    },
+    {
+      "name": "remote-method",
+      "desc": "$t('select.api.remote-method')",
+      "type": "function(query)",
+      "optionalValue": "",
+      "default": "",
+      "version": ""
+    },
+    {
+      "name": "loading",
+      "desc": "$t('select.api.loading')",
+      "type": "boolean",
+      "optionalValue": "",
+      "default": "",
+      "version": ""
+    },
+    {
+      "name": "reserve-keyword",
+      "desc": "$t('select.api.reserve-keyword')",
+      "type": "boolean",
+      "optionalValue": "",
+      "default": "false",
+      "version": ""
+    },
+    {
+      "name": "show-select-all",
+      "desc": "$t('select.api.show-select-all')",
+      "type": "boolean",
+      "optionalValue": "",
+      "default": "false",
+      "version": ""
+    }
+  ],
+  "events": [
+    {
+      "name": "change",
+      "desc": "$t('select.api.change')",
+      "args": "(value: any)"
+    },
+    {
+      "name": "update:visible",
+      "desc": "$t('select.api.update:visible')",
+      "args": "(visible: boolean)"
+    },
+    {
+      "name": "remove",
+      "desc": "$t('select.api.remove')",
+      "args": "(value: any)"
+    },
+    {
+      "name": "focus()",
+      "desc": "$t('select.api.focus()')",
+      "version": ""
+    },
+    {
+      "name": "blur()",
+      "desc": "$t('select.api.blur()')",
+      "version": ""
+    }
+  ]
+}

@@ -1,11 +1,13 @@
 @mixin select-tags-size($height, $tagHeight) {
-  .#{$prefix}-select-choice .#{$prefix}-select-search-field, .#{$prefix}-select-tags-li{
+  .#{$prefix}-select-choice .#{$prefix}-select-search-field,
+  .#{$prefix}-select-tags-li {
     line-height: $height - 2px; // 2 * border-width;
+    // margin-right: 4px;
   }
-  .#{$prefix}-select-search-field{
+  .#{$prefix}-select-search-field {
     line-height: $height;
   }
-  .#{$prefix}-tag{
+  .#{$prefix}-tag {
     margin: ($height - $tagHeight - 2px)/2 2px;
   }
 }

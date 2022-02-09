@@ -363,7 +363,7 @@ $date-picker-disabled-bgc: $color-fill-3!default;
 // @name 边框颜色
 $date-picker-border-color: #E7E9EF!default;
 // @name 宽度
-$date-picker-width: 200px!default;
+$date-picker-width: 248px!default;
 
 // @name 字号
 $date-picker-font-size: $font-size-1!default;
@@ -446,9 +446,9 @@ $date-picker-cells-width: $date-picker-cell-size * 7 + 7 * 2 * $date-picker-cell
 $date-picker-cells-width-with-weeknumbers: $date-picker-cell-size * 8 + 8 * 2 * $date-picker-cell-padding-horizontal;
 
 // @name 单元格-间距-vertical
-$date-picker-cells-offset-vertical: $s-3!default;
+$date-picker-cells-offset-vertical: $s-2!default;
 // @name 单元格-间距-水平
-$date-picker-cells-offset-horizontal: $s-4!default;
+$date-picker-cells-offset-horizontal: $s-2!default;
 
 // @refer color
 // @name 范围-背景色
@@ -462,9 +462,15 @@ $date-picker-today-color: $color-primary!default;
 $date-picker-disabled-bgc: #f7f7f7!default;
 
 // @name 年- 单元格-高度
-$date-picker-year-cell-height: 26px!default;
+$date-picker-year-cell-height: 32px!default;
+// @name 月- 单元格-高度
+$date-picker-month-cell-height: 32px!default;
 // @name 月- 单元格-宽度
 $date-picker-month-cell-width: 38px + $date-picker-cell-offset!default;
+// @name 月- 单元格-上下外边距
+$date-picker-month-cell-margin-y: 8px!default;
+// @name 月- 单元格-左右外边距
+$date-picker-month-cell-margin-x: 6px!default;
 // @end propsValue
 // @end category
 // @end component
@@ -495,5 +501,115 @@ $time-picker-cell-selected-bgc: $color-primary-1!default;
 // @name 单元格-禁用-文字颜色
 $time-picker-cell-disabled-color: #c5c8ce!default;
 // @end propsValue
+// @end category
+// @end component
+
+// @component upload 上传
+// @include progress
+// @category base
+// @propsValue default
+// @name itemlist-上外边距
+$upload-itemlist-margin-top: 10px!default;
+
+// @dom item
+// @name 项-背景色
+$upload-item-bgc: inherit!default;
+// @name 项-宽度
+$upload-item-width: 100%!default;
+// @name 项-水平内边距
+$upload-item-padding-horizontal: $s-0!default;
+// @name 项-文件名-文字颜色
+$upload-item-filename-color: $color-text-2!default;
+// @name 项-文件描述-上外边距
+$upload-item-filedescription-margin-top: $s-0!default;
+// @name 项-文件名-字号
+$upload-item-filename-font-size: $font-size-2!default;
+// @name 项-文件名-字重
+$upload-item-filename-font-weight: $font-weight-regular!default;
+// @name 项-行高-文件名
+$upload-item-filename-line-height: $line-height-2!default;
+// @name 项-文件描述-字号
+$upload-item-filedescription-font-size: inherit!default;
+// @name 项-文件描述-字重
+$upload-item-filedescription-font-weight: inherit!default;
+// @name 项-行高-文件描述
+$upload-item-filedescription-line-height: inherit!default;
+// @end dom
+
+// @dom operateicon
+// @name 操作图标-尺寸
+$upload-operateicon-size: inherit!default;
+// @name 操作图标-间距
+$upload-operateicon-spacing: 15px!default;
+// @name 操作图标-文字颜色
+$upload-operateicon-color: $color-success-1!default;
+// @end dom
+
+// @dom filetypeicon
+// @name 文件类型-右外边距
+$upload-filetypeicon-margin-right: 7px!default;
+// @name 文件类型-尺寸
+$upload-filetypeicon-size: inherit!default;
+// @end dom
+
+// @end propsValue
+// @end category
+
+// @category hover
+// @propsValue default
+// @refer color
+// @name 悬浮-背景色
+$upload-hover-bgc: #f5f7fa!default;
+// @name 悬浮-项-文件名-文字颜色
+$upload-hover-item-filename-color: inherit!default;
+// @name 悬浮-操作图标-文字颜色
+$upload-hover-operateicon-color: inherit!default;
+// @end propsValue
+// @end category
+
+// @category fail
+// @propsValue default
+// @name 错误-项-文件名-文字颜色
+$upload-error-item-filename-color: $color-danger-1!default;
+// @end propsValue
+// @end category
+// @end component
+
+// @component progress 进度条
+// @category base
+// @propsValue default
+// @name 文字-宽度
+$progress-text-width: 55px!default;
+// @name 圆角
+$progress-border-radius: 100px!default;
+// @name 背景色
+$progress-bgc: $color-line-2!default;
+// @name 文字-外边距-左侧
+$progress-text-margin-left: $s-3!default;
+// @name 文字颜色
+$progress-text-color: $color-text-2!default;
+// @name 文字-字号
+$progress-text-font-size: $font-size-default!default;
+// @name 图标-字号
+$progress-icon-font-size: $font-size-default!default;
+// @end propsValue
+// @end category
+
+// @category status
+// @propsValue default
+// @name 默认-文字颜色
+$progress-default-color: $color-primary!default;
+// @end propsValue
+
+// @propsValue error
+// @name 错误-文字颜色
+$progress-error-color: $color-danger-1!default;
+// @end propsValue
+
+// @propsValue success
+// @name 成功-文字颜色
+$progress-success-color: $color-success-1!default;
+// @end propsValue
+
 // @end category
 // @end component

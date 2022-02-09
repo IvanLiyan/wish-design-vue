@@ -45,7 +45,7 @@
   ],
   "methods": [
     {
-      "name": "validateFields(props: string | string[]): boolean",
+      "name": "validateFields(props?: string | string[]): boolean",
       "desc": "对部分表单字段进行校验的方法, props 为需要校验的属性名",
       "args": ""
     },

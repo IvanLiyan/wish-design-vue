@@ -1,12 +1,5 @@
 <template>
-  <wt-form
-    ref="formCustom"
-    title="法人信息"
-    :rules="ruleCustom"
-    :model="formCustom"
-    :first-fields="true"
-    label-suffix="asdf"
-  >
+  <wt-form ref="formCustom" title="法人信息" :rules="ruleCustom" :model="formCustom" :first-fields="true">
     <wt-row :gutter="20">
       <wt-col :span="12">
         <wt-form-item prop="username" helper="提现操作仅限于此真实姓名下的银行卡。" required>
@@ -14,8 +7,28 @@
         </wt-form-item>
       </wt-col>
       <wt-col :span="12">
-        <wt-form-item prop="idCard" required>
+        <wt-form-item prop="idCard" required :rules="idRule">
           <wt-input label="身份证号" placeholder="大陆身份证" v-model="formCustom.idCard" />
+        </wt-form-item>
+      </wt-col>
+    </wt-row>
+
+    <wt-row :gutter="20">
+      <wt-col :span="8">
+        <wt-form-item prop="nation" required>
+          <wt-select v-model="formCustom.nation" label="国家">
+            <wt-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value" />
+          </wt-select>
+        </wt-form-item>
+      </wt-col>
+      <wt-col :span="8">
+        <wt-form-item prop="time" required>
+          <wt-time-picker type="time" v-model="formCustom.time" />
+        </wt-form-item>
+      </wt-col>
+      <wt-col :span="8">
+        <wt-form-item prop="date" required>
+          <wt-date-picker type="date" v-model="formCustom.date" />
         </wt-form-item>
       </wt-col>
     </wt-row>
@@ -64,6 +77,9 @@ const initialData = {
   checkboxValue: ['checkbox1', 'checkbox3'],
   radioValue: 'radio1',
   switchValue: false,
+  nation: null,
+  time: null,
+  date: null,
 };
 
 export default {
@@ -72,8 +88,31 @@ export default {
       formCustom: JSON.parse(JSON.stringify(initialData)),
       ruleCustom: {
         // username: [{ required: true }],
-        password: [{ validator: validatePassword }],
+        idCard: [{ validator: validatePassword, trigger: 'blur' }],
       },
+
+      idRule: {
+        max: 5,
+        message: '身份证号不能多余5位',
+      },
+      options: [
+        {
+          value: 'china',
+          label: '中国',
+        },
+        {
+          value: 'america',
+          label: '美国',
+        },
+        {
+          value: 'japan',
+          label: '日本',
+        },
+        {
+          value: 'france',
+          label: '法国',
+        },
+      ],
     };
   },
   methods: {

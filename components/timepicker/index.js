@@ -1,11 +1,12 @@
 import TimePicker from '@components/datepicker/picker/timepicker.js';
 import CreateComponent from '@components/datepicker/control';
+import { withFormItem } from '@components/form-item';
 
-const WtTimePicker = CreateComponent('WtTimePicker', TimePicker);
+const HocTimePicker = withFormItem(TimePicker.name, CreateComponent(TimePicker.name, TimePicker));
 
 /* istanbul ignore next */
-WtTimePicker.install = function (Vue) {
-  Vue.component(WtTimePicker.name, WtTimePicker);
+HocTimePicker.install = function (Vue) {
+  Vue.component(HocTimePicker.name, HocTimePicker);
 };
 
-export default WtTimePicker;
+export default HocTimePicker;

@@ -1,0 +1,28 @@
+{
+  "props": [
+    {
+      "name": "value",
+      "desc": "$t('option.api.value')",
+      "type": ["string", "number", "object"],
+      "optionalValue": "",
+      "default": "",
+      "version": ""
+    },
+    {
+      "name": "label",
+      "desc": "$t('option.api.label')",
+      "type": "string",
+      "optionalValue": "",
+      "default": "",
+      "version": ""
+    },
+    {
+      "name": "disabled",
+      "desc": "$t('option.api.disabled')",
+      "type": "boolean",
+      "optionalValue": "",
+      "default": "",
+      "version": ""
+    }
+  ]
+}

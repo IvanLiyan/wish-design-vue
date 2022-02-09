@@ -1,8 +1,8 @@
 <template>
   <div :class="classes">
-    <label :class="`${prefix}-label`" :for="labelFor" :style="labelStyles" v-if="label || $slots.label"
+    <!-- <label :class="`${prefix}-label`" :for="labelFor" :style="labelStyles" v-if="label || $slots.label"
       ><slot name="label">{{ label }}</slot>
-    </label>
+    </label> -->
     <div :class="`${prefix}-content`">
       <slot></slot>
       <transition name="fade-in" @after-leave="handleAfterLeave">
@@ -35,13 +35,6 @@ import { CONFIG_PROVIDER, getPrefixCls } from '@/utils/config';
 export default {
   name: 'WtFormItem',
   props: {
-    label: {
-      type: String,
-      default: '',
-    },
-    labelWidth: {
-      type: Number,
-    },
     prop: {
       type: String,
     },
@@ -61,9 +54,7 @@ export default {
     showMessage: {
       type: Boolean,
     },
-    labelFor: {
-      type: String,
-    },
+
     helper: {
       type: String,
     },

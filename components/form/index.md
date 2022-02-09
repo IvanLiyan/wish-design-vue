@@ -29,14 +29,14 @@
 
 ### 校验规则
 
-| 参数     | 说明                                       | 类型    | 默认值  |
-| -------- | ------------------------------------------ | ------- | ------- |
-| trigger  | 触发条件, 非必填, 可选值: 'blur'、'change' | string  | -       |
-| max      | 最大长度                                   | number  | -       |
-| message  | 校验文案                                   | string  | -       |
-| min      | 最小长度                                   | number  | -       |
-| pattern  | 正则表达式校验                             | RegExp  | -       |
-| required | 是否必选                                   | boolean | `false` |
+| 参数     | 说明                                                        | 类型    | 默认值  |
+| -------- | ----------------------------------------------------------- | ------- | ------- |
+| trigger  | 触发条件, 非必填, 可选值: 'blur'、'change',默认两者时都触发 | string  | -       |
+| min      | 最小长度                                                    | number  | -       |
+| max      | 最大长度                                                    | number  | -       |
+| message  | 校验文案                                                    | string  | -       |
+| pattern  | 正则表达式校验                                              | RegExp  | -       |
+| required | 是否必选                                                    | boolean | `false` |
 
 | validator | 自定义校验（**注意 callback 必须被调用**）, 支持 source 参数，source 为当前表单 modal 属性值 | function(rule, value, callback, source) | - |
 

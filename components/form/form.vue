@@ -111,9 +111,13 @@ export default {
         field.resetField();
       });
     },
+    /**
+     * 校验所有field
+     */
     validate(callback) {
       const callbackFn = callback || noop;
       return new Promise((resolve, reject) => {
+        // props undefined 为所有field
         this.validateFields(undefined, function (valid, errors) {
           callbackFn(valid, errors);
           valid ? resolve() : reject(errors);
