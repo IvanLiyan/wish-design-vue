@@ -1,31 +1,31 @@
 # 选择框 / Select
 
-下拉选择器，用于多个选项的选择输入，状态的切换。当选项少于 5 个时，建议用 Radio 或 Checkbox。
+<span>{{$t('select.componnent_desc')}}</span>
 
-## 基础样式
+## <span>{{$t('select.module1.title')}}</span>
 
-分为基本选择器和带标题选择器两种。
+<span>{{$t('select.module1.desc1')}}</span>
 :::include(src="./doc/base.vue")
 :::
 
-## 不同状态
+## <span>{{$t('select.module2.title')}}</span>
 
 :::include(src="./doc/status.vue")
 :::
 
-## 应用场景
+## <span>{{$t('select.module3.title')}}</span>
 
-### 单选
+### <span>{{$t('select.module3.subtitle1')}}</span>
 
 :::include(src="./doc/default.vue")
 :::
 
-### 多选
+### <span>{{$t('select.module3.subtitle2')}}</span>
 
 :::include(src="./doc/multiple.vue")
 :::
 
-## 搜索选择
+### <span>{{$t('select.module3.subtitle3')}}</span>
 
 :::include(src="./doc/search.vue")
 :::

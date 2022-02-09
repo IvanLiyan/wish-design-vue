@@ -1,2 +1,7 @@
-@import "./common/var.scss";
-// @import "../theme-chalk/form.scss";
+@import './common/var.scss';
+
+@include c(form) {
+  padding: 16px 16px 24px 16px;
+  text-align: left;
+  box-shadow: $shadow-1;
+}

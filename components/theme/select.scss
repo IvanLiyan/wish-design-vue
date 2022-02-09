@@ -3,7 +3,6 @@
 @import './mixins/select.scss';
 @import './tag.scss';
 @import './input.scss';
-@import './tag.scss';
 @import './dropdown-menu.scss';
 @import './dropdown-menu-item.scss';
 
@@ -120,9 +119,8 @@ $select-tags-padding-left: 4px;
 
   &-multiple {
     border-radius: $border-radius-2;
-    // height: 36px;
+    min-height: 36px;
     line-height: 20px;
-
     &-line {
       border-width: 0px;
       border-bottom-width: 1px;
@@ -159,7 +157,7 @@ $select-tags-padding-left: 4px;
   }
   // tags
   &-tags {
-    padding: 8px 4px;
+    padding: 8px 4px 4px 4px;
     position: relative;
     z-index: 2;
     &-text {
@@ -180,12 +178,18 @@ $select-tags-padding-left: 4px;
   }
   &-choice {
     float: left;
-    line-height: 22px - 2px; // 2 * border-width;
+    line-height: 20px;
+    height: 20px;
     font-size: 0; // clear white space
     max-width: 100%;
+    margin: 2px 2px 2px 0;
     .#{$prefix}-tag {
       max-width: 100%;
       border-width: 0px;
+      color: $color-black;
+      height: 20px;
+      background: #f7f9fa;
+      border-radius: 20px;
       &.focus {
         border-width: 1px;
         border-color: $color-primary-1;

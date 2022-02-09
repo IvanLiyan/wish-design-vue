@@ -2,7 +2,7 @@
   "props": [
     {
       "name": "value",
-      "desc": "选项的值",
+      "desc": "$t('option.api.value')",
       "type": ["string", "number", "object"],
       "optionalValue": "",
       "default": "",
@@ -10,7 +10,7 @@
     },
     {
       "name": "label",
-      "desc": "选项的展示内容，若不设置则默认使用 value.toString()",
+      "desc": "$t('option.api.label')",
       "type": "string",
       "optionalValue": "",
       "default": "",
@@ -18,7 +18,7 @@
     },
     {
       "name": "disabled",
-      "desc": "是否禁用该选项",
+      "desc": "$t('option.api.disabled')",
       "type": "boolean",
       "optionalValue": "",
       "default": "",

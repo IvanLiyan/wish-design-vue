@@ -7,6 +7,7 @@
         :clearable="clearable"
         :disabled="disabled"
         @close="handleClose"
+        round
       >
         <slot></slot>
       </wt-tag>

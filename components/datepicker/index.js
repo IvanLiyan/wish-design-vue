@@ -1,13 +1,14 @@
+import { withFormItem } from '@components/form-item';
 import DatePicker from './picker/datepicker';
 import CreateComponent from './control';
 import RangeDatePickerPanel from './panel/Date/date-range.vue';
 
-const WtDatePicker = CreateComponent('WtDatePicker', DatePicker);
+const HocDatePicker = withFormItem(DatePicker.name, CreateComponent(DatePicker.name, DatePicker));
 
 /* istanbul ignore next */
-WtDatePicker.install = function (Vue) {
-  Vue.component(WtDatePicker.name, WtDatePicker);
+HocDatePicker.install = function (Vue) {
+  Vue.component(HocDatePicker.name, HocDatePicker);
 };
 
-WtDatePicker.RangeDatePickerPanel = RangeDatePickerPanel;
-export default WtDatePicker;
+HocDatePicker.RangeDatePickerPanel = RangeDatePickerPanel;
+export default HocDatePicker;

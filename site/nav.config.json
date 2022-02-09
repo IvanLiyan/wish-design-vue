@@ -68,9 +68,19 @@
             "cnName": "时间选择框"
           },
           {
+            "path": "form",
+            "name": "Form",
+            "cnName": "表单"
+          },
+          {
             "path": "upload",
             "name": "Upload",
             "cnName": "上传"
+          },
+          {
+            "path": "select",
+            "name": "Select",
+            "cnName": "选择器"
           }
         ]
       },
@@ -96,21 +106,6 @@
             "path": "card",
             "name": "Card",
             "cnName": "卡片"
-          }
-        ]
-      },
-      {
-        "groupName": "Data display",
-        "list": [
-          {
-            "path": "tag",
-            "name": "Tag",
-            "cnName": "标签"
-          },
-          {
-            "path": "select",
-            "name": "Select",
-            "cnName": "选择器"
           }
         ]
       }

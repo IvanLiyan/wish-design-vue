@@ -1,2 +1,56 @@
 @import './common/var.scss';
 @import './mixins/mixins.scss';
+$form-item-label-padding-right: 9px;
+
+@mixin tip {
+  margin-top: 2px;
+  font-size: $font-size-4;
+  line-height: $line-height-4;
+  padding-left: 10px;
+}
+
+@include c(form-item) {
+  margin-bottom: 18px;
+  vertical-align: top;
+  font-size: 0;
+  @include clearfix();
+  &-title {
+    font-size: $h3-font-size;
+    font-weight: $font-weight-medium;
+    line-height: $h3-line-height;
+    margin-bottom: 16px;
+  }
+  &-wrapper {
+    display: inline-block;
+  }
+  &-content {
+    position: relative;
+    // line-height: 34px;
+    text-align: left;
+  }
+  &-error-tip {
+    @include tip();
+    color: $color-danger-1;
+  }
+  &-helper {
+    @include tip();
+    color: $color-text-3;
+  }
+  //   .#{$prefix}-form-item {
+  //     margin-bottom: 16px;
+  //   }
+  //   &-error-bottom {
+  //     margin-bottom: max(9px - 16px, 0);
+  //   }
+  &-required {
+    > .#{$prefix}-form-item-label {
+      &:before {
+        font-family: SimSun, sans-serif;
+        display: inline-block;
+        margin-right: 4px;
+        content: '*';
+        color: red;
+      }
+    }
+  }
+}

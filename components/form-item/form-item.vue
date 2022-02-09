@@ -1,62 +1,40 @@
 <template>
-<div :class="classes">
-  <label :class="`${prefix}-label`" :for="labelFor"
-    :style="labelStyles"
-    v-if="label || $slots.label"
-    ><slot name="label">{{ label }}{{ labelSuffix }}</slot>
-  </label><div
-    :class="`${prefix}-content`" :style="contentStyles">
-    <slot></slot>
-    <transition v-if="helperPlacement === 'right'" name="fade-in"
-      @after-leave="handleAfterLeave">
-      <div :class="`${prefix}-helper ${prefix}-helper-right`"
-        v-if="(helper || $slots.helper)">
-        <slot name="helper">{{ helper }}</slot>
-      </div>
-    </transition>
-    <transition name="fade-in" @after-leave="handleAfterLeave">
-      <div
-        :class="{
-          [`${prefix}-error-tip`]: true,
-          [`${prefix}-error-tip-right`]: validatePlacement === 'right'
-        }"
-        v-if="showError"
-      >
-        <slot :message="validateMessage" name="error">
-          <div v-if="useHtmlMessage" v-html="validateMessage"></div>
-          <template v-else>{{ validateMessage }}</template>
-        </slot>
-      </div>
-    </transition>
-    <transition v-if="helperPlacement !== 'right'" name="fade-in"
-      @after-leave="handleAfterLeave">
-      <div :class="`${prefix}-helper`"
-        v-if="(helper || $slots.helper)">
-        <slot name="helper">{{ helper }}</slot>
-      </div>
-    </transition>
+  <div :class="classes">
+    <!-- <label :class="`${prefix}-label`" :for="labelFor" :style="labelStyles" v-if="label || $slots.label"
+      ><slot name="label">{{ label }}</slot>
+    </label> -->
+    <div :class="`${prefix}-content`">
+      <slot></slot>
+      <transition name="fade-in" @after-leave="handleAfterLeave">
+        <div
+          :class="{
+            [`${prefix}-error-tip`]: true,
+          }"
+          v-if="showError"
+        >
+          <slot :message="validateMessage" name="error">
+            <!-- <div v-if="useHtmlMessage" v-html="validateMessage"></div> -->
+            <template>{{ validateMessage }}</template>
+          </slot>
+        </div>
+      </transition>
+      <transition v-if="helperPlacement !== 'right'" name="fade-in" @after-leave="handleAfterLeave">
+        <div :class="`${prefix}-helper`" v-if="helper || $slots.helper">
+          <slot name="helper">{{ helper }}</slot>
+        </div>
+      </transition>
+    </div>
   </div>
-</div>
 </template>
 <script>
 import AsyncValidator from 'async-validator';
 import { getPropByPath } from '@/utils/util';
 import { hasProps } from '@/utils/vnode';
-import {
-  CONFIG_PROVIDER,
-  getPrefixCls,
-} from '@/utils/config';
+import { CONFIG_PROVIDER, getPrefixCls } from '@/utils/config';
 
 export default {
   name: 'WtFormItem',
   props: {
-    label: {
-      type: String,
-      default: '',
-    },
-    labelWidth: {
-      type: Number,
-    },
     prop: {
       type: String,
     },
@@ -76,16 +54,14 @@ export default {
     showMessage: {
       type: Boolean,
     },
-    labelFor: {
-      type: String,
-    },
+
     helper: {
       type: String,
     },
     helperPlacement: {
       type: String,
       default: 'bottom',
-      validator (v) {
+      validator(v) {
         return ['right', 'bottom'].indexOf(v) > -1;
       },
     },
@@ -98,12 +74,12 @@ export default {
       type: String,
     },
   },
-  provide () {
+  provide() {
     return {
       formItem: this,
     };
   },
-  data () {
+  data() {
     return {
       validateState: this.error ? 'error' : '',
       validateMessage: this.error || '',
@@ -112,28 +88,28 @@ export default {
     };
   },
   computed: {
-    isRequired () {
+    isRequired() {
       const rules = this.getRules();
       if (rules.length) {
-        return rules.some(rule => {
+        return rules.some((rule) => {
           return rule.required;
         });
       }
       return false;
     },
-    prefix () {
+    prefix() {
       return this.config.getPrefixCls('form-item');
     },
-    isNested () {
+    isNested() {
       return this.formItem && this.form === this.formItem.form;
     },
-    needShowError () {
+    needShowError() {
       return hasProps(this, 'showMessage') ? this.showMessage : this.form.showMessage;
     },
-    showError () {
+    showError() {
       return this.validateMessage && this.needShowError;
     },
-    classes () {
+    classes() {
       const { isFadeIn, validateState, prefix } = this;
       const error = (isFadeIn && validateState !== 'warning') || validateState === 'error';
       return {
@@ -148,7 +124,7 @@ export default {
     },
     fieldValue: {
       cache: false,
-      get () {
+      get() {
         const model = this.form.model;
         if (!model || !this.prop) {
           return;
@@ -162,15 +138,13 @@ export default {
         return getPropByPath(model, path).v;
       },
     },
-    realLabelWidth () {
-      return this.labelWidth || this.labelWidth === 0
-        ? this.labelWidth
-        : this.form.labelWidth;
+    realLabelWidth() {
+      return this.labelWidth || this.labelWidth === 0 ? this.labelWidth : this.form.labelWidth;
     },
-    $labelPosition () {
+    $labelPosition() {
       return this.labelPosition || this.form.labelPosition;
     },
-    labelStyles () {
+    labelStyles() {
       const style = {};
       if (this.$labelPosition === 'top') {
         return style;
@@ -181,40 +155,36 @@ export default {
       }
       return style;
     },
-    contentStyles () {
-      const style = {};
-      if (this.$labelPosition === 'top') {
-        return style;
-      }
-      if ((this.form.inline || this.isNested) &&
-        !this.label && !this.$slots.label) {
-        return style;
-      }
-      const labelWidth = this.realLabelWidth;
-      if (labelWidth) {
-        style.marginLeft = `${labelWidth}px`;
-      }
-      return style;
-    },
-    isStatusControl () {
+    // contentStyles() {
+    //   const style = {};
+    //   if (this.$labelPosition === 'top') {
+    //     return style;
+    //   }
+    //   if ((this.form.inline || this.isNested) && !this.label && !this.$slots.label) {
+    //     return style;
+    //   }
+    //   const labelWidth = this.realLabelWidth;
+    //   if (labelWidth) {
+    //     style.marginLeft = `${labelWidth}px`;
+    //   }
+    //   return style;
+    // },
+    isStatusControl() {
       return 'validateStatus' in this.$options.propsData;
     },
-    state () {
+    state() {
       return this.isStatusControl ? this.validateStatus : this.validateState;
-    },
-    labelSuffix () {
-      return this.form.labelSuffix;
     },
   },
   watch: {
-    error (val) {
+    error(val) {
       this.validateMessage = val;
       this.validateState = val === '' ? '' : 'error';
     },
-    validateStatus (val) {
+    validateStatus(val) {
       this.validateState = val;
     },
-    showError (n) {
+    showError(n) {
       if (n) {
         this.isFadeIn = true;
       }
@@ -234,7 +204,7 @@ export default {
       },
     },
   },
-  mounted () {
+  mounted() {
     if (this.prop) {
       this.form.$emit('addFormItem', this);
 
@@ -245,11 +215,11 @@ export default {
       this.$on('formChange', this.onFieldChange);
     }
   },
-  beforeDestroy () {
+  beforeDestroy() {
     this.form.$emit('removeFormItem', this);
   },
   methods: {
-    getRules () {
+    getRules() {
       let formRules = this.form.rules;
       const selfRules = this.rules;
 
@@ -257,18 +227,16 @@ export default {
 
       const rules = [].concat(selfRules || formRules || []);
       if (this.required && rules.every((rule) => !rule.required)) {
-        rules.push({ required: true });
+        rules.push({ required: true, message: '必填' });
       }
       return rules;
     },
-    getFilteredRule (trigger) {
+    getFilteredRule(trigger) {
       const rules = this.getRules();
 
-      return rules.filter(
-        rule => !trigger || !rule.trigger || rule.trigger.indexOf(trigger) > -1,
-      );
+      return rules.filter((rule) => !trigger || !rule.trigger || rule.trigger.indexOf(trigger) > -1);
     },
-    validate (trigger, callback = function () {}) {
+    validate(trigger, callback = function () {}) {
       const rules = this.getFilteredRule(trigger);
       if (!rules || rules.length === 0) {
         callback();
@@ -287,17 +255,16 @@ export default {
       };
 
       model[this.prop] = this.fieldValue;
-      const firstFields = this.form.firstFields;
 
-      validator.validate(model, { firstFields }, errors => {
-        this.validateState = !errors ? 'success' : (isWeak ? 'warning' : 'error');
+      validator.validate(model, (errors) => {
+        this.validateState = !errors ? 'success' : isWeak ? 'warning' : 'error';
         this.validateMessage = errors ? errors[0].message : '';
 
         callback(isWeak ? '' : this.validateMessage);
       });
       this.validateDisabled = false;
     },
-    resetField () {
+    resetField() {
       this.validateState = '';
       this.validateMessage = '';
 
@@ -316,16 +283,16 @@ export default {
         prop.o[prop.k] = this.initialValue;
       }
     },
-    clearValidate () {
+    clearValidate() {
       this.validateState = '';
       this.validateMessage = '';
       this.validateDisabled = false;
     },
 
-    onFieldBlur () {
+    onFieldBlur() {
       this.validate('blur');
     },
-    onFieldChange () {
+    onFieldChange() {
       if (this.validateDisabled) {
         this.validateDisabled = false;
         return;
@@ -333,7 +300,7 @@ export default {
 
       this.validate('change');
     },
-    handleAfterLeave () {
+    handleAfterLeave() {
       this.isFadeIn = false;
     },
   },

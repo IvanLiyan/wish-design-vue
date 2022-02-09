@@ -6,7 +6,7 @@
         [`${inputPrefix}-${type}`]: type,
         [`${inputPrefix}-with-label`]: label,
         [`${inputPrefix}-disabled`]: disabled,
-        [`${inputPrefix}-invalid`]: isInvalid && !focused,
+        [`${inputPrefix}-invalid`]: isInvalid,
         [`${inputPrefix}-focused`]: focused,
       }"
       :style="fullWidth ? { width: '100%' } : {}"
@@ -37,10 +37,11 @@
         <slot name="suffix"></slot>
       </div>
     </fieldset>
-    <div :class="`${inputPrefix}-tip`">
+    <!-- <div :class="`${inputPrefix}-tip`" v-if="isInvalid">
       <span v-if="isInvalid && !focused">{{ validationText }}</span>
       <em v-if="type === 'textarea'"> {{ inputValue.length }}/ {{ maxLength }}</em>
-    </div>
+    </div> -->
+    <em v-if="type === 'textarea' && isInvalid"> {{ inputValue.length }}/ {{ maxLength }}</em>
   </div>
 </template>
 <script>
@@ -115,7 +116,7 @@ export default {
       return tip;
     },
     inputValue() {
-      let value = this.noModel ? this.nativeValue : this.value || '';
+      let value = (this.noModel ? this.nativeValue : this.value) || '';
       if (this.type !== 'textarea') {
         value = value.slice(0, this.maxLength);
       }

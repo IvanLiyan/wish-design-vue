@@ -1,174 +1,139 @@
 <template>
-  <wt-form :model="formCustom" ref="formCustom" :rules="ruleCustom">
-    <wt-form-item label="主机名称" prop="hostname">
-      <wt-input type="text" v-model="formCustom.hostname" style="width: 260px;" />
+  <wt-form ref="formCustom" title="法人信息" :rules="ruleCustom" :model="formCustom" :first-fields="true">
+    <wt-row :gutter="20">
+      <wt-col :span="12">
+        <wt-form-item prop="username" helper="提现操作仅限于此真实姓名下的银行卡。" required>
+          <wt-input label="法人代表姓名" placeholder="大陆身份证" v-model="formCustom.username" />
+        </wt-form-item>
+      </wt-col>
+      <wt-col :span="12">
+        <wt-form-item prop="idCard" required :rules="idRule">
+          <wt-input label="身份证号" placeholder="大陆身份证" v-model="formCustom.idCard" />
+        </wt-form-item>
+      </wt-col>
+    </wt-row>
+
+    <wt-row :gutter="20">
+      <wt-col :span="8">
+        <wt-form-item prop="nation" required>
+          <wt-select v-model="formCustom.nation" label="国家">
+            <wt-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value" />
+          </wt-select>
+        </wt-form-item>
+      </wt-col>
+      <wt-col :span="8">
+        <wt-form-item prop="time" required>
+          <wt-time-picker type="time" v-model="formCustom.time" />
+        </wt-form-item>
+      </wt-col>
+      <wt-col :span="8">
+        <wt-form-item prop="date" required>
+          <wt-date-picker type="date" v-model="formCustom.date" />
+        </wt-form-item>
+      </wt-col>
+    </wt-row>
+
+    <wt-form-item prop="checkboxValue" required>
+      <wt-checkbox-group arrange="horizontal" v-model="formCustom.checkboxValue">
+        <wt-checkbox value="checkbox1">checkbox1</wt-checkbox>
+        <wt-checkbox value="checkbox2">checkbox2</wt-checkbox>
+        <wt-checkbox value="checkbox3">checkbox3</wt-checkbox>
+        <wt-checkbox value="checkbox4">checkbox4</wt-checkbox>
+      </wt-checkbox-group>
     </wt-form-item>
-    <wt-form-item label="管理员" prop="owner">
-      {{ formCustom.owner }}
-    </wt-form-item>
-    <wt-form-item label="机房区域" prop="curzone">
-      <wt-input-group compact>
-        <wt-select type="text" v-model="formCustom.curzone" style="width: 100px;">
-          <wt-option :key="item.value"
-            v-for="item in list1"
-            :value="item.value"
-            :label="item.label" />
-        </wt-select>
-        <wt-select type="text" v-model="formCustom.curhost">
-          <wt-option :key="item.value"
-            v-for="item in list1.filter(v => v.value === formCustom.curzone).length
-            ? list1.filter(v => v.value === formCustom.curzone)[0].children
-            : []"
-            :value="item.value"
-            :label="item.label" />
-        </wt-select>
-      </wt-input-group>
-    </wt-form-item>
-    <wt-form-item label="类型" prop="type">
-      <wt-radio-group v-model="formCustom.type">
-        <wt-radio value="windows">windows</wt-radio>
-        <wt-radio value="linux">Linux</wt-radio>
+
+    <wt-form-item prop="radioValue" required>
+      <wt-radio-group v-model="formCustom.radioValue" arrange="horizontal">
+        <wt-radio value="radio1">radio1</wt-radio>
+        <wt-radio value="radio2">radio2</wt-radio>
+        <wt-radio value="radio3">radio3</wt-radio>
+        <wt-radio value="radio4">radio4</wt-radio>
       </wt-radio-group>
     </wt-form-item>
-    <wt-form-item label="CPU" prop="cpu">
-      <wt-radio-group v-model="formCustom.cpu">
-        <wt-radio-button value="2">2核</wt-radio-button>
-        <wt-radio-button value="4">4核</wt-radio-button>
-        <wt-radio-button value="8">8核</wt-radio-button>
-        <wt-radio-button value="16">16核</wt-radio-button>
-      </wt-radio-group>
+
+    <wt-form-item prop="switchValue" required>
+      <wt-switch v-model="formCustom.switchValue">item content</wt-switch>
     </wt-form-item>
-    <wt-form-item label="标签" prop="tags">
-      <wt-select v-model="formCustom.tags" placeholder="请选择" multiple style="width: 260px;">
-        <wt-option
-          v-for="item in list2"
-          :key="item.value"
-          :label="item.label"
-          :value="item.value" />
-      </wt-select>
-    </wt-form-item>
-    <wt-form-item label="描述" prop="desc">
-      <wt-textarea placeholder="描述文本"
-        v-model="formCustom.desc" style="width: 260px;"
-        rows="3" maxlength="50" />
-    </wt-form-item>
-    <wt-form-item>
-      <wt-button type="primary" style="margin-right: 12px;"
-        @click="handleSubmit('formCustom')">
-        立即创建
-      </wt-button>
-      <wt-button @click="handleReset('formCustom')">取消</wt-button>
-    </wt-form-item>
+    <div>
+      <wt-button type="text" @click="reset">重置</wt-button>
+      <wt-button type="text" @click="clear">清空数据</wt-button>
+
+      <wt-button type="text" @click="clearValidate">移除校验</wt-button>
+      <wt-button @click="submit">提交</wt-button>
+    </div>
   </wt-form>
 </template>
 <script>
+const validatePassword = (rule, value, callback) => {
+  if (!/^[a-zA-Z0-9]{6,16}$/.test(value)) {
+    callback(new Error('只能输入6-16个字符且仅为字母,数字'));
+  } else {
+    callback();
+  }
+};
+const initialData = {
+  username: '',
+  idCard: '',
+  checkboxValue: ['checkbox1', 'checkbox3'],
+  radioValue: 'radio1',
+  switchValue: false,
+  nation: null,
+  time: null,
+  date: null,
+};
+
 export default {
-  data () {
-    const validateHostname = (rule, value, callback) => {
-      if (value.trim() === '') {
-        callback(new Error('请输入主机名称'));
-      } else {
-        callback();
-      }
-    };
+  data() {
     return {
-      formCustom: {
-        hostname: '',
-        owner: '李明/liming',
-        curzone: '',
-        curhost: '',
-        type: 'windows',
-        cpu: '2',
-        tags: [],
-      },
+      formCustom: JSON.parse(JSON.stringify(initialData)),
       ruleCustom: {
-        curzone: {
-          required: true,
-          validator: (rule, value, callback) => {
-            if (!this.formCustom.curzone) {
-              return callback(new Error('请选择区域'));
-            } else if (!this.formCustom.curhost) {
-              return callback(new Error('请选择机房'));
-            }
-            callback();
-          },
-        },
-        type: { required: true, message: '必填' },
-        cpu: { required: true, message: '必填' },
-        hostname: [
-          { required: true, message: '必填' },
-          { validator: validateHostname, trigger: 'blur' },
-        ],
+        // username: [{ required: true }],
+        idCard: [{ validator: validatePassword, trigger: 'blur' }],
       },
-      list1: [{
-        value: '1',
-        label: '区域1',
-        children: [{
-          value: '1',
-          label: '主机1',
-        }, {
-          value: '2',
-          label: '主机2',
-        }],
-      }, {
-        value: '2',
-        label: '区域2',
-        children: [{
-          value: '3',
-          label: '主机3',
-        }, {
-          value: '4',
-          label: '主机4',
-        }],
-      }],
-      list2: [{
-        value: 'tag1',
-        label: '标签1',
-      }, {
-        value: 'tag2',
-        label: '标签2',
-      }, {
-        value: 'tag3',
-        label: '标签3',
-      }, {
-        value: 'tag4',
-        label: '标签4',
-      }, {
-        value: 'tag5',
-        label: '标签5',
-      }],
+
+      idRule: {
+        max: 5,
+        message: '身份证号不能多余5位',
+      },
+      options: [
+        {
+          value: 'china',
+          label: '中国',
+        },
+        {
+          value: 'america',
+          label: '美国',
+        },
+        {
+          value: 'japan',
+          label: '日本',
+        },
+        {
+          value: 'france',
+          label: '法国',
+        },
+      ],
     };
   },
   methods: {
-    handleSubmit (name) {
-      this.$refs[name].validate((valid) => {
-        if (valid) {
-          console.log('Success!');
-        } else {
-          console.error('Fail!');
-        }
-      });
+    reset: function () {
+      this.$refs.formCustom.resetFields();
     },
-    handleReset (name) {
-      this.$refs[name].resetFields();
+    clear: function () {
+      this.$refs.formCustom.clearValidate();
+      this.formCustom = {};
+    },
+
+    clearValidate: function () {
+      this.$refs.formCustom.clearValidate();
+    },
+
+    submit: async function () {
+      const valid = this.$refs.formCustom.validateFields();
+      console.log('valid', valid);
+      console.log('data', this.formCustom);
     },
   },
 };
 </script>
-<style lang='scss'>
-  .demo-input-group{
-    >:not(:last-child){
-      .wt-input {
-        border-top-right-radius: 0px;
-        border-bottom-right-radius: 0px;
-        border-right: none;
-      }
-    }
-    >:not(:first-child){
-      .wt-input {
-        border-top-left-radius: 0px;
-        border-bottom-left-radius: 0px;
-      }
-    }
-  }
-</style>
+<style lang="scss"></style>
