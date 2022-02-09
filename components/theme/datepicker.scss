@@ -33,15 +33,23 @@
       margin: $date-picker-cell-offset 0;
       padding: 0 $date-picker-cell-padding-horizontal;
       display: inline-block;
-      line-height: $date-picker-cell-size - 2px;
+      line-height: $date-picker-cell-size - 4px;
       text-align: center;
       font-size: $date-picker-cells-cell-font-size;
       transition: all .1s ease-in-out;
+      margin: 4px -2px;
+      .header-em {
+        width: 28px;
+        height: 28px;
+        margin: 0 4px;
+        font-size: 12px;
+      }
       em{
         display: inline-block;
         border-radius: $date-picker-cell-border-radius;
-        width: $date-picker-cell-size;
-        height: $date-picker-cell-size;
+        width: 28px;
+        height: 28px;
+        margin: 0 4px;
         border: 1px solid transparent;
         font-style: normal;
         box-sizing: border-box;
@@ -134,7 +142,7 @@
       padding: 0;
       margin: $date-picker-month-cell-margin-y $date-picker-month-cell-margin-x;
       em{
-        width: 100%;
+        width: 64px;
         height: 100%;
       }
     }
@@ -147,7 +155,9 @@
   &-time-header {
     padding: 8px 0px;
     text-align: left;
-    border-bottom: 1px solid $date-picker-border-color;
+    display: flex;
+    // border-bottom: 1px solid $date-picker-border-color;
+    border-top: 1px solid #F0F5F7;
     .#{$prefix}-input-wrapper{
       width: $date-picker-header-input-size;
     }
@@ -213,6 +223,7 @@
   position: relative;
   // sidebar
   &-sidebar{
+    border-bottom: 1px solid #F0F5F7;
     position: absolute;
     top: 0;
     bottom: 0;
@@ -253,8 +264,8 @@
     font-size: $font-size-1;
     .#{$prefix}-date-picker-cells-month, .#{$prefix}-date-picker-cells-year {
       .#{$prefix}-date-picker-cells-cell{
-        margin: 8px 6px;
-        width: 64px;
+        margin: 8px -4px;
+        width: 76px;
       }
     }
   }
@@ -285,7 +296,7 @@
 .#{$prefix}-picker-confirm{
   width: 484px;
   clear: both;
-  border-top: 1px solid $date-picker-border-color;
+  // border-top: 1px solid $date-picker-border-color;
   padding: 8px 16px;
   text-align: right;
   .#{$prefix}-button + .#{$prefix}-button{

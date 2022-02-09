@@ -82,7 +82,7 @@ export default {
         }
         cells.push(cell);
       }
-
+      console.log('cells', cells);
       return cells;
     },
   },

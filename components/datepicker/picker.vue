@@ -443,6 +443,7 @@ export default {
       }
       if (type.match(/^date/) || type.match(/^week/)) type = 'date';
       if (type.match(/^month/)) type = 'month';
+      if (type.match(/^year/)) type = 'year';
       if (['year', 'month', 'date', 'time'].indexOf(type) > -1) {
         this.selectionMode = type;
       }

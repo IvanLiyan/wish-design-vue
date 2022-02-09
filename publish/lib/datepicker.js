@@ -2129,7 +2129,7 @@ __webpack_require__.r(__webpack_exports__);
   props: {
     type: {
       validator: function validator(value) {
-        return ['year', 'month', 'date', 'daterange', 'datetime', 'datetimerange', 'week', 'monthrange', 'weekrange'].indexOf(value) > -1;
+        return ['year', 'month', 'date', 'daterange', 'datetime', 'datetimerange', 'week', 'monthrange', 'weekrange', 'yearrange'].indexOf(value) > -1;
       },
 
       default: 'date'
@@ -3919,7 +3919,8 @@ var DEFAULT_FORMATS = {
   monthrange: 'yyyy-MM',
   datetimerange: 'yyyy-MM-dd HH:mm:ss',
   week: 'yyyy-WW',
-  weekrange: 'yyyy-WW'
+  weekrange: 'yyyy-WW',
+  yearrange: 'yyyy'
 };
 
 var formatDate = function formatDate(date, format) {
@@ -4074,6 +4075,10 @@ var TYPE_VALUE_RESOLVER_MAP = {
     parser: RANGE_PARSER
   },
   monthrange: {
+    formatter: RANGE_FORMATTER,
+    parser: RANGE_PARSER
+  },
+  yearrange: {
     formatter: RANGE_FORMATTER,
     parser: RANGE_PARSER
   },
@@ -4665,7 +4670,7 @@ __webpack_require__.r(__webpack_exports__);
         return Object(_utils_date__WEBPACK_IMPORTED_MODULE_1__["clearHours"])(new Date(date.getFullYear(), date.getMonth(), 1));
       });
       var focusedDate = Object(_utils_date__WEBPACK_IMPORTED_MODULE_1__["clearHours"])(new Date(this.focusedDate.getFullYear(), this.focusedDate.getMonth(), 1));
-      var isRange = this.selectionMode === 'range' && this.pickerType === 'monthrange';
+      var isRange = this.selectionMode === 'range' && (this.pickerType === 'monthrange' || this.pickerType === 'yearrange');
       var _rangeState = this.rangeState,
           from = _rangeState.from,
           to = _rangeState.to;
@@ -4675,7 +4680,7 @@ __webpack_require__.r(__webpack_exports__);
         cell.date = new Date(tableYear, i, 1);
         cell.desc = this.tCell(i + 1);
         var day = Object(_utils_date__WEBPACK_IMPORTED_MODULE_1__["clearHours"])(cell.date);
-        cell.disabled = (this.selectionMode === 'month' || this.pickerType === 'monthrange') && typeof this.disabledDate === 'function' && this.disabledDate(cell.date);
+        cell.disabled = (this.selectionMode === 'month' || this.pickerType === 'monthrange' || this.pickerType === 'yearrange') && typeof this.disabledDate === 'function' && this.disabledDate(cell.date);
         cell.selected = selectedDays.indexOf(day) > -1;
         cell.focused = day === focusedDate;
         if (isRange && !cell.selected) {

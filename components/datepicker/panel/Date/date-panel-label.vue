@@ -32,15 +32,18 @@ export default {
     datePanelLabel: Object,
     currentView: String,
     datePrefixCls: String,
+    position: String,
   },
   computed: {
     yearRangeValue () {
-      if (this.$props.currentView === 'year') {
-        const startYear = this.$props.datePanelLabel.labels[0].label.substr(0, 3) + '0';
-        const endYear = parseInt(startYear) + 11;
+      if (this.$props.currentView === 'year' && this.$props.position === 'right') {
+        const startYear = parseInt(this.$props.datePanelLabel.labels[0].label.substr(0, 3) + '0') + 12;
+        const endYear = startYear + 11;
         return startYear + ' - ' + endYear;
       } else {
-        return '';
+        const startYear = Math.floor(parseInt(this.$props.datePanelLabel.labels[0].label) / 10) * 10;
+        const endYear = parseInt(startYear) + 11;
+        return startYear + ' - ' + endYear;
       };
     },
   },

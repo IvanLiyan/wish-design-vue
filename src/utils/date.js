@@ -34,6 +34,7 @@ export const DEFAULT_FORMATS = {
   datetimerange: 'yyyy-MM-dd HH:mm:ss',
   week: 'yyyy-WW',
   weekrange: 'yyyy-WW',
+  yearrange: 'yyyy',
 };
 
 const formatDate = function (date, format, options = {}) {
@@ -192,6 +193,10 @@ export const TYPE_VALUE_RESOLVER_MAP = {
     parser: RANGE_PARSER,
   },
   monthrange: {
+    formatter: RANGE_FORMATTER,
+    parser: RANGE_PARSER,
+  },
+  yearrange: {
     formatter: RANGE_FORMATTER,
     parser: RANGE_PARSER,
   },

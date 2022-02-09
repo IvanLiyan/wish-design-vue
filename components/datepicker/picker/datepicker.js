@@ -13,6 +13,7 @@ export default {
           'daterange', 'datetime',
           'datetimerange', 'week',
           'monthrange', 'weekrange',
+          'yearrange',
         ].indexOf(value) > -1;
       },
       default: 'date',

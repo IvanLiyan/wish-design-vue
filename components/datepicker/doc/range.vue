@@ -13,7 +13,7 @@
       />
     </div>
     <!-- <div class="demo-picker-group">
-      <wt-date-picker type="weekrange"
+      <wt-date-picker type="yearrange"
         v-model="value6"
         placeholder="选择时间" style="width: 240px;"
       />
