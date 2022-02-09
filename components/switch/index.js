@@ -1,6 +1,12 @@
 import Switch from './switch.vue';
+import { withFormItem } from '@components/form-item';
+
 /* istanbul ignore next */
-Switch.install = function (Vue) {
-  Vue.component(Switch.name, Switch);
+const HocSwitch = withFormItem(Switch.name, Switch);
+
+/* istanbul ignore next */
+HocSwitch.install = function (Vue) {
+  Vue.component(HocSwitch.name, HocSwitch);
 };
-export default Switch;
+
+export default HocSwitch;

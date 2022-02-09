@@ -12,32 +12,43 @@ function noop() {}
 export default {
   name: 'WtForm',
   props: {
+    /**
+     * 表单标题
+     */
     title: String,
+    /**
+     * 表单数据对象
+     */
     model: {
       type: Object,
     },
+    /**
+     * 校验规则
+     */
     rules: {
       type: Object,
     },
-    labelWidth: {
-      type: Number,
-      default: 100,
-    },
-    labelPosition: {
-      type: String,
-      validator(value) {
-        return ['right', 'top'].indexOf(value) > -1;
-      },
-      default: 'right',
-    },
+
+    /**
+     * 是否显示校验信息
+     */
     showMessage: {
       type: Boolean,
       default: true,
     },
-    inline: {
+    /**
+     * 是否禁用该表单内的所有组件
+     */
+    disabled: Boolean, // use in form-item HOC
+
+    /**
+     * 是否在 rules 属性改变后立即触发一次验证
+     */
+    validateOnRuleChange: {
       type: Boolean,
-      default: false,
+      default: true,
     },
+
     autocomplete: {
       type: String,
       validator(value) {
@@ -45,16 +56,6 @@ export default {
       },
       default: 'off',
     },
-    firstFields: {
-      type: Boolean,
-      default: true,
-    },
-    validateOnRuleChange: {
-      type: Boolean,
-      default: true,
-    },
-    disabled: Boolean, // use in form-item HOC
-    labelSuffix: String,
   },
   provide() {
     return { form: this };
@@ -78,13 +79,7 @@ export default {
     },
     classes() {
       const { prefix } = this;
-      return [
-        prefix,
-        `${prefix}-${this.labelPosition}`,
-        {
-          [`${prefix}-inline`]: this.inline,
-        },
-      ];
+      return [prefix];
     },
   },
   watch: {

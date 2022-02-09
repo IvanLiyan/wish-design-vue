@@ -1,11 +1,14 @@
 import { withRadioGroup } from '@components/radio-group';
+import { withFormItem } from '@components/form-item';
 import Radio from './radio.vue';
 
-const RadioCom = withRadioGroup(Radio.name, Radio);
+const HocRadio = withFormItem(Radio.name, withRadioGroup('', Radio));
 
 /* istanbul ignore next */
-RadioCom.install = function (Vue) {
-  Vue.component(RadioCom.name, RadioCom);
+HocRadio.install = function (Vue) {
+  Vue.component(HocRadio.name, HocRadio);
 };
 
-export default RadioCom;
+/* istanbul ignore next */
+
+export default HocRadio;

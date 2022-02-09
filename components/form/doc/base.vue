@@ -1,5 +1,12 @@
 <template>
-  <wt-form ref="formCustom" title="法人信息" :rules="ruleCustom" :model="formCustom">
+  <wt-form
+    ref="formCustom"
+    title="法人信息"
+    :rules="ruleCustom"
+    :model="formCustom"
+    :first-fields="true"
+    label-suffix="asdf"
+  >
     <wt-row :gutter="20">
       <wt-col :span="12">
         <wt-form-item prop="username" helper="提现操作仅限于此真实姓名下的银行卡。" required>
@@ -35,8 +42,11 @@
       <wt-switch v-model="formCustom.switchValue">item content</wt-switch>
     </wt-form-item>
     <div>
-      <wt-button @click="submit">提交</wt-button>
       <wt-button type="text" @click="reset">重置</wt-button>
+      <wt-button type="text" @click="clear">清空数据</wt-button>
+
+      <wt-button type="text" @click="clearValidate">移除校验</wt-button>
+      <wt-button @click="submit">提交</wt-button>
     </div>
   </wt-form>
 </template>
@@ -68,11 +78,18 @@ export default {
   },
   methods: {
     reset: function () {
-      this.formCustom = JSON.parse(JSON.stringify(initialData));
+      this.$refs.formCustom.resetFields();
+    },
+    clear: function () {
+      this.$refs.formCustom.clearValidate();
+      this.formCustom = {};
+    },
+
+    clearValidate: function () {
       this.$refs.formCustom.clearValidate();
     },
+
     submit: async function () {
-      // const res = await this.$refs.formCustom.validate();
       const valid = this.$refs.formCustom.validateFields();
       console.log('valid', valid);
       console.log('data', this.formCustom);

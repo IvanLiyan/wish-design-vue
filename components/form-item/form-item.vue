@@ -1,7 +1,7 @@
 <template>
   <div :class="classes">
     <label :class="`${prefix}-label`" :for="labelFor" :style="labelStyles" v-if="label || $slots.label"
-      ><slot name="label">{{ label }}{{ labelSuffix }}</slot>
+      ><slot name="label">{{ label }}</slot>
     </label>
     <div :class="`${prefix}-content`">
       <slot></slot>
@@ -184,9 +184,6 @@ export default {
     state() {
       return this.isStatusControl ? this.validateStatus : this.validateState;
     },
-    labelSuffix() {
-      return this.form.labelSuffix;
-    },
   },
   watch: {
     error(val) {
@@ -267,9 +264,8 @@ export default {
       };
 
       model[this.prop] = this.fieldValue;
-      const firstFields = this.form.firstFields;
 
-      validator.validate(model, { firstFields }, (errors) => {
+      validator.validate(model, (errors) => {
         this.validateState = !errors ? 'success' : isWeak ? 'warning' : 'error';
         this.validateMessage = errors ? errors[0].message : '';
 
