@@ -45,25 +45,25 @@ export default {
     return {
       options: [
         {
-          value: '李白',
-          label: '李白',
+          value: 'apple',
+          label: 'apple',
         },
         {
-          value: '李贺',
-          label: '李贺',
+          value: 'orange',
+          label: 'orange',
         },
         {
-          value: '杜甫',
-          label: '杜甫',
+          value: 'watermelon',
+          label: 'watermelon',
           disabled: true,
         },
         {
-          value: '白居易',
-          label: '白居易',
+          value: 'grape',
+          label: 'grape',
         },
         {
-          value: '屈原',
-          label: '屈原',
+          value: 'banana',
+          label: 'banana',
         },
       ],
       value: '',

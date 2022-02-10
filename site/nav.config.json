@@ -101,6 +101,11 @@
             "path": "card",
             "name": "Card",
             "cnName": "卡片"
+          },
+          {
+            "path": "loading",
+            "name": "Loading",
+            "cnName": "加载中"
           }
         ]
       }
