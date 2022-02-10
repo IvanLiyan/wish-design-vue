@@ -6,6 +6,7 @@
       [`${prefix}-multiple-${genre}`]: genre,
       [`${prefix}-disabled`]: disabled,
       [`${prefix}-multiple`]: multiple,
+      [`${prefix}-with-label`]: label,
       [`${prefix}-multiple-invalid`]: multiple && invalid,
       [`${prefix}-multiple-focus`]: multiple && opened,
     }"

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="content">
     <wt-select v-model="value" style="margin-right: 50px" label="国家">
       <wt-option
         v-for="item in options"
@@ -54,3 +54,10 @@ export default {
   },
 };
 </script>
+<style lang="scss" scoped>
+.content {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+</style>

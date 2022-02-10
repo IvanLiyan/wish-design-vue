@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="type-and-use-size">
-      <wt-select v-model="value" multiple label="渠道">
+      <wt-select v-model="value" multiple label="国家">
         <wt-option
           v-for="item in options"
           :key="item.value"

@@ -28,7 +28,7 @@ $select-tags-padding-left: 4px;
     // }
   }
   &-with-label {
-    height: $input-height + $legend-height/2;
+    margin-top: 8px;
   }
   legend {
     @include reset-form;
@@ -51,6 +51,7 @@ $select-tags-padding-left: 4px;
       color: $color-primary-1 !important;
     }
   }
+
   .#{$prefix}-input {
     overflow: hidden;
     text-overflow: ellipsis;
@@ -68,6 +69,7 @@ $select-tags-padding-left: 4px;
   .#{$prefix}-input-disabled .#{$prefix}-input {
     cursor: not-allowed;
   }
+
   .#{$prefix}-input-suffix-inner {
     position: absolute;
     right: 10px;
