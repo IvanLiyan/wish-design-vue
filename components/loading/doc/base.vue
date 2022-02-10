@@ -1,3 +1,3 @@
 <template>
-  <wt-loading />
+  <wt-loading message="loading" />
 </template>

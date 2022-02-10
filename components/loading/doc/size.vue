@@ -1,16 +1,16 @@
 <template>
   <div>
     <div class="demo-loading-group">
-      <wt-loading size="small" />
-      <div>小</div>
+      <wt-loading size="small" message="loading..." />
+      <div class="bold">small</div>
     </div>
     <div class="demo-loading-group">
-      <wt-loading />
-      <div>中</div>
+      <wt-loading message="loading..." />
+      <div class="bold">normal</div>
     </div>
     <div class="demo-loading-group">
-      <wt-loading size="large" />
-      <div>大</div>
+      <wt-loading size="large" message="loading..." />
+      <div class="bold">large</div>
     </div>
   </div>
 </template>
@@ -19,6 +19,11 @@
   display: inline-block;
   i {
     margin-bottom: 4px;
+  }
+  .bold {
+    font-weight: bold;
+    margin-top: 15px;
+    font-size: 16px;
   }
 }
 .demo-loading-group + .demo-loading-group {

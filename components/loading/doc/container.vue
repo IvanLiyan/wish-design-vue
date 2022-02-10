@@ -1,7 +1,7 @@
 <template>
   <div class="content">
     <wt-switch v-model="loading" class="switch" />
-    <wt-loading :loading="loading" :delay="500">
+    <wt-loading message="loading" :loading="loading" :delay="500">
       <wt-card class="card" title="Container shows loading title" subtitle="Container shows loading subtitle" />
     </wt-loading>
   </div>
