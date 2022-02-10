@@ -290,16 +290,16 @@ export default {
       const reference = this.getReference();
       if (reference) {
         switch (this.trigger) {
-        case 'click':
-          this.addPopperClickListener();
-          break;
-        case 'hover':
-          this.addPopperHoverListener();
-          break;
-        case 'focus':
-          // 暂时不管能否 focus
-          this.addPopperFocusListener();
-          break;
+          case 'click':
+            this.addPopperClickListener();
+            break;
+          case 'hover':
+            this.addPopperHoverListener();
+            break;
+          case 'focus':
+            // 暂时不管能否 focus
+            this.addPopperFocusListener();
+            break;
         }
       }
     },
