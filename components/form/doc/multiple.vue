@@ -12,11 +12,9 @@
     <wt-form-item prop="idCard" required :span="12" helper=" " :style="{ 'padding-left': '10px' }">
       <wt-input label="身份证号" placeholder="大陆身份证" v-model="formCustom.idCard" />
     </wt-form-item>
-
     <wt-form-item prop="username" :span="12" required :style="{ 'padding-right': '10px' }">
       <div></div>
     </wt-form-item>
-
     <wt-form-item prop="nation" required :span="6" :style="{ 'padding-left': '10px' }">
       <wt-select v-model="formCustom.nation" label="身份证有效期限">
         <wt-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value" />
@@ -25,12 +23,9 @@
     <wt-form-item prop="date" required :span="6">
       <wt-date-picker type="date" v-model="formCustom.date" />
     </wt-form-item>
-
     <div>
-      <wt-button type="text" @click="reset">重置</wt-button>
-
-      <wt-button type="text" @click="clearValidate">移除校验</wt-button>
       <wt-button @click="submit">提交</wt-button>
+      <wt-button type="text" @click="reset">重置</wt-button>
     </div>
   </wt-form>
 </template>
@@ -58,13 +53,7 @@ export default {
     return {
       formCustom: JSON.parse(JSON.stringify(initialData)),
       ruleCustom: {
-        // username: [{ required: true }],
         idCard: [{ validator: validatePassword, trigger: 'blur' }],
-      },
-
-      idRule: {
-        max: 5,
-        message: '身份证号不能多余5位',
       },
       options: [
         {
@@ -89,19 +78,17 @@ export default {
   methods: {
     reset: function () {
       this.$refs.form.resetFields();
-      console.log('data', this.formCustom);
     },
-
-    clearValidate: function () {
-      this.$refs.form.clearValidate();
-    },
-
     submit: async function () {
       const valid = this.$refs.form.validateFields();
-      console.log('this', this, valid);
+      if (valid) {
+        this.$wt.notify({
+          type: 'success',
+          message: 'Submit success',
+        });
+      }
       console.log('data', this.formCustom);
     },
   },
 };
 </script>
-<style lang="scss"></style>
