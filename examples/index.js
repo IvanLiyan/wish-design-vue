@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import 'babel-polyfill';
-import MTD from '@/index.js';
+import WT from '@/index.js';
 import router from './routes';
 import App from './app';
 import DemoBlok from './components/demo-block';
@@ -14,7 +14,7 @@ import VersionTag from './components/version-tag.vue';
 import ApiDoc from './components/api-doc';
 
 Vue.config.devtools = true;
-Vue.use(MTD);
+Vue.use(WT);
 Vue.component('demo-block', DemoBlok);
 Vue.component('design-tag', DesignTag);
 Vue.component('version-tag', VersionTag);
@@ -47,8 +47,7 @@ if (window.MTD_Frame) {
             {
               title: '代码仓库 <i class="mtdicon mtdicon-forward-o"></i>',
               value: 'code',
-              href:
-                'https://dev.sankuai.com/code/repo-detail/ss/mtd-vue/file/list',
+              href: 'https://dev.sankuai.com/code/repo-detail/ss/mtd-vue/file/list',
               target: '_blank',
             },
           ],
@@ -56,22 +55,20 @@ if (window.MTD_Frame) {
       },
     },
     feedback: {
-      feedback:
-        'https://tt.sankuai.com/ticket/create?cid=112&tid=2189&iid=9445',
+      feedback: 'https://tt.sankuai.com/ticket/create?cid=112&tid=2189&iid=9445',
       feedback_list: 'https://tt.sankuai.com/ticket/handle?filter=createdBy',
-      dxQRCode:
-        'https://msstest.sankuai.com/v1/mss_d895c43e068542d6986e312787d9109d/test/ss-home/qrcode.png',
+      dxQRCode: 'https://msstest.sankuai.com/v1/mss_d895c43e068542d6986e312787d9109d/test/ss-home/qrcode.png',
     },
     env: process.env.NODE_ENV,
     sso: true,
     onSuccess: () => {
       new Vue({
         // eslint-disable-line
-        render: h => h(App),
+        render: (h) => h(App),
         router,
       }).$mount('#app');
     },
-    onError: error => {
+    onError: (error) => {
       console.error(error);
     },
   });

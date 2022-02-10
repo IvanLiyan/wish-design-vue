@@ -1,8 +1,6 @@
 <template>
-  <div class="demo-picker-group">
-    <wt-date-picker type="date"
-      v-model="value1" confirm :open.sync="open"
-      placeholder="选择时间">
+  <div class="demo-container">
+    <wt-date-picker type="date" v-model="value1" confirm :open.sync="open" placeholder="选择时间">
       <template v-slot:confirm>
         <wt-button-group>
           <wt-button type="text" @click="clear">清空</wt-button>
@@ -14,18 +12,18 @@
 </template>
 <script>
 export default {
-  data () {
+  data() {
     return {
       value1: new Date(),
       open: false,
     };
   },
   methods: {
-    clear () {
+    clear() {
       this.value1 = undefined;
       this.open = false;
     },
-    submit () {
+    submit() {
       this.open = false;
     },
   },

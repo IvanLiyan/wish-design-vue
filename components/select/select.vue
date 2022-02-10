@@ -1,5 +1,6 @@
 <template>
   <div
+    :style="width && { width: `${width}px` }"
     :class="{
       [prefix]: true,
       [`${prefix}-${size}`]: size,
@@ -232,6 +233,7 @@ export default {
     icon: String,
     name: String,
     value: [String, Number, Object, Array, Boolean],
+    width: Number,
     defaultActiveFirstOption: {
       type: Boolean,
       default: true,

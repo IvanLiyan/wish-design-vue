@@ -1,7 +1,6 @@
-@import "./common/var.scss";
-@import "./mixins/mixins.scss";
+@import './common/var.scss';
+@import './mixins/mixins.scss';
 .#{$prefix}-date-picker {
-  width: 240px;
   .#{$prefix}-input-tip {
     min-height: 0 !important;
   }
@@ -12,14 +11,14 @@
 .#{$prefix}-picker-panel-body {
   width: 242px;
   // border-bottom: 1px solid rgba(0,0,0,0.06);
-  .#{$prefix}-picker-panel-content{
+  .#{$prefix}-picker-panel-content {
     width: 100%;
     text-align: center;
-    border-bottom: 1px solid #F0F4F6;
+    border-bottom: 1px solid #f0f4f6;
     .#{$prefix}-time-picker-multiple-header {
       margin: 8px;
       font-size: 12px;
-      color: rgba(0,0,0,0.60);
+      color: rgba(0, 0, 0, 0.6);
       letter-spacing: 0;
     }
   }
@@ -30,7 +29,7 @@
     .#{$prefix}-time-picker-multiple-header {
       margin: 8px;
       font-size: 12px;
-      color: rgba(0,0,0,0.60);
+      color: rgba(0, 0, 0, 0.6);
       letter-spacing: 0;
     }
   }
@@ -44,13 +43,13 @@
 }
 .#{$prefix}-time-picker-cells {
   min-width: $time-picker-cells-width;
-  &-with-minutes{
-    min-width: 2*$time-picker-cells-width;
+  &-with-minutes {
+    min-width: 2 * $time-picker-cells-width;
   }
-  &-with-seconds{
-    min-width: 3*$time-picker-cells-width;
+  &-with-seconds {
+    min-width: 3 * $time-picker-cells-width;
   }
-  &-list{
+  &-list {
     width: $time-picker-cells-width;
     max-height: $time-picker-max-height;
     float: left;
@@ -66,24 +65,24 @@
   }
   &-list:nth-child(2) {
     width: 82px;
-    border-left: 1px solid #F0F4F6;
-    border-right: 1px solid #F0F4F6;
+    border-left: 1px solid #f0f4f6;
+    border-right: 1px solid #f0f4f6;
   }
   &-list:last-child {
     border-top-right-radius: 4px;
     border: 0;
   }
-  &-ul{
+  &-ul {
     width: 100%;
     margin: 0;
     padding: 0 0 0;
     list-style: none;
   }
-  &-cell{
+  &-cell {
     font-family: Noto Sans SC;
     font-size: 14px;
     font-weight: $font-weight-regular;
-    color: #0E161C;
+    color: #0e161c;
     display: block;
     height: $time-picker-cell-height;
     line-height: $time-picker-cell-height;
@@ -94,11 +93,12 @@
     user-select: none;
     cursor: pointer;
     list-style: none;
-    transition: background .2s ease-in-out;
-    &:hover, &.hover{
+    transition: background 0.2s ease-in-out;
+    &:hover,
+    &.hover {
       background-color: $time-picker-cell-hover-bgc;
     }
-    &-selected{
+    &-selected {
       color: $time-picker-cell-selected-color;
       background-color: $time-picker-cell-selected-bgc;
       font-weight: $time-picker-cell-selected-font-weight;
@@ -107,10 +107,11 @@
     &-selected:hover {
       background-color: $time-picker-cell-selected-bgc;
     }
-    &-disabled{
+    &-disabled {
       color: $time-picker-cell-disabled-color;
       cursor: not-allowed;
-      &:hover, &.hover{
+      &:hover,
+      &.hover {
         background-color: inherit;
       }
     }
@@ -132,12 +133,12 @@
     align-items: center;
     justify-content: center;
     line-height: 20px;
-    background: #305BEF;
+    background: #305bef;
     border: 0;
   }
   .disabled {
-    background: #F7F9FA;
-    color: #BFCDD4;
+    background: #f7f9fa;
+    color: #bfcdd4;
   }
   .select-now {
     margin-left: 8px;
@@ -145,7 +146,7 @@
     font-size: 14px;
     line-height: 20px;
     font-weight: 400;
-    color: #305BEF;
+    color: #305bef;
     cursor: pointer;
   }
 }

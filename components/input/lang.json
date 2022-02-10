@@ -19,6 +19,7 @@
     },
     "api": {
       "type": "类型",
+      "width": "宽",
       "clearable": "是否有清空按钮",
       "invalid": "是否是错误状态",
       "disabled": "是否禁用",
@@ -53,6 +54,7 @@
     },
     "api": {
       "type": "Type property",
+      "width": "Width",
       "clearable": "Whether to show clear button",
       "invalid": "Whether the input is invalid",
       "disabled": "Whether disabled",

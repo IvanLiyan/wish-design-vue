@@ -1,30 +1,14 @@
 <template>
-  <div class="demo-picker-wrapper">
-    <div class="demo-picker-group">
-      <wt-date-picker
-        type="date"
-        v-model="value1"
-      />
-    </div>
-    <div class="demo-picker-group">
-      <wt-date-picker
-        type="month"
-        v-model="value2"
-        placeholder="选择时间" />
-    </div>
-    <div class="demo-picker-group">
-      <wt-date-picker
-        type="year"
-        v-model="value3"
-        placeholder="选择时间" />
-    </div>
+  <div class="demo-container">
+    <wt-date-picker type="date" v-model="value1" />
+    <wt-date-picker type="month" v-model="value2" placeholder="选择时间" />
+    <wt-date-picker type="year" v-model="value3" placeholder="选择时间" />
   </div>
 </template>
-<style>
-</style>
+<style></style>
 <script>
 export default {
-  data () {
+  data() {
     return {
       value1: '',
       value2: '',

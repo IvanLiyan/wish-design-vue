@@ -33,6 +33,14 @@
       "version": ""
     },
     {
+      "name": "width",
+      "desc": "$t('select.api.width')",
+      "type": "Number",
+      "optionalValue": "",
+      "default": "100%",
+      "version": ""
+    },
+    {
       "name": "filterable",
       "desc": "$t('select.api.filterable')",
       "type": "boolean",

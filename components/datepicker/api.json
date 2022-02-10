@@ -1,5 +1,14 @@
 {
-  "props": [{
+  "props": [
+    {
+      "name": "width",
+      "desc": "$t('datepicker.api.width')",
+      "type": "Number",
+      "optionalValue": "",
+      "default": "100%",
+      "version": ""
+    },
+    {
       "name": "size",
       "desc": "设置输入框的大小，同 Input 组件 size 属性",
       "type": "string",
@@ -11,7 +20,17 @@
       "name": "type",
       "desc": "显示类型, 0.1.45 开始支持 week 类型, 0.3.9 开始支持 monthrange, 0.3.12 开始支持 weekrange",
       "type": "string",
-      "optionalValue": ["date", "daterange", "datetime", "datetimerange", "year", "month", "monthrange", "week", "weekrange"],
+      "optionalValue": [
+        "date",
+        "daterange",
+        "datetime",
+        "datetimerange",
+        "year",
+        "month",
+        "monthrange",
+        "week",
+        "weekrange"
+      ],
       "default": "date",
       "version": ""
     },
@@ -83,7 +102,20 @@
       "name": "placement",
       "desc": "弹出面板默认的方向",
       "type": "string",
-      "optionalValue": ["top", "top-start", "top-end", "bottom", "bottom-start", "bottom-end", "left", "left-start", "left-end", "right", "right-start", "right-end"],
+      "optionalValue": [
+        "top",
+        "top-start",
+        "top-end",
+        "bottom",
+        "bottom-start",
+        "bottom-end",
+        "left",
+        "left-start",
+        "left-end",
+        "right",
+        "right-start",
+        "right-end"
+      ],
       "default": "bottom-start",
       "version": ""
     },
@@ -207,7 +239,8 @@
       "version": "0.3.14"
     }
   ],
-  "events": [{
+  "events": [
+    {
       "name": "update:open",
       "desc": "当面板显示隐藏时触发",
       "signature": "function (open: boolean)",
@@ -238,19 +271,24 @@
       "args": "参数 from 表示起始时间，selecting 表示是否仍在选择中，to 表示结束时间，可为空"
     }
   ],
-  "slots":[{
-    "name": "shortcuts",
-    "desc": "自定义侧边栏内容",
-    "version": "0.3.0"
-  },{
-  	"name": "confirm",
-    "desc": "自定义底部确认栏内容",
-    "version": "0.3.10"
-  }],
-  "scopedSlots": [{
-    "name": "cell",
-    "desc": "自定义日期单元格的内容， 具体类型参考 <a target='blank' href='http://dev.sankuai.com/code/repo-detail/SS/mtd-vue/file/detail?codeArea=mcode&branch=refs%2Fheads%2Fmaster&path=types%2Fdate-picker.d.ts'>类型声明</a>",
-    "args": "{ cell: {<br />&nbsp;&nbsp; type: string, // 当前单元格类型 <br />&nbsp;&nbsp; date: Date, // 当前单元格日期 <br />&nbsp;&nbsp; desc: string, // 当前单元格文案 <br />&nbsp;&nbsp; selected: boolean, // 是否选中 <br />&nbsp;&nbsp; disabled: boolean, // 是否禁用 <br />&nbsp;&nbsp; range: boolean // 是否在时期范围段中 <br />}}",
-    "version": "0.3.10"
-  }]
+  "slots": [
+    {
+      "name": "shortcuts",
+      "desc": "自定义侧边栏内容",
+      "version": "0.3.0"
+    },
+    {
+      "name": "confirm",
+      "desc": "自定义底部确认栏内容",
+      "version": "0.3.10"
+    }
+  ],
+  "scopedSlots": [
+    {
+      "name": "cell",
+      "desc": "自定义日期单元格的内容， 具体类型参考 <a target='blank' href='http://dev.sankuai.com/code/repo-detail/SS/mtd-vue/file/detail?codeArea=mcode&branch=refs%2Fheads%2Fmaster&path=types%2Fdate-picker.d.ts'>类型声明</a>",
+      "args": "{ cell: {<br />&nbsp;&nbsp; type: string, // 当前单元格类型 <br />&nbsp;&nbsp; date: Date, // 当前单元格日期 <br />&nbsp;&nbsp; desc: string, // 当前单元格文案 <br />&nbsp;&nbsp; selected: boolean, // 是否选中 <br />&nbsp;&nbsp; disabled: boolean, // 是否禁用 <br />&nbsp;&nbsp; range: boolean // 是否在时期范围段中 <br />}}",
+      "version": "0.3.10"
+    }
+  ]
 }

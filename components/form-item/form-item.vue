@@ -1,8 +1,5 @@
 <template>
   <div :class="classes">
-    <!-- <label :class="`${prefix}-label`" :for="labelFor" :style="labelStyles" v-if="label || $slots.label"
-      ><slot name="label">{{ label }}</slot>
-    </label> -->
     <div :class="`${prefix}-content`">
       <slot></slot>
       <transition name="fade-in" @after-leave="handleAfterLeave">
@@ -13,7 +10,6 @@
           v-if="showError"
         >
           <slot :message="validateMessage" name="error">
-            <!-- <div v-if="useHtmlMessage" v-html="validateMessage"></div> -->
             <template>{{ validateMessage }}</template>
           </slot>
         </div>
@@ -38,6 +34,14 @@ export default {
     prop: {
       type: String,
     },
+    span: {
+      type: Number,
+      default: 24,
+    },
+    offset: {
+      type: Number,
+    },
+
     required: {
       type: Boolean,
       default: false,
@@ -110,10 +114,13 @@ export default {
       return this.validateMessage && this.needShowError;
     },
     classes() {
-      const { isFadeIn, validateState, prefix } = this;
+      const { isFadeIn, validateState, prefix, span, offset } = this;
       const error = (isFadeIn && validateState !== 'warning') || validateState === 'error';
       return {
         [prefix]: true,
+        [`span-${span}`]: true,
+        [`offset-${offset}`]: true,
+
         [`${prefix}-required`]: this.required || this.isRequired,
         [`${prefix}-error`]: error,
         [`${prefix}-warning`]: validateState === 'warning',
@@ -265,6 +272,7 @@ export default {
       this.validateDisabled = false;
     },
     resetField() {
+      console.log('this.initialValue', this.initialValue);
       this.validateState = '';
       this.validateMessage = '';
 
