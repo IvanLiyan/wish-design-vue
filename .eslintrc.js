@@ -68,6 +68,7 @@ module.exports = {
       2,
       {
         ignoredNodes: ['TemplateLiteral'],
+        SwitchCase: 1,
       },
     ],
     'standard/no-callback-literal': 'off',

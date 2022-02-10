@@ -1,0 +1,38 @@
+{
+  "chinese": {
+    "componnent_desc": "向用户显示系统正在积极响应。",
+    "module1": {
+      "title": "基础样式"
+    },
+    "module2": {
+      "title": "类型与用法",
+      "subtitle1": "大小",
+      "subtitle2": "类型",
+      "subtitle3": "容器显示加载"
+    },
+    "api": {
+      "size": "组件大小",
+      "message": "描述文案",
+      "loading": "是否为加载中状态",
+      "delay": "延迟显示加载效果（防止闪烁）,单位毫秒"
+    }
+  },
+  "english": {
+    "componnent_desc": "Feedback to user that the system is still working actively.",
+    "module1": {
+      "title": "Basic Style"
+    },
+    "module2": {
+      "title": "Types and Use Case",
+      "subtitle1": "Size",
+      "subtitle2": "Type",
+      "subtitle3": "Container shows loading"
+    },
+    "api": {
+      "size": "Component Size",
+      "message": "Description",
+      "loading": "Whether it's a loading status",
+      "delay": "Delay to show the loading effect and avoide blinks, by milliseconds"
+    }
+  }
+}

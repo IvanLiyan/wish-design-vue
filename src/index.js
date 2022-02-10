@@ -25,6 +25,7 @@ import Select from 'components/select';
 import SelectInput from 'components/select-input';
 import Option from 'components/option';
 import OptionGroup from 'components/option-group';
+import Loading from 'components/loading';
 import CollapseTransition from './transitions/collapse-transition';
 
 const components = [
@@ -54,6 +55,7 @@ const components = [
   SelectInput,
   Option,
   OptionGroup,
+  Loading,
   CollapseTransition,
 ];
 
@@ -104,6 +106,7 @@ export {
   SelectInput,
   Option,
   OptionGroup,
+  Loading,
   CollapseTransition,
 };
 

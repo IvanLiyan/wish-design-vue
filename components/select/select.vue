@@ -106,7 +106,12 @@
         </li>
       </ul>
       <span :class="`${inputPrefix}-suffix-inner`">
-        <Icon :name="`${prefix}-clear ${iconPrefix('error-circle')}`" @click.stop="handleInputClear" v-if="showClear" />
+        <wt-loading v-if="loading" message="" size="small" />
+        <Icon
+          :name="`${prefix}-clear ${iconPrefix('error-circle')}`"
+          @click.stop="handleInputClear"
+          v-else-if="showClear"
+        />
         <Icon :name="sIcon" v-else />
       </span>
     </div>

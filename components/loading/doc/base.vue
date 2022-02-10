@@ -1,0 +1,3 @@
+<template>
+  <wt-loading />
+</template>
