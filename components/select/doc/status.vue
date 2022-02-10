@@ -35,29 +35,29 @@ export default {
     return {
       options: [
         {
-          value: '中国',
-          label: '中国',
+          value: 'China',
+          label: 'China',
         },
         {
-          value: '美国',
-          label: '美国',
+          value: 'America',
+          label: 'America',
         },
         {
-          value: '日本',
-          label: '日本',
+          value: 'Japan',
+          label: 'Japan',
           disabled: true,
         },
         {
-          value: '法国',
-          label: '法国',
+          value: 'France',
+          label: 'France',
         },
         {
-          value: '俄罗斯',
-          label: '俄罗斯',
+          value: 'Russia',
+          label: 'Russia',
         },
       ],
       value1: '',
-      value2: '美国',
+      value2: 'America',
       value3: '',
     };
   },

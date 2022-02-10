@@ -23,7 +23,8 @@
           <date-panel-label
             :date-panel-label="leftDatePanelLabel"
             :current-view="leftDatePanelView"
-            :date-prefix-cls="prefix" />
+            :date-prefix-cls="prefix"
+            position="left" />
           <span
             v-if="splitPanels || currentView !== leftPickerTable.split('-')[0]"
             :class="iconBtnCls('next', '-double')"
@@ -93,7 +94,8 @@
             <date-panel-label
               :date-panel-label="rightDatePanelLabel"
               :current-view="rightDatePanelView"
-              :date-prefix-cls="prefix" />
+              :date-prefix-cls="prefix"
+              position="right" />
             <span
               :class="iconBtnCls('next', '-double')"
               @click="nextYear('right')">

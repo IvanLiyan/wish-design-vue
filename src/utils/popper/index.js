@@ -1,4 +1,3 @@
-
 import PopperJS from 'popper.js/dist/esm/popper';
 import { on, off } from '../dom';
 import PopupManage from './popup-manage';
@@ -18,9 +17,7 @@ const defaultPopperOptions = {
   },
   // flip: { behavior: ['right', 'left', 'bottom', 'top'] },
 };
-export {
-  PopupManage,
-};
+export { PopupManage };
 
 export default {
   props: {
@@ -42,7 +39,7 @@ export default {
       // 暂定，触发 update:visible 事件的方式
       type: String,
       default: 'custom',
-      validator (v) {
+      validator(v) {
         return ['click', 'hover', 'focus', 'custom'].includes(v);
       },
     },
@@ -58,22 +55,22 @@ export default {
       default: true,
     },
   },
-  created () {
+  created() {
     this.$on('esc', this.handleEscClose);
   },
-  mounted () {
+  mounted() {
     this.init();
   },
-  beforeDestroy () {
+  beforeDestroy() {
     this.destroy();
   },
 
-  activated () {
+  activated() {
     this.init();
   },
 
   // call destroy in keep-alive mode
-  deactivated () {
+  deactivated() {
     this.destroy();
   },
 
@@ -84,25 +81,25 @@ export default {
     },
   },
 
-  data () {
+  data() {
     return {
       popperVisible: false,
       options: {}, // popper options
     };
   },
   computed: {
-    getContainer () {
+    getContainer() {
       return this.getPopupContainer || this.config.getPContainer || getConfig().getPopupContainer;
     },
   },
   watch: {
-    visible (val) {
+    visible(val) {
       val ? this.updatePopper() : this.destroyPopper();
     },
-    popperDisabled (n) {
+    popperDisabled(n) {
       n ? this.removePopperListener() : this.addPopperListener();
     },
-    placement () {
+    placement() {
       if (this.popperJS) {
         this.popperJS.options.placement = this.placement;
         this.updatePopper();
@@ -110,7 +107,7 @@ export default {
     },
   },
   methods: {
-    init () {
+    init() {
       if (this.visible) {
         // 会存在 activated 后立即执行 beforeDestroy 的情况。
         // 详见: https://tt.sankuai.com/ticket/detail?id=3892540
@@ -119,7 +116,7 @@ export default {
       const { popperDisabled } = this;
       popperDisabled ? this.removePopperListener() : this.addPopperListener();
     },
-    destroy () {
+    destroy() {
       PopupManage.close(this);
       if (this.popperJS) {
         this.popperJS.destroy();
@@ -127,15 +124,15 @@ export default {
       }
       this.removePopperListener();
     },
-    getReference () {
+    getReference() {
       return this.$refs.reference || this.reference;
     },
 
-    getDrop () {
+    getDrop() {
       return this.$refs.drop || this.drop;
     },
 
-    createPopper () {
+    createPopper() {
       const reference = this.getReference();
       const drop = this.getDrop();
       if (!reference || !drop) {
@@ -174,7 +171,7 @@ export default {
       this.popperJS = new PopperJS(reference, drop, options);
     },
 
-    updatePopper () {
+    updatePopper() {
       if (!this.visible) {
         // 存在 nextTick 中调用 updatePopper 的情况，此时 visible 有出现 false 的可能
         return;
@@ -196,7 +193,7 @@ export default {
       this.$emit('show');
     },
 
-    destroyPopper () {
+    destroyPopper() {
       clearTimeout(this._timer);
       if (this.popperJS) {
         this.popperJS.disableEventListeners();
@@ -206,16 +203,16 @@ export default {
       this.$emit('hide');
     },
 
-    handleEscClose () {
+    handleEscClose() {
       this.visible && this.hideDrop();
     },
 
-    handleReferenceClick () {
+    handleReferenceClick() {
       if (this.toggleOnReferenceClick || !this.visible) {
         this.$emit('update:visible', !this.visible);
       }
     },
-    handleDocumentClick (e) {
+    handleDocumentClick(e) {
       if (!this.visible) {
         return;
       }
@@ -229,7 +226,7 @@ export default {
       this.$emit('clickoutside', e);
       this.$emit('update:visible', false);
     },
-    handlerDropMouseEnter () {
+    handlerDropMouseEnter() {
       /**
        * tofix: https://tt.sankuai.com/ticket/detail?id=4057761
        * 关闭延迟为 0 时，不可移入
@@ -239,7 +236,7 @@ export default {
       }
       this.showDrop();
     },
-    showDrop () {
+    showDrop() {
       clearTimeout(this._timer);
       if (this.visible) {
         return;
@@ -252,7 +249,7 @@ export default {
         this.$emit('update:visible', true);
       }
     },
-    hideDrop () {
+    hideDrop() {
       clearTimeout(this._timer);
       if (!this.visible) {
         return;
@@ -265,7 +262,7 @@ export default {
         this.$emit('update:visible', false);
       }
     },
-    addPopperClickListener () {
+    addPopperClickListener() {
       const reference = this.getReference();
 
       on(reference, 'click', this.handleReferenceClick);
@@ -274,7 +271,7 @@ export default {
       */
       on(document, 'mousedown', this.handleDocumentClick);
     },
-    addPopperHoverListener () {
+    addPopperHoverListener() {
       const reference = this.getReference();
       const drop = this.getDrop();
 
@@ -283,31 +280,31 @@ export default {
       on(reference, 'mouseleave', this.hideDrop);
       on(drop, 'mouseleave', this.hideDrop);
     },
-    addPopperFocusListener () {
+    addPopperFocusListener() {
       const reference = this.getReference();
       on(reference, 'focus', this.showDrop);
       on(reference, 'blur', this.hideDrop);
     },
 
-    addPopperListener () {
+    addPopperListener() {
       const reference = this.getReference();
       if (reference) {
         switch (this.trigger) {
-        case 'click':
-          this.addPopperClickListener();
-          break;
-        case 'hover':
-          this.addPopperHoverListener();
-          break;
-        case 'focus':
-          // 暂时不管能否 focus
-          this.addPopperFocusListener();
-          break;
+          case 'click':
+            this.addPopperClickListener();
+            break;
+          case 'hover':
+            this.addPopperHoverListener();
+            break;
+          case 'focus':
+            // 暂时不管能否 focus
+            this.addPopperFocusListener();
+            break;
         }
       }
     },
 
-    removePopperListener () {
+    removePopperListener() {
       const reference = this.getReference();
       const drop = this.getDrop();
       off(reference, 'click', this.handleReferenceClick);

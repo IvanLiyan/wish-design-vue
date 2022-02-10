@@ -10,7 +10,7 @@
   </div>
 </template>
 <script>
-import { clearHours } from '@/utils/date';
+import { clearHours, isInRange } from '@/utils/date';
 import { deepCopy } from '@/utils/util';
 import mixin from './mixin';
 import {
@@ -32,6 +32,7 @@ export default {
   },
   computed: {
     prefix () {
+      console.log('this.props', this.$props);
       return this.config.getPrefixCls('date-picker');
     },
     prefixCls () {
@@ -54,6 +55,7 @@ export default {
         selected: false,
         disabled: false,
       };
+      const tableYear = this.tableDate.getFullYear();
 
       const selectedDays = this.dates.filter(Boolean)
         .map((date) => {
@@ -62,19 +64,24 @@ export default {
       const focusedDate = clearHours(
         new Date(this.focusedDate.getFullYear(), 0, 1),
       );
-
+      const isRange = this.selectionMode === 'range' && this.pickerType === 'yearrange';
+      const { from, to } = this.rangeState;
       for (let i = 0; i < 12; i++) {
         const cell = deepCopy(cellTmpl);
         cell.date = new Date(this.startYear + i, 0, 1);
         cell.disabled = typeof this.disabledDate === 'function' &&
           this.disabledDate(cell.date) &&
-          this.selectionMode === 'year';
+          (this.selectionMode === 'year' || this.pickerType === 'yearrange');
         const day = clearHours(cell.date);
         cell.selected = (selectedDays.indexOf(day) > -1);
         cell.focused = day === focusedDate;
+        if (isRange && !cell.selected) {
+          const date = new Date(tableYear, i, 1, 0, 0, 0);
+          cell.range = isInRange(date.getTime(), from && from.getTime(), to && to.getTime());
+        }
         cells.push(cell);
       }
-
+      console.log('cells', cells);
       return cells;
     },
   },

@@ -81,6 +81,14 @@
 			"version": ""
 		},
 		{
+			"name": "invalid",
+			"desc": "是否为错误状态",
+			"type": "boolean",
+			"optionalValue": "-",
+			"default": "false",
+			"version": ""
+		},
+		{
 			"name": "popper-class",
 			"desc": "下拉框的类名",
 			"type": "string",

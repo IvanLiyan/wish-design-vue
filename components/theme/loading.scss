@@ -1,0 +1,86 @@
+@import './common/var.scss';
+@import './mixins/mixins.scss';
+@keyframes #{$prefix}-line-scale {
+  0% {
+    transform: scaley(1);
+  }
+  50% {
+    transform: scaley(0.4);
+  }
+  100% {
+    transform: scaley(1);
+  }
+}
+
+@function loading-delay($interval, $count, $index) {
+  @return ($index * $interval) - ($interval * $count);
+}
+
+@mixin line-scale($n: 5) {
+  @for $i from 1 through $n {
+    > div:nth-child(#{$i}) {
+      animation: #{$prefix}-line-scale 1s loading-delay(0.1s, $n, $i) infinite cubic-bezier(0.2, 0.68, 0.18, 1.08);
+    }
+  }
+}
+
+@include c(loading) {
+  text-align: center;
+  &-nested {
+    position: relative;
+    .#{$prefix}-loading {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+    }
+    .#{$prefix}-loading-container {
+      transition: opacity linear 0.3s;
+    }
+    .#{$prefix}-loading-blur {
+      opacity: 0.5;
+      pointer-events: none;
+      user-select: none;
+      overflow: hidden;
+    }
+  }
+  &-message {
+    color: $color-black;
+    font-size: $font-size-2;
+    margin-top: 10px;
+  }
+  // type
+  &-line-scale {
+    display: inline-block;
+    vertical-align: middle;
+    height: $line-height-2;
+    @include line-scale();
+    color: $color-primary-1;
+    font-size: 0;
+    > div {
+      background-color: currentColor;
+      animation-fill-mode: both;
+      width: 3px;
+      height: 100%;
+      border-radius: 2px;
+      margin: 1px;
+      display: inline-block;
+    }
+  }
+  &-circle {
+    color: $color-primary-1;
+    display: inline-block;
+    vertical-align: top;
+    animation: wrapRotate linear 1.5s infinite;
+  }
+}
+
+@keyframes wrapRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

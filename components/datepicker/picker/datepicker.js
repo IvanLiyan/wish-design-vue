@@ -7,20 +7,14 @@ export default {
   mixins: [Picker],
   props: {
     type: {
-      validator(value) {
-        return (
-          [
-            'year',
-            'month',
-            'date',
-            'daterange',
-            'datetime',
-            'datetimerange',
-            'week',
-            'monthrange',
-            'weekrange',
-          ].indexOf(value) > -1
-        );
+      validator (value) {
+        return [
+          'year', 'month', 'date',
+          'daterange', 'datetime',
+          'datetimerange', 'week',
+          'monthrange', 'weekrange',
+          'yearrange',
+        ].indexOf(value) > -1;
       },
       default: 'date',
     },

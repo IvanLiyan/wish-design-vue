@@ -70,7 +70,7 @@ describe('DatePicker', function () {
   });
 
   describe('should emit input event ', function () {
-    const rangeType = ['daterange', 'monthrange', 'weekrange'];
+    const rangeType = ['daterange', 'monthrange', 'weekrange', 'yearrange'];
     const startDay = dayjs('2021-04-06 12:00:00', 'yyyy-MM-dd HH:mm:ss');
     const expectDay = dayjs('2021-04-01 12:00:00', 'yyyy-MM-dd HH:mm:ss');
     function click0401 () {

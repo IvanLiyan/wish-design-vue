@@ -5,7 +5,7 @@
       [`${prefix}-week-cells`]: isWeek,
     }">
     <div :class="[`${prefix}-cells-header`]">
-      <span v-for="day in headerDays" :key="day"><em>{{ day }}</em></span>
+      <span v-for="day in headerDays" :key="day"><em class="header-em">{{ day }}</em></span>
     </div>
     <span
       :class="[`${prefix}-cells-cell`, getCellCls(cell)]"
