@@ -1,5 +1,5 @@
 <template>
-  <span :class="`${datePrefixCls}-current`" @click="clickHere">
+  <span :class="`${datePrefixCls}-current`">
     <span
       v-if="datePanelLabel"
       v-show="datePanelLabel.labels[0].type === 'year' ||
@@ -48,9 +48,6 @@ export default {
     },
   },
   methods: {
-    clickHere () {
-      console.log('123', this.$props);
-    },
   },
 };
 </script>

@@ -9,10 +9,18 @@ $form-item-label-padding-right: 9px;
   padding-left: 10px;
 }
 
+@for $i from 1 through 24 {
+  @include span-calc($i);
+}
+@for $i from 0 through 24 {
+  @include offset-calc($i);
+}
+
 @include c(form-item) {
   margin-bottom: 18px;
   vertical-align: top;
   font-size: 0;
+  display: inline-block;
   @include clearfix();
   &-title {
     font-size: $h3-font-size;
@@ -35,6 +43,7 @@ $form-item-label-padding-right: 9px;
   &-helper {
     @include tip();
     color: $color-text-3;
+    min-height: $line-height-4;
   }
   //   .#{$prefix}-form-item {
   //     margin-bottom: 16px;

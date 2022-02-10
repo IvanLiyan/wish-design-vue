@@ -1,5 +1,5 @@
 <template>
-  <wt-form ref="formCustom" title="法人信息" :rules="ruleCustom" :model="formCustom" :first-fields="true">
+  <wt-form ref="form" title="法人信息" :rules="ruleCustom" :model="formCustom" :first-fields="true">
     <wt-row :gutter="20">
       <wt-col :span="12">
         <wt-form-item prop="username" helper="提现操作仅限于此真实姓名下的银行卡。" required>
@@ -56,7 +56,6 @@
     </wt-form-item>
     <div>
       <wt-button type="text" @click="reset">重置</wt-button>
-      <wt-button type="text" @click="clear">清空数据</wt-button>
 
       <wt-button type="text" @click="clearValidate">移除校验</wt-button>
       <wt-button @click="submit">提交</wt-button>
@@ -117,19 +116,16 @@ export default {
   },
   methods: {
     reset: function () {
-      this.$refs.formCustom.resetFields();
-    },
-    clear: function () {
-      this.$refs.formCustom.clearValidate();
-      this.formCustom = {};
+      this.$refs.form.resetFields();
+      console.log('data', this.formCustom);
     },
 
     clearValidate: function () {
-      this.$refs.formCustom.clearValidate();
+      this.$refs.form.clearValidate();
     },
 
     submit: async function () {
-      const valid = this.$refs.formCustom.validateFields();
+      const valid = this.$refs.form.validateFields();
       console.log('valid', valid);
       console.log('data', this.formCustom);
     },

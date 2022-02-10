@@ -169,7 +169,6 @@ export default {
       if (emit) this.$emit('pick', newDate, true);
     },
     handleConfirm () {
-      console.log('confirm', this.newDate);
       this.$parent.$parent.$parent.handleOpenChange(false);
     },
     handleSelectNow () {

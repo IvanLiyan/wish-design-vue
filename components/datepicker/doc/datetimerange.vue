@@ -1,7 +1,7 @@
 <template>
-  <div>
-    <wt-date-picker type="datetimerange"
-      style="width: 320px;"
+  <div class="demo-container">
+    <wt-date-picker
+      type="datetimerange"
       v-model="value7"
       format="yyyy-MM-dd HH:mm"
       :time-picker-options="{ format: 'HH:mm:ss' }"
@@ -10,7 +10,7 @@
 </template>
 <script>
 export default {
-  data () {
+  data() {
     return {
       value7: [],
     };

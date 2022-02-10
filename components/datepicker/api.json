@@ -1,5 +1,14 @@
 {
-  "props": [{
+  "props": [
+    {
+      "name": "width",
+      "desc": "$t('datepicker.api.width')",
+      "type": "Number",
+      "optionalValue": "",
+      "default": "100%",
+      "version": ""
+    },
+    {
       "name": "size",
       "desc": "设置输入框的大小，同 Input 组件 size 属性",
       "type": "string",
@@ -9,9 +18,9 @@
     },
     {
       "name": "type",
-      "desc": "显示类型, 0.1.45 开始支持 week 类型, 0.3.9 开始支持 monthrange, 0.3.12 开始支持 weekrange",
+      "desc": "显示类型",
       "type": "string",
-      "optionalValue": ["date", "daterange", "datetime", "datetimerange", "year", "month", "monthrange", "week", "weekrange"],
+      "optionalValue": ["date", "daterange", "datetimerange", "year", "month", "monthrange"],
       "default": "date",
       "version": ""
     },
@@ -21,14 +30,6 @@
       "type": "string",
       "optionalValue": "",
       "default": "<strong>date、daterange</strong>: <wbr/>yyyy-MM-dd; <br /> <strong>datetime、datetimerange</strong>: <wbr/>yyyy-MM-dd HH:mm:ss; <br /> <strong>year</strong>: <wbr/>yyyy; <br /><strong>month</strong>: <wbr/>yyyy-MM",
-      "version": ""
-    },
-    {
-      "name": "editable",
-      "desc": "文本框是否可输入, 当 type=week 时不可用",
-      "type": "boolean",
-      "optionalValue": "",
-      "default": "true",
       "version": ""
     },
     {
@@ -48,22 +49,6 @@
       "version": ""
     },
     {
-      "name": "clearable",
-      "desc": "是否可清空",
-      "type": "boolean",
-      "optionalValue": "",
-      "default": "false",
-      "version": ""
-    },
-    {
-      "name": "open",
-      "desc": "不必须，是否显示下方面板，提供 open 属性则为受控模式，不提供则为非受控模式，受控模式下则根据 open 值来决定显示",
-      "type": "boolean",
-      "optionalValue": "",
-      "default": "false",
-      "version": ""
-    },
-    {
       "name": "multiple",
       "desc": "是否可以多选，仅在 type = 'date' 下生效",
       "type": "boolean",
@@ -72,18 +57,23 @@
       "version": ""
     },
     {
-      "name": "placeholder",
-      "desc": "空内容时的占位内容",
-      "type": "string",
-      "optionalValue": "",
-      "default": "",
-      "version": ""
-    },
-    {
       "name": "placement",
       "desc": "弹出面板默认的方向",
       "type": "string",
-      "optionalValue": ["top", "top-start", "top-end", "bottom", "bottom-start", "bottom-end", "left", "left-start", "left-end", "right", "right-start", "right-end"],
+      "optionalValue": [
+        "top",
+        "top-start",
+        "top-end",
+        "bottom",
+        "bottom-start",
+        "bottom-end",
+        "left",
+        "left-start",
+        "left-end",
+        "right",
+        "right-start",
+        "right-end"
+      ],
       "default": "bottom-start",
       "version": ""
     },
@@ -104,74 +94,11 @@
       "version": ""
     },
     {
-      "name": "genre",
-      "desc": "类型 (同 Input 组件)",
-      "type": "string",
-      "optionalValue": ["不设置", "area", "line"],
-      "default": "不设置",
-      "version": ""
-    },
-    {
-      "name": "show-btn-now",
-      "desc": "是否显示此刻按钮，仅当显示底部控制栏时生效",
-      "type": "boolean",
-      "optionalValue": "",
-      "default": "true",
-      "version": ""
-    },
-    {
       "name": "popper-class",
       "desc": "下拉框的类名",
       "type": "string",
       "optionalValue": "",
       "default": "",
-      "version": ""
-    },
-    {
-      "name": "options",
-      "desc": "选择器额外配置，比如不可选日期与快捷选项，具体项详见下表",
-      "type": "object",
-      "optionalValue": "",
-      "default": "",
-      "version": ""
-    },
-    {
-      "name": "default-time",
-      "desc": "选中日期后的默认具体时刻",
-      "type": "非范围选择时：string / 范围选择时：string[]",
-      "optionalValue": "非范围选择时：形如12:00:00的字符串；范围选择时：数组，长度为2，每项值为字符串，形如12:00:00，第一项指定开始日期的时刻，第二项指定结束日期的时刻。不指定会使用时刻 00:00:00",
-      "default": ""
-    },
-    {
-      "name": "value-format",
-      "desc": "绑定值的格式。不指定则根据当前 value 值的类型进行推断",
-      "type": "string",
-      "optionalValue": "",
-      "default": "",
-      "version": "0.1.44"
-    },
-    {
-      "name": "split-panels",
-      "desc": "开启后，左右面板不联动，仅在 daterange 和 datetimerange 下可用。",
-      "type": "boolean",
-      "optionalValue": "",
-      "default": "true",
-      "version": ""
-    },
-    {
-      "name": "start-date",
-      "desc": "设置默认显示的起始日期",
-      "type": "Date",
-      "optionalValue": "",
-      "default": "",
-      "version": ""
-    },
-    {
-      "name": "show-week-numbers",
-      "desc": "是否显示星期数, 当 type='week' 时强制显示",
-      "type": "boolean",
-      "optionalValue": "",
-      "default": "false",
       "version": ""
     },
     {
@@ -196,7 +123,7 @@
       "type": "object",
       "optionalValue": "",
       "default": "",
-      "version": "0.3.1"
+      "version": ""
     },
     {
       "name": "week-start",
@@ -204,10 +131,11 @@
       "type": "number",
       "optionalValue": "0 ~ 6",
       "default": "1",
-      "version": "0.3.14"
+      "version": ""
     }
   ],
-  "events": [{
+  "events": [
+    {
       "name": "update:open",
       "desc": "当面板显示隐藏时触发",
       "signature": "function (open: boolean)",
@@ -220,37 +148,10 @@
       "args": ""
     },
     {
-      "name": "clear",
-      "desc": "当点击清除按钮时触发(此时会先触发一次 value 为空的 input 事件)",
-      "signature": "function ()",
-      "args": ""
-    },
-    {
-      "name": "confirm",
-      "desc": "当点击确定按钮时触发",
-      "signature": "function ()",
-      "args": ""
-    },
-    {
       "name": "pick-range",
       "desc": "当在日期段模式下，用户点击选择时间时触发",
       "signature": "(selection: { from: Date, selecting: boolean, to?: Date })",
       "args": "参数 from 表示起始时间，selecting 表示是否仍在选择中，to 表示结束时间，可为空"
     }
-  ],
-  "slots":[{
-    "name": "shortcuts",
-    "desc": "自定义侧边栏内容",
-    "version": "0.3.0"
-  },{
-  	"name": "confirm",
-    "desc": "自定义底部确认栏内容",
-    "version": "0.3.10"
-  }],
-  "scopedSlots": [{
-    "name": "cell",
-    "desc": "自定义日期单元格的内容， 具体类型参考 <a target='blank' href='http://dev.sankuai.com/code/repo-detail/SS/mtd-vue/file/detail?codeArea=mcode&branch=refs%2Fheads%2Fmaster&path=types%2Fdate-picker.d.ts'>类型声明</a>",
-    "args": "{ cell: {<br />&nbsp;&nbsp; type: string, // 当前单元格类型 <br />&nbsp;&nbsp; date: Date, // 当前单元格日期 <br />&nbsp;&nbsp; desc: string, // 当前单元格文案 <br />&nbsp;&nbsp; selected: boolean, // 是否选中 <br />&nbsp;&nbsp; disabled: boolean, // 是否禁用 <br />&nbsp;&nbsp; range: boolean // 是否在时期范围段中 <br />}}",
-    "version": "0.3.10"
-  }]
+  ]
 }

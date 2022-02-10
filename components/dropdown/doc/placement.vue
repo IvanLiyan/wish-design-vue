@@ -145,10 +145,8 @@ export default {
   },
   methods: {
     handleInput: function (visible) {
-      console.log('handleInput', visible);
     },
     handleClickOutside: function (e) {
-      console.log('handleClickOutside', e);
     },
   },
 };

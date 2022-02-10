@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="demo-container">
     <wt-select v-model="value" label="国家">
       <wt-option
         v-for="item in options"

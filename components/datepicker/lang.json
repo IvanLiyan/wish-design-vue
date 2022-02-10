@@ -3,17 +3,29 @@
     "componnent_desc": "用于日期和时间的选择",
     "module1": {
       "title": "基础样式",
-      "desc1": "包含日期选择，月份选择，年份选择， 支持手动输入。支持格式yyyy/mm/dd, yyyymmdd, yyyy-mm-dd。"
+      "desc1": "日期选择，支持手动输入。支持格式yyyy/mm/dd, yyyymmdd, yyyy-mm-dd。"
     },
     "module2": {
-      "title": "选择起止日期",
-      "desc1": "可以选择开始和结束时间（日期/月份/年份）"
+      "title": "选择月份",
+      "desc1": "月份选择，支持手动输入，支持格式yyyy/mm，yyyymm，yyyy-mm。"
     },
     "module3": {
-      "title": "选择起止时间",
-      "desc1": "可以选择开始和结束时间"
+      "title": "选择年份",
+      "desc1": "年份选择，支持手动输入。"
     },
     "module4": {
+      "title": "选择起止日期",
+      "desc1": "可以选择开始和结束日期。"
+    },
+    "module5": {
+      "title": "选择起止月份",
+      "desc1": "可以选择开始和结束月份。"
+    },
+    "module6": {
+      "title": "选择起止日期和时间",
+      "desc1": "可以选择开始和结束的日期，并具体到时间"
+    },
+    "module7": {
       "title": "快速选择",
       "desc1": "可以自定义要快速选择的时间段，默认前7天、前14天、前30天、前90天"
     },
@@ -21,21 +33,23 @@
       "title": "设置标题",
       "subtitle": "设置副标题",
       "caption": "设置说明文字",
-	  "body-class": "设置card-body的class"
+      "body-class": "设置card-body的class",
+      "width": "宽"
     }
   },
   "english": {
     "componnent_desc": "",
     "module1": {
-    	"title": "",
-    	"desc1": "",
-    	"desc2": "" 
+      "title": "",
+      "desc1": "",
+      "desc2": ""
     },
     "api": {
       "title": "",
       "subtitle": "",
       "caption": "",
-	  "body-class": ""
+      "body-class": "",
+      "width": "Width"
     }
   }
 }

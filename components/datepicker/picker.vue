@@ -12,6 +12,7 @@
     :get-popup-container="getPopupContainer"
     :popper-options="popperOptions"
     ref="popper"
+    :style="width && { width: `${width}px` }"
   >
     <Reference>
       <PickerInput
@@ -133,6 +134,7 @@ export default {
     PickerInput: Input,
   },
   props: {
+    width: Number,
     format: {
       type: String,
     },
@@ -280,7 +282,6 @@ export default {
   },
   computed: {
     prefix() {
-      console.log('this.type', this.type);
       return this.config.getPrefixCls('date-picker');
     },
     iconPrefix() {
@@ -295,9 +296,7 @@ export default {
       ];
     },
     visualValue() {
-      console.log('THIS.INTERNAMVALUE', this.internalValue);
       const text = this.formatDate(this.internalValue);
-      console.log('visualValue', text);
       if (this.formatter) {
         return this.formatter(this.value, text) || '';
       }
@@ -345,7 +344,6 @@ export default {
   },
   watch: {
     value(val) {
-      console.log('internalValue', val);
       this.internalValue = this.parseDate(val);
     },
     type(type) {
@@ -453,7 +451,6 @@ export default {
       this.$refs.pickerPanel && this.$refs.pickerPanel.reset && this.$refs.pickerPanel.reset();
     },
     handleInputChange(newValue) {
-      console.log('newValue', newValue);
       this.inputValue = newValue;
       // const isArrayValue = this.type.indexOf('range') > -1 || this.multiple;
       const oldValue = this.formatDate(this.internalValue);
@@ -532,10 +529,6 @@ export default {
       return isRange || this.multiple ? val || [] : [val];
     },
     formatDate(value, format = this.format) {
-      console.log('value', value);
-      console.log('format', format);
-      console.log('this.type', this.type);
-      console.log('this.multiple', this.multiple);
       const defaultFormat = DEFAULT_FORMATS[this.type];
       if (this.multiple) {
         const formatter = TYPE_VALUE_RESOLVER_MAP.multiple.formatter;
