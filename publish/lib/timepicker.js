@@ -2497,7 +2497,6 @@ function arrayEql(a, b) {
 
   computed: {
     prefix: function prefix() {
-      console.log('this.type', this.type);
       return this.config.getPrefixCls('date-picker');
     },
     iconPrefix: function iconPrefix() {
@@ -2507,9 +2506,7 @@ function arrayEql(a, b) {
       return [this.prefix, babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_2___default()({}, this.prefix + '-focused', this.isFocused)];
     },
     visualValue: function visualValue() {
-      console.log('THIS.INTERNAMVALUE', this.internalValue);
       var text = this.formatDate(this.internalValue);
-      console.log('visualValue', text);
       if (this.formatter) {
         return this.formatter(this.value, text) || '';
       }
@@ -2553,7 +2550,6 @@ function arrayEql(a, b) {
   },
   watch: {
     value: function value(val) {
-      console.log('internalValue', val);
       this.internalValue = this.parseDate(val);
     },
     type: function type(_type) {
@@ -2666,7 +2662,6 @@ function arrayEql(a, b) {
       this.$refs.pickerPanel && this.$refs.pickerPanel.reset && this.$refs.pickerPanel.reset();
     },
     handleInputChange: function handleInputChange(newValue) {
-      console.log('newValue', newValue);
       this.inputValue = newValue;
       // const isArrayValue = this.type.indexOf('range') > -1 || this.multiple;
       var oldValue = this.formatDate(this.internalValue);
@@ -2762,11 +2757,6 @@ function arrayEql(a, b) {
     },
     formatDate: function formatDate(value) {
       var format = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : this.format;
-
-      console.log('value', value);
-      console.log('format', format);
-      console.log('this.type', this.type);
-      console.log('this.multiple', this.multiple);
       var defaultFormat = _utils_date__WEBPACK_IMPORTED_MODULE_7__["DEFAULT_FORMATS"][this.type];
       if (this.multiple) {
         var formatter = _utils_date__WEBPACK_IMPORTED_MODULE_7__["TYPE_VALUE_RESOLVER_MAP"].multiple.formatter;
@@ -3836,7 +3826,6 @@ var returnFalse = function returnFalse() {
       if (emit) this.$emit('pick', newDate, true);
     },
     handleConfirm: function handleConfirm() {
-      console.log('confirm', this.newDate);
       this.$parent.$parent.$parent.handleOpenChange(false);
     },
     handleSelectNow: function handleSelectNow() {
@@ -4481,7 +4470,6 @@ var capitalize = function capitalize(str) {
       immediate: true,
       handler: function handler(dates) {
         this.setDates(dates);
-        console.log('dates', dates[0]);
         if (dates.length === 2 && dates[0] !== null && dates[1] !== null) {
           this.confirmDisabled = false;
         } else {
@@ -4508,7 +4496,6 @@ var capitalize = function capitalize(str) {
       this.$emit('canel');
     },
     handleChange: function handleChange(start, end) {
-      console.log('handleChange');
       this.confirmDisabled = false;
       var dateStart = new Date(this.dateStart || Object(_utils_date__WEBPACK_IMPORTED_MODULE_8__["initTimeDate"])());
       var dateEnd = new Date(this.dateEnd || Object(_utils_date__WEBPACK_IMPORTED_MODULE_8__["initTimeDate"])());

@@ -8,16 +8,31 @@
 
 ## {{$t('datepicker.module2.title')}}
 <span>{{$t('datepicker.module2.desc1')}}</span>
-:::include(src="./doc/range.vue")
+:::include(src="./doc/month.vue")
 :::
 
 ## {{$t('datepicker.module3.title')}}
 <span>{{$t('datepicker.module3.desc1')}}</span>
-:::include(src="./doc/datetimerange.vue")
+:::include(src="./doc/year.vue")
 :::
 
 ## {{$t('datepicker.module4.title')}}
 <span>{{$t('datepicker.module4.desc1')}}</span>
+:::include(src="./doc/daterange.vue")
+:::
+
+## {{$t('datepicker.module5.title')}}
+<span>{{$t('datepicker.module5.desc1')}}</span>
+:::include(src="./doc/monthrange.vue")
+:::
+
+## {{$t('datepicker.module6.title')}}
+<span>{{$t('datepicker.module6.desc1')}}</span>
+:::include(src="./doc/datetimerange.vue")
+:::
+
+## {{$t('datepicker.module7.title')}}
+<span>{{$t('datepicker.module7.desc1')}}</span>
 :::include(src="./doc/quick.vue")
 :::
 
@@ -47,3 +62,7 @@
     }
   }
 </style>
+
+## QA测试
+:::include(src="./doc/test.vue")
+:::

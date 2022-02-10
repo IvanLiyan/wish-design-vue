@@ -17414,7 +17414,6 @@ var dateSorter = function dateSorter(a, b) {
 
   methods: {
     clickHere: function clickHere() {
-      console.log('PROPS', this.$props);
     },
     handleValueChange: function handleValueChange(newVal) {
       var minDate = newVal[0] ? Object(_utils_date__WEBPACK_IMPORTED_MODULE_10__["toDate"])(newVal[0]) : null;

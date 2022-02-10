@@ -2,9 +2,9 @@
   <div class="demo-picker-wrapper">
     <div class="demo-picker-group">
       <wt-date-picker
-        type="date"
-        v-model="value1"
-      />
+        type="month"
+        v-model="value2"
+        placeholder="选择时间" />
     </div>
   </div>
 </template>
@@ -14,7 +14,7 @@
 export default {
   data () {
     return {
-      value1: '',
+      value2: '',
     };
   },
 };
