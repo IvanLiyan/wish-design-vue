@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div :style="width && { width: `${width}px` }">
     <fieldset
       :class="{
         [`${inputPrefix}-wrapper`]: true,
@@ -9,7 +9,6 @@
         [`${inputPrefix}-invalid`]: isInvalid,
         [`${inputPrefix}-focused`]: focused,
       }"
-      :style="fullWidth ? { width: '100%' } : {}"
     >
       <legend v-if="label">{{ label }}</legend>
       <div :class="`${inputPrefix}-con`">
@@ -37,10 +36,6 @@
         <slot name="suffix"></slot>
       </div>
     </fieldset>
-    <!-- <div :class="`${inputPrefix}-tip`" v-if="isInvalid">
-      <span v-if="isInvalid && !focused">{{ validationText }}</span>
-      <em v-if="type === 'textarea'"> {{ inputValue.length }}/ {{ maxLength }}</em>
-    </div> -->
     <em v-if="type === 'textarea' && isInvalid"> {{ inputValue.length }}/ {{ maxLength }}</em>
   </div>
 </template>
@@ -75,8 +70,8 @@ export default {
     disabled: Boolean,
     // 校验不通过
     invalid: Boolean,
+    width: Number,
 
-    fullWidth: Boolean,
     label: String,
     value: [String, Number],
     validation: String,

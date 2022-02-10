@@ -12,6 +12,7 @@
     :get-popup-container="getPopupContainer"
     :popper-options="popperOptions"
     ref="popper"
+    :style="width && { width: `${width}px` }"
   >
     <Reference>
       <PickerInput
@@ -133,6 +134,7 @@ export default {
     PickerInput: Input,
   },
   props: {
+    width: Number,
     format: {
       type: String,
     },

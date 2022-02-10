@@ -1,16 +1,11 @@
 <template>
-  <div class="wt-row">
-    <div style="">
-      <wt-time-picker
-        type="timerange"
-        v-model="value3"
-      />
-    </div>
+  <div class="demo-container">
+    <wt-time-picker type="timerange" v-model="value3" />
   </div>
 </template>
 <script>
 export default {
-  data () {
+  data() {
     return {
       value3: [],
     };

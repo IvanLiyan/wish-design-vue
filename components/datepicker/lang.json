@@ -33,21 +33,23 @@
       "title": "设置标题",
       "subtitle": "设置副标题",
       "caption": "设置说明文字",
-	  "body-class": "设置card-body的class"
+      "body-class": "设置card-body的class",
+      "width": "宽"
     }
   },
   "english": {
     "componnent_desc": "",
     "module1": {
-    	"title": "",
-    	"desc1": "",
-    	"desc2": "" 
+      "title": "",
+      "desc1": "",
+      "desc2": ""
     },
     "api": {
       "title": "",
       "subtitle": "",
       "caption": "",
-	  "body-class": ""
+      "body-class": "",
+      "width": "Width"
     }
   }
 }

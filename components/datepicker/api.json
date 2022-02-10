@@ -1,6 +1,22 @@
 {
   "props": [
     {
+      "name": "width",
+      "desc": "$t('datepicker.api.width')",
+      "type": "Number",
+      "optionalValue": "",
+      "default": "100%",
+      "version": ""
+    },
+    {
+      "name": "size",
+      "desc": "设置输入框的大小，同 Input 组件 size 属性",
+      "type": "string",
+      "optionalValue": ["small", "不设置", "large"],
+      "default": "不设置",
+      "version": ""
+    },
+    {
       "name": "type",
       "desc": "显示类型",
       "type": "string",
@@ -44,7 +60,20 @@
       "name": "placement",
       "desc": "弹出面板默认的方向",
       "type": "string",
-      "optionalValue": ["top", "top-start", "top-end", "bottom", "bottom-start", "bottom-end", "left", "left-start", "left-end", "right", "right-start", "right-end"],
+      "optionalValue": [
+        "top",
+        "top-start",
+        "top-end",
+        "bottom",
+        "bottom-start",
+        "bottom-end",
+        "left",
+        "left-start",
+        "left-end",
+        "right",
+        "right-start",
+        "right-end"
+      ],
       "default": "bottom-start",
       "version": ""
     },
@@ -105,7 +134,8 @@
       "version": ""
     }
   ],
-  "events": [{
+  "events": [
+    {
       "name": "update:open",
       "desc": "当面板显示隐藏时触发",
       "signature": "function (open: boolean)",

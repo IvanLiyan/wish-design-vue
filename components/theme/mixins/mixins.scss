@@ -8,6 +8,20 @@ $prefix: 'wt' !default;
   }
 }
 
+// span计算布局宽度
+@mixin span-calc($span-width) {
+  .span-#{$span-width} {
+    width: percentage($span-width/24);
+  }
+}
+
+// offset计算偏移量
+@mixin offset-calc($offset-width) {
+  .offset-#{$offset-width} {
+    margin-left: percentage($offset-width/24);
+  }
+}
+
 /*
 @param {string} $element 元素名
 @param {bool} $append 是否加载在当前类下,一般在 theme 中为 true

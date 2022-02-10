@@ -5,8 +5,8 @@
 @import './timepicker.scss';
 .#{$prefix}-date-picker {
   // data-table
-  display: inline-block;
-  width: $date-picker-width;
+  // display: inline-block;
+  min-width: 240px;
   .wt-picker-panel-sidebar + .wt-picker-panel-body {
     margin-top: 100px;
   }

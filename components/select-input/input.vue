@@ -35,9 +35,10 @@
     />
     <span :class="`${prefix}-suffix-inner`" v-if="hasSuffix">
       <i :class="`${prefix}-clear ${iconPrefix('error-circle')}`" @click.stop="handleClearClick" v-if="showClear"></i>
-      <slot name="suffix" v-else>
+      <slot name="suffix">
         <!-- <i :class="suffixIcon" @click="handleSuffixIconClick"></i> -->
-        <Icon :name="suffixIcon" @click="handlePrefixClick" />
+        <Icon v-if="!loading" :name="suffixIcon" @click="handlePrefixClick" />
+        <wt-loading v-else message="" size="small" />
       </slot>
     </span>
   </div>
@@ -67,6 +68,12 @@ export default {
     multiple: Boolean,
     inputWidth: Number,
     genre: String,
+    loading: {
+      type: Boolean,
+      default() {
+        return false;
+      },
+    },
     filterable: {
       type: Boolean,
       default() {

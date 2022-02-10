@@ -24,5 +24,6 @@
   "select": "components/select",
   "select-input": "components/select-input",
   "option": "components/option",
-  "option-group": "components/option-group"
+  "option-group": "components/option-group",
+  "loading": "components/loading"
 }
