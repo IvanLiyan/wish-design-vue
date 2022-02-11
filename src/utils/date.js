@@ -20,7 +20,7 @@ function converFormat (f) {
   return f.replace(/y/g, 'Y').replace(/d/g, 'D').replace(/W/g, 'w');
 }
 
-export const RANGE_SEPARATOR = '-';
+export const RANGE_SEPARATOR = '~';
 
 export const DEFAULT_FORMATS = {
   date: 'yyyy-MM-dd',
