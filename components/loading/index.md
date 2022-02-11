@@ -1,6 +1,6 @@
 # 加载 / Loading
 
-<span>{{$t('loading.componnent_desc')}}</span>
+<span>{{$t('loading.component_desc')}}</span>
 
 ## <span>{{$t('loading.module1.title')}}</span>
 

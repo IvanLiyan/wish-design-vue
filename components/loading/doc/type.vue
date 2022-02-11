@@ -1,10 +1,10 @@
 <template>
   <div>
     <div class="demo-loading-text">
-      <wt-loading size="small" message="正在加载中" />
+      <wt-loading size="small" message="loading" />
     </div>
     <div class="demo-loading-text">
-      <wt-loading type="line-scale" message="加载中" />
+      <wt-loading type="line-scale" message="loading" />
     </div>
   </div>
 </template>
