@@ -32,7 +32,6 @@ export default {
   },
   computed: {
     prefix () {
-      console.log('this.props', this.$props);
       return this.config.getPrefixCls('date-picker');
     },
     prefixCls () {
@@ -81,7 +80,6 @@ export default {
         }
         cells.push(cell);
       }
-      console.log('cells', cells);
       return cells;
     },
   },

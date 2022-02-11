@@ -8,8 +8,9 @@
     :before-remove="beforeRemove"
     :show-file-down="true"
     :file-list="fileList">
-    <wt-button icon="wticon-export-o">点击上传</wt-button>
-    <!-- <div slot="tip" class="wt-upload-tip">上传文件提示信息</div> -->
+    <!-- <wt-button icon="wticon-export-o" >点击上传</wt-button> -->
+    <wt-button>点击上传</wt-button>
+    <div slot="tip" class="wt-upload-tip">上传文件提示信息</div>
   </wt-upload>
 </template>
 <script>
@@ -45,6 +46,9 @@ export default {
         title: '删除文件',
         message: `确定移除${file.name}？`,
       });
+    },
+    clickHere () {
+      console.log('hhh');
     },
   },
 };

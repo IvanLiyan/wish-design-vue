@@ -2,18 +2,19 @@
   <div class="demo-picker-wrapper">
     <div class="demo-picker-group">
       <wt-date-picker
-        type="date"
-        v-model="value1"
-      />
+        type="year"
+        v-model="value3"
+        placeholder="选择时间" />
     </div>
   </div>
 </template>
-<style></style>
+<style>
+</style>
 <script>
 export default {
-  data() {
+  data () {
     return {
-      value1: '',
+      value3: '',
     };
   },
 };

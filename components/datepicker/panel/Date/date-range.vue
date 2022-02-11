@@ -7,7 +7,7 @@
           @click="handleShortcutClick(shortcut)">{{ shortcut.text }}</div>
       </slot>
     </div>
-    <div :class="panelBodyClasses" @click="clickHere">
+    <div :class="panelBodyClasses">
       <div :class="[panelPrefix + '-content', panelPrefix + '-content-left']">
         <div :class="[prefix + '-header']">
           <span :class="iconBtnCls('prev', '-double')"
@@ -349,9 +349,6 @@ export default {
     this.setPanelDates(this.leftPanelDate);
   },
   methods: {
-    clickHere () {
-      console.log('PROPS', this.$props);
-    },
     handleValueChange (newVal) {
       const minDate = newVal[0] ? toDate(newVal[0]) : null;
       const maxDate = newVal[1] ? toDate(newVal[1]) : null;
