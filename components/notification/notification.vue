@@ -21,7 +21,7 @@ const iconTypeMap = {
   success: 'check-circle',
   info: 'alert-circle',
   warning: 'alert-triangle',
-  danger: 'x-circle',
+  error: 'x-circle',
 };
 
 export default {

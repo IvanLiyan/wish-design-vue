@@ -90,7 +90,7 @@ describe('Button', function () {
       const btn = createButton(type);
       expect(btn.classes()).to.include(`wt-btn-${type}`);
     }
-    ['primary', 'text', 'text-secondary', 'success', 'warning', 'danger'].map(createIt);
+    ['primary', 'text', 'text-secondary', 'success', 'warning', 'error'].map(createIt);
   });
 
   it('dashed', function () {

@@ -27,14 +27,14 @@
       <wt-tag type="success" clearable rounded>item content</wt-tag>
       <wt-tag type="success" size="large" clearable rounded>item content</wt-tag>
     </div>
-    <h4>danger</h4>
+    <h4>error</h4>
     <div class="demo-container">
-      <wt-tag type="danger" rounded>item content</wt-tag>
-      <wt-tag type="danger" size="large" rounded>item content</wt-tag>
-      <wt-tag type="danger">item content</wt-tag>
-      <wt-tag type="danger" size="large">item content</wt-tag>
-      <wt-tag type="danger" clearable rounded>item content</wt-tag>
-      <wt-tag type="danger" size="large" clearable rounded>item content</wt-tag>
+      <wt-tag type="error" rounded>item content</wt-tag>
+      <wt-tag type="error" size="large" rounded>item content</wt-tag>
+      <wt-tag type="error">item content</wt-tag>
+      <wt-tag type="error" size="large">item content</wt-tag>
+      <wt-tag type="error" clearable rounded>item content</wt-tag>
+      <wt-tag type="error" size="large" clearable rounded>item content</wt-tag>
     </div>
     <h4>warning</h4>
     <div class="demo-container">

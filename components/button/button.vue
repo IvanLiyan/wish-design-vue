@@ -46,7 +46,7 @@ export default {
       type: String,
       default: 'primary',
       validator: (val) =>
-        ['primary', 'secondary', 'third', 'ghost', 'text', 'link', 'dashed', 'success', 'warning', 'danger'].includes(
+        ['primary', 'secondary', 'third', 'ghost', 'text', 'link', 'dashed', 'success', 'warning', 'error'].includes(
           val,
         ),
     },

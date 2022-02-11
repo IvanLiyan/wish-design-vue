@@ -44,7 +44,7 @@
     },
     "module4": {
       "title": "Emphasis Button",
-      "desc1": "We use three different colors (Red, Yellow, Green) to emphasis different status (Danger, Warning, Success)."
+      "desc1": "We use three different colors (Red, Yellow, Green) to emphasis different status (Error, Warning, Success)."
     },
     "module5": {
       "title": "Button Group",

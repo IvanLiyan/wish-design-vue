@@ -1,0 +1,37 @@
+{
+  "props": [
+    {
+      "name": "type",
+      "desc": "主题",
+      "type": "string",
+      "optionalValue": ["success", "warning", "error", "info"],
+      "default": "warning",
+      "version": ""
+    },
+    {
+      "name": "closable",
+      "desc": "是否可关闭",
+      "type": "boolean",
+      "optionalValue": "",
+      "default": "true",
+      "version": ""
+    }
+  ],
+  "events": [
+    {
+      "name": "close",
+      "desc": "关闭 alert 时触发的事件",
+      "args": ""
+    }
+  ],
+  "slots": [
+    {
+      "name": "title",
+      "desc": "标题"
+    },
+    {
+      "name": "description",
+      "desc": "辅助性文字"
+    }
+  ]
+}

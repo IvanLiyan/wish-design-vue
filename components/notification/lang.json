@@ -1,0 +1,24 @@
+{
+  "chinese": {
+    "componnent_desc": "默认 5 秒自动消失，通常出现在窗口的右上角，多个同时出现时，以纵向顺序排列。用于展示即时的操作反馈，通常用于不打断用户操作的提醒",
+    "api": {
+      "desc": "你可以通过 this.$wt.notify 来直接调用组件，亦或者使用单独引用的方式调用组件",
+      "message": "说明文字",
+      "type": "主题样式，如果不在可选值内将被忽略",
+      "duration": "显示时间, 毫秒。设为 0 则不会自动关闭",
+      "position": "出现位置",
+      "offset": "偏移的距离，在同一时刻，所有的 Notification 实例应当设置一个相同的偏移量"
+    }
+  },
+  "english": {
+    "componnent_desc": "",
+    "api": {
+      "desc": "",
+      "message": "",
+      "type": "",
+      "duration": "",
+      "position": "",
+      "offset": ""
+    }
+  }
+}

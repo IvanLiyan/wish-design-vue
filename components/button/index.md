@@ -26,6 +26,16 @@
         }
     }
   }
+   .demo-container-left{
+     text-align:left;
+     &>*{
+          margin-bottom: 20px;
+        &:last-child{
+             margin-bottom: 0;
+        }
+    }
+  
+  }
   
 </style>
 

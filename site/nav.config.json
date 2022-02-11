@@ -90,7 +90,17 @@
           {
             "path": "notification",
             "name": "Notification",
-            "cnName": "提示"
+            "cnName": "全局提示"
+          },
+          {
+            "path": "loading",
+            "name": "Loading",
+            "cnName": "加载中"
+          },
+          {
+            "path": "alert",
+            "name": "Alert",
+            "cnName": "警告提示"
           }
         ]
       },
@@ -106,11 +116,6 @@
             "path": "card",
             "name": "Card",
             "cnName": "卡片"
-          },
-          {
-            "path": "loading",
-            "name": "Loading",
-            "cnName": "加载中"
           }
         ]
       }
