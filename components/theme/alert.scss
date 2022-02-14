@@ -39,18 +39,18 @@
   }
 
   @include e(success) {
-    background-color: #e6fff4;
+    background-color: $color-success-3;
   }
 
   @include e(warning) {
-    background-color: #fff8e6;
+    background-color: $color-warning-3;
   }
   @include e(error) {
-    background-color: #ffebec;
+    background-color: $color-danger-3;
   }
 
   @include e(info) {
-    background-color: #e6f8ff;
+    background-color: $color-info-3;
   }
 
   @include e(icon) {
