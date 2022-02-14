@@ -11,14 +11,14 @@
     }
   },
   "english": {
-    "componnent_desc": "",
+    "componnent_desc": "By default disappear in 5 seconds,usually shown in the top right corner. If there are multipe alerts, shown one by one vertically. Used for immediately response to a user action, working as non-interrupt notifications.",
     "api": {
-      "desc": "",
-      "message": "",
-      "type": "",
-      "duration": "",
-      "position": "",
-      "offset": ""
+      "desc": "You can use this.$wt.notify to call this component, or call it through independent citation.",
+      "message": "Description",
+      "type": "Theme style,will be ignored if the value set is not useable",
+      "duration": "Shown duration time by millisecond. Set 0 and it won't disappear automatically.",
+      "position": "Shown Position",
+      "offset": "Offset, all Notification entities share the same offset value at the same time."
     }
   }
 }

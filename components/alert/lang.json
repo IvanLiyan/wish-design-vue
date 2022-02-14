@@ -12,15 +12,15 @@
     }
   },
   "english": {
-    "componnent_desc": "",
-    "module1": { "title": "" },
-    "module2": { "title": "" },
+    "componnent_desc": "Won't disappear automatically, shown on the top of window or card, for relatively important announcements or notifications.",
+    "module1": { "title": "Basic Style" },
+    "module2": { "title": "Type" },
     "api": {
-      "type": "",
-      "closable": "",
-      "title": "",
-      "description": "",
-      "close": ""
+      "type": "Type",
+      "closable": "Whether it is closable",
+      "title": "Title",
+      "description": "Descriptive text",
+      "close": "Event triggered by closing the alert"
     }
   }
 }

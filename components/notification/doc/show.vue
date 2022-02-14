@@ -119,21 +119,21 @@ export default {
     click12: function (e) {
       this.$wt.notify({
         type: 'info',
-        message: 'I am a info notification',
+        message: 'I am an info notification',
         position: 'bottom-left',
       });
     },
     click17: function (e) {
       this.$wt.notify({
         type: 'info',
-        message: 'I am a info notification',
+        message: 'I am an info notification',
         position: 'bottom-center',
       });
     },
     click18: function (e) {
       this.$wt.notify({
         type: 'info',
-        message: 'I am a info notification',
+        message: 'I am an info notification',
         position: 'bottom-right',
       });
     },
@@ -154,14 +154,14 @@ export default {
     click15: function (e) {
       this.$wt.notify({
         type: 'error',
-        message: 'I am a error notification',
+        message: 'I am an error notification',
         offset: 50,
       });
     },
     click16: function (e) {
       this.$wt.notify({
         type: 'info',
-        message: 'I am a info notification',
+        message: 'I am an info notification',
         offset: 100,
       });
     },

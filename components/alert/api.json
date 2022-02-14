@@ -2,7 +2,7 @@
   "props": [
     {
       "name": "type",
-      "desc": "主题",
+      "desc": "$t('alert.api.title')",
       "type": "string",
       "optionalValue": ["success", "warning", "error", "info"],
       "default": "warning",
@@ -10,7 +10,7 @@
     },
     {
       "name": "closable",
-      "desc": "是否可关闭",
+      "desc": "$t('alert.api.closable')",
       "type": "boolean",
       "optionalValue": "",
       "default": "true",
@@ -20,18 +20,18 @@
   "events": [
     {
       "name": "close",
-      "desc": "关闭 alert 时触发的事件",
+      "desc": "$t('alert.api.close')",
       "args": ""
     }
   ],
   "slots": [
     {
       "name": "title",
-      "desc": "标题"
+      "desc": "$t('alert.api.title')"
     },
     {
       "name": "description",
-      "desc": "辅助性文字"
+      "desc": "$t('alert.api.description')"
     }
   ]
 }

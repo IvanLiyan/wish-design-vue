@@ -25,13 +25,13 @@ export default {
     clickError: function (e) {
       this.$wt.notify({
         type: 'error',
-        message: 'I am a error notification',
+        message: 'I am an error notification',
       });
     },
     clickInfo: function (e) {
       this.$wt.notify({
         type: 'info',
-        message: 'I am a info notification',
+        message: 'I am an info notification',
       });
     },
   },

@@ -1,15 +1,13 @@
 # 警告提示 / Alert
 
-<div>用于展示重要公告</div>
+<span>{{$t('alert.componnent_desc')}}</span>
 
-<span>不会自动消失，通常出现在窗口或卡片的顶端。用于展示较为重要的公告信息或通知</span>
-
-### 基础样式
+### {{$t('alert.module1.title')}}
 
 :::include(src="./doc/base.vue")
 :::
 
-### 类型
+### {{$t('alert.module2.title')}}
 
 :::include(src="./doc/type.vue")
 :::

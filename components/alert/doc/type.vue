@@ -1,27 +1,39 @@
 <template>
   <div class="demo-container-left">
     <wt-alert type="warning" @close="close">
-      <span slot="title">联运物流商春节放假通知</span>
+      <span slot="title">Spring Festival holiday notice for intermodal logistics providers</span>
       <p slot="description">
-        为了确保您的产品能及时进入海外仓、保证服务质量，Uni-Freight（联运）物流服务商将于2021年2月5日截单（停止收货），若您需使用Uni-Freight（联运）服务，请提前下单，并确保产品在2月4日18:00前送达联运仓库。
+        In order to ensure that your products can enter overseas warehouses in time and ensure service quality,
+        Uni-Freight (intermodal) logistics service providers will cut off orders (stop receiving goods) on February 5,
+        2021. If you need to use Uni-Freight (intermodal) service, please place an order in advance and ensure that the
+        product arrives at the intermodal warehouse before 18:00 on February 4.
       </p>
     </wt-alert>
     <wt-alert type="success" @close="close">
-      <span slot="title">联运物流商春节放假通知</span>
+      <span slot="title">Spring Festival holiday notice for intermodal logistics providers</span>
       <p slot="description">
-        为了确保您的产品能及时进入海外仓、保证服务质量，Uni-Freight（联运）物流服务商将于2021年2月5日截单（停止收货），若您需使用Uni-Freight（联运）服务，请提前下单，并确保产品在2月4日18:00前送达联运仓库。
+        In order to ensure that your products can enter overseas warehouses in time and ensure service quality,
+        Uni-Freight (intermodal) logistics service providers will cut off orders (stop receiving goods) on February 5,
+        2021. If you need to use Uni-Freight (intermodal) service, please place an order in advance and ensure that the
+        product arrives at the intermodal warehouse before 18:00 on February 4.
       </p>
     </wt-alert>
     <wt-alert type="error" @close="close">
-      <span slot="title">联运物流商春节放假通知</span>
+      <span slot="title">Spring Festival holiday notice for intermodal logistics providers</span>
       <p slot="description">
-        为了确保您的产品能及时进入海外仓、保证服务质量，Uni-Freight（联运）物流服务商将于2021年2月5日截单（停止收货），若您需使用Uni-Freight（联运）服务，请提前下单，并确保产品在2月4日18:00前送达联运仓库。
+        In order to ensure that your products can enter overseas warehouses in time and ensure service quality,
+        Uni-Freight (intermodal) logistics service providers will cut off orders (stop receiving goods) on February 5,
+        2021. If you need to use Uni-Freight (intermodal) service, please place an order in advance and ensure that the
+        product arrives at the intermodal warehouse before 18:00 on February 4.
       </p>
     </wt-alert>
     <wt-alert type="info" @close="close">
-      <span slot="title">联运物流商春节放假通知</span>
+      <span slot="title">Spring Festival holiday notice for intermodal logistics providers</span>
       <p slot="description">
-        为了确保您的产品能及时进入海外仓、保证服务质量，Uni-Freight（联运）物流服务商将于2021年2月5日截单（停止收货），若您需使用Uni-Freight（联运）服务，请提前下单，并确保产品在2月4日18:00前送达联运仓库。
+        In order to ensure that your products can enter overseas warehouses in time and ensure service quality,
+        Uni-Freight (intermodal) logistics service providers will cut off orders (stop receiving goods) on February 5,
+        2021. If you need to use Uni-Freight (intermodal) service, please place an order in advance and ensure that the
+        product arrives at the intermodal warehouse before 18:00 on February 4.
       </p>
     </wt-alert>
   </div>
