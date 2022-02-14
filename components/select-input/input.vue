@@ -18,7 +18,6 @@
   >
     <span :class="`${prefix}-prefix-inner`" v-if="hasPrefix">
       <slot name="prefix">
-        <!-- <i :class="prefixIcon" @click="handlePrefixClick"></i> -->
         <Icon :name="prefixIcon" @click="handlePrefixClick" />
       </slot>
     </span>
@@ -36,7 +35,6 @@
     <span :class="`${prefix}-suffix-inner`" v-if="hasSuffix">
       <i :class="`${prefix}-clear ${iconPrefix('error-circle')}`" @click.stop="handleClearClick" v-if="showClear"></i>
       <slot name="suffix">
-        <!-- <i :class="suffixIcon" @click="handleSuffixIconClick"></i> -->
         <Icon v-if="!loading" :name="suffixIcon" @click="handlePrefixClick" />
         <wt-loading v-else message="" size="small" />
       </slot>
