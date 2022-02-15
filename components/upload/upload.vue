@@ -220,6 +220,7 @@ export default {
       this.onChange(file, this.uploadFiles);
     },
     handleRemove (file, raw) {
+      console.log('REMOVE');
       if (raw) {
         file = this.getFile(raw);
       }

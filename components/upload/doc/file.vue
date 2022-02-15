@@ -1,6 +1,6 @@
 <template>
   <wt-upload
-    class="upload-base"
+    class="upload-file"
     action="https://jsonplaceholder.typicode.com/posts/"
     multiple
     :on-preview="handlePreview"
@@ -9,7 +9,9 @@
     :show-file-down="true"
     :file-list="fileList"
   >
-    <wt-button icon="share" type="third">点击上传</wt-button>
+    <wt-button icon="paperclip" type="third">
+      <span>点击上传</span>
+    </wt-button>
   </wt-upload>
 </template>
 <script>
@@ -37,8 +39,19 @@ export default {
 };
 </script>
 <style>
-.upload-base{
+.upload-file {
   width: 360px;
   text-align: left;
+}
+.upload-file button {
+  width: 240px;
+  max-width: 240px;
+  height: 36px;
+  text-align: left;
+  padding: 0 9px;
+}
+.upload-file button span {
+  margin-left: 5px;
+  color: #BFCDD4;
 }
 </style>

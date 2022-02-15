@@ -25,5 +25,6 @@
   "select-input": "components/select-input",
   "option": "components/option",
   "option-group": "components/option-group",
-  "loading": "components/loading"
+  "loading": "components/loading",
+  "upload": "components/upload"
 }

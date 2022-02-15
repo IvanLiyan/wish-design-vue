@@ -71,6 +71,7 @@ $line-height-1: 24px !default;
 $line-height-2: 20px !default;
 $line-height-3: 18px !default;
 $line-height-4: 16px !default;
+$line-height-5: 28px !default;
 
 // @ignore
 $line-height-default: $line-height-2 / $font-size-2 !default;
@@ -515,7 +516,7 @@ $upload-itemlist-margin-top: 10px!default;
 // @name 项-背景色
 $upload-item-bgc: inherit!default;
 // @name 项-宽度
-$upload-item-width: 100%!default;
+$upload-item-width: 240px!default;
 // @name 项-水平内边距
 $upload-item-padding-horizontal: $s-0!default;
 // @name 项-文件名-文字颜色
@@ -527,7 +528,7 @@ $upload-item-filename-font-size: $font-size-2!default;
 // @name 项-文件名-字重
 $upload-item-filename-font-weight: $font-weight-regular!default;
 // @name 项-行高-文件名
-$upload-item-filename-line-height: $line-height-2!default;
+$upload-item-filename-line-height: $line-height-5!default;
 // @name 项-文件描述-字号
 $upload-item-filedescription-font-size: inherit!default;
 // @name 项-文件描述-字重
@@ -564,6 +565,8 @@ $upload-hover-bgc: #f5f7fa!default;
 $upload-hover-item-filename-color: inherit!default;
 // @name 悬浮-操作图标-文字颜色
 $upload-hover-operateicon-color: inherit!default;
+// @name 按钮-边框颜色
+$btn-border-color: $color-line-1!default;
 // @end propsValue
 // @end category
 

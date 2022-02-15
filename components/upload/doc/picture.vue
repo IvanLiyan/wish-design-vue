@@ -1,9 +1,10 @@
 <template>
-  <div>
+  <div class="picture-wrapper">
     <wt-upload
       class="picture-list"
-      action="https://jsonplaceholder.typicode.com/posts/"
+      action="https://www.mocky.io/v2/5185415ba171ea3a00704eed/posts/"
       list-type="picture-card"
+      :http-request="uploadPdf"
       :on-preview="handlePictureCardPreview"
       :on-remove="handleRemove"
       :file-list="fileList">
@@ -20,14 +21,7 @@ export default {
     return {
       dialogImageUrl: '',
       dialogVisible: false,
-      fileList: [
-        {
-          name: 'food.jpeg',
-          /* eslint-disable */
-          url: 'https://fuss10.elemecdn.com/3/63/4e7f3a15429bfda99bce42a18cdd1jpeg.jpeg?imageMogr2/thumbnail/360x360/format/webp/quality/100',
-          /* eslint-disable */
-        }
-      ]
+      fileList: [],
     };
   },
   methods: {
@@ -42,6 +36,15 @@ export default {
 };
 </script>
 <style>
+.picture-wrapper {
+  width: 104px;
+  height: 104px;
+  border: 1px solid #BFCDD4;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .picture-list{
   text-align:left;
 }

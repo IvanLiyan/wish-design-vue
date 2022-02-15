@@ -1,0 +1,42 @@
+{
+  "chinese": {
+    "componnent_desc": "将文件上传至服务端。",
+    "module1": {
+      "title": "基础样式"
+	  },
+    "module2": {
+      "title": "文件上传"
+	  },
+    "module3": {
+      "title": "图片上传",
+      "desc": ""
+	  },
+    "api": {
+      "title": "设置标题",
+      "subtitle": "设置副标题",
+      "caption": "设置说明文字",
+	    "body-class": "设置card-body的class"
+    }
+  },
+  "english": {
+    "componnent_desc": "",
+    "module1": {
+      "title": "",
+      "desc": ""
+	  },
+    "module2": {
+      "title": "",
+      "desc": ""
+	  },
+    "module3": {
+      "title": "",
+      "desc": ""
+	  },
+    "api": {
+      "title": "",
+      "subtitle": "",
+      "caption": "",
+	    "body-class": ""
+    }
+  }
+}

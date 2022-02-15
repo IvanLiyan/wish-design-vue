@@ -22,7 +22,7 @@ export default {
     },
     getIconCls: {
       type: Function,
-      required: true,
+      required: false,
     },
   },
   inject: {

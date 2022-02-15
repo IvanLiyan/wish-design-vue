@@ -1,6 +1,7 @@
 <script>
 import ajax from './ajax';
 import UploadDragger from './upload-dragger.vue';
+import Icon from '@components/icon';
 
 export default {
   inject: ['uploader'],
@@ -30,7 +31,7 @@ export default {
     },
     getIconCls: {
       type: Function,
-      required: true,
+      required: false,
     },
 
     onFileSelect: Function,
@@ -222,7 +223,6 @@ export default {
           drag
             ? <upload-dragger
               prefix={this.prefix}
-              getIconCls={this.getIconCls}
               disabled={disabled}
               on-file={uploadFiles}>
               {this.$slots.default}</upload-dragger>
@@ -235,7 +235,12 @@ export default {
           name={name}
           on-change={handleChange}
           multiple={multiple}
-          accept={accept}></input>
+          accept={accept}>
+        </input>
+        <div class={`${prefix}-info`}>
+          <Icon class={`${prefix}-info-icon`} name="plus" color="#0E161C" />
+          <span class={`${prefix}-info-text`}>点击上传</span>
+        </div>
       </div>
     );
   },
