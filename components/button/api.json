@@ -14,7 +14,7 @@
         "dashed",
         "success",
         "warning",
-        "danger"
+        "error"
       ],
       "default": "primary",
       "version": ""

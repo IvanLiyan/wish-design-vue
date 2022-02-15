@@ -2,7 +2,7 @@
   <div class="demo-container">
     <wt-button type="success" @click="clickSuccess">success</wt-button>
     <wt-button type="warning" @click="clickWarning">warning</wt-button>
-    <wt-button type="danger" @click="clickDanger">danger</wt-button>
+    <wt-button type="error" @click="clickError">error</wt-button>
     <wt-button type="secondary" @click="clickInfo">info</wt-button>
   </div>
 </template>
@@ -22,16 +22,16 @@ export default {
         message: 'I am a warning notification',
       });
     },
-    clickDanger: function (e) {
+    clickError: function (e) {
       this.$wt.notify({
-        type: 'danger',
-        message: 'I am a danger notification',
+        type: 'error',
+        message: 'I am an error notification',
       });
     },
     clickInfo: function (e) {
       this.$wt.notify({
         type: 'info',
-        message: 'I am a info notification',
+        message: 'I am an info notification',
       });
     },
   },

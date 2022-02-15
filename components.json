@@ -26,5 +26,6 @@
   "option": "components/option",
   "option-group": "components/option-group",
   "loading": "components/loading",
-  "upload": "components/upload"
+  "upload": "components/upload",
+  "alert": "components/alert",
 }

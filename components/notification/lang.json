@@ -1,0 +1,24 @@
+{
+  "chinese": {
+    "componnent_desc": "默认 5 秒自动消失，通常出现在窗口的右上角，多个同时出现时，以纵向顺序排列。用于展示即时的操作反馈，通常用于不打断用户操作的提醒",
+    "api": {
+      "desc": "你可以通过 this.$wt.notify 来直接调用组件，亦或者使用单独引用的方式调用组件",
+      "message": "说明文字",
+      "type": "主题样式，如果不在可选值内将被忽略",
+      "duration": "显示时间, 毫秒。设为 0 则不会自动关闭",
+      "position": "出现位置",
+      "offset": "偏移的距离，在同一时刻，所有的 Notification 实例应当设置一个相同的偏移量"
+    }
+  },
+  "english": {
+    "componnent_desc": "By default disappear in 5 seconds,usually shown in the top right corner. If there are multipe alerts, shown one by one vertically. Used for immediately response to a user action, working as non-interrupt notifications.",
+    "api": {
+      "desc": "You can use this.$wt.notify to call this component, or call it through independent citation.",
+      "message": "Description",
+      "type": "Theme style,will be ignored if the value set is not useable",
+      "duration": "Shown duration time by millisecond. Set 0 and it won't disappear automatically.",
+      "position": "Shown Position",
+      "offset": "Offset, all Notification entities share the same offset value at the same time."
+    }
+  }
+}

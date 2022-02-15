@@ -35,7 +35,7 @@ export default {
     },
     type: {
       default: 'default',
-      range: ['default', 'primary', 'success', 'danger', 'warning'],
+      range: ['default', 'primary', 'success', 'error', 'warning'],
     },
     disabled: {
       type: Boolean,

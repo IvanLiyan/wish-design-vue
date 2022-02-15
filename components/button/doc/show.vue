@@ -53,11 +53,11 @@
       <wt-button type="link" link-size="small">按钮按钮按钮按钮按钮按钮按钮</wt-button>
     </div>
     <div>
-      <wt-button type="danger">按钮</wt-button>
-      <wt-button type="danger" loading>loading 按钮</wt-button>
-      <wt-button type="danger" disabled>disabled 按钮</wt-button>
-      <wt-button type="danger" icon="plus">按钮按钮按钮按钮按钮按钮按钮</wt-button>
-      <wt-button type="danger" icon="plus" />
+      <wt-button type="error">按钮</wt-button>
+      <wt-button type="error" loading>loading 按钮</wt-button>
+      <wt-button type="error" disabled>disabled 按钮</wt-button>
+      <wt-button type="error" icon="plus">按钮按钮按钮按钮按钮按钮按钮</wt-button>
+      <wt-button type="error" icon="plus" />
     </div>
     <div>
       <wt-button type="warning">按钮</wt-button>

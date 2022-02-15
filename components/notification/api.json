@@ -2,7 +2,7 @@
   "props": [
     {
       "name": "message",
-      "desc": "说明文字",
+      "desc": "$t('notification.api.message')",
       "type": ["string"],
       "optionalValue": "",
       "default": "",
@@ -10,15 +10,15 @@
     },
     {
       "name": "type",
-      "desc": "主题样式，如果不在可选值内将被忽略",
+      "desc": "$t('notification.api.type')",
       "type": "string",
-      "optionalValue": ["success", "warning", "info", "danger"],
+      "optionalValue": ["success", "warning", "info", "error"],
       "default": "",
       "version": ""
     },
     {
       "name": "duration",
-      "desc": "显示时间, 毫秒。设为 0 则不会自动关闭",
+      "desc": "$t('notification.api.duration')",
       "type": "number",
       "optionalValue": "",
       "default": "3000",
@@ -26,7 +26,7 @@
     },
     {
       "name": "position",
-      "desc": "配置位置选项",
+      "desc": "$t('notification.api.position')",
       "type": "string",
       "optionalValue": ["top-left", "top-center", "top-right", "bottom-left", "bottom-center", "bottom-right"],
       "default": "top-right",
@@ -34,7 +34,7 @@
     },
     {
       "name": "offset",
-      "desc": "偏移的距离，在同一时刻，所有的 Notification 实例应当设置一个相同的偏移量",
+      "desc": "$t('notification.api.offset')",
       "type": "number",
       "optionalValue": "",
       "default": "0",

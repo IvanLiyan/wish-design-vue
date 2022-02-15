@@ -1,0 +1,73 @@
+@import './common/var.scss';
+@import './mixins/mixins.scss';
+
+@mixin announcement-color($color, $bgc, $iconColor) {
+  background-color: $bgc;
+  color: $color;
+  .#{$prefix}-announcement-icon {
+    color: $iconColor;
+  }
+}
+
+@include c(alert) {
+  padding: 16px;
+  color: $color-text-1;
+  min-width: 240px;
+  border-radius: 4px;
+  text-align: left;
+  box-shadow: $shadow-3;
+  opacity: 1;
+  transition: opacity 0.4s;
+  display: inline-flex;
+  align-items: center;
+
+  @include e(title) {
+    font-size: $h3-font-size;
+    line-height: $h3-line-height;
+    margin-bottom: 8px;
+  }
+
+  @include e(description) {
+    font-size: $font-size-2;
+    line-height: $line-height-2;
+    text-align: justify;
+  }
+
+  @include e(default) {
+    background-color: #fff;
+    border-left: solid 8px $color-primary;
+  }
+
+  @include e(success) {
+    background-color: #e6fff4;
+  }
+
+  @include e(warning) {
+    background-color: #fff8e6;
+  }
+  @include e(error) {
+    background-color: #ffebec;
+  }
+
+  @include e(info) {
+    background-color: #e6f8ff;
+  }
+
+  @include e(icon) {
+    font-size: 14px;
+  }
+
+  &-content {
+    flex: 1 1 auto;
+    word-break: break-word;
+  }
+
+  @include e(close) {
+    margin-left: 10px;
+    cursor: pointer;
+  }
+}
+.#{$prefix}-alert-fade-enter,
+.#{$prefix}-alert-fade-leave-active {
+  opacity: 0;
+}

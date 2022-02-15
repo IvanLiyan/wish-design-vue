@@ -59,7 +59,7 @@ $large-height: 28px;
     color: $color-success-1;
     background-color: $color-success-3;
   }
-  @include e('danger') {
+  @include e('error') {
     color: $color-danger-1;
     background-color: $color-danger-3;
   }

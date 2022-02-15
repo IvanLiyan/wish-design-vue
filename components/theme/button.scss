@@ -252,7 +252,7 @@
       $color-line-1
     );
   }
-  &-danger {
+  &-error {
     @include btn-color(
       // 正常
       $color-danger,

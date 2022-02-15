@@ -27,6 +27,7 @@ import Option from 'components/option';
 import OptionGroup from 'components/option-group';
 import Loading from 'components/loading';
 import Upload from 'components/upload';
+import Alert from 'components/alert';
 import CollapseTransition from './transitions/collapse-transition';
 
 const components = [
@@ -58,6 +59,7 @@ const components = [
   OptionGroup,
   Loading,
   Upload,
+  Alert,
   CollapseTransition,
 ];
 
@@ -110,6 +112,7 @@ export {
   OptionGroup,
   Loading,
   Upload,
+  Alert,
   CollapseTransition,
 };
 

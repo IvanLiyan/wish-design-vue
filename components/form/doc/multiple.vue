@@ -57,20 +57,8 @@ export default {
       },
       options: [
         {
-          value: 'china',
-          label: '中国',
-        },
-        {
-          value: 'america',
-          label: '美国',
-        },
-        {
-          value: 'japan',
-          label: '日本',
-        },
-        {
-          value: 'france',
-          label: '法国',
+          value: 'date-range',
+          label: '起止日期',
         },
       ],
     };

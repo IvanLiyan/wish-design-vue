@@ -12,7 +12,7 @@
       "name": "type",
       "desc": "$t('tag.api.type')",
       "type": "string   ",
-      "optionalValue": ["default", "primary", "success", "danger", "warning"],
+      "optionalValue": ["default", "primary", "success", "error", "warning"],
       "default": "default",
       "version": ""
     },

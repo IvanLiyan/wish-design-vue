@@ -1,0 +1,26 @@
+{
+  "chinese": {
+    "componnent_desc": "不会自动消失，通常出现在窗口或卡片的顶端。用于展示较为重要的公告信息或通知",
+    "module1": { "title": "基础样式" },
+    "module2": { "title": "类型" },
+    "api": {
+      "type": "类型",
+      "closable": "是否可关闭",
+      "title": "标题",
+      "description": "辅助性文字",
+      "close": "关闭 alert 时触发的事件"
+    }
+  },
+  "english": {
+    "componnent_desc": "Won't disappear automatically, shown on the top of window or card, for relatively important announcements or notifications.",
+    "module1": { "title": "Basic Style" },
+    "module2": { "title": "Type" },
+    "api": {
+      "type": "Type",
+      "closable": "Whether it is closable",
+      "title": "Title",
+      "description": "Descriptive text",
+      "close": "Event triggered by closing the alert"
+    }
+  }
+}

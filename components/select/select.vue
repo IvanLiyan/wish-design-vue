@@ -83,29 +83,7 @@
             />
           </div>
         </li>
-        <li :class="`${prefix}-tags-li`" v-if="collapseTags && filteredSelected.length" ref="selectedItemTag">
-          <!-- <wt-tooltip placement="top" theme="light" :popper-class="`${prefix}-tags-popper`">
-            <div slot="content">
-              <ul :class="`${prefix}-tags-ul`" :style="{ width: tooltipWidth + 'px' }">
-                <li :class="`${prefix}-choice`" v-for="(item, index) in filteredSelected" :key="index">
-                  <wt-tag
-                    theme=""
-                    :size="size"
-                    :closable="!item.disabled && closableFn(item)"
-                    @close="handleClearClick(item)"
-                  >
-                    {{ formatterOption(item) }}
-                  </wt-tag>
-                </li>
-              </ul>
-            </div>
-            <span :class="`${prefix}-tags-text`">
-              <slot name="maxTagPlaceholder" :omitted-values="omittedValues" :selected="filteredSelected"
-                >已选择{{ filteredSelected.length }}项</slot
-              >
-            </span>
-          </wt-tooltip> -->
-        </li>
+        <li :class="`${prefix}-tags-li`" v-if="collapseTags && filteredSelected.length" ref="selectedItemTag"></li>
       </ul>
       <span :class="`${inputPrefix}-suffix-inner`">
         <wt-loading v-if="loading" message="" size="small" />
@@ -202,7 +180,6 @@ import Clickoutside from '@/utils/clickoutside';
 import NavigationMixin from './navigation-mixin';
 import scrollIntoView from '@/utils/scroll-into-view';
 import WtTag from '@components/tag';
-// import MtdTooltip from '@components/tooltip';
 import debounce from 'throttle-debounce/debounce';
 import { getValueByPath } from '@/utils/util';
 import { isFunction, isObject, isExist } from '@/utils/type';
@@ -224,7 +201,6 @@ export default {
   name: 'WtSelect',
   components: {
     WtSelectInput,
-    // MtdTooltip,
     Popper,
     Drop,
     Reference,
@@ -702,11 +678,6 @@ export default {
           });
           nextValues = [...(this.value || []), ...diffValues];
         }
-
-        // const nextValues = this.isSelectAll ? []
-        //   : this.options.filter((option) => {
-        //     return !option.isSelectAll && !option._disabled;
-        //   }).map((option) => option.value);
 
         this.$emit('input', nextValues);
         this.$emit('change', nextValues);

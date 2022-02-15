@@ -1,0 +1,37 @@
+{
+  "props": [
+    {
+      "name": "type",
+      "desc": "$t('alert.api.title')",
+      "type": "string",
+      "optionalValue": ["success", "warning", "error", "info"],
+      "default": "warning",
+      "version": ""
+    },
+    {
+      "name": "closable",
+      "desc": "$t('alert.api.closable')",
+      "type": "boolean",
+      "optionalValue": "",
+      "default": "true",
+      "version": ""
+    }
+  ],
+  "events": [
+    {
+      "name": "close",
+      "desc": "$t('alert.api.close')",
+      "args": ""
+    }
+  ],
+  "slots": [
+    {
+      "name": "title",
+      "desc": "$t('alert.api.title')"
+    },
+    {
+      "name": "description",
+      "desc": "$t('alert.api.description')"
+    }
+  ]
+}

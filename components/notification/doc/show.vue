@@ -4,7 +4,7 @@
     <div class="demo-container">
       <wt-button type="success" @click="click1">success</wt-button>
       <wt-button type="warning" @click="click2">warning</wt-button>
-      <wt-button type="danger" @click="click3">danger</wt-button>
+      <wt-button type="error" @click="click3">error</wt-button>
       <wt-button type="secondary" @click="click4">info</wt-button>
     </div>
     <div>
@@ -56,8 +56,8 @@ export default {
     },
     click3: function (e) {
       this.$wt.notify({
-        type: 'danger',
-        message: 'I am a danger notification',
+        type: 'error',
+        message: 'I am a error notification',
       });
     },
     click4: function (e) {
@@ -82,8 +82,8 @@ export default {
     },
     click7: function (e) {
       this.$wt.notify({
-        type: 'danger',
-        message: 'I am a danger notification',
+        type: 'error',
+        message: 'I am a error notification',
         duration: 5000,
       });
     },
@@ -111,29 +111,29 @@ export default {
     },
     click11: function (e) {
       this.$wt.notify({
-        type: 'danger',
-        message: 'I am a danger notification',
+        type: 'error',
+        message: 'I am a error notification',
         position: 'top-center',
       });
     },
     click12: function (e) {
       this.$wt.notify({
         type: 'info',
-        message: 'I am a info notification',
+        message: 'I am an info notification',
         position: 'bottom-left',
       });
     },
     click17: function (e) {
       this.$wt.notify({
         type: 'info',
-        message: 'I am a info notification',
+        message: 'I am an info notification',
         position: 'bottom-center',
       });
     },
     click18: function (e) {
       this.$wt.notify({
         type: 'info',
-        message: 'I am a info notification',
+        message: 'I am an info notification',
         position: 'bottom-right',
       });
     },
@@ -153,15 +153,15 @@ export default {
     },
     click15: function (e) {
       this.$wt.notify({
-        type: 'danger',
-        message: 'I am a danger notification',
+        type: 'error',
+        message: 'I am an error notification',
         offset: 50,
       });
     },
     click16: function (e) {
       this.$wt.notify({
         type: 'info',
-        message: 'I am a info notification',
+        message: 'I am an info notification',
         offset: 100,
       });
     },
