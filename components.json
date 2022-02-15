@@ -27,5 +27,5 @@
   "option-group": "components/option-group",
   "loading": "components/loading",
   "upload": "components/upload",
-  "alert": "components/alert",
+  "alert": "components/alert"
 }
