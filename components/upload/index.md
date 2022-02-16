@@ -5,13 +5,17 @@
 :::include(src="./doc/base.vue")
 :::
 
-## <span>{{$t('upload.module2.title')}}</span>
-:::include(src="./doc/file.vue")
+## <span>{{$t('upload.module3.title')}}</span>
+###  <span>{{$t('upload.module3.desc1')}}</span>
+:::include(src="./doc/picture-list.vue")
 :::
 
-## <span>{{$t('upload.module3.title')}}</span>
+###  <span>{{$t('upload.module3.desc2')}}</span>
 :::include(src="./doc/picture.vue")
 :::
 
 ## API
 <api-doc name="Upload" :doc="require('./api.json')"></api-doc>
+
+:::include(src="./doc/test.vue")
+:::

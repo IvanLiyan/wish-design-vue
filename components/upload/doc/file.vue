@@ -1,6 +1,6 @@
 <template>
   <wt-upload
-    class="upload-file"
+    class="upload-file-picture"
     action="https://jsonplaceholder.typicode.com/posts/"
     multiple
     :on-preview="handlePreview"

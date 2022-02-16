@@ -17,7 +17,7 @@
   },
   {
     "name": "multiple",
-    "desc": "是否支持多选文件",
+    "desc": "是否支持多选文件(只在list-type为text有效)",
     "type": "boolean",
     "optionalValue": "",
     "default": "",
@@ -49,26 +49,10 @@
   },
   {
     "name": "show-file-list",
-    "desc": "是否显示已上传文件列表",
+    "desc": "是否显示已上传文件列表(只在list-type为text有效)",
     "type": "boolean",
     "optionalValue": "",
     "default": "true",
-    "version": ""
-  },
-  {
-    "name": "show-file-down",
-    "desc": "是否显示下载icon(只在list-type为text有效)",
-    "type": "boolean",
-    "optionalValue": "",
-    "default": "false",
-    "version": ""
-  },
-  {
-    "name": "drag",
-    "desc": "是否启用拖拽上传",
-    "type": "boolean",
-    "optionalValue": "",
-    "default": "false",
     "version": ""
   },
   {
@@ -147,16 +131,8 @@
     "name": "list-type",
     "desc": "文件列表的类型",
     "type": "string",
-    "optionalValue": "text / picture-card",
+    "optionalValue": "text / picture-list / picture-card",
     "default": "text",
-    "version": ""
-  },
-  {
-    "name": "auto-upload",
-    "desc": "是否在选取文件后立即进行上传",
-    "type": "boolean",
-    "optionalValue": "",
-    "default": "true",
     "version": ""
   },
   {
@@ -165,14 +141,6 @@
     "type": "Array",
     "optionalValue": "",
     "default": "[]",
-    "version": ""
-  },
-  {
-    "name": "http-request",
-    "desc": "覆盖默认的上传行为，可以自定义上传的实现",
-    "type": "function",
-    "optionalValue": "",
-    "default": "",
     "version": ""
   },
   {
@@ -190,38 +158,6 @@
     "optionalValue": "",
     "default": "",
     "version": ""
-  },
-  {
-    "name": "on-exceed",
-    "desc": "文件超出个数限制时的钩子",
-    "type": "function(files, fileList)",
-    "optionalValue": "",
-    "default": "",
-    "version": ""
-  },
-  {
-    "name": "element-id",
-    "desc": "设置内部 input[type='file'] 元素的 id",
-    "type": "string",
-    "optionalValue": "",
-    "default": "",
-    "version": "0.1.42"
-  },
-  {
-    "name": "method",
-    "desc": "要使用的HTTP方法",
-    "type": "string",
-    "optionalValue": "",
-    "default": "'POST'",
-    "version": "0.3.11"
-  },
-  {
-    "name": "on-file-select",
-    "desc": "在用户选择完文件后立刻触发，参数为用户所选择的文件，单选时参数为长度为 1 的文件数组，当返回 false 时则阻止此次文件选择",
-    "type": "Function(file: File[]): any",
-    "optionalValue": "",
-    "default": "",
-    "version": "0.3.11"
   }],
   "slots": [{
     "name": "trigger",

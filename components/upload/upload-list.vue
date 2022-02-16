@@ -38,6 +38,7 @@
         <Loading :class="`${prefix}-list-item-loading`" size="small" />
         <span>上传中</span>
       </div>
+      <i v-else-if="listType === 'picture-list'"></i>
       <span
         :class="[`${prefix}-list-item-status`,file.status === 'fail' && `${prefix}-list-item-status-fail`]"
         v-else

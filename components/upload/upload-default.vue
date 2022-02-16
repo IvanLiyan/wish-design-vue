@@ -206,6 +206,7 @@ export default {
       disabled,
       handleKeydown,
       prefix,
+      fileList,
     } = this;
     const data = {
       class: {
@@ -217,6 +218,10 @@ export default {
       },
     };
     data.class[`${prefix}-${listType}`] = true;
+    if ((listType === 'picture-list') && (fileList.length === 1)) {
+      data.class[`${prefix}-${listType}-uploaded`] = true;
+    };
+
     return (
       <div {...data} tabindex="0" >
         {
@@ -237,10 +242,10 @@ export default {
           multiple={multiple}
           accept={accept}>
         </input>
-        <div class={`${prefix}-info`}>
+        {listType === 'picture-card' && <div class={`${prefix}-info`}>
           <Icon class={`${prefix}-info-icon`} name="plus" color="#0E161C" />
           <span class={`${prefix}-info-text`}>点击上传</span>
-        </div>
+        </div>}
       </div>
     );
   },

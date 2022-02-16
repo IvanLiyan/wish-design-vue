@@ -2,7 +2,6 @@
   <wt-upload
     class="upload-base"
     action="https://jsonplaceholder.typicode.com/posts/"
-    multiple
     :on-preview="handlePreview"
     :on-remove="handleRemove"
     :before-remove="beforeRemove"
