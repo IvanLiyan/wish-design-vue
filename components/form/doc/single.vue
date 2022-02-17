@@ -78,6 +78,7 @@ export default {
   methods: {
     reset: function () {
       this.$refs.form.resetFields();
+      console.log('this.$refs.form.formCustom', this.$refs.form.formCustom);
     },
     clearValidate: function () {
       this.$refs.form.clearValidate();

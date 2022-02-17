@@ -21,6 +21,7 @@
         :on-preview="handlePictureCardPreview"
         :on-remove="handleRemove"
         :file-list="fileList"
+        v-model="formCustom.idFront"
       >
         <Icon name="paperclip" :width="18" :height="18" class="picture-list-icon" />
         <span>点击上传</span>
@@ -35,6 +36,7 @@
         :on-preview="handlePictureCardPreview"
         :on-remove="handleRemove"
         :file-list="fileList"
+        v-model="formCustom.idBack"
       >
         <Icon name="paperclip" :width="18" :height="18" class="picture-list-icon" />
         <span>点击上传</span>
