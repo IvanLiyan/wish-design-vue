@@ -3,14 +3,14 @@
     <wt-upload
       class="base-upload"
       :show-file-list="false"
-      action="https://jsonplaceholder.typicode.com/posts/">
+      action="https://www.mocky.io/v2/5cc8019d300000980a055e76">
       <wt-button icon="wticon-export-o">点击上传</wt-button>
     </wt-upload>
     <wt-upload
       class="base-drag-upload"
       :show-file-list="false"
       drag
-      action="https://jsonplaceholder.typicode.com/posts/">
+      action="https://www.mocky.io/v2/5cc8019d300000980a055e76">
       <i class="wticon-export-o"></i>
       <div class="wt-upload-text">点击或将文件拖拽到这里上传</div>
     </wt-upload>

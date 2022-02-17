@@ -1,7 +1,7 @@
 <template>
   <wt-upload
     class="avatar-uploader"
-    action="https://jsonplaceholder.typicode.com/posts/"
+    action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
     accept="image/*"
     :show-file-list="false"
     :on-success="handleAvatarSuccess"
