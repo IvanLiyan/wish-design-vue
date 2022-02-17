@@ -109,7 +109,7 @@ $color-text-2: rgba(0, 0, 0, 0.75);
   // }
   .demo-source {
     text-align: center;
-    padding: 40px;
+    padding: 30px;
     overflow: auto;
   }
 

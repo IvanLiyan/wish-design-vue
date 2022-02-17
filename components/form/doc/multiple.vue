@@ -12,8 +12,33 @@
     <wt-form-item prop="idCard" required :span="12" helper=" " :style="{ 'padding-left': '10px' }">
       <wt-input label="身份证号" placeholder="大陆身份证" v-model="formCustom.idCard" />
     </wt-form-item>
-    <wt-form-item prop="username" :span="12" required :style="{ 'padding-right': '10px' }">
-      <div></div>
+    <wt-form-item prop="idFront" :span="6" required :style="{ 'padding-right': '10px' }">
+      <wt-upload
+        class="picture-list"
+        action="https://www.mocky.io/v2/5185415ba171ea3a00704eed/posts/"
+        list-type="picture-list"
+        :http-request="uploadPdf"
+        :on-preview="handlePictureCardPreview"
+        :on-remove="handleRemove"
+        :file-list="fileList"
+      >
+        <Icon name="paperclip" :width="18" :height="18" class="picture-list-icon" />
+        <span>点击上传</span>
+      </wt-upload>
+    </wt-form-item>
+    <wt-form-item prop="idBack" :span="6" required :style="{ 'padding-right': '10px' }">
+      <wt-upload
+        class="picture-list"
+        action="https://www.mocky.io/v2/5185415ba171ea3a00704eed/posts/"
+        list-type="picture-list"
+        :http-request="uploadPdf"
+        :on-preview="handlePictureCardPreview"
+        :on-remove="handleRemove"
+        :file-list="fileList"
+      >
+        <Icon name="paperclip" :width="18" :height="18" class="picture-list-icon" />
+        <span>点击上传</span>
+      </wt-upload>
     </wt-form-item>
     <wt-form-item prop="nation" required :span="6" :style="{ 'padding-left': '10px' }">
       <wt-select v-model="formCustom.nation" label="身份证有效期限">

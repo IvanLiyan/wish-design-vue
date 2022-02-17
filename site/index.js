@@ -12,9 +12,7 @@ import 'highlight.js/styles/default.css';
 import VueI18n from 'vue-i18n';
 import ApiDoc from './components/api-doc';
 import LangMessage from './lang.json';
-import VueResource from 'vue-resource';
 
-Vue.use(VueResource);
 Vue.use(VueI18n);
 
 const i18n = new VueI18n({
