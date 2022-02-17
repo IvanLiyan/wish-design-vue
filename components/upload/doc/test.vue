@@ -30,7 +30,7 @@
     <p>支持多选文件</p>
     <wt-upload
       class="upload-base"
-      action="https://jsonplaceholder.typicode.com/posts/"
+      action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
       multiple
       :on-preview="handlePreview"
       :on-remove="handleRemove"
@@ -44,7 +44,7 @@
     <p>额外附带参数</p>
     <wt-upload
       class="upload-base"
-      action="https://jsonplaceholder.typicode.com/posts/"
+      action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
       :data="data"
       :on-preview="handlePreview"
       :on-remove="handleRemove"
@@ -58,7 +58,7 @@
     <p>上传的文件字段名testFileName</p>
     <wt-upload
       class="upload-base"
-      action="https://jsonplaceholder.typicode.com/posts/"
+      action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
       name="testFileName"
       :on-preview="handlePreview"
       :on-remove="handleRemove"
@@ -72,7 +72,7 @@
     <p>发送cookie</p>
     <wt-upload
       class="upload-base"
-      action="https://jsonplaceholder.typicode.com/posts/"
+      action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
       with-credentials
       :on-preview="handlePreview"
       :on-remove="handleRemove"
@@ -86,7 +86,7 @@
     <p>不显示上传文件列表</p>
     <wt-upload
       class="upload-base"
-      action="https://jsonplaceholder.typicode.com/posts/"
+      action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
       :show-file-list="false"
       :on-preview="handlePreview"
       :on-remove="handleRemove"
@@ -100,7 +100,7 @@
     <p>接受上传的文件类型：如只接受jpg</p>
     <wt-upload
       class="upload-base"
-      action="https://jsonplaceholder.typicode.com/posts/"
+      action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
       accept="jpg"
       :on-preview="handlePreview"
       :on-remove="handleRemove"
@@ -114,7 +114,7 @@
     <p>事件测试（看控制面板）</p>
     <wt-upload
       class="upload-base"
-      action="https://jsonplaceholder.typicode.com/posts/"
+      action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
       :on-preview="handlePreview"
       :on-remove="handleRemove"
       :on-success="handleSuccess"
@@ -132,7 +132,7 @@
     <p>file-list</p>
     <wt-upload
       class="upload-base"
-      action="https://jsonplaceholder.typicode.com/posts/"
+      action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
       :on-preview="handlePreview"
       :on-remove="handleRemove"
       :before-remove="beforeRemove"
@@ -145,7 +145,7 @@
     <p>禁用</p>
     <wt-upload
       class="upload-base"
-      action="https://jsonplaceholder.typicode.com/posts/"
+      action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
       disabled
       :on-preview="handlePreview"
       :on-remove="handleRemove"
@@ -159,7 +159,7 @@
     <p>最大允许上传个数-3个</p>
     <wt-upload
       class="upload-base"
-      action="https://jsonplaceholder.typicode.com/posts/"
+      action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
       :limit="3"
       :on-preview="handlePreview"
       :on-remove="handleRemove"

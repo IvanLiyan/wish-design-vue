@@ -64,14 +64,6 @@
     "version": ""
   },
   {
-    "name": "on-preview",
-    "desc": "点击文件列表中已上传的文件时的钩子",
-    "type": "function(file)",
-    "optionalValue": "",
-    "default": "",
-    "version": ""
-  },
-  {
     "name": "on-remove",
     "desc": "文件列表移除文件时的钩子",
     "type": "function(file, fileList)",

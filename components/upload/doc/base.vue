@@ -1,7 +1,7 @@
 <template>
   <wt-upload
     class="upload-base"
-    action="https://jsonplaceholder.typicode.com/posts/"
+    action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
     :on-preview="handlePreview"
     :on-remove="handleRemove"
     :before-remove="beforeRemove"

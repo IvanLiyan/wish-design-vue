@@ -36,7 +36,7 @@ export default function upload (option) {
   const xhr = new XMLHttpRequest();
   const action = option.action;
 
-  this.$http.jsonp('https://jsonplaceholder.typicode.com/posts/', {}, {
+  this.$http.jsonp('https://www.mocky.io/v2/5cc8019d300000980a055e76', {}, {
     headers: {},
     emulateJSON: true,
   }).then((response) => {
