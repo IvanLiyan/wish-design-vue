@@ -115,6 +115,7 @@
   "dependencies": {
     "@types/node": "^16.11.7",
     "async-validator": "^1.12.2",
+    "axios": "^0.26.0",
     "calendar-js": "^1.4.4",
     "dayjs": "^1.10.7",
     "debounce": "^1.2.1",
@@ -124,7 +125,8 @@
     "throttle-debounce": "^1.1.0",
     "vue-feather-icons": "^5.1.0",
     "vue-fragment": "^1.5.2",
-    "vue-highlight.js": "^3.1.0"
+    "vue-highlight.js": "^3.1.0",
+    "vue-resource": "^1.5.3"
   },
   "peerDependencies": {
     "vue": "^2.5.2"

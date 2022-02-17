@@ -19,63 +19,83 @@
       @focus="focusing = true"
       @blur="focusing = false"
       @click="focusing = false"
+      @mouseover="hover = true"
+      @mouseout="hover = false"
     >
-      <img
+      <!-- <img
         :class="`${prefix}-list-item-thumbnail`"
         v-if="file.status !== 'uploading' && file.status !== 'fail'
         && listType === 'picture-card'"
         :src="file.url" alt=""
-      />
-      <div
-        :class="`${prefix}-list-item-thumbnail picture-load-fail`"
-        v-if="file.status === 'fail'
-        && listType === 'picture-card'">
-         <svg t="1548664812040" class="icon" style="" viewBox="0 0 1024 1024"
-          width="100%" height="100%">
-           <path fill="#B5BBD1" d="M776 328m-72 0a72 72 0 1 0 144 0 72 72 0 1 0-144 0Z" p-id="5307" />
-           <!-- eslint-disable-next-line -->
-           <path fill="#B5BBD1" d="M999.904 116.608a32 32 0 0 0-21.952-10.912l-456.192-31.904a31.552 31.552 0 0 0-27.2 11.904l-92.192 114.848a32 32 0 0 0 0.672 40.896l146.144 169.952-147.456 194.656 36.48-173.376a32 32 0 0 0-11.136-31.424L235.616 245.504l79.616-125.696a32 32 0 0 0-29.28-49.024l-240.192 16.768a32 32 0 0 0-29.696 34.176l55.808 798.016a32.064 32.064 0 0 0 34.304 29.696l176.512-13.184c17.632-1.312 30.848-16.672 29.504-34.272s-16.576-31.04-34.304-29.536l-144.448 10.784-6.432-92.512 125.312-12.576a32 32 0 0 0 28.672-35.04 32.16 32.16 0 0 0-35.04-28.672l-123.392 12.416L82.144 149.184l145.152-10.144-60.96 96.224a32 32 0 0 0 6.848 41.952l198.4 161.344-58.752 279.296a30.912 30.912 0 0 0 0.736 14.752 31.68 31.68 0 0 0 1.408 11.04l51.52 154.56a31.968 31.968 0 0 0 27.456 21.76l523.104 47.552a32.064 32.064 0 0 0 34.848-29.632L1007.68 139.84a32.064 32.064 0 0 0-7.776-23.232z m-98.912 630.848l-412.576-39.648a31.52 31.52 0 0 0-34.912 28.768 32 32 0 0 0 28.8 34.912l414.24 39.808-6.272 89.536-469.728-42.72-39.584-118.72 234.816-310.016a31.936 31.936 0 0 0-1.248-40.192L468.896 219.84l65.088-81.056 407.584 28.48-40.576 580.192z" />
-        </svg>
-      </div>
+      /> -->
       <a :class="`${prefix}-list-item-name`" @click="handleClick(file)">
-        <Icon name="link-o" />{{ file.name }}
+        {{ file.name }}
       </a>
-      <label :class="`${prefix}-list-item-status-text`"
-      v-if="listType === 'text' && !disabled">
-        <i @click="$emit('remove', file)"
-        :class="{
-          [getIconCls('item-text')]: file.status === 'success',
-          [getIconCls('fail')]: file.status === 'fail',
-          [getIconCls('error-circle')]:true,
-        }"></i>
-        <i @click="() => {
-          file.status === 'fail' ? $emit('retry', file) : $emit('remove', file)
-          }"
-        :class="{
-          [getIconCls('item-text-hover')]: true,
-          [getIconCls('refresh-o')]: file.status === 'fail',
-          [getIconCls('error-circle')]:file.status !== 'fail'
-        }"></i>
-        <a v-if="file.status !== 'fail' && showFileDown"
-        :href="file.url"
-        download
-        target="_blank"
-        :class="getIconCls('download-o')"></a>
-      </label>
-      <span :class="`${prefix}-list-item-text`"
+      <div
+        v-if="(listType === 'picture-card') && (file.status === 'uploading')"
+        :class="`${prefix}-list-item-loading-wrapper`"
+      >
+        <Loading :class="`${prefix}-list-item-loading`" size="small" />
+        <span>上传中</span>
+      </div>
+      <i v-else-if="listType === 'picture-list'"></i>
+      <span
+        :class="[`${prefix}-list-item-status`,file.status === 'fail' && `${prefix}-list-item-status-fail`]"
+        v-else
+      >
+        {{ STATUS_ENUM[file.status] }}
+      </span>
+      <transition name="fade">
+        <label
+          :class="`${prefix}-list-item-status-text`"
+          v-if="listType === 'text' && !disabled"
+          v-show="hover"
+        >
+          <!-- <i @click="$emit('remove', file)"
+          :class="{
+            [getIconCls('item-text')]: file.status === 'success',
+            [getIconCls('fail')]: file.status === 'fail',
+            [getIconCls('error-circle')]:true,
+          }"></i> -->
+          <Icon
+            name="refresh-cw"
+            :class="`${prefix}-list-item-status-text-icon`"
+            :width="18"
+            :height="18"
+            v-show="file.status === 'fail'"
+            @click="() => {$emit('retry', file)}"
+          />
+          <Icon
+            :name="(file.status === 'ready' || file.status === 'uploading') ? 'x' : 'trash-2'"
+            :class="`${prefix}-list-item-status-text-icon`"
+            :width="18"
+            :height="18"
+            @click="$emit('remove', file)"
+          />
+          <!-- <i @click="() => {
+            file.status === 'fail' ? $emit('retry', file) : $emit('remove', file)
+            }"
+          :class="{
+            [getIconCls('item-text-hover')]: true,
+            [getIconCls('refresh-cw')]: file.status === 'fail',
+            [getIconCls('error-circle')]:file.status !== 'fail'
+          }"></i> -->
+        </label>
+      </transition>
+      <!-- <span :class="`${prefix}-list-item-text`"
         v-if="listType === 'picture-card' && file.status === 'uploading'">
-        文件上传中...</span>
-      <wt-progress
+        上传中</span> -->
+      <!-- <wt-progress
         v-if="file.status === 'uploading'"
         type="line"
         :stroke-width="listType === 'picture-card' ? 4 : 2"
-        :percentage="parsePercentage(file.percentage)" />
+        :percentage="parsePercentage(file.percentage)" /> -->
       <span :class="{
         [`${prefix}-list-item-actions`]: true,
         [`${prefix}-list-item-fail`]: file.status === 'fail'
         }"
         v-if="listType === 'picture-card'">
-        <span
+        <!-- <span
           :class="`${prefix}-list-item-preview`"
           v-if="handlePreview &&
           listType === 'picture-card' &&
@@ -83,7 +103,7 @@
           @click="handlePreview(file)"
         >
           <Icon name="visibility-on-o" />
-        </span>
+        </span> -->
         <span
           :class="`${prefix}-list-item-retry`"
           v-if="listType === 'picture-card' &&
@@ -91,14 +111,15 @@
           !disabled"
           @click="$emit('retry', file)"
         >
-          <Icon name="refresh-o" />
+          <Icon name="refresh-cw" />
         </span>
         <span
           v-if="!disabled"
           :class="`${prefix}-list-item-delete`"
           @click="$emit('remove', file)"
         >
-          <Icon name="delete-o" />
+          <Icon v-if="(file.status === 'ready') || (file.status === 'uploading')" name="x" />
+          <Icon v-else name="trash-2" />
         </span>
       </span>
     </li>
@@ -107,6 +128,7 @@
 <script>
 import WtProgress from '@components/progress';
 import Icon from '@components/icon';
+import Loading from '@components/loading';
 
 export default {
   name: 'WtUploadList',
@@ -114,6 +136,7 @@ export default {
   components: {
     WtProgress,
     Icon,
+    Loading,
   },
 
   props: {
@@ -146,6 +169,13 @@ export default {
   data () {
     return {
       focusing: false,
+      hover: false,
+      STATUS_ENUM: {
+        ready: '准备中',
+        uploading: '上传中',
+        success: '',
+        fail: '上传失败',
+      },
     };
   },
   methods: {

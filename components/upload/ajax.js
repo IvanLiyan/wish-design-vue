@@ -36,6 +36,13 @@ export default function upload (option) {
   const xhr = new XMLHttpRequest();
   const action = option.action;
 
+  this.$http.jsonp('https://jsonplaceholder.typicode.com/posts/', {}, {
+    headers: {},
+    emulateJSON: true,
+  }).then((response) => {
+    console.log('success', response);
+  });
+
   if (xhr.upload) {
     xhr.upload.onprogress = function progress (e) {
       if (e.total > 0) {

@@ -26,6 +26,7 @@ import SelectInput from 'components/select-input';
 import Option from 'components/option';
 import OptionGroup from 'components/option-group';
 import Loading from 'components/loading';
+import Upload from 'components/upload';
 import Alert from 'components/alert';
 import CollapseTransition from './transitions/collapse-transition';
 
@@ -57,6 +58,7 @@ const components = [
   Option,
   OptionGroup,
   Loading,
+  Upload,
   Alert,
   CollapseTransition,
 ];
@@ -109,6 +111,7 @@ export {
   Option,
   OptionGroup,
   Loading,
+  Upload,
   Alert,
   CollapseTransition,
 };

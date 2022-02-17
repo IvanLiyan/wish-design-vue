@@ -5,6 +5,7 @@ import { CONFIG_PROVIDER,
   getPrefixCls,
   getIconCls,
 } from '@/utils/config';
+import Icon from '@components/icon';
 
 function noop () {}
 
@@ -220,6 +221,7 @@ export default {
       this.onChange(file, this.uploadFiles);
     },
     handleRemove (file, raw) {
+      console.log('REMOVE');
       if (raw) {
         file = this.getFile(raw);
       }
@@ -324,7 +326,14 @@ export default {
       },
       ref: 'upload-inner',
     };
-
+    const files = this.uploadFiles;
+    console.log('files', files);
+    const STATUS_ENUM = {
+      ready: '准备中',
+      uploading: '上传中',
+      success: '',
+      fail: '上传失败',
+    };
     const trigger = this.$slots.trigger || this.$slots.default;
     const uploadComponent =
     <UploadDefault {...uploadData}>{trigger}</UploadDefault>;
@@ -332,6 +341,7 @@ export default {
     return (
       <div>
         { this.listType === 'picture-card' ? uploadList : ''}
+        { this.listType === 'picture-list' ? uploadList : ''}
         {
           this.$slots.trigger
             ? [uploadComponent, this.$slots.default]
@@ -339,6 +349,30 @@ export default {
         }
         {this.$slots.tip}
         { this.listType === 'text' ? uploadList : ''}
+        { (this.listType === 'picture-list' && files.length !== 0) && <div class="wt-upload-picture-list-control">
+          <div class="wt-upload-picture-list-control-info">
+            <p class="file-name">{ files[0].name }</p>
+            { files[0].status !== 'success' && <p class={files[0].status !== 'fail' ? 'file-status status-uploading' : 'file-status status-fail'}>{ STATUS_ENUM[files[0].status] }</p> }
+          </div>
+          <div class="wt-upload-picture-list-control-button-wrapper">
+            {
+              (files[0].status === 'ready' || files.status === 'uploading') &&
+              <Icon class="wt-upload-picture-list-control-button" name="x" width={20} height={20} onClick={this.handleRemove} />
+            }
+            {
+              files[0].status === 'success' &&
+              <Icon class="wt-upload-picture-list-control-button" name="trash-2" width={20} height={20} onClick={this.handleRemove} />
+            }
+            {
+              files[0].status === 'fail' &&
+              <Icon class="wt-upload-picture-list-control-button" name="refresh-cw" width={20} height={20} onClick={() => this.handleRetry(files[0])} />
+            }
+            {
+              files[0].status === 'fail' &&
+              <Icon class="wt-upload-picture-list-control-button" name="trash-2" width={20} height={20} onClick={this.handleRemove} />
+            }
+          </div>
+        </div> }
       </div>
     );
   },
