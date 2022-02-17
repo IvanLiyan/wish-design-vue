@@ -36,13 +36,6 @@ export default function upload (option) {
   const xhr = new XMLHttpRequest();
   const action = option.action;
 
-  this.$http.jsonp('https://www.mocky.io/v2/5cc8019d300000980a055e76', {}, {
-    headers: {},
-    emulateJSON: true,
-  }).then((response) => {
-    console.log('success', response);
-  });
-
   if (xhr.upload) {
     xhr.upload.onprogress = function progress (e) {
       if (e.total > 0) {
