@@ -23,6 +23,7 @@
         :size="size"
         :placeholder="getPlaceHolder"
         :current-value="visualValue"
+        :label="label"
         :name="name"
         clearable-on-readonly
         ref="input"
@@ -203,6 +204,9 @@ export default {
       type: String,
     },
     name: {
+      type: String,
+    },
+    label: {
       type: String,
     },
     elementId: {

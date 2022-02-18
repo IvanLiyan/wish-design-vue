@@ -3,7 +3,7 @@
     <wt-upload
       class="picture-list"
       action="https://www.mocky.io/v2/5185415ba171ea3a00704eed/posts/"
-      list-type="picture-card"
+      input-type="picture-card"
       :http-request="uploadPdf"
       :on-preview="handlePictureCardPreview"
       :on-remove="handleRemove"

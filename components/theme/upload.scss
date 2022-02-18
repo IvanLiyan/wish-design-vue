@@ -193,6 +193,20 @@
       border-color: $color-primary;
     }
   }
+  // 上传控件-输入框样式
+  .upload-input {
+    max-width: 240px;
+    width: 240px;
+    padding: 8px 9px;
+    text-align: left;
+    line-height: 20px;
+    &-text {
+      margin-left: 5px;
+      font-size: 14px;
+      line-height: 20px;
+      color: #BFCDD4;
+    }
+  }
 }
 
 @include c(upload-dragger) {
@@ -245,6 +259,7 @@
   }
 }
 
+// 已上传列表
 @include c(upload-list) {
   margin: 0;
   padding: 0;
@@ -362,7 +377,7 @@
       position: absolute;
       right: 5px;
       top: 0px; // (20 - 14) / 2
-      height: 26px;
+      height: 100%;
       line-height: 26px;
       display: flex;
       align-items: center;
@@ -409,6 +424,30 @@
       &-icon {
         margin: 0 3px;
         cursor: pointer;
+      }
+    }
+    &-image {
+      height: $upload-item-filename-picture-line-height !important;
+      &-picture {
+        width: 40px;
+        height: 40px;
+        margin: 0 4px;
+        border-radius: $border-radius-2;
+      }
+      &-info {
+        p {
+          margin: 0;
+          height: $upload-item-filename-picture-line-height / 2 - 1;
+          line-height: $upload-item-filename-picture-line-height / 2 - 1;
+          font-size: $font-size-2;
+          color: $color-black;
+        }
+        &-status {
+          color: $color-text-3 !important;
+        }
+        &-fail {
+          color: $color-danger-1 !important;
+        }
       }
     }
   }

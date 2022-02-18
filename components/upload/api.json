@@ -8,6 +8,14 @@
     "version": ""
   },
   {
+    "name": "input-type",
+    "desc": "上传控件的类型",
+    "type": "string",
+    "optionalValue": "button / input / picture-card",
+    "default": "button",
+    "version": ""
+  },
+  {
     "name": "headers",
     "desc": "设置上传的请求头部",
     "type": "object",
@@ -123,7 +131,7 @@
     "name": "list-type",
     "desc": "文件列表的类型",
     "type": "string",
-    "optionalValue": "text / picture-list / picture-card",
+    "optionalValue": "text / picture-card",
     "default": "text",
     "version": ""
   },

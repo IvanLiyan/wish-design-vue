@@ -5,7 +5,6 @@ import { CONFIG_PROVIDER,
   getPrefixCls,
   getIconCls,
 } from '@/utils/config';
-import Icon from '@components/icon';
 
 function noop () {}
 
@@ -40,6 +39,10 @@ export default {
     action: {
       type: String,
       required: true,
+    },
+    inputType: {
+      type: String,
+      default: 'button',
     },
     headers: {
       type: Object,
@@ -102,7 +105,7 @@ export default {
       type: Function,
       default: noop,
     },
-    fileList: {
+    value: {
       type: Array,
       default () {
         return [];
@@ -152,10 +155,10 @@ export default {
   },
 
   watch: {
-    fileList: {
+    value: {
       immediate: true,
-      handler (fileList) {
-        this.uploadFiles = fileList.map(item => {
+      handler (value) {
+        this.uploadFiles = value.map(item => {
           item.uid = item.uid || (Date.now() + this.tempIndex++);
           item.status = item.status || 'success';
           return item;
@@ -227,9 +230,9 @@ export default {
       }
       const doRemove = () => {
         this.abort(file);
-        const fileList = this.uploadFiles;
-        fileList.splice(fileList.indexOf(file), 1);
-        this.onRemove(file, fileList);
+        const value = this.uploadFiles;
+        value.splice(value.indexOf(file), 1);
+        this.onRemove(file, value);
       };
 
       if (!this.beforeRemove) {
@@ -250,9 +253,9 @@ export default {
       this.submit();
     },
     getFile (rawFile) {
-      const fileList = this.uploadFiles;
+      const value = this.uploadFiles;
       let target;
-      fileList.every(item => {
+      value.every(item => {
         target = rawFile.uid === item.uid ? item : null;
         return !target;
       });
@@ -271,6 +274,13 @@ export default {
           this.$refs['upload-inner'].upload(file.raw);
         });
     },
+    transListType (inputType) {
+      if (inputType === 'button' || inputType === 'input') {
+        return 'text';
+      } else {
+        return 'picture-card';
+      }
+    },
   },
 
   render (h) {
@@ -282,7 +292,8 @@ export default {
           prefix={this.prefix}
           getIconCls={this.getIconCls}
           disabled={this.uploadDisabled}
-          listType={this.listType}
+          inputType={this.inputType}
+          listType={this.transListType(this.inputType)}
           files={this.uploadFiles}
           showFileDown={this.showFileDown}
           on-remove={this.handleRemove}
@@ -298,81 +309,63 @@ export default {
         type: this.type,
         drag: this.drag,
         action: this.action,
+        inputType: this.inputType,
         multiple: this.multiple,
-        'before-upload': this.beforeUpload,
+        'before-upload': this.beforeUpload, // 上传前
         'with-credentials': this.withCredentials,
         headers: this.headers,
         method: this.method,
         name: this.name,
         data: this.data,
         accept: this.accept,
-        fileList: this.uploadFiles,
+        value: this.uploadFiles,
         autoUpload: this.autoUpload,
-        listType: this.listType,
+        listType: this.transListType(this.inputType),
         disabled: this.uploadDisabled,
         limit: this.limit,
         prefix: this.prefix,
         getIconCls: this.getIconCls,
-        'on-exceed': this.onExceed,
-        'on-start': this.handleStart,
-        'on-progress': this.handleProgress,
-        'on-success': this.handleSuccess,
-        'on-error': this.handleError,
-        'on-preview': this.onPreview,
-        'on-remove': this.handleRemove,
-        'on-retry': this.handleRetry,
-        'on-file-select': this.onFileSelect,
+        'on-exceed': this.onExceed, // 超出数量限制
+        'on-start': this.handleStart, // 开始上传
+        'on-progress': this.handleProgress, // 上传过程
+        'on-success': this.handleSuccess, // 上传成功
+        'on-error': this.handleError, // 上传失败
+        'on-preview': this.onPreview, // 预览文件
+        'on-remove': this.handleRemove, // 删除文件
+        'on-retry': this.handleRetry, // 重新上传
+        'on-file-select': this.onFileSelect, // 选取文件
         'http-request': this.httpRequest,
       },
       ref: 'upload-inner',
     };
     const files = this.uploadFiles;
     console.log('files', files);
-    const STATUS_ENUM = {
-      ready: '准备中',
-      uploading: '上传中',
-      success: '',
-      fail: '上传失败',
-    };
-    const trigger = this.$slots.trigger || this.$slots.default;
     const uploadComponent =
-    <UploadDefault {...uploadData}>{trigger}</UploadDefault>;
+    <UploadDefault {...uploadData}>
+      {/* 输入控件的渲染逻辑 */}
+      {
+        this.inputType === 'input'
+          ? <wt-button type="third" class="upload-input">
+            <wt-icon class="upload-input-icon" name="paperclip" width={18} height={18} />
+            <span class="upload-input-text">点击上传</span>
+          </wt-button>
+          : (this.inputType === 'picture-card'
+            ? ''
+            : <wt-button icon="share" type="third">点击上传</wt-button>)
+      }
+      {/* End---输入控件的渲染逻辑---End */}
+    </UploadDefault>;
 
     return (
       <div>
-        { this.listType === 'picture-card' ? uploadList : ''}
-        { this.listType === 'picture-list' ? uploadList : ''}
+        { this.inputType === 'picture-card' ? uploadList : ''}
         {
           this.$slots.trigger
             ? [uploadComponent, this.$slots.default]
             : uploadComponent
         }
         {this.$slots.tip}
-        { this.listType === 'text' ? uploadList : ''}
-        { (this.listType === 'picture-list' && files.length !== 0) && <div class="wt-upload-picture-list-control">
-          <div class="wt-upload-picture-list-control-info">
-            <p class="file-name">{ files[0].name }</p>
-            { files[0].status !== 'success' && <p class={files[0].status !== 'fail' ? 'file-status status-uploading' : 'file-status status-fail'}>{ STATUS_ENUM[files[0].status] }</p> }
-          </div>
-          <div class="wt-upload-picture-list-control-button-wrapper">
-            {
-              (files[0].status === 'ready' || files.status === 'uploading') &&
-              <Icon class="wt-upload-picture-list-control-button" name="x" width={20} height={20} onClick={this.handleRemove} />
-            }
-            {
-              files[0].status === 'success' &&
-              <Icon class="wt-upload-picture-list-control-button" name="trash-2" width={20} height={20} onClick={this.handleRemove} />
-            }
-            {
-              files[0].status === 'fail' &&
-              <Icon class="wt-upload-picture-list-control-button" name="refresh-cw" width={20} height={20} onClick={() => this.handleRetry(files[0])} />
-            }
-            {
-              files[0].status === 'fail' &&
-              <Icon class="wt-upload-picture-list-control-button" name="trash-2" width={20} height={20} onClick={this.handleRemove} />
-            }
-          </div>
-        </div> }
+        { (this.inputType === 'button') || (this.inputType === 'input') ? uploadList : ''}
       </div>
     );
   },

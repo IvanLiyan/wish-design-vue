@@ -33,6 +33,14 @@
       "version": ""
     },
     {
+      "name": "label",
+      "desc": "选择器上方的标签",
+      "type": "string",
+      "optionalValue": "",
+      "default": "",
+      "version": ""
+    },
+    {
       "name": "readonly",
       "desc": "是否只读",
       "type": "boolean",

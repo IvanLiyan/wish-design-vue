@@ -3,13 +3,14 @@
     <wt-upload
       class="picture-list"
       action="https://www.mocky.io/v2/5185415ba171ea3a00704eed/posts/"
-      list-type="picture-list"
+      input-type="input"
+      multiple
       :http-request="uploadPdf"
       :on-preview="handlePictureCardPreview"
       :on-remove="handleRemove"
       :file-list="fileList">
-      <Icon name="paperclip" :width="18" :height="18" class="picture-list-icon" />
-      <span>点击上传</span>
+      <!-- <Icon name="paperclip" :width="18" :height="18" class="picture-list-icon" />
+      <span>点击上传</span> -->
     </wt-upload>
     <wt-modal v-model="dialogVisible">
       <img :src="dialogImageUrl" />
