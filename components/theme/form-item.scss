@@ -18,7 +18,7 @@ $form-item-label-padding-right: 9px;
 
 @include c(form-item) {
   margin-bottom: 18px;
-  vertical-align: bottom;
+  vertical-align: top;
   font-size: 0;
   display: inline-block;
   @include clearfix();

@@ -14,6 +14,29 @@
       <wt-form-item prop="idCard" required helper=" ">
         <wt-input label="身份证号" placeholder="大陆身份证" v-model="formCustom.idCard" />
       </wt-form-item>
+      <wt-form-item prop="idFront" required>
+        <span class="upload-label">身份证件（头像面）副本</span>
+        <wt-upload
+          class="upload-base"
+          action="https://jsonplaceholder.typicode.com/posts/"
+          input-type="button"
+          :value="fileList"
+          v-model="formCustom.idFront"
+        />
+        <span class="helper">文件大小不超过20MB</span>
+      </wt-form-item>
+      <wt-form-item prop="idBack" required>
+        <span class="upload-label">身份证件（国徽面）副本</span>
+        <wt-upload
+          class="upload-base"
+          action="https://jsonplaceholder.typicode.com/posts/"
+          input-type="button"
+          :value="fileList"
+          v-model="formCustom.idBack"
+          @input="input"
+        />
+        <span class="helper">文件大小不超过20MB</span>
+      </wt-form-item>
       <wt-form-item prop="nation" required :span="12">
         <wt-select v-model="formCustom.nation" label="身份证有效期限">
           <wt-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value" />
@@ -40,6 +63,44 @@ const validatePassword = (rule, value, callback) => {
 const initialData = {
   username: '',
   idCard: '',
+  idFront: [
+    {
+      name: 'test.jpg',
+      percentage: 100,
+      raw: {
+        uid: 1645171975770,
+        lastModified: 1644907336299,
+        lastModifiedDate: new Date(),
+        name: 'test.jpg',
+        size: 88596,
+        type: 'image/jpeg',
+        webkitRelativePath: '',
+      },
+      size: 88596,
+      status: 'success',
+      uid: 1645171975770,
+      url: 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.zcool.cn%2Fcommunity%2F016a0b5e8c681ea8012165183f807a.jpg%403000w_1l_0o_100sh.jpg&refer=http%3A%2F%2Fimg.zcool.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1647763053&t=57ce7af82e614f2a1373b7f83d338fb5',
+    },
+  ],
+  idBack: [
+    {
+      name: 'test.jpg',
+      percentage: 100,
+      raw: {
+        uid: 1645171975770,
+        lastModified: 1644907336299,
+        lastModifiedDate: new Date(),
+        name: 'test.jpg',
+        size: 88596,
+        type: 'image/jpeg',
+        webkitRelativePath: '',
+      },
+      size: 88596,
+      status: 'success',
+      uid: 1645171975770,
+      url: 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.zcool.cn%2Fcommunity%2F016a0b5e8c681ea8012165183f807a.jpg%403000w_1l_0o_100sh.jpg&refer=http%3A%2F%2Fimg.zcool.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1647763053&t=57ce7af82e614f2a1373b7f83d338fb5',
+    },
+  ],
   checkboxValue: ['checkbox1', 'checkbox3'],
   radioValue: 'radio1',
   switchValue: false,
@@ -76,6 +137,9 @@ export default {
     };
   },
   methods: {
+    input: function (a) {
+      console.log('aaa', a);
+    },
     reset: function () {
       this.$refs.form.resetFields();
       console.log('this.$refs.form.formCustom', this.$refs.form.formCustom);
@@ -96,3 +160,19 @@ export default {
   },
 };
 </script>
+
+<style scope>
+.upload-label {
+  color: #0e161c;
+  font-size: 12px;
+  line-height: 16px;
+  margin-bottom: 4px;
+  display: inline-block;
+}
+.helper {
+  font-size: 12px;
+  position: absolute;
+  left: 120px;
+  top: 30px;
+}
+</style>

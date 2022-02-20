@@ -14,7 +14,7 @@
     </wt-form-item>
     <wt-form-item prop="idFront" :span="6" required :style="{ 'padding-right': '10px' }">
       <wt-upload
-        class="picture-list"
+        input-type="input"
         action="https://www.mocky.io/v2/5185415ba171ea3a00704eed/posts/"
         list-type="picture-list"
         :http-request="uploadPdf"
@@ -29,7 +29,7 @@
     </wt-form-item>
     <wt-form-item prop="idBack" :span="6" required :style="{ 'padding-right': '10px' }">
       <wt-upload
-        class="picture-list"
+        input-type="input"
         action="https://www.mocky.io/v2/5185415ba171ea3a00704eed/posts/"
         list-type="picture-list"
         :http-request="uploadPdf"
@@ -67,6 +67,44 @@ const validatePassword = (rule, value, callback) => {
 const initialData = {
   username: '',
   idCard: '',
+  idFront: [
+    // {
+    //   name: 'test.jpg',
+    //   percentage: 100,
+    //   raw: {
+    //     uid: 1645171975770,
+    //     lastModified: 1644907336299,
+    //     lastModifiedDate: new Date(),
+    //     name: 'test.jpg',
+    //     size: 88596,
+    //     type: 'image/jpeg',
+    //     webkitRelativePath: '',
+    //   },
+    //   size: 88596,
+    //   status: 'success',
+    //   uid: 1645171975770,
+    //   url: 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.zcool.cn%2Fcommunity%2F016a0b5e8c681ea8012165183f807a.jpg%403000w_1l_0o_100sh.jpg&refer=http%3A%2F%2Fimg.zcool.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1647763053&t=57ce7af82e614f2a1373b7f83d338fb5',
+    // },
+  ],
+  idBack: [
+    // {
+    //   name: 'test.jpg',
+    //   percentage: 100,
+    //   raw: {
+    //     uid: 1645171975770,
+    //     lastModified: 1644907336299,
+    //     lastModifiedDate: new Date(),
+    //     name: 'test.jpg',
+    //     size: 88596,
+    //     type: 'image/jpeg',
+    //     webkitRelativePath: '',
+    //   },
+    //   size: 88596,
+    //   status: 'success',
+    //   uid: 1645171975770,
+    //   url: 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.zcool.cn%2Fcommunity%2F016a0b5e8c681ea8012165183f807a.jpg%403000w_1l_0o_100sh.jpg&refer=http%3A%2F%2Fimg.zcool.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1647763053&t=57ce7af82e614f2a1373b7f83d338fb5',
+    // },
+  ],
   checkboxValue: ['checkbox1', 'checkbox3'],
   radioValue: 'radio1',
   switchValue: false,
@@ -93,6 +131,7 @@ export default {
   methods: {
     reset: function () {
       this.$refs.form.resetFields();
+      console.log(this.$refs.form.formCustom);
     },
     submit: async function () {
       const valid = this.$refs.form.validateFields();
