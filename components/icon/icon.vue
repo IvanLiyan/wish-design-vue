@@ -8,7 +8,6 @@
         color,
         width,
         height,
-
         'stroke-width': strokeWidth,
         'stroke-line-cap': strokeLinecap,
         'stroke-linejoin': strokeLinejoin,

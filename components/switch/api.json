@@ -20,7 +20,7 @@
 
     {
       "name": "value",
-      "desc": "$t('switch.api.name')",
+      "desc": "$t('switch.api.value')",
       "type": "any",
       "optionalValue": "",
       "default": "",
