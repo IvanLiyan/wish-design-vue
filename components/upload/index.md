@@ -5,12 +5,11 @@
 :::include(src="./doc/base.vue")
 :::
 
-## <span>{{$t('upload.module3.title')}}</span>
-###  <span>{{$t('upload.module3.desc1')}}</span>
+## <span>{{$t('upload.module2.title')}}</span>
 :::include(src="./doc/picture-list.vue")
 :::
 
-###  <span>{{$t('upload.module3.desc2')}}</span>
+## <span>{{$t('upload.module3.title')}}</span>
 :::include(src="./doc/picture.vue")
 :::
 

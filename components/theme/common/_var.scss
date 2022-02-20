@@ -72,6 +72,7 @@ $line-height-2: 20px !default;
 $line-height-3: 18px !default;
 $line-height-4: 16px !default;
 $line-height-5: 28px !default;
+$line-height-6: 48px !default;
 
 // @ignore
 $line-height-default: $line-height-2 / $font-size-2 !default;
@@ -529,6 +530,8 @@ $upload-item-filename-font-size: $font-size-2!default;
 $upload-item-filename-font-weight: $font-weight-regular!default;
 // @name 项-行高-文件名
 $upload-item-filename-line-height: $line-height-5!default;
+// @name 项-图片行高-文件名
+$upload-item-filename-picture-line-height: $line-height-6!default;
 // @name 项-文件描述-字号
 $upload-item-filedescription-font-size: inherit!default;
 // @name 项-文件描述-字重

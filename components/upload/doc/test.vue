@@ -4,6 +4,7 @@
     <wt-upload
       class="upload-base"
       action="https://wish.com/"
+      input-type="button"
       :on-preview="handlePreview"
       :on-remove="handleRemove"
       :before-remove="beforeRemove"

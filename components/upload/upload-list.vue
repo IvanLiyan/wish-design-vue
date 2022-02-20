@@ -12,7 +12,9 @@
     <li
       v-for="file in files"
       :class="[`${prefix}-list-item`,
-      `${prefix}-list-item-` + file.status, focusing ? 'focusing' : '']"
+      `${prefix}-list-item-` + file.status,
+      focusing ? 'focusing' : '',
+      getPictureClass(prefix, file, inputType)]"
       :key="file.uid"
       tabindex="0"
       @keydown.delete="!disabled && $emit('remove', file)"
@@ -28,9 +30,19 @@
         && listType === 'picture-card'"
         :src="file.url" alt=""
       /> -->
-      <a :class="`${prefix}-list-item-name`" @click="handleClick(file)">
+      <a
+        :class="`${prefix}-list-item-name`"
+        @click="handleClick(file)"
+        v-show="(listType !== 'picture-card') && (file.raw.type.substr(0, 5) !== 'image')"
+      >
         {{ file.name }}
       </a>
+      <img
+        :class="`${prefix}-list-item-image-picture`"
+        v-show="(listType !== 'picture-card') && (file.raw.type.substr(0, 5) === 'image')"
+        :src="file.url"
+        alt=""
+      />
       <div
         v-if="(listType === 'picture-card') && (file.status === 'uploading')"
         :class="`${prefix}-list-item-loading-wrapper`"
@@ -38,7 +50,15 @@
         <Loading :class="`${prefix}-list-item-loading`" size="small" />
         <span>上传中</span>
       </div>
-      <i v-else-if="listType === 'picture-list'"></i>
+      <div
+        v-else-if="(listType !== 'picture-card') && (file.raw.type.substr(0, 5) === 'image')"
+        :class="`${prefix}-list-item-image-info`"
+      >
+        <p>{{ file.name }}</p>
+        <p :class="file.status === 'fail' ? `${prefix}-list-item-image-info-fail` : `${prefix}-list-item-image-info-status`">
+          {{ STATUS_ENUM[file.status] }}
+        </p>
+      </div>
       <span
         :class="[`${prefix}-list-item-status`,file.status === 'fail' && `${prefix}-list-item-status-fail`]"
         v-else
@@ -159,6 +179,7 @@ export default {
       default: false,
     },
     handlePreview: Function,
+    inputType: String,
     listType: String,
     showFileDown: {
       type: Boolean,
@@ -183,7 +204,14 @@ export default {
       return parseInt(val, 10);
     },
     handleClick (file) {
-      this.handlePreview && this.handlePreview(file);
+      // this.handlePreview && this.handlePreview(file);
+      console.log('file', file);
+    },
+    // 判断是否为非图片卡形式控件且上传文件类型为image，为item添加class
+    getPictureClass (prefix, file, inputType) {
+      if ((inputType !== 'picture-card') && (file.raw.type.substr(0, 5) === 'image')) {
+        return `${prefix}-list-item-image`;
+      }
     },
   },
 };

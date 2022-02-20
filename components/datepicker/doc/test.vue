@@ -8,6 +8,13 @@
         format="yyyy/MM/dd"
       />
       <br />
+      <p>展示标签-姓名</p>
+      <wt-date-picker
+        type="date"
+        v-model="value23"
+        label="姓名"
+      />
+      <br />
       <p>只读</p>
       <wt-date-picker
         type="date"
@@ -186,6 +193,7 @@ export default {
       value20: '',
       value21: '',
       value22: '',
+      value23: '',
     };
   },
   methods: {

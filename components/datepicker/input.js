@@ -7,6 +7,9 @@ export default createHoc({
     currentValue: {
       type: String,
     },
+    label: {
+      type: String,
+    },
   },
   data () {
     return {
@@ -57,6 +60,7 @@ export default createHoc({
   mapStateToProps (context) {
     return {
       value: context.value,
+      label: context.label,
     };
   },
   mapMethodToListener (context) {

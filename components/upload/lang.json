@@ -2,10 +2,10 @@
   "chinese": {
     "componnent_desc": "将文件上传至服务端。",
     "module1": {
-      "title": "基础样式"
+      "title": "基础样式-按钮"
 	  },
     "module2": {
-      "title": "文件上传"
+      "title": "输入框样式"
 	  },
     "module3": {
       "title": "图片上传",

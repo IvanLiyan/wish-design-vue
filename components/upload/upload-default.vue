@@ -206,7 +206,6 @@ export default {
       disabled,
       handleKeydown,
       prefix,
-      fileList,
     } = this;
     const data = {
       class: {
@@ -218,9 +217,6 @@ export default {
       },
     };
     data.class[`${prefix}-${listType}`] = true;
-    if ((listType === 'picture-list') && (fileList.length === 1)) {
-      data.class[`${prefix}-${listType}-uploaded`] = true;
-    };
 
     return (
       <div {...data} tabindex="0" >
