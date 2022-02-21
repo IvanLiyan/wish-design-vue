@@ -4,9 +4,6 @@
       class="picture-list"
       action="https://www.mocky.io/v2/5185415ba171ea3a00704eed/posts/"
       input-type="picture-card"
-      :http-request="uploadPdf"
-      :on-preview="handlePictureCardPreview"
-      :on-remove="handleRemove"
       :value="fileList">
       <i class="wticon-add"></i>
     </wt-upload>
@@ -41,15 +38,6 @@ export default {
       // }
       ],
     };
-  },
-  methods: {
-    handleRemove (file, fileList) {
-      console.log(file, fileList);
-    },
-    handlePictureCardPreview (file) {
-      this.dialogImageUrl = file.url;
-      this.dialogVisible = true;
-    },
   },
 };
 </script>

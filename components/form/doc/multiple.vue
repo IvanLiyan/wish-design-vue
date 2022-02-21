@@ -48,7 +48,7 @@
       </wt-select>
     </wt-form-item>
     <wt-form-item prop="date" required :span="6">
-      <wt-date-picker type="date" v-model="formCustom.date" />
+      <wt-date-picker type="date" v-model="formCustom.date" label="选择日期" />
     </wt-form-item>
     <div>
       <wt-button @click="submit">提交</wt-button>
