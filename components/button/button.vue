@@ -13,7 +13,6 @@
         [`${prefix}-loading`]: _loading,
       },
     ]"
-    :type="htmlType"
     :disabled="disabled || _loading"
     v-on="listen"
     v-bind="$attrs"
@@ -65,11 +64,6 @@ export default {
       type: String,
       default: 'normal',
       validator: (val) => ['normal', 'small'].includes(val),
-    },
-    // 按钮原生html type
-    htmlType: {
-      type: String,
-      default: 'button',
     },
   },
 

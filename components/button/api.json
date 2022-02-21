@@ -69,14 +69,6 @@
       "version": ""
     },
     {
-      "name": "html-type",
-      "desc": "$t('button.api.html-type')",
-      "type": "string",
-      "optionalValue": ["button", "submit", "reset"],
-      "default": "button",
-      "version": ""
-    },
-    {
       "name": "target",
       "desc": "$t('button.api.target')",
       "type": "string",
