@@ -31,6 +31,9 @@ export default {
     this.setType();
   },
   methods: {
+    /**
+     * 按钮组，将所有按钮设置为类型“third”的按钮展示
+     */
     setType: function () {
       const buttons = this.$slots.default;
       if (buttons && buttons.length > 0) {

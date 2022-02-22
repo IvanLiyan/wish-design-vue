@@ -96,6 +96,9 @@ export default {
         click: this.handleClick,
       };
     },
+    /**
+     * 获取按钮标签
+     */
     tag() {
       if (this.href !== undefined) {
         return 'a';
@@ -103,14 +106,23 @@ export default {
         return 'button';
       }
     },
+    /**
+     * 是否loading
+     */
     _loading() {
       return hasProps(this, 'loading') ? this.loading : this.innerLoading;
     },
   },
+  /**
+   * 清除倒计时
+   */
   beforeDestroy() {
     clearTimeout(this.timeout);
   },
   methods: {
+    /**
+     * 点击按钮
+     */
     handleClick(e) {
       clearTimeout(this.timeout);
       const onClick = this.$listeners.click;
