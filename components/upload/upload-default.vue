@@ -219,7 +219,7 @@ export default {
     data.class[`${prefix}-${listType}`] = true;
 
     return (
-      <div {...data} tabindex="0" >
+      <div {...data} tabindex="0">
         {
           drag
             ? <upload-dragger
@@ -236,7 +236,8 @@ export default {
           name={name}
           on-change={handleChange}
           multiple={multiple}
-          accept={accept}>
+          accept={accept}
+        >
         </input>
         {listType === 'picture-card' && <div class={`${prefix}-info`}>
           <Icon class={`${prefix}-info-icon`} name="plus" color="#0E161C" />

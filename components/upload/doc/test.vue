@@ -215,7 +215,7 @@ export default {
 </script>
 <style>
 .upload-base{
-  width: 360px;
+  /* width: 360px; */
   text-align: left;
 }
 .picture-list-wrapper {
@@ -227,8 +227,9 @@ export default {
 .picture-list{
   text-align: left;
   position: relative;
+  width: 100%;
 }
-.picture-wrapper {
+/* .picture-wrapper {
   width: 104px;
   height: 104px;
   border: 1px solid #BFCDD4;
@@ -236,5 +237,5 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-}
+} */
 </style>

@@ -288,18 +288,20 @@ export default {
 
     if (this.showFileList) {
       uploadList = (
-        <UploadList
-          prefix={this.prefix}
-          getIconCls={this.getIconCls}
-          disabled={this.uploadDisabled}
-          inputType={this.inputType}
-          listType={this.transListType(this.inputType)}
-          files={this.uploadFiles}
-          showFileDown={this.showFileDown}
-          on-remove={this.handleRemove}
-          on-retry={this.handleRetry}
-          handlePreview={this.onPreview}>
-        </UploadList>
+        <div class={`${this.prefix}-uploadlist-${this.inputType}`}>
+          <UploadList
+            prefix={this.prefix}
+            getIconCls={this.getIconCls}
+            disabled={this.uploadDisabled}
+            inputType={this.inputType}
+            listType={this.transListType(this.inputType)}
+            files={this.uploadFiles}
+            showFileDown={this.showFileDown}
+            on-remove={this.handleRemove}
+            on-retry={this.handleRetry}
+            handlePreview={this.onPreview}>
+          </UploadList>
+        </div>
       );
     }
 
@@ -358,7 +360,7 @@ export default {
 
     return (
       <div>
-        { this.inputType === 'picture-card' ? uploadList : ''}
+        { this.inputType === 'picture-card' && uploadList }
         {
           this.$slots.trigger
             ? [uploadComponent, this.$slots.default]

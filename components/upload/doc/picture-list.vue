@@ -44,6 +44,7 @@ export default {
 </script>
 <style>
 .picture-list-wrapper {
+  width: 240px;
   border-radius: 2px;
   display: flex;
   align-items: center;

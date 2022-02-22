@@ -8,7 +8,6 @@
     @dragleave.prevent="dragover = false"
   >
     <slot></slot>
-    <span>hah</span>
   </div>
 </template>
 <script>

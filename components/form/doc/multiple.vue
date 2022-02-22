@@ -102,14 +102,12 @@
     <wt-form-item prop="code" :span="6" required :style="{ 'padding-left': '10px' }">
       <wt-input label="邮政编码" placeholder="请输入纯数字" v-model="formData.code" />
     </wt-form-item>
-
     <div class="title">其他电商平台经验</div>
     <wt-form-item prop="experience" required>
       <wt-checkbox-group arrange="horizontal" v-model="formData.experience">
         <wt-checkbox v-for="exp in experiences" :key="exp.value" :value="exp.value">{{ exp.label }}</wt-checkbox>
       </wt-checkbox-group>
     </wt-form-item>
-
     <div class="title">电话联系方式</div>
     <wt-form-item prop="telType" required :span="6">
       <wt-select v-model="formData.telType" label="座机/手机" placeholder="请选择">
@@ -119,9 +117,13 @@
     <wt-form-item prop="telPhone" :span="6" required :style="{ 'padding-right': '10px' }">
       <wt-input label=" " placeholder="请输入纯数字电话号码" v-model="formData.telPhone" />
     </wt-form-item>
-
     <wt-form-item prop="telOpenTime" required :span="12" :style="{ 'padding-left': '10px' }">
-      <wt-date-picker type="date" v-model="formData.telOpenTime" label="可接听来电的时间段" placeholder="请选择时间" />
+      <wt-time-picker
+        type="timerange"
+        v-model="formData.telOpenTime"
+        label="可接听来电的时间段"
+        placeholder="请选择时间"
+      />
     </wt-form-item>
 
     <div>

@@ -25,7 +25,7 @@
   },
   {
     "name": "multiple",
-    "desc": "是否支持多选文件(只在list-type为text有效)",
+    "desc": "是否支持多选文件(只在input-type为button或input时有效)",
     "type": "boolean",
     "optionalValue": "",
     "default": "",
@@ -57,7 +57,7 @@
   },
   {
     "name": "show-file-list",
-    "desc": "是否显示已上传文件列表(只在list-type为text有效)",
+    "desc": "是否显示已上传文件列表(只在input-type为button或input时有效)",
     "type": "boolean",
     "optionalValue": "",
     "default": "true",
