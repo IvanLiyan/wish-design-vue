@@ -16,42 +16,26 @@
 export default {
   data () {
     return {
-      dialogImageUrl: 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.zcool.cn%2Fcommunity%2F016a0b5e8c681ea8012165183f807a.jpg%403000w_1l_0o_100sh.jpg&refer=http%3A%2F%2Fimg.zcool.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1647763053&t=57ce7af82e614f2a1373b7f83d338fb5',
+      dialogImageUrl: 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic2.zhimg.com%2Fv2-6df7121d5e4955182c835d77f826c773_r.jpg%3Fsource%3D1940ef5c&refer=http%3A%2F%2Fpic2.zhimg.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1648022745&t=133c8d77690506243fd8c32e31df7e1a',
       dialogVisible: false,
-      fileList: [
-      //   {
-      //   name: 'test.jpg',
-      //   percentage: 100,
-      //   raw: {
-      //     uid: 1645171975770,
-      //     lastModified: 1644907336299,
-      //     lastModifiedDate: new Date(),
-      //     name: 'test.jpg',
-      //     size: 88596,
-      //     type: 'image/jpeg',
-      //     webkitRelativePath: '',
-      //   },
-      //   size: 88596,
-      //   status: 'success',
-      //   uid: 1645171975770,
-      //   url: 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.zcool.cn%2Fcommunity%2F016a0b5e8c681ea8012165183f807a.jpg%403000w_1l_0o_100sh.jpg&refer=http%3A%2F%2Fimg.zcool.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1647763053&t=57ce7af82e614f2a1373b7f83d338fb5',
-      // }
-      ],
+      fileList: [{
+        name: 'test.jpg',
+        percentage: 100,
+        raw: {
+          uid: 1645171975770,
+          lastModified: 1644907336299,
+          lastModifiedDate: new Date(),
+          name: 'test.jpg',
+          size: 88596,
+          type: 'image/jpeg',
+          webkitRelativePath: '',
+        },
+        size: 88596,
+        status: 'success',
+        uid: 1645171975770,
+        url: 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic2.zhimg.com%2Fv2-6df7121d5e4955182c835d77f826c773_r.jpg%3Fsource%3D1940ef5c&refer=http%3A%2F%2Fpic2.zhimg.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1648022745&t=133c8d77690506243fd8c32e31df7e1a',
+      }],
     };
   },
 };
 </script>
-<style>
-.picture-wrapper {
-  width: 104px;
-  height: 104px;
-  border: 1px solid #BFCDD4;
-  border-radius: 2px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.picture-list{
-  text-align:left;
-}
-</style>

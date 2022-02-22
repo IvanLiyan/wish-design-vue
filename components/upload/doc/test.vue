@@ -228,7 +228,7 @@ export default {
   text-align: left;
   position: relative;
 }
-.picture-wrapper {
+/* .picture-wrapper {
   width: 104px;
   height: 104px;
   border: 1px solid #BFCDD4;
@@ -236,5 +236,5 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-}
+} */
 </style>

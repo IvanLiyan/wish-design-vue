@@ -38,11 +38,19 @@
         {{ file.name }}
       </a>
       <img
-        :class="`${prefix}-list-item-image-picture`"
-        v-show="(listType !== 'picture-card') && (file.raw.type.substr(0, 5) === 'image')"
+        :class="[`${prefix}-list-item-image-picture`, `${prefix}-list-item-image-picture-${inputType}`]"
+        v-show="(file.raw.type.substr(0, 5) === 'image') && (file.status === 'success')"
         :src="file.url"
         alt=""
       />
+      <!-- 列表形式占位图 Start -->
+      <img
+        :class="`${prefix}-list-item-image-picture`"
+        v-show="(file.raw.type.substr(0, 5) === 'image') && (file.status !== 'success') && (inputType !== 'picture-card')"
+        src="@site/assets/noImage.png"
+        alt=""
+      />
+      <!-- 列表形式占位图 End -->
       <div
         v-if="(listType === 'picture-card') && (file.status === 'uploading')"
         :class="`${prefix}-list-item-loading-wrapper`"
