@@ -14,7 +14,10 @@
     @click="toggleMenu"
     v-clickoutside="handleClose"
   >
-    <legend v-if="label" :class="[{ [`${prefix}-invalid`]: invalid, [`${prefix}-focus`]: opened }]">
+    <legend
+      v-if="label"
+      :class="[{ [`${prefix}-invalid`]: invalid, [`${prefix}-focus`]: opened, 'space-label': !label.trim() }]"
+    >
       {{ label }}
     </legend>
     <div

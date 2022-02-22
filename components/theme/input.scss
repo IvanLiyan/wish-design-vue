@@ -56,6 +56,9 @@ $padding: 8px;
       padding: $legend-padding;
       line-height: $line-height-4;
       height: $line-height-4;
+      &.space-label {
+        padding: 0;
+      }
     }
   }
   &-with-label {

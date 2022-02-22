@@ -272,12 +272,11 @@ export default {
       this.validateDisabled = false;
     },
     resetField() {
-      console.log('this.initialValue', this.initialValue);
       this.validateState = '';
       this.validateMessage = '';
 
       const model = this.form.model;
-      const value = this.fieldValue;
+      // const value = this.fieldValue;
       let path = this.prop;
       if (path.indexOf(':') !== -1) {
         path = path.replace(/:/, '.');
@@ -285,11 +284,12 @@ export default {
 
       const prop = getPropByPath(model, path);
       this.validateDisabled = true;
-      if (Array.isArray(value)) {
-        prop.o[prop.k] = [].concat(this.initialValue);
-      } else {
-        prop.o[prop.k] = this.initialValue;
-      }
+      // if (Array.isArray(value)) {
+      //   prop.o[prop.k] = [].concat(this.initialValue);
+      // } else {
+      //   prop.o[prop.k] = this.initialValue;
+      // }
+      prop.o[prop.k] = this.initialValue;
     },
     clearValidate() {
       this.validateState = '';

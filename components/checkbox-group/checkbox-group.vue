@@ -11,9 +11,6 @@ export default {
   props: {
     value: {
       type: Array,
-      default() {
-        return [];
-      },
     },
     arrange: {
       type: String,
@@ -50,8 +47,9 @@ export default {
   },
   methods: {
     handleChange(checked, value) {
-      const index = this.value.indexOf(value);
-      const nextValue = [...this.value];
+      const groupValue = this.value || [];
+      const index = groupValue.indexOf(value);
+      const nextValue = [...groupValue];
       if (checked) {
         nextValue.push(value);
       } else if (index !== -1) {

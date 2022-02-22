@@ -10,7 +10,7 @@
         [`${inputPrefix}-focused`]: focused,
       }"
     >
-      <legend v-if="label">{{ label }}</legend>
+      <legend v-if="label" :class="{ 'space-label': !label.trim() }">{{ label }}</legend>
       <div :class="`${inputPrefix}-con`">
         <slot name="prefix"></slot>
         <textarea

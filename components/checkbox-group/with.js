@@ -8,7 +8,9 @@ export default function withCheckboxGroup(name, Component) {
         prop: 'checked',
       },
       props: {
-        value: [String, Number, Boolean, Function, Object, Symbol],
+        value: {
+          type: [String, Number, Boolean, Function, Object, Array, Symbol],
+        },
         disabled: Boolean,
         name: String,
         checked: Boolean,
@@ -20,7 +22,9 @@ export default function withCheckboxGroup(name, Component) {
       },
       computed: {
         _checked() {
-          return this.checkboxGroup ? this.checkboxGroup.value.indexOf(this.value) > -1 : this.checked;
+          return this.checkboxGroup
+            ? this.checkboxGroup.value && this.checkboxGroup.value.indexOf(this.value) > -1
+            : this.checked;
         },
         _disabled() {
           return (this.checkboxGroup || {}).disabled || this.disabled;

@@ -11,7 +11,7 @@
     {
       "name": "value",
       "desc": "$t('checkbox-group.api.value')",
-      "type": "any",
+      "type": "array",
       "optionalValue": "",
       "default": "",
       "version": ""
