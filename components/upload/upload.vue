@@ -156,7 +156,7 @@ export default {
 
   watch: {
     value: {
-      immediate: true,
+      immediate: true, // 在最初绑定值的时候也执行函数
       handler (value) {
         this.uploadFiles = value.map(item => {
           item.uid = item.uid || (Date.now() + this.tempIndex++);
@@ -213,6 +213,7 @@ export default {
 
         this.onSuccess(res, file, this.uploadFiles);
         this.onChange(file, this.uploadFiles);
+        this.$emit('input', this.uploadFiles);
       }
     },
     handleError (err, rawFile) {
@@ -222,9 +223,9 @@ export default {
 
       this.onError(err, file, this.uploadFiles);
       this.onChange(file, this.uploadFiles);
+      this.$emit('input', this.uploadFiles);
     },
     handleRemove (file, raw) {
-      console.log('REMOVE');
       if (raw) {
         file = this.getFile(raw);
       }
@@ -233,6 +234,7 @@ export default {
         const value = this.uploadFiles;
         value.splice(value.indexOf(file), 1);
         this.onRemove(file, value);
+        this.$emit('input', this.uploadFiles);
       };
 
       if (!this.beforeRemove) {
@@ -340,8 +342,6 @@ export default {
       },
       ref: 'upload-inner',
     };
-    const files = this.uploadFiles;
-    console.log('files', files);
     const uploadComponent =
     <UploadDefault {...uploadData}>
       {/* 输入控件的渲染逻辑 */}

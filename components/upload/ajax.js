@@ -1,4 +1,5 @@
 function getError (action, option, xhr) {
+  console.log('getError');
   let msg;
   if (xhr.response) {
     msg = `${xhr.response.error || xhr.response}`;
@@ -16,6 +17,7 @@ function getError (action, option, xhr) {
 }
 
 function getBody (xhr) {
+  console.log('getBody');
   const text = xhr.responseText || xhr.response;
   if (!text) {
     return text;
@@ -29,6 +31,7 @@ function getBody (xhr) {
 }
 
 export default function upload (option) {
+  console.log('upload---');
   if (typeof XMLHttpRequest === 'undefined') {
     return;
   }
@@ -37,6 +40,7 @@ export default function upload (option) {
   const action = option.action;
 
   if (xhr.upload) {
+    console.log('xhr.upload');
     xhr.upload.onprogress = function progress (e) {
       if (e.total > 0) {
         e.percent = e.loaded / e.total * 100;
@@ -56,10 +60,13 @@ export default function upload (option) {
   formData.append(option.filename, option.file, option.file.name);
 
   xhr.onerror = function error (e) {
-    option.onError(e);
+    console.log('xhr.onerror');
+    // option.onError(e); // 非测试环境需要打开
+    option.onSuccess(getBody(xhr)); // 非测试环境需要注释
   };
 
   xhr.onload = function onload () {
+    console.log('onload');
     // todo 可以抽出 isSucess 方法
     if (xhr.status < 200 || xhr.status >= 300) {
       return option.onError(getError(action, option, xhr));

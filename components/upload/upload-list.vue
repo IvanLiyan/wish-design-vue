@@ -213,7 +213,6 @@ export default {
     },
     handleClick (file) {
       // this.handlePreview && this.handlePreview(file);
-      console.log('file', file);
     },
     // 判断是否为非图片卡形式控件且上传文件类型为image，为item添加class
     getPictureClass (prefix, file, inputType) {
