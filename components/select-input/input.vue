@@ -55,7 +55,7 @@ export default {
       type: String,
       default: 'text',
     },
-    size: String,
+    size: String, //
     clearable: Boolean,
     disabled: Boolean,
     readonly: Boolean,
@@ -63,8 +63,8 @@ export default {
     value: [String, Number, Array],
     prefixIcon: String,
     suffixIcon: String,
-    multiple: Boolean,
-    inputWidth: Number,
+    multiple: Boolean, //
+    inputWidth: Number, //
     genre: String,
     loading: {
       type: Boolean,

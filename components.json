@@ -26,5 +26,8 @@
   "option": "components/option",
   "option-group": "components/option-group",
   "loading": "components/loading",
-  "alert": "components/alert"
+  "alert": "components/alert",
+  "tab": "components/tab",
+  "tab-drop": "components/tab-drop",
+  "tab-pane": "components/tab-pane"
 }

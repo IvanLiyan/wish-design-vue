@@ -285,3 +285,16 @@ $prefix: 'wt' !default;
 @function active-color($color, $sPercent: 6, $bPercent: 6) {
   @return hover-color($color);
 }
+
+@mixin btn-default-hover() {
+  color: $btn-hover-color;
+  border-color: $btn-hover-border-color;
+  background-color: $btn-hover-bgc;
+}
+@mixin btn-default-desiabled() {
+  color: $color-text-6;
+  border-color: $btn-disabled-border-color;
+  background: $color-fill-3;
+  opacity: $btn-disabled-opacity;
+  cursor: not-allowed;
+}

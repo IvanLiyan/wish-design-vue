@@ -1,0 +1,38 @@
+{
+  "chinese": {
+    "component_desc": "用于切换多页信息",
+    "module1": {
+      "title": "基础样式"
+    },
+    "module2": {
+      "title": "使用"
+    },
+    "api": {
+      "value": "选中选项卡的值 (目前暂不支持数字0，建议使用字符串0)",
+      "number": "选项卡的数值（number值大于0）",
+      "icon": "选项卡的图标",
+      "tab-click": "标签被选中时触发，注: tab-drop 组件触发时 event 参数为 undefined",
+      "prev-click": "点击向前翻页按钮",
+      "next-click": "点击向后翻页按钮",
+      "input": "标签页切换的事件，参数为当前标签页的值"
+    }
+  },
+  "english": {
+    "component_desc": "",
+    "module1": {
+      "title": ""
+    },
+    "module2": {
+      "title": ""
+    },
+    "api": {
+      "value": "",
+      "number": "",
+      "icon": "",
+      "tab-click": "",
+      "prev-click": "",
+      "next-click": "",
+      "input": ""
+    }
+  }
+}

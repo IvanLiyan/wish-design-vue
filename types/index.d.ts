@@ -26,6 +26,9 @@ import { Option } from './option';
 import { OptionGroup } from './option-group';
 import { Loading } from './loading';
 import { Alert } from './alert';
+import { Tab } from './tab';
+import { TabDrop } from './tab-drop';
+import { TabPane } from './tab-pane';
 import { Confirm as WTConfirm } from './confirm';
 import {
   Message as WTMessage,
@@ -70,6 +73,9 @@ export {
   OptionGroup,
   Loading,
   Alert,
+  Tab,
+  TabDrop,
+  TabPane,
   FormRule,
   FormRules,
   NotificationOptions,
