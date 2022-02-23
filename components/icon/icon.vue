@@ -5,6 +5,7 @@
     v-bind="$attrs"
     v-on="$listeners"
     :class="`${prefix} ${prefix}-${name}`"
+    :fill="color"
     :color="color"
     :width="width"
     :height="height"
