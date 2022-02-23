@@ -60,9 +60,8 @@ export default function upload (option) {
   formData.append(option.filename, option.file, option.file.name);
 
   xhr.onerror = function error (e) {
-    console.log('xhr.onerror');
-    // option.onError(e); // 非测试环境需要打开
-    option.onSuccess(getBody(xhr)); // 非测试环境需要注释
+    option.onError(e); // 非测试环境需要打开
+    // option.onSuccess(getBody(xhr)); // 非测试环境需要注释
   };
 
   xhr.onload = function onload () {

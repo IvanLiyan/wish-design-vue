@@ -214,6 +214,7 @@ export default {
         this.onSuccess(res, file, this.uploadFiles);
         this.onChange(file, this.uploadFiles);
         this.$emit('input', this.uploadFiles);
+        this.$emit('change', this.uploadFiles);
       }
     },
     handleError (err, rawFile) {
@@ -224,6 +225,7 @@ export default {
       this.onError(err, file, this.uploadFiles);
       this.onChange(file, this.uploadFiles);
       this.$emit('input', this.uploadFiles);
+      this.$emit('change', this.uploadFiles);
     },
     handleRemove (file, raw) {
       if (raw) {
@@ -235,6 +237,7 @@ export default {
         value.splice(value.indexOf(file), 1);
         this.onRemove(file, value);
         this.$emit('input', this.uploadFiles);
+        this.$emit('change', this.uploadFiles);
       };
 
       if (!this.beforeRemove) {

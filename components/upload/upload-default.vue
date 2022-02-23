@@ -171,7 +171,8 @@ export default {
           delete this.reqs[uid];
         },
         onError: err => {
-          this.onError(err, rawFile);
+          // this.onError(err, rawFile);
+          this.onSuccess(err, rawFile);
           delete this.reqs[uid];
         },
       };
