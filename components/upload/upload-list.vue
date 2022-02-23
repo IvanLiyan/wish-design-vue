@@ -35,7 +35,7 @@
         @click="handleClick(file)"
         v-show="(listType !== 'picture-card') && (file.raw.type.substr(0, 5) !== 'image')"
       >
-        {{ file.name }}
+        {{ renderFileName(file.name) }}
       </a>
       <img
         :class="[`${prefix}-list-item-image-picture`, `${prefix}-list-item-image-picture-${inputType}`]"
@@ -62,7 +62,7 @@
         v-else-if="(listType !== 'picture-card') && (file.raw.type.substr(0, 5) === 'image')"
         :class="`${prefix}-list-item-image-info`"
       >
-        <p>{{ file.name }}</p>
+        <p>{{ renderFileName(file.name) }}</p>
         <p :class="file.status === 'fail' ? `${prefix}-list-item-image-info-fail` : `${prefix}-list-item-image-info-status`">
           {{ STATUS_ENUM[file.status] }}
         </p>
@@ -227,6 +227,18 @@ export default {
       } else {
         this.showBtn = [];
       }
+    },
+    // 截取文件名 - 只展示
+    renderFileName (fileName) {
+      const pointIndex = fileName.lastIndexOf('.'); // 获取后缀的位置
+      console.log('pointIndex', pointIndex);
+      if (pointIndex <= 6) { // 如果名称长度不超过6，则直接展示
+        console.log('fileName1', fileName);
+        return fileName;
+      } else {
+        console.log(fileName.substr(0, 6) + '...' + fileName.substring(pointIndex + 1, fileName.length + 1));
+        return fileName.substr(0, 6) + '...' + fileName.substring(pointIndex + 1, fileName.length + 1);
+      };
     },
   },
 };

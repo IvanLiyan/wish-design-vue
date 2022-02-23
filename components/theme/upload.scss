@@ -353,14 +353,14 @@
       outline: none;
     }
     &-name {
-      width: 72px;
+      width: 126px;
       color: $color-text-1;
       display: block;
-      overflow: hidden;
+      // overflow: hidden;
       padding-left: 4px;
-      text-overflow: ellipsis;
+      // text-overflow: ellipsis;
       transition: color .3s;
-      white-space: nowrap;
+      // white-space: nowrap;
       cursor: pointer;
       &:hover, &.hover{
         color: $upload-hover-item-filename-color;
