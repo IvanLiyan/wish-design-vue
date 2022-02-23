@@ -66,6 +66,8 @@
         action="https://jsonplaceholder.typicode.com/posts/"
         list-type="picture-list"
         v-model="formData.idFront"
+        @input="upload"
+        @change="change"
       />
     </wt-form-item>
     <wt-form-item
@@ -142,7 +144,7 @@ const validatePassword = (rule, value, callback) => {
 };
 const initialData = {
   open: false,
-  login: 'daili',
+  login: null,
   introducer: null,
   busType: null,
   name: '',
@@ -311,6 +313,12 @@ export default {
         });
       }
       console.log('data', this.formData);
+    },
+    upload: function () {
+      console.log('upload,,,,', this.formData);
+    },
+    change: function () {
+      console.log('change,,,,', this.formData);
     },
   },
 };

@@ -1,11 +1,14 @@
 import CheckboxGroup from './checkbox-group.vue';
 import withCheckboxGroup from './with';
+import { withFormItem } from '@components/form-item';
+
+const HocCheckboxGroup = withFormItem(CheckboxGroup.name, CheckboxGroup);
 
 export { withCheckboxGroup };
 
 /* istanbul ignore next */
-CheckboxGroup.install = function (Vue) {
-  Vue.component(CheckboxGroup.name, CheckboxGroup);
+HocCheckboxGroup.install = function (Vue) {
+  Vue.component(HocCheckboxGroup.name, HocCheckboxGroup);
 };
 
-export default CheckboxGroup;
+export default HocCheckboxGroup;

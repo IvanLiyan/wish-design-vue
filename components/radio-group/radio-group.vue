@@ -48,8 +48,9 @@ export default {
   methods: {
     handleChange(radioValue) {
       if (this.value !== radioValue) {
-        this.$emit('change', radioValue);
+        // 顺序不能改变，必须先input后change, 若先change，formItem会去校验，此时value值还没改变
         this.$emit('input', radioValue);
+        this.$emit('change', radioValue);
       }
     },
   },
