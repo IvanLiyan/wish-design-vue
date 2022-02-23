@@ -21,8 +21,8 @@
       @focus="focusing = true"
       @blur="focusing = false"
       @click="focusing = false"
-      @mouseover="hover = true"
-      @mouseout="hover = false"
+      @mouseover="changeShowBtn(file.uid, true)"
+      @mouseout="changeShowBtn(file.uid, false)"
     >
       <!-- <img
         :class="`${prefix}-list-item-thumbnail`"
@@ -77,7 +77,7 @@
         <label
           :class="`${prefix}-list-item-status-text`"
           v-if="listType === 'text' && !disabled"
-          v-show="hover"
+          v-show="showBtn.indexOf(file.uid) > -1"
         >
           <!-- <i @click="$emit('remove', file)"
           :class="{
@@ -198,7 +198,7 @@ export default {
   data () {
     return {
       focusing: false,
-      hover: false,
+      showBtn: [],
       STATUS_ENUM: {
         ready: '准备中',
         uploading: '上传中',
@@ -218,6 +218,14 @@ export default {
     getPictureClass (prefix, file, inputType) {
       if ((inputType !== 'picture-card') && (file.raw.type.substr(0, 5) === 'image')) {
         return `${prefix}-list-item-image`;
+      }
+    },
+    // 改变文件列表按钮展示状态
+    changeShowBtn (uid, e) {
+      if (e) {
+        this.showBtn = [uid];
+      } else {
+        this.showBtn = [];
       }
     },
   },
