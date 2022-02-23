@@ -20,8 +20,8 @@
           class="upload-base"
           action="https://jsonplaceholder.typicode.com/posts/"
           input-type="button"
-          :value="fileList"
           v-model="formCustom.idFront"
+          :on-remove="removeFront"
         />
         <span class="helper">文件大小不超过20MB</span>
       </wt-form-item>
@@ -31,7 +31,6 @@
           class="upload-base"
           action="https://jsonplaceholder.typicode.com/posts/"
           input-type="button"
-          :value="fileList"
           v-model="formCustom.idBack"
           @input="input"
         />
@@ -137,6 +136,9 @@ export default {
     };
   },
   methods: {
+    removeFront () {
+      console.log('formCustom', this.formCustom);
+    },
     input: function (a) {
       console.log('aaa', a);
     },

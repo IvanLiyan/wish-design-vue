@@ -63,7 +63,7 @@
     >
       <wt-upload
         input-type="input"
-        action="https://www.mocky.io/v2/5185415ba171ea3a00704eed/posts/"
+        action="https://jsonplaceholder.typicode.com/posts/"
         list-type="picture-list"
         v-model="formData.idFront"
       />
@@ -77,7 +77,7 @@
     >
       <wt-upload
         input-type="input"
-        action="https://www.mocky.io/v2/5185415ba171ea3a00704eed/posts/"
+        action="https://jsonplaceholder.typicode.com/posts/"
         list-type="picture-list"
         v-model="formData.idBack"
       />
