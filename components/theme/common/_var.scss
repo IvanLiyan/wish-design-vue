@@ -355,92 +355,92 @@ $popover-small-title-margin-bottom: $s-2 !default;
 // @category base
 // @propsValue default
 // @name 禁用-文字颜色
-$date-picker-disabled-color: $color-text-4!default;
+$date-picker-disabled-color: $color-text-4 !default;
 // @name 激活-文字颜色
-$date-picker-active-color: $color-primary!default;
+$date-picker-active-color: $color-primary !default;
 // @refer color
 // @name 禁用-背景色
-$date-picker-disabled-bgc: $color-fill-3!default;
+$date-picker-disabled-bgc: $color-fill-3 !default;
 // @refer color
 // @name 边框颜色
-$date-picker-border-color: #E7E9EF!default;
+$date-picker-border-color: #e7e9ef !default;
 // @name 宽度
-$date-picker-width: 248px!default;
+$date-picker-width: 248px !default;
 
 // @name 字号
-$date-picker-font-size: $font-size-1!default;
+$date-picker-font-size: $font-size-1 !default;
 // @name 页头-高度
-$date-picker-header-height: $s-10!default;
+$date-picker-header-height: $s-10 !default;
 // @name 页头-行高
-$date-picker-header-line-height: $line-height-1!default;
+$date-picker-header-line-height: $line-height-1 !default;
 // @name 页头-竖直内边距
 $date-picker-header-padding-vertical: ($date-picker-header-height - $date-picker-header-line-height)/2;
 // @name 页头-水平内边距
-$date-picker-header-padding-horizontal: $s-5!default;
+$date-picker-header-padding-horizontal: $s-5 !default;
 // @name 页头-input-尺寸
-$date-picker-header-input-size: 100px!default;
+$date-picker-header-input-size: 100px !default;
 // @name 页头-input-间距
-$date-picker-header-input-offset: $s-3!default;
+$date-picker-header-input-offset: $s-3 !default;
 // @name 页头-文字颜色
-$date-picker-header-color: $color-text-1!default;
+$date-picker-header-color: $color-text-1 !default;
 // @name 页头-悬浮-文字颜色
-$date-picker-header-hover-color: $color-primary!default;
+$date-picker-header-hover-color: $color-primary !default;
 // @name 图标-按钮-尺寸
-$date-picker-icon-btn-size: $font-size-1!default;
+$date-picker-icon-btn-size: $font-size-1 !default;
 // @refer color
 // @name 图标-按钮-文字颜色
-$date-picker-icon-btn-color: #808AB1!default;
+$date-picker-icon-btn-color: #808ab1 !default;
 // @name 图标-按钮-悬浮-文字颜色
-$date-picker-icon-btn-hover-color: $color-primary!default;
+$date-picker-icon-btn-hover-color: $color-primary !default;
 
 // @name 侧边栏-宽度
-$date-picker-sidebar-width: 160px!default;
+$date-picker-sidebar-width: 160px !default;
 // @name 侧边栏-边框-宽度
-$date-picker-sidebar-border-width: 0!default;
+$date-picker-sidebar-border-width: 0 !default;
 // @name 侧边栏-边框颜色
-$date-picker-sidebar-border-color: transparent!default;
+$date-picker-sidebar-border-color: transparent !default;
 // @name shortcut-竖直内边距
-$date-picker-shortcut-padding-vertical: 0!default;
+$date-picker-shortcut-padding-vertical: 0 !default;
 // @name shortcut-水平内边距
-$date-picker-shortcut-padding-horizontal: 16px!default;
+$date-picker-shortcut-padding-horizontal: 16px !default;
 // @refer color
 // @name shortcut-背景色
-$date-picker-shortcut-bgc: #FBFBFB!default;
+$date-picker-shortcut-bgc: #fbfbfb !default;
 // @name shortcut-下外边距
-$date-picker-shortcut-margin-bottom: $s-2!default;
+$date-picker-shortcut-margin-bottom: $s-2 !default;
 // @name shortcut-行高
-$date-picker-shortcut-line-height: $h-2!default;
+$date-picker-shortcut-line-height: $h-2 !default;
 // @name shortcut-悬浮-背景色
-$date-picker-shortcut-hover-bgc: $color-line-2!default;
+$date-picker-shortcut-hover-bgc: $color-line-2 !default;
 // @name shortcut-悬浮-文字颜色
-$date-picker-shortcut-hover-color: $color-primary!default;
+$date-picker-shortcut-hover-color: $color-primary !default;
 
 // @name 单元格-尺寸
-$date-picker-cell-size: 32px!default;
+$date-picker-cell-size: 32px !default;
 // @name 单元格-字号
-$date-picker-cell-font-size: $font-size-4!default;
+$date-picker-cell-font-size: $font-size-4 !default;
 // @name 单元格-内单元-字号
-$date-picker-cells-cell-font-size: $font-size-2!default;
+$date-picker-cells-cell-font-size: $font-size-2 !default;
 // @name 单元格-圆角
-$date-picker-cell-border-radius: $border-radius-2!default;
+$date-picker-cell-border-radius: $border-radius-2 !default;
 // @name 单元格-竖直间距
-$date-picker-cell-offset: $s-0!default;
+$date-picker-cell-offset: $s-0 !default;
 // @name 单元格-水平间距
-$date-picker-cell-padding-horizontal: $s-0!default;
+$date-picker-cell-padding-horizontal: $s-0 !default;
 // @name 单元格-悬浮-文字颜色
-$date-picker-cell-hover-color: $color-white!default;
+$date-picker-cell-hover-color: $color-white !default;
 // @name 单元格-悬浮-背景色
-$date-picker-cell-hover-bgc: $color-primary!default;
+$date-picker-cell-hover-bgc: $color-primary !default;
 // @name 单元格-选中-文字字重
-$date-picker-cell-selected-font-weight: $font-weight-regular!default;
+$date-picker-cell-selected-font-weight: $font-weight-regular !default;
 // @name 单元格-选中-文字颜色
-$date-picker-cell-selected-color: $color-white!default;
+$date-picker-cell-selected-color: $color-white !default;
 // @name 单元格-选中-背景色
-$date-picker-cell-selected-bgc: $color-primary!default;
+$date-picker-cell-selected-bgc: $color-primary !default;
 // @name 单元格-文字颜色
-$date-picker-cell-color: $color-text-2!default;
+$date-picker-cell-color: $color-text-2 !default;
 // @name 单元格-页头-文字颜色
-$date-picker-cell-header-color: $date-picker-cell-color!default;
+$date-picker-cell-header-color: $date-picker-cell-color !default;
 
 // @name 单元格-宽度
 $date-picker-cells-width: $date-picker-cell-size * 7 + 7 * 2 * $date-picker-cell-padding-horizontal;
@@ -448,31 +448,31 @@ $date-picker-cells-width: $date-picker-cell-size * 7 + 7 * 2 * $date-picker-cell
 $date-picker-cells-width-with-weeknumbers: $date-picker-cell-size * 8 + 8 * 2 * $date-picker-cell-padding-horizontal;
 
 // @name 单元格-间距-vertical
-$date-picker-cells-offset-vertical: $s-2!default;
+$date-picker-cells-offset-vertical: $s-2 !default;
 // @name 单元格-间距-水平
-$date-picker-cells-offset-horizontal: $s-2!default;
+$date-picker-cells-offset-horizontal: $s-2 !default;
 
 // @refer color
 // @name 范围-背景色
-$date-picker-range-bgc: #EDF1FF!default;
+$date-picker-range-bgc: #edf1ff !default;
 // @name outsize- 单元格-文字颜色
-$date-picker-outsize-cell-color: $color-text-6!default;
+$date-picker-outsize-cell-color: $color-text-6 !default;
 // @name today-文字颜色
-$date-picker-today-color: $color-primary!default;
+$date-picker-today-color: $color-primary !default;
 // @refer color
 // @name 禁用-背景色
-$date-picker-disabled-bgc: #f7f7f7!default;
+$date-picker-disabled-bgc: #f7f7f7 !default;
 
 // @name 年- 单元格-高度
-$date-picker-year-cell-height: 32px!default;
+$date-picker-year-cell-height: 32px !default;
 // @name 月- 单元格-高度
-$date-picker-month-cell-height: 32px!default;
+$date-picker-month-cell-height: 32px !default;
 // @name 月- 单元格-宽度
-$date-picker-month-cell-width: 38px + $date-picker-cell-offset!default;
+$date-picker-month-cell-width: 38px + $date-picker-cell-offset !default;
 // @name 月- 单元格-上下外边距
-$date-picker-month-cell-margin-y: 8px!default;
+$date-picker-month-cell-margin-y: 8px !default;
 // @name 月- 单元格-左右外边距
-$date-picker-month-cell-margin-x: 6px!default;
+$date-picker-month-cell-margin-x: 6px !default;
 // @end propsValue
 // @end category
 // @end component
@@ -482,26 +482,26 @@ $date-picker-month-cell-margin-x: 6px!default;
 // @category base
 // @propsValue default
 // @name 最大高
-$time-picker-max-height: 180px!default;
+$time-picker-max-height: 180px !default;
 // @name 边框颜色
-$time-picker-border-color: $date-picker-border-color!default;
+$time-picker-border-color: $date-picker-border-color !default;
 // @name 单元格-宽度
-$time-picker-cells-width:80px!default;
+$time-picker-cells-width: 80px !default;
 // @name 单元格-高度
-$time-picker-cell-height: 30px!default;
+$time-picker-cell-height: 30px !default;
 // @refer color
 // @name 单元格-悬浮-背景色
-$time-picker-cell-hover-bgc: #E5ECFF!default;
+$time-picker-cell-hover-bgc: #e5ecff !default;
 // @name 单元格-选中-字重
-$time-picker-cell-selected-font-weight: $font-weight-medium!default;
+$time-picker-cell-selected-font-weight: $font-weight-medium !default;
 // @name 单元格-选中-文字颜色
-$time-picker-cell-selected-color: $color-white!default;
+$time-picker-cell-selected-color: $color-white !default;
 // @refer color
 // @name 单元格-选中-背景色
-$time-picker-cell-selected-bgc: $color-primary-1!default;
+$time-picker-cell-selected-bgc: $color-primary-1 !default;
 // @refer color
 // @name 单元格-禁用-文字颜色
-$time-picker-cell-disabled-color: #c5c8ce!default;
+$time-picker-cell-disabled-color: #c5c8ce !default;
 // @end propsValue
 // @end category
 // @end component
@@ -511,49 +511,49 @@ $time-picker-cell-disabled-color: #c5c8ce!default;
 // @category base
 // @propsValue default
 // @name itemlist-上外边距
-$upload-itemlist-margin-top: 10px!default;
+$upload-itemlist-margin-top: 10px !default;
 
 // @dom item
 // @name 项-背景色
-$upload-item-bgc: inherit!default;
+$upload-item-bgc: inherit !default;
 // @name 项-宽度
-$upload-item-width: 240px!default;
+$upload-item-width: 240px !default;
 // @name 项-水平内边距
-$upload-item-padding-horizontal: $s-0!default;
+$upload-item-padding-horizontal: $s-0 !default;
 // @name 项-文件名-文字颜色
-$upload-item-filename-color: $color-text-2!default;
+$upload-item-filename-color: $color-text-2 !default;
 // @name 项-文件描述-上外边距
-$upload-item-filedescription-margin-top: $s-0!default;
+$upload-item-filedescription-margin-top: $s-0 !default;
 // @name 项-文件名-字号
-$upload-item-filename-font-size: $font-size-2!default;
+$upload-item-filename-font-size: $font-size-2 !default;
 // @name 项-文件名-字重
-$upload-item-filename-font-weight: $font-weight-regular!default;
+$upload-item-filename-font-weight: $font-weight-regular !default;
 // @name 项-行高-文件名
-$upload-item-filename-line-height: $line-height-5!default;
+$upload-item-filename-line-height: $line-height-5 !default;
 // @name 项-图片行高-文件名
-$upload-item-filename-picture-line-height: $line-height-6!default;
+$upload-item-filename-picture-line-height: $line-height-6 !default;
 // @name 项-文件描述-字号
-$upload-item-filedescription-font-size: inherit!default;
+$upload-item-filedescription-font-size: inherit !default;
 // @name 项-文件描述-字重
-$upload-item-filedescription-font-weight: inherit!default;
+$upload-item-filedescription-font-weight: inherit !default;
 // @name 项-行高-文件描述
-$upload-item-filedescription-line-height: inherit!default;
+$upload-item-filedescription-line-height: inherit !default;
 // @end dom
 
 // @dom operateicon
 // @name 操作图标-尺寸
-$upload-operateicon-size: inherit!default;
+$upload-operateicon-size: inherit !default;
 // @name 操作图标-间距
-$upload-operateicon-spacing: 15px!default;
+$upload-operateicon-spacing: 15px !default;
 // @name 操作图标-文字颜色
-$upload-operateicon-color: $color-success-1!default;
+$upload-operateicon-color: $color-success-1 !default;
 // @end dom
 
 // @dom filetypeicon
 // @name 文件类型-右外边距
-$upload-filetypeicon-margin-right: 7px!default;
+$upload-filetypeicon-margin-right: 7px !default;
 // @name 文件类型-尺寸
-$upload-filetypeicon-size: inherit!default;
+$upload-filetypeicon-size: inherit !default;
 // @end dom
 
 // @end propsValue
@@ -563,20 +563,20 @@ $upload-filetypeicon-size: inherit!default;
 // @propsValue default
 // @refer color
 // @name 悬浮-背景色
-$upload-hover-bgc: #f5f7fa!default;
+$upload-hover-bgc: #f5f7fa !default;
 // @name 悬浮-项-文件名-文字颜色
-$upload-hover-item-filename-color: inherit!default;
+$upload-hover-item-filename-color: inherit !default;
 // @name 悬浮-操作图标-文字颜色
-$upload-hover-operateicon-color: inherit!default;
+$upload-hover-operateicon-color: inherit !default;
 // @name 按钮-边框颜色
-$btn-border-color: $color-line-1!default;
+$btn-border-color: $color-line-1 !default;
 // @end propsValue
 // @end category
 
 // @category fail
 // @propsValue default
 // @name 错误-项-文件名-文字颜色
-$upload-error-item-filename-color: $color-danger-1!default;
+$upload-error-item-filename-color: $color-danger-1 !default;
 // @end propsValue
 // @end category
 // @end component
@@ -585,36 +585,36 @@ $upload-error-item-filename-color: $color-danger-1!default;
 // @category base
 // @propsValue default
 // @name 文字-宽度
-$progress-text-width: 55px!default;
+$progress-text-width: 55px !default;
 // @name 圆角
-$progress-border-radius: 100px!default;
+$progress-border-radius: 100px !default;
 // @name 背景色
-$progress-bgc: $color-line-2!default;
+$progress-bgc: $color-line-2 !default;
 // @name 文字-外边距-左侧
-$progress-text-margin-left: $s-3!default;
+$progress-text-margin-left: $s-3 !default;
 // @name 文字颜色
-$progress-text-color: $color-text-2!default;
+$progress-text-color: $color-text-2 !default;
 // @name 文字-字号
-$progress-text-font-size: $font-size-default!default;
+$progress-text-font-size: $font-size-default !default;
 // @name 图标-字号
-$progress-icon-font-size: $font-size-default!default;
+$progress-icon-font-size: $font-size-default !default;
 // @end propsValue
 // @end category
 
 // @category status
 // @propsValue default
 // @name 默认-文字颜色
-$progress-default-color: $color-primary!default;
+$progress-default-color: $color-primary !default;
 // @end propsValue
 
 // @propsValue error
 // @name 错误-文字颜色
-$progress-error-color: $color-danger-1!default;
+$progress-error-color: $color-danger-1 !default;
 // @end propsValue
 
 // @propsValue success
 // @name 成功-文字颜色
-$progress-success-color: $color-success-1!default;
+$progress-success-color: $color-success-1 !default;
 // @end propsValue
 
 // @end category

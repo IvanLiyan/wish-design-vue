@@ -116,6 +116,11 @@
             "path": "card",
             "name": "Card",
             "cnName": "卡片"
+          },
+          {
+            "path": "tab",
+            "name": "Tab",
+            "cnName": "分页"
           }
         ]
       }

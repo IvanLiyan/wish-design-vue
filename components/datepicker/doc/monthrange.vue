@@ -1,9 +1,10 @@
 <template>
   <div class="demo-picker-wrapper">
     <div class="demo-picker-group">
-      <wt-date-picker type="monthrange"
+      <wt-date-picker
+        type="monthrange"
         v-model="value5"
-        placeholder="选择时间" style="width: 240px;"
+        style="width: 240px;"
       />
     </div>
   </div>

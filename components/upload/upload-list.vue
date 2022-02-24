@@ -88,16 +88,16 @@
           <Icon
             name="refresh-cw"
             :class="`${prefix}-list-item-status-text-icon`"
-            :width="18"
-            :height="18"
+            :width="20"
+            :height="20"
             v-show="file.status === 'fail'"
             @click="() => {$emit('retry', file)}"
           />
           <Icon
             :name="(file.status === 'ready' || file.status === 'uploading') ? 'x' : 'trash-2'"
             :class="`${prefix}-list-item-status-text-icon`"
-            :width="18"
-            :height="18"
+            :width="20"
+            :height="20"
             @click="$emit('remove', file)"
           />
           <!-- <i @click="() => {

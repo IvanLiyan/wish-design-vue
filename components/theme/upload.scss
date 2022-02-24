@@ -1,6 +1,6 @@
-@import "./common/var.scss";
-@import "./mixins/mixins.scss";
-@import "./progress.scss";
+@import './common/var.scss';
+@import './mixins/mixins.scss';
+@import './progress.scss';
 
 @include c(upload) {
   display: inline-block;
@@ -13,7 +13,7 @@
     display: none;
   }
 
-  [class^="wticon-"] {
+  [class^='wticon-'] {
     display: inline-block;
   }
 
@@ -37,13 +37,13 @@
     height: 104px;
     position: relative;
     &-success {
-      border: 0.5px solid #305BEF;
+      border: 0.5px solid #305bef;
     }
     &-fail {
-      border: 0.5px solid #E52533;
+      border: 0.5px solid #e52533;
     }
     &-ready {
-      border: 0.5px solid #BFCDD4;
+      border: 0.5px solid #bfcdd4;
     }
   }
 
@@ -58,7 +58,7 @@
     align-items: center;
     justify-content: flex-start;
     &:hover {
-      background: #F7F9FA;
+      background: #f7f9fa;
       .wt-upload-picture-list-control-button-wrapper {
         width: 63px;
         display: flex !important;
@@ -71,7 +71,7 @@
         width: 48px;
         height: 46px;
         position: absolute;
-        background: #F7F9FA;
+        background: #f7f9fa;
         top: 0px;
         left: -47px;
       }
@@ -88,10 +88,10 @@
       line-height: 16px;
     }
     .status-uploading {
-      color: #3F5663;
+      color: #3f5663;
     }
     .status-fail {
-      color: #D0000F;
+      color: #d0000f;
     }
     &-info {
       width: 120px;
@@ -113,13 +113,13 @@
 
   /* 照片列表模式 */
   &-picture-list {
-    background-color: #FFF;
+    background-color: #fff;
     border-radius: 2px;
     box-sizing: border-box;
     width: 240px;
     min-height: 36px;
     max-height: 48px;
-    border: .5px solid #BFCDD4;
+    border: 0.5px solid #bfcdd4;
     border-radius: 2px;
     cursor: pointer;
     line-height: 100px;
@@ -128,7 +128,7 @@
     align-items: center;
     justify-content: flex-start;
     &:hover {
-      background: #F7F9FA;
+      background: #f7f9fa;
     }
     .picture-list-icon {
       display: block;
@@ -139,22 +139,24 @@
       height: 34px;
       line-height: 36px;
       margin-left: 5px;
-      color: #BFCDD4;
+      color: #bfcdd4;
     }
     i {
       font-size: 14px;
       color: $color-black;
     }
 
-    &:hover, &.hover {
-      background: #F7F9FA;
-      transition: .2s;
+    &:hover,
+    &.hover {
+      background: #f7f9fa;
+      transition: 0.2s;
     }
   }
 
   &-picture-list-uploaded {
     height: 48px;
-    i, span {
+    i,
+    span {
       display: none;
     }
   }
@@ -164,7 +166,7 @@
     position: absolute;
     top: 4px;
     left: 4px;
-    background-color: #EFF4F6;
+    background-color: #eff4f6;
     border-radius: 2px;
     box-sizing: border-box;
     width: 96px;
@@ -178,7 +180,8 @@
       color: #8c939d;
     }
 
-    &:hover, &.hover {
+    &:hover,
+    &.hover {
       border-color: $color-primary;
       color: $color-primary;
     }
@@ -223,7 +226,7 @@
       margin-left: 5px;
       font-size: 14px;
       line-height: 20px;
-      color: #BFCDD4;
+      color: #bfcdd4;
     }
   }
 }
@@ -247,12 +250,12 @@
     line-height: 50px;
   }
 
-  +.#{$prefix}-upload-tip {
+  + .#{$prefix}-upload-tip {
     text-align: center;
   }
 
-  ~.#{$prefix}-upload-files {
-    border-top: $btn-border-color;
+  ~ .#{$prefix}-upload-files {
+    border-top: $color-line-1;
     margin-top: 7px;
     padding-top: 5px;
   }
@@ -268,12 +271,13 @@
     }
   }
 
-  &:hover, &.hover {
+  &:hover,
+  &.hover {
     border-color: $color-primary;
   }
 
   @include when(dragover) {
-    background-color: rgba(32, 159, 255, .06);
+    background-color: rgba(32, 159, 255, 0.06);
     border: 2px dashed $color-primary;
   }
 }
@@ -288,7 +292,8 @@
   &-leave-active {
     transition: all 1s;
   }
-  &-enter, &-leave-active {
+  &-enter,
+  &-leave-active {
     opacity: 0;
     transform: translateY(-30px);
   }
@@ -299,13 +304,13 @@
     align-items: center;
     justify-content: flex-start;
     &-fail {
-      border: .5px solid #E52533;
+      border: 0.5px solid #e52533;
     }
     &-success {
-      border: .5px solid #305BEF;
+      border: 0.5px solid #305bef;
     }
-    border: .5px solid #BFCDD4;
-    transition: all .5s cubic-bezier(.55, 0, .1, 1);
+    border: 0.5px solid #bfcdd4;
+    transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1);
     font-size: $upload-item-filename-font-size;
     color: $color-text-2;
     line-height: $upload-item-filename-line-height - 2;
@@ -347,7 +352,8 @@
       margin-top: $upload-itemlist-margin-top;
     }
 
-    &:hover, &.hover {
+    &:hover,
+    &.hover {
       background-color: $upload-hover-bgc;
       .#{$icon-prefix}-item-text {
         display: none;
@@ -357,7 +363,7 @@
         display: inline-block;
       }
     }
-    &:focus{
+    &:focus {
       outline: none;
     }
     &-name {
@@ -367,17 +373,18 @@
       // overflow: hidden;
       padding-left: 4px;
       // text-overflow: ellipsis;
-      transition: color .3s;
+      transition: color 0.3s;
       // white-space: nowrap;
       cursor: pointer;
-      &:hover, &.hover{
+      &:hover,
+      &.hover {
         color: $upload-hover-item-filename-color;
         text-decoration: none;
       }
       .#{$icon-prefix} {
         height: 100%;
         margin-right: $upload-filetypeicon-margin-right;
-        color: #808AB1;
+        color: #808ab1;
         line-height: inherit;
         font-size: $upload-filetypeicon-size;
       }
@@ -385,11 +392,11 @@
 
     &-status {
       width: 96px;
-      color: #3F5663;
+      color: #3f5663;
     }
 
     &-status-fail {
-      color: #D0000F;
+      color: #d0000f;
     }
 
     &-status-text {
@@ -406,13 +413,14 @@
       .#{$icon-prefix}-item-text,
       .#{$icon-prefix}-error-circle,
       .#{$icon-prefix}-download-o,
-      .#{$icon-prefix}-refresh-o{
+      .#{$icon-prefix}-refresh-o {
         color: $upload-operateicon-color;
         display: inline-block;
         position: absolute;
         cursor: pointer;
         font-size: $upload-operateicon-size;
-        &:hover, &.hover {
+        &:hover,
+        &.hover {
           color: $upload-hover-operateicon-color;
         }
       }
@@ -428,11 +436,11 @@
       }
 
       .#{$icon-prefix}-error-circle {
-        color: #B5BBD1;
+        color: #b5bbd1;
         font-weight: 600;
       }
       .#{$icon-prefix}-download-o {
-        color: #B5BBD1;
+        color: #b5bbd1;
         right: $upload-operateicon-spacing;
         font-weight: 600;
       }
@@ -497,7 +505,7 @@
     .#{$prefix}-upload-list-item {
       position: absolute;
       overflow: hidden;
-      background-color: #EFF4F6;
+      background-color: #eff4f6;
       border: 0;
       border-radius: 2px;
       box-sizing: border-box;
@@ -507,7 +515,7 @@
       text-align: center;
       font-size: 14px;
       font-weight: 400;
-      color: #D0000F;
+      color: #d0000f;
       margin: 3px;
       display: inline-block;
       z-index: 2;
@@ -521,7 +529,8 @@
         display: none;
       }
 
-      &:hover, &.hover {
+      &:hover,
+      &.hover {
         .#{$prefix}-upload-list-item-status-label {
           display: none;
         }
@@ -543,12 +552,12 @@
       justify-content: center;
       align-items: center;
       div {
-        height: 24px
+        height: 24px;
       }
       span {
         height: 24px;
         line-height: 24px;
-        color: #6B828F;
+        color: #6b828f;
       }
     }
 
@@ -596,23 +605,23 @@
       color: #fff;
       opacity: 0;
       font-size: 20px;
-      background-color: rgba(0, 0, 0, .5);
-      transition: opacity .3s;
+      background-color: rgba(0, 0, 0, 0.5);
+      transition: opacity 0.3s;
 
       &::before {
         display: inline-block;
-        content: "";
+        content: '';
         height: 100%;
-        vertical-align: middle
+        vertical-align: middle;
       }
 
       span {
         display: none;
         cursor: pointer;
-        vertical-align: middle
+        vertical-align: middle;
       }
 
-      span+span {
+      span + span {
         margin-left: 15px;
       }
 
@@ -622,7 +631,8 @@
         color: inherit;
       }
 
-      &:hover, &.hover {
+      &:hover,
+      &.hover {
         opacity: 1;
 
         span {
@@ -659,12 +669,12 @@
     width: 46px;
     height: 46px;
     &:hover {
-      background: #F7F9FA;
+      background: #f7f9fa;
     }
 
     .#{$prefix}-upload-list-item {
       // overflow: hidden;
-      background-color: #EFF4F6;
+      background-color: #eff4f6;
       border: 0;
       border-radius: 2px;
       box-sizing: border-box;
@@ -674,7 +684,7 @@
       text-align: center;
       font-size: 14px;
       font-weight: 400;
-      color: #D0000F;
+      color: #d0000f;
       // margin: 0 8px 8px 0;
       margin: 0;
       display: inline-block;
@@ -689,7 +699,8 @@
         display: none;
       }
 
-      &:hover, &.hover {
+      &:hover,
+      &.hover {
         .#{$prefix}-upload-list-item-status-label {
           display: none;
         }
@@ -711,12 +722,12 @@
       justify-content: center;
       align-items: center;
       div {
-        height: 24px
+        height: 24px;
       }
       span {
         height: 24px;
         line-height: 24px;
-        color: #6B828F;
+        color: #6b828f;
       }
     }
 
@@ -764,23 +775,23 @@
       color: #fff;
       opacity: 0;
       font-size: 20px;
-      background-color: rgba(0, 0, 0, .5);
-      transition: opacity .3s;
+      background-color: rgba(0, 0, 0, 0.5);
+      transition: opacity 0.3s;
 
       &::before {
         display: inline-block;
-        content: "";
+        content: '';
         height: 100%;
-        vertical-align: middle
+        vertical-align: middle;
       }
 
       span {
         display: none;
         cursor: pointer;
-        vertical-align: middle
+        vertical-align: middle;
       }
 
-      span+span {
+      span + span {
         margin-left: 15px;
       }
 
@@ -790,7 +801,8 @@
         color: inherit;
       }
 
-      &:hover, &.hover {
+      &:hover,
+      &.hover {
         opacity: 1;
 
         span {
@@ -816,10 +828,11 @@
       }
     }
   }
-  .fade-enter-active, .fade-leave-active {
-    transition: opacity .35s
+  .fade-enter-active,
+  .fade-leave-active {
+    transition: opacity 0.35s;
   }
   .fade-enter, .fade-leave-to /* .fade-leave-active in <2.1.8 */ {
-    opacity: 0
+    opacity: 0;
   }
 }

@@ -3,8 +3,7 @@
     <div class="demo-picker-group">
       <wt-date-picker
         type="year"
-        v-model="value3"
-        placeholder="选择时间" />
+        v-model="value3" />
     </div>
   </div>
 </template>

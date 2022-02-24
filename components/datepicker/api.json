@@ -102,6 +102,14 @@
       "version": ""
     },
     {
+      "name": "placeholder",
+      "desc": "输入框占位内容",
+      "type": "string",
+      "optionalValue": "",
+      "default": "",
+      "version": ""
+    },
+    {
       "name": "popper-class",
       "desc": "下拉框的类名",
       "type": "string",

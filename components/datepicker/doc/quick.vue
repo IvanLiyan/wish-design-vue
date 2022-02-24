@@ -1,6 +1,6 @@
 <template>
   <div class="demo-container">
-    <wt-date-picker type="daterange" v-model="value8" placeholder="选择时间" :options="rangeOptions" />
+    <wt-date-picker type="daterange" v-model="value8" :options="rangeOptions" />
   </div>
 </template>
 <script>

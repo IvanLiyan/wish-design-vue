@@ -1,6 +1,17 @@
 @import '../common/var';
 
-@mixin tabs-size($minwidth, $maxwidth, $height, $paddingHorizontal, $labelPaddingHorizontal, $fontSize, $tabsLeftMarginRight, $borderRadius, $tabsActiveMaxWidth) {
+@mixin tabs-size(
+  $minwidth,
+  $maxwidth,
+  $height,
+  $paddingHorizontal,
+  $labelPaddingHorizontal,
+  $fontSize,
+  $tabsLeftMarginRight,
+  $borderRadius,
+  $tabsActiveMaxWidth
+) {
+  min-width: 80px;
   max-width: $maxwidth;
   height: $height;
   line-height: $height;
@@ -11,7 +22,7 @@
   &.#{$prefix}-tab-active {
     max-width: $tabsActiveMaxWidth;
   }
-  .#{$prefix}-tabs-item-label{
+  .#{$prefix}-tabs-item-label {
     padding: 0 $labelPaddingHorizontal;
   }
 }
@@ -43,28 +54,14 @@
   }
 }
 
-@mixin tabs-card-active(
-  $tabs-card-active-color,
-  $tabs-card-item-border-color,
-  $tabs-card-item-bgc
-) {
+@mixin tabs-card-active($tabs-card-active-color, $tabs-card-item-border-color, $tabs-card-item-bgc) {
   color: $tabs-card-active-color;
   border-bottom-color: $tabs-card-item-bgc;
   background-color: $tabs-card-item-bgc;
   font-weight: $tabs-active-font-weight;
-
-  &.#{$prefix}-tabs-closable.#{$prefix}-tabs-item-small {
-    padding: 0 ($tabs-small-card-padding * 2 - $tabs-small-font-size * 1.5) / 2;
-    @include tabs-close-active($tabs-small-font-size)
-  }
   &.#{$prefix}-tabs-closable.#{$prefix}-tabs-item-normal {
     padding: 0 ($tabs-padding * 2 - $tabs-font-size * 1.5) / 2;
-    @include tabs-close-active($tabs-font-size)
-  }
-  &.#{$prefix}-tabs-closable.#{$prefix}-tabs-item-large {
-    //$tabs-large-font-size * 1.5 为icon width + margin-left
-    padding: 0 ($tabs-large-card-padding * 2 - $tabs-large-font-size * 1.5) / 2;
-    @include tabs-close-active($tabs-large-font-size)
+    @include tabs-close-active($tabs-font-size);
   }
   .#{$icon-prefix} {
     color: $tabs-card-active-color;

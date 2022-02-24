@@ -22,12 +22,14 @@ import Form from 'components/form';
 import FormItem from 'components/form-item';
 import Notification from 'components/notification';
 import Select from 'components/select';
-import SelectInput from 'components/select-input';
 import Option from 'components/option';
 import OptionGroup from 'components/option-group';
 import Loading from 'components/loading';
 import Upload from 'components/upload';
 import Alert from 'components/alert';
+import Tab from 'components/tab';
+import TabDrop from 'components/tab-drop';
+import TabPane from 'components/tab-pane';
 import CollapseTransition from './transitions/collapse-transition';
 
 const components = [
@@ -54,12 +56,14 @@ const components = [
   FormItem,
   Notification,
   Select,
-  SelectInput,
   Option,
   OptionGroup,
   Loading,
   Upload,
   Alert,
+  Tab,
+  TabDrop,
+  TabPane,
   CollapseTransition,
 ];
 
@@ -107,12 +111,14 @@ export {
   FormItem,
   Notification,
   Select,
-  SelectInput,
   Option,
   OptionGroup,
   Loading,
   Upload,
   Alert,
+  Tab,
+  TabDrop,
+  TabPane,
   CollapseTransition,
 };
 

@@ -125,6 +125,9 @@ $color-text-2: rgba(0, 0, 0, 0.75);
       vertical-align: middle;
     }
   }
+  &.demo-tab {
+    background: rgb(247, 249, 250);
+  }
 }
 
 .demo-desc {

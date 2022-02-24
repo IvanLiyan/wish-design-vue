@@ -1,0 +1,527 @@
+@import './common/var.scss';
+@import 'mixins/mixins.scss';
+@import 'mixins/tabs.scss';
+@import 'mixins/button.scss';
+
+// @component tabs 标签页
+// @category base
+// @propsValue default
+// @name 字重
+$tabs-font-weight: $font-weight-regular !default;
+// @name 激活-字重
+$tabs-active-font-weight: $font-weight-regular !default;
+
+// @name nav-边框-底部-颜色
+$tabs-nav-border-bottom: $color-line-2 !default;
+// @name 文字颜色
+$tabs-color: $color-text-5 !default;
+// @name 图标-文字颜色
+$tabs-icon-color: $color-text-5 !default;
+// @state hover
+// @name 悬浮-文字颜色
+$tabs-hover-color: $color-primary-1 !default;
+// @name 悬浮-背景色
+$tabs-hover-bgc: $color-transparent !default;
+// @end state
+
+// @state active
+// @name 激活-文字颜色
+$tabs-active-color: $color-primary !default;
+// @end state
+
+// @state disabled
+// @name 禁用-文字颜色
+$tabs-disabled-color: $color-text-3 !default;
+// @name 禁用-透明度
+$tabs-disabled-opacity: 0.45 !default;
+// @end state
+
+// @name 操作-圆角
+$tabs-action-border-radius: $border-radius-2 !default;
+// @name 操作-文字颜色
+$tabs-action-color: $color-text-5 !default;
+// @name 操作-边框颜色
+$tabs-action-border-color: $color-line-1 !default;
+// @name 操作-禁用-文字颜色
+$tabs-action-disabled-color: $color-text-4 !default;
+// @name add-外边距-左侧
+$tabs-add-margin-left: 6px !default;
+// @name 关闭按钮-文字颜色
+$tabs-close-color: $color-text-5 !default;
+// @name bar-z-index
+$tabs-bar-z-index: 1 !default;
+// @name bar-背景色
+$tabs-bar-background-color: $color-primary !default;
+// @name bar-高度
+$tabs-bar-height: $border-width-2 !default;
+// @name bar-圆角
+$tabs-bar-border-radius: $border-radius-0 !default;
+// @name 滑块背景高度
+$tabs-slider-height: $border-width-1 !default;
+
+// @name 项-边框-宽度
+$tabs-item-border-width: $border-width-1 !default;
+// @name 项-边框颜色
+$tabs-item-border-color: $color-line-1 !default;
+
+// @name 内容-边框-宽度
+$tabs-content-border-width: $border-width-1 !default;
+// @name 内容-上外边距
+$tabs-content-margin-top: -$border-width-1 !default;
+// @name scroll-边框-宽度
+$tabs-scroll-border-width: $border-width-2 !default;
+
+// @end propsValue
+// @end category
+
+// @category type
+// @propsValue card
+// @name 卡片型-导航-背景色
+$tabs-card-nav-bgc: $color-transparent !default;
+// @name 卡片型-项-间距
+$tabs-card-item-spacing: 2px !default;
+// @name 卡片型-圆角
+$tabs-card-border-radius: $border-radius-2 !default;
+
+// @name 卡片型-项-文字颜色
+$tabs-card-item-color: $color-white !default;
+// @name 卡片型-项-背景色
+$tabs-card-item-bgc: $color-white !default;
+// @name 卡片型-项-悬浮-文字颜色
+$tabs-card-item-hover-color: $color-primary-1 !default;
+// @name 卡片型-项-悬浮-背景色
+$tabs-card-item-hover-bgc: $color-white !default;
+
+// @name 卡片型-项-激活-背景色
+$tabs-card-item-active-bgc: $color-white !default;
+// @name 卡片型-项-激活-字体颜色
+$tabs-card-item-active-color: $color-primary !default;
+// @name 卡片型-项-禁用-文字颜色
+$tabs-card-item-disabled-color: $tabs-color !default;
+// @name 卡片型-项-禁用-背景色
+$tabs-card-item-disabled-bgc: $color-white !default;
+// @name 卡片型-项-禁用-透明度
+$tabs-card-item-disabled-opacity: 0.45 !default;
+// @end propsValue
+
+// @propsValue border-card
+// @name 卡片型-边框颜色
+$tabs-card-border-color: $color-line-2 !default;
+// @end propsValue
+// @end category
+
+// @propsValue default
+// @name 高度
+$tabs-height: $s-7 !default;
+// @name 字号
+$tabs-font-size: $font-size-2 !default;
+// @name 最小宽
+$tabs-min-width: 80px !default;
+// @name 最大宽
+$tabs-max-width: 220px !default;
+// @name 激活-最大宽
+$tabs-active-max-width: 400px !default;
+// @name 内边距
+$tabs-padding: $s-0 !default;
+// @name 右外边距
+$tabs-margin-right: $s-4 !default;
+// @name 内容-内边距
+$tabs-content-padding: $s-2 !default;
+// @name 标题标签-水平内边距
+$tabs-label-padding-horizontal: $s-0 !default;
+// @name 图标-字号
+$tabs-icon-font-size: $font-size-2 !default;
+// @name 操作-字号
+$tabs-action-font-size: $font-size-3 !default;
+// @name 操作-高度
+$tabs-action-height: $s-5 !default;
+
+// @name 左侧-水平内边距
+$tabs-left-margin-right: $s-2 !default;
+// @name 左侧-下外边距
+$tabs-left-margin-bottom: $s-3 !default;
+
+// @name card-内边距
+$tabs-card-padding: $s-2 !default;
+// @name card-高度
+$tabs-card-height: $s-6 !default;
+// @end propsValue
+
+// @end propsValue
+// @end category
+// @end component
+
+// base
+@include c(tabs) {
+  color: $tabs-color;
+  transition: all linear 0.3s;
+  &-item {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: $tabs-font-weight;
+    background-color: $color-white;
+  }
+  .#{$prefix}-tab-active {
+    font-weight: $tabs-active-font-weight;
+  }
+}
+// content
+.#{$prefix}-tabs-content {
+  padding: $tabs-content-padding;
+  text-align: left;
+}
+
+// slider
+@include c(tabs-bottom-border) {
+  width: 100%;
+  height: $tabs-slider-height;
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
+}
+.#{$prefix}-tabs-card,
+.#{$prefix}-tabs-border-card {
+  .#{$prefix}-tabs-bottom-border {
+    display: none;
+  }
+}
+
+// size
+@include c(tabs) {
+  > .#{$prefix}-tabs-nav {
+    .#{$prefix}-tabs-nav-scroll {
+      background-color: $color-white;
+    }
+    .#{$prefix}-tabs-action {
+      font-size: $tabs-action-font-size;
+      padding: ($tabs-action-height - 2px - $tabs-action-font-size) / 2;
+    }
+  }
+}
+.#{$prefix}-tabs-card,
+.#{$prefix}-tabs-border-card {
+  > .#{$prefix}-tabs-nav {
+    @if $tabs-card-nav-bgc != transparent {
+      background-color: $tabs-card-nav-bgc;
+    }
+  }
+}
+
+// card, border-card
+.#{$prefix}-tabs-card,
+.#{$prefix}-tabs-border-card {
+  > .#{$prefix}-tabs-nav {
+    .#{$prefix}-tabs-item {
+      border-radius: $tabs-card-border-radius $tabs-card-border-radius 0 0;
+    }
+  }
+}
+
+// old
+.#{$prefix}-tabs-nav {
+  position: relative;
+}
+.#{$prefix}-tabs-nocard {
+  .#{$prefix}-tabs-content {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  &.#{$prefix}-tabs-left {
+    > .#{$prefix}-tabs-content {
+      padding: 14px 27px;
+    }
+  }
+  .#{$prefix}-tab-icon {
+    color: $tabs-icon-color;
+    margin-right: 8px;
+  }
+
+  @include c(tabs-bar) {
+    position: absolute;
+    align-self: flex-end;
+    background-color: $tabs-bar-background-color;
+    transition: transform 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    z-index: $tabs-bar-z-index;
+    height: $tabs-bar-height;
+    bottom: 0;
+    border-radius: $tabs-bar-border-radius;
+  }
+}
+
+@include c(tabs-nav-container) {
+  position: relative;
+  display: flex;
+  align-items: center;
+  z-index: 2;
+}
+
+@include c(tabs-nav-scroll) {
+  display: inline-flex;
+  position: relative;
+  overflow: hidden;
+}
+
+@include c(tabs-nav-animated) {
+  position: relative;
+  display: flex;
+  transition: transform 0.3s;
+}
+
+.#{$prefix}-tabs-nocard {
+  .#{$prefix}-tabs-item {
+    .#{$prefix}-input-wrapper {
+      font-size: 1em;
+      color: currentColor;
+      vertical-align: baseline;
+    }
+  }
+  .#{$prefix}-tab-active {
+    .#{$prefix}-input-wrapper {
+      font-weight: $tabs-active-font-weight;
+    }
+  }
+  @include c(tabs-item) {
+    position: relative;
+    text-align: center;
+    box-sizing: border-box;
+    cursor: pointer;
+    .#{$prefix}-tabs-item-label {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 27px;
+      line-height: $line-height-2;
+      min-width: 80px;
+      box-shadow: 0px -2px $color-primary;
+      .#{$prefix}-icon svg {
+        margin-right: 8px;
+        color: $color-text-5;
+      }
+      .#{$prefix}-tabs-item-number {
+        width: 22px;
+        height: 16px;
+        padding: 0px 4px;
+        background: $color-text-5;
+        border-radius: 16px;
+        color: #ffffff;
+        font-size: 12px;
+        line-height: 16px;
+        text-align: center;
+        margin-left: 8px;
+      }
+    }
+    &:hover,
+    &.hover {
+      color: $tabs-hover-color;
+      background-color: $color-white;
+      .#{$icon-prefix} {
+        color: $tabs-hover-color;
+      }
+      .#{$prefix}-input {
+        color: $tabs-hover-color;
+      }
+      .#{$prefix}-tabs-item-number {
+        background: $color-warning-2;
+      }
+      .#{$prefix}-icon svg {
+        color: $tabs-active-color;
+      }
+    }
+    &.#{$prefix}-tab-active {
+      color: $tabs-active-color;
+      .#{$prefix}-tab-icon {
+        color: $tabs-active-color;
+      }
+      .#{$prefix}-tabs-item-number {
+        background: $color-warning-2;
+      }
+    }
+
+    &:last-child {
+      margin: 0;
+    }
+    .#{$prefix}-tabs-select-item {
+      width: 100px;
+      .#{$prefix}-input {
+        padding: 0;
+        border: none;
+        box-shadow: none;
+        background-color: transparent;
+      }
+      .#{$prefix}-input-disabled .#{$prefix}-input {
+        background-color: transparent;
+      }
+    }
+    .#{$prefix}-picker-selected {
+      vertical-align: top;
+      color: currentColor;
+      font-weight: inherit;
+    }
+
+    &.#{$prefix}-tab-active {
+      .#{$prefix}-input {
+        color: $tabs-hover-color;
+      }
+    }
+  }
+}
+
+@include c(tabs) {
+  &-left {
+    > .#{$prefix}-tabs-nav {
+      float: left;
+      border-bottom: none;
+      @include c(tabs-nav-animated) {
+        flex-direction: column;
+      }
+      .#{$prefix}-tabs-bar {
+        bottom: auto;
+        right: 0;
+        width: $tabs-bar-height;
+      }
+      .#{$prefix}-tabs-nav-container {
+        display: block;
+      }
+      .#{$prefix}-tabs-item {
+        text-align: right;
+      }
+      .#{$prefix}-tabs-bottom-border {
+        height: 100%;
+        right: 0;
+        width: $tabs-slider-height;
+      }
+    }
+    > .#{$prefix}-tabs-content {
+      float: left;
+    }
+  }
+}
+
+.#{$prefix}-tabs-card,
+.#{$prefix}-tabs-border-card {
+  > .#{$prefix}-tabs-nav {
+    @include c(tabs-item) {
+      position: relative;
+      text-align: center;
+      box-sizing: border-box;
+      background-color: $tabs-card-item-bgc;
+      border: $tabs-item-border-width solid $tabs-item-border-color;
+      margin-right: $tabs-card-item-spacing;
+      transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+
+      .#{$prefix}-tabs-tab-close {
+        position: relative;
+        width: 0;
+        vertical-align: middle;
+        overflow: hidden;
+        top: -1px;
+        transform-origin: 100% 50%;
+        display: inline-block;
+        transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+      }
+      cursor: pointer;
+      &:hover,
+      &.hover {
+        @include tabs-card-active($tabs-card-item-hover-color, $tabs-item-border-color, $tabs-card-item-hover-bgc);
+      }
+      &.#{$prefix}-tab-active {
+        @include tabs-card-active($tabs-card-item-active-color, $tabs-card-item-active-bgc, $tabs-card-item-active-bgc);
+      }
+      &:last-child {
+        margin: 0;
+      }
+    }
+    @include c(tabs-scroll) {
+      border: $tabs-scroll-border-width solid $tabs-card-border-color;
+    }
+    .#{$prefix}-tabs-item-disabled {
+      background-color: $tabs-card-item-disabled-bgc;
+      color: $tabs-card-item-disabled-color;
+      opacity: $tabs-card-item-disabled-opacity;
+      &:hover,
+      &.hover {
+        color: $tabs-card-item-disabled-color;
+        background-color: $color-transparent;
+        font-weight: $tabs-font-weight;
+      }
+    }
+  }
+
+  @include c(tabs-content) {
+    margin-top: $tabs-content-margin-top;
+    border-top: $tabs-content-border-width solid $tabs-card-border-color;
+  }
+}
+@include c(tabs-border-card) {
+  @include c(tabs-content) {
+    border: $tabs-content-border-width solid $tabs-card-border-color;
+  }
+}
+@include c(tabs-action) {
+  line-height: 1;
+  color: $tabs-action-color;
+  text-align: center;
+  svg {
+    color: $color-text-5;
+  }
+  &:hover,
+  &.hover {
+    cursor: pointer;
+    @include btn-default-hover();
+  }
+  &-disabled {
+    color: $color-text-6;
+    background-color: $color-fill-3;
+    &:hover,
+    &.hover {
+      cursor: not-allowed;
+      color: $color-text-6;
+      border-color: $tabs-action-border-color;
+      background-color: $color-fill-3;
+    }
+  }
+}
+
+@include c(tabs-page) {
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  bottom: auto; // fix to ie10
+  height: 48px;
+  background: $color-white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 5px;
+  .#{$prefix}-tabs-action {
+    &:first-child {
+      border-right: none;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+    &:last-child {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+  }
+}
+@include c(tabs-add) {
+  margin-left: $tabs-add-margin-left;
+}
+// disabled
+@include c(tabs-item-disabled) {
+  &.#{$prefix}-tabs-item {
+    // 提升权重
+    color: $tabs-disabled-color;
+    opacity: $tabs-disabled-opacity;
+    background-color: $color-transparent;
+    &:hover,
+    &.hover {
+      color: $tabs-disabled-color;
+      cursor: not-allowed;
+      background-color: $color-transparent;
+    }
+  }
+}

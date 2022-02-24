@@ -1,0 +1,37 @@
+{
+	"props":[{
+		"name": "label",
+		"desc": "选项卡标题",
+		"type": "string",
+		"optionalValue": "",
+		"default": "",
+		"version": ""
+	},
+	{
+		"name": "value",
+		"desc": "当前下拉选中的值(目前暂不支持数字0，建议使用字符串0)",
+		"type": "any",
+		"optionalValue": "",
+		"default": "",
+		"version": ""
+	},
+	{
+		"name": "closable",
+		"desc": "标签是否可关闭",
+		"type": "boolean",
+		"optionalValue": "",
+		"default": "false",
+		"version": ""
+	}, {
+		"name": "lazy",
+		"desc": "标签是否延迟渲染",
+		"type": "boolean",
+		"optionalValue": "",
+		"default": "false",
+		"version": ""
+	}],
+	"slots": [{
+		"name": "label",
+		"desc": "标签文本的内容"
+	}]
+}
