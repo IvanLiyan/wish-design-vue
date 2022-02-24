@@ -22,7 +22,6 @@ import Form from 'components/form';
 import FormItem from 'components/form-item';
 import Notification from 'components/notification';
 import Select from 'components/select';
-import SelectInput from 'components/select-input';
 import Option from 'components/option';
 import OptionGroup from 'components/option-group';
 import Loading from 'components/loading';
@@ -56,7 +55,6 @@ const components = [
   FormItem,
   Notification,
   Select,
-  SelectInput,
   Option,
   OptionGroup,
   Loading,
@@ -111,7 +109,6 @@ export {
   FormItem,
   Notification,
   Select,
-  SelectInput,
   Option,
   OptionGroup,
   Loading,

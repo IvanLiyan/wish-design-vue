@@ -19,45 +19,38 @@ $select-tags-padding-left: 4px;
   .#{$prefix}-input-wrapper {
     width: 100%;
     vertical-align: top;
-    // .#{$prefix}-loading {
-    //   margin-top: 2px;
-    //   .#{$prefix}-loading-circle {
-    //     color: $color-black;
-    //   }
-    // }
-  }
-  &-with-label {
-    margin-top: 8px;
-  }
-  legend {
-    @include reset-form;
-    font-size: $font-size-4;
-    margin-left: 8px;
-    color: $color-black;
-    line-height: 1;
-    display: block;
-    position: absolute;
-    background: $color-white;
-    top: -8px;
-    left: 0;
-    padding: 0 2px;
-    z-index: 10;
-    line-height: $line-height-4;
-    &.#{$prefix}-select-invalid {
-      color: $color-danger-1;
-    }
-    &.#{$prefix}-select-focus {
-      color: $color-primary-1 !important;
+    .#{$prefix}-select-suffix-inner {
+      display: flex;
+      align-items: center;
     }
   }
+  // legend {
+  //   @include reset-form;
+  //   font-size: $font-size-4;
+  //   margin-left: 8px;
+  //   color: $color-black;
+  //   line-height: 1;
+  //   display: block;
+  //   position: absolute;
+  //   background: $color-white;
+  //   top: px;
+  //   left: 0;
+  //   padding: 0 2px;
+  //   z-index: 10;
+  //   line-height: $line-height-4;
+  //   &.#{$prefix}-select-invalid {
+  //     color: $color-danger-1;
+  //   }
+  //   &.#{$prefix}-select-focus {
+  //     color: $color-primary-1 !important;
+  //   }
+  // }
 
   .#{$prefix}-input {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
     cursor: pointer;
-    padding-left: 8px;
-    padding-right: 8px;
   }
   .#{$prefix}-input-tip {
     color: $color-danger-1;
@@ -89,15 +82,6 @@ $select-tags-padding-left: 4px;
       }
     }
   }
-  &-search-focus {
-    border-color: $color-primary-1;
-    .#{$prefix}-input-suffix-inner {
-      > .#{$icon-prefix}-down,
-      > .#{$icon-prefix}-chevron-down {
-        transform: rotate(180deg);
-      }
-    }
-  }
 
   &-group-wrap {
     position: relative;
@@ -126,8 +110,7 @@ $select-tags-padding-left: 4px;
 
   &-dropdown-empty,
   &-dropdown-loading {
-    text-align: center;
-    color: $color-white;
+    text-align: left;
   }
 
   &-multiple {
@@ -137,6 +120,7 @@ $select-tags-padding-left: 4px;
     &-line {
       border-width: 0px;
       border-bottom-width: 1px;
+      border-color: $color-primary-1;
       legend {
         margin-left: 0;
         padding: 0;
@@ -151,10 +135,13 @@ $select-tags-padding-left: 4px;
     &-focus {
       border-color: $color-primary-1;
       legend {
-        color: $color-danger-1;
+        color: $color-primary-1;
+      }
+      .#{$prefix}-input-wrapper {
+        border-color: $color-primary-1;
       }
     }
-    .#{$prefix}-select-input {
+    .#{$prefix}-input-box {
       position: absolute;
       z-index: 0;
       top: 0;
@@ -163,16 +150,15 @@ $select-tags-padding-left: 4px;
       width: 100%;
       max-width: 100%;
       line-height: 36px;
-      .#{$prefix}-input {
-        border: none;
-      }
     }
   }
   // tags
   &-tags {
-    padding: 8px 4px 4px 4px;
+    padding: 16px 4px 4px 4px;
     position: relative;
     z-index: 2;
+    min-height: 44px;
+    // border: 1px $color-line-1 solid;
     &-text {
       display: inline-block;
       cursor: pointer;
@@ -195,7 +181,6 @@ $select-tags-padding-left: 4px;
     height: 20px;
     font-size: 0; // clear white space
     max-width: 100%;
-    margin: 2px 2px 2px 0;
     .#{$prefix}-tag {
       max-width: 100%;
       border-width: 0px;
@@ -217,6 +202,15 @@ $select-tags-padding-left: 4px;
     text-align: left;
     padding: 2px;
   }
+  &-search-focus {
+    border-color: $color-primary-1;
+    .#{$prefix}-input-suffix-inner {
+      > .#{$icon-prefix}-down,
+      > .#{$icon-prefix}-chevron-down {
+        transform: rotate(180deg);
+      }
+    }
+  }
   &-search-field-wrap {
     display: inline-block;
   }
@@ -228,13 +222,6 @@ $select-tags-padding-left: 4px;
     margin: 0;
     margin-left: 6px;
     background-color: transparent;
-  }
-  &-tags {
-    .#{$prefix}-input-suffix-inner {
-      width: 22px;
-      line-height: 22px;
-      font-size: 12px + 2px;
-    }
   }
 
   &-dropdown {

@@ -18,21 +18,21 @@
     }
   },
   "english": {
-    "component_desc": "",
+    "component_desc": "For switching in different functions or information sections",
     "module1": {
-      "title": ""
+      "title": "Basic Style"
     },
     "module2": {
-      "title": ""
+      "title": "Use"
     },
     "api": {
-      "value": "",
-      "number": "",
-      "icon": "",
-      "tab-click": "",
-      "prev-click": "",
-      "next-click": "",
-      "input": ""
+      "value": "Value of selected Tab(Don't support number 0, use string '0' instead if necessary).",
+      "number": "Number value of the Tab(please use positive number).",
+      "icon": "Icon for Tab content",
+      "tab-click": "Triggered when the Tab gets selected. when tab-drop triggers, event parameter is 'undefined'.",
+      "prev-click": "Click to the previous Tab.",
+      "next-click": "Click to the next Tab.",
+      "input": "event of Tab switching, use value of the current tab as parameter."
     }
   }
 }

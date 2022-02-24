@@ -22,7 +22,6 @@
   "form-item": "components/form-item",
   "notification": "components/notification",
   "select": "components/select",
-  "select-input": "components/select-input",
   "option": "components/option",
   "option-group": "components/option-group",
   "loading": "components/loading",

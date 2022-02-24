@@ -16,8 +16,8 @@
     },
     "api": {
       "value": "select当前选中值,多选时为数组",
-
       "value-key": "仅当 value 值为 object、object[]时生效，作为value唯一标识的键名",
+      "label": "select标题",
       "disabled": "是否禁用",
       "width": "宽",
       "invalid": "是否校验通过，用于非空校验",
@@ -57,6 +57,7 @@
     "api": {
       "value": "Value of selected options, use array if multiple options get selected",
       "value-key": "Only used when the value property is object/object[], as the key name",
+      "label": "select title",
       "disabled": "Whether to disable the select",
       "invalid": "Whether to bypass not empty validation",
       "width": "Width",
