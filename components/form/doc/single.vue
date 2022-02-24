@@ -114,8 +114,8 @@ const initialData = {
   busType: null,
   name: '',
   idCard: '',
-  idFront: null,
-  idBack: null,
+  idFront: [],
+  idBack: [],
   regNation: null,
   regProvince: null,
   regCity: null,
@@ -241,12 +241,6 @@ export default {
         });
       }
       console.log('data', this.formData);
-    },
-    upload: function () {
-      console.log('upload,,,,', this.formData);
-    },
-    change: function () {
-      console.log('change,,,,', this.formData);
     },
   },
 };

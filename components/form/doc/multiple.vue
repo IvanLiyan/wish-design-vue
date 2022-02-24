@@ -66,8 +66,6 @@
         action="https://jsonplaceholder.typicode.com/posts/"
         list-type="picture-list"
         v-model="formData.idFront"
-        @input="upload"
-        @change="change"
       />
     </wt-form-item>
     <wt-form-item
@@ -142,8 +140,8 @@ const initialData = {
   busType: null,
   name: '',
   idCard: '',
-  idFront: null,
-  idBack: null,
+  idFront: [],
+  idBack: [],
   regNation: null,
   regProvince: null,
   regCity: null,
@@ -269,12 +267,6 @@ export default {
         });
       }
       console.log('data', this.formData);
-    },
-    upload: function () {
-      console.log('upload,,,,', this.formData);
-    },
-    change: function () {
-      console.log('change,,,,', this.formData);
     },
   },
 };
