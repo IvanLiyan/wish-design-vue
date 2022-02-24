@@ -1,0 +1,54 @@
+{
+  "props": [
+    {
+      "name": "value",
+      "desc": "$t('tab.api.value')",
+      "type": "any",
+      "optionalValue": "",
+      "default": "",
+      "version": ""
+    },
+    {
+      "name": "number",
+      "desc": "$t('tab.api.number')",
+      "type": "number",
+      "optionalValue": "",
+      "default": "",
+      "version": ""
+    },
+    {
+      "name": "icon",
+      "desc": "$t('tab.api.icon')",
+      "type": "string",
+      "optionalValue": "",
+      "default": "",
+      "version": ""
+    }
+  ],
+  "events": [
+    {
+      "name": "tab-click",
+      "desc": "$t('tab.api.tab-click')",
+      "signature": "function (event, tab)",
+      "args": ""
+    },
+    {
+      "name": "prev-click",
+      "desc": "$t('tab.api.prev-click')",
+      "signature": "function (event)",
+      "args": ""
+    },
+    {
+      "name": "next-click",
+      "desc": "$t('tab.api.next-click')",
+      "signature": "function (event)",
+      "args": ""
+    },
+    {
+      "name": "input",
+      "desc": "$t('tab.api.input')",
+      "signature": "function (value)",
+      "args": ""
+    }
+  ]
+}

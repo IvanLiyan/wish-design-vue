@@ -1,5 +1,5 @@
 <template>
-  <div :style="width && { width: `${width}px` }">
+  <div :style="width && { width: `${width}px` }" :class="`${inputPrefix}-box`">
     <fieldset
       :class="{
         [`${inputPrefix}-wrapper`]: true,
@@ -9,6 +9,7 @@
         [`${inputPrefix}-invalid`]: isInvalid,
         [`${inputPrefix}-focused`]: focused,
       }"
+      :style="{ height: newHeight + 'px' }"
     >
       <legend v-if="label" :class="{ 'space-label': !label.trim() }">{{ label }}</legend>
       <div :class="`${inputPrefix}-con`">
@@ -84,6 +85,7 @@ export default {
       type: Number,
       default: 100,
     },
+    newHeight: Number,
   },
   data() {
     return {

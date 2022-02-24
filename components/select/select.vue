@@ -7,19 +7,12 @@
       [`${prefix}-multiple-${genre}`]: genre,
       [`${prefix}-disabled`]: disabled,
       [`${prefix}-multiple`]: multiple,
-      [`${prefix}-with-label`]: label,
       [`${prefix}-multiple-invalid`]: multiple && invalid,
       [`${prefix}-multiple-focus`]: multiple && opened,
     }"
     @click="toggleMenu"
     v-clickoutside="handleClose"
   >
-    <legend
-      v-if="label"
-      :class="[{ [`${prefix}-invalid`]: invalid, [`${prefix}-focus`]: opened, 'space-label': !label.trim() }]"
-    >
-      {{ label }}
-    </legend>
     <div
       :class="[
         `${prefix}-tags`,
@@ -88,15 +81,6 @@
         </li>
         <li :class="`${prefix}-tags-li`" v-if="collapseTags && filteredSelected.length" ref="selectedItemTag"></li>
       </ul>
-      <span :class="`${inputPrefix}-suffix-inner`">
-        <wt-loading v-if="loading" message="" size="small" />
-        <Icon
-          :name="`${prefix}-clear ${iconPrefix('error-circle')}`"
-          @click.stop="handleInputClear"
-          v-else-if="showClear"
-        />
-        <Icon :name="sIcon" v-else />
-      </span>
     </div>
     <popper
       :visible="opened"
@@ -108,20 +92,17 @@
       :popper-options="popperOptions"
     >
       <reference>
-        <wt-select-input
+        <wt-input
           ref="reference"
           v-bind="$attrs"
-          :genre="genre"
           :name="name"
-          :suffix-icon="multiple ? undefined : sIcon"
+          :label="label"
           v-model="showValue"
           :disabled="disabled"
-          :readonly="readonly || multiple"
           :placeholder="currentPlaceholder"
-          :clearable="clearable"
-          :size="size"
           :loading="loading"
           :invalid="invalid"
+          :new-height="newHeight"
           @clear="handleInputClear"
           @focus="handleFocus"
           @compositionstart="handleComposition"
@@ -136,8 +117,11 @@
           @keydown.tab="focused = false"
           :class="{ [`${prefix}-search-focus`]: focused }"
         >
-          <slot name="prefix" slot="prefix" v-if="$slots.prefix"></slot>
-        </wt-select-input>
+          <span slot="suffix" :class="`${prefix}-suffix-inner`">
+            <Icon v-if="!loading" :name="sIcon" />
+            <wt-loading v-else message="" size="small" />
+          </span>
+        </wt-input>
       </reference>
       <drop
         ref="drop"
@@ -178,7 +162,7 @@
 </template>
 <script>
 import { Popper, Drop, Reference } from '@components/popper';
-import WtSelectInput from '../select-input';
+import WtInput from '../input';
 import Clickoutside from '@/utils/clickoutside';
 import NavigationMixin from './navigation-mixin';
 import scrollIntoView from '@/utils/scroll-into-view';
@@ -203,7 +187,7 @@ const SELECT_ALL_VALUE = '__SELECT_ALL__';
 export default {
   name: 'WtSelect',
   components: {
-    WtSelectInput,
+    WtInput,
     Popper,
     Drop,
     Reference,
@@ -334,16 +318,15 @@ export default {
       tagInputWidth: 0,
       query: '',
       previousQuery: null,
-
       minWidth: 0,
       isOnComposition: false,
       selected: this.multiple ? [] : {},
-
       scrollListener: false,
-
       SELECT_ALL_VALUE: SELECT_ALL_VALUE,
       isSelectAll: false,
       isMounted: false,
+      tagsHeight: 36,
+      newHeight: this.label ? 44 : 36,
     };
   },
   provide() {
@@ -509,6 +492,7 @@ export default {
       if (this.multiple) {
         if (!this.collapseTags) {
           this.updatePopper();
+        } else {
         }
       } else if (!this.focused) {
         this.showValue = this.formatterOption(this.selected);
@@ -517,6 +501,11 @@ export default {
     },
     inputWidth() {
       this.minWidth = this.$refs.reference.$el.getBoundingClientRect().width + 'px';
+    },
+    tagsHeight(val, old) {
+      if (val !== old) {
+        this.newHeight = val;
+      }
     },
   },
   created() {
@@ -770,6 +759,7 @@ export default {
         if (this.focused) {
           this.$refs.popper.updatePopper();
         }
+        this.tagsHeight = this.$refs.tags.offsetHeight;
       });
     },
     handleQueryChange(val) {

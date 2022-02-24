@@ -17,6 +17,14 @@
       "version": ""
     },
     {
+      "name": "label",
+      "desc": "$t('select.api.label')",
+      "type": ["string"],
+      "optionalValue": "",
+      "default": "",
+      "version": ""
+    },
+    {
       "name": "disabled",
       "desc": "$t('select.api.disabled')",
       "type": "boolean",
