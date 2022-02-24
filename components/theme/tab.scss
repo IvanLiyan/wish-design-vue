@@ -331,7 +331,7 @@ $tabs-card-height: $s-6 !default;
     }
     &.#{$prefix}-tab-active {
       color: $tabs-active-color;
-      .#{$prefix}-tab-icon {
+      .#{$prefix}-icon svg {
         color: $tabs-active-color;
       }
       .#{$prefix}-tabs-item-number {
