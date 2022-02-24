@@ -139,7 +139,7 @@
           !disabled"
           @click="$emit('retry', file)"
         >
-          <Icon name="refresh-cw" />
+          <Icon color="#FFF" name="refresh-cw" />
         </span>
         <span
           v-if="!disabled"
