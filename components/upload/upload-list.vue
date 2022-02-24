@@ -34,6 +34,7 @@
         :class="`${prefix}-list-item-name`"
         @click="handleClick(file)"
         v-show="(listType !== 'picture-card') && (file.raw.type.substr(0, 5) !== 'image')"
+        :title="file.name"
       >
         {{ renderFileName(file.name) }}
       </a>
@@ -61,6 +62,7 @@
       <div
         v-else-if="(listType !== 'picture-card') && (file.raw.type.substr(0, 5) === 'image')"
         :class="`${prefix}-list-item-image-info`"
+        :title="file.name"
       >
         <p>{{ renderFileName(file.name) }}</p>
         <p :class="file.status === 'fail' ? `${prefix}-list-item-image-info-fail` : `${prefix}-list-item-image-info-status`">
