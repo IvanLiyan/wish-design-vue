@@ -198,7 +198,6 @@ export default {
     },
     placeholder: {
       type: String,
-      default: '',
     },
     placement: {
       type: String,
@@ -331,7 +330,9 @@ export default {
       return isArray(this.value) ? isString(this.value[0]) : isString(this.value);
     },
     getPlaceHolder() {
-      if (this.type === 'date') {
+      if (this.placeholder) {
+        return this.placeholder;
+      } else if (this.type === 'date') {
         return PICKER_TYPE_ENUM.date;
       } else if (this.type === 'month') {
         return PICKER_TYPE_ENUM.month;
