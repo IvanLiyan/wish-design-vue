@@ -17,7 +17,7 @@ $form-item-label-padding-right: 9px;
 }
 
 @include c(form-item) {
-  margin-bottom: 18px;
+  margin-bottom: 16px;
   vertical-align: top;
 
   display: inline-block;
@@ -45,12 +45,6 @@ $form-item-label-padding-right: 9px;
     color: $color-text-3;
     min-height: $line-height-4;
   }
-  //   .#{$prefix}-form-item {
-  //     margin-bottom: 16px;
-  //   }
-  //   &-error-bottom {
-  //     margin-bottom: max(9px - 16px, 0);
-  //   }
   &-required {
     > .#{$prefix}-form-item-label {
       &:before {
