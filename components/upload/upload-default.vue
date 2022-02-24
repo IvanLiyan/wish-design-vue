@@ -81,7 +81,6 @@ export default {
       this.uploadFiles(files);
     },
     uploadFiles (files) {
-      console.log('UPLOAD FILES');
       // 超出限制大小
       if (this.limit && this.fileList.length + files.length > this.limit) {
         this.onExceed && this.onExceed(files, this.fileList);
@@ -102,7 +101,6 @@ export default {
       });
     },
     upload (rawFile) {
-      console.log('upload~~');
       this.$refs.input.value = null;
 
       if (!this.beforeUpload) {
@@ -171,7 +169,7 @@ export default {
           delete this.reqs[uid];
         },
         onError: err => {
-          // this.onError(err, rawFile);
+          // this.onError(err, rawFile); // 注释
           this.onSuccess(err, rawFile);
           delete this.reqs[uid];
         },

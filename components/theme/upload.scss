@@ -35,8 +35,16 @@
   &-uploadlist-picture-card {
     width: 104px;
     height: 104px;
-    border: 1px solid red;
     position: relative;
+    &-success {
+      border: 0.5px solid #305BEF;
+    }
+    &-fail {
+      border: 0.5px solid #E52533;
+    }
+    &-ready {
+      border: 0.5px solid #BFCDD4;
+    }
   }
 
   &-picture-list-control {
@@ -353,14 +361,14 @@
       outline: none;
     }
     &-name {
-      width: 72px;
+      width: 126px;
       color: $color-text-1;
       display: block;
-      overflow: hidden;
+      // overflow: hidden;
       padding-left: 4px;
-      text-overflow: ellipsis;
+      // text-overflow: ellipsis;
       transition: color .3s;
-      white-space: nowrap;
+      // white-space: nowrap;
       cursor: pointer;
       &:hover, &.hover{
         color: $upload-hover-item-filename-color;
@@ -500,7 +508,7 @@
       font-size: 14px;
       font-weight: 400;
       color: #D0000F;
-      margin: 0 8px 8px 0;
+      margin: 3px;
       display: inline-block;
       z-index: 2;
 
