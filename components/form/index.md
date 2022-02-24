@@ -25,10 +25,10 @@
 :::include(src="./doc/multiple.vue")
 :::
 
-<!-- 竖版排列，一行只有 1 个元素。
+竖版排列，一行只有 1 个元素。
 
 :::include(src="./doc/single.vue")
-::: -->
+:::
 
 ## API
 
