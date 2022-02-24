@@ -286,6 +286,15 @@ export default {
         return 'picture-card';
       }
     },
+    renderStatusClass () {
+      if ((this.uploadFiles.length === 1) && (this.uploadFiles[0].status === 'success')) {
+        return `${this.prefix}-uploadlist-${this.inputType}-success`;
+      } else if ((this.uploadFiles.length === 1) && (this.uploadFiles[0].status === 'fail')) {
+        return `${this.prefix}-uploadlist-${this.inputType}-fail`;
+      } else {
+        return `${this.prefix}-uploadlist-${this.inputType}-ready`;
+      }
+    },
   },
 
   render (h) {
@@ -293,7 +302,7 @@ export default {
 
     if (this.showFileList) {
       uploadList = (
-        <div class={`${this.prefix}-uploadlist-${this.inputType}`}>
+        <div class={[`${this.prefix}-uploadlist-${this.inputType}`, this.inputType === 'picture-card' && this.renderStatusClass()]}>
           <UploadList
             prefix={this.prefix}
             getIconCls={this.getIconCls}

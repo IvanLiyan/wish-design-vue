@@ -146,8 +146,8 @@
           :class="`${prefix}-list-item-delete`"
           @click="$emit('remove', file)"
         >
-          <Icon v-if="(file.status === 'ready') || (file.status === 'uploading')" name="x" />
-          <Icon v-else name="trash-2" />
+          <Icon v-if="(file.status === 'ready') || (file.status === 'uploading')" name="x" color="#FFF" />
+          <Icon v-else color="#FFF" name="trash-2" />
         </span>
       </span>
     </li>
