@@ -62,4 +62,10 @@ $form-item-label-padding-right: 9px;
       }
     }
   }
+  .#{$prefix}-radio-group-vertical .#{$prefix}-radio {
+    margin-bottom: 8px;
+  }
+  .#{$prefix}-checkbox-group-vertical .#{$prefix}-checkbox {
+    margin-bottom: 8px;
+  }
 }
