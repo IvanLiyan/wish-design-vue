@@ -39,6 +39,10 @@ export default function withRadioGroup(name, Component) {
       },
       mapMethodToListener(context) {
         return {
+          /**
+           *
+           * 监听radio的chenge事件并进行透传逻辑处理
+           */
           change(v) {
             if (context.radioGroup) {
               context.radioGroup.$emit('radioChange', context.value);

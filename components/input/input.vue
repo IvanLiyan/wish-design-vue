@@ -71,16 +71,20 @@ export default {
     disabled: Boolean,
     // 校验不通过
     invalid: Boolean,
+    // 宽
     width: Number,
-
+    // 宽
     label: String,
+    // 输入框的内容
     value: [String, Number],
-    validation: String,
+    // 是否有清空按钮
     clearable: Boolean,
+    // 自适应内容高度
     autosize: {
       type: [Boolean, Object],
       default: false,
     },
+    // 限制输入的最大长度
     maxLength: {
       type: Number,
       default: 100,
@@ -89,12 +93,18 @@ export default {
   },
   data() {
     return {
+      // 聚焦
       focused: false,
+      // hover
       hovering: false,
-      isComposing: false, // 是否在拼音拼写中
+      // 是否在拼音拼写中
+      isComposing: false,
+      // textarea自适应高度
       textareaCalcStyle: {},
-      nativeValue: '', // input自身值
-      noModel: false, // 没有双向绑定
+      // input自身值
+      nativeValue: '',
+      // 没有双向绑定
+      noModel: false,
     };
   },
 
@@ -102,16 +112,13 @@ export default {
     inputPrefix() {
       return this.config.getPrefixCls('input');
     },
+
+    // 是否显示清除icon
     showClearIcon() {
       return this.clearable && this.inputValue && !this.disabled;
     },
-    validationText() {
-      let tip = this.validation || '请填写正确的内容';
-      if (this.inputValue.length > this.maxLength) {
-        tip = '字数超过限制最大长度';
-      }
-      return tip;
-    },
+
+    // input值
     inputValue() {
       let value = (this.noModel ? this.nativeValue : this.value) || '';
       if (this.type !== 'textarea') {
@@ -119,6 +126,7 @@ export default {
       }
       return value;
     },
+    // 是否校验不通过
     isInvalid() {
       return (this.type === 'textarea' && this.inputValue && this.inputValue.length > this.maxLength) || this.invalid;
     },

@@ -52,7 +52,6 @@ export default {
     // 颜色
     color: {
       type: String,
-      default: '#000',
     },
     // 宽度
     width: {

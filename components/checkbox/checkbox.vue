@@ -35,16 +35,21 @@ export default {
     },
   },
   props: {
+    // value
     value: [String, Number, Boolean, Function, Object, Array, Symbol],
+    // 是否选中
     checked: {
       type: Boolean,
       default: false,
     },
+    // 禁用
     disabled: {
       type: Boolean,
       default: false,
     },
+    // 禁用
     name: String,
+    // 注释内容
     hint: String,
   },
   computed: {
@@ -63,10 +68,13 @@ export default {
     },
   },
   methods: {
+    /**
+     * 改变值
+     */
     handleChange($event) {
       if (!this.disabled) {
-        this.$emit('change', !this.checked);
         this.$emit('input', !this.checked);
+        this.$emit('change', !this.checked);
       }
     },
   },

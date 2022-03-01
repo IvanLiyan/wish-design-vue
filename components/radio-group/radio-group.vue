@@ -43,9 +43,15 @@ export default {
     },
   },
   created() {
+    /**
+     * 监听radio的值变化
+     */
     this.$on('radioChange', this.handleChange);
   },
   methods: {
+    /**
+     * 值改变
+     */
     handleChange(radioValue) {
       if (this.value !== radioValue) {
         // 顺序不能改变，必须先input后change, 若先change，formItem会去校验，此时value值还没改变

@@ -11,7 +11,7 @@
       "lg": "≥ 992px 响应式栅格数或者栅格属性对象",
       "xl": "≥ 1200px 响应式栅格数或者栅格属性对象",
       "xxl": "≥ 1620px 响应式栅格数或者栅格属性对象",
-      "coltag": "自定义元素标签"
+      "tag": "自定义元素标签"
     }
   },
   "english": {
@@ -26,7 +26,7 @@
       "lg": "≥ 992px, could be a span value or an object containing above props",
       "xl": "≥ 1200px, could be a span value or an object containing above props",
       "xxl": "≥ 1620px, could be a span value or an object containing above props",
-      "coltag": "Customized element tag"
+      "tag": "Customized element tag"
     }
   }
 }

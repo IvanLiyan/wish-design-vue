@@ -22,15 +22,19 @@ export default {
   },
   props: {
     // value: [String, Number, Boolean, Function, Object, Array, Symbol],
+    // 是否选中
     checked: {
       type: Boolean,
       default: false,
     },
+    // 是否禁用
     disabled: {
       type: Boolean,
       default: false,
     },
+    // radio 内容
     name: String,
+    // radio 提示
     hint: String,
   },
   computed: {
@@ -49,10 +53,13 @@ export default {
     },
   },
   methods: {
+    /**
+     * 点击
+     */
     handleClick($event) {
       if (!this.disabled && !this.checked) {
-        this.$emit('change', true);
         this.$emit('input', true);
+        this.$emit('change', true);
       }
       if (!this.disabled) {
         this.$emit('click', $event);

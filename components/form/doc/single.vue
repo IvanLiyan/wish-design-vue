@@ -12,6 +12,7 @@
         <wt-radio value="daili">代为注册<span slot="hint">需要另外联系法人安排时间进行实名认证</span></wt-radio>
       </wt-radio-group>
     </wt-form-item>
+
     <wt-form-item prop="introducer">
       <wt-select
         v-model="formData.introducer"

@@ -48,6 +48,10 @@ export default function withCheckboxGroup(name, Component) {
       },
       mapMethodToListener(context) {
         return {
+          /**
+           *
+           * 监听checkbox的chenge事件并进行透传逻辑处理
+           */
           change(checked) {
             if (context.checkboxGroup) {
               context.checkboxGroup.$emit('checkboxChange', checked, context.value);

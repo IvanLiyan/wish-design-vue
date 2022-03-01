@@ -46,6 +46,9 @@ export default {
     this.$on('checkboxChange', this.handleChange);
   },
   methods: {
+    /**
+     * 改变值
+     */
     handleChange(checked, value) {
       const groupValue = this.value || [];
       const index = groupValue.indexOf(value);

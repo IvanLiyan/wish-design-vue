@@ -9,6 +9,13 @@
       "version": ""
     },
     {
+      "name": "label",
+      "desc": "$t('input.api.label')",
+      "type": "string",
+      "default": "",
+      "version": ""
+    },
+    {
       "name": "width",
       "desc": "$t('input.api.width')",
       "type": "Number",
