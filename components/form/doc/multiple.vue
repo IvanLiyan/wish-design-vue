@@ -17,13 +17,13 @@
         v-model="formData.introducer"
         label="入驻介绍人（可选）"
         filterable
-        placeholder="输入介绍人姓名搜索并选则"
+        placeholder="输入介绍人姓名搜索并选择"
       >
         <wt-option v-for="item in introducers" :key="item.value" :label="item.label" :value="item.value" />
       </wt-select>
     </wt-form-item>
     <wt-form-item prop="busType" required :span="12" :style="{ 'padding-left': '10px' }">
-      <wt-select multiple v-model="formData.busType" label="经营类型" placeholder="输入经营类型搜索并选则">
+      <wt-select multiple v-model="formData.busType" label="经营类型" placeholder="输入经营类型搜索并选择">
         <wt-option v-for="item in busTypes" :key="item.value" :label="item.label" :value="item.value" />
       </wt-select>
     </wt-form-item>
