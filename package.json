@@ -1,6 +1,6 @@
 {
   "name": "@wish/wt-vue",
-  "version": "0.0.2-alpha.2",
+  "version": "0.0.2-alpha.6",
   "description": "vue、component",
   "main": "lib/wt-vue.common.js",
   "scripts": {
@@ -10,8 +10,9 @@
     "build:deploy": "npm run clean && npm run build:themeIndex && cross-env NODE_ENV=production webpack --progress --config build/webpack.deploy.conf.js",
     "release": "node script/release.js",
     "clean": "cd publish && rimraf lib es dist types test/**/coverage",
-    "build": "cross-env NODE_ENV=production npm run build:all",
+    "build": "cross-env NODE_ENV=production npm run build:simple",
     "build:all": "npm run clean && npm run build:srcIndex && npm run build:component && npm run build:index && npm run build:utils && npm run build:distIndex && npm run build:es && npm run build:themeIndex && npm run build:style && npm run build:typesIndex && npm run build:lang && npm run copy:types ",
+    "build:simple": "npm run clean && npm run build:component && npm run build:index && npm run build:utils && npm run build:distIndex && npm run build:es && npm run build:themeIndex && npm run build:style && npm run build:lang ",
     "build:srcIndex": "node build/bin/build-entry.js",
     "build:themeIndex": "node build/bin/build-theme-index.js",
     "build:typesIndex": "node build/bin/build-ts.js",
