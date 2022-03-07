@@ -1,6 +1,6 @@
 {
   "name": "@wish/wt-vue",
-  "version": "0.0.2-alpha.1",
+  "version": "0.0.2-alpha.4",
   "description": "vue、component",
   "main": "lib/wt-vue.common.js",
   "scripts": {
@@ -45,6 +45,7 @@
     "@vue/component-compiler-utils": "^3.2.2",
     "@vue/test-utils": "^1.2.2",
     "autoprefixer": "^7.1.2",
+    "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^7.1.5",
