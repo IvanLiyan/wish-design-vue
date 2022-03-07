@@ -229,6 +229,7 @@ export default {
         this.$emit('enter', e);
       }
     },
+
     /**
      * 设置textarea自适应高度
      */
