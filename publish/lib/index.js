@@ -256,7 +256,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  version: '0.0.2-alpha.6',
+  version: '0.0.2-alpha.2',
   install: install
 });
 

@@ -57,6 +57,6 @@ if (typeof window !== 'undefined' && window.Vue) {
 export { Button, Card, Row, Col, Icon, ButtonGroup, Input, Radio, RadioGroup, Checkbox, CheckboxGroup, Switch, Tag, Dropdown, DropdownMenu, DropdownMenuItem, Popper, Datepicker, Timepicker, Form, FormItem, Notification, Select, Option, OptionGroup, Loading, Upload, Alert, Tab, TabDrop, TabPane, CollapseTransition };
 
 export default {
-  version: '0.0.2-alpha.6',
+  version: '0.0.2-alpha.2',
   install: install
 };
