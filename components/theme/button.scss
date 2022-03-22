@@ -52,6 +52,7 @@
     border-color: $disabledBorderColor;
   }
 }
+
 // start defined wt-btn
 @include c(btn) {
   @include reset-btn();
@@ -300,5 +301,13 @@
       $color-fill-2,
       $color-line-1
     );
+  }
+}
+
+a{
+  &.#{$prefix}-btn{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
   }
 }
