@@ -100,7 +100,9 @@ export default {
      * 获取按钮标签
      */
     tag() {
-      if (this.href !== undefined) {
+      if (this.to !== undefined) {
+        return 'router-link';
+      } else if (this.href !== undefined) {
         return 'a';
       } else {
         return 'button';
