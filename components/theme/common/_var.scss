@@ -619,3 +619,104 @@ $progress-success-color: $color-success-1 !default;
 
 // @end category
 // @end component
+
+// @component menu 导航菜单
+// @category base
+// @propsValue default
+// @name 字号
+$menu-font-size: $font-size-2!default;
+// @name 水平内边距
+$menu-padding-horizontal: $s-3!default;
+// @name 项-高度
+$menu-item-height: $s-10!default;
+// @name 项-水平-高度
+$menu-item-horizontal-height: $s-10!default;
+// @name 项-图标-尺寸
+$menu-item-icon-size: $font-size-3!default;
+// @name 项-图标-右外边距
+$menu-item-icon-margin-right: $s-2!default;
+// @name 下拉-宽度
+$submenu-dropdown-width: 180px!default;
+// @name 下拉-最大高度
+$submenu-dropdown-max-height: 80vh!default;
+// @name 下拉-竖直间距
+$submenu-dropdown-padding-vertical: $s-1!default;
+// @end propsValue
+// @end category
+
+// @category collapse
+// @propsValue true
+// @name 收起-宽度
+$menu-collapse-width: 60px!default;
+// @end propsValue
+// @end category
+
+// @category theme
+// @propsValue light
+// @refer color
+// @name 浅色-文字颜色
+$menu-light-color: #666!default;
+// @refer color
+// @name 浅色-背景色
+$menu-light-bgc: $color-white!default;
+
+// @name 浅色-悬浮-文字颜色
+$menu-light-hover-color: $color-primary!default;
+// @name 浅色-悬浮-背景色
+$menu-light-hover-bgc: none!default;
+// @name 浅色-水平-悬浮-背景色
+$menu-light-horizontal-hover-bgc: none!default;
+
+// @ignore
+$sidebar-active-color: $color-primary!default;
+// @end ignore
+// @refer color
+// @name 浅色-激活-文字颜色
+$menu-light-active-color: $sidebar-active-color!default;
+// @refer color
+// @name 浅色-激活-背景色
+$menu-light-active-bgc: #EEF6FF!default;
+// @name 浅色-水平-激活-背景色
+$menu-light-horizontal-active-bgc: none!default;
+
+// @refer color
+// @name 浅色-禁用-文字颜色
+$menu-light-disabled-color: $menu-light-color; // $color-text-6!default;
+// @name 浅色-禁用-背景色
+$menu-light-disabled-bgc: none!default;
+// @name 浅色-禁用-透明度
+$menu-light-disabled-opacity: .45!default;
+// @end propsValue
+
+// @propsValue dark
+// @refer color
+// @name 深色-文字颜色
+$menu-dark-color: #CAD0E3!default;
+// @refer color
+// @name 深色-背景色
+$menu-dark-bgc: #293454!default;
+
+// @name 深色-悬浮-文字颜色
+$menu-dark-hover-color: $color-white!default;
+// @name 深色-悬浮-背景色
+$menu-dark-hover-bgc: none!default;
+// @name 深色-水平-悬浮-背景色
+$menu-dark-horizontal-hover-bgc: none!default;
+
+// @name 深色-激活-文字颜色
+$menu-dark-active-color: $color-white!default;
+// @name 深色-激活-背景色
+$menu-dark-active-bgc: $color-primary!default;
+// @name 深色-水平-激活-背景色
+$menu-dark-horizontal-active-bgc: none!default;
+
+// @name 深色-禁用-文字颜色
+$menu-dark-disabled-color: $menu-dark-color!default;
+// @name 深色-禁用-背景色
+$menu-dark-disabled-bgc: transparent!default;
+// @name 深色-禁用-透明度
+$menu-dark-disabled-opacity: .45!default;
+// @end propsValue
+
+// @end category
+// @end component

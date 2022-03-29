@@ -1,0 +1,78 @@
+@import "./common/var.scss";
+@import "./mixins/mixins.scss";
+@include c(submenu){
+  position: relative;
+  &-title {
+    position: relative;
+    padding: 0 $menu-padding-horizontal;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: padding .3s;
+  }
+  &-text {
+    font-size: $menu-font-size;
+    flex: 1 1 auto;
+    min-width: 0;
+    // user-select: none;
+    @include text-ellipsis();
+  }
+  &-icon {
+    font-size: $menu-item-icon-size;
+    min-width: $menu-item-icon-size;
+    flex: 0 0 auto;
+    display: inline-block;
+    margin-right: 8px;
+  }
+  &-direction {
+    flex: 0 0 auto;
+    font-size: $menu-item-icon-size;
+    min-width: $menu-item-icon-size;
+    text-align: center;
+    margin-left: 12px;
+    transition: transform .3s;
+  }
+  &-direction-expanded{
+    transform: rotateZ(180deg);
+  }
+  &-content{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+  &-dropdown {
+
+  }
+}
+@include c(submenu-dropdown) {
+  list-style-type: none;
+  margin: 0;
+  padding: $submenu-dropdown-padding-vertical 0px;
+  width: $submenu-dropdown-width;
+  max-height: $submenu-dropdown-max-height;
+  overflow: auto;
+  .#{$prefix}-submenu{
+    position: relative;
+    &-active {
+      >.#{$prefix}-tooltip-rel>.#{$prefix}-submenu-title{
+        &:before{
+          display: none;
+        }
+      }
+    }
+  }
+  .#{$prefix}-menu-item-active{
+    &:before{
+      display: none;
+    }
+  }
+  // .#{$prefix}-submenu-content{
+  //   width: $submenu-dropdown-width;
+  //   position: absolute;
+  //   left: $submenu-dropdown-width;
+  //   top: 0;
+  //   background-color: #fff;
+  //   box-shadow: $box-shadow;
+  //   border-radius: 2px;
+  // }
+}

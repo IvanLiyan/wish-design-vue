@@ -30,6 +30,7 @@ import Alert from 'components/alert';
 import Tab from 'components/tab';
 import TabDrop from 'components/tab-drop';
 import TabPane from 'components/tab-pane';
+import Menu from 'components/menu';
 import CollapseTransition from './transitions/collapse-transition';
 
 const components = [
@@ -64,6 +65,7 @@ const components = [
   Tab,
   TabDrop,
   TabPane,
+  Menu,
   CollapseTransition,
 ];
 
@@ -119,10 +121,11 @@ export {
   Tab,
   TabDrop,
   TabPane,
+  Menu,
   CollapseTransition,
 };
 
 export default {
-  version: '0.0.2-alpha.4',
+  version: '0.0.2-alpha.15',
   install,
 };

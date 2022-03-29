@@ -29,5 +29,6 @@
   "alert": "components/alert",
   "tab": "components/tab",
   "tab-drop": "components/tab-drop",
-  "tab-pane": "components/tab-pane"
+  "tab-pane": "components/tab-pane",
+  "menu": "components/menu"
 }
