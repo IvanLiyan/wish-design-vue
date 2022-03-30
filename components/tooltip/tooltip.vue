@@ -28,7 +28,7 @@ import {
 } from '@/utils/config';
 
 export default {
-  name: 'Tooltip',
+  name: 'WtTooltip',
   components: {
     Popper,
     Drop,

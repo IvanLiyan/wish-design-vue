@@ -36,6 +36,11 @@
             "path": "menu",
             "name": "Menu",
             "cnName": "菜单"
+          },
+          {
+            "path": "tooltip",
+            "name": "Tooltip",
+            "cnName": "气泡"
           }
         ]
       },

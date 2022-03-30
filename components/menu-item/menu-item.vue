@@ -1,5 +1,5 @@
 <template>
-  <mtd-tooltip v-bind="tooltipProps"
+  <wt-tooltip v-bind="tooltipProps"
     tag="li"
     :class="{
       [prefix]: true,
@@ -25,7 +25,7 @@
       <span v-if="!!tooltip">{{ tooltip }}</span>
       <slot v-else-if="isCollapse"></slot>
     </div>
-  </mtd-tooltip>
+  </wt-tooltip>
 </template>
 <script>
 import MtdTooltip from '@components/tooltip';
@@ -36,7 +36,7 @@ import {
 } from '@/utils/config';
 
 export default {
-  name: 'MtdMenuItem',
+  name: 'WtMenuItem',
   components: {
     MtdTooltip,
   },

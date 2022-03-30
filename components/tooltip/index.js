@@ -1,8 +1,8 @@
-import MtdTooltip from './control.js';
+import WtTooltip from './control.js';
 
 /* istanbul ignore next */
-MtdTooltip.install = function (Vue) {
-  Vue.component(MtdTooltip.name, MtdTooltip);
+WtTooltip.install = function (Vue) {
+  Vue.component(WtTooltip.name, WtTooltip);
 };
 
-export default MtdTooltip;
+export default WtTooltip;

@@ -720,3 +720,66 @@ $menu-dark-disabled-opacity: .45!default;
 
 // @end category
 // @end component
+
+// @component tooltip 文字提示
+// @category base
+// @propsValue default
+// @name 圆角
+$tooltip-border-radius: $border-radius-1!default;
+// @name 最大宽
+$tooltip-max-width: 100%!default;
+// @name 阴影
+$tooltip-shadow: $shadow-1!default;
+// @name 字重
+$tooltip-font-weight: $font-weight-regular!default;
+// @end propsValue
+// @end category
+
+// @category theme
+// @propsValue default
+// @name 文字颜色
+$tooltip-color: $color-white!default;
+// @refer color
+// @name 背景色
+$tooltip-bgc: #808AB1!default;
+// @name 边框-宽度
+$tooltip-border-width: 0px!default;
+// @name 边框颜色
+$tooltip-border-color: $tooltip-bgc!default;
+// @end propsValue
+// @propsValue light
+// @name 浅色-文字颜色
+$tooltip-light-color: $color-text-2!default;
+// @name 浅色-背景色
+$tooltip-light-bgc: $color-white!default;
+// @name 浅色-边框-宽度
+$tooltip-light-border-width: 0px!default;
+// @name 浅色-边框颜色
+$tooltip-light-border-color: rgba(52,88,124,0.23)!default;
+// @end propsValue
+// @end category
+
+// @category size 尺寸
+// @propsValue default
+// @name 竖直内边距
+$tooltip-padding-vertical: 7px!default;
+// @name 水平内边距
+$tooltip-padding-horizontal: $s-3!default;
+// @name 字号
+$tooltip-font-size: $font-size-2!default;
+// @name 行高
+$tooltip-line-height: 20px!default;
+// @end propsValue
+
+// @propsValue small
+// @name 小号-竖直内边距
+$tooltip-small-padding-vertical: 5px!default;
+// @name 小号-水平内边距
+$tooltip-small-padding-horizontal: 10px!default;
+// @name 小号-字号
+$tooltip-small-font-size: $font-size-1!default;
+// @name 小号-行高
+$tooltip-small-line-height: 20px!default;
+// @end propsValue
+// @end category
+// @end component
