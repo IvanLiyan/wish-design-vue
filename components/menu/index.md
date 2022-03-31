@@ -2,9 +2,6 @@
 .demo-menu.demo-block .source{
   text-align: left;
 }
-.demo-source {
-  background: #F7F9FA;
-}
 </style>
 # 导航菜单 / Menu
 
