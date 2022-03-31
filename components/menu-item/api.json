@@ -8,22 +8,6 @@
 		"version": ""
 	},
 	{
-		"name": "disabled",
-		"desc": "是否禁用",
-		"type": "boolean",
-		"optionalValue": "",
-		"default": "false",
-		"version": ""
-	},
-	{
-		"name": "icon",
-		"desc": " 菜单的图标",
-		"type": "string",
-		"optionalValue": "",
-		"default": "",
-		"version": ""
-	},
-	{
 		"name": "route",
 		"desc": "Vue Router",
 		"type": "string / object",
@@ -45,10 +29,7 @@
 		"optionalValue": "",
 		"default": ""
 	}],
-	"slots":[{
-		"name": "icon",
-		"desc": "自定义图标"
-	},
+	"slots":[
 	{
 		"name": "default",
 		"desc": "自定义菜单标题"

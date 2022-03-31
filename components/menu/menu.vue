@@ -27,7 +27,7 @@ export default {
   props: {
     mode: {
       type: String,
-      default: 'inline',
+      default: 'horizontal',
       validator (value) {
         return ['vertical', 'horizontal', 'inline'].indexOf(value) > -1;
       },
@@ -174,6 +174,9 @@ export default {
       }
       flat(it);
       return keys;
+    },
+    clearInnerExpandedNames () {
+      this.innerExpandedNames = [];
     },
   },
 };

@@ -1,5 +1,9 @@
 <template>
-  <wt-menu v-model="activeName">
+  <wt-menu
+    v-model="activeName"
+    @select="handleSelect"
+    @update:expandedNames="handleUpdate"
+  >
     <wt-submenu name="1">
       <wt-icon slot="icon" name="home" :stroke-width="1" :width="18" :height="18" />
       <span slot="title">一级菜单</span>
@@ -36,8 +40,16 @@
 export default {
   data () {
     return {
-      activeName: '',
+      activeName: '2-1',
     };
+  },
+  methods: {
+    handleSelect () {
+      console.log('handleSelect');
+    },
+    handleUpdate (name) {
+      console.log('handleUpdate:Name', name);
+    },
   },
 };
 </script>

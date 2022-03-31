@@ -7,8 +7,6 @@
       [`${prefix}-disabled`]: disabled,
     }"
     :disabled="!enabledTip" :placement="placement"
-    @mouseenter.native="handleMouseenter"
-    @mouseleave.native="handleMouseleave"
   >
     <a :is="tag" :style="style"
       :class="`${prefix}-title`"

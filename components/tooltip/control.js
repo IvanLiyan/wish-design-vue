@@ -1,8 +1,8 @@
 import createHoc from '@/utils/hoc';
-import Tooltip from './tooltip.vue';
+import WtTooltip from './tooltip.vue';
 
 export default createHoc({
-  name: 'MtdTooltip',
+  name: 'WtTooltip',
   model: {
     prop: 'visible',
   },
@@ -54,4 +54,4 @@ export default createHoc({
       input: context.handleInput,
     };
   },
-})(Tooltip);
+})(WtTooltip);

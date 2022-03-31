@@ -14,6 +14,7 @@
     font-size: $menu-font-size;
     flex: 1 1 auto;
     min-width: 0;
+    text-align: center;
     // user-select: none;
     @include text-ellipsis();
   }
@@ -21,7 +22,8 @@
     font-size: $menu-item-icon-size;
     min-width: $menu-item-icon-size;
     flex: 0 0 auto;
-    display: inline-block;
+    display: flex;
+    align-items: center;
     margin-right: 8px;
   }
   &-direction {
@@ -48,7 +50,8 @@
   list-style-type: none;
   margin: 0;
   padding: $submenu-dropdown-padding-vertical 0px;
-  width: $submenu-dropdown-width;
+  min-width: 144px;
+  width: auto;
   max-height: $submenu-dropdown-max-height;
   overflow: auto;
   .#{$prefix}-submenu{

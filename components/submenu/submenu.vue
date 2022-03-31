@@ -5,10 +5,9 @@
       [`${prefix}-expanded`]: isExpanded,
       [`${prefix}-active`]: active || showChildActive,
     }]"
-    @mouseenter="handleMouseenter"
-    @mouseleave="handleMouseleave"
+    @click="handleClickMenu"
   >
-    <mtd-tooltip v-bind="tooltipProps"
+    <wt-tooltip v-bind="tooltipProps"
       :disabled="!enabledTip" :content="tooltip"
       :placement="tooltipPlacement"
       tag="div"
@@ -22,36 +21,36 @@
         <div :class="`${prefix}-text`" v-if="level !== 0 || !isCollapse">
           <slot name="title"></slot>
         </div>
-        <Icon name="down-thick"
+        <Icon name="chevron-down"
           :class="[`${prefix}-direction`, {
             [`${prefix}-direction-expanded`]: isExpanded
           }]"
+          :width="14"
+          :height="14"
         />
       </div>
       <div slot="content">{{ tooltip }}</div>
-    </mtd-tooltip>
-    <mtd-collapse-transition v-if="!isPopup"
+    </wt-tooltip>
+    <wt-collapse-transition v-if="!isPopup"
       @after-enter="handleAnimateEnd"
       @after-leave="handleAnimateEnd"
     >
       <ul :class="`${prefix}-content`" v-if="isMounted" v-show="isExpanded">
         <slot></slot>
       </ul>
-    </mtd-collapse-transition>
+    </wt-collapse-transition>
     <dropdown-menu v-if="isPopup" :visible="isExpanded" :lazy="lazy"
       :disabled="disabled" :placement="dropdownPlacement" :level="level"
       :popper-class="popperClass"
-      @mouseenter="clearTimer"
-      @mouseleave="closePopup"
     >
       <slot></slot>
     </dropdown-menu>
   </li>
 </template>
 <script>
-import MtdCollapseTransition from '@/transitions/collapse-transition';
+import WtCollapseTransition from '@/transitions/collapse-transition';
 import DropdownMenu from './drop';
-import MtdTooltip from '@components/tooltip';
+import WtTooltip from '@components/tooltip';
 import Icon from '@components/icon';
 import { CONFIG_PROVIDER,
   getPrefixCls,
@@ -59,7 +58,7 @@ import { CONFIG_PROVIDER,
 import { getProps, findVNodesFromSlot } from '@/utils/vnode';
 
 export default {
-  name: 'MtdSubmenu',
+  name: 'WtSubmenu',
   inject: {
     menu: 'menu',
     submenu: {
@@ -73,9 +72,9 @@ export default {
     },
   },
   components: {
-    MtdCollapseTransition,
+    WtCollapseTransition,
     DropdownMenu: DropdownMenu,
-    MtdTooltip,
+    WtTooltip,
     Icon,
   },
   props: {
@@ -183,6 +182,7 @@ export default {
     this.$on('menuItemClick', this.handleMenuItemClick);
     this.$on('submenu-enter', this.handleMouseenter);
     this.$on('submenu-leave', this.handleMouseleave);
+    this.$on('handleClickMenu', this.handleClickMenu);
   },
   mounted () {
     this.computedActive();
@@ -198,7 +198,7 @@ export default {
       const { foundedActivedItem, isActive, lazy } = this.menu;
       if (lazy) {
         if (!foundedActivedItem) {
-          const items = findVNodesFromSlot(this.$slots.default, 'MtdMenuItem');
+          const items = findVNodesFromSlot(this.$slots.default, 'WtMenuItem');
           const activeItem = items.find((item) => isActive(getProps(item)));
           if (activeItem) {
             this.activeChild = getProps(activeItem);
@@ -251,6 +251,23 @@ export default {
           this.isExpanded && this.menu.toggleExpanded(this);
         }
       }, this.closeDelay);
+    },
+    handleClickMenu () {
+      if (this.isClickTrigger || this.disabled) return;
+      clearTimeout(this.timer);
+      if (!this.isExpanded) {
+        this.$parent.clearInnerExpandedNames();
+        this.timer = setTimeout(() => {
+          this.menu.toggleExpanded(this);
+        }, this.openDelay);
+      } else {
+        this.$parent.clearInnerExpandedNames();
+        this.timer = setTimeout(() => {
+          if (this.isExpanded) {
+            this.isExpanded && this.menu.toggleExpanded(this);
+          }
+        }, this.closeDelay);
+      }
     },
     clearTimer () {
       this.parent.$emit('submenu-enter');
