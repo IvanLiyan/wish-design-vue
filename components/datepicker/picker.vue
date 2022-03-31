@@ -83,10 +83,6 @@
         <template slot-scope="scope" slot="cell">
           <slot :cell="scope.cell" name="cell">{{ scope.cell.desc }}</slot>
         </template>
-
-        <template slot="confirm" v-if="$slots.confirm">
-          <slot name="confirm"></slot>
-        </template>
       </component>
     </Drop>
   </Popper>
