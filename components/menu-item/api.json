@@ -8,6 +8,14 @@
 		"version": ""
 	},
 	{
+		"name": "disabled",
+		"desc": "是否禁用",
+		"type": "boolean",
+		"optionalValue": "",
+		"default": "false",
+		"version": ""
+	},
+	{
 		"name": "route",
 		"desc": "Vue Router",
 		"type": "string / object",

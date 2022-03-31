@@ -26,8 +26,8 @@
       <wt-menu-item name="3-1">
         二级菜单
       </wt-menu-item>
-      <wt-menu-item name="3-2">
-        二级菜单
+      <wt-menu-item name="3-2" disabled>
+        二级菜单(禁用)
       </wt-menu-item>
     </wt-submenu>
   </wt-menu>
