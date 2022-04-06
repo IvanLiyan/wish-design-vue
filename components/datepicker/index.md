@@ -36,14 +36,6 @@
 :::include(src="./doc/quick.vue")
 :::
 
-<!-- ### 不可选择日期和时间
-:::include(src="./doc/disabled.vue")
-:::
-
-### 自定义确认栏
-:::include(src="./doc/custom-confirm.vue")
-::: -->
-
 ## API
 <api-doc name="DatePicker" :doc="require('./api.json')"></api-doc>
 

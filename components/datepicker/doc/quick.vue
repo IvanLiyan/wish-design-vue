@@ -1,6 +1,6 @@
 <template>
   <div class="demo-container">
-    <wt-date-picker type="daterange" v-model="value8" :options="rangeOptions" />
+    <wt-date-picker type="daterange" v-model="value" :options="rangeOptions" />
   </div>
 </template>
 <script>
@@ -41,12 +41,7 @@ export default {
       },
     ];
     return {
-      value8: [],
-      options: {
-        disabledDate(date) {
-          return date && date.getTime() > Date.now();
-        },
-      },
+      value: [],
       rangeOptions: {
         shortcuts: rangeShortcuts,
       },
