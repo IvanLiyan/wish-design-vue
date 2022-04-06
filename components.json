@@ -30,8 +30,4 @@
   "tab": "components/tab",
   "tab-drop": "components/tab-drop",
   "tab-pane": "components/tab-pane",
-  "menu": "components/menu",
-  "menu-item": "components/menu-item",
-  "submenu": "components/submenu",
-  "tooltip": "components/tooltip"
 }

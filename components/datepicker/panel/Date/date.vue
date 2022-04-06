@@ -77,7 +77,7 @@
           </template>
         </component>
       </div>
-      <Confirm
+      <!-- <Confirm
         v-if="confirm"
         :show-time="showTime"
         :show-btn-now="showBtnNow"
@@ -87,7 +87,7 @@
         <template slot v-if="$slots.confirm">
           <slot name="confirm"></slot>
         </template>
-      </Confirm>
+      </Confirm> -->
     </div>
   </div>
 </template>
