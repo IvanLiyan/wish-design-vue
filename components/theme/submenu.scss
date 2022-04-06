@@ -32,7 +32,7 @@
     min-width: $menu-item-icon-size;
     text-align: center;
     margin-left: 12px;
-    transition: transform .3s;
+    // transition: transform .3s;
   }
   &-direction-expanded{
     transform: rotateZ(180deg);
