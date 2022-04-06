@@ -4,6 +4,9 @@
   // height: $menu-item-height;
   position: relative;
   cursor: pointer;
+  &-active &-title {
+    color: #0E161C !important;
+  }
   &-title{
     padding: 0 $menu-padding-horizontal;
     text-decoration: none;
@@ -16,6 +19,8 @@
     transition: padding .3s;
     &:hover, &.hover{
       text-decoration: none;
+      background: #E5ECFF !important;
+      color: #0E161C !important;
     }
   }
   &-text{
