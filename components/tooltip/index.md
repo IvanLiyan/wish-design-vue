@@ -36,6 +36,10 @@
     }
   }
 }
+.tooltip-wrapper {
+  display: flex;
+  justify-content: space-around;
+}
 </style>
 # 文字提示 / Tooltip
 用于缩略信息的完整展示，不承载复杂文本和操作，通过鼠标移入显示、移出消失的方式查看。
@@ -44,17 +48,13 @@
 :::include(src="./doc/base.vue")
 :::
 
-## 类型与用法
-### 大小 <design-tag></design-tag>
-:::include(src="./doc/size.vue")
-:::
-
-### 颜色 <design-tag></design-tag>
-:::include(src="./doc/color.vue")
-:::
-
-### 位置 <design-tag></design-tag>
+## 图表类
+#### 支持出现在不同位置 <design-tag></design-tag>
 :::include(src="./doc/position.vue")
+:::
+
+#### 可以自定义内容 <design-tag></design-tag>
+:::include(src="./doc/custom.vue")
 :::
 
 ## API

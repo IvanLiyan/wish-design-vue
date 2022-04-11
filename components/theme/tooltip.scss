@@ -9,8 +9,8 @@
     $tooltip-border-width,
     $tooltip-border-color
   );
-  line-height: $tooltip-line-height;
-  padding: $tooltip-padding-vertical $tooltip-padding-horizontal;
+  // line-height: $tooltip-line-height;
+  padding: 2px 8px;
   font-size: $tooltip-font-size;
   max-width: $tooltip-max-width;
   border-radius: $tooltip-border-radius;

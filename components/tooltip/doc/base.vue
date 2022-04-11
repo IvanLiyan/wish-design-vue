@@ -1,5 +1,5 @@
 <template>
-  <mtd-tooltip content="文字内容" default-visible placement="top">
-    <span style="cursor: pointer;">示例</span>
-  </mtd-tooltip>
+  <wt-tooltip content="2022.03" placement="top">
+    <span>鼠标移入后展示</span>
+  </wt-tooltip>
 </template>

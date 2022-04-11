@@ -1,8 +1,9 @@
 <template>
 <popper v-bind="$attrs" :tag="tag" :popper-disabled="disabled"
   :class="`${prefix}-rel`" :trigger="trigger"
+  :show-arrow="showArrow"
   :visible="!disabled && visible" @update:visible="handleVisibleChange"
-  :show-arrow="showArrow" ref="popper" :open-delay="openDelay"
+  ref="popper" :open-delay="openDelay"
   @clickoutside="clickoutside"
 >
   <reference><slot></slot></reference>
@@ -44,7 +45,7 @@ export default {
     size: String,
     showArrow: {
       type: Boolean,
-      default: true,
+      default: false,
     },
     trigger: {
       type: String,
