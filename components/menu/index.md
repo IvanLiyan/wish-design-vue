@@ -5,7 +5,7 @@
 </style>
 # 导航菜单 / Menu
 
-## 基础样式TEST
+## 基础样式
 :::include(src="./doc/base.vue")
 :::
 
