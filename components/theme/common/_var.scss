@@ -783,3 +783,71 @@ $tooltip-small-line-height: 20px!default;
 // @end propsValue
 // @end category
 // @end component
+
+// @component sidebar 侧边栏
+$sidebar-width: 200px!default;
+$sidebar-collapse-width: 60px!default;
+$sidebar-bgc: #F1F3F8!default;
+
+$sidebar-header-height: 65px!default;
+$sidebar-header-color: $color-text-2!default;
+$sidebar-header-font-size: 18px!default;
+$sidebar-header-font-weight: $font-weight-medium!default;
+$sidebar-header-icon-size: $font-size-3!default;
+$sidebar-header-icon-color: #8C99C1!default;
+$sidebar-header-icon-top: 0px!default;
+$sidebar-header-icon-right: 6px!default;
+
+// @end component
+
+// Navbar
+$navbar-height: 56px!default;
+
+$navbar-user-font-size: $font-size-2!default;
+$navbar-user-padding-horizontal: 10px!default;
+$navbar-user-arrow-color: #697597!default;
+
+$navbar-avatar-size: 34px!default;
+$navbar-avatar-border-color: rgba(#757BA7, .6)!default;
+
+$navbar-brand-width: 200px!default;
+$navbar-item-font-size: $font-size-2!default;
+$navbar-item-min-width: 80px!default;
+$navbar-item-padding-horizontal: $s-5!default;
+$navbar-item-dropdown-shadow: $shadow-1!default;
+
+$navbar-icon-item-padding-horizontal: 15px!default;
+$navbar-icon-item-font-size: 18px!default;
+
+$navbar-search-padding-horizontal: 10px!default;
+$navbar-search-width: 220px!default;
+$navbar-search-height: 30px!default;
+$navbar-search-line-height: 20px!default;
+$navbar-search-font-size: $font-size-2!default;
+$navbar-search-input-padding-horizontal: $s-3!default;
+$navbar-search-icon-padding: ($navbar-search-height - 2px - $navbar-search-font-size)/2!default;
+// Navbar Dark
+$navbar-dark-color: #ACB8DB!default;
+$navbar-dark-bgc: #252F47!default;
+$navbar-dark-shadow: 0 1px 3px 0 rgba(8, 28, 66, 0.45)!default;
+$navbar-dark-active-color: #EEEEF7!default;
+$navbar-dark-active-bgc: #222D4D!default;
+$navbar-dark-search-color: #7D8CB3!default;
+$navbar-dark-search-bgc: #3E4A6C!default;
+$navbar-dark-search-active-color: $color-white!default;
+$navbar-dark-search-active-icon-color: #D2D8E9!default;
+$navbar-dark-search-active-bgc: #454F6F!default;
+// Navbar Light
+$navbar-light-color: #8C99C1!default;
+$navbar-light-bgc: $color-white!default;
+$navbar-light-shadow: 0 1px 3px 0 rgba(8, 28, 66, 0.10)!default;
+// $navbar-light-icon-color:!default;
+$navbar-light-active-color: #666!default;
+$navbar-light-active-bgc: $navbar-light-bgc!default;
+$navbar-light-search-color: #bbb!default;
+$navbar-light-search-bgc: $color-white!default;
+$navbar-light-search-border-color: #DEE3F0!default;
+$navbar-light-search-active-color: $navbar-light-active-color!default;
+$navbar-light-search-active-icon-color: #B9C1D9!default;
+$navbar-light-search-active-border-color: $navbar-light-search-border-color!default;
+$navbar-light-search-active-bgc: $color-white!default;

@@ -33,5 +33,9 @@
   "menu": "components/menu",
   "menu-item": "components/menu-item",
   "submenu": "components/submenu",
-  "tooltip": "components/tooltip"
+  "tooltip": "components/tooltip",
+  "sidebar": "components/sidebar",
+  "smenu": "components/smenu",
+  "smenu-item": "components/smenu-item",
+  "ssubmenu": "components/ssubmenu"
 }

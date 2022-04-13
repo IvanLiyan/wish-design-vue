@@ -34,6 +34,10 @@ import Menu from 'components/menu';
 import MenuItem from 'components/menu-item';
 import Submenu from 'components/submenu';
 import Tooltip from 'components/tooltip';
+import Sidebar from 'components/sidebar';
+import Smenu from 'components/smenu';
+import SmenuItem from 'components/smenu-item';
+import Ssubmenu from 'components/ssubmenu';
 import CollapseTransition from './transitions/collapse-transition';
 
 const components = [
@@ -72,7 +76,11 @@ const components = [
   MenuItem,
   Submenu,
   Tooltip,
+  Sidebar,
   CollapseTransition,
+  Smenu,
+  SmenuItem,
+  Ssubmenu,
 ];
 
 export function install (Vue) {
@@ -131,6 +139,10 @@ export {
   MenuItem,
   Submenu,
   Tooltip,
+  Sidebar,
+  Smenu,
+  SmenuItem,
+  Ssubmenu,
   CollapseTransition,
 };
 
