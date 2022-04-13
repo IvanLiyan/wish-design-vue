@@ -30,10 +30,6 @@ import Alert from 'components/alert';
 import Tab from 'components/tab';
 import TabDrop from 'components/tab-drop';
 import TabPane from 'components/tab-pane';
-import Menu from 'components/menu';
-import MenuItem from 'components/menu-item';
-import Submenu from 'components/submenu';
-import Tooltip from 'components/tooltip';
 import CollapseTransition from './transitions/collapse-transition';
 
 const components = [
@@ -68,10 +64,6 @@ const components = [
   Tab,
   TabDrop,
   TabPane,
-  Menu,
-  MenuItem,
-  Submenu,
-  Tooltip,
   CollapseTransition,
 ];
 
@@ -127,10 +119,6 @@ export {
   Tab,
   TabDrop,
   TabPane,
-  Menu,
-  MenuItem,
-  Submenu,
-  Tooltip,
   CollapseTransition,
 };
 
