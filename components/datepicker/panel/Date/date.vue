@@ -236,16 +236,19 @@ export default {
     },
   },
   methods: {
+    // 日期变换
     handleValueChange (newVal) {
       this.dates = newVal;
       this.panelDate = this.startDate || (this.multiple
         ? this.dates[this.dates.length - 1] : this.dates[0]) || new Date();
       this.rangeState = {};
     },
+    // 重置
     reset () {
       this.currentView = this.selectionMode;
       this.pickerTable = this.getTableType(this.currentView);
     },
+    // 切换年份
     changeYear (dir) {
       if (this.selectionMode === 'year' || this.pickerTable === 'year-table') {
         this.panelDate = new Date(
@@ -257,18 +260,22 @@ export default {
         this.panelDate = siblingMonth(this.panelDate, dir * 12);
       }
     },
+    // 获取面板类型
     getTableType (currentView) {
       return currentView.match(/^time/) ? 'time-picker'
         : `${currentView}-table`;
     },
+    // 切换月份
     changeMonth (dir) {
       this.panelDate = siblingMonth(this.panelDate, dir);
     },
+    // 年份月份选择切换
     handlePreSelection (value) {
       this.panelDate = value;
       if (this.pickerTable === 'year-table') this.pickerTable = 'month-table';
       else this.pickerTable = this.getTableType(this.currentView);
     },
+    // 选择
     handlePick (value, type) {
       const { selectionMode, panelDate, defaultTime } = this;
       if (selectionMode === 'year') value = new Date(value.getFullYear(), 0, 1);
@@ -300,7 +307,7 @@ export default {
       this.dates = [value];
       this.$emit('pick', value, false);
     },
-
+    // 更改时间
     hanldeTimeChange (time) {
       const hours = time ? time.getHours() : 0;
       const mins = time ? time.getMinutes() : 0;
@@ -323,6 +330,7 @@ export default {
       );
       return formatter(value, format);
     },
+    // 区间切换
     handleChangeRange (val) {
       if (val && this.visible) {
         this.rangeState = {

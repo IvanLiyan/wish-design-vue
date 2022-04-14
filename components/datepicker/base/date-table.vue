@@ -27,7 +27,6 @@ import {
 } from '@/utils/date';
 import Locale from '@/mixins/locale';
 import jsCalendar from '@/js-calendar';
-
 import mixin from './mixin';
 import { CONFIG_PROVIDER,
   getPrefixCls,
@@ -35,7 +34,6 @@ import { CONFIG_PROVIDER,
 
 export default {
   mixins: [ Locale, mixin ],
-
   props: {
     /* more props in mixin */
     showWeekNumbers: {
@@ -75,6 +73,7 @@ export default {
         .concat(translatedDays.splice(0, weekStart));
       return this.showWeekNumbers ? [''].concat(weekDays) : weekDays;
     },
+    // 单元格渲染
     cells () {
       const { isWeek } = this;
       const tableYear = this.tableDate.getFullYear();

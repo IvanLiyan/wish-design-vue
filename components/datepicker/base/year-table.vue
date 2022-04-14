@@ -20,7 +20,6 @@ import {
 
 export default {
   mixins: [ mixin ],
-
   props: {/* in mixin */},
   inject: {
     config: {
