@@ -279,8 +279,8 @@ export default {
     const emptyArray = isRange ? [null, null] : [null];
     const initialValue = isEmptyArray((isRange ? value : [value]) || []) ? emptyArray : this.parseDate(value);
     return {
-      internalValue: initialValue,
-      selectionMode: this.onSelectionModeChange(this.type),
+      internalValue: initialValue, // 初始化时间
+      selectionMode: this.onSelectionModeChange(this.type), // 选择模式
       isFocused: false,
       focusedDate: initialValue[0] || this.startDate || new Date(),
       selecting: false, // 目前仅用在 timerange 中，表示是否在选择中
