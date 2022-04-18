@@ -8,6 +8,7 @@
       </slot>
     </div>
     <div :class="panelBodyClasses">
+      <!-- 起始时间 -->
       <div :class="[panelPrefix + '-content', panelPrefix + '-content-left']">
         <div :class="[prefix + '-header']">
           <span :class="iconBtnCls('prev', '-double')"
@@ -24,7 +25,8 @@
             :date-panel-label="leftDatePanelLabel"
             :current-view="leftDatePanelView"
             :date-prefix-cls="prefix"
-            position="left" />
+            position="left"
+          />
           <span
             v-if="splitPanels || currentView !== leftPickerTable.split('-')[0]"
             :class="iconBtnCls('next', '-double')"
@@ -58,24 +60,26 @@
           <template slot-scope="scope" slot="cell">
             <slot :cell="scope.cell" name="cell"></slot>
           </template>
-      </component>
-      <div :class="`${prefix}-time-header`" v-if="showTime">
-        <!-- <picker-input :current-value="leftInput"
-          size="small" /> -->
-        <time-picker
-          ref="timePicker"
-          v-bind="timePickerOptions"
-          size="small"
-          placement="bottom-start"
-          icon=""
-          :value="leftTime"
-          :open.sync="openLeftTime"
-          :disabled="false"
-          @input="hanldeLeftTimeChange"
-          :append-to-container="false"
-        />
+        </component>
+        <div :class="`${prefix}-time-header`" v-if="showTime">
+          <!-- <picker-input :current-value="leftInput"
+            size="small" /> -->
+          <time-picker
+            ref="timePicker"
+            v-bind="timePickerOptions"
+            size="small"
+            placement="bottom-start"
+            icon=""
+            :value="leftTime"
+            :open.sync="openLeftTime"
+            :disabled="false"
+            @input="hanldeLeftTimeChange"
+            :append-to-container="false"
+          />
+        </div>
       </div>
-      </div><div
+      <!-- 结束时间 -->
+      <div
         :class="[`${panelPrefix}-content`, `${panelPrefix}-content-right`]">
         <div :class="[prefix + '-header']">
             <span
@@ -145,6 +149,7 @@
           />
         </div>
       </div>
+      <!-- 带时间选择的起始日期选择模式会展示确认模块 -->
       <Confirm
         v-if="confirm"
         :show-time="showTime"
@@ -203,10 +208,12 @@ export default {
   inheritAttrs: false,
   props: {
     // more props in the mixin
+    // 是否分离左右面板
     splitPanels: {
       type: Boolean,
       default: false,
     },
+    // 默认区间
     defaultTime: {
       type: Array,
       default () {
@@ -220,21 +227,21 @@ export default {
 
     return {
       dates: [...this.value],
+      // 日期区间
       rangeState: {
         from: this.value[0],
         to: this.value[1],
         selecting: minDate && !maxDate,
       },
-      currentView: this.selectionMode || 'range',
-      leftPickerTable: `${this.selectionMode}-table`,
-      rightPickerTable: `${this.selectionMode}-table`,
-      leftPanelDate: leftPanelDate,
-      rightPanelDate: new Date(
+      currentView: this.selectionMode || 'range', // 当前选择模式
+      leftPickerTable: `${this.selectionMode}-table`, // 左面板
+      rightPickerTable: `${this.selectionMode}-table`, // 右面板
+      leftPanelDate: leftPanelDate, // 起始日期
+      rightPanelDate: new Date( // 结束日期
         leftPanelDate.getFullYear(),
         leftPanelDate.getMonth() + 1,
         1,
       ),
-
       openLeftTime: false,
       openRightTime: false,
     };
@@ -349,6 +356,7 @@ export default {
     this.setPanelDates(this.leftPanelDate);
   },
   methods: {
+    // 选择后触发
     handleValueChange (newVal) {
       const minDate = newVal[0] ? toDate(newVal[0]) : null;
       const maxDate = newVal[1] ? toDate(newVal[1]) : null;
@@ -363,11 +371,13 @@ export default {
       // set panels positioning
       this.setPanelDates(this.startDate || this.dates[0] || new Date());
     },
+    // 清空状态 重置数据
     reset () {
       this.currentView = this.selectionMode;
       this.leftPickerTable = `${this.currentView}-table`;
       this.rightPickerTable = `${this.currentView}-table`;
     },
+    // 改变选择模式
     setPanelDates (leftPanelDate) {
       this.leftPanelDate = leftPanelDate;
       let rightPanelDate;
@@ -412,20 +422,25 @@ export default {
         }),
       };
     },
+    // 上一年按钮
     prevYear (panel) {
       const increment = this.currentView === 'year' ? -10 : -1;
       this.changePanelDate(panel, 'FullYear', increment);
     },
+    // 下一年按钮
     nextYear (panel) {
       const increment = this.currentView === 'year' ? 10 : 1;
       this.changePanelDate(panel, 'FullYear', increment);
     },
+    // 上一月按钮
     prevMonth (panel) {
       this.changePanelDate(panel, 'Month', -1);
     },
+    // 下一月按钮
     nextMonth (panel) {
       this.changePanelDate(panel, 'Month', 1);
     },
+    // 日期选择后
     changePanelDate (panel, type, increment, updateOtherPanel = true) {
       const current = new Date(this[`${panel}PanelDate`]);
       current[`set${type}`](current[`get${type}`]() + increment);
@@ -450,12 +465,15 @@ export default {
         this[`${otherPanel}PanelDate`] = otherCurrent;
       }
     },
+    // 展示年份选择
     showYearPicker (panel) {
       this[`${panel}PickerTable`] = 'year-table';
     },
+    // 展示月份选择
     showMonthPicker (panel) {
       this[`${panel}PickerTable`] = 'month-table';
     },
+    // 返回上一级选择状态
     handlePreSelection (panel, value) {
       this[`${panel}PanelDate`] = value;
       const currentViewType = this[`${panel}PickerTable`];
@@ -471,7 +489,7 @@ export default {
         this.changePanelDate(otherPanel, 'Month', 1, false);
       }
     },
-
+    // 设置默认时间
     setDefaultTime (date, oldDate, defaultTime) {
       const time = (defaultTime || '0:0:0').split(':');
       const hours = oldDate ? oldDate.getHours() : time[0];
@@ -480,7 +498,7 @@ export default {
       date.setHours(hours, mins, sec);
       return date;
     },
-
+    // 选择区间数值后
     handleRangePick (val, type) {
       if (this.rangeState.selecting || this.currentView === 'time') {
         if (this.currentView === 'time') {
@@ -494,13 +512,6 @@ export default {
           const dates = [minDate, maxDate].map((date, i) => {
             return this.setDefaultTime(date, this.value[i], this.defaultTime[i]);
           });
-
-          // 暂时不处理，待确定交互
-          // if (dates[0].getTime() > dates[1].getTime()) {
-          //   // 会出现同一天 minDate > maxDate 情况，忽略第二次的值，要求用户重新选择
-          //   return;
-          // }
-
           this.dates = dates;
           this.rangeState = {
             from: minDate,
@@ -518,6 +529,7 @@ export default {
       }
       this.$emit('pick-range', this.rangeState);
     },
+    // 改变区间值
     handleChangeRange (val) {
       if (!this.rangeState.selecting) {
         if (this.isWeek) {
@@ -528,7 +540,7 @@ export default {
       }
       this.rangeState.to = val;
     },
-
+    // 起始时间变化
     hanldeLeftTimeChange (time) {
       const left = this.dates[0];
       const hours = time ? time.getHours() : 0;
@@ -546,7 +558,7 @@ export default {
       }
       this.handleConfirm(false);
     },
-
+    // 结束时间变化
     hanldeRightTimeChange (time) {
       const right = this.dates[1];
 
@@ -560,7 +572,7 @@ export default {
       this.dates[1] = d;
       this.handleConfirm(false);
     },
-
+    // 选择的日期绑定到输入框
     formatDateToInput (value, type) {
       let format = this.format;
       if (format) {

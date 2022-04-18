@@ -44,6 +44,7 @@ export default {
         `${prefixCls}-month`,
       ];
     },
+    // 单元格渲染
     cells () {
       const cells = [];
       const cellTmpl = {

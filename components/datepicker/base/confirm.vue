@@ -1,10 +1,6 @@
 <template>
   <div :class="[prefix + '-confirm']">
     <slot>
-      <wt-button v-if="showBtnNow" size="small" type="text-primary"
-        @click="handleClickNow">
-        {{ labels.now }}
-      </wt-button>
       <wt-button size="small" type="primary"
         @click="handleSuccess"
       >
@@ -56,6 +52,7 @@ export default {
     timeClasses () {
       return `${this.prefix}-confirm-time`;
     },
+    // 渲染按钮文字
     labels () {
       const labels = ['time', 'now', 'ok'];
       const values = [this.isTime ? 'selectDate' : 'selectTime', 'now', 'ok'];
@@ -66,9 +63,7 @@ export default {
     },
   },
   methods: {
-    handleClickNow () {
-      this.$emit('click-now');
-    },
+    // 确认
     handleSuccess () {
       this.$emit('confirm');
     },

@@ -135,10 +135,13 @@ export default {
     PickerInput: Input,
   },
   props: {
+    // 宽度
     width: Number,
+    // 日期格式
     format: {
       type: String,
     },
+    // 数值格式
     valueFormat: {
       // 如果没有配置则默认按照当前 value 属性推断
       type: String,
@@ -150,97 +153,98 @@ export default {
         return true;
       },
     },
+    // 是否只读
     readonly: {
       type: Boolean,
       default: false,
     },
+    // 是否可编辑
     editable: {
       type: Boolean,
       default: true,
     },
+    // 是否禁用
     disabled: {
       type: Boolean,
       default: false,
     },
+    // 是否可清除
     clearable: {
       type: Boolean,
       default: false,
     },
-    confirm: {
-      type: Boolean,
-      default: false,
-    },
+    // 是否默认打开面板
     open: {
       type: Boolean,
       default: null,
     },
+    // 是否可多选
     multiple: {
       type: Boolean,
       default: false,
     },
+    // 时间控件可选项
     timePickerOptions: {
       default: () => ({}),
       type: Object,
     },
+    // 是否分割面板
     splitPanels: {
       type: Boolean,
       default: true,
     },
-    showWeekNumbers: {
-      type: Boolean,
-      default: false,
-    },
+    // 开始日期
     startDate: {
       type: Date,
     },
+    // 控件尺寸
     size: {
       type: String,
     },
+    // 输入框占位符
     placeholder: {
       type: String,
     },
+    // 面板弹出方向
     placement: {
       type: String,
     },
+    // 输入框的name属性
     name: {
       type: String,
     },
+    // 选择器上方的标签
     label: {
       type: String,
     },
-    elementId: {
-      type: String,
-    },
-    steps: {
-      type: Array,
-      default: () => [],
-    },
+    // 控件值
     value: {
       type: [Date, String, Array, Number],
     },
+    // 快捷选项
     options: {
       type: Object,
       default: () => ({}),
     },
-    icon: String,
-    appendToContainer: {
-      type: Boolean,
-      default: true,
-    },
-    getPopupContainer: Function,
+    // appendToContainer: {
+    //   type: Boolean,
+    //   default: true,
+    // },
+    // getPopupContainer: Function,
     invalid: Boolean,
     loading: Boolean,
     genre: String,
-    showBtnNow: {
-      type: Boolean,
-      default: true,
-    },
+    // showBtnNow: {
+    //   type: Boolean,
+    //   default: true,
+    // },
     popperClass: String,
     defaultTime: {
       type: [Array, String],
     },
     popperOptions: Object,
     formatter: Function,
+    // 周起始
     weekStart: {
       type: Number,
       default: 1,
@@ -248,6 +252,7 @@ export default {
         return v >= 0 && v <= 6;
       },
     },
+    // 是否展示此刻按钮
     showNow: {
       type: Boolean,
       default: false,
@@ -274,8 +279,8 @@ export default {
     const emptyArray = isRange ? [null, null] : [null];
     const initialValue = isEmptyArray((isRange ? value : [value]) || []) ? emptyArray : this.parseDate(value);
     return {
-      internalValue: initialValue,
-      selectionMode: this.onSelectionModeChange(this.type),
+      internalValue: initialValue, // 初始化时间
+      selectionMode: this.onSelectionModeChange(this.type), // 选择模式
       isFocused: false,
       focusedDate: initialValue[0] || this.startDate || new Date(),
       selecting: false, // 目前仅用在 timerange 中，表示是否在选择中
@@ -395,6 +400,7 @@ export default {
     this.$on('focus-input', () => this.focus());
   },
   methods: {
+    // 日期格式填入输入框
     formatToInput(date) {
       const isRange = this.type.indexOf('range') > -1;
       if (isArray(this.value) || this.multiple || isRange) {
@@ -402,6 +408,7 @@ export default {
       }
       return this.formatValue(date);
     },
+    // 日期值格式
     formatValue(date) {
       if (this.valueFormat === 'timestamp') {
         return date ? date.getTime() : undefined;
@@ -411,6 +418,7 @@ export default {
         return date || undefined;
       }
     },
+    // 面板打开与关闭
     handleOpenChange(v) {
       if (this.readonly || this.disabled) {
         return;
@@ -423,13 +431,15 @@ export default {
         this.$emit('blur');
       }
     },
+    // 输入框聚焦
     handleInputFocus() {
       this.isFocused = true;
     },
-
+    // 输入框失焦
     handleInputBlur() {
       this.isFocused = false;
     },
+    // 输入框输入
     handleInputEnter() {
       if (this.internalValue.length !== 0 && this.internalValue[0] !== null) {
         this.handleOpenChange(true);
@@ -439,6 +449,7 @@ export default {
         }, 1250);
       }
     },
+    // 选择模式切换 年/月/日
     onSelectionModeChange(type) {
       if (this.readonly || this.disabled) {
         return;
@@ -452,9 +463,11 @@ export default {
       this.$nextTick(this.updatePopper);
       return this.selectionMode;
     },
+    // 重置
     reset() {
       this.$refs.pickerPanel && this.$refs.pickerPanel.reset && this.$refs.pickerPanel.reset();
     },
+    // 输入框输入
     handleInputChange(newValue) {
       this.inputValue = newValue;
       // const isArrayValue = this.type.indexOf('range') > -1 || this.multiple;
@@ -475,6 +488,7 @@ export default {
         this.internalValue = newDate.sort((a, b) => a.getTime() - b.getTime());
       }
     },
+    // 点击“此刻”
     handleClickNow() {
       const dates = this.multiple ? new Date() : this.internalValue.map(() => new Date());
       this.$emit('click-now');
@@ -482,10 +496,12 @@ export default {
       this.handleOpenChange(false);
       // this.reset();
     },
+    // 清空输入框
     handleClear() {
       this.$emit('clear');
       this.internalValue = this.internalValue.map(() => '');
     },
+    // 选择数值后
     hanldePickRange(rangeState) {
       this.$emit('pick-range', rangeState);
     },
@@ -533,6 +549,7 @@ export default {
       }
       return isRange || this.multiple ? val || [] : [val];
     },
+    // 日期格式
     formatDate(value, format = this.format) {
       const defaultFormat = DEFAULT_FORMATS[this.type];
       if (this.multiple) {
@@ -543,6 +560,7 @@ export default {
         return formatter(value, format || defaultFormat, { weekStart: this.weekStart });
       }
     },
+    // 选择日期
     onPick(dates, visible = false) {
       // 若是时间段则排序
       if (isArray(dates)) {
@@ -578,6 +596,7 @@ export default {
         }
       }
     },
+    // 选择成功
     onPickSuccess() {
       this.$emit('confirm');
       this.handleOpenChange(false);
@@ -587,20 +606,24 @@ export default {
       this.selecting = true;
       this.internalValue = value;
     },
+    // 取消选择
     handleCancel() {
       this.internalValue = this.parseDate(this.value);
       this.handleOpenChange(false);
     },
+    // 聚焦
     focus() {
       if (this.editable) {
         this.$refs.input.focus();
       }
       this.handleOpenChange(true);
     },
+    // 失焦
     blur() {
       this.$refs.input.blur();
       this.handleOpenChange(false);
     },
+    // 更新弹出层
     updatePopper() {
       this.$nextTick(() => {
         const { open } = this;
@@ -610,6 +633,7 @@ export default {
         }
       });
     },
+    // 获取选择类型
     getPickerType(pickerType) {
       if (pickerType === 'calendar') {
         this.pickerType = 'calendar';

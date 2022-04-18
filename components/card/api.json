@@ -1,12 +1,4 @@
 {
-  "props": [{
-    "name": "body-class",
-    "desc": "$t('card.api.body-class')",
-    "type": "string",
-    "optionalValue": "",
-    "default": "",
-    "version": ""
-  }],
   "slots": [{
     "name": "title",
     "desc": "$t('card.api.title')",
