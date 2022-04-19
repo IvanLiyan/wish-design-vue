@@ -20,6 +20,14 @@
       "version": ""
     },
     {
+      "name": "width",
+      "desc": "$t('button.api.width')",
+      "type": "Number",
+      "optionalValue": "",
+      "default": "100%",
+      "version": ""
+    },
+    {
       "name": "loading",
       "desc": "$t('button.api.loading')",
       "type": "boolean",
@@ -52,6 +60,7 @@
       "default": "",
       "version": ""
     },
+    
     {
       "name": "to",
       "desc": "$t('button.api.to')",

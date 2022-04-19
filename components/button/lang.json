@@ -18,6 +18,7 @@
 
     "api": {
       "type": "类型",
+      "width":"宽度",
       "loading": "是否加载中状态",
       "disabled": "是否是禁用状态",
       "icon": "设置按钮左侧图标类型",
@@ -56,6 +57,7 @@
     },
     "api": {
       "type": "Button Type",
+      "width":"Width",
       "loading": "Whether to show loading status",
       "disabled": "Whether to show disabled status",
       "icon": "Set the left-side icon type",

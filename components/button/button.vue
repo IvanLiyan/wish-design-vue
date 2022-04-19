@@ -15,6 +15,7 @@
     ]"
     :type="htmlType"
     :disabled="disabled || _loading"
+     :style="width && { width: `${width}px` ,'max-width':`${width}px`}"
     v-on="listen"
     v-bind="$attrs"
   >
@@ -50,6 +51,8 @@ export default {
           val,
         ),
     },
+    // 按钮宽度
+    width: Number,
     // 按钮icon
     icon: String,
     // 按钮loading状态
