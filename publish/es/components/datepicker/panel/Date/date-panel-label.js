@@ -15,6 +15,7 @@ export default {
     position: String
   },
   computed: {
+    // 年份区间渲染
     yearRangeValue: function yearRangeValue() {
       if (this.$props.currentView === 'year' && this.$props.position === 'right') {
         var startYear = parseInt(this.$props.datePanelLabel.labels[0].label.substr(0, 3) + '0') + 12;
@@ -26,6 +27,5 @@ export default {
         return _startYear + ' - ' + _endYear;
       };
     }
-  },
-  methods: {}
+  }
 };

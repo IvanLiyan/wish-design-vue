@@ -42,7 +42,7 @@ var __vue_render__ = function __vue_render__() {
         return [_vm._t("cell", null, { "cell": scope.cell })];
       } }], null, true) }), _vm._v(" "), _vm.showTime ? _c('div', { class: _vm.prefix + "-time-header" }, [_c('time-picker', _vm._b({ ref: "timePicker", attrs: { "size": "small", "placement": "bottom-start", "icon": "", "value": _vm.leftTime, "open": _vm.openLeftTime, "disabled": false, "append-to-container": false }, on: { "update:open": function updateOpen($event) {
         _vm.openLeftTime = $event;
-      }, "input": _vm.hanldeLeftTimeChange } }, 'time-picker', _vm.timePickerOptions, false))], 1) : _vm._e()], 1), _c('div', { class: [_vm.panelPrefix + "-content", _vm.panelPrefix + "-content-right"] }, [_c('div', { class: [_vm.prefix + '-header'] }, [_vm.splitPanels || _vm.currentView !== _vm.rightPickerTable.split('-')[0] ? _c('span', { class: _vm.iconBtnCls('prev', '-double'), on: { "click": function click($event) {
+      }, "input": _vm.hanldeLeftTimeChange } }, 'time-picker', _vm.timePickerOptions, false))], 1) : _vm._e()], 1), _vm._v(" "), _c('div', { class: [_vm.panelPrefix + "-content", _vm.panelPrefix + "-content-right"] }, [_c('div', { class: [_vm.prefix + '-header'] }, [_vm.splitPanels || _vm.currentView !== _vm.rightPickerTable.split('-')[0] ? _c('span', { class: _vm.iconBtnCls('prev', '-double'), on: { "click": function click($event) {
         return _vm.prevYear('right');
       } } }, [_c('Icon', { attrs: { "name": "chevrons-left" } })], 1) : _vm._e(), _vm._v(" "), _vm.splitPanels && _vm.rightPickerTable === 'date-table' ? _c('span', { directives: [{ name: "show", rawName: "v-show", value: _vm.currentView === 'date', expression: "currentView === 'date'" }], class: _vm.iconBtnCls('prev'), on: { "click": function click($event) {
         return _vm.prevMonth('right');
@@ -78,10 +78,12 @@ export default {
   inheritAttrs: false,
   props: {
     // more props in the mixin
+    // 是否分离左右面板
     splitPanels: {
       type: Boolean,
       default: false
     },
+    // 默认区间
     defaultTime: {
       type: Array,
       default: function _default() {
@@ -101,17 +103,18 @@ export default {
 
     return {
       dates: [].concat(_toConsumableArray(this.value)),
+      // 日期区间
       rangeState: {
         from: this.value[0],
         to: this.value[1],
         selecting: minDate && !maxDate
       },
-      currentView: this.selectionMode || 'range',
-      leftPickerTable: this.selectionMode + '-table',
-      rightPickerTable: this.selectionMode + '-table',
-      leftPanelDate: leftPanelDate,
-      rightPanelDate: new Date(leftPanelDate.getFullYear(), leftPanelDate.getMonth() + 1, 1),
-
+      currentView: this.selectionMode || 'range', // 当前选择模式
+      leftPickerTable: this.selectionMode + '-table', // 左面板
+      rightPickerTable: this.selectionMode + '-table', // 右面板
+      leftPanelDate: leftPanelDate, // 起始日期
+      rightPanelDate: new Date( // 结束日期
+      leftPanelDate.getFullYear(), leftPanelDate.getMonth() + 1, 1),
       openLeftTime: false,
       openRightTime: false
     };
@@ -215,6 +218,7 @@ export default {
   },
 
   methods: {
+    // 选择后触发
     handleValueChange: function handleValueChange(newVal) {
       var minDate = newVal[0] ? toDate(newVal[0]) : null;
       var maxDate = newVal[1] ? toDate(newVal[1]) : null;
@@ -229,11 +233,15 @@ export default {
       // set panels positioning
       this.setPanelDates(this.startDate || this.dates[0] || new Date());
     },
+
+    // 清空状态 重置数据
     reset: function reset() {
       this.currentView = this.selectionMode;
       this.leftPickerTable = this.currentView + '-table';
       this.rightPickerTable = this.currentView + '-table';
     },
+
+    // 改变选择模式
     setPanelDates: function setPanelDates(leftPanelDate) {
       this.leftPanelDate = leftPanelDate;
       var rightPanelDate = void 0;
@@ -270,20 +278,30 @@ export default {
         })
       };
     },
+
+    // 上一年按钮
     prevYear: function prevYear(panel) {
       var increment = this.currentView === 'year' ? -10 : -1;
       this.changePanelDate(panel, 'FullYear', increment);
     },
+
+    // 下一年按钮
     nextYear: function nextYear(panel) {
       var increment = this.currentView === 'year' ? 10 : 1;
       this.changePanelDate(panel, 'FullYear', increment);
     },
+
+    // 上一月按钮
     prevMonth: function prevMonth(panel) {
       this.changePanelDate(panel, 'Month', -1);
     },
+
+    // 下一月按钮
     nextMonth: function nextMonth(panel) {
       this.changePanelDate(panel, 'Month', 1);
     },
+
+    // 日期选择后
     changePanelDate: function changePanelDate(panel, type, increment) {
       var updateOtherPanel = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : true;
 
@@ -310,12 +328,18 @@ export default {
         this[_otherPanel + 'PanelDate'] = otherCurrent;
       }
     },
+
+    // 展示年份选择
     showYearPicker: function showYearPicker(panel) {
       this[panel + 'PickerTable'] = 'year-table';
     },
+
+    // 展示月份选择
     showMonthPicker: function showMonthPicker(panel) {
       this[panel + 'PickerTable'] = 'month-table';
     },
+
+    // 返回上一级选择状态
     handlePreSelection: function handlePreSelection(panel, value) {
       this[panel + 'PanelDate'] = value;
       var currentViewType = this[panel + 'PickerTable'];
@@ -331,6 +355,8 @@ export default {
         this.changePanelDate(otherPanel, 'Month', 1, false);
       }
     },
+
+    // 设置默认时间
     setDefaultTime: function setDefaultTime(date, oldDate, defaultTime) {
       var time = (defaultTime || '0:0:0').split(':');
       var hours = oldDate ? oldDate.getHours() : time[0];
@@ -339,6 +365,8 @@ export default {
       date.setHours(hours, mins, sec);
       return date;
     },
+
+    // 选择区间数值后
     handleRangePick: function handleRangePick(val, type) {
       var _this2 = this;
 
@@ -354,13 +382,6 @@ export default {
           var dates = [minDate, maxDate].map(function (date, i) {
             return _this2.setDefaultTime(date, _this2.value[i], _this2.defaultTime[i]);
           });
-
-          // 暂时不处理，待确定交互
-          // if (dates[0].getTime() > dates[1].getTime()) {
-          //   // 会出现同一天 minDate > maxDate 情况，忽略第二次的值，要求用户重新选择
-          //   return;
-          // }
-
           this.dates = dates;
           this.rangeState = {
             from: minDate,
@@ -378,6 +399,8 @@ export default {
       }
       this.$emit('pick-range', this.rangeState);
     },
+
+    // 改变区间值
     handleChangeRange: function handleChangeRange(val) {
       if (!this.rangeState.selecting) {
         if (this.isWeek) {
@@ -388,6 +411,8 @@ export default {
       }
       this.rangeState.to = val;
     },
+
+    // 起始时间变化
     hanldeLeftTimeChange: function hanldeLeftTimeChange(time) {
       var left = this.dates[0];
       var hours = time ? time.getHours() : 0;
@@ -405,6 +430,8 @@ export default {
       }
       this.handleConfirm(false);
     },
+
+    // 结束时间变化
     hanldeRightTimeChange: function hanldeRightTimeChange(time) {
       var right = this.dates[1];
 
@@ -418,6 +445,8 @@ export default {
       this.dates[1] = d;
       this.handleConfirm(false);
     },
+
+    // 选择的日期绑定到输入框
     formatDateToInput: function formatDateToInput(value, type) {
       var format = this.format;
       if (format) {

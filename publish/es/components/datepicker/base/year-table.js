@@ -21,7 +21,6 @@ export default {
   staticRenderFns: __vue_staticRenderFns__,
 
   mixins: [mixin],
-
   props: {/* in mixin */},
   inject: {
     config: {

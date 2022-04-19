@@ -3,7 +3,6 @@ import _extends from 'babel-runtime/helpers/extends';
 import { clearHours, isInRange } from '@wish/wt-vue/es/utils/date';
 import Locale from '@wish/wt-vue/es/mixins/locale';
 import jsCalendar from '@wish/wt-vue/es/js-calendar';
-
 import mixin from './mixin';
 import { CONFIG_PROVIDER, getPrefixCls } from '@wish/wt-vue/es/utils/config';
 
@@ -29,7 +28,6 @@ export default {
   staticRenderFns: __vue_staticRenderFns__,
 
   mixins: [Locale, mixin],
-
   props: {
     /* more props in mixin */
     showWeekNumbers: {
@@ -67,6 +65,8 @@ export default {
       var weekDays = translatedDays.splice(weekStart, 7 - weekStart).concat(translatedDays.splice(0, weekStart));
       return this.showWeekNumbers ? [''].concat(weekDays) : weekDays;
     },
+
+    // 单元格渲染
     cells: function cells() {
       var isWeek = this.isWeek;
 

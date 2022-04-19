@@ -40,22 +40,27 @@ export default {
   name: 'TimeSpinner',
   mixins: [Options],
   props: {
+    // 小时
     hours: {
       type: [Number, String],
       default: NaN
     },
+    // 分钟
     minutes: {
       type: [Number, String],
       default: NaN
     },
+    // 秒
     seconds: {
       type: [Number, String],
       default: NaN
     },
+    // 是否显示秒
     showSeconds: {
       type: Boolean,
       default: true
     },
+    // 是否显示分钟
     showMinutes: {
       type: Boolean,
       default: true
@@ -227,6 +232,8 @@ export default {
 
       return [prefixCls + '-cell', (_ref2 = {}, _defineProperty(_ref2, prefixCls + '-cell-selected', cell.selected), _defineProperty(_ref2, prefixCls + '-cell-focused', cell.focused), _defineProperty(_ref2, prefixCls + '-cell-disabled', cell.disabled), _ref2)];
     },
+
+    // 选择值后重新计算
     chooseValue: function chooseValue(values) {
       var _this4 = this;
 
@@ -239,6 +246,8 @@ export default {
         this.emitChange(changes);
       }
     },
+
+    // 点击对应时分秒
     handleClick: function handleClick(type, cell) {
       if (cell.disabled) return;
       var data = {};
@@ -264,6 +273,8 @@ export default {
       this.$emit('change', changes);
       this.$emit('pick-click');
     },
+
+    // 滚动切换时分秒
     scroll: function scroll(type, index) {
       var from = this.$refs[type].scrollTop;
       var to = 30 * this.getScrollIndex(type, index);

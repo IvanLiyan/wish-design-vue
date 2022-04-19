@@ -34,7 +34,7 @@ var __vue_render__ = function __vue_render__() {
         return _vm.changeMonth(+1);
       } } }, [_c('Icon', { attrs: { "name": "chevron-right" } })], 1) : _vm._e()], 1), _vm._v(" "), _c('div', { class: [_vm.panelPrefix + '-content'] }, [_vm.currentView !== 'time' ? _c(_vm.pickerTable, { ref: "pickerTable", tag: "component", attrs: { "table-date": _vm.panelDate, "show-week-numbers": _vm.isWeek || _vm.showWeekNumbers, "is-week": _vm.isWeek, "value": _vm.dates, "selection-mode": _vm.isWeek ? 'week' : _vm.selectionMode, "disabled-date": _vm.disabledDate, "focused-date": _vm.focusedDate, "range-state": _vm.rangeState, "week-start": _vm.weekStart }, on: { "pick": _vm.panelPickerHandlers, "change-range": _vm.handleChangeRange }, scopedSlots: _vm._u([{ key: "cell", fn: function fn(scope) {
         return [_vm._t("cell", null, { "cell": scope.cell })];
-      } }], null, true) }) : _vm._e()], 1), _vm._v(" "), _vm.confirm ? _c('Confirm', { attrs: { "show-time": _vm.showTime, "show-btn-now": _vm.showBtnNow }, on: { "click-now": _vm.handlePickClickNow, "confirm": _vm.handlePickSuccess } }, [_vm.$slots.confirm ? _c('template', { slot: "default" }, [_vm._t("confirm")], 2) : _vm._e()], 2) : _vm._e()], 1)]);
+      } }], null, true) }) : _vm._e()], 1)])]);
 };
 var __vue_staticRenderFns__ = [];
 
@@ -165,15 +165,20 @@ export default {
     }
   },
   methods: {
+    // 日期变换
     handleValueChange: function handleValueChange(newVal) {
       this.dates = newVal;
       this.panelDate = this.startDate || (this.multiple ? this.dates[this.dates.length - 1] : this.dates[0]) || new Date();
       this.rangeState = {};
     },
+
+    // 重置
     reset: function reset() {
       this.currentView = this.selectionMode;
       this.pickerTable = this.getTableType(this.currentView);
     },
+
+    // 切换年份
     changeYear: function changeYear(dir) {
       if (this.selectionMode === 'year' || this.pickerTable === 'year-table') {
         this.panelDate = new Date(this.panelDate.getFullYear() + dir * 10, 0, 1);
@@ -181,16 +186,24 @@ export default {
         this.panelDate = siblingMonth(this.panelDate, dir * 12);
       }
     },
+
+    // 获取面板类型
     getTableType: function getTableType(currentView) {
       return currentView.match(/^time/) ? 'time-picker' : currentView + '-table';
     },
+
+    // 切换月份
     changeMonth: function changeMonth(dir) {
       this.panelDate = siblingMonth(this.panelDate, dir);
     },
+
+    // 年份月份选择切换
     handlePreSelection: function handlePreSelection(value) {
       this.panelDate = value;
       if (this.pickerTable === 'year-table') this.pickerTable = 'month-table';else this.pickerTable = this.getTableType(this.currentView);
     },
+
+    // 选择
     handlePick: function handlePick(value, type) {
       var selectionMode = this.selectionMode,
           panelDate = this.panelDate,
@@ -221,6 +234,8 @@ export default {
       this.dates = [value];
       this.$emit('pick', value, false);
     },
+
+    // 更改时间
     hanldeTimeChange: function hanldeTimeChange(time) {
       var hours = time ? time.getHours() : 0;
       var mins = time ? time.getMinutes() : 0;
@@ -242,6 +257,8 @@ export default {
 
       return formatter(value, format);
     },
+
+    // 区间切换
     handleChangeRange: function handleChangeRange(val) {
       if (val && this.visible) {
         this.rangeState = {

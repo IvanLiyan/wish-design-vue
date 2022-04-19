@@ -43,6 +43,8 @@ export default {
 
       return ['' + prefixCls, prefixCls + '-month'];
     },
+
+    // 单元格渲染
     cells: function cells() {
       var cells = [];
       var cellTmpl = {

@@ -2172,7 +2172,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _picker_vue_vue_type_template_id_c3d07414___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(239);
+/* harmony import */ var _picker_vue_vue_type_template_id_5835b4ff___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(239);
 /* harmony import */ var _picker_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(241);
 /* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(88);
 
@@ -2184,8 +2184,8 @@ __webpack_require__.r(__webpack_exports__);
 
 var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
   _picker_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _picker_vue_vue_type_template_id_c3d07414___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _picker_vue_vue_type_template_id_c3d07414___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _picker_vue_vue_type_template_id_5835b4ff___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _picker_vue_vue_type_template_id_5835b4ff___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
   null,
@@ -2201,10 +2201,10 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_picker_vue_vue_type_template_id_c3d07414___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(240);
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_picker_vue_vue_type_template_id_c3d07414___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_picker_vue_vue_type_template_id_5835b4ff___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(240);
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_picker_vue_vue_type_template_id_5835b4ff___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_picker_vue_vue_type_template_id_c3d07414___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_picker_vue_vue_type_template_id_5835b4ff___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
@@ -2396,10 +2396,13 @@ function arrayEql(a, b) {
     PickerInput: _input_js__WEBPACK_IMPORTED_MODULE_11__["default"]
   },
   props: {
+    // 宽度
     width: Number,
+    // 日期格式
     format: {
       type: String
     },
+    // 数值格式
     valueFormat: {
       // 如果没有配置则默认按照当前 value 属性推断
       type: String,
@@ -2411,103 +2414,102 @@ function arrayEql(a, b) {
         return true;
       }
     },
+    // 是否只读
     readonly: {
       type: Boolean,
       default: false
     },
+    // 是否可编辑
     editable: {
       type: Boolean,
       default: true
     },
+    // 是否禁用
     disabled: {
       type: Boolean,
       default: false
     },
+    // 是否可清除
     clearable: {
       type: Boolean,
       default: false
     },
-    confirm: {
-      type: Boolean,
-      default: false
-    },
+    // 是否默认打开面板
     open: {
       type: Boolean,
       default: null
     },
+    // 是否可多选
     multiple: {
       type: Boolean,
       default: false
     },
+    // 时间控件可选项
     timePickerOptions: {
       default: function _default() {
         return {};
       },
       type: Object
     },
+    // 是否分割面板
     splitPanels: {
       type: Boolean,
       default: true
     },
-    showWeekNumbers: {
-      type: Boolean,
-      default: false
-    },
+    // 开始日期
     startDate: {
       type: Date
     },
+    // 控件尺寸
     size: {
       type: String
     },
+    // 输入框占位符
     placeholder: {
       type: String
     },
+    // 面板弹出方向
     placement: {
       type: String
     },
+    // 输入框的name属性
     name: {
       type: String
     },
+    // 选择器上方的标签
     label: {
       type: String
     },
-    elementId: {
-      type: String
-    },
-    steps: {
-      type: Array,
-      default: function _default() {
-        return [];
-      }
-    },
+    // 控件值
     value: {
       type: [Date, String, Array, Number]
     },
+    // 快捷选项
     options: {
       type: Object,
       default: function _default() {
         return {};
       }
     },
-    icon: String,
-    appendToContainer: {
-      type: Boolean,
-      default: true
-    },
-    getPopupContainer: Function,
+    // appendToContainer: {
+    //   type: Boolean,
+    //   default: true,
+    // },
+    // getPopupContainer: Function,
     invalid: Boolean,
     loading: Boolean,
     genre: String,
-    showBtnNow: {
-      type: Boolean,
-      default: true
-    },
+    // showBtnNow: {
+    //   type: Boolean,
+    //   default: true,
+    // },
     popperClass: String,
     defaultTime: {
       type: [Array, String]
     },
     popperOptions: Object,
     formatter: Function,
+    // 周起始
     weekStart: {
       type: Number,
       default: 1,
@@ -2515,6 +2517,7 @@ function arrayEql(a, b) {
         return v >= 0 && v <= 6;
       }
     },
+    // 是否展示此刻按钮
     showNow: {
       type: Boolean,
       default: false
@@ -2543,8 +2546,8 @@ function arrayEql(a, b) {
     var emptyArray = isRange ? [null, null] : [null];
     var initialValue = isEmptyArray((isRange ? value : [value]) || []) ? emptyArray : this.parseDate(value);
     return {
-      internalValue: initialValue,
-      selectionMode: this.onSelectionModeChange(this.type),
+      internalValue: initialValue, // 初始化时间
+      selectionMode: this.onSelectionModeChange(this.type), // 选择模式
       isFocused: false,
       focusedDate: initialValue[0] || this.startDate || new Date(),
       selecting: false, // 目前仅用在 timerange 中，表示是否在选择中
@@ -2659,6 +2662,7 @@ function arrayEql(a, b) {
   },
 
   methods: {
+    // 日期格式填入输入框
     formatToInput: function formatToInput(date) {
       var _this2 = this;
 
@@ -2670,6 +2674,8 @@ function arrayEql(a, b) {
       }
       return this.formatValue(date);
     },
+
+    // 日期值格式
     formatValue: function formatValue(date) {
       if (this.valueFormat === 'timestamp') {
         return date ? date.getTime() : undefined;
@@ -2679,6 +2685,8 @@ function arrayEql(a, b) {
         return date || undefined;
       }
     },
+
+    // 面板打开与关闭
     handleOpenChange: function handleOpenChange(v) {
       if (this.readonly || this.disabled) {
         return;
@@ -2691,12 +2699,18 @@ function arrayEql(a, b) {
         this.$emit('blur');
       }
     },
+
+    // 输入框聚焦
     handleInputFocus: function handleInputFocus() {
       this.isFocused = true;
     },
+
+    // 输入框失焦
     handleInputBlur: function handleInputBlur() {
       this.isFocused = false;
     },
+
+    // 输入框输入
     handleInputEnter: function handleInputEnter() {
       if (this.internalValue.length !== 0 && this.internalValue[0] !== null) {
         this.handleOpenChange(true);
@@ -2706,6 +2720,8 @@ function arrayEql(a, b) {
         }, 1250);
       }
     },
+
+    // 选择模式切换 年/月/日
     onSelectionModeChange: function onSelectionModeChange(type) {
       if (this.readonly || this.disabled) {
         return;
@@ -2719,9 +2735,13 @@ function arrayEql(a, b) {
       this.$nextTick(this.updatePopper);
       return this.selectionMode;
     },
+
+    // 重置
     reset: function reset() {
       this.$refs.pickerPanel && this.$refs.pickerPanel.reset && this.$refs.pickerPanel.reset();
     },
+
+    // 输入框输入
     handleInputChange: function handleInputChange(newValue) {
       this.inputValue = newValue;
       // const isArrayValue = this.type.indexOf('range') > -1 || this.multiple;
@@ -2743,6 +2763,8 @@ function arrayEql(a, b) {
         });
       }
     },
+
+    // 点击“此刻”
     handleClickNow: function handleClickNow() {
       var dates = this.multiple ? new Date() : this.internalValue.map(function () {
         return new Date();
@@ -2752,12 +2774,16 @@ function arrayEql(a, b) {
       this.handleOpenChange(false);
       // this.reset();
     },
+
+    // 清空输入框
     handleClear: function handleClear() {
       this.$emit('clear');
       this.internalValue = this.internalValue.map(function () {
         return '';
       });
     },
+
+    // 选择数值后
     hanldePickRange: function hanldePickRange(rangeState) {
       this.$emit('pick-range', rangeState);
     },
@@ -2816,6 +2842,8 @@ function arrayEql(a, b) {
       }
       return isRange || this.multiple ? val || [] : [val];
     },
+
+    // 日期格式
     formatDate: function formatDate(value) {
       var format = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : this.format;
 
@@ -2830,6 +2858,8 @@ function arrayEql(a, b) {
         return _formatter(value, format || defaultFormat, { weekStart: this.weekStart });
       }
     },
+
+    // 选择日期
     onPick: function onPick(dates) {
       var visible = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
 
@@ -2869,6 +2899,8 @@ function arrayEql(a, b) {
         }
       }
     },
+
+    // 选择成功
     onPickSuccess: function onPickSuccess() {
       this.$emit('confirm');
       this.handleOpenChange(false);
@@ -2878,20 +2910,28 @@ function arrayEql(a, b) {
       this.selecting = true;
       this.internalValue = value;
     },
+
+    // 取消选择
     handleCancel: function handleCancel() {
       this.internalValue = this.parseDate(this.value);
       this.handleOpenChange(false);
     },
+
+    // 聚焦
     focus: function focus() {
       if (this.editable) {
         this.$refs.input.focus();
       }
       this.handleOpenChange(true);
     },
+
+    // 失焦
     blur: function blur() {
       this.$refs.input.blur();
       this.handleOpenChange(false);
     },
+
+    // 更新弹出层
     updatePopper: function updatePopper() {
       var _this3 = this;
 
@@ -2905,6 +2945,8 @@ function arrayEql(a, b) {
         }
       });
     },
+
+    // 获取选择类型
     getPickerType: function getPickerType(pickerType) {
       if (pickerType === 'calendar') {
         this.pickerType = 'calendar';
@@ -3174,7 +3216,7 @@ var PICKER_TYPE_ENUM = {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _date_vue_vue_type_template_id_6aa02952___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(258);
+/* harmony import */ var _date_vue_vue_type_template_id_0dd5d09f___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(258);
 /* harmony import */ var _date_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(260);
 /* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(88);
 
@@ -3186,8 +3228,8 @@ __webpack_require__.r(__webpack_exports__);
 
 var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
   _date_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _date_vue_vue_type_template_id_6aa02952___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _date_vue_vue_type_template_id_6aa02952___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _date_vue_vue_type_template_id_0dd5d09f___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _date_vue_vue_type_template_id_0dd5d09f___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
   null,
@@ -3203,10 +3245,10 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_date_vue_vue_type_template_id_6aa02952___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(259);
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_date_vue_vue_type_template_id_6aa02952___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_date_vue_vue_type_template_id_0dd5d09f___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(259);
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_date_vue_vue_type_template_id_0dd5d09f___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_date_vue_vue_type_template_id_6aa02952___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_date_vue_vue_type_template_id_0dd5d09f___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
@@ -3218,7 +3260,7 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{class:_vm.classes,on:{"mousedown":function($event){$event.preventDefault();}}},[(_vm.shortcuts.length || _vm.$slots.shortcuts)?_c('div',{class:[_vm.panelPrefix + '-sidebar']},[_vm._t("shortcuts",function(){return _vm._l((_vm.shortcuts),function(shortcut){return _c('div',{key:shortcut.text,class:[_vm.panelPrefix + '-shortcut'],on:{"click":function($event){return _vm.handleShortcutClick(shortcut)}}},[_vm._v(_vm._s(shortcut.text))])})})],2):_vm._e(),_c('div',{class:[_vm.panelPrefix + '-body']},[(_vm.showTime)?_c('div',{class:(_vm.prefix + "-time-header")},[_c('picker-input',{attrs:{"current-value":_vm.visibleDate,"size":"small"}}),_c('time-picker',_vm._b({ref:"timePicker",attrs:{"size":"small","icon":"","value":_vm.visibleTime,"open":_vm.openTime,"placement":"bottom-end","time-disabled":_vm.timeDisabled,"append-to-container":false},on:{"update:open":function($event){_vm.openTime=$event},"input":_vm.hanldeTimeChange}},'time-picker',_vm.timePickerOptions,false))],1):_vm._e(),_c('div',{directives:[{name:"show",rawName:"v-show",value:(_vm.currentView !== 'time'),expression:"currentView !== 'time'"}],class:[_vm.prefix + '-header']},[_c('span',{class:_vm.iconBtnCls('prev', '-double'),on:{"click":function($event){return _vm.changeYear(-1)}}},[_c('Icon',{attrs:{"name":"chevrons-left"}})],1),(_vm.pickerTable === 'date-table')?_c('span',{directives:[{name:"show",rawName:"v-show",value:(_vm.currentView === 'date'),expression:"currentView === 'date'"}],class:_vm.iconBtnCls('prev'),on:{"click":function($event){return _vm.changeMonth(-1)}}},[_c('Icon',{attrs:{"name":"chevron-left"}})],1):_vm._e(),_c('date-panel-label',{attrs:{"date-panel-label":_vm.datePanelLabel,"current-view":_vm.pickerTable.split('-').shift(),"date-prefix-cls":_vm.prefix}}),_c('span',{class:_vm.iconBtnCls('next', '-double'),on:{"click":function($event){return _vm.changeYear(+1)}}},[_c('Icon',{attrs:{"name":"chevrons-right"}})],1),(_vm.pickerTable === 'date-table')?_c('span',{directives:[{name:"show",rawName:"v-show",value:(_vm.currentView === 'date'),expression:"currentView === 'date'"}],class:_vm.iconBtnCls('next'),on:{"click":function($event){return _vm.changeMonth(+1)}}},[_c('Icon',{attrs:{"name":"chevron-right"}})],1):_vm._e()],1),_c('div',{class:[_vm.panelPrefix + '-content']},[(_vm.currentView !== 'time')?_c(_vm.pickerTable,{ref:"pickerTable",tag:"component",attrs:{"table-date":_vm.panelDate,"show-week-numbers":_vm.isWeek || _vm.showWeekNumbers,"is-week":_vm.isWeek,"value":_vm.dates,"selection-mode":_vm.isWeek ? 'week' : _vm.selectionMode,"disabled-date":_vm.disabledDate,"focused-date":_vm.focusedDate,"range-state":_vm.rangeState,"week-start":_vm.weekStart},on:{"pick":_vm.panelPickerHandlers,"change-range":_vm.handleChangeRange},scopedSlots:_vm._u([{key:"cell",fn:function(scope){return [_vm._t("cell",null,{"cell":scope.cell})]}}],null,true)}):_vm._e()],1),(_vm.confirm)?_c('Confirm',{attrs:{"show-time":_vm.showTime,"show-btn-now":_vm.showBtnNow},on:{"click-now":_vm.handlePickClickNow,"confirm":_vm.handlePickSuccess}},[(_vm.$slots.confirm)?_c('template',{slot:"default"},[_vm._t("confirm")],2):_vm._e()],2):_vm._e()],1)])}
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{class:_vm.classes,on:{"mousedown":function($event){$event.preventDefault();}}},[(_vm.shortcuts.length || _vm.$slots.shortcuts)?_c('div',{class:[_vm.panelPrefix + '-sidebar']},[_vm._t("shortcuts",function(){return _vm._l((_vm.shortcuts),function(shortcut){return _c('div',{key:shortcut.text,class:[_vm.panelPrefix + '-shortcut'],on:{"click":function($event){return _vm.handleShortcutClick(shortcut)}}},[_vm._v(_vm._s(shortcut.text))])})})],2):_vm._e(),_c('div',{class:[_vm.panelPrefix + '-body']},[(_vm.showTime)?_c('div',{class:(_vm.prefix + "-time-header")},[_c('picker-input',{attrs:{"current-value":_vm.visibleDate,"size":"small"}}),_c('time-picker',_vm._b({ref:"timePicker",attrs:{"size":"small","icon":"","value":_vm.visibleTime,"open":_vm.openTime,"placement":"bottom-end","time-disabled":_vm.timeDisabled,"append-to-container":false},on:{"update:open":function($event){_vm.openTime=$event},"input":_vm.hanldeTimeChange}},'time-picker',_vm.timePickerOptions,false))],1):_vm._e(),_c('div',{directives:[{name:"show",rawName:"v-show",value:(_vm.currentView !== 'time'),expression:"currentView !== 'time'"}],class:[_vm.prefix + '-header']},[_c('span',{class:_vm.iconBtnCls('prev', '-double'),on:{"click":function($event){return _vm.changeYear(-1)}}},[_c('Icon',{attrs:{"name":"chevrons-left"}})],1),(_vm.pickerTable === 'date-table')?_c('span',{directives:[{name:"show",rawName:"v-show",value:(_vm.currentView === 'date'),expression:"currentView === 'date'"}],class:_vm.iconBtnCls('prev'),on:{"click":function($event){return _vm.changeMonth(-1)}}},[_c('Icon',{attrs:{"name":"chevron-left"}})],1):_vm._e(),_c('date-panel-label',{attrs:{"date-panel-label":_vm.datePanelLabel,"current-view":_vm.pickerTable.split('-').shift(),"date-prefix-cls":_vm.prefix}}),_c('span',{class:_vm.iconBtnCls('next', '-double'),on:{"click":function($event){return _vm.changeYear(+1)}}},[_c('Icon',{attrs:{"name":"chevrons-right"}})],1),(_vm.pickerTable === 'date-table')?_c('span',{directives:[{name:"show",rawName:"v-show",value:(_vm.currentView === 'date'),expression:"currentView === 'date'"}],class:_vm.iconBtnCls('next'),on:{"click":function($event){return _vm.changeMonth(+1)}}},[_c('Icon',{attrs:{"name":"chevron-right"}})],1):_vm._e()],1),_c('div',{class:[_vm.panelPrefix + '-content']},[(_vm.currentView !== 'time')?_c(_vm.pickerTable,{ref:"pickerTable",tag:"component",attrs:{"table-date":_vm.panelDate,"show-week-numbers":_vm.isWeek || _vm.showWeekNumbers,"is-week":_vm.isWeek,"value":_vm.dates,"selection-mode":_vm.isWeek ? 'week' : _vm.selectionMode,"disabled-date":_vm.disabledDate,"focused-date":_vm.focusedDate,"range-state":_vm.rangeState,"week-start":_vm.weekStart},on:{"pick":_vm.panelPickerHandlers,"change-range":_vm.handleChangeRange},scopedSlots:_vm._u([{key:"cell",fn:function(scope){return [_vm._t("cell",null,{"cell":scope.cell})]}}],null,true)}):_vm._e()],1)])])}
 var staticRenderFns = []
 
 
@@ -3488,15 +3530,20 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   methods: {
+    // 日期变换
     handleValueChange: function handleValueChange(newVal) {
       this.dates = newVal;
       this.panelDate = this.startDate || (this.multiple ? this.dates[this.dates.length - 1] : this.dates[0]) || new Date();
       this.rangeState = {};
     },
+
+    // 重置
     reset: function reset() {
       this.currentView = this.selectionMode;
       this.pickerTable = this.getTableType(this.currentView);
     },
+
+    // 切换年份
     changeYear: function changeYear(dir) {
       if (this.selectionMode === 'year' || this.pickerTable === 'year-table') {
         this.panelDate = new Date(this.panelDate.getFullYear() + dir * 10, 0, 1);
@@ -3504,16 +3551,24 @@ __webpack_require__.r(__webpack_exports__);
         this.panelDate = Object(_utils_date__WEBPACK_IMPORTED_MODULE_12__["siblingMonth"])(this.panelDate, dir * 12);
       }
     },
+
+    // 获取面板类型
     getTableType: function getTableType(currentView) {
       return currentView.match(/^time/) ? 'time-picker' : currentView + '-table';
     },
+
+    // 切换月份
     changeMonth: function changeMonth(dir) {
       this.panelDate = Object(_utils_date__WEBPACK_IMPORTED_MODULE_12__["siblingMonth"])(this.panelDate, dir);
     },
+
+    // 年份月份选择切换
     handlePreSelection: function handlePreSelection(value) {
       this.panelDate = value;
       if (this.pickerTable === 'year-table') this.pickerTable = 'month-table';else this.pickerTable = this.getTableType(this.currentView);
     },
+
+    // 选择
     handlePick: function handlePick(value, type) {
       var selectionMode = this.selectionMode,
           panelDate = this.panelDate,
@@ -3544,6 +3599,8 @@ __webpack_require__.r(__webpack_exports__);
       this.dates = [value];
       this.$emit('pick', value, false);
     },
+
+    // 更改时间
     hanldeTimeChange: function hanldeTimeChange(time) {
       var hours = time ? time.getHours() : 0;
       var mins = time ? time.getMinutes() : 0;
@@ -3565,6 +3622,8 @@ __webpack_require__.r(__webpack_exports__);
 
       return formatter(value, format);
     },
+
+    // 区间切换
     handleChangeRange: function handleChangeRange(val) {
       if (val && this.visible) {
         this.rangeState = {
@@ -3582,7 +3641,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _date_table_vue_vue_type_template_id_820c87a0___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(263);
+/* harmony import */ var _date_table_vue_vue_type_template_id_7b413bb3___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(263);
 /* harmony import */ var _date_table_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(265);
 /* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(88);
 
@@ -3594,8 +3653,8 @@ __webpack_require__.r(__webpack_exports__);
 
 var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
   _date_table_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _date_table_vue_vue_type_template_id_820c87a0___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _date_table_vue_vue_type_template_id_820c87a0___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _date_table_vue_vue_type_template_id_7b413bb3___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _date_table_vue_vue_type_template_id_7b413bb3___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
   null,
@@ -3611,10 +3670,10 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_date_table_vue_vue_type_template_id_820c87a0___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(264);
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_date_table_vue_vue_type_template_id_820c87a0___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_date_table_vue_vue_type_template_id_7b413bb3___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(264);
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_date_table_vue_vue_type_template_id_7b413bb3___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_date_table_vue_vue_type_template_id_820c87a0___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_date_table_vue_vue_type_template_id_7b413bb3___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
@@ -3692,10 +3751,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
 /* harmony default export */ __webpack_exports__["default"] = ({
   mixins: [_mixins_locale__WEBPACK_IMPORTED_MODULE_3___default.a, _mixin__WEBPACK_IMPORTED_MODULE_5__["default"]],
-
   props: {
     /* more props in mixin */
     showWeekNumbers: {
@@ -3733,6 +3790,8 @@ __webpack_require__.r(__webpack_exports__);
       var weekDays = translatedDays.splice(weekStart, 7 - weekStart).concat(translatedDays.splice(0, weekStart));
       return this.showWeekNumbers ? [''].concat(weekDays) : weekDays;
     },
+
+    // 单元格渲染
     cells: function cells() {
       var isWeek = this.isWeek;
 
@@ -4401,7 +4460,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _year_table_vue_vue_type_template_id_7e4eb1c5___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(281);
+/* harmony import */ var _year_table_vue_vue_type_template_id_6f1ba40a___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(281);
 /* harmony import */ var _year_table_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(283);
 /* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(88);
 
@@ -4413,8 +4472,8 @@ __webpack_require__.r(__webpack_exports__);
 
 var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
   _year_table_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _year_table_vue_vue_type_template_id_7e4eb1c5___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _year_table_vue_vue_type_template_id_7e4eb1c5___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _year_table_vue_vue_type_template_id_6f1ba40a___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _year_table_vue_vue_type_template_id_6f1ba40a___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
   null,
@@ -4430,10 +4489,10 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_year_table_vue_vue_type_template_id_7e4eb1c5___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(282);
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_year_table_vue_vue_type_template_id_7e4eb1c5___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_year_table_vue_vue_type_template_id_6f1ba40a___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(282);
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_year_table_vue_vue_type_template_id_6f1ba40a___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_year_table_vue_vue_type_template_id_7e4eb1c5___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_year_table_vue_vue_type_template_id_6f1ba40a___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
@@ -4494,7 +4553,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   mixins: [_mixin__WEBPACK_IMPORTED_MODULE_3__["default"]],
-
   props: {/* in mixin */},
   inject: {
     config: {
@@ -4576,7 +4634,7 @@ module.exports = require("@wish/wt-vue/lib/utils/util");
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _month_table_vue_vue_type_template_id_652322f3___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(287);
+/* harmony import */ var _month_table_vue_vue_type_template_id_3ead45da___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(287);
 /* harmony import */ var _month_table_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(289);
 /* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(88);
 
@@ -4588,8 +4646,8 @@ __webpack_require__.r(__webpack_exports__);
 
 var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
   _month_table_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _month_table_vue_vue_type_template_id_652322f3___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _month_table_vue_vue_type_template_id_652322f3___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _month_table_vue_vue_type_template_id_3ead45da___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _month_table_vue_vue_type_template_id_3ead45da___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
   null,
@@ -4605,10 +4663,10 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_month_table_vue_vue_type_template_id_652322f3___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(288);
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_month_table_vue_vue_type_template_id_652322f3___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_month_table_vue_vue_type_template_id_3ead45da___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(288);
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_month_table_vue_vue_type_template_id_3ead45da___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_month_table_vue_vue_type_template_id_652322f3___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_month_table_vue_vue_type_template_id_3ead45da___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
@@ -4694,6 +4752,8 @@ __webpack_require__.r(__webpack_exports__);
 
       return ['' + prefixCls, prefixCls + '-month'];
     },
+
+    // 单元格渲染
     cells: function cells() {
       var cells = [];
       var cellTmpl = {
@@ -4755,7 +4815,7 @@ module.exports = require("@wish/wt-vue/lib/timepicker");
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _confirm_vue_vue_type_template_id_5387677f___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(293);
+/* harmony import */ var _confirm_vue_vue_type_template_id_52a943cf___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(293);
 /* harmony import */ var _confirm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(295);
 /* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(88);
 
@@ -4767,8 +4827,8 @@ __webpack_require__.r(__webpack_exports__);
 
 var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
   _confirm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _confirm_vue_vue_type_template_id_5387677f___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _confirm_vue_vue_type_template_id_5387677f___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _confirm_vue_vue_type_template_id_52a943cf___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _confirm_vue_vue_type_template_id_52a943cf___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
   null,
@@ -4784,10 +4844,10 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_confirm_vue_vue_type_template_id_5387677f___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(294);
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_confirm_vue_vue_type_template_id_5387677f___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_confirm_vue_vue_type_template_id_52a943cf___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(294);
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_confirm_vue_vue_type_template_id_52a943cf___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_confirm_vue_vue_type_template_id_5387677f___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_confirm_vue_vue_type_template_id_52a943cf___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
@@ -4799,7 +4859,7 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{class:[_vm.prefix + '-confirm']},[_vm._t("default",function(){return [(_vm.showBtnNow)?_c('wt-button',{attrs:{"size":"small","type":"text-primary"},on:{"click":_vm.handleClickNow}},[_vm._v(" "+_vm._s(_vm.labels.now)+" ")]):_vm._e(),_c('wt-button',{attrs:{"size":"small","type":"primary"},on:{"click":_vm.handleSuccess}},[_vm._v(" "+_vm._s(_vm.labels.ok)+" ")])]})],2)}
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{class:[_vm.prefix + '-confirm']},[_vm._t("default",function(){return [_c('wt-button',{attrs:{"size":"small","type":"primary"},on:{"click":_vm.handleSuccess}},[_vm._v(" "+_vm._s(_vm.labels.ok)+" ")])]})],2)}
 var staticRenderFns = []
 
 
@@ -4825,10 +4885,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _mixins_locale__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_mixins_locale__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _utils_config__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(86);
 /* harmony import */ var _utils_config__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_utils_config__WEBPACK_IMPORTED_MODULE_2__);
-//
-//
-//
-//
 //
 //
 //
@@ -4880,6 +4936,8 @@ __webpack_require__.r(__webpack_exports__);
     timeClasses: function timeClasses() {
       return this.prefix + '-confirm-time';
     },
+
+    // 渲染按钮文字
     labels: function labels() {
       var _this = this;
 
@@ -4892,9 +4950,7 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   methods: {
-    handleClickNow: function handleClickNow() {
-      this.$emit('click-now');
-    },
+    // 确认
     handleSuccess: function handleSuccess() {
       this.$emit('confirm');
     },
@@ -4920,7 +4976,7 @@ module.exports = require("@wish/wt-vue/lib/button");
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _date_panel_label_vue_vue_type_template_id_1545bb5a___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(299);
+/* harmony import */ var _date_panel_label_vue_vue_type_template_id_1ba3f668___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(299);
 /* harmony import */ var _date_panel_label_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(301);
 /* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(88);
 
@@ -4932,8 +4988,8 @@ __webpack_require__.r(__webpack_exports__);
 
 var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
   _date_panel_label_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _date_panel_label_vue_vue_type_template_id_1545bb5a___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _date_panel_label_vue_vue_type_template_id_1545bb5a___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _date_panel_label_vue_vue_type_template_id_1ba3f668___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _date_panel_label_vue_vue_type_template_id_1ba3f668___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
   null,
@@ -4949,10 +5005,10 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_date_panel_label_vue_vue_type_template_id_1545bb5a___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(300);
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_date_panel_label_vue_vue_type_template_id_1545bb5a___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_date_panel_label_vue_vue_type_template_id_1ba3f668___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(300);
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_date_panel_label_vue_vue_type_template_id_1ba3f668___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_date_panel_label_vue_vue_type_template_id_1545bb5a___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_date_panel_label_vue_vue_type_template_id_1ba3f668___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
@@ -5023,6 +5079,7 @@ __webpack_require__.r(__webpack_exports__);
     position: String
   },
   computed: {
+    // 年份区间渲染
     yearRangeValue: function yearRangeValue() {
       if (this.$props.currentView === 'year' && this.$props.position === 'right') {
         var startYear = parseInt(this.$props.datePanelLabel.labels[0].label.substr(0, 3) + '0') + 12;
@@ -5034,8 +5091,7 @@ __webpack_require__.r(__webpack_exports__);
         return _startYear + ' - ' + _endYear;
       };
     }
-  },
-  methods: {}
+  }
 });
 
 /***/ }),
@@ -5211,7 +5267,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _date_range_vue_vue_type_template_id_242dc92c___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(306);
+/* harmony import */ var _date_range_vue_vue_type_template_id_563c84e6___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(306);
 /* harmony import */ var _date_range_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(308);
 /* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(88);
 
@@ -5223,8 +5279,8 @@ __webpack_require__.r(__webpack_exports__);
 
 var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
   _date_range_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _date_range_vue_vue_type_template_id_242dc92c___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _date_range_vue_vue_type_template_id_242dc92c___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _date_range_vue_vue_type_template_id_563c84e6___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _date_range_vue_vue_type_template_id_563c84e6___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
   null,
@@ -5240,10 +5296,10 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_date_range_vue_vue_type_template_id_242dc92c___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(307);
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_date_range_vue_vue_type_template_id_242dc92c___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_date_range_vue_vue_type_template_id_563c84e6___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(307);
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_date_range_vue_vue_type_template_id_563c84e6___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_date_range_vue_vue_type_template_id_242dc92c___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_date_range_vue_vue_type_template_id_563c84e6___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
@@ -5462,6 +5518,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 
 
 
@@ -5499,10 +5560,12 @@ var dateSorter = function dateSorter(a, b) {
   inheritAttrs: false,
   props: {
     // more props in the mixin
+    // 是否分离左右面板
     splitPanels: {
       type: Boolean,
       default: false
     },
+    // 默认区间
     defaultTime: {
       type: Array,
       default: function _default() {
@@ -5522,17 +5585,18 @@ var dateSorter = function dateSorter(a, b) {
 
     return {
       dates: [].concat(babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_1___default()(this.value)),
+      // 日期区间
       rangeState: {
         from: this.value[0],
         to: this.value[1],
         selecting: minDate && !maxDate
       },
-      currentView: this.selectionMode || 'range',
-      leftPickerTable: this.selectionMode + '-table',
-      rightPickerTable: this.selectionMode + '-table',
-      leftPanelDate: leftPanelDate,
-      rightPanelDate: new Date(leftPanelDate.getFullYear(), leftPanelDate.getMonth() + 1, 1),
-
+      currentView: this.selectionMode || 'range', // 当前选择模式
+      leftPickerTable: this.selectionMode + '-table', // 左面板
+      rightPickerTable: this.selectionMode + '-table', // 右面板
+      leftPanelDate: leftPanelDate, // 起始日期
+      rightPanelDate: new Date( // 结束日期
+      leftPanelDate.getFullYear(), leftPanelDate.getMonth() + 1, 1),
       openLeftTime: false,
       openRightTime: false
     };
@@ -5636,6 +5700,7 @@ var dateSorter = function dateSorter(a, b) {
   },
 
   methods: {
+    // 选择后触发
     handleValueChange: function handleValueChange(newVal) {
       var minDate = newVal[0] ? Object(_utils_date__WEBPACK_IMPORTED_MODULE_10__["toDate"])(newVal[0]) : null;
       var maxDate = newVal[1] ? Object(_utils_date__WEBPACK_IMPORTED_MODULE_10__["toDate"])(newVal[1]) : null;
@@ -5650,11 +5715,15 @@ var dateSorter = function dateSorter(a, b) {
       // set panels positioning
       this.setPanelDates(this.startDate || this.dates[0] || new Date());
     },
+
+    // 清空状态 重置数据
     reset: function reset() {
       this.currentView = this.selectionMode;
       this.leftPickerTable = this.currentView + '-table';
       this.rightPickerTable = this.currentView + '-table';
     },
+
+    // 改变选择模式
     setPanelDates: function setPanelDates(leftPanelDate) {
       this.leftPanelDate = leftPanelDate;
       var rightPanelDate = void 0;
@@ -5691,20 +5760,30 @@ var dateSorter = function dateSorter(a, b) {
         })
       };
     },
+
+    // 上一年按钮
     prevYear: function prevYear(panel) {
       var increment = this.currentView === 'year' ? -10 : -1;
       this.changePanelDate(panel, 'FullYear', increment);
     },
+
+    // 下一年按钮
     nextYear: function nextYear(panel) {
       var increment = this.currentView === 'year' ? 10 : 1;
       this.changePanelDate(panel, 'FullYear', increment);
     },
+
+    // 上一月按钮
     prevMonth: function prevMonth(panel) {
       this.changePanelDate(panel, 'Month', -1);
     },
+
+    // 下一月按钮
     nextMonth: function nextMonth(panel) {
       this.changePanelDate(panel, 'Month', 1);
     },
+
+    // 日期选择后
     changePanelDate: function changePanelDate(panel, type, increment) {
       var updateOtherPanel = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : true;
 
@@ -5731,12 +5810,18 @@ var dateSorter = function dateSorter(a, b) {
         this[_otherPanel + 'PanelDate'] = otherCurrent;
       }
     },
+
+    // 展示年份选择
     showYearPicker: function showYearPicker(panel) {
       this[panel + 'PickerTable'] = 'year-table';
     },
+
+    // 展示月份选择
     showMonthPicker: function showMonthPicker(panel) {
       this[panel + 'PickerTable'] = 'month-table';
     },
+
+    // 返回上一级选择状态
     handlePreSelection: function handlePreSelection(panel, value) {
       this[panel + 'PanelDate'] = value;
       var currentViewType = this[panel + 'PickerTable'];
@@ -5752,6 +5837,8 @@ var dateSorter = function dateSorter(a, b) {
         this.changePanelDate(otherPanel, 'Month', 1, false);
       }
     },
+
+    // 设置默认时间
     setDefaultTime: function setDefaultTime(date, oldDate, defaultTime) {
       var time = (defaultTime || '0:0:0').split(':');
       var hours = oldDate ? oldDate.getHours() : time[0];
@@ -5760,6 +5847,8 @@ var dateSorter = function dateSorter(a, b) {
       date.setHours(hours, mins, sec);
       return date;
     },
+
+    // 选择区间数值后
     handleRangePick: function handleRangePick(val, type) {
       var _this2 = this;
 
@@ -5775,13 +5864,6 @@ var dateSorter = function dateSorter(a, b) {
           var dates = [minDate, maxDate].map(function (date, i) {
             return _this2.setDefaultTime(date, _this2.value[i], _this2.defaultTime[i]);
           });
-
-          // 暂时不处理，待确定交互
-          // if (dates[0].getTime() > dates[1].getTime()) {
-          //   // 会出现同一天 minDate > maxDate 情况，忽略第二次的值，要求用户重新选择
-          //   return;
-          // }
-
           this.dates = dates;
           this.rangeState = {
             from: minDate,
@@ -5799,6 +5881,8 @@ var dateSorter = function dateSorter(a, b) {
       }
       this.$emit('pick-range', this.rangeState);
     },
+
+    // 改变区间值
     handleChangeRange: function handleChangeRange(val) {
       if (!this.rangeState.selecting) {
         if (this.isWeek) {
@@ -5809,6 +5893,8 @@ var dateSorter = function dateSorter(a, b) {
       }
       this.rangeState.to = val;
     },
+
+    // 起始时间变化
     hanldeLeftTimeChange: function hanldeLeftTimeChange(time) {
       var left = this.dates[0];
       var hours = time ? time.getHours() : 0;
@@ -5826,6 +5912,8 @@ var dateSorter = function dateSorter(a, b) {
       }
       this.handleConfirm(false);
     },
+
+    // 结束时间变化
     hanldeRightTimeChange: function hanldeRightTimeChange(time) {
       var right = this.dates[1];
 
@@ -5839,6 +5927,8 @@ var dateSorter = function dateSorter(a, b) {
       this.dates[1] = d;
       this.handleConfirm(false);
     },
+
+    // 选择的日期绑定到输入框
     formatDateToInput: function formatDateToInput(value, type) {
       var format = this.format;
       if (format) {
