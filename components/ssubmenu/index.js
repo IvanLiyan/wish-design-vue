@@ -1,6 +1,6 @@
-import Submenu from './submenu.vue';
+import Ssubmenu from './submenu.vue';
 /* istanbul ignore next */
-Submenu.install = function (Vue) {
-  Vue.component(Submenu.name, Submenu);
+Ssubmenu.install = function (Vue) {
+  Vue.component(Ssubmenu.name, Ssubmenu);
 };
-export default Submenu;
+export default Ssubmenu;

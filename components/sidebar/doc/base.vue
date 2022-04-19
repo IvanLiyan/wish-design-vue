@@ -3,7 +3,6 @@
     <div class="demo-sidebar-aside">
       <wt-sidebar :data="data"
         :active-key.sync="activeKey"
-        title="导航标题"
         @menu-item-click="handleItemClick"
         @menu-expand-change="handleExpandChange" />
     </div>
@@ -18,7 +17,7 @@ export default {
   data () {
     return {
       'data': [{
-        icon: 'wticon wticon-home-o',
+        icon: 'home',
         title: '一级菜单',
         id: '1',
         children: [{

@@ -2,7 +2,7 @@
   <wt-menu-item v-bind="rest" :tooltip-props="tooltipProps"
     :tooltip="item.tooltip" :enabled-tooltip="item.enabledTooltip"
   >
-    <i v-if="item.icon" :class="item.icon" slot="icon"></i>
+    <!-- <i v-if="item.icon" :class="item.icon" slot="icon"></i> -->
     <slot :item="item">{{ item.title }}</slot>
   </wt-menu-item>
 </template>
