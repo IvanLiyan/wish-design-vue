@@ -33,15 +33,14 @@
 <script>
 import { CONFIG_PROVIDER, getPrefixCls, getIconCls } from '@/utils/config';
 // 引入自定义组件
-import CheckCircle from './custom-icon/check-circle.vue';
+import customIcons, { customIconNames } from './custom-icon/index.js';
 
 const feather = require('feather-icons');
-const customIconNames = ['check-circle'];
 
 export default {
   name: 'WtIcon',
   components: {
-    CheckCircle,
+    ...customIcons,
   },
   props: {
     // 名称
