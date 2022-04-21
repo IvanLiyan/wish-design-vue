@@ -12,9 +12,9 @@
           :class="`${menuPrefix}-title-backward`" />
       </span>
     </div>
-    <div :class="`${prefix}-menus`">
-      <slot name="menu">
-        <wt-menu
+    <div :class="`${prefix}-smenus`">
+      <slot name="smenu">
+        <wt-smenu
           v-bind="$attrs"
           :theme="theme"
           :active-name="activeKey"
@@ -28,26 +28,26 @@
           :item-key="itemKey"
         >
           <template v-for="item in data">
-            <submenu v-if="item.children" :item-key="itemKey"
+            <ssubmenu v-if="item.children" :item-key="itemKey"
               :item="item" :key="item[itemKey]"
               :tooltip-props="tooltipProps"
             >
-              <template v-if="$scopedSlots.submenu" slot="title" slot-scope="scope">
-                <slot v-bind="scope" name="submenu"></slot>
+              <template v-if="$scopedSlots.ssubmenu" slot="title" slot-scope="scope">
+                <slot v-bind="scope" name="ssubmenu"></slot>
               </template>
               <template v-if="$scopedSlots.item" slot="item" slot-scope="scope">
                 <slot v-bind="scope" name="item"></slot>
               </template>
-            </submenu>
-            <menu-item v-else :item="item" :key="item[itemKey]"
+            </ssubmenu>
+            <smenu-item v-else :item="item" :key="item[itemKey]"
               :item-key="itemKey" :tooltip-props="tooltipProps"
             >
               <template v-if="$scopedSlots.item" slot slot-scope="scope">
                 <slot v-bind="scope" name="item"></slot>
               </template>
-            </menu-item>
+            </smenu-item>
           </template>
-        </wt-menu>
+        </wt-smenu>
       </slot>
     </div>
   </div>
@@ -55,7 +55,7 @@
 <script>
 import WtMenu from '@components/smenu';
 import Icon from '@components/icon';
-import Submenu from './submenu.vue';
+import Ssubmenu from './ssubmenu.vue';
 import MenuItem from './menu-item';
 import {
   CONFIG_PROVIDER,
@@ -66,7 +66,7 @@ export default {
   name: 'WtSidebar',
   components: {
     WtMenu,
-    Submenu,
+    Ssubmenu,
     MenuItem,
     Icon,
   },
