@@ -15,13 +15,6 @@
         label="姓名"
       />
       <br />
-      <p>只读</p>
-      <wt-date-picker
-        type="date"
-        v-model="value2"
-        :readonly="true"
-      />
-      <br />
       <p>禁用</p>
       <wt-date-picker
         type="date"

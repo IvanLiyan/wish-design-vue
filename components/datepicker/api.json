@@ -33,14 +33,6 @@
       "version": ""
     },
     {
-      "name": "readonly",
-      "desc": "是否只读",
-      "type": "boolean",
-      "optionalValue": "",
-      "default": "false",
-      "version": ""
-    },
-    {
       "name": "disabled",
       "desc": "是否禁用",
       "type": "boolean",
