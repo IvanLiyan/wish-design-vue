@@ -9,14 +9,6 @@
       "version": ""
     },
     {
-      "name": "size",
-      "desc": "设置输入框的大小，同 Input 组件 size 属性",
-      "type": "string",
-      "optionalValue": ["small", "不设置", "large"],
-      "default": "不设置",
-      "version": ""
-    },
-    {
       "name": "type",
       "desc": "显示类型",
       "type": "string",
