@@ -118,14 +118,6 @@
       "version": ""
     },
     {
-      "name": "popper-options",
-      "desc": "自定义 popper.js 的配置项，具体配置查看 <a target='_blank' href='https://popper.js.org/docs/v1/#modifiers--codeobjectcode'>popper.js 文档</a>",
-      "type": "object",
-      "optionalValue": "",
-      "default": "",
-      "version": ""
-    },
-    {
       "name": "week-start",
       "desc": "设置周起始日期",
       "type": "number",
