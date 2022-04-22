@@ -3,7 +3,7 @@ import { addClass, removeClass } from '../utils/dom';
 function createTransition(listeners) {
   return {
     'before-enter'(el) {
-      addClass(el, 'collapse-transition');
+      addClass(el, 'expansion-transition');
       el.style.height = '0';
       const fn = listeners['before-enter'];
       fn && fn();
@@ -15,14 +15,14 @@ function createTransition(listeners) {
       } else {
         el.style.height = '';
       }
-      addClass(el, 'collapse-overflow');
+      addClass(el, 'expansion-overflow');
       const fn = listeners['enter'];
       fn && fn();
     },
 
     'after-enter'(el) {
       // for safari: remove class then reset height is necessary
-      removeClass(el, 'collapse-transition collapse-overflow');
+      removeClass(el, 'expansion-transition expansion-overflow');
       el.style.height = '';
       const fn = listeners['after-enter'];
       fn && fn();
@@ -31,7 +31,7 @@ function createTransition(listeners) {
     beforeLeave(el) {
       if (!el.dataset) el.dataset = {};
       el.style.height = el.scrollHeight + 'px';
-      addClass(el, 'collapse-overflow');
+      addClass(el, 'expansion-overflow');
       const fn = listeners['before-leave'];
       fn && fn();
     },
@@ -40,7 +40,7 @@ function createTransition(listeners) {
       if (el.scrollHeight !== 0) {
         // for safari: add class after set height,
         // or it will jump to zero height suddenly, weired
-        addClass(el, 'collapse-transition');
+        addClass(el, 'expansion-transition');
         el.style.height = 0;
       }
       const fn = listeners['leave'];
@@ -48,7 +48,7 @@ function createTransition(listeners) {
     },
 
     'after-leave'(el) {
-      removeClass(el, 'collapse-transition collapse-overflow');
+      removeClass(el, 'expansion-transition expansion-overflow');
       el.style.height = '';
       const fn = listeners['after-leave'];
       fn && fn();
@@ -57,7 +57,7 @@ function createTransition(listeners) {
 }
 
 export default {
-  name: 'WtCollapseTransition',
+  name: 'WtexpansionTransition',
   functional: true,
   render(h, context) {
     const { children, listeners } = context;

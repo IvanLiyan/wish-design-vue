@@ -1,5 +1,5 @@
 <template>
-  <wt-select v-model="value" multiple collapse-tags :closable="false" ref="select">
+  <wt-select v-model="value" multiple expansion-tags :closable="false" ref="select">
     <wt-option
       v-for="item in options"
       :key="item.value"

@@ -227,7 +227,7 @@ $border: 1px solid $color-line-1;
   .table {
     width: 100%;
     // table-layout: fixed;
-    border-collapse: collapse;
+    border-expansion: expansion;
     margin-bottom: 45px;
     color: #333;
     th {

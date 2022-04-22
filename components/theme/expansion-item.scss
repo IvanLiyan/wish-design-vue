@@ -1,0 +1,140 @@
+@import './common/var.scss';
+@import './mixins/mixins.scss';
+
+// @component expansion 折叠面板
+// @category base
+// @propsValue default
+// @name 边框颜色
+$expansion-border-color: $color-line-2 !default;
+// @name 边框宽度
+$expansion-border-width: $border-width-1 !default;
+// @state disabled
+// @name 禁用-文字颜色
+$expansion-disabled-color: $color-text-4 !default;
+// @refer color
+// @name 禁用-图标-文字颜色
+$expansion-disabled-icon-color: #ddd !default;
+// @end state
+
+// @dom header
+// @name 页头-字号
+$expansion-header-font-size: $font-size-2 !default;
+// @name 页头-字重
+$expansion-header-font-weight: $font-weight-inherit !default;
+// @name 页头-文字颜色
+$expansion-header-color: $color-text-2 !default;
+// @name 页头-图标-文字颜色
+$expansion-header-icon-color: $color-text-6 !default;
+// @name 页头-图标-字号
+$expansion-header-icon-font-size: 1em !default;
+// @name 页头-背景色
+$expansion-header-bgc: $color-fill-1 !default;
+// @name 页头-高度
+$expansion-header-height: $s-11 !default;
+// @name 页头-行高
+$expansion-header-line-height: $line-height-2 !default;
+// @name 页头-竖直内边距
+$expansion-header-padding-vertical: ($expansion-header-height - $expansion-header-line-height)/2;
+// @name 页头-水平内边距
+$expansion-header-padding-horizontal: 10px !default;
+// @end dom
+
+// @dom content
+// @name 内容-文字颜色
+$expansion-content-color: $color-text-2 !default;
+// @name 内容-背景色
+$expansion-content-bgc: $color-white;
+// @name 内容-竖直内边距
+$expansion-content-padding-vertical: $s-4 !default;
+// @name 内容-左内边距
+$expansion-content-padding-left: $s-4 !default;
+// @name 内容-右内边距
+$expansion-content-padding-right: $s-4 !default;
+// @end dom
+
+// @end propsValue
+// @end category
+
+// @category type
+// @propsValue sample
+// @name 简洁-页头-背景色
+$expansion-simple-header-bgc: $expansion-content-bgc !default;
+// @name 简洁-是否显示两侧边框
+$expansion-simple-border-horizontal: true !default;
+// @end propsValue
+
+// @propsValue area
+// @refer color
+// @name 面型-页头-背景色
+$expansion-area-header-bgc: #f2f4fa !default;
+// @refer color
+// @name 面型-背景色
+$expansion-area-bgc: $color-white !default;
+// @name 面型-间距
+$expansion-area-offset: 2px !default;
+// @name 面型-阴影
+$expansion-area-shadow: $shadow-0 !default;
+// @end propsValue
+// @end category
+
+// @end component
+
+@include c(expansion-item) {
+  $expansion-item-icon-width: 2 * $expansion-header-padding-horizontal + $expansion-header-font-size;
+  border-radius: 2px;
+  font-size: $h4-font-size;
+  color: $color-text-1;
+  box-shadow: 0px 2px 1px -1px rgba(25, 42, 50, 0.2), 0px 1px 1px rgba(25, 42, 50, 0.14),
+    0px 1px 3px rgba(25, 42, 50, 0.12);
+  &-header {
+    cursor: pointer;
+    color: $expansion-header-color;
+    background-color: $color-white;
+    padding: $expansion-header-padding-vertical $expansion-header-padding-horizontal;
+    padding-left: 48px;
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    height: 48px;
+    line-height: $h4-line-height;
+    box-shadow: inset 0px -1px 0px #bfcdd4;
+    border-radius: 2px;
+    @if $expansion-header-font-weight != inherit {
+      font-weight: $expansion-header-font-weight;
+    }
+  }
+  &-content {
+    color: $expansion-content-color;
+    padding: $expansion-content-padding-vertical $expansion-content-padding-right $expansion-content-padding-vertical
+      $expansion-content-padding-left;
+    box-shadow: inset 0px -1px 0px #bfcdd4;
+  }
+
+  .#{$prefix}-expansion-arrow {
+    position: absolute;
+    text-align: center;
+    left: 0;
+    top: 0;
+    width: 48px;
+    line-height: 55px;
+    transition: transform 0.3s;
+    font-size: $expansion-header-icon-font-size;
+  }
+  &-active {
+    > .#{$prefix}-expansion-item-header {
+      .#{$prefix}-expansion-arrow {
+        width: 48px;
+        height: 48px;
+        transform: rotate(180deg);
+      }
+    }
+  }
+  &-disabled &-header {
+    cursor: not-allowed;
+    color: $expansion-disabled-color;
+  }
+  &-disabled .#{$prefix}-expansion-arrow {
+    color: $expansion-disabled-icon-color;
+  }
+}

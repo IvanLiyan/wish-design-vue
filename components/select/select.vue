@@ -25,7 +25,7 @@
       ref="tags"
     >
       <ul :class="`${prefix}-tags-ul`">
-        <template v-if="!collapseTags">
+        <template v-if="!expansionTags">
           <ChoiceTag
             v-for="(item, index) in filteredSelected"
             :key="index"
@@ -43,7 +43,7 @@
           </ChoiceTag>
         </template>
         <ChoiceTag
-          v-if="collapseTags && filteredSelected.length"
+          v-if="expansionTags && filteredSelected.length"
           :option="filteredSelected[0]"
           theme=""
           :size="size"
@@ -79,7 +79,7 @@
             />
           </div>
         </li>
-        <li :class="`${prefix}-tags-li`" v-if="collapseTags && filteredSelected.length" ref="selectedItemTag"></li>
+        <li :class="`${prefix}-tags-li`" v-if="expansionTags && filteredSelected.length" ref="selectedItemTag"></li>
       </ul>
     </div>
     <popper
@@ -274,7 +274,7 @@ export default {
         return 0;
       },
     },
-    collapseTags: Boolean,
+    expansionTags: Boolean,
     popperClass: String,
     appendToContainer: {
       type: Boolean,
@@ -292,7 +292,7 @@ export default {
       default: false,
     },
     genre: String,
-    collapseMaxSearchWidth: {
+    expansionMaxSearchWidth: {
       // 将在 1.0 中移除
       type: Number,
       default: 50,
@@ -419,8 +419,8 @@ export default {
       return 'closeable' in this.$options.propsData ? this.closeable : this.closable;
     },
     omittedValues() {
-      if (this.multiple && this.collapseTags) {
-        // collapseTags 模式下只显示一个 tag
+      if (this.multiple && this.expansionTags) {
+        // expansionTags 模式下只显示一个 tag
         const omittedLength = this.selected.length - 1;
         if (omittedLength > 0) {
           return this.selected.slice(1);
@@ -490,7 +490,7 @@ export default {
     },
     selected(val, old) {
       if (this.multiple) {
-        if (!this.collapseTags) {
+        if (!this.expansionTags) {
           this.updatePopper();
         } else {
         }
@@ -605,8 +605,8 @@ export default {
       const { query } = this;
       // todo: 需要修改成当前字体大小
       const length = query.length * 14 + 5;
-      this.inputLength = this.collapseTags ? Math.min(this.collapseMaxSearchWidth, length) : length;
-      this.multiple && !this.collapseTags && this.updatePopper();
+      this.inputLength = this.expansionTags ? Math.min(this.expansionMaxSearchWidth, length) : length;
+      this.multiple && !this.expansionTags && this.updatePopper();
       this.debouncedQueryChange(this.query);
     },
     getOption(value) {
@@ -727,7 +727,7 @@ export default {
       if (this.disabled) {
         return;
       }
-      if (!this.collapseTags && e.target.value.length <= 0) {
+      if (!this.expansionTags && e.target.value.length <= 0) {
         const { filteredSelected } = this;
         if (!filteredSelected || !filteredSelected.length) {
           return;

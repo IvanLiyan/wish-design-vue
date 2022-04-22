@@ -63,12 +63,13 @@ export default {
 
   props: {
     value: [String, Number, Object, Boolean],
-    label: [String, Number],
+    label: {
+      type: [String, Number],
+    },
     disabled: {
       type: Boolean,
       default: false,
     },
-
     created: Boolean, // 用于标记是否自动创建
 
     isSelectAll: Boolean, // 是否全选 option

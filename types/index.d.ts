@@ -29,6 +29,8 @@ import { Alert } from './alert';
 import { Tab } from './tab';
 import { TabDrop } from './tab-drop';
 import { TabPane } from './tab-pane';
+import { Expansion } from './expansion';
+import { expansion-item } from './expansion-item';
 import { Confirm as WTConfirm } from './confirm';
 import {
   Message as WTMessage,
@@ -39,7 +41,7 @@ import {
   NotificationOptions
 } from './notification';
 import { FormRule, FormRules } from './form';
-import CollapseTransition from './collapse-transition';
+import expansionTransition from './expansion-transition';
 
 export const Message: WTMessage;
 export const Notification: WTNotification;
@@ -76,11 +78,13 @@ export {
   Tab,
   TabDrop,
   TabPane,
+  Expansion,
+  expansion-item,
   FormRule,
   FormRules,
   NotificationOptions,
   MessageOptions,
-  CollapseTransition,
+  expansionTransition,
 };
 
 export declare function install(vue: any): void;

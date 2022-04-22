@@ -121,6 +121,11 @@
             "path": "tab",
             "name": "Tab",
             "cnName": "分页"
+          },
+          {
+            "path": "expansion",
+            "name": "Expansion",
+            "cnName": "伸缩框"
           }
         ]
       }

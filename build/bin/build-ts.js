@@ -49,7 +49,7 @@ import {
   NotificationOptions
 } from './notification';
 import { FormRule, FormRules } from './form';
-import CollapseTransition from './collapse-transition';
+import expansionTransition from './expansion-transition';
 
 export const Message: WTMessage;
 export const Notification: WTNotification;
@@ -61,7 +61,7 @@ export {
   FormRules,
   NotificationOptions,
   MessageOptions,
-  CollapseTransition,
+  expansionTransition,
 };
 
 export declare function install(vue: any): void;

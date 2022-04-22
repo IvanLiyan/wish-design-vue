@@ -30,7 +30,9 @@ import Alert from 'components/alert';
 import Tab from 'components/tab';
 import TabDrop from 'components/tab-drop';
 import TabPane from 'components/tab-pane';
-import CollapseTransition from './transitions/collapse-transition';
+import Expansion from 'components/expansion';
+import ExpansionItem from 'components/expansion-item';
+import expansionTransition from './transitions/expansion-transition';
 
 const components = [
   Button,
@@ -64,7 +66,9 @@ const components = [
   Tab,
   TabDrop,
   TabPane,
-  CollapseTransition,
+  Expansion,
+  ExpansionItem,
+  expansionTransition,
 ];
 
 export function install (Vue) {
@@ -119,10 +123,12 @@ export {
   Tab,
   TabDrop,
   TabPane,
-  CollapseTransition,
+  Expansion,
+  ExpansionItem,
+  expansionTransition,
 };
 
 export default {
-  version: '0.0.1',
+  version: '0.0.2-alpha.1',
   install,
 };
