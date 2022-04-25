@@ -34,6 +34,8 @@ import Menu from 'components/menu';
 import MenuItem from 'components/menu-item';
 import Submenu from 'components/submenu';
 import Tooltip from 'components/tooltip';
+import Table from 'components/table';
+import TableColumn from 'components/table-column';
 import CollapseTransition from './transitions/collapse-transition';
 
 const components = [
@@ -72,6 +74,8 @@ const components = [
   MenuItem,
   Submenu,
   Tooltip,
+  Table,
+  TableColumn,
   CollapseTransition,
 ];
 
@@ -131,6 +135,8 @@ export {
   MenuItem,
   Submenu,
   Tooltip,
+  Table,
+  TableColumn,
   CollapseTransition,
 };
 

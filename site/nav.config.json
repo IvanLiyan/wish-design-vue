@@ -131,6 +131,11 @@
             "path": "tab",
             "name": "Tab",
             "cnName": "分页"
+          },
+          {
+            "path": "table",
+            "name": "Table",
+            "cnName": "表格"
           }
         ]
       }
