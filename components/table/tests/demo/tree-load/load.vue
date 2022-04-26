@@ -1,11 +1,11 @@
 <template>
-<mtd-table :data="tableData" tree
+<wt-table :data="tableData" tree
   :expand-row-keys.sync="expands"
   row-key="id"
   :row-class="rowClass"
   :load-data="loadData"
 >
-  <mtd-table-column
+  <wt-table-column
     prop="id"
     label="工单号"
     sortable
@@ -16,21 +16,21 @@
     ]"
     :filter-method="filterName"
   />
-  <mtd-table-column
+  <wt-table-column
     prop="status"
     label="状态"
     width="100" />
-  <mtd-table-column
+  <wt-table-column
     prop="author"
     label="申请人"
     width="100"
   />
-  <mtd-table-column
+  <wt-table-column
     prop="email"
     label="邮箱"
     width="220"
   />
-</mtd-table>
+</wt-table>
 </template>
 <script>
 import {

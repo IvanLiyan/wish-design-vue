@@ -1,6 +1,6 @@
 import { hasClass, addClass, removeClass } from '@/utils/dom';
-import MtdCheckbox from '@components/checkbox';
-import MtdPopover from '@components/popover';
+import WtCheckbox from '@components/checkbox';
+import WtPopover from '@components/popover';
 import FilterPanel from './filter-panel.vue';
 import LayoutObserver from './layout-observer';
 import { mapStates } from './store';
@@ -64,7 +64,7 @@ const convertToRows = (originColumns) => {
 };
 
 export default {
-  name: 'MtdTableHeader',
+  name: 'WtTableHeader',
 
   mixins: [LayoutObserver],
 
@@ -197,8 +197,8 @@ export default {
   },
 
   components: {
-    MtdCheckbox,
-    MtdPopover,
+    WtCheckbox,
+    WtPopover,
   },
 
   computed: {

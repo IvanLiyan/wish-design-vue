@@ -1,10 +1,10 @@
 <template>
   <div>
-    <mtd-table
+    <wt-table
       :data="tableData3"
       :checkboxable="checkboxable"
       :selection="selection">
-      <mtd-table-column
+      <wt-table-column
         type="selection"
         width="34">
         <template slot-scope="scope" slot="selection">
@@ -12,20 +12,20 @@
             <mtd-checkbox v-bind="scope.props" v-on="scope.on" />
           </mtd-tooltip>
         </template>
-      </mtd-table-column>
-      <mtd-table-column
+      </wt-table-column>
+      <wt-table-column
         label="日期"
         width="120">
         <template slot-scope="scope">{{ scope.row.date }}</template>
-      </mtd-table-column>
-      <mtd-table-column
+      </wt-table-column>
+      <wt-table-column
         prop="name"
         label="姓名"
         width="120" />
-      <mtd-table-column
+      <wt-table-column
         prop="address"
         label="地址" />
-    </mtd-table>
+    </wt-table>
   </div>
 </template>
 

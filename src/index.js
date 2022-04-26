@@ -36,6 +36,7 @@ import Submenu from 'components/submenu';
 import Tooltip from 'components/tooltip';
 import Table from 'components/table';
 import TableColumn from 'components/table-column';
+import Pagination from 'components/pagination';
 import CollapseTransition from './transitions/collapse-transition';
 
 const components = [
@@ -76,6 +77,7 @@ const components = [
   Tooltip,
   Table,
   TableColumn,
+  Pagination,
   CollapseTransition,
 ];
 
@@ -137,6 +139,7 @@ export {
   Tooltip,
   Table,
   TableColumn,
+  Pagination,
   CollapseTransition,
 };
 

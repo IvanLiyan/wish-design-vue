@@ -1,7 +1,7 @@
 <template>
-  <mtd-table :data="tableData"
+  <wt-table :data="tableData"
     @change="handleFilterChange">
-    <mtd-table-column
+    <wt-table-column
       prop="date"
       label="日期"
       width="180"
@@ -12,7 +12,7 @@
     { text: '2016-05-04', value: '2016-05-04' },
   ]"
       :filter-method="filterDate" />
-    <mtd-table-column
+    <wt-table-column
       prop="name"
       label="姓名"
       width="180"
@@ -31,11 +31,11 @@
           <mtd-button @click="scope.clear">Reset</mtd-button>
         </div>
       </template>
-    </mtd-table-column>
-    <mtd-table-column
+    </wt-table-column>
+    <wt-table-column
       prop="address"
       label="地址" />
-  </mtd-table>
+  </wt-table>
 </template>
 
 <script>

@@ -1,34 +1,34 @@
 <template>
-  <mtd-table :data="tableData3">
-    <mtd-table-column
+  <wt-table :data="tableData3">
+    <wt-table-column
       prop="date"
       label="日期"
       width="150" />
-    <mtd-table-column label="配送信息">
-      <mtd-table-column
+    <wt-table-column label="配送信息">
+      <wt-table-column
         prop="name"
         label="姓名"
         width="120" />
-      <mtd-table-column label="地址">
-        <mtd-table-column
+      <wt-table-column label="地址">
+        <wt-table-column
           prop="province"
           label="省份"
           width="120" />
-        <mtd-table-column
+        <wt-table-column
           prop="city"
           label="市区"
           width="120" />
-        <mtd-table-column
+        <wt-table-column
           prop="address"
           label="地址"
           width="300" />
-        <mtd-table-column
+        <wt-table-column
           prop="zip"
           label="邮编"
           width="120" />
-      </mtd-table-column>
-    </mtd-table-column>
-  </mtd-table>
+      </wt-table-column>
+    </wt-table-column>
+  </wt-table>
 </template>
 
 <script>

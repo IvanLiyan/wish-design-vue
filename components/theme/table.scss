@@ -347,7 +347,13 @@ $table-resize-width: 2px;
     }
   }
 
-  &-header, &-body, &-footer {
+  &-header {
+    table-layout: fixed;
+    border-collapse: separate;
+    border-top: 1px solid #BFCDD4;
+  }
+
+  &-body, &-footer {
     table-layout: fixed;
     border-collapse: separate;
   }

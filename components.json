@@ -35,5 +35,6 @@
   "submenu": "components/submenu",
   "tooltip": "components/tooltip",
   "table": "components/table",
-  "table-column": "components/table-column"
+  "table-column": "components/table-column",
+  "pagination": "components/pagination"
 }

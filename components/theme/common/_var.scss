@@ -391,7 +391,7 @@ $date-picker-icon-btn-size: $font-size-1 !default;
 // @name 图标-按钮-文字颜色
 $date-picker-icon-btn-color: #808ab1 !default;
 // @name 图标-按钮-悬浮-文字颜色
-$date-picker-icon-btn-hover-color: $color-primary !default;
+$date-picker-icon-btn-hover-color: $color-primary-1 !default;
 
 // @name 侧边栏-宽度
 $date-picker-sidebar-width: 160px !default;
@@ -800,7 +800,7 @@ $table-bgc: $color-white!default; // it use for fix table-column
 // @name 表头-文字颜色
 $table-header-color: $color-text-2!default; // header 464646
 // @name 表头-背景色
-$table-header-bgc: rgba($color-line-2, .5)!default;
+$table-header-bgc: $color-white!default;
 
 // @dom
 // @refer color
@@ -863,7 +863,7 @@ $table-color-text-placeholder: #c0c4cc!default;
 // @refer color
 
 // @name 边框颜色
-$table-border-color: $color-line-2!default;
+$table-border-color: #BFCDD4;
 // @name 边框-宽度
 $table-border-width: $border-width-1!default;
 // @refer color
@@ -895,9 +895,9 @@ $table-striped-bgc: #FAFAFA!default;
 
 // @propsValue default
 // @name 字号
-$table-font-size: $font-size-2!default;
+$table-font-size: $font-size-4!default;
 // @name 行高
-$table-line-height: $line-height-2!default;
+$table-line-height: $line-height-5!default;
 // @name 竖直内边距
 $table-padding-vertical: 10px!default;
 // @name 表头竖直内边距
@@ -927,4 +927,81 @@ $table-large-header-padding-vertical: $s-2!default;
 // @end propsValue
 
 // @end category
+// @end component
+
+// @component pagination 分页
+// @category base
+
+// @propsValue default
+// @name 文字颜色
+$pagination-color: $color-text-1!default;
+// @name 背景色
+$pagination-bgc: $color-white!default;
+// @refer color
+// @name 上一项-下一项-文字颜色
+$pagination-prev-next-color: $color-text-3!default;
+// @name 总计-文字颜色
+$pagination-total-color: $color-text-1!default;
+// @name 圆角
+$pagination-border-radius: $border-radius-2!default;
+// @name 边框-宽度
+$pagination-border-width: $border-width-1!default;
+// @name 边框颜色
+$pagination-border-color: $color-line-1!default;
+// @name 页数-内边距
+$pagination-page-padding: $s-1!default;
+// @name 额外-间距
+$pagination-addon-spacing: $s-3!default;
+// @name select-宽度
+$pagination-select-width: 100px!default;
+// @name 简洁-项-间距
+$pagination-simple-item-spacing: $s-1!default;
+
+// @state active
+// @name 激活-背景色
+$pagination-active-bgc: $color-white!default;
+// @name 激活-文字颜色
+$pagination-active-color: $color-primary!default;
+// @name 激活-边框颜色
+$pagination-active-border-color: $color-primary!default;
+// @end state
+
+// @end propsValue
+// @end category
+
+// @category size
+// @propsValue default
+// @name 字号
+$pagination-font-size: $font-size-2!default;
+// @name 图标-字号
+$pagination-icon-font-size: $font-size-1!default;
+// @name 尺寸
+$pagination-size: $s-8!default;
+// @name 页数-外边距
+$pagination-page-margin: $s-2!default;
+// @name 跳转-宽度
+$pagination-jumper-width: $s-10!default;
+// @end propsValue
+
+// @propsValue small
+// @name 小号-字号
+$pagination-small-font-size: $font-size-1!default;
+// @name 小号-图标-字号
+$pagination-small-icon-font-size: $font-size-3!default;
+// @name 小号-尺寸
+$pagination-small-size: $s-6!default;
+// @name 小号-页数-外边距
+$pagination-small-page-margin: $s-2!default;
+// @name 小号-跳转-宽度
+$pagination-small-jumper-width: $s-10!default;
+// @end propsValue
+// @end category
+
+// @category show-size-changer
+// @propsValue true
+// @name select-宽度
+$pagination-select-width: 100px!default;
+// @end propsValue
+// @end category
+
 // @end component

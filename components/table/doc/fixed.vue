@@ -1,48 +1,48 @@
 <template>
   <div>
     <p>固定表头</p>
-    <mtd-table :data="tableData3" height="250" bordered style="margin-bottom: 40px;">
-      <mtd-table-column
+    <wt-table :data="tableData3" height="250" bordered style="margin-bottom: 40px;">
+      <wt-table-column
         prop="date"
         label="日期"
         width="180" />
-      <mtd-table-column
+      <wt-table-column
         prop="name"
         label="姓名"
         width="180" />
-      <mtd-table-column
+      <wt-table-column
         prop="address"
         label="地址" />
-    </mtd-table>
+    </wt-table>
 
     <p>固定列</p>
-    <mtd-table :data="tableData3" bordered>
-      <mtd-table-column
+    <wt-table :data="tableData3" bordered>
+      <wt-table-column
         fixed
         prop="date"
         label="日期"
         width="150" />
-      <mtd-table-column
+      <wt-table-column
         prop="name"
         label="姓名"
         width="120" />
-      <mtd-table-column
+      <wt-table-column
         prop="province"
         label="省份"
         width="120" />
-      <mtd-table-column
+      <wt-table-column
         prop="city"
         label="市区"
         width="120" />
-      <mtd-table-column
+      <wt-table-column
         prop="address"
         label="地址"
         width="300" />
-      <mtd-table-column
+      <wt-table-column
         prop="zip"
         label="邮编"
         width="120" />
-      <mtd-table-column
+      <wt-table-column
         fixed="right"
         label="操作"
         width="130">
@@ -50,8 +50,8 @@
           <mtd-button @click="handleClick(scope.row)" type="text" size="small">查看</mtd-button>
           <mtd-button type="text" size="small">编辑</mtd-button>
         </template>
-      </mtd-table-column>
-    </mtd-table>
+      </wt-table-column>
+    </wt-table>
   </div>
 </template>
 <script>

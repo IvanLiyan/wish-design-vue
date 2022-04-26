@@ -1,25 +1,25 @@
 <template>
 <div>
-  <mtd-table
+  <wt-table
     :data="tableData6"
     highlight-current-row>
-    <mtd-table-column
+    <wt-table-column
       prop="id"
       label="ID"
       width="180" />
-    <mtd-table-column
+    <wt-table-column
       prop="name"
       label="姓名" />
-    <mtd-table-column
+    <wt-table-column
       prop="amount1"
       label="数值 1（元）" />
-    <mtd-table-column
+    <wt-table-column
       prop="amount2"
       label="数值 2（元）" />
-    <mtd-table-column
+    <wt-table-column
       prop="amount3"
       label="数值 3（元）" />
-  </mtd-table>
+  </wt-table>
 </div>
 </template>
 <script>

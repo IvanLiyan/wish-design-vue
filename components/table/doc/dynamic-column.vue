@@ -9,19 +9,19 @@
         <mtd-checkbox value="tag">tag</mtd-checkbox>
       </mtd-checkbox-group>
     </mtd-dropdown>
-    <mtd-table :data="tableData"
+    <wt-table :data="tableData"
       style="margin-bottom: 20px;"
       row-key="number"
       :selection="selection"
       reserve-selection
       :index-of-selection="indexOfSelection"
       height="500px">
-      <mtd-table-column
+      <wt-table-column
         type="selection"
         width="34" />
-      <mtd-table-column v-for="column in columns" :key="column"
+      <wt-table-column v-for="column in columns" :key="column"
         :prop="column" :label="column" />
-    </mtd-table>
+    </wt-table>
   </div>
 </template>
 <script>

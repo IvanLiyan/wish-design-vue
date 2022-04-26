@@ -1,13 +1,13 @@
 <template>
   <div>
     <p>折叠内容为表格</p>
-    <mtd-table
+    <wt-table
       class="expandsTable"
       :data="tableData5"
       :row-key="getRowKeys"
       :expandable="expandable"
       :expand-row-keys="expands">
-      <mtd-table-column type="expand" width="120">
+      <wt-table-column type="expand" width="120">
         <template slot-scope="scope" slot="expand">
           <div @click="scope.toggle">
               <i class="mtdicon mtdicon-right-thick"></i>
@@ -15,35 +15,35 @@
           </div>
         </template>
         <template slot-scope="props">
-          <mtd-table :data="tableData" :show-header="false">
-            <mtd-table-column width="40" />
-            <mtd-table-column
+          <wt-table :data="tableData" :show-header="false">
+            <wt-table-column width="40" />
+            <wt-table-column
               prop="date"
               align="center"
               label="日期"
               width="180" />
-            <mtd-table-column
+            <wt-table-column
               prop="name"
               label="姓名"
               width="180" />
-            <mtd-table-column
+            <wt-table-column
               prop="address"
               label="地址" />
-          </mtd-table>
+          </wt-table>
         </template>
-      </mtd-table-column>
-      <mtd-table-column
+      </wt-table-column>
+      <wt-table-column
         label="商品 ID"
         prop="id"
         width="180" />
-      <mtd-table-column
+      <wt-table-column
         label="商品名称"
         prop="name"
         width="180" />
-      <mtd-table-column
+      <wt-table-column
         label="描述"
         prop="desc" />
-    </mtd-table>
+    </wt-table>
   </div>
 </template>
 <script>

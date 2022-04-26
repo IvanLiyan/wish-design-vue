@@ -1,9 +1,9 @@
 <template>
-<mtd-table :data="tableData" tree
+<wt-table :data="tableData" tree
   :expand-row-keys.sync="expands"
   row-key="id">
-  <mtd-table-column type="selection" />
-  <mtd-table-column
+  <wt-table-column type="selection" />
+  <wt-table-column
     prop="id"
     label="工单号"
     sortable
@@ -13,19 +13,19 @@
       { text: '243304314809', value: '243304314809' },
     ]"
     :filter-method="filterName" />
-  <mtd-table-column
+  <wt-table-column
     prop="status"
     label="状态"
     width="100" />
-  <mtd-table-column
+  <wt-table-column
     prop="author"
     label="申请人"
     width="100" />
-  <mtd-table-column
+  <wt-table-column
     prop="email"
     label="邮箱"
     width="220" />
-</mtd-table>
+</wt-table>
 </template>
 <script>
 export default {

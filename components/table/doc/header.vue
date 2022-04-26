@@ -1,21 +1,21 @@
 <template>
-  <mtd-table :data="tableData">
-    <mtd-table-column
+  <wt-table :data="tableData">
+    <wt-table-column
       prop="date"
       label="日期"
       width="180" />
-    <mtd-table-column
+    <wt-table-column
       prop="name"
       label="姓名"
       width="180" />
-    <mtd-table-column
+    <wt-table-column
       prop="address"
       label="地址">
       <template slot="header" slot-scope="scope">
         <i class="mtdicon mtdicon-location"></i> 地址
       </template>
-    </mtd-table-column>
-  </mtd-table>
+    </wt-table-column>
+  </wt-table>
 </template>
 
 <script>

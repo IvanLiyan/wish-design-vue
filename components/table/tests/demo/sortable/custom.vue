@@ -1,10 +1,10 @@
 <template>
-  <mtd-table :data="data"
+  <wt-table :data="data"
     @sort-change="onSortChange"
     :sort-order.sync="sortOrder">
-    <mtd-table-column label="label" prop="prop" />
-    <mtd-table-column label="label" prop="value" sortable="custom" />
-  </mtd-table>
+    <wt-table-column label="label" prop="prop" />
+    <wt-table-column label="label" prop="value" sortable="custom" />
+  </wt-table>
 </template>
 
 <script>

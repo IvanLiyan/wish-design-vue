@@ -1,37 +1,37 @@
 <template>
   <mtd-row>
     <mtd-col :span="20">
-      <mtd-table :data="tableData"
+      <wt-table :data="tableData"
         style="margin-bottom: 20px;"
         row-key="number"
         :selection="selection"
         reserve-selection
         :index-of-selection="indexOfSelection"
         height="500px">
-        <mtd-table-column type="expand" width="40">
+        <wt-table-column type="expand" width="40">
           <template slot-scope="props">
             <div>hello world</div>
           </template>
-        </mtd-table-column>
-        <mtd-table-column
+        </wt-table-column>
+        <wt-table-column
           type="selection"
           width="34" />
-        <mtd-table-column
+        <wt-table-column
           prop="number"
           label="编号"
           width="60" />
-        <mtd-table-column
+        <wt-table-column
           prop="name"
           label="姓名"
           width="180" />
-        <mtd-table-column
+        <wt-table-column
           prop="address"
           label="地址" />
-        <mtd-table-column
+        <wt-table-column
           prop="tag"
           label="标签"
           width="60" />
-      </mtd-table>
+      </wt-table>
       <mtd-pagination
         :total="200"
         :show-total="false"

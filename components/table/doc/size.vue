@@ -1,47 +1,47 @@
 <template>
   <div>
     <p>小号</p>
-    <mtd-table :data="tableData" size="small" style="margin-bottom: 40px;">
-      <mtd-table-column
+    <wt-table :data="tableData" size="small" style="margin-bottom: 40px;">
+      <wt-table-column
         prop="date"
         label="日期"
         width="180" />
-      <mtd-table-column
+      <wt-table-column
         prop="name"
         label="姓名"
         width="180" />
-      <mtd-table-column
+      <wt-table-column
         prop="address"
         label="地址" />
-    </mtd-table>
+    </wt-table>
     <p>默认</p>
-    <mtd-table :data="tableData" style="margin-bottom: 40px;">
-      <mtd-table-column
+    <wt-table :data="tableData" style="margin-bottom: 40px;">
+      <wt-table-column
         prop="date"
         label="日期"
         width="180" />
-      <mtd-table-column
+      <wt-table-column
         prop="name"
         label="姓名"
         width="180" />
-      <mtd-table-column
+      <wt-table-column
         prop="address"
         label="地址" />
-    </mtd-table>
+    </wt-table>
     <p>大号</p>
-    <mtd-table :data="tableData" size="large">
-      <mtd-table-column
+    <wt-table :data="tableData" size="large">
+      <wt-table-column
         prop="date"
         label="日期"
         width="180" />
-      <mtd-table-column
+      <wt-table-column
         prop="name"
         label="姓名"
         width="180" />
-      <mtd-table-column
+      <wt-table-column
         prop="address"
         label="地址" />
-    </mtd-table>
+    </wt-table>
   </div>
 </template>
 <script>

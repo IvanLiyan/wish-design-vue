@@ -1,13 +1,13 @@
 <template>
-  <mtd-table :data="tableData">
-    <mtd-table-column
+  <wt-table :data="tableData">
+    <wt-table-column
       label="日期"
       width="240">
       <template slot-scope="scope">
         <mtd-input v-model="scope.row.date" placeholder="具体文案" />
       </template>
-    </mtd-table-column>
-    <mtd-table-column
+    </wt-table-column>
+    <wt-table-column
       label="姓名">
       <template slot-scope="scope">
         <mtd-popover trigger="hover" placement="top">
@@ -17,8 +17,8 @@
           </div>
         </mtd-popover>
       </template>
-    </mtd-table-column>
-    <mtd-table-column label="操作" width="180">
+    </wt-table-column>
+    <wt-table-column label="操作" width="180">
       <template slot-scope="scope">
         <mtd-button
           size="small"
@@ -31,8 +31,8 @@
           @click="handleDelete(scope.$index, scope.row)">删除
         </mtd-button>
       </template>
-    </mtd-table-column>
-  </mtd-table>
+    </wt-table-column>
+  </wt-table>
 </template>
 
 <script>

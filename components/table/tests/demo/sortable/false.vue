@@ -1,8 +1,8 @@
 <template>
-  <mtd-table :data="data" :sort-order.sync="sortOrder">
-    <mtd-table-column label="label" prop="prop" />
-    <mtd-table-column label="label" prop="value" :sortable="false" />
-  </mtd-table>
+  <wt-table :data="data" :sort-order.sync="sortOrder">
+    <wt-table-column label="label" prop="prop" />
+    <wt-table-column label="label" prop="value" :sortable="false" />
+  </wt-table>
 </template>
 
 <script>

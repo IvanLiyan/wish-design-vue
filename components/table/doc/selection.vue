@@ -1,25 +1,25 @@
 <template>
   <div>
-    <mtd-table
+    <wt-table
       :data="tableData3"
       :checkboxable="checkboxable"
       :selection="selection">
-      <mtd-table-column
+      <wt-table-column
         type="selection"
         width="34" />
-      <mtd-table-column
+      <wt-table-column
         label="日期"
         width="120">
         <template slot-scope="scope">{{ scope.row.date }}</template>
-      </mtd-table-column>
-      <mtd-table-column
+      </wt-table-column>
+      <wt-table-column
         prop="name"
         label="姓名"
         width="120" />
-      <mtd-table-column
+      <wt-table-column
         prop="address"
         label="地址" />
-    </mtd-table>
+    </wt-table>
     <div style="margin-top: 20px">
       <mtd-button @click="selectRow()">选中第三、第四行</mtd-button>
       <mtd-button @click="clearSelectRow()">取消选择</mtd-button>

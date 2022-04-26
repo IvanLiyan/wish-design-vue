@@ -1,21 +1,21 @@
 <template>
-  <mtd-table
+  <wt-table
     :data="tableData"
     :sort-order.sync="orderData">
-    <mtd-table-column
+    <wt-table-column
       prop="date"
       label="日期"
       sortable
       :sort-method="sort"
       width="180" />
-    <mtd-table-column
+    <wt-table-column
       prop="name"
       label="姓名"
       width="180" />
-    <mtd-table-column
+    <wt-table-column
       prop="address"
       label="地址" />
-  </mtd-table>
+  </wt-table>
 </template>
 
 <script>

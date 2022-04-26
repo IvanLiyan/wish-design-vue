@@ -1,21 +1,21 @@
 <template>
-  <mtd-table :data="tableData" show-summary
+  <wt-table :data="tableData" show-summary
     :summary-method="getSummary"
     :height="180">
-    <mtd-table-column
+    <wt-table-column
       prop="name"
       label="菜品名"
       width="180" />
-    <mtd-table-column
+    <wt-table-column
       prop="value"
       label="单价(元)" />
-    <mtd-table-column
+    <wt-table-column
       prop="count"
       label="数量(份)" />
-    <mtd-table-column
+    <wt-table-column
       prop="total"
       label="销售额(元)" />
-  </mtd-table>
+  </wt-table>
 </template>
 
 <script>

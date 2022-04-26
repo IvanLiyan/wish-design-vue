@@ -1,21 +1,21 @@
 <template>
-  <mtd-table :data="tableData"
+  <wt-table :data="tableData"
     highlight-current-row
     row-key="date"
     :current-row-key="currentRowKey"
   >
-    <mtd-table-column
+    <wt-table-column
       prop="date"
       label="日期"
       width="180" />
-    <mtd-table-column
+    <wt-table-column
       prop="name"
       label="姓名"
       width="180" />
-    <mtd-table-column
+    <wt-table-column
       prop="address"
       label="地址" />
-  </mtd-table>
+  </wt-table>
 </template>
 <script>
 import {

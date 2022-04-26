@@ -1,6 +1,6 @@
 <template>
-  <mtd-table :data="tableData" style="width: 400px;">
-    <mtd-table-column
+  <wt-table :data="tableData" style="width: 400px;">
+    <wt-table-column
       prop="date"
       label="日期"
       width="180"
@@ -12,7 +12,7 @@
         { text: '2016-05-04', value: '2016-05-04' },
       ]"
       :filter-method="filterDate" />
-    <mtd-table-column
+    <wt-table-column
       prop="name"
       label="姓名"
       width="180"
@@ -23,11 +23,11 @@
         { text: '小小', value: '小小' },
       ]"
       :filter-method="filterName" />
-    <mtd-table-column
+    <wt-table-column
       fixed="right"
       prop="address"
       label="地址" />
-  </mtd-table>
+  </wt-table>
 </template>
 <script>
 export default {

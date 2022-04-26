@@ -1,20 +1,20 @@
 <template>
   <div style="text-align: right;">
-    <mtd-table :data="tableData"
+    <wt-table :data="tableData"
       style="margin-bottom: 20px;">
-      <mtd-table-column
+      <wt-table-column
         prop="date"
         label="日期"
         width="180" />
-      <mtd-table-column
+      <wt-table-column
         prop="name"
         label="姓名"
         width="180" />
-      <mtd-table-column
+      <wt-table-column
         prop="address"
         label="地址" />
       <h1 slot="empty">123</h1>
-    </mtd-table>
+    </wt-table>
     <mtd-pagination
       size="small"
       :total="60"

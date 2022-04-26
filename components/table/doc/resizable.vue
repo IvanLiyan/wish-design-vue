@@ -1,20 +1,20 @@
 <template>
-  <mtd-table :data="tableData">
-    <mtd-table-column
+  <wt-table :data="tableData">
+    <wt-table-column
       prop="date"
       label="日期"
       width="180"
       resizable />
-    <mtd-table-column
+    <wt-table-column
       prop="name"
       label="姓名"
       width="180"
       resizable />
-    <mtd-table-column
+    <wt-table-column
       prop="address"
       label="地址"
       resizable />
-  </mtd-table>
+  </wt-table>
 </template>
 <script>
 export default {

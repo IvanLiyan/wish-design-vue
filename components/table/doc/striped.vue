@@ -1,33 +1,33 @@
 <template>
   <div>
     <p>斑马线样式</p>
-    <mtd-table :data="tableData" striped style="margin-bottom: 40px;">
-      <mtd-table-column
+    <wt-table :data="tableData" striped style="margin-bottom: 40px;">
+      <wt-table-column
         prop="date"
         label="日期"
         width="180" />
-      <mtd-table-column
+      <wt-table-column
         prop="name"
         label="姓名"
         width="180" />
-      <mtd-table-column
+      <wt-table-column
         prop="address"
         label="地址" />
-    </mtd-table>
+    </wt-table>
     <p>显示列分割线样式</p>
-    <mtd-table :data="tableData" bordered>
-      <mtd-table-column
+    <wt-table :data="tableData" bordered>
+      <wt-table-column
         prop="date"
         label="日期"
         width="180" />
-      <mtd-table-column
+      <wt-table-column
         prop="name"
         label="姓名"
         width="180" />
-      <mtd-table-column
+      <wt-table-column
         prop="address"
         label="地址" />
-    </mtd-table>
+    </wt-table>
   </div>
 </template>
 <script>

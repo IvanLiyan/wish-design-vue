@@ -1,19 +1,19 @@
 <template>
-  <mtd-table :data="tableData"
+  <wt-table :data="tableData"
     :tooltip-props="{ size: 'small' }">
-    <mtd-table-column
+    <wt-table-column
       prop="date"
       label="日期"
       width="180" />
-    <mtd-table-column
+    <wt-table-column
       prop="name"
       label="姓名"
       width="180" />
-    <mtd-table-column
+    <wt-table-column
       prop="address"
       label="地址" show-overflow-tooltip />
     <h1 slot="empty">123</h1>
-  </mtd-table>
+  </wt-table>
 </template>
 
 <script>
