@@ -1,0 +1,144 @@
+@import './common/var.scss';
+@import './mixins/breadcrumb.scss';
+// @component breadcrumb 面包屑
+// @category base
+// @propsValue default
+// @name 文字颜色
+$breadcrumb-color: $color-primary-1 !default;
+// @refer color
+// @name 分割符-文字颜色
+$breadcrumb-sepreate-color: #c6cede !default;
+// @name 悬浮-文字-装饰
+$breadcrumb-hover-text-decoration: none !default;
+// @name 项-最大宽
+$breadcrumb-item-max-width: 200px !default;
+
+// @dom current
+// @name 当前-文字颜色
+$breadcrumb-current-color: $color-black !default;
+// @name 当前-字重
+$breadcrumb-current-font-weight: $font-weight-medium !default;
+// @name 项-最大宽-当前
+$breadcrumb-item-current-max-width: 400px !default;
+// @end dom
+
+// @state hover
+// @name 悬浮-文字颜色
+$breadcrumb-hover-color: $color-primary !default;
+// @end state
+// @state active
+// @name 激活-文字颜色
+$breadcrumb-active-color: $color-primary !default;
+// @refer color
+// @end state
+// @end propsValue
+// @end category
+
+// @category size
+// @propsValue default
+// @name 字号
+$breadcrumb-font-size: $font-size-2 !default;
+// @name 行高
+$breadcrumb-line-height: $line-height-2 !default;
+// @name 分割符-间距
+$breadcrumb-sepreate-spacing: $s-2 !default;
+// @end propsValue
+
+// @propsValue small
+// @name 小号-字号
+$breadcrumb-small-font-size: $font-size-1 !default;
+// @name 小号-行高
+$breadcrumb-small-line-height: $line-height-1 !default;
+// @name 小号-分割符-间距
+$breadcrumb-small-sepreate-spacing: $s-1 !default;
+// @end propsValue
+
+// @propsValue max
+// @name 大号-字号
+$breadcrumb-large-font-size: $font-size-3 !default;
+// @name 大号-行高
+$breadcrumb-large-line-height: $line-height-3 !default;
+// @name 大号-分割符-间距
+$breadcrumb-large-sepreate-spacing: $s-2 !default;
+// @end propsValue
+// @end category
+// @end component
+
+@include c(breadcrumb) {
+  color: $color-primary-1;
+  &-separator {
+    color: $breadcrumb-sepreate-color;
+  }
+  @include clearfix;
+  @include e(item) {
+    float: left;
+    @include e(inner) {
+      @include text-ellipsis;
+      max-width: $breadcrumb-item-max-width;
+      &,
+      & > a {
+        text-decoration: none;
+        cursor: pointer;
+        color: $color-primary-1;
+        &:hover,
+        &.hover {
+          color: $breadcrumb-hover-color;
+          text-decoration: $breadcrumb-hover-text-decoration;
+        }
+        &:active,
+        &.active {
+          color: $breadcrumb-active-color;
+        }
+      }
+    }
+    &:last-child {
+      .#{$prefix}-breadcrumb-inner {
+        max-width: $breadcrumb-item-current-max-width;
+      }
+      .#{$prefix}-breadcrumb-inner,
+      .#{$prefix}-breadcrumb-inner > a {
+        font-weight: $breadcrumb-current-font-weight;
+        color: $breadcrumb-current-color;
+        cursor: text;
+        &,
+        &:hover,
+        &.hover {
+          color: $breadcrumb-current-color;
+        }
+      }
+
+      .#{$prefix}-breadcrumb-separator {
+        display: none;
+        margin: 0 18px;
+      }
+    }
+  }
+  @include breadcrumb-size($breadcrumb-font-size, $breadcrumb-line-height, $breadcrumb-sepreate-spacing);
+}
+
+@include c(breadcrumb-title) {
+  font-family: 'Noto Sans SC';
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 32px;
+  color: #0e161c;
+  display: flex;
+  align-items: center;
+  &::after {
+    content: '';
+    border: 1px solid #bfcdd4;
+    margin: 0px 8px;
+    width: 1px;
+    height: 24px;
+  }
+  @include e(icon) {
+    margin-right: 8px;
+    cursor: pointer;
+  }
+}
+
+@include c(breadcrumb-wrapper) {
+  display: flex;
+  align-items: center;
+}

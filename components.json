@@ -31,5 +31,7 @@
   "tab-drop": "components/tab-drop",
   "tab-pane": "components/tab-pane",
   "expansion": "components/expansion",
-  "expansion-item": "components/expansion-item"
+  "expansion-item": "components/expansion-item",
+  "breadcrumb": "components/breadcrumb",
+  "breadcrumb-item": "components/breadcrumb-item"
 }

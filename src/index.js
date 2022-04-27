@@ -32,6 +32,8 @@ import TabDrop from 'components/tab-drop';
 import TabPane from 'components/tab-pane';
 import Expansion from 'components/expansion';
 import ExpansionItem from 'components/expansion-item';
+import Breadcrumb from 'components/breadcrumb';
+import BreadcrumbItem from 'components/breadcrumb-item';
 import expansionTransition from './transitions/expansion-transition';
 
 const components = [
@@ -68,6 +70,8 @@ const components = [
   TabPane,
   Expansion,
   ExpansionItem,
+  Breadcrumb,
+  BreadcrumbItem,
   expansionTransition,
 ];
 
@@ -125,6 +129,8 @@ export {
   TabPane,
   Expansion,
   ExpansionItem,
+  Breadcrumb,
+  BreadcrumbItem,
   expansionTransition,
 };
 

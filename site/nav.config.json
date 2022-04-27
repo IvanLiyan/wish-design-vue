@@ -28,6 +28,11 @@
         "groupName": "Navigation",
         "list": [
           {
+            "path": "breadcrumb",
+            "name": "Breadcrumb",
+            "cnName": "面包屑"
+          },
+          {
             "path": "dropdown",
             "name": "Dropdown",
             "cnName": "下拉"

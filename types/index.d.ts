@@ -30,7 +30,9 @@ import { Tab } from './tab';
 import { TabDrop } from './tab-drop';
 import { TabPane } from './tab-pane';
 import { Expansion } from './expansion';
-import { expansion-item } from './expansion-item';
+import { ExpansionItem } from './expansion-item';
+import { Breadcrumb } from './breadcrumb';
+import { BreadcrumbItem } from './breadcrumb-item';
 import { Confirm as WTConfirm } from './confirm';
 import {
   Message as WTMessage,
@@ -79,7 +81,9 @@ export {
   TabDrop,
   TabPane,
   Expansion,
-  expansion-item,
+  ExpansionItem,
+  Breadcrumb,
+  BreadcrumbItem,
   FormRule,
   FormRules,
   NotificationOptions,
