@@ -41,10 +41,11 @@ export default function withRadioGroup(name, Component) {
         return {
           /**
            *
-           * 监听radio的chenge事件并进行透传逻辑处理
+           * 监听radio的change事件并进行透传逻辑处理
            */
           change(v) {
             if (context.radioGroup) {
+              context.$emit('change', context.value);
               context.radioGroup.$emit('radioChange', context.value);
             } else {
               context.$emit('change', v);

@@ -37,6 +37,9 @@ $padding: 8px;
   $il: $B + '-with-label';
   $it: $B + '-tip';
 
+  &-box {
+    position: relative;
+  }
   &-wrapper {
     @include reset-form;
     text-align: left;
@@ -125,6 +128,8 @@ $padding: 8px;
     }
     & + .#{$it} {
       color: $color-danger-1;
+      position: absolute;
+      right: 8px;
     }
   }
 
@@ -186,6 +191,7 @@ $padding: 8px;
     em {
       @include verticle-middle;
       right: $padding;
+      position: absolute;
     }
   }
 }

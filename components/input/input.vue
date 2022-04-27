@@ -38,7 +38,9 @@
         <slot name="suffix"></slot>
       </div>
     </fieldset>
-    <em v-if="type === 'textarea' && isInvalid"> {{ inputValue.length }}/ {{ maxLength }}</em>
+    <em v-if="type === 'textarea' && inputValue.length > maxLength" :class="`${inputPrefix}-tip`">
+      {{ inputValue.length }}/{{ maxLength }}</em
+    >
   </div>
 </template>
 <script>
@@ -74,13 +76,13 @@ export default {
     invalid: Boolean,
     // 宽
     width: Number,
-    // 宽
+    // 标签
     label: String,
     // 输入框的内容
     value: [String, Number],
     // 是否有清空按钮
     clearable: Boolean,
-    // 自适应内容高度
+    // textarea时 自适应内容高度
     autosize: {
       type: [Boolean, Object],
       default: false,
@@ -96,8 +98,6 @@ export default {
     return {
       // 聚焦
       focused: false,
-      // hover
-      hovering: false,
       // 是否在拼音拼写中
       isComposing: false,
       // textarea自适应高度
@@ -149,6 +149,9 @@ export default {
     },
   },
   watch: {
+    /**
+     *textarea时，监听输入内容，若时autosize,变更输入框的高度
+     */
     value(val) {
       this.nativeValue = val;
       if (this.type === 'textarea') {
@@ -245,7 +248,7 @@ export default {
       this.textareaCalcStyle = calcNodeHeight(this.$refs.input, minRows, maxRows);
     },
     /**
-     * 清楚输入框文本内容
+     * 清除输入框文本内容
      */
     handleClear() {
       this.handleInput({ target: { value: '' } });

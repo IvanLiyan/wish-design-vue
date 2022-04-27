@@ -10,9 +10,6 @@ const WtInput = withFormItem('WtInput', Input, {
     blur() {
       return this.$refs.wrappedInstance.blur();
     },
-    select() {
-      return this.$refs.wrappedInstance.select();
-    },
   },
 });
 

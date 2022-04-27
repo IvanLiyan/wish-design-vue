@@ -6,3 +6,13 @@
     <wt-radio disabled checked value="item4">item content <span slot="hint">desc should short</span></wt-radio>
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      value: 'item1',
+    };
+  },
+};
+</script>

@@ -17,6 +17,14 @@
       "version": ""
     },
     {
+      "name": "arrange",
+      "desc": "$t('radio-group.api.arrange')",
+      "type": "string",
+      "optionalValue": ["horizontal", "vertical"],
+      "default": "",
+      "version": ""
+    },
+    {
       "name": "name",
       "desc": "$t('radio-group.api.name')",
       "type": "string",

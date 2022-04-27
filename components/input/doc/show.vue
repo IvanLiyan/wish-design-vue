@@ -246,6 +246,7 @@
         @input="input"
         @focus="focus"
         v-model="inputData"
+        :max-length="20"
       />
     </div>
   </div>
@@ -261,6 +262,7 @@ export default {
   methods: {
     input: function (val) {
       console.log('input val', val);
+      console.log('inputData', this.inputData);
     },
     handleChange: function (val) {
       console.log('change val', val);
