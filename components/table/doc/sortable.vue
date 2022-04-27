@@ -1,46 +1,82 @@
 <template>
-  <wt-table
-    :data="tableData"
-    :sort-order.sync="orderData">
-    <wt-table-column
-      prop="date"
-      label="日期"
-      sortable
-      :sort-method="sort"
-      width="180" />
-    <wt-table-column
-      prop="name"
-      label="姓名"
-      width="180" />
-    <wt-table-column
-      prop="address"
-      label="地址" />
-  </wt-table>
+  <div>
+    <wt-table :data="tableData" :sort-order.sync="orderData">>
+      <wt-table-column
+        prop="orderId"
+        label="WOSP订单ID"
+        sortable
+        width="160" />
+      <wt-table-column
+        prop="logId"
+        label="物流追踪单号"
+        sortable
+        width="140" />
+      <wt-table-column
+        prop="logStatus"
+        label="物流状态"
+        sortable
+        width="140" />
+      <wt-table-column
+        prop="orderStatus"
+        width="100"
+        sortable
+        label="订单状态" />
+      <wt-table-column
+        prop="channelNum"
+        width="100"
+        sortable
+        label="渠道号" />
+      <wt-table-column
+        prop="name"
+        label="收件人"
+        sortable
+        width="170" />
+      <wt-table-column
+        prop="addTime"
+        label="创建时间"
+        sortable
+        width="160" />
+      <wt-table-column
+        prop="control"
+        label="操作" />
+    </wt-table>
+    <wt-pagination
+      size="small"
+      :total="60"
+      :show-total="true"
+      :show-quick-jumper="true"
+      :show-size-changer="true"
+      :current-page.sync="currentPage"
+    />
+  </div>
 </template>
 
 <script>
 export default {
   data () {
     return {
+      currentPage: 1,
       tableData: [{
-        date: '2016-05-02',
-        name: '美小团',
-        address: '北京市朝阳区望京东路四号',
+        orderId: 'WOSP021700118221DEU',
+        logId: 'WI001117700472FPL',
+        logStatus: 'Wishpost订单已生成',
+        orderStatus: <wt-tag type="error">用户取消</wt-tag>,
+        channelNum: '5301',
+        name: 'F.lli Gregorio Giuseppe',
+        addTime: '2020-08-25 00:00:00',
+        control: <div class="control"><wt-icon name="eye" width="20" height="20" /><wt-icon name="download" width="20" height="20" /><wt-icon name="x-circle" width="20" height="20" /></div>,
       }, {
-        date: '2016-05-04',
-        name: '美小团',
-        address: '北京市朝阳区望京东路四号 1517 号',
-      }, {
-        date: '2016-05-01',
-        name: '美小团',
-        address: '北京市朝阳区望京东路四号 1519 号',
-      }, {
-        date: '2016-05-03',
-        name: '美小团',
-        address: '北京市朝阳区望京东路四号 1516 号',
+        orderId: 'WOSP021700118221DEU',
+        logId: 'WI001117700472FPL',
+        logStatus: 'Wishpost订单已生成',
+        orderStatus: <wt-tag type="success">已完成</wt-tag>,
+        channelNum: '5301',
+        name: 'F.lli Gregorio Giuseppe',
+        addTime: '2020-08-25 00:00:00',
+        control: <div class="control"><wt-icon name="eye" width="20" height="20" /><wt-icon name="download" width="20" height="20" /><wt-icon name="x-circle" width="20" height="20" /></div>,
       }],
       orderData: {
-        prop: 'date',
+        prop: 'orderId',
         order: 'descending',
       },
     };

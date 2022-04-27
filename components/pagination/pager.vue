@@ -10,7 +10,9 @@
         [`${prefix}-disabled`]: currentPage <= 1
       }]"
       @click="prev"
-    ></li>
+    >
+      <Icon name="chevron-left" :strokeWidth="1" style="margin-top: 4px;"/>
+    </li>
     <li :class="`${prefix}-simple-item`"
         v-if="simple">
       <span v-if="simpleReadonly"
@@ -60,7 +62,9 @@
     <li @click="next"
       :class="[`${prefix}-item`, `${prefix}-next`, `${iconPrefix('right-thick')}`, {
         [`${prefix}-disabled`]: currentPage === pageCount
-      }]"></li>
+      }]">
+        <Icon name="chevron-right" :strokeWidth="1" style="margin-top: 4px;"/>
+      </li>
   </ul>
 </template>
 

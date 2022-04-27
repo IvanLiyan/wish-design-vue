@@ -89,6 +89,7 @@ $table-resize-width: 2px;
     font-size: $table-font-size; // td、th is set font-size to 0.
     >.#{$prefix}-checkbox{
       vertical-align: top;
+      display: grid;
     }
   }
 
@@ -442,7 +443,7 @@ $table-resize-width: 2px;
     width: 20px;
     display: inline-block;
     margin-left: 5px;
-    vertical-align: top;
+    vertical-align: text-bottom;
     position: relative;
     &-icon{
       width: 0;

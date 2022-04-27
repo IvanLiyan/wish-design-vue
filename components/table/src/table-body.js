@@ -3,7 +3,7 @@ import {
   addClass,
   removeClass,
 } from '@/utils/dom';
-import MtdCheckbox from '@components/checkbox';
+import WtCheckbox from '@components/checkbox';
 import Icon from '@components/icon';
 import LayoutObserver from './layout-observer';
 import { mapStates } from './store';
@@ -19,7 +19,7 @@ export default {
   mixins: [LayoutObserver],
 
   components: {
-    MtdCheckbox,
+    WtCheckbox,
     Icon,
   },
 

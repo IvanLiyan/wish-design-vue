@@ -51,9 +51,9 @@
   </wt-dropdown>
 </template>
 <script>
-import MtdDropdown from '@components/dropdown';
-import MtdCheckboxGroup from '@components/checkbox-group';
-import MtdCheckbox from '@components/checkbox';
+import WtDropdown from '@components/dropdown';
+import WtCheckboxGroup from '@components/checkbox-group';
+import WtCheckbox from '@components/checkbox';
 import Icon from '@components/icon';
 import { CONFIG_PROVIDER,
   getPrefixCls,
@@ -62,9 +62,9 @@ import { CONFIG_PROVIDER,
 export default {
   name: 'FilerPanel',
   components: {
-    MtdDropdown,
-    MtdCheckboxGroup,
-    MtdCheckbox,
+    WtDropdown,
+    WtCheckboxGroup,
+    WtCheckbox,
     Icon,
   },
   props: {

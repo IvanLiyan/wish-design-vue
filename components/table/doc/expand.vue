@@ -112,7 +112,7 @@ export default {
       }],
 
       // 要展开的行，数值的元素是row的key值
-      expands: [],
+      expands: ['id'],
     };
   },
   methods: {

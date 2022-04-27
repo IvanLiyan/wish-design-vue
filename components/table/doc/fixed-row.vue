@@ -1,12 +1,6 @@
 <template>
   <div>
-    <wt-table
-      :data="tableData"
-      :checkboxable="checkboxable"
-      :selection="selection">
-      <wt-table-column
-        type="selection"
-        width="34" />
+    <wt-table :data="tableData" height="148">
       <wt-table-column
         prop="orderId"
         label="WOSP订单ID"
@@ -82,32 +76,44 @@ export default {
         name: 'F.lli Gregorio Giuseppe',
         addTime: '2020-08-25 00:00:00',
         control: <div class="control"><wt-icon name="eye" width="20" height="20" /><wt-icon name="download" width="20" height="20" /><wt-icon name="x-circle" width="20" height="20" /></div>,
+      }, {
+        orderId: 'WOSP021700118221DEU',
+        logId: 'WI001117700472FPL',
+        logStatus: 'Wishpost订单已生成',
+        orderStatus: <wt-tag type="success">已完成</wt-tag>,
+        channelNum: '5301',
+        name: 'F.lli Gregorio Giuseppe',
+        addTime: '2020-08-25 00:00:00',
+        control: <div class="control"><wt-icon name="eye" width="20" height="20" /><wt-icon name="download" width="20" height="20" /><wt-icon name="x-circle" width="20" height="20" /></div>,
+      }, {
+        orderId: 'WOSP021700118221DEU',
+        logId: 'WI001117700472FPL',
+        logStatus: 'Wishpost订单已生成',
+        orderStatus: <wt-tag type="success">已完成</wt-tag>,
+        channelNum: '5301',
+        name: 'F.lli Gregorio Giuseppe',
+        addTime: '2020-08-25 00:00:00',
+        control: <div class="control"><wt-icon name="eye" width="20" height="20" /><wt-icon name="download" width="20" height="20" /><wt-icon name="x-circle" width="20" height="20" /></div>,
+      }, {
+        orderId: 'WOSP021700118221DEU',
+        logId: 'WI001117700472FPL',
+        logStatus: 'Wishpost订单已生成',
+        orderStatus: <wt-tag type="success">已完成</wt-tag>,
+        channelNum: '5301',
+        name: 'F.lli Gregorio Giuseppe',
+        addTime: '2020-08-25 00:00:00',
+        control: <div class="control"><wt-icon name="eye" width="20" height="20" /><wt-icon name="download" width="20" height="20" /><wt-icon name="x-circle" width="20" height="20" /></div>,
+      }, {
+        orderId: 'WOSP021700118221DEU',
+        logId: 'WI001117700472FPL',
+        logStatus: 'Wishpost订单已生成',
+        orderStatus: <wt-tag type="success">已完成</wt-tag>,
+        channelNum: '5301',
+        name: 'F.lli Gregorio Giuseppe',
+        addTime: '2020-08-25 00:00:00',
+        control: <div class="control"><wt-icon name="eye" width="20" height="20" /><wt-icon name="download" width="20" height="20" /><wt-icon name="x-circle" width="20" height="20" /></div>,
       }],
-      checked: false,
-      selection: [],
     };
-  },
-
-  methods: {
-    selectRow () {
-      const {tableData, selection} = this;
-      const rows = [tableData[2], tableData[3]];
-      rows.forEach((row) => {
-        if (selection.indexOf(row) === -1) {
-          selection.push(row);
-        }
-      });
-    },
-    clearSelectRow () {
-      this.selection = [];
-    },
-    checkboxable (row, index) {
-      if (index === 2) {
-        return false;
-      } else {
-        return true;
-      }
-    },
   },
 };
 </script>

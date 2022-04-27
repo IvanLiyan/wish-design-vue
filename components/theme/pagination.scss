@@ -153,12 +153,25 @@
   &-total,
   &-options,
   &-jumper{
+    height: 36px;
+    line-height: 36px;
     display: inline-block;
     margin-left: $pagination-addon-spacing; // $pagination-page-margin;
+    span {
+      font-size: 12px;
+    }
   }
+  &-options {
+    width: 90px;
+    .wt-input-wrapper {
+      min-width: 90px;
+    }
+  }
+
   &-total{
     color: $pagination-total-color;
     line-height: $pagination-size;
+    font-size: 14px;
   }
   &-jumper {
     &-input {
@@ -202,8 +215,9 @@
     .#{$B + '-jumper'} {
       &-input {
         width: $pagination-small-jumper-width;
-        height: $pagination-small-size;
+        height: 36px;
         margin-left: $pagination-small-page-margin;
+        text-align: right;
       }
     }
   }

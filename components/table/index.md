@@ -22,15 +22,53 @@
       width: 50%;
     }
   }
+  
+  .wt-pagination {
+    margin-top: 6px;
+    text-align: right;
+  }
+
+  .control {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .control .wt-icon {
+    cursor: pointer;
+  }
 </style>
 
 # 表格 / Table
-一个二维数组，各类数据出现在单元格中，从行和列的交集中获取其上下文，使信息易于检索，便于用户查找和比较。
+用于展示行列数据
 
-## 基础样式
+## 数据表格
+### 默认
 :::include(src="./doc/base.vue")
 :::
 
+### 可排序
+:::include(src="./doc/sortable.vue")
+:::
+
+### 行选择
+:::include(src="./doc/selection.vue")
+:::
+
+## 表格展示
+### 表头固定
+:::include(src="./doc/fixed-row.vue")
+:::
+
+### 表列固定
+:::include(src="./doc/fixed-column.vue")
+:::
+
+<!-- ### 可展开
+:::include(src="./doc/expand.vue")
+::: -->
+
+<!-- 
 ## 类型与用法
 ### 大小 <design-tag></design-tag>
 根据场景选择，在一些小区域内如弹窗和卡片内用小号表格。
@@ -52,19 +90,12 @@
 ### 表头固定、列固定
 一屏内展示大量数据，需要下滚时仍能看到表头标题，可固定表头。对于列数很多的表格，有些列需要在横向滚动时常显，可固定列。
 只要在`mtd-table`元素中定义了`height`属性，即可实现固定表头的表格，而不需要额外的代码。
-:::include(src="./doc/fixed.vue")
-:::
+
 
 ### 多级表头
 多级表头用来展现数据列标题的层次关系。
 只需要在 mtd-table-column 里面嵌套 mtd-table-column，就可以实现多级表头。
 :::include(src="./doc/cascade.vue")
-:::
-
-### 多选
-选择多行数据时使用 复选框 / Checkbox。
-实现多选非常简单: 手动添加一个`mtd-table-column`，设`type`属性为`selection`即可。
-:::include(src="./doc/selection.vue")
 :::
 
 ### 保留选中状态
@@ -77,12 +108,6 @@
 :::include(src="./doc/custom-selection.vue")
 :::
 
-### 排序
-可排序的栏会配有上下箭头标识，对表格进行排序。
-在列中设置`sortable`属性即可实现以该列为基准的排序，接受一个`Boolean`，默认为`false`。可以通过 Table 的`sort-order`属性设置默认的排序列和排序顺序。可以使用`sort-method`或者`sort-by`使用自定义的排序规则。如果需要后端排序，需将`sortable`设置为`custom`，同时在 Table 上监听`sort-change`事件，在事件回调中可以获取当前排序的字段名和排序顺序，从而向接口请求排序后的表格数据。
-:::include(src="./doc/sortable.vue")
-:::
-
 ### 自定义列模板
 自定义列的显示内容，可组合其他组件使用。
 通过 `scoped slot` 可以获取到 row, column, $index 和 store（table 内部的状态管理）的数据，用法参考 demo。
@@ -91,11 +116,6 @@
 
 ### 自定义表头
 :::include(src="./doc/header.vue")
-:::
-
-### 表内折叠行
-如果表格项内容过多，或包含更多详细信息，想采取一种比较轻的形式在页面内展示，可用折叠行的方式。展开行可设置为可同时展开多个和一次只能展开一个。
-:::include(src="./doc/expand.vue")
 :::
 
 
@@ -145,7 +165,7 @@
 
 ### 异步加载树型表格
 :::include(src="./doc/tree-load.vue")
-:::
+::: -->
 
 
 ## API

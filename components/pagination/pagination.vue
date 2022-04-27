@@ -142,12 +142,6 @@ export default {
           pagerCount={this.pagerCount}
           simpleReadonly={this.simpleReadonly}
           onChange={ this.handleCurrentChange } />
-        {this.showSizeChanger && <WtOptions size={size}
-          selectProps={this.selectProps}
-          pageSizeOptions={this.defaultPageSizeOptions}
-          pageSize={this.pageSize}
-          class={this.selectClass || ''}
-          onChange={ this.handlePageSizeChange } />}
         {this.showQuickJumper && <span class={`${prefix}-jumper`}>
           <span>前往</span>
           <input
@@ -157,6 +151,12 @@ export default {
             onKeyup={this.handleKeyup}
             onBlur={this.handleChange} />
         </span>}
+        {this.showSizeChanger && <WtOptions size={size}
+          selectProps={this.selectProps}
+          pageSizeOptions={this.defaultPageSizeOptions}
+          pageSize={this.pageSize}
+          class={this.selectClass || ''}
+          onChange={ this.handlePageSizeChange } />}
         {this.showTotal &&
         <span class={`${prefix}-total`}>共{this.total}条</span>}
       </div>
