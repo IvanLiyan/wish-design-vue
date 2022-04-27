@@ -9,14 +9,6 @@
       "version": ""
     },
     {
-      "name": "size",
-      "desc": "设置输入框的大小，同 Input 组件 size 属性",
-      "type": "string",
-      "optionalValue": ["small", "不设置", "large"],
-      "default": "不设置",
-      "version": ""
-    },
-    {
       "name": "type",
       "desc": "显示类型",
       "type": "string",
@@ -38,14 +30,6 @@
       "type": "string",
       "optionalValue": "",
       "default": "",
-      "version": ""
-    },
-    {
-      "name": "readonly",
-      "desc": "是否只读",
-      "type": "boolean",
-      "optionalValue": "",
-      "default": "false",
       "version": ""
     },
     {
@@ -131,14 +115,6 @@
       "type": "function():HTMLElement",
       "optionalValue": "",
       "default": "默认返回 document.body",
-      "version": ""
-    },
-    {
-      "name": "popper-options",
-      "desc": "自定义 popper.js 的配置项，具体配置查看 <a target='_blank' href='https://popper.js.org/docs/v1/#modifiers--codeobjectcode'>popper.js 文档</a>",
-      "type": "object",
-      "optionalValue": "",
-      "default": "",
       "version": ""
     },
     {
