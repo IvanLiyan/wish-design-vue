@@ -8,10 +8,26 @@
       "version": ""
     },
     {
+      "name": "striped",
+      "desc": "是否为斑马纹 table",
+      "type": "boolean",
+      "optionalValue": "",
+      "default": "false",
+      "version": ""
+    },
+    {
+      "name": "bordered",
+      "desc": "是否带有边框",
+      "type": "boolean",
+      "optionalValue": "",
+      "default": "false",
+      "version": ""
+    },
+    {
       "name": "size",
       "desc": "Table 的尺寸",
       "type": "string",
-      "optionalValue": ["small"],
+      "optionalValue": ["large", "small"],
       "default": "",
       "version": ""
     },
@@ -29,6 +45,14 @@
       "type": ["string", "number"],
       "optionalValue": "",
       "default": "",
+      "version": ""
+    },
+    {
+      "name": "show-header",
+      "desc": "是否显示表头",
+      "type": "boolean",
+      "optionalValue": "",
+      "default": "true",
       "version": ""
     },
     {
@@ -69,6 +93,14 @@
       "type": ["Function(row)", "String"],
       "optionalValue": "",
       "default": "",
+      "version": ""
+    },
+    {
+      "name": "empty-text",
+      "desc": "空数据显示文本，可通过插槽 slot=\"empty\"设置",
+      "type": "string",
+      "optionalValue": "",
+      "default": "暂无数据",
       "version": ""
     },
     {

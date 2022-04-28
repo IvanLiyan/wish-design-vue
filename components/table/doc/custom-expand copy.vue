@@ -1,29 +1,20 @@
 <template>
   <div>
-    <p>折叠内容为表格</p>
     <wt-table
       class="expandsTable"
       :data="tableData5"
       :row-key="getRowKeys"
       :expandable="expandable"
       :expand-row-keys="expands">
-      <wt-table-column type="expand" width="40">
+      <wt-table-column type="expand" width="120">
+        <template slot-scope="scope" slot="expand">
+          <div @click="scope.toggle">
+              <!-- <i class="wticon wticon-right-thick"></i> -->
+              <wt-icon class="wticon wticon-right-thick" name="chevron-right" width="20" height="20" strokeWidth="1" />
+          </div>
+        </template>
         <template slot-scope="props">
-          <wt-table :data="tableData" :show-header="false">
-            <wt-table-column width="40" />
-            <wt-table-column
-              prop="date"
-              align="center"
-              label="日期"
-              width="180" />
-            <wt-table-column
-              prop="name"
-              label="姓名"
-              width="180" />
-            <wt-table-column
-              prop="address"
-              label="地址" />
-          </wt-table>
+          <p>一段屁话</p>
         </template>
       </wt-table-column>
       <wt-table-column

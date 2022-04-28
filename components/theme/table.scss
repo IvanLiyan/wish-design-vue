@@ -91,6 +91,10 @@ $table-resize-width: 2px;
       vertical-align: top;
       display: grid;
     }
+    .expand-wrapper {
+      line-height: 100%;
+      cursor: pointer;
+    }
   }
 
   &-cell-tooltip {
@@ -213,7 +217,7 @@ $table-resize-width: 2px;
     th, td {
       .#{$prefix}-table-cell{
         line-height: $table-small-line-height;
-        font-size: $table-small-font-size;
+        font-size: 12px;
       }
     }
   }

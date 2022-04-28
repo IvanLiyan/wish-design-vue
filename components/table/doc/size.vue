@@ -1,85 +1,73 @@
 <template>
   <div>
-    <p>小号</p>
-    <wt-table :data="tableData" size="small" style="margin-bottom: 40px;">
+    <wt-table :data="tableData" size="small">
       <wt-table-column
-        prop="date"
-        label="日期"
-        width="180" />
+        prop="orderId"
+        label="WOSP订单ID"
+        width="160" />
       <wt-table-column
-        prop="name"
-        label="姓名"
-        width="180" />
+        prop="logId"
+        label="物流追踪单号"
+        width="140" />
       <wt-table-column
-        prop="address"
-        label="地址" />
-    </wt-table>
-    <p>默认</p>
-    <wt-table :data="tableData" style="margin-bottom: 40px;">
+        prop="logStatus"
+        label="物流状态"
+        width="140" />
       <wt-table-column
-        prop="date"
-        label="日期"
-        width="180" />
+        prop="orderStatus"
+        width="90"
+        label="订单状态" />
       <wt-table-column
-        prop="name"
-        label="姓名"
-        width="180" />
-      <wt-table-column
-        prop="address"
-        label="地址" />
-    </wt-table>
-    <p>大号</p>
-    <wt-table :data="tableData" size="large">
-      <wt-table-column
-        prop="date"
-        label="日期"
-        width="180" />
+        prop="channelNum"
+        width="70"
+        label="渠道号" />
       <wt-table-column
         prop="name"
-        label="姓名"
-        width="180" />
+        label="收件人"
+        width="170" />
       <wt-table-column
-        prop="address"
-        label="地址" />
+        prop="addTime"
+        label="创建时间"
+        width="160" />
+      <wt-table-column
+        fixed="right"
+        prop="control"
+        label="操作" />
     </wt-table>
+    <wt-pagination
+      size="small"
+      :total="60"
+      :show-total="true"
+      :show-quick-jumper="true"
+      :show-size-changer="true"
+      :current-page.sync="currentPage"
+    />
   </div>
 </template>
+
 <script>
 export default {
   data () {
     return {
+      currentPage: 1,
       tableData: [{
-        date: '2016-05-03',
-        name: '美小团',
-        province: '北京',
-        city: '朝阳区',
-        address: '北京市朝阳区望京东路四号',
-        zip: 200333,
-        tag: '家',
+        orderId: 'WOSP021700118221DEU',
+        logId: 'WI001117700472FPL',
+        logStatus: 'Wishpost订单已生成',
+        orderStatus: <wt-tag type="error">用户取消</wt-tag>,
+        channelNum: '5301',
+        name: 'F.lli Gregorio Giuseppe',
+        addTime: '2020-08-25 00:00:00',
+        control: <div class="control"><wt-icon name="eye" width="20" height="20" /><wt-icon name="download" width="20" height="20" /><wt-icon name="x-circle" width="20" height="20" /></div>,
       }, {
-        date: '2016-05-02',
-        name: '美小团',
-        province: '北京',
-        city: '朝阳区',
-        address: '北京市朝阳区望京东路四号',
-        zip: 200333,
-        tag: '公司',
-      }, {
-        date: '2016-05-04',
-        name: '美小团',
-        province: '北京',
-        city: '朝阳区',
-        address: '北京市朝阳区望京东路四号',
-        zip: 200333,
-        tag: '家',
-      }, {
-        date: '2016-05-01',
-        name: '美小团',
-        province: '北京',
-        city: '朝阳区',
-        address: '北京市朝阳区望京东路四号',
-        zip: 200333,
-        tag: '公司',
+        orderId: 'WOSP021700118221DEU',
+        logId: 'WI001117700472FPL',
+        logStatus: 'Wishpost订单已生成',
+        orderStatus: <wt-tag type="success">已完成</wt-tag>,
+        channelNum: '5301',
+        name: 'F.lli Gregorio Giuseppe',
+        addTime: '2020-08-25 00:00:00',
+        control: <div class="control"><wt-icon name="eye" width="20" height="20" /><wt-icon name="download" width="20" height="20" /><wt-icon name="x-circle" width="20" height="20" /></div>,
       }],
     };
   },

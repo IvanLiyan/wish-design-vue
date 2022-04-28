@@ -1,48 +1,57 @@
 <template>
   <div>
-    <p>折叠内容为表格</p>
     <wt-table
       class="expandsTable"
-      :data="tableData5"
+      :data="tableData"
       :row-key="getRowKeys"
       :expandable="expandable"
       :expand-row-keys="expands">
-      <wt-table-column type="expand" width="120">
+      <wt-table-column type="expand">
         <template slot-scope="scope" slot="expand">
-          <div @click="scope.toggle">
-              <i class="mtdicon mtdicon-right-thick"></i>
-              xxxxx
+          <div @click="scope.toggle" class="expand-wrapper">
+              <!-- <i class="wticon wticon-right-thick"></i> -->
+              <wt-icon class="wticon mtdicon-right-thick" name="chevron-right" width="20" height="20" strokeWidth="1" />
           </div>
         </template>
         <template slot-scope="props">
-          <wt-table :data="tableData" :show-header="false">
-            <wt-table-column width="40" />
-            <wt-table-column
-              prop="date"
-              align="center"
-              label="日期"
-              width="180" />
-            <wt-table-column
-              prop="name"
-              label="姓名"
-              width="180" />
-            <wt-table-column
-              prop="address"
-              label="地址" />
-          </wt-table>
+          <p>
+            是非成败转头空，青山依旧在，惯看秋月春风。一壶浊酒喜相逢，古今多少事，滚滚长江东逝水，浪花淘尽英雄。 几度夕阳红。白发渔樵江渚上，都付笑谈中。
+            滚滚长江东逝水，浪花淘尽英雄。是非成败转头空，青山依旧在，几度夕阳红。白发渔樵江渚上，惯看秋月春风。一壶浊酒喜相逢，古今多少事，都付笑谈中。
+            是非成败转头空，青山依旧在，惯看秋月春风。一壶浊酒喜相逢，古今多少事，滚滚长江东逝水，浪花淘尽英雄。 几度夕阳红。白发渔樵江渚上，都付笑谈中。
+          </p>
         </template>
       </wt-table-column>
       <wt-table-column
-        label="商品 ID"
-        prop="id"
-        width="180" />
+        prop="orderId"
+        label="WOSP订单ID"
+        width="160" />
       <wt-table-column
-        label="商品名称"
+        prop="logId"
+        label="物流追踪单号"
+        width="140" />
+      <wt-table-column
+        prop="logStatus"
+        label="物流状态"
+        width="140" />
+      <wt-table-column
+        prop="orderStatus"
+        width="90"
+        label="订单状态" />
+      <wt-table-column
+        prop="channelNum"
+        width="70"
+        label="渠道号" />
+      <wt-table-column
         prop="name"
-        width="180" />
+        label="收件人"
+        width="170" />
       <wt-table-column
-        label="描述"
-        prop="desc" />
+        prop="addTime"
+        label="创建时间"
+        width="160" />
+      <wt-table-column
+        prop="control"
+        label="操作" />
     </wt-table>
   </div>
 </template>
@@ -51,70 +60,23 @@ export default {
   data () {
     return {
       tableData: [{
-        date: '2016-05-03',
-        name: '美小团',
-        province: '北京',
-        city: '朝阳区',
-        address: '北京市朝阳区望京东路四号',
-        zip: 200333,
-        tag: '家',
+        orderId: 'WOSP021700118221DEU',
+        logId: 'WI001117700472FPL',
+        logStatus: 'Wishpost订单已生成',
+        orderStatus: <wt-tag type="error">用户取消</wt-tag>,
+        channelNum: '5301',
+        name: 'F.lli Gregorio Giuseppe',
+        addTime: '2020-08-25 00:00:00',
+        control: <div class="control"><wt-icon name="eye" width="20" height="20" /><wt-icon name="download" width="20" height="20" /><wt-icon name="x-circle" width="20" height="20" /></div>,
       }, {
-        date: '2016-05-02',
-        name: '美小团',
-        province: '北京',
-        city: '朝阳区',
-        address: '北京市朝阳区望京东路四号',
-        zip: 200333,
-        tag: '公司',
-      }, {
-        date: '2016-05-04',
-        name: '美小团',
-        province: '北京',
-        city: '朝阳区',
-        address: '北京市朝阳区望京东路四号',
-        zip: 200333,
-        tag: '家',
-      }, {
-        date: '2016-05-01',
-        name: '美小团',
-        province: '北京',
-        city: '朝阳区',
-        address: '北京市朝阳区望京东路四号',
-        zip: 200333,
-        tag: '公司',
-      }],
-      tableData5: [{
-        id: '12987122',
-        name: '好滋好味鸡蛋仔',
-        category: '江浙小吃、小吃零食',
-        desc: '荷兰优质淡奶，奶香浓而不腻',
-        address: '北京市朝阳区真北路',
-        shop: '美小团夫妻店',
-        shopId: '10333',
-      }, {
-        id: '12987123',
-        name: '好滋好味鸡蛋仔',
-        category: '江浙小吃、小吃零食',
-        desc: '荷兰优质淡奶，奶香浓而不腻',
-        address: '北京市朝阳区真北路',
-        shop: '美小团夫妻店',
-        shopId: '10333',
-      }, {
-        id: '12987125',
-        name: '好滋好味鸡蛋仔',
-        category: '江浙小吃、小吃零食',
-        desc: '荷兰优质淡奶，奶香浓而不腻',
-        address: '北京市朝阳区真北路',
-        shop: '美小团夫妻店',
-        shopId: '10333',
-      }, {
-        id: '12987126',
-        name: '好滋好味鸡蛋仔',
-        category: '江浙小吃、小吃零食',
-        desc: '荷兰优质淡奶，奶香浓而不腻',
-        address: '北京市朝阳区真北路',
-        shop: '美小团夫妻店',
-        shopId: '10333',
+        orderId: 'WOSP021700118221DES',
+        logId: 'WI001117700472FPL',
+        logStatus: 'Wishpost订单已生成',
+        orderStatus: <wt-tag type="success">已完成</wt-tag>,
+        channelNum: '5301',
+        name: 'F.lli Gregorio Giuseppe',
+        addTime: '2020-08-25 00:00:00',
+        control: <div class="control"><wt-icon name="eye" width="20" height="20" /><wt-icon name="download" width="20" height="20" /><wt-icon name="x-circle" width="20" height="20" /></div>,
       }],
 
       // 要展开的行，数值的元素是row的key值
@@ -124,17 +86,17 @@ export default {
   methods: {
     // 获取row的key值
     getRowKeys (row) {
-      return row.id;
+      return row.orderId;
     },
     expandable (row, index) {
-      return index > 0;
+      return index > -1;
     },
   },
 };
 </script>
 
 <style>
-  .expandsTable .mtd-table-expanded-cell td {
+  .expandsTable .wt-table-expanded-cell td {
     /* padding: 10px 0px 10px 40px; */
     background-color: #F7F8FC;
   }

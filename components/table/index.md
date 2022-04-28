@@ -47,8 +47,16 @@
 :::include(src="./doc/base.vue")
 :::
 
+### 紧凑
+:::include(src="./doc/size.vue")
+:::
+
 ### 可排序
 :::include(src="./doc/sortable.vue")
+:::
+
+### 可展开
+:::include(src="./doc/custom-expand.vue")
 :::
 
 ### 行选择
@@ -64,17 +72,7 @@
 :::include(src="./doc/fixed-column.vue")
 :::
 
-<!-- ### 可展开
-:::include(src="./doc/expand.vue")
-::: -->
-
 <!-- 
-## 类型与用法
-### 大小 <design-tag></design-tag>
-根据场景选择，在一些小区域内如弹窗和卡片内用小号表格。
-`striped`属性可以创建带斑马纹的表格。它接受一个 `Boolean`，默认为 `false`，设置为 `true` 即为启用。
-:::include(src="./doc/size.vue")
-:::
 
 ### 样式 <design-tag></design-tag>
 一般用基础样式，为加强行阅读引导，可用斑马行样式；为突出纵列数据对比，可显示列分割线。
