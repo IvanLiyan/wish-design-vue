@@ -4,8 +4,6 @@ import { withFormItem } from '@components/form-item';
 const WtSelect = withFormItem('WtSelect', Select, {
   withRef: true,
   methods: {
-    // 由于暂时不支持 visible 属性，先提供手动展开方法
-    // https://ones.sankuai.com/ones/product/4348/workItem/requirement/detail/3278600
     toggle(visible) {
       const { wrappedInstance } = this.$refs;
       const nextVisible = visible !== undefined ? visible : !wrappedInstance.focused;

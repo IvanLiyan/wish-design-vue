@@ -15,7 +15,6 @@
       @click.native.stop
       @input="selectOptionClick"
       :form-no-validate="true"
-      :indeterminate="indeterminate"
       :checked="!!itemSelected"
       :disabled="_disabled"
     >
@@ -62,25 +61,29 @@ export default {
   },
 
   props: {
+    // 选项值
     value: [String, Number, Object, Boolean],
+    // 选项显示内容
     label: {
       type: [String, Number],
     },
+    // 禁用
     disabled: {
       type: Boolean,
       default: false,
     },
-    created: Boolean, // 用于标记是否自动创建
-
-    isSelectAll: Boolean, // 是否全选 option
-    indeterminate: Boolean, // 是否半选状态，仅用于 全选时
+    // 用于标记是否自动创建
+    created: Boolean,
+    // 是否全选 option
+    isSelectAll: Boolean,
   },
 
   data() {
     return {
+      // 可见状态
       visible: true,
+      // hover状态
       hover: false,
-      hitState: false,
     };
   },
   computed: {
@@ -96,15 +99,18 @@ export default {
     dmi_p() {
       return this.config.getPrefixCls('dropdown-menu-item');
     },
+    // 选项对应vlaue标识
     realValue() {
       if (isObject(this.value) && this.select.valueKey) {
         return getValueByPath(this.value, this.select.valueKey);
       }
       return this.value;
     },
+    // 选项显示内容取值
     currentLabel() {
       return isExist(this.label) ? this.label : isExist(this.value) ? this.value.toString() : '';
     },
+    // 选项是否被选中
     itemSelected() {
       if (!this.select.selected) {
         return false;
@@ -117,15 +123,19 @@ export default {
         });
       }
     },
+    // 选项群组是否可用
     groupDisabled() {
       return this.optionGroup ? this.optionGroup.disabled : false;
     },
+    // 禁用状态
     _disabled() {
       return this.disabled || this.groupDisabled;
     },
+    // 是否多选
     isMultiple() {
       return this.select.multiple && !this.select.showCheckbox;
     },
+    // 是否为checkbox
     isCheckbox() {
       return this.select.multiple && this.select.showCheckbox;
     },
@@ -140,12 +150,17 @@ export default {
   },
 
   methods: {
+    /**
+     * 触发hover
+     */
     hoverItem() {
       if (!this._disabled) {
         this.select.$emit('hoverItem', this);
       }
     },
-
+    /**
+     * 选项点击事件
+     */
     selectOptionClick() {
       if (!this._disabled) {
         this.select.$emit('optionClick', this);

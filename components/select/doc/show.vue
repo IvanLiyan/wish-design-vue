@@ -3,24 +3,12 @@
     <div class="line">
       <div class="type-and-use-size">
         <wt-select v-model="value" label="国家">
-          <wt-option
-            v-for="item in options3"
-            :key="item.value"
-            :label="item.label"
-            :value="item.value"
-            :disabled="item.disabled"
-          />
+          <wt-option v-for="item in options3" :key="item.value" :value="item.value" :disabled="item.disabled" />
         </wt-select>
       </div>
       <div class="type-and-use-size">
         <wt-select v-model="value2" label="国家" disabled placeholder="选择国家">
-          <wt-option
-            v-for="item in options3"
-            :key="item.value"
-            :label="item.label"
-            :value="item.value"
-            :disabled="item.disabled"
-          />
+          <wt-option v-for="item in options3" :key="item.value" :value="item.value" :disabled="item.disabled" />
         </wt-select>
       </div>
       <div class="type-and-use-size">
@@ -31,26 +19,14 @@
           :invalid="isInvalid"
           placeholder="选择国家"
         >
-          <wt-option
-            v-for="item in options3"
-            :key="item.value"
-            :label="item.label"
-            :value="item.value"
-            :disabled="item.disabled"
-          />
+          <wt-option v-for="item in options3" :key="item.value" :value="item.value" :disabled="item.disabled" />
         </wt-select>
       </div>
     </div>
     <div class="line">
       <div class="type-and-use-size">
         <wt-select v-model="value4" :filterable="true" :auto-clear-query="true" multiple label="本地搜索">
-          <wt-option
-            v-for="item in options"
-            :key="item.value"
-            :label="item.label"
-            :value="item.value"
-            :disabled="item.disabled"
-          />
+          <wt-option v-for="item in options" :key="item.value" :value="item.value" :disabled="item.disabled" />
         </wt-select>
       </div>
 
@@ -64,24 +40,12 @@
           label="异步搜索"
           multiple
         >
-          <wt-option
-            v-for="item in options2"
-            :key="item.value"
-            :label="item.label"
-            :value="item.value"
-            :disabled="item.disabled"
-          />
+          <wt-option v-for="item in options2" :key="item.value" :value="item.value" :disabled="item.disabled" />
         </wt-select>
       </div>
       <div class="type-and-use-size">
         <wt-select v-model="value6" :filterable="true" :show-select-all="true" multiple label="显示全选">
-          <wt-option
-            v-for="item in options"
-            :key="item.value"
-            :label="item.label"
-            :value="item.value"
-            :disabled="item.disabled"
-          />
+          <wt-option v-for="item in options" :key="item.value" :value="item.value" :disabled="item.disabled" />
         </wt-select>
       </div>
 
@@ -96,13 +60,7 @@
             placeholder="本地搜索"
             no-data-text="没有数据哦"
           >
-            <wt-option
-              v-for="item in options4"
-              :key="item.value"
-              :label="item.label"
-              :value="item.value"
-              :disabled="item.disabled"
-            />
+            <wt-option v-for="item in options4" :key="item.value" :value="item.value" :disabled="item.disabled" />
           </wt-select>
         </div>
         <div class="type-and-use-size">
@@ -115,13 +73,7 @@
             no-match-text="没有搜索到数据哦"
             multiple
           >
-            <wt-option
-              v-for="item in options"
-              :key="item.value"
-              :label="item.label"
-              :value="item.value"
-              :disabled="item.disabled"
-            />
+            <wt-option v-for="item in options" :key="item.value" :value="item.value" :disabled="item.disabled" />
           </wt-select>
         </div>
         <div class="type-and-use-size">
@@ -137,13 +89,7 @@
             multiple
             :reserve-keyword="true"
           >
-            <wt-option
-              v-for="item in options2"
-              :key="item.value"
-              :label="item.label"
-              :value="item.value"
-              :disabled="item.disabled"
-            />
+            <wt-option v-for="item in options2" :key="item.value" :value="item.value" :disabled="item.disabled" />
           </wt-select>
         </div>
       </div>
@@ -158,13 +104,7 @@
             placeholder="本地搜索"
             @change="change"
           >
-            <wt-option
-              v-for="item in options"
-              :key="item.value"
-              :label="item.label"
-              :value="item.value"
-              :disabled="item.disabled"
-            />
+            <wt-option v-for="item in options" :key="item.value" :value="item.value" :disabled="item.disabled" />
           </wt-select>
         </div>
         <div class="type-and-use-size">
@@ -181,13 +121,7 @@
             :reserve-keyword="true"
             @remove="remove"
           >
-            <wt-option
-              v-for="item in options2"
-              :key="item.value"
-              :label="item.label"
-              :value="item.value"
-              :disabled="item.disabled"
-            />
+            <wt-option v-for="item in options2" :key="item.value" :value="item.value" :disabled="item.disabled" />
           </wt-select>
         </div>
         <div class="type-and-use-size">
@@ -202,13 +136,7 @@
             @blur="blur"
             @focus="focus"
           >
-            <wt-option
-              v-for="item in options"
-              :key="item.value"
-              :label="item.label"
-              :value="item.value"
-              :disabled="item.disabled"
-            />
+            <wt-option v-for="item in options" :key="item.value" :value="item.value" :disabled="item.disabled" />
           </wt-select>
         </div>
       </div>

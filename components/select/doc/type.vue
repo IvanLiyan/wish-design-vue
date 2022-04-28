@@ -3,37 +3,19 @@
     <div class="type-and-use-size">
       <p>线性</p>
       <wt-select v-model="value">
-        <wt-option
-          v-for="item in options"
-          :key="item.value"
-          :label="item.label"
-          :value="item.value"
-          :disabled="item.disabled"
-        />
+        <wt-option v-for="item in options" :key="item.value" :value="item.value" :disabled="item.disabled" />
       </wt-select>
     </div>
     <div class="type-and-use-size">
       <p>面型</p>
       <wt-select v-model="value2" genre="area">
-        <wt-option
-          v-for="item in options"
-          :key="item.value"
-          :label="item.label"
-          :value="item.value"
-          :disabled="item.disabled"
-        />
+        <wt-option v-for="item in options" :key="item.value" :value="item.value" :disabled="item.disabled" />
       </wt-select>
     </div>
     <div class="type-and-use-size">
       <p>单线</p>
       <wt-select v-model="value3" genre="line">
-        <wt-option
-          v-for="item in options"
-          :key="item.value"
-          :label="item.label"
-          :value="item.value"
-          :disabled="item.disabled"
-        />
+        <wt-option v-for="item in options" :key="item.value" :value="item.value" :disabled="item.disabled" />
       </wt-select>
     </div>
   </div>
