@@ -8,7 +8,7 @@
   >
     <div :class="`${prefix}-header`" @click="handleClick">
       <!-- <i :class="`${expansionPrefix}-arrow ${iconPrefix('right-thick')}`"></i> -->
-      <Icon :class="`${expansionPrefix}-arrow`" name="chevron-down" color="#0E161C" :width="18" :height="18" />
+      <Icon :class="`${expansionPrefix}-arrow`" :name="arrowIcon" color="#0E161C" :width="18" :height="18" />
       <slot name="title">{{ title }}</slot>
     </div>
     <wt-expansion-transition>
@@ -37,6 +37,11 @@ export default {
     disabled: Boolean,
     active: Boolean,
   },
+  data() {
+    return {
+      arrowIcon: 'chevron-down',
+    };
+  },
   inject: {
     config: {
       from: CONFIG_PROVIDER,
@@ -61,6 +66,7 @@ export default {
     handleClick() {
       if (!this.disabled) {
         this.$emit('itemClick', !this.active, this);
+        this.arrowIcon = this.arrowIcon === 'chevron-down' ? 'chevron-up' : 'chevron-down';
       }
     },
   },

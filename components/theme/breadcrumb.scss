@@ -117,8 +117,6 @@ $breadcrumb-large-sepreate-spacing: $s-2 !default;
 }
 
 @include c(breadcrumb-title) {
-  font-family: 'Noto Sans SC';
-  font-style: normal;
   font-weight: bold;
   font-size: 24px;
   line-height: 32px;
