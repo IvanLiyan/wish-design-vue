@@ -38,6 +38,9 @@ import Expansion from 'components/expansion';
 import ExpansionItem from 'components/expansion-item';
 import Breadcrumb from 'components/breadcrumb';
 import BreadcrumbItem from 'components/breadcrumb-item';
+import Table from 'components/table';
+import TableColumn from 'components/table-column';
+import Pagination from 'components/pagination';
 import ExpansionTransition from './transitions/expansion-transition';
 
 const components = [
@@ -80,6 +83,9 @@ const components = [
   ExpansionItem,
   Breadcrumb,
   BreadcrumbItem,
+  Table,
+  TableColumn,
+  Pagination,
   ExpansionTransition,
 ];
 
@@ -143,6 +149,9 @@ export {
   ExpansionItem,
   Breadcrumb,
   BreadcrumbItem,
+  Table,
+  TableColumn,
+  Pagination,
   ExpansionTransition,
 };
 

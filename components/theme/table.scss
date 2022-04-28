@@ -1,0 +1,631 @@
+@import "./mixins/mixins.scss";
+@import "./common/var.scss";
+@import "./checkbox-group.scss";
+@import "./checkbox.scss";
+@import "./dropdown-menu-item.scss";
+
+$table-resize-width: 2px;
+@mixin table-border-pseudo () {
+  content: '';
+  position: absolute;
+  background-color: $table-border-color;
+  z-index: 1;
+}
+
+@include c(table) {
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+  flex: 1 1 auto;
+  width: 100%;
+  max-width: 100%;
+  background-color: $table-bgc;
+  font-size: $table-font-size;
+  color: $table-color;
+  text-align: left;
+  th {
+    color: $table-header-color;
+    font-weight: $font-weight-medium;
+    background-color: $table-header-bgc;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    border-bottom: $table-border-width solid $table-border-color;
+    padding: $table-header-padding-vertical 0;
+    &:hover{
+      .divider{
+        opacity: 1;
+      }
+    }
+  }
+  .divider{
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 100%;
+    transform: translateX(-1px);
+    box-sizing: content-box;
+    width: $table-resize-width;
+    background-color: rgba(0,0,0,0.04);
+    z-index: 1;
+    &.hover{
+      opacity: 1;
+    }
+    &:hover, &.active{
+      background-color: $color-primary;
+      opacity: 1;
+    }
+  }
+  td{
+    padding: $table-padding-vertical 0;
+    border-bottom: $table-border-width solid $table-border-color;
+  }
+  th, td {
+    min-width: 0;
+    box-sizing: border-box;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+    position: relative;
+    font-size: 0;
+  }
+
+  tr {
+    background-color: $table-bgc;
+    &.#{$prefix}-table-current-row{
+      background-color: $table-current-row-bgc;
+    }
+  }
+
+  &-cell{
+    position: relative;
+    box-sizing: border-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    word-break: break-all;
+    line-height: $table-line-height;
+    padding-left: $table-padding-horizontal;
+    padding-right: $table-padding-horizontal;
+    font-size: $table-font-size; // td、th is set font-size to 0.
+    >.#{$prefix}-checkbox{
+      vertical-align: top;
+      display: grid;
+    }
+    .expand-wrapper {
+      line-height: 100%;
+      cursor: pointer;
+    }
+  }
+
+  &-cell-tooltip {
+    @include text-ellipsis();
+  }
+
+  &-text-center {
+    text-align: center;
+  }
+
+  &-text-left {
+    text-align: left;
+  }
+
+  &-text-right {
+    text-align: right;
+  }
+
+  &-is-hidden {
+    visibility: hidden;
+  }
+
+  // 数据为空
+  &-empty-block {
+    position: relative;
+    min-height: $table-empty-height;
+    text-align: center;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &-loading-block{
+    min-height: 60px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &-loading{
+    .#{$prefix}-table-body{
+      opacity: .5;
+    }
+    .#{$prefix}-table-body-wrapper{
+      min-height: 120px;
+    }
+  }
+  // 展开行
+  &-expand-column {
+    .#{$prefix}-table-cell {
+      // padding: 0;
+      text-align: center;
+    }
+  }
+
+
+  &-expand-icon, &-tree-expand-icon {
+    position: relative;
+    cursor: pointer;
+    color: $table-expand-icon-color;
+    font-size: $table-expand-font-size;
+    transition: transform 0.2s ease-in-out;
+    height: $table-expand-height;
+    text-align: center;
+    &.#{$prefix}-table-expand-icon-expanded{
+      transform: rotate(90deg);
+    }
+  }
+  &-tree-expand-icon {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    line-height: 1;
+    margin-right: 8px;
+    font-size: 16px;
+  }
+  &-expanded-cell {
+    background-color: $table-bgc;
+
+    // 纯属为了增加权重
+    &[class*=#{$prefix}-table-cell] {
+      padding: $table-expand-cell-padding-vertical
+        $table-expand-cell-padding-horizontal;
+    }
+    >.#{$prefix}-table-cell{
+      padding: 0;
+    }
+    &:hover, &.hover {
+      background-color: transparent !important;
+    }
+  }
+
+  &-large {
+    th{
+      padding: $table-large-header-padding-vertical 0;
+    }
+    td{
+      padding: $table-large-padding-vertical 0;
+    }
+    th, td {
+      .#{$prefix}-table-cell{
+        font-size: $table-large-font-size;
+        line-height: $table-large-line-height;
+      }
+    }
+  }
+
+  &-small {
+    th{
+      padding: $table-small-header-padding-vertical 0;
+    }
+    td{
+      padding: $table-small-padding-vertical 0;
+    }
+    th, td {
+      .#{$prefix}-table-cell{
+        line-height: $table-small-line-height;
+        font-size: 12px;
+      }
+    }
+  }
+  &-border{
+    border: $table-border-width solid $table-border-color; // 会使得 js 宽度计算相差 2px
+    border-right: none;
+    border-bottom: none;
+    th, td {
+      border-right: $table-border-width solid $table-border-color;
+    }
+    &::after {
+      @include table-border-pseudo();
+      top: 0;
+      right: 0;
+      width: 1px;
+      height: 100%;
+    }
+    &::before {
+      @include table-border-pseudo();
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 1px;
+    }
+  }
+  // 拥有多级表头
+  &-group, &-border {
+    // 表格右部伪 border
+  }
+
+  // 表格底部伪 border，总是有的
+
+
+  // table border
+
+  &-hidden {
+    visibility: hidden;
+  }
+
+  &-fixed, &-fixed-right {
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    box-shadow: $table-fixed-shadow;
+    background-color: $color-white;
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 1px;
+      background-color: $table-border-color;
+      z-index: 4;
+    }
+  }
+  &-empty{
+    > .#{$prefix}-table-fixed, > .#{$prefix}-table-fixed-right{
+      &::before{
+        display: none;
+      }
+    }
+  }
+  &-border{
+    > .#{$prefix}-table-fixed, > .#{$prefix}-table-fixed-right{
+      &::before{
+        display: inline-block;
+      }
+    }
+  }
+  &-fixed-right-patch {
+    position: absolute;
+    top: -1px;
+    right: 0;
+    background-color: $table-bgc;
+    border-bottom: $table-border-width solid $table-border-color;
+  }
+
+  &-fixed-right {
+    top: 0;
+    left: auto;
+    right: 0;
+
+    .#{$prefix}-table-fixed-header-wrapper,
+    .#{$prefix}-table-fixed-body-wrapper,
+    .#{$prefix}-table-fixed-footer-wrapper {
+      left: auto;
+      right: 0;
+    }
+  }
+
+  &-fixed-header-wrapper {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 3;
+  }
+
+  &-fixed-footer-wrapper {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 3;
+
+    & tbody td {
+      border-top: $table-border-width solid $table-border-color;
+      background-color: $table-row-hover-bgc;
+      color: $table-color;
+    }
+  }
+
+  &-fixed-body-wrapper {
+    position: absolute;
+    left: 0;
+    top: 41px;
+    overflow: hidden;
+    z-index: 3;
+  }
+
+  &-header-wrapper, &-body-wrapper, &-footer-wrapper {
+    width: 100%;
+  }
+
+  &-footer-wrapper {
+    margin-top: -1px;
+    td {
+      border-top: $table-border-width solid $table-border-color;
+      background-color: $table-footer-bgc;
+      font-weight: $table-footer-font-weight;
+    }
+  }
+
+  &-header {
+    table-layout: fixed;
+    border-collapse: separate;
+    border-top: 1px solid #BFCDD4;
+  }
+
+  &-body, &-footer {
+    table-layout: fixed;
+    border-collapse: separate;
+  }
+
+  &-header-wrapper, &-footer-wrapper {
+    overflow: hidden;
+  }
+
+  &-scrolling-none{
+    ~ .#{$prefix}-table-fixed,
+    ~ .#{$prefix}-table-fixed-right {
+      box-shadow: none;
+    }
+  }
+
+  &-scrolling-left{
+    ~ .#{$prefix}-table-fixed {
+      box-shadow: none;
+    }
+  }
+
+  &-scrolling-right{
+    ~ .#{$prefix}-table-fixed-right {
+      box-shadow: none;
+    }
+  }
+
+  &-body-wrapper {
+    overflow: hidden;
+    position: relative;
+
+  }
+  .#{$prefix}-table-border {
+    &.#{$prefix}-table-scrolling-right{
+      ~ .#{$prefix}-table-fixed-right {
+        border-left: $table-border-width solid $table-border-color;
+      }
+    }
+
+    &.#{$prefix}-table-scrolling-left{
+      ~ .#{$prefix}-table-fixed {
+        border-left: $table-border-width solid $table-border-color;
+      }
+    }
+  }
+
+  &-scrollable-x {
+    .#{$prefix}-table-body-wrapper {
+      overflow-x: auto;
+    }
+  }
+
+  &-scrollable-y {
+    .#{$prefix}-table-body-wrapper {
+      overflow-y: auto;
+    }
+  }
+
+  &-is-sortable{
+    cursor: pointer;
+    &:hover{
+      background-color: rgba(0,0,0,0.04);
+    }
+    // &:hover{
+    //   background: $table-filter-hover-bgc;
+    // }
+    // &:before{
+    //   content: ' ';
+    //   position: absolute;
+    //   top: 0;
+    //   right: 0;
+    //   bottom: 0;
+    //   left: 0;
+
+    //   z-index: 1;
+    // }
+    // >.#{$prefix}-table-cell{
+    //   :hover{
+    //   }
+
+    // }
+  }
+  &-sortable {
+    // sort icon
+    height: 20px;
+    width: 20px;
+    display: inline-block;
+    margin-left: 5px;
+    vertical-align: text-bottom;
+    position: relative;
+    &-icon{
+      width: 0;
+      height: 0;
+      border: solid 5px transparent;
+      position: absolute;
+      left: 5px;
+    }
+    &-ascending {
+      border-bottom-color: $table-color-text-placeholder;
+      border-top: none;
+      top: 3px;
+    }
+
+    &-descending {
+      border-top-color: $table-color-text-placeholder;
+      border-bottom: none;
+      bottom: 3px;
+    }
+
+  }
+
+  .ascending .#{$prefix}-table-sortable-ascending {
+    border-bottom-color: $table-color-primary;
+  }
+
+  .descending .#{$prefix}-table-sortable-descending {
+    border-top-color: $table-color-primary;
+  }
+
+  &-hidden-columns {
+    visibility: hidden;
+    position: absolute;
+    z-index: -1;
+  }
+
+  &-striped {
+    & .#{$prefix}-table-body {
+      & tr.#{$prefix}-table-row-striped {
+        td {
+          background: $table-striped-bgc;
+        }
+      }
+    }
+  }
+
+  &-column-has-actions{
+    user-select: none;
+  }
+
+  .#{$prefix}-table-column-has-filters{
+    padding-right: 32px;
+  }
+  .#{$prefix}-table-column-filter-trigger{
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    text-align: center;
+    width: $table-filter-width;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    i{
+      color: $table-filter-color;
+      font-size: $table-filter-font-size;
+    }
+
+    &-filtered{
+      i{
+        color: $table-filter-active-color;
+      }
+    }
+
+    &:hover, &.hover{
+      background: $table-filter-hover-bgc;
+      i{
+        color: $table-filter-hover-color;
+      }
+    }
+  }
+  &-filter-checkbox-group{
+    >.#{$prefix}-checkbox{
+      display: block;
+      margin-right: 0;
+    }
+  }
+  &-filter-footer{
+    padding: $table-filter-footer-padding-vertical $table-filter-footer-padding-horizontal;
+    overflow: hidden;
+    &-clear{
+      float: right;
+    }
+    &-confirm{
+      margin-right: $table-filter-footer-action-offset;
+    }
+    >a{
+      cursor: pointer;
+      text-decoration: none;
+      color: $table-filter-footer-action-color;
+      &:hover{
+        color: $table-filter-footer-action-hover-color;
+      }
+    }
+  }
+  &-column-resize-proxy {
+    position: absolute;
+    left: 200px;
+    top: 0;
+    bottom: 0;
+    width: 0;
+    border-left: $table-resize-width solid $table-border-color;
+    transform: translateX(-1px);
+    z-index: 10;
+  }
+
+  /***
+    &-enable-row-transition {
+      .#{$prefix}-table-body td {
+        transition: background-color .25s ease;
+      }
+    }
+  ***/
+  &-body{
+    tr:hover, tr.hover {
+      >td {
+        background-color: $table-row-hover-bgc;
+      }
+    }
+  }
+
+  &-fluid-height {
+    .#{$prefix}-table-fixed,
+    .#{$prefix}-table-fixed-right {
+      bottom: 0;
+      overflow: hidden;
+    }
+  }
+
+  .#{$prefix}-table-expanded-cell{
+    // 增加权重
+    padding: 0px;
+    font-size: 1em;
+  }
+  th {
+    .drag-line{
+      position: absolute;
+      right: 0px;
+      top: 0;
+      width: 2px;
+      height: 100%;
+      background: rgba(0,0,0,0.07);
+      // display: none;
+    }
+    &:hover {
+      .drag-line{
+        display: block;
+      }
+    }
+  }
+
+  &-overflow-tooltip{
+    max-height: $table-overflow-max-height;
+  }
+}
+
+@include c(table-column) {
+  &-selection{
+    text-align: center;
+    .#{$prefix}-table-cell{
+      overflow: visible; // 解决当 cell 设置小时会出现省略号问题
+    }
+  }
+  &-index{
+    text-align: center;
+  }
+
+  &-resizable{
+  }
+}

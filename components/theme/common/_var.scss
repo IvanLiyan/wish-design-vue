@@ -391,7 +391,7 @@ $date-picker-icon-btn-size: $font-size-1 !default;
 // @name 图标-按钮-文字颜色
 $date-picker-icon-btn-color: #808ab1 !default;
 // @name 图标-按钮-悬浮-文字颜色
-$date-picker-icon-btn-hover-color: $color-primary !default;
+$date-picker-icon-btn-hover-color: $color-primary-1 !default;
 
 // @name 侧边栏-宽度
 $date-picker-sidebar-width: 160px !default;
@@ -782,4 +782,226 @@ $tooltip-small-font-size: $font-size-1!default;
 $tooltip-small-line-height: 20px!default;
 // @end propsValue
 // @end category
+// @end component
+
+// @component table 表格
+// @category base
+// @propsValue default
+// @name 水平内边距
+$table-padding-horizontal: 10px!default;
+
+// @name 表格超长 tooltip 最大高
+$table-overflow-max-height: 40vh!default;
+
+// @name 文字颜色
+$table-color: $color-text-3!default; // td的颜色 默认字体颜色
+// @name 背景色
+$table-bgc: $color-white!default; // it use for fix table-column
+// @name 表头-文字颜色
+$table-header-color: $color-text-2!default; // header 464646
+// @name 表头-背景色
+$table-header-bgc: $color-white!default;
+
+// @dom
+// @refer color
+// @name 表头-过滤器颜色
+$table-filter-color: #909399!default;
+// @name 表头-过滤器宽度
+$table-filter-width: $s-8!default;
+// @name 表头-过滤器大小
+$table-filter-font-size: $font-size-2!default;
+// @name 表头-过滤器底部竖直内间距
+$table-filter-footer-padding-vertical: $s-2!default;
+// @name 表头-过滤器底部水平内边距
+$table-filter-footer-padding-horizontal: $s-3!default;
+// @name 表头-过滤器操作按钮间隔
+$table-filter-footer-action-offset: $s-2!default;
+// @name 表头-过滤器操作按钮颜色
+$table-filter-footer-action-color: $color-text-default!default;
+// @state hover
+// @refer color
+// @name 表头-过滤器悬浮颜色
+$table-filter-hover-color: #909399!default;
+// @refer color
+// @name 表头-过滤器悬浮背景色
+$table-filter-hover-bgc: rgba(0,0,0,0.04)!default;
+// @name 表头-过滤器操作按钮悬浮颜色
+$table-filter-footer-action-hover-color: $color-primary!default;
+// @end state
+
+// @state active
+// @refer color
+// @name 表头-过滤器激活颜色
+$table-filter-active-color: $color-primary-1!default;
+// @end state
+// @end dom
+
+// @name 表尾-背景色
+$table-footer-bgc: $color-white!default;
+// @name 表尾-字重
+$table-footer-font-weight: $font-weight-medium!default;
+// @name 空状态-高度
+$table-empty-height: 60px!default;
+
+// @name 展开-高度
+$table-expand-height: 20px!default;
+// @name 展开-字号
+$table-expand-font-size: $font-size-1!default;
+// @name 展开-外边距
+$table-expand-margin: 5px!default;
+// @name 展开- 单元格-竖直内边距
+$table-expand-cell-padding-vertical: $s-5!default;
+// @name 展开- 单元格-水平内边距
+$table-expand-cell-padding-horizontal:50px!default;
+// @name 展开-图标-文字颜色
+$table-expand-icon-color: $color-text-6!default;
+// @name 文字颜色-主要
+$table-color-primary: $color-primary!default;
+// @refer color
+// @name 文字颜色-文字-提示文案
+$table-color-text-placeholder: #c0c4cc!default;
+// @refer color
+
+// @name 边框颜色
+$table-border-color: #BFCDD4;
+// @name 边框-宽度
+$table-border-width: $border-width-1!default;
+// @refer color
+// @name row-悬浮-背景色
+$table-row-hover-bgc: #f5f7fa!default;
+// @refer color
+// @name 高亮行背景色
+$table-current-row-bgc: $color-info-1!default;
+// @refer color
+// @refer shadow
+// @name 固定的-阴影
+$table-fixed-shadow: 0 0 10px rgba(0, 0, 0, .12)!default;
+// @refer shadow
+// @name column-阴影
+$table-column-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1)!default;
+// @refer color
+// @end propsValue
+// @end category
+
+// @category striped
+// @propsValue true
+// @refer color
+// @name striped-背景色
+$table-striped-bgc: #FAFAFA!default;
+// @end propsValue
+// @end category
+
+// @category size
+
+// @propsValue default
+// @name 字号
+$table-font-size: $font-size-4!default;
+// @name 行高
+$table-line-height: $line-height-5!default;
+// @name 竖直内边距
+$table-padding-vertical: 10px!default;
+// @name 表头竖直内边距
+$table-header-padding-vertical: 10px!default;
+// @end propsValue
+
+// @propsValue small
+// @name 小号-字号
+$table-small-font-size: $font-size-1!default;
+// @name 小号-行高
+$table-small-line-height: $line-height-2!default;
+// @name 小号-竖直内边距
+$table-small-padding-vertical: $s-2!default;
+// @name 小号-表头竖直内边距
+$table-small-header-padding-vertical: $s-2!default;
+// @end propsValue
+
+// @propsValue large
+// @name 大号-字号
+$table-large-font-size: $font-size-2!default;
+// @name 大号-行高
+$table-large-line-height: $line-height-2!default;
+// @name 大号-竖直内边距
+$table-large-padding-vertical: $s-4!default;
+// @name 大号-表头竖直内边距
+$table-large-header-padding-vertical: $s-2!default;
+// @end propsValue
+
+// @end category
+// @end component
+
+// @component pagination 分页
+// @category base
+
+// @propsValue default
+// @name 文字颜色
+$pagination-color: $color-text-1!default;
+// @name 背景色
+$pagination-bgc: $color-white!default;
+// @refer color
+// @name 上一项-下一项-文字颜色
+$pagination-prev-next-color: $color-text-3!default;
+// @name 总计-文字颜色
+$pagination-total-color: $color-text-1!default;
+// @name 圆角
+$pagination-border-radius: $border-radius-2!default;
+// @name 边框-宽度
+$pagination-border-width: $border-width-1!default;
+// @name 边框颜色
+$pagination-border-color: $color-line-1!default;
+// @name 页数-内边距
+$pagination-page-padding: $s-1!default;
+// @name 额外-间距
+$pagination-addon-spacing: $s-3!default;
+// @name select-宽度
+$pagination-select-width: 100px!default;
+// @name 简洁-项-间距
+$pagination-simple-item-spacing: $s-1!default;
+
+// @state active
+// @name 激活-背景色
+$pagination-active-bgc: $color-white!default;
+// @name 激活-文字颜色
+$pagination-active-color: $color-primary!default;
+// @name 激活-边框颜色
+$pagination-active-border-color: $color-primary!default;
+// @end state
+
+// @end propsValue
+// @end category
+
+// @category size
+// @propsValue default
+// @name 字号
+$pagination-font-size: $font-size-2!default;
+// @name 图标-字号
+$pagination-icon-font-size: $font-size-1!default;
+// @name 尺寸
+$pagination-size: $s-8!default;
+// @name 页数-外边距
+$pagination-page-margin: $s-2!default;
+// @name 跳转-宽度
+$pagination-jumper-width: $s-10!default;
+// @end propsValue
+
+// @propsValue small
+// @name 小号-字号
+$pagination-small-font-size: $font-size-1!default;
+// @name 小号-图标-字号
+$pagination-small-icon-font-size: $font-size-3!default;
+// @name 小号-尺寸
+$pagination-small-size: $s-6!default;
+// @name 小号-页数-外边距
+$pagination-small-page-margin: $s-2!default;
+// @name 小号-跳转-宽度
+$pagination-small-jumper-width: $s-10!default;
+// @end propsValue
+// @end category
+
+// @category show-size-changer
+// @propsValue true
+// @name select-宽度
+$pagination-select-width: 100px!default;
+// @end propsValue
+// @end category
+
 // @end component
