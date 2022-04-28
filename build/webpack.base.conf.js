@@ -188,7 +188,7 @@ module.exports = {
     compress: true,
     host: '0.0.0.0',
     port: config.port,
-    open: false,
+    open: true,
     publicPath: '/',
   },
 };

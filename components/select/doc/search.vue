@@ -2,13 +2,7 @@
   <div>
     <div class="type-and-use-size">
       <wt-select v-model="value" class="select-width" :filterable="true" label="本地搜索" multiple>
-        <wt-option
-          v-for="item in options"
-          :key="item.value"
-          :label="item.label"
-          :value="item.value"
-          :disabled="item.disabled"
-        />
+        <wt-option v-for="item in options" :key="item.value" :value="item.value" :disabled="item.disabled" />
       </wt-select>
     </div>
     <div class="type-and-use-size">
@@ -22,13 +16,7 @@
         label="异步搜索"
         multiple
       >
-        <wt-option
-          v-for="item in options2"
-          :key="item.value"
-          :label="item.label"
-          :value="item.value"
-          :disabled="item.disabled"
-        />
+        <wt-option v-for="item in options2" :key="item.value" :value="item.value" :disabled="item.disabled" />
       </wt-select>
     </div>
   </div>

@@ -1,0 +1,11 @@
+@import './common/var.scss';
+@import './mixins/mixins.scss';
+
+@include c(expansion) {
+  border: none;
+  text-align: left;
+  background-color: $color-white;
+  > :last-child {
+    border-bottom: none;
+  }
+}

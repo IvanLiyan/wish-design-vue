@@ -1,10 +1,8 @@
 <template>
   <ul class="flat-component-list">
     <li class="flat-component-item" v-for="item in components" :key="item.path">
-      <router-link :to="item.path" tag="div"
-                   active-class="active-component">
-        <div class="flat-component" @click="handleClick"
-             :class="$route.name === item.name && 'component-active'">
+      <router-link :to="item.path" tag="div" active-class="active-component">
+        <div class="flat-component" @click="handleClick" :class="$route.name === item.name && 'component-active'">
           <div class="flat-bg" :class="`component-${item.name.toLowerCase()}`"></div>
           <div class="flat-text">
             <div v-if="!item.cnName">
@@ -19,7 +17,7 @@
             </div>
           </div>
         </div>
-     </router-link>
+      </router-link>
     </li>
   </ul>
 </template>
@@ -31,7 +29,7 @@ export default {
       default: () => [],
     },
   },
-  data () {
+  data() {
     const components = this.navs.reduce((com, nav) => {
       com = com.concat(nav.list);
       return com;
@@ -41,25 +39,49 @@ export default {
     };
   },
   methods: {
-    handleClick () {
+    handleClick() {
       this.$emit('on-click');
     },
-    doubleLine (item) {
-      return (item.cnName.length === 2 && item.name.length >= 13) ||
+    doubleLine(item) {
+      return (
+        (item.cnName.length === 2 && item.name.length >= 13) ||
         (item.cnName.length === 3 && item.name.length >= 9) ||
         (item.cnName.length === 4 && item.name.length >= 8) ||
-        (item.cnName.length > 4);
+        item.cnName.length > 4
+      );
     },
   },
 };
 </script>
 <style lang="scss">
-$component-name: (badge, breadcrumb, button, checkbox,
-  collapse, datepicker, dropdownmenu, form,
-  input, link, list, loading, modaldialog, announcement, notification,
-  pagination, popover, progress, radiobutton,
-  select, slider, steps, switch,
-  tabs, table, tag, tooltip
+$component-name: (
+  badge,
+  breadcrumb,
+  button,
+  checkbox,
+  expansion,
+  datepicker,
+  dropdownmenu,
+  form,
+  input,
+  link,
+  list,
+  loading,
+  modaldialog,
+  announcement,
+  notification,
+  pagination,
+  popover,
+  progress,
+  radiobutton,
+  select,
+  slider,
+  steps,
+  switch,
+  tabs,
+  table,
+  tag,
+  tooltip
 );
 $item-width: 146px;
 .flat-component-list {
@@ -78,14 +100,14 @@ $item-width: 146px;
       background: #fff;
       border-radius: 2px;
       overflow: hidden;
-      border: 1px solid #EDF0F7;
-      transition: all .3s ease-out;
+      border: 1px solid #edf0f7;
+      transition: all 0.3s ease-out;
       cursor: pointer;
 
       &:hover {
         // margin-top: -10px;
         transform: translateY(-10px);
-        box-shadow: 0 12px 12px 0 rgba(120,155,197,0.11);
+        box-shadow: 0 12px 12px 0 rgba(120, 155, 197, 0.11);
       }
       &.component-active {
         // transform: translateY(0px);
@@ -97,12 +119,12 @@ $item-width: 146px;
 
     &:nth-child(odd) {
       .flat-bg {
-        background-color: #F6F5FF;
+        background-color: #f6f5ff;
       }
     }
     &:nth-child(even) {
       .flat-bg {
-        background-color: #F1F8FF;
+        background-color: #f1f8ff;
       }
     }
     .flat-bg {
@@ -123,9 +145,7 @@ $item-width: 146px;
       }
       // line-height: 54px;
     }
-
   }
-
 }
 @each $component in $component-name {
   .component-#{$component} {

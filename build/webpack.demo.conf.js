@@ -56,7 +56,7 @@ const plugins = [
     template: resolve('site/index.html'),
     inject: true,
     minify: {
-      collapseWhitespace: true,
+      expansionWhitespace: true,
     },
   }),
   // copy ico

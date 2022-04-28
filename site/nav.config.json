@@ -28,6 +28,11 @@
         "groupName": "Navigation",
         "list": [
           {
+            "path": "breadcrumb",
+            "name": "Breadcrumb",
+            "cnName": "面包屑"
+          },
+          {
             "path": "dropdown",
             "name": "Dropdown",
             "cnName": "下拉"
@@ -130,7 +135,12 @@
           {
             "path": "tab",
             "name": "Tab",
-            "cnName": "分页"
+            "cnName": "标签页"
+          },
+          {
+            "path": "expansion",
+            "name": "Expansion",
+            "cnName": "伸缩框"
           }
         ]
       }

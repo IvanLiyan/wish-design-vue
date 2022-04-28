@@ -33,5 +33,9 @@
   "menu": "components/menu",
   "menu-item": "components/menu-item",
   "submenu": "components/submenu",
-  "tooltip": "components/tooltip"
+  "tooltip": "components/tooltip",
+  "expansion": "components/expansion",
+  "expansion-item": "components/expansion-item",
+  "breadcrumb": "components/breadcrumb",
+  "breadcrumb-item": "components/breadcrumb-item"
 }

@@ -1,0 +1,20 @@
+{
+  "props": [
+    {
+      "name": "showTitle",
+      "desc": "显示当前页标签，默认不显示",
+      "type": "string",
+      "optionalValue": "",
+      "default": "false",
+      "version": ""
+    },
+    {
+      "name": "showBackIcon",
+      "desc": "同时显示当前页标签及返回按钮，默认不显示",
+      "type": "string",
+      "optionalValue": "",
+      "default": "false",
+      "version": ""
+    }
+  ]
+}

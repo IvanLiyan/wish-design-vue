@@ -1,0 +1,32 @@
+{
+  "chinese": {
+    "component_desc": "用于信息的展开和收起",
+    "module1": {
+      "title": "基础样式"
+    },
+    "module2": {
+      "title": "使用",
+      "subTitle1": "展开方式",
+      "subTitle2": "嵌套折叠面板"
+    },
+    "api": {
+      "value": "当前展开的面板值，可以是数组也可以是单个值，当是数组时则表示可以同时展开多个",
+      "input": "当切换展开面板时触发"
+    }
+  },
+  "english": {
+    "component_desc": "For switching in different functions or information sections",
+    "module1": {
+      "title": "Basic Style"
+    },
+    "module2": {
+      "title": "",
+      "subTitle1": "",
+      "subTitle2": ""
+    },
+    "api": {
+      "value": "",
+      "input": ""
+    }
+  }
+}
