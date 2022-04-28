@@ -34,7 +34,6 @@ import Menu from 'components/menu';
 import MenuItem from 'components/menu-item';
 import Submenu from 'components/submenu';
 import Tooltip from 'components/tooltip';
-import CollapseTransition from './transitions/collapse-transition';
 import Expansion from 'components/expansion';
 import ExpansionItem from 'components/expansion-item';
 import Breadcrumb from 'components/breadcrumb';
@@ -77,7 +76,6 @@ const components = [
   MenuItem,
   Submenu,
   Tooltip,
-  CollapseTransition,
   Expansion,
   ExpansionItem,
   Breadcrumb,
@@ -85,7 +83,7 @@ const components = [
   ExpansionTransition,
 ];
 
-export function install(Vue) {
+export function install (Vue) {
   components.map(function (component) {
     Vue.component(component.name, component);
   });
@@ -98,7 +96,7 @@ export function install(Vue) {
 
   if (Vue.prototype) Vue.prototype.$wt = $wt;
   if (Vue.config.globalProperties) Vue.config.globalProperties.$wt = $wt;
-}
+};
 
 /* istanbul ignore if */
 if (typeof window !== 'undefined' && window.Vue) {
@@ -141,7 +139,6 @@ export {
   MenuItem,
   Submenu,
   Tooltip,
-  CollapseTransition,
   Expansion,
   ExpansionItem,
   Breadcrumb,
