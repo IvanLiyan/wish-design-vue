@@ -7,7 +7,6 @@
     }"
   >
     <div :class="`${prefix}-header`" @click="handleClick">
-      <!-- <i :class="`${expansionPrefix}-arrow ${iconPrefix('right-thick')}`"></i> -->
       <Icon :class="`${expansionPrefix}-arrow`" :name="arrowIcon" color="#0E161C" :width="18" :height="18" />
       <slot name="title">{{ title }}</slot>
     </div>

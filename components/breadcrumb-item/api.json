@@ -7,6 +7,14 @@
       "optionalValue": "",
       "default": "span",
       "version": ""
+    },
+    {
+      "name": "to",
+      "desc": "在tag为router-link下，编辑页面跳转路径",
+      "type": ["string"],
+      "optionalValue": "",
+      "default": "",
+      "version": ""
     }
   ]
 }
