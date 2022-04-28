@@ -141,6 +141,11 @@
             "path": "expansion",
             "name": "Expansion",
             "cnName": "伸缩框"
+          },
+          {
+            "path": "table",
+            "name": "Table",
+            "cnName": "表格"
           }
         ]
       }

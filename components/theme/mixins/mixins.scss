@@ -287,14 +287,14 @@ $prefix: 'wt' !default;
 }
 
 @mixin btn-default-hover() {
-  color: $btn-hover-color;
-  border-color: $btn-hover-border-color;
-  background-color: $btn-hover-bgc;
+  color: $color-primary-1;
+  border-color: $color-primary-1;
+  background-color: $color-white;
 }
 @mixin btn-default-desiabled() {
   color: $color-text-6;
-  border-color: $btn-disabled-border-color;
+  border-color: $color-line-1;
   background: $color-fill-3;
-  opacity: $btn-disabled-opacity;
+  opacity: .45;
   cursor: not-allowed;
 }
