@@ -116,6 +116,11 @@
             "path": "alert",
             "name": "Alert",
             "cnName": "警告提示"
+          },
+          {
+            "path": "progress",
+            "name": "Progress",
+            "cnName": "进度"
           }
         ]
       },
