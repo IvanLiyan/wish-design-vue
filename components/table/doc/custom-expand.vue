@@ -51,7 +51,8 @@
         width="160" />
       <wt-table-column
         prop="control"
-        label="操作" />
+        label="操作"
+        width="100" />
     </wt-table>
   </div>
 </template>
