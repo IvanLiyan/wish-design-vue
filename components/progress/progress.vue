@@ -4,18 +4,38 @@
     [`${prefix}-${status}`]: status,
     [`${prefix}-${type}`]: type,
   }">
-    <div :is="tag" v-bind="$attrs" :percentage="percentage" /><div
-    :class="`${prefix}-percentage`">
-      <span v-if="!status" :class="`${prefix}-text`">
-        {{ type ==='line' ? `${percentage}%` : '' }}
+    <div :is="tag" v-bind="$attrs" :percentage="percentage" />
+    <!-- 条形进度条的文案展示 -->
+    <div v-if="type === 'line'" :class="`${prefix}-percentage`">
+      <!-- 先判断是否有状态，有状态则展示状态图标 -->
+      <wt-icon v-if="status" :class="[`${prefix}-icon`, icon]" :name="status === 'success' ? 'check-circle' : 'x-circle'" :color="status === 'success' ? '#2EAA77' : '#E52533'" />
+      <!-- 无状态时，判断是否自定义文字，是则展示自定义文字 -->
+      <span v-else-if="text" :class="`${prefix}-text`">
+        {{ text }}
       </span>
-      <i v-else :class="[`${prefix}-icon`, icon]"></i>
+      <!-- 无状态且未自定义文字，则显示进度值 -->
+      <span v-else :class="`${prefix}-text`">
+        {{ `${percentage}%` }}
+      </span>
+    </div>
+    <!-- 环形进度条的文案展示 -->
+    <div v-else :class="`${prefix}-percentage`">
+      <!-- 先判断是否有状态，有状态则展示状态图标 -->
+      <wt-icon v-if="status" :class="[`${prefix}-icon`, icon]" :name="status === 'success' ? 'check' : 'x'" :color="status === 'success' ? '#2EAA77' : '#E52533'" />
+      <!-- 无状态时，判断是否有自定义文字，有则展示自定义文字 -->
+      <span v-else-if="text" :class="`${prefix}-text`">
+        {{ text }}
+      </span>
+      <!-- 无状态且未自定义文字，则显示进度值 -->
+      <span v-else :class="`${prefix}-text`">
+        {{ `${percentage}%` }}
+      </span>
     </div>
   </div>
 </template>
 <script>
-import MtdLine from './line.vue';
-import MtdCircle from './circle.vue';
+import WtLine from './line.vue';
+import WtCircle from './circle.vue';
 import {
   CONFIG_PROVIDER,
   getPrefixCls,
@@ -23,10 +43,10 @@ import {
 } from '@/utils/config';
 
 export default {
-  name: 'MtdProgress',
+  name: 'WtProgress',
   components: {
-    MtdLine,
-    MtdCircle,
+    WtLine,
+    WtCircle,
   },
   inheritAttrs: false,
   props: {
@@ -43,6 +63,9 @@ export default {
       default: 0,
       required: true,
       validator: val => val >= 0,
+    },
+    text: {
+      type: String,
     },
   },
   inject: {
@@ -62,7 +85,7 @@ export default {
       return this.config.getIconPrefix;
     },
     tag () {
-      return this.type === 'circle' ? MtdCircle : MtdLine;
+      return this.type === 'circle' ? WtCircle : WtLine;
     },
     icon () {
       if (this.type === 'line') {

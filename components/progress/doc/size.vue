@@ -1,7 +1,7 @@
 <template>
   <div class="demo-box source">
-    <mtd-progress :percentage="65" :stroke-width="6" class="demo-progress-small" /><br />
-    <mtd-progress :percentage="65" />
+    <wt-progress :percentage="65" :stroke-width="8" class="demo-progress-small" /><br />
+    <wt-progress :percentage="65" />
   </div>
 </template>
 
