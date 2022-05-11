@@ -10,11 +10,11 @@
 ### 环形进度条
 :::include(src="./doc/circle.vue")
 :::
-
+<!-- 
 ### 状态
 进度条会根据进程情况出现成功、失败两种状态。
 :::include(src="./doc/status.vue")
-:::
+::: -->
 
 ## API
 <api-doc name="Progress" :doc="require('./api.json')"></api-doc>
@@ -26,13 +26,18 @@
         display: inline-block;
         margin-bottom: 40px;
     }
+    .demo-box div {
+        margin-bottom: 16px;
+    }
     .demo-progress-small {
         width: 250px;
     }
     .demo-circle {
-        display: inline-block;
-        width: 50px;
-        font-size: 12px;
-        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .demo-circle div {
+        margin: 0 16px;
     }
 </style>

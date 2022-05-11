@@ -33,6 +33,7 @@
     color: $progress-text-color;
     display: inline-block;
     font-size: $progress-text-font-size;
+    word-break: keep-all;
   }
   &-icon {
     display: inline-block;

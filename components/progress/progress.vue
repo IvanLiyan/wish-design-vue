@@ -8,7 +8,7 @@
     <!-- 条形进度条的文案展示 -->
     <div v-if="type === 'line'" :class="`${prefix}-percentage`">
       <!-- 先判断是否有状态，有状态则展示状态图标 -->
-      <wt-icon v-if="status" :class="[`${prefix}-icon`, icon]" :name="status === 'success' ? 'check-circle' : 'x-circle'" :color="status === 'success' ? '#2EAA77' : '#E52533'" />
+      <wt-icon v-if="status" :class="[`${prefix}-icon`, icon]" :name="status === 'success' ? 'check-circle' : 'x-circle'" :color="status === 'success' ? '#2EAA77' : '#E52533'" :width="18" :height="18" />
       <!-- 无状态时，判断是否自定义文字，是则展示自定义文字 -->
       <span v-else-if="text" :class="`${prefix}-text`">
         {{ text }}
@@ -21,7 +21,7 @@
     <!-- 环形进度条的文案展示 -->
     <div v-else :class="`${prefix}-percentage`">
       <!-- 先判断是否有状态，有状态则展示状态图标 -->
-      <wt-icon v-if="status" :class="[`${prefix}-icon`, icon]" :name="status === 'success' ? 'check' : 'x'" :color="status === 'success' ? '#2EAA77' : '#E52533'" />
+      <wt-icon v-if="status" :class="[`${prefix}-icon`, icon]" :name="status === 'success' ? 'check' : 'x'" :color="status === 'success' ? '#2EAA77' : '#E52533'" :width="18" :height="18" />
       <!-- 无状态时，判断是否有自定义文字，有则展示自定义文字 -->
       <span v-else-if="text" :class="`${prefix}-text`">
         {{ text }}

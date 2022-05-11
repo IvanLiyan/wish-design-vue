@@ -36,7 +36,7 @@ export default {
     },
     strokeWidth: {
       type: Number,
-      default: 6,
+      default: 5,
     },
     width: {
       type: Number,
