@@ -41,7 +41,7 @@ import BreadcrumbItem from 'components/breadcrumb-item';
 import Table from 'components/table';
 import TableColumn from 'components/table-column';
 import Pagination from 'components/pagination';
-import Progress from 'components/progress';
+import Badge from 'components/badge';
 import ExpansionTransition from './transitions/expansion-transition';
 
 const components = [
@@ -87,7 +87,7 @@ const components = [
   Table,
   TableColumn,
   Pagination,
-  Progress,
+  Badge,
   ExpansionTransition,
 ];
 
@@ -154,7 +154,7 @@ export {
   Table,
   TableColumn,
   Pagination,
-  Progress,
+  Badge,
   ExpansionTransition,
 };
 

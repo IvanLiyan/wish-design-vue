@@ -1005,3 +1005,36 @@ $pagination-select-width: 100px!default;
 // @end category
 
 // @end component
+
+// @component badge 徽章
+// @category base
+// @propsValue default
+// @name 高度
+$badge-height: $s-5!default;
+// @name 背景色
+$badge-bgc: $color-danger-1!default;
+// @name 文字颜色
+$badge-text-color: $color-white!default;
+// @name 字号
+$badge-font-size: $font-size-1!default;
+// @name 字重
+$badge-font-weight: $font-weight-medium!default;
+// @name 水平内边距
+$badge-padding-horizontal: 6px!default;
+// @name 边框-宽度
+$badge-border-width: $border-width-1!default;
+// @name 圆角
+$badge-border-radius: $border-radius-round!default;
+// @name 边框颜色
+$badge-border-color: $color-white!default;
+// @end propsValue
+// @end category
+
+// @category dot
+// @propsValue true
+// @name 点-尺寸
+$badge-dot-size: $s-2!default;
+// @end propsValue
+// @end category
+
+// @end component
