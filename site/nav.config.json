@@ -116,6 +116,11 @@
             "path": "alert",
             "name": "Alert",
             "cnName": "警告提示"
+          },
+          {
+            "path": "dialog",
+            "name": "Dialog",
+            "cnName": "对话框"
           }
         ]
       },
@@ -146,6 +151,11 @@
             "path": "table",
             "name": "Table",
             "cnName": "表格"
+          },
+          {
+            "path": "confirm",
+            "name": "Confirm",
+            "cnName": "确认框"
           }
         ]
       }

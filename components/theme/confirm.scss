@@ -1,0 +1,111 @@
+@import './common/var.scss';
+@import './mixins/mixins.scss';
+@import './dialog.scss';
+@import './button.scss';
+
+// @component confirm 确认框
+// @category base
+// @propsValue default
+// @name 顶部边框宽
+$confirm-border-top-width: $border-width-0 !default;
+// @name 顶部边框颜色
+$confirm-border-top-color: $color-transparent !default;
+// @name 标题-文字颜色
+$confirm-title-color: $dialog-header-color !default;
+// @name 标题-字重
+$confirm-title-font-weight: $dialog-header-font-weight !default;
+// @name 标题-字号
+$confirm-title-font-size: $dialog-header-font-size !default;
+// @name 标题-行高
+$confirm-title-line-height: $dialog-header-line-height !default;
+
+// @name 消息-文字颜色
+$confirm-message-color: $color-text-2 !default;
+// @name 消息-字号
+$confirm-message-font-size: $font-size-2 !default;
+// @name 消息-行高
+$confirm-message-line-height: $line-height-2 !default;
+
+// @name 成功-文字颜色
+$confirm-success-color: $color-success-1 !default;
+// @name 失败-文字颜色
+$confirm-danger-color: $color-danger-1 !default;
+// @name 警告-文字颜色
+$confirm-warning-color: $color-warning-1 !default;
+// @name 信息-文字颜色
+$confirm-info-color: $color-primary !default;
+// @name 图标-尺寸
+$confirm-icon-size: 26px !default;
+// @name 标题-下外边距
+$confirm-title-margin-bottom: $s-4 !default;
+// @name 图标-右外边距
+$confirm-icon-margin-right: 9px !default;
+// @name 内容-竖直内边距
+$confirm-content-padding-vertical: 50px !default;
+// @name 内容-水平内边距
+$confirm-content-padding-horizontal: 50px !default;
+// @end propsValue
+// @end category
+// @end component
+
+@include c(confirm) {
+  // padding-top: 30px;
+  &-icon {
+    float: left;
+    width: $confirm-icon-size;
+    height: $confirm-icon-size;
+    font-size: $confirm-icon-size;
+    i {
+      vertical-align: top;
+      line-height: $confirm-title-line-height;
+    }
+  }
+  &-warning {
+    color: $confirm-warning-color;
+  }
+  &-error {
+    color: $confirm-danger-color;
+  }
+  &-success {
+    color: $confirm-success-color;
+  }
+  &-info {
+    color: $confirm-info-color;
+  }
+  &-message {
+    font-size: $confirm-message-font-size;
+    color: $confirm-message-color;
+    line-height: $confirm-message-line-height;
+  }
+  &-title {
+    font-size: $confirm-title-font-size;
+    color: $confirm-title-color;
+    letter-spacing: 0;
+    margin-bottom: $confirm-title-margin-bottom;
+    font-weight: $confirm-title-font-weight;
+    line-height: $confirm-title-line-height;
+  }
+  &-footer {
+    text-align: right;
+    button + button {
+      margin-left: 12px;
+    }
+  }
+
+  &-typed {
+    $top: $confirm-content-padding-vertical - $dialog-content-padding-vertical;
+    $left: $confirm-content-padding-horizontal - $dialog-content-padding-horizontal;
+    margin: $top $left 0;
+  }
+  &-typed &-right {
+    margin-left: $confirm-icon-size + $confirm-icon-margin-right;
+  }
+
+  &-wrapper {
+    @if $confirm-border-top-width != 0px {
+      .#{$prefix}-dialog {
+        border-top: $confirm-border-top-width solid $confirm-border-top-color;
+      }
+    }
+  }
+}

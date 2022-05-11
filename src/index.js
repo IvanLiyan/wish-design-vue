@@ -41,6 +41,8 @@ import BreadcrumbItem from 'components/breadcrumb-item';
 import Table from 'components/table';
 import TableColumn from 'components/table-column';
 import Pagination from 'components/pagination';
+import Dialog from 'components/dialog';
+import Confirm from 'components/confirm';
 import ExpansionTransition from './transitions/expansion-transition';
 
 const components = [
@@ -86,6 +88,8 @@ const components = [
   Table,
   TableColumn,
   Pagination,
+  Dialog,
+  Confirm,
   ExpansionTransition,
 ];
 
@@ -152,6 +156,8 @@ export {
   Table,
   TableColumn,
   Pagination,
+  Dialog,
+  Confirm,
   ExpansionTransition,
 };
 
