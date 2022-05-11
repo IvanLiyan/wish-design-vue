@@ -18,7 +18,7 @@ import { CONFIG_PROVIDER,
 } from '@/utils/config';
 
 export default {
-  name: 'MtdLineProgress',
+  name: 'WtLineProgress',
   props: {
     color: {
       type: String,

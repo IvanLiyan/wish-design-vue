@@ -7,19 +7,37 @@
 :::
 
 ## 类型与用法
-### 大小 <design-tag></design-tag>
-:::include(src="./doc/size.vue")
-:::
-
-### 状态 <design-tag></design-tag>
-进度条会根据进程情况出现成功、失败两种状态。
-:::include(src="./doc/status.vue")
-:::
-
 ### 环形进度条
-多用于屏幕空间受限区域的进度展示。
 :::include(src="./doc/circle.vue")
 :::
+<!-- 
+### 状态
+进度条会根据进程情况出现成功、失败两种状态。
+:::include(src="./doc/status.vue")
+::: -->
 
 ## API
 <api-doc name="Progress" :doc="require('./api.json')"></api-doc>
+
+<style>
+    .demo-box{
+        width: 350px;
+        margin-left: 20px;
+        display: inline-block;
+        margin-bottom: 40px;
+    }
+    .demo-box div {
+        margin-bottom: 16px;
+    }
+    .demo-progress-small {
+        width: 250px;
+    }
+    .demo-circle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .demo-circle div {
+        margin: 0 16px;
+    }
+</style>

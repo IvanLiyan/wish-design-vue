@@ -1,13 +1,13 @@
 <template>
   <div>
     <div class="demo-box">
-      <mtd-progress :percentage="value1" :status="status1" />
+      <wt-progress :percentage="value1" :status="status1" />
     </div>
-    <mtd-button @click="handleClick1">预览效果</mtd-button>
+    <wt-button @click="handleClick1">预览效果</wt-button>
     <div class="demo-box">
-      <mtd-progress :percentage="value2" :status="status2" />
+      <wt-progress :percentage="value2" :status="status2" />
     </div>
-    <mtd-button @click="handleClick2">预览效果</mtd-button>
+    <wt-button @click="handleClick2">预览效果</wt-button>
   </div>
 </template>
 

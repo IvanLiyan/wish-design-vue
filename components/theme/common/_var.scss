@@ -595,7 +595,7 @@ $progress-text-margin-left: $s-3 !default;
 // @name 文字颜色
 $progress-text-color: $color-text-2 !default;
 // @name 文字-字号
-$progress-text-font-size: $font-size-default !default;
+$progress-text-font-size: $font-size-4 !default;
 // @name 图标-字号
 $progress-icon-font-size: $font-size-default !default;
 // @end propsValue
@@ -609,12 +609,12 @@ $progress-default-color: $color-primary !default;
 
 // @propsValue error
 // @name 错误-文字颜色
-$progress-error-color: $color-danger-1 !default;
+$progress-error-color: #E52533 !default;
 // @end propsValue
 
 // @propsValue success
 // @name 成功-文字颜色
-$progress-success-color: $color-success-1 !default;
+$progress-success-color: #2EAA77 !default;
 // @end propsValue
 
 // @end category
