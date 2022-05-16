@@ -1,10 +1,9 @@
 <template>
-<div>
-  <mtd-pagination
-    :total="60"
+  <wt-pagination
+    :total="300"
     :show-total="false"
-    :current-page.sync="currentPage" />
-</div>
+    :current-page.sync="currentPage"
+  />
 </template>
 <script>
 export default {

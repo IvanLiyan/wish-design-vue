@@ -46,6 +46,11 @@
             "path": "tooltip",
             "name": "Tooltip",
             "cnName": "气泡"
+          },
+          {
+            "path": "pagination",
+            "name": "Pagination",
+            "cnName": "分页"
           }
         ]
       },

@@ -11,7 +11,7 @@
       }]"
       @click="prev"
     >
-      <Icon name="chevron-left" stroke-width="1" style="margin-top: 4px;" />
+      <Icon name="chevron-left" :stroke-width="1" style="margin-top: 4px;" />
     </li>
     <li :class="`${prefix}-simple-item`"
         v-if="simple">
@@ -36,8 +36,7 @@
       <li
         :class="`${prefix}-item ${prefix}-quickprev`"
         v-if="showPrevMore" @click="quickPrev">
-        <Icon name="ellipsis" />
-        <Icon name="fast-backward" />
+        <Icon name="more-horizontal" :width="16" :height="16" :stroke-width="2" />
       </li>
       <li
         :class="[`${prefix}-item`, `${prefix}-number`, {
@@ -50,8 +49,7 @@
         :class="`${prefix}-item ${prefix}-quicknext`"
         @click="quickNext"
         v-if="showNextMore">
-        <Icon name="ellipsis" />
-        <Icon name="fast-forward" />
+        <Icon name="more-horizontal" :width="16" :height="16" :stroke-width="2" />
       </li>
       <li @click="goTo(pageCount)"
         :class="[`${prefix}-item`, `${prefix}-number`, {
@@ -63,7 +61,7 @@
       :class="[`${prefix}-item`, `${prefix}-next`, `${iconPrefix('right-thick')}`, {
         [`${prefix}-disabled`]: currentPage === pageCount
       }]">
-        <Icon name="chevron-right" stroke-width="1" style="margin-top: 4px;" />
+        <Icon name="chevron-right" :stroke-width="1" style="margin-top: 4px;" />
       </li>
   </ul>
 </template>
