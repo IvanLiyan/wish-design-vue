@@ -8,14 +8,6 @@
       "version": ""
     },
     {
-      "name": "size",
-      "desc": "Table 的尺寸",
-      "type": "string",
-      "optionalValue": ["small"],
-      "default": "",
-      "version": ""
-    },
-    {
       "name": "height",
       "desc": "Table 的高度。如果 height 为 number 类型，单位px；如果 height 为 string 类型，则这个高度会设置为 Table 的 style.height 的值，Table 的高度会受控于外部样式。",
       "type": ["string", "number"],
@@ -27,38 +19,6 @@
       "name": "max-height",
       "desc": "Table 的最大高度",
       "type": ["string", "number"],
-      "optionalValue": "",
-      "default": "",
-      "version": ""
-    },
-    {
-      "name": "row-class",
-      "desc": "行的 className 的回调方法，也可以使用字符串为所有行设置一个固定的 className。",
-      "type": "Function({ row,rowIndex }) / String",
-      "optionalValue": "",
-      "default": "",
-      "version": ""
-    },
-    {
-      "name": "cell-class",
-      "desc": "单元格的 className 的回调方法，也可以使用字符串为所有单元格设置一个固定的className。",
-      "type": "Function({ row, column, rowIndex, columnIndex }) / String",
-      "optionalValue": "",
-      "default": "",
-      "version": ""
-    },
-    {
-      "name": "header-row-class",
-      "desc": "表头行的 className 的回调方法，也可以使用字符串为所有表头行设置一个固定的className。",
-      "type": "Function({ row,rowIndex }) / String",
-      "optionalValue": "",
-      "default": "",
-      "version": ""
-    },
-    {
-      "name": "header-cell-class",
-      "desc": "表头单元格的 className 的回调方法，也可以使用字符串为所有表头单元格设置一个固定的className。",
-      "type": "Function({ row, column, rowIndex, columnIndex }) / String",
       "optionalValue": "",
       "default": "",
       "version": ""
@@ -135,22 +95,6 @@
       "version": ""
     },
     {
-      "name": "loading",
-      "desc": "是否加载中",
-      "type": "boolean",
-      "optionalValue": "",
-      "default": "",
-      "version": ""
-    },
-    {
-      "name": "loading-message",
-      "desc": "加载中提示文案",
-      "type": "string",
-      "optionalValue": "",
-      "default": "'正在加载中'",
-      "version": ""
-    },
-    {
       "name": "show-overflow-tooltip",
       "desc": "当内容过长时展示省略号，hover 时是否显示 tooltip 展示全部内容，也支持配置在 table-column 上",
       "type": "boolean",
@@ -167,46 +111,6 @@
       "version": ""
     },
     {
-      "name": "tooltip-class",
-      "desc": "tooltip 的额外类名",
-      "type": "object",
-      "optionalValue": "",
-      "default": "",
-      "version": ""
-    },
-    {
-      "name": "disable-mouse-event",
-      "desc": "mouse 相关事件会造成表格更新，对性能有一定的影响，在性能较差的场景中可使用此属性禁用鼠标事件。",
-      "type": "boolean",
-      "optionalValue": "",
-      "default": "false",
-      "version": "0.1.40"
-    },
-    {
-      "name": "show-summary",
-      "desc": "是否在表尾显示合计行。",
-      "type": "boolean",
-      "optionalValue": "",
-      "default": "false",
-      "version": "0.1.40"
-    },
-    {
-      "name": "sum-text",
-      "desc": "合计行第一列的文本。",
-      "type": "string",
-      "optionalValue": "",
-      "default": "'合计'",
-      "version": "0.1.40"
-    },
-    {
-      "name": "summary-method",
-      "desc": "自定义的合计计算方法，详见表尾合计示例。",
-      "type": "function({ columns,data }): any[]",
-      "optionalValue": "",
-      "default": "",
-      "version": "0.1.40"
-    },
-    {
       "name": "highlight-current-row",
       "desc": "是否高亮当前行",
       "type": "boolean",
@@ -221,70 +125,6 @@
       "optionalValue": "",
       "default": "",
       "version": "0.3.0"
-    },
-    {
-      "name": "overflow-selector",
-      "desc": "用于获取内容超长的元素，用获取到的元素来判断是否展示超长 tooltip，超出内容宽度即展示文字提示",
-      "type": "string",
-      "optionalValue": "",
-      "default": "",
-      "version": "0.3.0"
-    },
-    {
-      "name": "tree",
-      "desc": "是否是树形结构，必须配置 row-key 才可正常展开",
-      "type": "boolean",
-      "optionalValue": "",
-      "default": "",
-      "version": "0.3.2"
-    },
-    {
-      "name": "tree-field-names",
-      "desc": "自定义树形结构时数据的配置选项",
-      "type": "{ children: string, isLeaf: string }",
-      "optionalValue": "",
-      "default": "{ children: 'children', isLeaf: 'isLeaf' }",
-      "version": "0.3.2"
-    },
-    {
-      "name": "indent",
-      "desc": "展示树形数据时，每层缩进的宽度，以 px 为单位",
-      "type": "number",
-      "optionalValue": "",
-      "default": "24",
-      "version": "0.3.2"
-    },
-    {
-      "name": "load-data",
-      "desc": "当 row.isLeaf 为 false 时，并且 children 为空时，点击展开图标时调用此方法，需要使用第二个参数 callback，来表明获取到的数据及状态",
-      "type": "function (row, callback)",
-      "optionalValue": "",
-      "default": "",
-      "version": "0.3.2"
-    },
-    {
-      "name": "loaded-keys",
-      "desc": "已经加载过的节点，需要配合 loadData 使用",
-      "type": "string[]",
-      "optionalValue": "",
-      "default": "[]",
-      "version": "0.3.2"
-    },
-    {
-      "name": "default-expand-all",
-      "desc": "是否默认展开所有节点，仅当未设置 expand-row-keys 属性生效",
-      "type": "boolean",
-      "optionalValue": "",
-      "default": "false",
-      "version": "0.3.4"
-    },
-    {
-      "name": "expand-on-click-tr",
-      "desc": "当有可展开列时，是否点击整行展开",
-      "type": "boolean",
-      "optionalValue": "",
-      "default": "false",
-      "version": "0.3.8"
     }
   ],
   "events": [{
