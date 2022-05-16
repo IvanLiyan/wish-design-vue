@@ -5,7 +5,7 @@
 ## 基础样式
 :::include(src="./doc/base.vue")
 :::
-
+<!-- 
 ## 类型与用法
 ### 大小
 :::include(src="./doc/size.vue")
@@ -14,7 +14,7 @@
 ### 类型
 :::include(src="./doc/type.vue")
 :::
-
+ -->
 
 ## 完整功能型
 可自由选择搭配：每页显示条数、快速跳转页码、总条数。
@@ -24,3 +24,12 @@
 ## API
 <api-doc name="Pagination" :doc="require('./api.json')"></api-doc>
 
+## 测试
+:::include(src="./doc/tests.vue")
+:::
+
+<style>
+    .wt-pagination {
+        text-align: center !important;
+    }
+</style>

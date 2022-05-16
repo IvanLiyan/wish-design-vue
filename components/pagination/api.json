@@ -1,35 +1,11 @@
 {
   "props": [
     {
-      "name": "size",
-      "desc": "大小",
-      "type": "string",
-      "optionalValue": ["small", "不设置"],
-      "default": "",
-      "version": ""
-    },
-    {
       "name": "unborder",
       "desc": "只有数字不带边框",
       "type": "boolean",
       "optionalValue": "",
       "default": "false",
-      "version": ""
-    },
-    {
-      "name": "simple",
-      "desc": "简洁分页",
-      "type": "boolean",
-      "optionalValue": "",
-      "default": "",
-      "version": ""
-    },
-    {
-      "name": "simple-readonly",
-      "desc": "简洁模式下是否只读",
-      "type": "boolean",
-      "optionalValue": "",
-      "default": "",
       "version": ""
     },
     {
@@ -94,14 +70,6 @@
       "type": "boolean",
       "optionalValue": "",
       "default": "false",
-      "version": ""
-    },
-    {
-      "name": "select-class",
-      "desc": "每页显示个数选择器的下拉框类名",
-      "type": "string",
-      "optionalValue": "",
-      "default": "",
       "version": ""
     }
   ],

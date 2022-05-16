@@ -1,6 +1,6 @@
 <template>
 <div>
-  <mtd-pagination
+  <wt-pagination
     :total="600"
     show-quick-jumper
     show-size-changer
