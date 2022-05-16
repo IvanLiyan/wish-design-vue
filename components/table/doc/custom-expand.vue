@@ -10,7 +10,7 @@
         <template slot-scope="scope" slot="expand">
           <div @click="scope.toggle" class="expand-wrapper">
               <!-- <i class="wticon wticon-right-thick"></i> -->
-              <wt-icon class="wticon mtdicon-right-thick" name="chevron-right" width="20" height="20" strokeWidth="1" />
+              <wt-icon class="wticon mtdicon-right-thick" name="chevron-right" width="20" height="20" stroke-width="1" />
           </div>
         </template>
         <template slot-scope="props">

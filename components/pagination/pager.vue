@@ -11,7 +11,7 @@
       }]"
       @click="prev"
     >
-      <Icon name="chevron-left" :strokeWidth="1" style="margin-top: 4px;"/>
+      <Icon name="chevron-left" :stroke-width="1" style="margin-top: 4px;" />
     </li>
     <li :class="`${prefix}-simple-item`"
         v-if="simple">
@@ -63,7 +63,7 @@
       :class="[`${prefix}-item`, `${prefix}-next`, `${iconPrefix('right-thick')}`, {
         [`${prefix}-disabled`]: currentPage === pageCount
       }]">
-        <Icon name="chevron-right" :strokeWidth="1" style="margin-top: 4px;"/>
+        <Icon name="chevron-right" :stroke-width="1" style="margin-top: 4px;" />
       </li>
   </ul>
 </template>
