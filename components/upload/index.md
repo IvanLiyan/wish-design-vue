@@ -18,3 +18,12 @@
 
 :::include(src="./doc/test.vue")
 :::
+
+<style>
+    .picture-demo-box {
+        height: 220px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+</style>

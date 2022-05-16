@@ -22,10 +22,13 @@ export default {
     };
   },
 
+  // 注入
   inject: {
+    // 表单
     form: {
       default: '',
     },
+    // 配置
     config: {
       from: CONFIG_PROVIDER,
       default: {
@@ -36,90 +39,101 @@ export default {
   },
 
   props: {
+    // 上传地址
     action: {
       type: String,
       required: true,
     },
+    // 控件类型
     inputType: {
       type: String,
       default: 'button',
     },
+    // 请求头
     headers: {
       type: Object,
       default () {
         return {};
       },
     },
+    // 请求方法 （默认POST）
     method: {
       type: String,
       default: 'post',
     },
+    // 附带参数
     data: Object,
+    // 是否可多选文件
     multiple: Boolean,
+    // 上传的文件字段名
     name: {
       type: String,
       default: 'file',
     },
-    drag: Boolean,
-    dragger: Boolean,
+    // 支持发送cookie凭证信息
     withCredentials: Boolean,
+    // 是否显示已上传文件列表
     showFileList: {
       type: Boolean,
       default: true,
     },
-    showFileDown: {
-      type: Boolean,
-      default: false,
-    },
+    // 接受的文件类型
     accept: String,
-    type: {
-      type: String,
-      default: 'select',
-    },
+    // 上传前触发
     beforeUpload: Function,
+    // 删除前触发
     beforeRemove: Function,
+    // 删除时触发
     onRemove: {
       type: Function,
       default: noop,
     },
+    // 重新上传时触发
     onRetry: {
       type: Function,
       default: noop,
     },
+    // 上传后触发
     onChange: {
       type: Function,
       default: noop,
     },
+    // 预览
     onPreview: {
       type: Function,
     },
+    // 上传成功
     onSuccess: {
       type: Function,
       default: noop,
     },
+    // 上传中
     onProgress: {
       type: Function,
       default: noop,
     },
+    // 上传失败
     onError: {
       type: Function,
       default: noop,
     },
+    // 文件列表
     value: {
       type: Array,
       default () {
         return [];
       },
     },
+    // 是否自动上传
     autoUpload: {
       type: Boolean,
       default: true,
     },
+    // 已上传列表类型
     listType: {
       type: String,
       default: 'text',
     },
-    httpRequest: Function,
     disabled: Boolean,
     limit: Number,
     onExceed: {

@@ -1,20 +1,15 @@
 <template>
-  <div class="picture-wrapper">
+  <div class="picture-demo-box">
     <wt-upload
       class="picture-list"
       action="https://www.mocky.io/v2/5185415ba171ea3a00704eed/posts/"
       input-type="picture-card"
-      v-model="fileList">
-      <i class="wticon-add"></i>
-    </wt-upload>
-    <br />
+      v-model="fileList" />
     <wt-upload
       class="picture-list"
       action="https://www.mocky.io/v2/5185415ba171ea3a00704eed/posts/"
       input-type="picture-card"
-      v-model="fileList2">
-      <i class="wticon-add"></i>
-    </wt-upload>
+      v-model="fileList2" />
   </div>
 </template>
 <script>
