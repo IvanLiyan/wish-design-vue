@@ -166,6 +166,11 @@
             "path": "table",
             "name": "Table",
             "cnName": "表格"
+          },
+          {
+            "path": "badge",
+            "name": "Badge",
+            "cnName": "徽章"
           }
         ]
       }

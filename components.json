@@ -44,5 +44,6 @@
   "dialog": "components/dialog",
   "confirm": "components/confirm",
   "stepper": "components/stepper",
-  "step": "components/step"
+  "step": "components/step",
+  "badge": "components/badge"
 }

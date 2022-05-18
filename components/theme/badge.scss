@@ -1,0 +1,40 @@
+@import "./common/var.scss";
+@include c(badge) {
+  position: relative;
+  display: inline-block;
+  margin-left: 2px;
+  &-text {
+    display: block;
+    height: $badge-height;
+    line-height: $badge-height;
+    color: $badge-text-color;
+    background-color: $badge-bgc;
+    border-radius: $badge-border-radius;
+    font-size: $badge-font-size;
+    font-weight: $badge-font-weight;
+    padding: 0 $badge-padding-horizontal;
+    white-space: nowrap;
+    border: $badge-border-width solid $badge-border-color;
+  }
+  &-position {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    transform: translate(-50%, -50%);
+  }
+  &-dot {
+    display: block;
+    height: 8px;
+    width: 8px;
+    padding: 0;
+    border-radius: 50%;
+  }
+  &-rounded{
+    width: $badge-height;
+    padding: 0;
+    text-align: center;
+  }
+  &-hidden {
+    display: none;
+  }
+}

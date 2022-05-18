@@ -45,6 +45,7 @@ import Dialog from 'components/dialog';
 import Confirm from 'components/confirm';
 import Stepper from 'components/stepper';
 import Step from 'components/step';
+import Badge from 'components/badge';
 import ExpansionTransition from './transitions/expansion-transition';
 
 const components = [
@@ -94,6 +95,7 @@ const components = [
   Confirm,
   Stepper,
   Step,
+  Badge,
   ExpansionTransition,
 ];
 
@@ -164,6 +166,7 @@ export {
   Confirm,
   Stepper,
   Step,
+  Badge,
   ExpansionTransition,
 };
 
