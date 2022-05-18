@@ -41,7 +41,6 @@ import BreadcrumbItem from 'components/breadcrumb-item';
 import Table from 'components/table';
 import TableColumn from 'components/table-column';
 import Pagination from 'components/pagination';
-import Progress from 'components/progress';
 import Dialog from 'components/dialog';
 import Confirm from 'components/confirm';
 import Stepper from 'components/stepper';
@@ -91,7 +90,6 @@ const components = [
   Table,
   TableColumn,
   Pagination,
-  Progress,
   Dialog,
   Confirm,
   Stepper,
@@ -99,7 +97,7 @@ const components = [
   ExpansionTransition,
 ];
 
-export function install(Vue) {
+export function install (Vue) {
   components.map(function (component) {
     Vue.component(component.name, component);
   });
@@ -112,7 +110,7 @@ export function install(Vue) {
 
   if (Vue.prototype) Vue.prototype.$wt = $wt;
   if (Vue.config.globalProperties) Vue.config.globalProperties.$wt = $wt;
-}
+};
 
 /* istanbul ignore if */
 if (typeof window !== 'undefined' && window.Vue) {
@@ -162,7 +160,6 @@ export {
   Table,
   TableColumn,
   Pagination,
-  Progress,
   Dialog,
   Confirm,
   Stepper,

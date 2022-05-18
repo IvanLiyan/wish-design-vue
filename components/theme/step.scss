@@ -132,6 +132,10 @@
         background-color: $color-white;
         border-color: $stepper-finish-dot-border-color;
       }
+      .#{$prefix}-icon {
+        width: 24px;
+        height: 24px;
+      }
     }
   }
   &-error {
@@ -153,6 +157,10 @@
       .#{$prefix}-step-head-dot {
         background-color: $stepper-error-dot-bgc;
         border-color: $stepper-error-dot-border-color;
+      }
+      .#{$prefix}-icon {
+        width: 24px;
+        height: 24px;
       }
     }
   }
@@ -176,6 +184,10 @@
         background-color: $stepper-cancel-dot-bgc;
         border-color: $stepper-cancel-dot-border-color;
       }
+      .#{$prefix}-icon {
+        width: 24px;
+        height: 24px;
+      }
     }
   }
   &-wait {
@@ -197,6 +209,10 @@
       .#{$prefix}-step-head-dot {
         background-color: $stepper-wait-dot-bgc;
         border-color: $stepper-wait-dot-border-color;
+      }
+      .#{$prefix}-icon {
+        width: 24px;
+        height: 24px;
       }
     }
   }
@@ -222,6 +238,10 @@
       .#{$prefix}-step-head-dot {
         background-color: $stepper-process-dot-bgc;
         border-color: $stepper-process-dot-border-color;
+      }
+      .#{$prefix}-icon {
+        width: 24px;
+        height: 24px;
       }
     }
   }
