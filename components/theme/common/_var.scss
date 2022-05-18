@@ -1010,13 +1010,13 @@ $pagination-select-width: 100px!default;
 // @category base
 // @propsValue default
 // @name 高度
-$badge-height: $s-5!default;
+$badge-height: 16px!default;
 // @name 背景色
-$badge-bgc: $color-danger-1!default;
+$badge-bgc: #E3812B!default;
 // @name 文字颜色
 $badge-text-color: $color-white!default;
 // @name 字号
-$badge-font-size: $font-size-1!default;
+$badge-font-size: $font-size-4!default;
 // @name 字重
 $badge-font-weight: $font-weight-medium!default;
 // @name 水平内边距

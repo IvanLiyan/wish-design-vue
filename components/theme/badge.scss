@@ -2,10 +2,11 @@
 @include c(badge) {
   position: relative;
   display: inline-block;
+  margin-left: 2px;
   &-text {
-    display: inline-block;
+    display: block;
     height: $badge-height;
-    line-height: $badge-height - 2;
+    line-height: $badge-height;
     color: $badge-text-color;
     background-color: $badge-bgc;
     border-radius: $badge-border-radius;
@@ -22,8 +23,9 @@
     transform: translate(-50%, -50%);
   }
   &-dot {
-    height: $badge-dot-size + 2*$badge-border-width;
-    width: $badge-dot-size + 2*$badge-border-width;
+    display: block;
+    height: 8px;
+    width: 8px;
     padding: 0;
     border-radius: 50%;
   }
