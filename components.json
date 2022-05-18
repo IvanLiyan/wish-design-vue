@@ -40,5 +40,9 @@
   "breadcrumb-item": "components/breadcrumb-item",
   "table": "components/table",
   "table-column": "components/table-column",
-  "pagination": "components/pagination"
+  "pagination": "components/pagination",
+  "dialog": "components/dialog",
+  "confirm": "components/confirm",
+  "stepper": "components/stepper",
+  "step": "components/step"
 }

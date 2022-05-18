@@ -42,7 +42,7 @@ export function install (Vue) {
   });
 
   const $wt = {
-    // confirm: Confirm,
+    confirm: Confirm,
     notify: Notification,
     // message: Message,
   };

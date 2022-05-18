@@ -42,6 +42,10 @@ import Table from 'components/table';
 import TableColumn from 'components/table-column';
 import Pagination from 'components/pagination';
 import Progress from 'components/progress';
+import Dialog from 'components/dialog';
+import Confirm from 'components/confirm';
+import Stepper from 'components/stepper';
+import Step from 'components/step';
 import ExpansionTransition from './transitions/expansion-transition';
 
 const components = [
@@ -88,23 +92,27 @@ const components = [
   TableColumn,
   Pagination,
   Progress,
+  Dialog,
+  Confirm,
+  Stepper,
+  Step,
   ExpansionTransition,
 ];
 
-export function install (Vue) {
+export function install(Vue) {
   components.map(function (component) {
     Vue.component(component.name, component);
   });
 
   const $wt = {
-    // confirm: Confirm,
+    confirm: Confirm,
     notify: Notification,
     // message: Message,
   };
 
   if (Vue.prototype) Vue.prototype.$wt = $wt;
   if (Vue.config.globalProperties) Vue.config.globalProperties.$wt = $wt;
-};
+}
 
 /* istanbul ignore if */
 if (typeof window !== 'undefined' && window.Vue) {
@@ -155,6 +163,10 @@ export {
   TableColumn,
   Pagination,
   Progress,
+  Dialog,
+  Confirm,
+  Stepper,
+  Step,
   ExpansionTransition,
 };
 

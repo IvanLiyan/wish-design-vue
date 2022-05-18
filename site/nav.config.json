@@ -51,6 +51,11 @@
             "path": "pagination",
             "name": "Pagination",
             "cnName": "分页"
+          },
+          {
+            "path": "stepper",
+            "name": "Stepper",
+            "cnName": "步骤"
           }
         ]
       },
@@ -126,6 +131,11 @@
             "path": "progress",
             "name": "Progress",
             "cnName": "进度"
+          },
+          {
+            "path": "dialog",
+            "name": "Dialog",
+            "cnName": "对话框"
           }
         ]
       },
