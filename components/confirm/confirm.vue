@@ -21,15 +21,15 @@
         [`${prefix}-typed`]: type,
       }"
     >
-      <span v-if="type" :class="`${prefix}-icon ${prefix}-${type}`">
-        <i :class="icon"></i>
+      <span :class="`${prefix}-icon ${prefix}-${type}`">
+        <wt-icon :name="icon" :width="48" :height="48" :color="iconColor" />
       </span>
       <div :class="`${prefix}-right`">
         <div v-if="type && title" :class="`${prefix}-title`">
           {{ title }}
         </div>
         <slot>
-          <div v-if="!dangerouslyUseHTMLString" :class="`${prefix}-message`">{{ message }}</div>
+          <div v-if="!useHTMLString" :class="`${prefix}-message`">{{ message }}</div>
           <div v-else v-html="message" :class="`${prefix}-message`"></div>
         </slot>
       </div>
@@ -57,10 +57,22 @@ import { isPromise } from '@/utils/type';
 import { getPrefix, getIconPrefix } from '@/utils/config';
 
 const ICONS = {
-  success: 'success-circle',
-  info: 'info-circle',
-  warning: 'warning-circle',
-  error: 'error-circle',
+  success: {
+    name: 'check-circle',
+    color: '#2EAA77',
+  },
+  info: {
+    name: 'alert-circle',
+    color: '#0090D9',
+  },
+  warning: {
+    name: 'alert-triangle',
+    color: '#FFC72C',
+  },
+  error: {
+    name: 'x-circle',
+    color: '#D0000F',
+  },
 };
 
 export default {
@@ -91,7 +103,7 @@ export default {
       maskClosable: false,
       onOk: null,
       onCancel: null,
-      dangerouslyUseHTMLString: false,
+      useHTMLString: false,
       prefixCls: getPrefix(),
       iconPrefixCls: getIconPrefix(),
     };
@@ -107,8 +119,10 @@ export default {
       };
     },
     icon() {
-      const { iconPrefixCls } = this;
-      return `${iconPrefixCls} ${iconPrefixCls}-${ICONS[this.type]}`;
+      return `${ICONS[this.type].name}`;
+    },
+    iconColor() {
+      return `${ICONS[this.type].color}`;
     },
   },
   watch: {
@@ -117,13 +131,14 @@ export default {
     },
   },
   mounted() {
-    this.$nextTick(() => {
-      if (this.$refs.ok) {
-        this.$refs.ok.focus();
-      } else if (this.$refs.cancel) {
-        this.$refs.cancel.focus();
-      }
-    });
+    // this.$nextTick(() => {
+    //   console.log(33333, this.$refs.ok);
+    //   if (this.$refs.ok) {
+    //     this.$refs.ok.focus();
+    //   } else if (this.$refs.cancel) {
+    //     this.$refs.cancel.focus();
+    //   }
+    // });
   },
   methods: {
     destroyElement() {

@@ -27,7 +27,7 @@
         <input
           v-else
           v-bind="$attrs"
-          :type="type === 'password' ? 'password' : text"
+          :type="type === 'password' ? 'password' : 'text'"
           :disabled="disabled"
           :class="inputPrefix"
           :value="inputValue"

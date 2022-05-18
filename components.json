@@ -42,5 +42,7 @@
   "table-column": "components/table-column",
   "pagination": "components/pagination",
   "dialog": "components/dialog",
-  "confirm": "components/confirm"
+  "confirm": "components/confirm",
+  "stepper": "components/stepper",
+  "step": "components/step"
 }

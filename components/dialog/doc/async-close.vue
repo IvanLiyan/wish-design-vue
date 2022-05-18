@@ -7,8 +7,8 @@
       江天一色无纤尘，皎皎空中孤月轮。江畔何人初见月？江月何年初照人？
       人生代代无穷已，江月年年望相似。不知江月待何人，但见长江送流水。
       <div slot="footer" class="demo-dialog-footer">
-        <wt-button @click="cancelDialog5">取消</wt-button
-        ><wt-button type="primary" :loading="submitting" @click="submitDialog5">提交</wt-button>
+        <wt-button type="primary" :loading="submitting" @click="submitDialog5">提交</wt-button>
+        <wt-button type="secondary" @click="cancelDialog5">取消</wt-button>
       </div>
     </wt-dialog>
   </div>

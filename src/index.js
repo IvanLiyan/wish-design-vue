@@ -43,6 +43,8 @@ import TableColumn from 'components/table-column';
 import Pagination from 'components/pagination';
 import Dialog from 'components/dialog';
 import Confirm from 'components/confirm';
+import Stepper from 'components/stepper';
+import Step from 'components/step';
 import ExpansionTransition from './transitions/expansion-transition';
 
 const components = [
@@ -90,6 +92,8 @@ const components = [
   Pagination,
   Dialog,
   Confirm,
+  Stepper,
+  Step,
   ExpansionTransition,
 ];
 
@@ -99,7 +103,7 @@ export function install (Vue) {
   });
 
   const $wt = {
-    // confirm: Confirm,
+    confirm: Confirm,
     notify: Notification,
     // message: Message,
   };
@@ -158,6 +162,8 @@ export {
   Pagination,
   Dialog,
   Confirm,
+  Stepper,
+  Step,
   ExpansionTransition,
 };
 

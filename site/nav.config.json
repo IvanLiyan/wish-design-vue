@@ -46,6 +46,11 @@
             "path": "tooltip",
             "name": "Tooltip",
             "cnName": "气泡"
+          },
+          {
+            "path": "stepper",
+            "name": "Stepper",
+            "cnName": "步骤"
           }
         ]
       },
@@ -151,11 +156,6 @@
             "path": "table",
             "name": "Table",
             "cnName": "表格"
-          },
-          {
-            "path": "confirm",
-            "name": "Confirm",
-            "cnName": "确认框"
           }
         ]
       }

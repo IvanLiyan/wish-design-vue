@@ -4,7 +4,7 @@
       <wt-button type="primary" @click="openDialog">填写表单</wt-button>
     </div>
     <wt-dialog v-model="visible" title="企业入驻" :closable="true">
-      <wt-form ref="form" :rules="ruleCustom" :model="formData" :first-fields="true" class="form">
+      <wt-form ref="form" :model="formData" :first-fields="true" class="form">
         <div class="title">企业注册地址</div>
         <wt-form-item prop="regNation" required>
           <wt-select v-model="formData.regNation" label="国家" placeholder="请选择">

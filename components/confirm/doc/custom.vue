@@ -26,7 +26,7 @@ export default {
         .confirm({
           title: 'HTML 片段',
           message: '<strong>这是 <i>HTML</i> 片段</strong>',
-          dangerouslyUseHTMLString: true,
+          useHTMLString: true,
         })
         .catch(() => {});
     },

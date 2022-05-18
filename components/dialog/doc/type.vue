@@ -52,7 +52,6 @@ export default {
           title: '申请审核未通过',
           message: '物流商价格申请内容通过，从下一个工作日开始生效。',
           width: '430px',
-          showCancelButton: true,
           type: 'error',
           okButtonText: '确定',
         })
