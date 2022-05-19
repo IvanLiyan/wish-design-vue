@@ -46,6 +46,11 @@ import Confirm from 'components/confirm';
 import Stepper from 'components/stepper';
 import Step from 'components/step';
 import Badge from 'components/badge';
+import Layout from 'components/layout';
+import Header from 'components/header';
+import Aside from 'components/aside';
+import Main from 'components/main';
+import Footer from 'components/footer';
 import ExpansionTransition from './transitions/expansion-transition';
 
 const components = [
@@ -96,6 +101,11 @@ const components = [
   Stepper,
   Step,
   Badge,
+  Layout,
+  Header,
+  Aside,
+  Main,
+  Footer,
   ExpansionTransition,
 ];
 
@@ -167,6 +177,11 @@ export {
   Stepper,
   Step,
   Badge,
+  Layout,
+  Header,
+  Aside,
+  Main,
+  Footer,
   ExpansionTransition,
 };
 
