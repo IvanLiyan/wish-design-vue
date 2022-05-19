@@ -134,41 +134,48 @@ export default {
       type: String,
       default: 'text',
     },
+    // 禁用
     disabled: Boolean,
+    // 限制上传的个数
     limit: Number,
+    // 超出数量时触发
     onExceed: {
       type: Function,
       default: noop,
     },
+    // 选择文件时触发
     onFileSelect: {
       type: Function,
       default: noop,
     },
+    // 节点ID
     elementId: String,
   },
 
   data () {
     return {
-      uploadFiles: [],
-      dragOver: false,
-      draging: false,
+      uploadFiles: [], // 已上传文件
       tempIndex: 1,
     };
   },
 
   computed: {
+    // 前缀class
     prefix () {
       return this.config.getPrefixCls('upload');
     },
+    // 图标class
     getIconCls () {
       return this.config.getIconCls;
     },
+    // 禁用
     uploadDisabled () {
       return this.disabled || (this.wtForm || {}).disabled;
     },
   },
 
   watch: {
+    // 已上传文件对应表单value值
     value: {
       immediate: true, // 在最初绑定值的时候也执行函数
       handler (value) {
@@ -182,6 +189,7 @@ export default {
   },
 
   beforeDestroy () {
+    // 删除文件时操作
     this.uploadFiles.forEach(file => {
       if (file.url && file.url.indexOf('blob:') === 0) {
         URL.revokeObjectURL(file.url);
@@ -190,6 +198,7 @@ export default {
   },
 
   methods: {
+    // 选择文件
     handleStart (rawFile) {
       rawFile.uid = Date.now() + this.tempIndex++;
       const file = {
@@ -208,16 +217,17 @@ export default {
           return;
         }
       }
-
       this.uploadFiles.push(file);
       this.onChange(file, this.uploadFiles);
     },
+    // 上传中-获取上传进度
     handleProgress (ev, rawFile) {
       const file = this.getFile(rawFile);
       this.onProgress(ev, file, this.uploadFiles);
       file.status = 'uploading';
       file.percentage = ev.percent || 0;
     },
+    // 上传成功
     handleSuccess (res, rawFile) {
       const file = this.getFile(rawFile);
 
@@ -231,6 +241,7 @@ export default {
         this.$emit('change', this.uploadFiles);
       }
     },
+    // 上传失败
     handleError (err, rawFile) {
       const file = this.getFile(rawFile);
 
@@ -241,6 +252,7 @@ export default {
       this.$emit('input', this.uploadFiles);
       this.$emit('change', this.uploadFiles);
     },
+    // 删除文件
     handleRemove (file, raw) {
       if (raw) {
         file = this.getFile(raw);
@@ -267,10 +279,12 @@ export default {
         }
       }
     },
+    // 重新上传
     handleRetry (file) {
       file.status = 'ready';
       this.submit();
     },
+    // 获取文件信息
     getFile (rawFile) {
       const value = this.uploadFiles;
       let target;
@@ -280,12 +294,15 @@ export default {
       });
       return target;
     },
+    // 中止上传
     abort (file) {
       this.$refs['upload-inner'].abort(file);
     },
+    // 清空文件列表
     clearFiles () {
       this.uploadFiles = [];
     },
+    // 提交
     submit () {
       this.uploadFiles
         .filter(file => file.status === 'ready')
@@ -293,6 +310,7 @@ export default {
           this.$refs['upload-inner'].upload(file.raw);
         });
     },
+    // 获取文件列表类型，如果是button或input就给出列表格式，picture-card给出图片卡形式
     transListType (inputType) {
       if (inputType === 'button' || inputType === 'input') {
         return 'text';
@@ -300,6 +318,7 @@ export default {
         return 'picture-card';
       }
     },
+    // 文件上传状态
     renderStatusClass () {
       if ((this.uploadFiles.length === 1) && (this.uploadFiles[0].status === 'success')) {
         return `${this.prefix}-uploadlist-${this.inputType}-success`;
@@ -318,16 +337,16 @@ export default {
       uploadList = (
         <div class={[`${this.prefix}-uploadlist-${this.inputType}`, this.inputType === 'picture-card' && this.renderStatusClass()]}>
           <UploadList
-            prefix={this.prefix}
-            getIconCls={this.getIconCls}
-            disabled={this.uploadDisabled}
-            inputType={this.inputType}
-            listType={this.transListType(this.inputType)}
-            files={this.uploadFiles}
-            showFileDown={this.showFileDown}
-            on-remove={this.handleRemove}
-            on-retry={this.handleRetry}
-            handlePreview={this.onPreview}>
+            prefix={this.prefix} // 前缀
+            getIconCls={this.getIconCls} // 图标
+            disabled={this.uploadDisabled} // 禁用
+            inputType={this.inputType} // 控件类型
+            listType={this.transListType(this.inputType)} // 文件列表类型
+            files={this.uploadFiles} // 文件列表
+            showFileDown={this.showFileDown} // 文件可下载
+            on-remove={this.handleRemove} // 移除文件
+            on-retry={this.handleRetry} // 重新上传
+            handlePreview={this.onPreview}> // 预览
           </UploadList>
         </div>
       );
@@ -336,25 +355,25 @@ export default {
     const uploadData = {
       props: {
         id: this.elementId,
-        type: this.type,
-        drag: this.drag,
-        action: this.action,
-        inputType: this.inputType,
-        multiple: this.multiple,
+        type: this.type, // 类型
+        drag: this.drag, // 弹窗
+        action: this.action, // 上传地址
+        inputType: this.inputType, // 控件类型
+        multiple: this.multiple, // 是否可多选文件
         'before-upload': this.beforeUpload, // 上传前
-        'with-credentials': this.withCredentials,
-        headers: this.headers,
-        method: this.method,
-        name: this.name,
-        data: this.data,
-        accept: this.accept,
-        value: this.uploadFiles,
-        autoUpload: this.autoUpload,
-        listType: this.transListType(this.inputType),
-        disabled: this.uploadDisabled,
-        limit: this.limit,
-        prefix: this.prefix,
-        getIconCls: this.getIconCls,
+        'with-credentials': this.withCredentials, // 发送cookie凭证
+        headers: this.headers, // 请求头
+        method: this.method, // 请求方法
+        name: this.name, // 文件名字段
+        data: this.data, // 附加数据
+        accept: this.accept, // 接受的文件类型
+        value: this.uploadFiles, // 已上传文件
+        autoUpload: this.autoUpload, // 自动上传
+        listType: this.transListType(this.inputType), // 已上传文件列表类型
+        disabled: this.uploadDisabled, // 禁用
+        limit: this.limit, // 限制数量
+        prefix: this.prefix, // 前缀
+        getIconCls: this.getIconCls, // 图标
         'on-exceed': this.onExceed, // 超出数量限制
         'on-start': this.handleStart, // 开始上传
         'on-progress': this.handleProgress, // 上传过程

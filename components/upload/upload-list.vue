@@ -81,12 +81,6 @@
           v-if="listType === 'text' && !disabled"
           v-show="showBtn.indexOf(file.uid) > -1"
         >
-          <!-- <i @click="$emit('remove', file)"
-          :class="{
-            [getIconCls('item-text')]: file.status === 'success',
-            [getIconCls('fail')]: file.status === 'fail',
-            [getIconCls('error-circle')]:true,
-          }"></i> -->
           <Icon
             name="refresh-cw"
             :class="`${prefix}-list-item-status-text-icon`"
@@ -102,38 +96,13 @@
             :height="20"
             @click="$emit('remove', file)"
           />
-          <!-- <i @click="() => {
-            file.status === 'fail' ? $emit('retry', file) : $emit('remove', file)
-            }"
-          :class="{
-            [getIconCls('item-text-hover')]: true,
-            [getIconCls('refresh-cw')]: file.status === 'fail',
-            [getIconCls('error-circle')]:file.status !== 'fail'
-          }"></i> -->
         </label>
       </transition>
-      <!-- <span :class="`${prefix}-list-item-text`"
-        v-if="listType === 'picture-card' && file.status === 'uploading'">
-        上传中</span> -->
-      <!-- <wt-progress
-        v-if="file.status === 'uploading'"
-        type="line"
-        :stroke-width="listType === 'picture-card' ? 4 : 2"
-        :percentage="parsePercentage(file.percentage)" /> -->
       <span :class="{
         [`${prefix}-list-item-actions`]: true,
         [`${prefix}-list-item-fail`]: file.status === 'fail'
         }"
         v-if="listType === 'picture-card'">
-        <!-- <span
-          :class="`${prefix}-list-item-preview`"
-          v-if="handlePreview &&
-          listType === 'picture-card' &&
-          file.status !== 'fail'"
-          @click="handlePreview(file)"
-        >
-          <Icon name="visibility-on-o" />
-        </span> -->
         <span
           :class="`${prefix}-list-item-retry`"
           v-if="listType === 'picture-card' &&
@@ -178,19 +147,25 @@ export default {
       type: Function,
       required: true,
     },
+    // 文件列表
     files: {
       type: Array,
       default () {
         return [];
       },
     },
+    // 是否禁用
     disabled: {
       type: Boolean,
       default: false,
     },
+    // 预览
     handlePreview: Function,
+    // 上传控件类型
     inputType: String,
+    // 已上传文件列表类型
     listType: String,
+    // 是否允许下载文件
     showFileDown: {
       type: Boolean,
       default: false,
@@ -200,8 +175,8 @@ export default {
   data () {
     return {
       focusing: false,
-      showBtn: [],
-      STATUS_ENUM: {
+      showBtn: [], // 展示按钮
+      STATUS_ENUM: { // 状态枚举
         ready: '准备中',
         uploading: '上传中',
         success: '',
@@ -210,9 +185,11 @@ export default {
     };
   },
   methods: {
+    // 上传进度百分比
     parsePercentage (val) {
       return parseInt(val, 10);
     },
+    // 点击图片预览功能，产品无此需求，暂时注释
     handleClick (file) {
       // this.handlePreview && this.handlePreview(file);
     },
@@ -230,7 +207,7 @@ export default {
         this.showBtn = [];
       }
     },
-    // 截取文件名 - 只展示
+    // 截取文件名 - 文件名超长的展示逻辑
     renderFileName (fileName) {
       const pointIndex = fileName.lastIndexOf('.'); // 获取后缀的位置
       console.log('pointIndex', pointIndex);

@@ -9,22 +9,22 @@ export default {
     UploadDragger,
   },
   props: {
-    type: String,
-    action: {
+    type: String, // 文件类型
+    action: { // 上传地址
       type: String,
       required: true,
     },
-    id: String,
-    name: {
+    id: String, // 文件id
+    name: { // 文件名字段
       type: String,
       default: 'file',
     },
-    data: Object,
-    headers: Object,
-    method: String,
-    withCredentials: Boolean,
-    multiple: Boolean,
-    accept: String,
+    data: Object, // 附加参数
+    headers: Object, // 请求头
+    method: String, // 请求方法
+    withCredentials: Boolean, // 是否附带cookie凭证信息
+    multiple: Boolean, // 是否可多选文件
+    accept: String, // 接受的文件类型
     prefix: {
       type: String,
       required: true,
@@ -34,36 +34,36 @@ export default {
       required: false,
     },
 
-    onFileSelect: Function,
-    onStart: Function,
-    onProgress: Function,
-    onSuccess: Function,
-    onError: Function,
-    beforeUpload: Function,
-    repeatUpload: Function,
-    drag: Boolean,
-    onPreview: {
+    onFileSelect: Function, // 选择文件
+    onStart: Function, // 开始上传
+    onProgress: Function, // 上传中
+    onSuccess: Function, // 上传成功
+    onError: Function, // 上传失败
+    beforeUpload: Function, // 上传前
+    repeatUpload: Function, // 重新上传
+    drag: Boolean, // 展示弹窗
+    onPreview: { // 预览文件
       type: Function,
       default: function () {},
     },
-    onRemove: {
+    onRemove: { // 删除已上传文件
       type: Function,
       default: function () {},
     },
-    onRetry: {
+    onRetry: { // 重试
       type: Function,
       default: function () {},
     },
-    fileList: Array,
-    autoUpload: Boolean,
-    listType: String,
-    httpRequest: {
+    fileList: Array, // 已上传文件列表
+    autoUpload: Boolean, // 自动上传
+    listType: String, // 已上传文件列表类型
+    httpRequest: { // 网络请求
       type: Function,
       default: ajax,
     },
-    disabled: Boolean,
-    limit: Number,
-    onExceed: Function,
+    disabled: Boolean, // 禁用
+    limit: Number, // 限制数量
+    onExceed: Function, // 超出数量时触发
   },
 
   data () {
@@ -74,12 +74,14 @@ export default {
   },
 
   methods: {
+    // 文件变化
     handleChange (ev) {
       const files = ev.target.files;
 
       if (!files) return;
       this.uploadFiles(files);
     },
+    // 上传过程
     uploadFiles (files) {
       // 超出限制大小
       if (this.limit && this.fileList.length + files.length > this.limit) {
@@ -87,32 +89,41 @@ export default {
         return;
       }
 
+      // 拿到待上传列表
       let postFiles = Array.prototype.slice.call(files);
       if (!this.multiple) { postFiles = postFiles.slice(0, 1); }
 
+      // 无文件
       if (postFiles.length === 0) { return; }
 
       if (this.onFileSelect && this.onFileSelect(postFiles) === false) {
         return;
       }
+      // 开始走上传流程
       postFiles.forEach(rawFile => {
         this.onStart(rawFile);
         if (this.autoUpload) this.upload(rawFile);
       });
     },
+    // 实际上传过程
     upload (rawFile) {
+      // 先把待上传列表清空
       this.$refs.input.value = null;
 
+      // 非上传前，则调用post
       if (!this.beforeUpload) {
         return this.post(rawFile);
       }
 
+      // 上传前拿待上传文件列表
       const before = this.beforeUpload(rawFile);
       if (before && before.then) {
         before.then(processedFile => {
           const fileType = Object.prototype.toString.call(processedFile);
 
+          // 文件类型是文件对象或blob对象
           if (fileType === '[object File]' || fileType === '[object Blob]') {
+            // blob对象new一个文件File
             if (fileType === '[object Blob]') {
               processedFile = new File([processedFile], rawFile.name, {
                 type: rawFile.type,
@@ -136,6 +147,7 @@ export default {
         this.onRemove(null, rawFile);
       }
     },
+    // 中止上传
     abort (file) {
       const { reqs } = this;
       if (file) {
@@ -151,6 +163,7 @@ export default {
         });
       }
     },
+    // 发送文件
     post (rawFile) {
       const { uid } = rawFile;
       const options = {
@@ -180,12 +193,14 @@ export default {
         req.then(options.onSuccess, options.onError);
       }
     },
+    // 点击文件
     handleClick () {
       if (!this.disabled) {
         this.$refs.input.value = null;
         this.$refs.input.click();
       }
     },
+    // 空格或回车等同点击文件
     handleKeydown (e) {
       if (e.target !== e.currentTarget) return;
       if (e.keyCode === 13 || e.keyCode === 32) {
@@ -196,17 +211,17 @@ export default {
 
   render (h) {
     const {
-      id,
-      handleClick,
-      drag,
-      name,
-      handleChange,
-      multiple,
-      accept,
-      listType,
-      uploadFiles,
-      disabled,
-      handleKeydown,
+      id, // id
+      handleClick, // 点击文件
+      drag, // 弹窗
+      name, // 文件名字段
+      handleChange, // 文件变化
+      multiple, // 多选文件
+      accept, // 接受的文件类型
+      listType, // 已上传列表类型
+      uploadFiles, // 已上传的文件列表
+      disabled, // 禁用
+      handleKeydown, // 键盘按键触发
       prefix,
     } = this;
     const data = {

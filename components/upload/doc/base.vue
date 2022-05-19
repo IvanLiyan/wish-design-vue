@@ -9,7 +9,6 @@
 export default {
   data () {
     return {
-      multiple: true,
       fileList: [{
         name: 'test.jpeg',
         raw: {
