@@ -82,42 +82,35 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 394);
+/******/ 	return __webpack_require__(__webpack_require__.s = 651);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 285:
-/***/ (function(module, exports) {
-
-module.exports = require("@wish/wt-vue/lib/utils/util");
-
-/***/ }),
-
-/***/ 394:
+/***/ 651:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _option__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(395);
+/* harmony import */ var _badge_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(652);
 
 
 /* istanbul ignore next */
-_option__WEBPACK_IMPORTED_MODULE_0__["default"].install = function (Vue) {
-  Vue.component(_option__WEBPACK_IMPORTED_MODULE_0__["default"].name, _option__WEBPACK_IMPORTED_MODULE_0__["default"]);
+_badge_vue__WEBPACK_IMPORTED_MODULE_0__["default"].install = function (Vue) {
+  Vue.component(_badge_vue__WEBPACK_IMPORTED_MODULE_0__["default"].name, _badge_vue__WEBPACK_IMPORTED_MODULE_0__["default"]);
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (_option__WEBPACK_IMPORTED_MODULE_0__["default"]);
+/* harmony default export */ __webpack_exports__["default"] = (_badge_vue__WEBPACK_IMPORTED_MODULE_0__["default"]);
 
 /***/ }),
 
-/***/ 395:
+/***/ 652:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _option_vue_vue_type_template_id_5126e53c___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(396);
-/* harmony import */ var _option_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(398);
+/* harmony import */ var _badge_vue_vue_type_template_id_0ea0c8a9___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(653);
+/* harmony import */ var _badge_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(655);
 /* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(88);
 
 
@@ -127,9 +120,9 @@ __webpack_require__.r(__webpack_exports__);
 /* normalize component */
 
 var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _option_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _option_vue_vue_type_template_id_5126e53c___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _option_vue_vue_type_template_id_5126e53c___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _badge_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _badge_vue_vue_type_template_id_0ea0c8a9___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _badge_vue_vue_type_template_id_0ea0c8a9___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
   null,
@@ -141,21 +134,21 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 
 /***/ }),
 
-/***/ 396:
+/***/ 653:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_option_vue_vue_type_template_id_5126e53c___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(397);
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_option_vue_vue_type_template_id_5126e53c___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_badge_vue_vue_type_template_id_0ea0c8a9___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(654);
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_badge_vue_vue_type_template_id_0ea0c8a9___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_option_vue_vue_type_template_id_5126e53c___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_badge_vue_vue_type_template_id_0ea0c8a9___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
 /***/ }),
 
-/***/ 397:
+/***/ 654:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -164,36 +157,30 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
 var render = function () {
 var _obj;
-var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('li',{directives:[{name:"show",rawName:"v-show",value:(_vm.visible),expression:"visible"}],class:( _obj = {}, _obj[_vm.dmi_p] = true, _obj[(_vm.dmi_p + "-selected")] = _vm.itemSelected, _obj[(_vm.dmi_p + "-disabled")] = _vm._disabled, _obj.hover = _vm.hover, _obj ),on:{"mouseenter":_vm.hoverItem,"click":function($event){$event.stopPropagation();return _vm.selectOptionClick.apply(null, arguments)}}},[(_vm.isCheckbox)?_c('wt-checkbox',{attrs:{"form-no-validate":true,"checked":!!_vm.itemSelected,"disabled":_vm._disabled},on:{"input":_vm.selectOptionClick},nativeOn:{"click":function($event){$event.stopPropagation();}}},[_vm._t("default",function(){return [_c('span',[_vm._v(_vm._s(_vm.currentLabel))])]})],2):_c('span',{class:(_vm.prefix + "-label-wrapper")},[_vm._t("default",function(){return [_c('span',[_vm._v(_vm._s(_vm.currentLabel))])]}),(_vm.isMultiple && _vm.itemSelected)?_c('span',{class:(_vm.selectPrefix + "-selected-check " + (_vm.iconPrefix('check-thick')))}):_vm._e()],2)],1)}
+var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{class:_vm.prefix},[_vm._t("default"),_c('span',{directives:[{name:"show",rawName:"v-show",value:(_vm.text || _vm.text === 0 || _vm.dot),expression:"text || text === 0 || dot"}],class:( _obj = {}, _obj[(_vm.prefix + "-text")] = true, _obj[(_vm.prefix + "-position")] = _vm.$slots.default, _obj[(_vm.prefix + "-dot")] = _vm.dot, _obj[(_vm.prefix + "-hidden")] = _vm.hidden, _obj[(_vm.prefix + "-rounded")] = _vm.rounded, _obj ),domProps:{"textContent":_vm._s(_vm.text)}})],2)}
 var staticRenderFns = []
 
 
 
 /***/ }),
 
-/***/ 398:
+/***/ 655:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_option_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(399);
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_option_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_badge_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(656);
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_badge_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
-/***/ 399:
+/***/ 656:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _utils_type__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(84);
-/* harmony import */ var _utils_type__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_utils_type__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _utils_util__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(285);
-/* harmony import */ var _utils_util__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_utils_util__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _components_checkbox__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(400);
-/* harmony import */ var _components_checkbox__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_components_checkbox__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _utils_config__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(86);
-/* harmony import */ var _utils_config__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_utils_config__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _utils_config__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(86);
+/* harmony import */ var _utils_config__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_utils_config__WEBPACK_IMPORTED_MODULE_0__);
 //
 //
 //
@@ -208,187 +195,49 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-
-
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'WtOption',
-  components: {
-    WtCheckbox: _components_checkbox__WEBPACK_IMPORTED_MODULE_2___default.a
-  },
-
-  inject: {
-    select: 'select',
-    optionGroup: {
-      default: null
-    },
-    config: {
-      from: _utils_config__WEBPACK_IMPORTED_MODULE_3__["CONFIG_PROVIDER"],
-      default: {
-        getPrefixCls: _utils_config__WEBPACK_IMPORTED_MODULE_3__["getPrefixCls"],
-        getIconCls: _utils_config__WEBPACK_IMPORTED_MODULE_3__["getIconCls"]
-      }
-    }
-  },
+  name: 'WtBadge',
 
   props: {
-    // 选项值
-    value: [String, Number, Object, Boolean],
-    // 选项显示内容
-    label: {
-      type: [String, Number]
-    },
-    // 禁用
-    disabled: {
-      type: Boolean,
-      default: false
-    },
-    // 用于标记是否自动创建
-    created: Boolean,
-    // 是否全选 option
-    isSelectAll: Boolean
+    value: [String, Number],
+    dot: Boolean,
+    max: Number,
+    hidden: Boolean
   },
-
-  data: function data() {
-    return {
-      // 可见状态
-      visible: true,
-      // hover状态
-      hover: false
-    };
-  },
-
-  computed: {
-    prefix: function prefix() {
-      return this.config.getPrefixCls('option');
-    },
-    iconPrefix: function iconPrefix() {
-      return this.config.getIconCls;
-    },
-    selectPrefix: function selectPrefix() {
-      return this.config.getPrefixCls('select');
-    },
-    dmi_p: function dmi_p() {
-      return this.config.getPrefixCls('dropdown-menu-item');
-    },
-
-    // 选项对应vlaue标识
-    realValue: function realValue() {
-      if (Object(_utils_type__WEBPACK_IMPORTED_MODULE_0__["isObject"])(this.value) && this.select.valueKey) {
-        return Object(_utils_util__WEBPACK_IMPORTED_MODULE_1__["getValueByPath"])(this.value, this.select.valueKey);
+  inject: {
+    config: {
+      from: _utils_config__WEBPACK_IMPORTED_MODULE_0__["CONFIG_PROVIDER"],
+      default: {
+        getPrefixCls: _utils_config__WEBPACK_IMPORTED_MODULE_0__["getPrefixCls"]
       }
-      return this.value;
-    },
-
-    // 选项显示内容取值
-    currentLabel: function currentLabel() {
-      return Object(_utils_type__WEBPACK_IMPORTED_MODULE_0__["isExist"])(this.label) ? this.label : Object(_utils_type__WEBPACK_IMPORTED_MODULE_0__["isExist"])(this.value) ? this.value.toString() : '';
-    },
-
-    // 选项是否被选中
-    itemSelected: function itemSelected() {
-      var _this = this;
-
-      if (!this.select.selected) {
-        return false;
-      }
-      if (!this.select.multiple) {
-        return this.realValue === this.select.selected.realValue;
-      } else {
-        return this.select.selected.find(function (item) {
-          return item.realValue === _this.realValue;
-        });
-      }
-    },
-
-    // 选项群组是否可用
-    groupDisabled: function groupDisabled() {
-      return this.optionGroup ? this.optionGroup.disabled : false;
-    },
-
-    // 禁用状态
-    _disabled: function _disabled() {
-      return this.disabled || this.groupDisabled;
-    },
-
-    // 是否多选
-    isMultiple: function isMultiple() {
-      return this.select.multiple && !this.select.showCheckbox;
-    },
-
-    // 是否为checkbox
-    isCheckbox: function isCheckbox() {
-      return this.select.multiple && this.select.showCheckbox;
     }
   },
-
-  created: function created() {
-    this.select.$emit('addOption', this);
-  },
-  beforeDestroy: function beforeDestroy() {
-    this.select.$emit('removeOption', this);
-  },
-
-
-  methods: {
-    /**
-     * 触发hover
-     */
-    hoverItem: function hoverItem() {
-      if (!this._disabled) {
-        this.select.$emit('hoverItem', this);
-      }
+  computed: {
+    prefix: function prefix() {
+      return this.config.getPrefixCls('badge');
     },
+    text: function text() {
+      var dot = this.dot,
+          value = this.value,
+          max = this.max;
 
-    /**
-     * 选项点击事件
-     */
-    selectOptionClick: function selectOptionClick() {
-      if (!this._disabled) {
-        this.select.$emit('optionClick', this);
+      if (dot) {
+        return;
       }
+      if (typeof value === 'number' && typeof max === 'number') {
+        return max < value ? max + '+' : value;
+      }
+
+      return value;
+    },
+    rounded: function rounded() {
+      return String(this.text).length === 1;
     }
   }
 });
-
-/***/ }),
-
-/***/ 400:
-/***/ (function(module, exports) {
-
-module.exports = require("@wish/wt-vue/lib/checkbox");
-
-/***/ }),
-
-/***/ 84:
-/***/ (function(module, exports) {
-
-module.exports = require("@wish/wt-vue/lib/utils/type");
 
 /***/ }),
 

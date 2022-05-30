@@ -82,42 +82,40 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 394);
+/******/ 	return __webpack_require__(__webpack_require__.s = 644);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 285:
-/***/ (function(module, exports) {
-
-module.exports = require("@wish/wt-vue/lib/utils/util");
-
-/***/ }),
-
-/***/ 394:
+/***/ 644:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _option__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(395);
+/* harmony import */ var _stepper_step__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(645);
+/* harmony import */ var _components_stepper__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(650);
+/* harmony import */ var _components_stepper__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_components_stepper__WEBPACK_IMPORTED_MODULE_1__);
 
+
+
+var WtStep = Object(_components_stepper__WEBPACK_IMPORTED_MODULE_1__["withStepper"])('WtStep', _stepper_step__WEBPACK_IMPORTED_MODULE_0__["default"]);
 
 /* istanbul ignore next */
-_option__WEBPACK_IMPORTED_MODULE_0__["default"].install = function (Vue) {
-  Vue.component(_option__WEBPACK_IMPORTED_MODULE_0__["default"].name, _option__WEBPACK_IMPORTED_MODULE_0__["default"]);
+WtStep.install = function (Vue) {
+  Vue.component(WtStep.name, WtStep);
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (_option__WEBPACK_IMPORTED_MODULE_0__["default"]);
+/* harmony default export */ __webpack_exports__["default"] = (WtStep);
 
 /***/ }),
 
-/***/ 395:
+/***/ 645:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _option_vue_vue_type_template_id_5126e53c___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(396);
-/* harmony import */ var _option_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(398);
+/* harmony import */ var _step_vue_vue_type_template_id_256e0ff8___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(646);
+/* harmony import */ var _step_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(648);
 /* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(88);
 
 
@@ -127,9 +125,9 @@ __webpack_require__.r(__webpack_exports__);
 /* normalize component */
 
 var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _option_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _option_vue_vue_type_template_id_5126e53c___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _option_vue_vue_type_template_id_5126e53c___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _step_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _step_vue_vue_type_template_id_256e0ff8___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _step_vue_vue_type_template_id_256e0ff8___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
   null,
@@ -141,21 +139,21 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 
 /***/ }),
 
-/***/ 396:
+/***/ 646:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_option_vue_vue_type_template_id_5126e53c___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(397);
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_option_vue_vue_type_template_id_5126e53c___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_step_vue_vue_type_template_id_256e0ff8___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(647);
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_step_vue_vue_type_template_id_256e0ff8___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_option_vue_vue_type_template_id_5126e53c___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_step_vue_vue_type_template_id_256e0ff8___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
 /***/ }),
 
-/***/ 397:
+/***/ 647:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -163,37 +161,39 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
 var render = function () {
-var _obj;
-var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('li',{directives:[{name:"show",rawName:"v-show",value:(_vm.visible),expression:"visible"}],class:( _obj = {}, _obj[_vm.dmi_p] = true, _obj[(_vm.dmi_p + "-selected")] = _vm.itemSelected, _obj[(_vm.dmi_p + "-disabled")] = _vm._disabled, _obj.hover = _vm.hover, _obj ),on:{"mouseenter":_vm.hoverItem,"click":function($event){$event.stopPropagation();return _vm.selectOptionClick.apply(null, arguments)}}},[(_vm.isCheckbox)?_c('wt-checkbox',{attrs:{"form-no-validate":true,"checked":!!_vm.itemSelected,"disabled":_vm._disabled},on:{"input":_vm.selectOptionClick},nativeOn:{"click":function($event){$event.stopPropagation();}}},[_vm._t("default",function(){return [_c('span',[_vm._v(_vm._s(_vm.currentLabel))])]})],2):_c('span',{class:(_vm.prefix + "-label-wrapper")},[_vm._t("default",function(){return [_c('span',[_vm._v(_vm._s(_vm.currentLabel))])]}),(_vm.isMultiple && _vm.itemSelected)?_c('span',{class:(_vm.selectPrefix + "-selected-check " + (_vm.iconPrefix('check-thick')))}):_vm._e()],2)],1)}
+var _obj, _obj$1, _obj$2, _obj$3;
+var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{class:[
+    _vm.prefix,
+    ( _obj = {}, _obj[(_vm.prefix + "-flex")] = !_vm.space, _obj[(_vm.prefix + "-dot")] = _vm.dot, _obj ) ],style:(_vm.style)},[_c('div',{class:[
+      (_vm.prefix + "-head"),
+      ( _obj$1 = {}, _obj$1[(_vm.prefix + "-" + _vm.status)] = true, _obj$1 ) ]},[_c('div',{class:[
+        (_vm.prefix + "-head-line"),
+        ( _obj$2 = {}, _obj$2[(_vm.prefix + "-head-line-dot")] = _vm.dot && _vm.direction === 'vertical', _obj$2 ) ]}),(_vm.icon || _vm.$slots.icon)?_c('div',{class:(_vm.prefix + "-head-icon")},[_vm._t("icon",function(){return [_c('wt-icon',{attrs:{"name":_vm.icon}})]})],2):(_vm.dot)?_c('div',{class:(_vm.prefix + "-head-number"),style:({ border: 'none', background: 'none' })},[_c('div',{class:(_vm.prefix + "-head-dot")})]):_c('div',{class:(_vm.prefix + "-head-number")},[(_vm.status === 'process' || _vm.status === 'wait')?_c('span',[_vm._v(" "+_vm._s(_vm.index + 1)+" ")]):_c('wt-icon',{attrs:{"name":_vm.currentIcon,"width":24,"height":24,"color":_vm.currentIconColor}})],1)]),_c('div',{class:[
+      (_vm.prefix + "-main"),
+      ( _obj$3 = {}, _obj$3[(_vm.prefix + "-" + _vm.status)] = true, _obj$3 ) ]},[_c('div',{class:(_vm.prefix + "-main-title")},[_vm._t("title",function(){return [_vm._v(_vm._s(_vm.title))]})],2),_c('div',{class:(_vm.prefix + "-main-description")},[_vm._t("description",function(){return [_vm._v(_vm._s(_vm.description))]})],2)])])}
 var staticRenderFns = []
 
 
 
 /***/ }),
 
-/***/ 398:
+/***/ 648:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_option_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(399);
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_option_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_step_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(649);
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_step_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
-/***/ 399:
+/***/ 649:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _utils_type__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(84);
-/* harmony import */ var _utils_type__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_utils_type__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _utils_util__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(285);
-/* harmony import */ var _utils_util__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_utils_util__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _components_checkbox__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(400);
-/* harmony import */ var _components_checkbox__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_components_checkbox__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _utils_config__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(86);
-/* harmony import */ var _utils_config__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_utils_config__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _utils_config__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(86);
+/* harmony import */ var _utils_config__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_utils_config__WEBPACK_IMPORTED_MODULE_0__);
 //
 //
 //
@@ -230,147 +230,92 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-
-
-
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'WtOption',
-  components: {
-    WtCheckbox: _components_checkbox__WEBPACK_IMPORTED_MODULE_2___default.a
+  name: 'Step',
+  props: {
+    index: Number,
+    title: String,
+    icon: String,
+    description: String,
+    status: String,
+    direction: String,
+    dot: Boolean,
+    space: [Number, String]
   },
-
   inject: {
-    select: 'select',
-    optionGroup: {
-      default: null
-    },
     config: {
-      from: _utils_config__WEBPACK_IMPORTED_MODULE_3__["CONFIG_PROVIDER"],
+      from: _utils_config__WEBPACK_IMPORTED_MODULE_0__["CONFIG_PROVIDER"],
       default: {
-        getPrefixCls: _utils_config__WEBPACK_IMPORTED_MODULE_3__["getPrefixCls"],
-        getIconCls: _utils_config__WEBPACK_IMPORTED_MODULE_3__["getIconCls"]
+        getPrefixCls: _utils_config__WEBPACK_IMPORTED_MODULE_0__["getPrefixCls"],
+        getIconCls: _utils_config__WEBPACK_IMPORTED_MODULE_0__["getIconCls"]
       }
     }
   },
-
-  props: {
-    // 选项值
-    value: [String, Number, Object, Boolean],
-    // 选项显示内容
-    label: {
-      type: [String, Number]
-    },
-    // 禁用
-    disabled: {
-      type: Boolean,
-      default: false
-    },
-    // 用于标记是否自动创建
-    created: Boolean,
-    // 是否全选 option
-    isSelectAll: Boolean
-  },
-
-  data: function data() {
-    return {
-      // 可见状态
-      visible: true,
-      // hover状态
-      hover: false
-    };
-  },
-
   computed: {
     prefix: function prefix() {
-      return this.config.getPrefixCls('option');
+      return this.config.getPrefixCls('step');
     },
     iconPrefix: function iconPrefix() {
       return this.config.getIconCls;
     },
-    selectPrefix: function selectPrefix() {
-      return this.config.getPrefixCls('select');
-    },
-    dmi_p: function dmi_p() {
-      return this.config.getPrefixCls('dropdown-menu-item');
-    },
-
-    // 选项对应vlaue标识
-    realValue: function realValue() {
-      if (Object(_utils_type__WEBPACK_IMPORTED_MODULE_0__["isObject"])(this.value) && this.select.valueKey) {
-        return Object(_utils_util__WEBPACK_IMPORTED_MODULE_1__["getValueByPath"])(this.value, this.select.valueKey);
+    style: function style() {
+      var size = this.space;
+      var space = typeof size === 'number' ? size + 'px' : size;
+      if (this.direction === 'vertical') {
+        return { height: space };
       }
-      return this.value;
+      return { width: space };
     },
-
-    // 选项显示内容取值
-    currentLabel: function currentLabel() {
-      return Object(_utils_type__WEBPACK_IMPORTED_MODULE_0__["isExist"])(this.label) ? this.label : Object(_utils_type__WEBPACK_IMPORTED_MODULE_0__["isExist"])(this.value) ? this.value.toString() : '';
-    },
-
-    // 选项是否被选中
-    itemSelected: function itemSelected() {
-      var _this = this;
-
-      if (!this.select.selected) {
-        return false;
+    currentIcon: function currentIcon() {
+      if (this.icon) {
+        return this.icon;
       }
-      if (!this.select.multiple) {
-        return this.realValue === this.select.selected.realValue;
-      } else {
-        return this.select.selected.find(function (item) {
-          return item.realValue === _this.realValue;
-        });
+      switch (this.status) {
+        case 'error':
+          return 'x-circle';
+        case 'cancel':
+          return 'alert-circle';
+        case 'finish':
+          return 'check-circle';
+        default:
+          return 'check-circle';
       }
     },
-
-    // 选项群组是否可用
-    groupDisabled: function groupDisabled() {
-      return this.optionGroup ? this.optionGroup.disabled : false;
-    },
-
-    // 禁用状态
-    _disabled: function _disabled() {
-      return this.disabled || this.groupDisabled;
-    },
-
-    // 是否多选
-    isMultiple: function isMultiple() {
-      return this.select.multiple && !this.select.showCheckbox;
-    },
-
-    // 是否为checkbox
-    isCheckbox: function isCheckbox() {
-      return this.select.multiple && this.select.showCheckbox;
-    }
-  },
-
-  created: function created() {
-    this.select.$emit('addOption', this);
-  },
-  beforeDestroy: function beforeDestroy() {
-    this.select.$emit('removeOption', this);
-  },
-
-
-  methods: {
-    /**
-     * 触发hover
-     */
-    hoverItem: function hoverItem() {
-      if (!this._disabled) {
-        this.select.$emit('hoverItem', this);
-      }
-    },
-
-    /**
-     * 选项点击事件
-     */
-    selectOptionClick: function selectOptionClick() {
-      if (!this._disabled) {
-        this.select.$emit('optionClick', this);
+    currentIconColor: function currentIconColor() {
+      switch (this.status) {
+        case 'error':
+          return '#e52533';
+        case 'cancel':
+          return '#ffc72c';
+        case 'finish':
+          return '#305bef';
+        default:
+          return '#305bef';
       }
     }
   }
@@ -378,17 +323,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 400:
+/***/ 650:
 /***/ (function(module, exports) {
 
-module.exports = require("@wish/wt-vue/lib/checkbox");
-
-/***/ }),
-
-/***/ 84:
-/***/ (function(module, exports) {
-
-module.exports = require("@wish/wt-vue/lib/utils/type");
+module.exports = require("@wish/wt-vue/lib/stepper");
 
 /***/ }),
 
