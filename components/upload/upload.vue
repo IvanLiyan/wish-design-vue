@@ -346,7 +346,8 @@ export default {
             showFileDown={this.showFileDown} // 文件可下载
             on-remove={this.handleRemove} // 移除文件
             on-retry={this.handleRetry} // 重新上传
-            handlePreview={this.onPreview}> // 预览
+            handlePreview={this.onPreview} // 预览
+          >
           </UploadList>
         </div>
       );

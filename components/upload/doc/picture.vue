@@ -2,12 +2,12 @@
   <div class="picture-demo-box">
     <wt-upload
       class="picture-list"
-      action="https://www.mocky.io/v2/5185415ba171ea3a00704eed/posts/"
+      :action="action"
       input-type="picture-card"
       v-model="fileList" />
     <wt-upload
       class="picture-list"
-      action="https://www.mocky.io/v2/5185415ba171ea3a00704eed/posts/"
+      :action="action"
       input-type="picture-card"
       v-model="fileList2" />
   </div>
@@ -16,6 +16,7 @@
 export default {
   data () {
     return {
+      action: 'https://www.mocky.io/v2/5185415ba171ea3a00704eed/posts/',
       fileList: [{
         name: 'test.jpg',
         percentage: 100,
