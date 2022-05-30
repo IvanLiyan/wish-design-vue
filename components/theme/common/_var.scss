@@ -1038,3 +1038,89 @@ $badge-dot-size: $s-2!default;
 // @end category
 
 // @end component
+
+// @component timeline 时间线
+// @category base
+// @propsValue default
+// @name 项-最小高
+$timeline-item-min-height: 70px!default;
+// @name 项-下外边距
+$timeline-item-margin-bottom: $s-5!default;
+// @name 项-custom-下外边距
+$timeline-item-custom-margin-bottom: 38px!default;
+// @dom dot
+// @name 项-点-宽度
+$timeline-item-dot-width: 17px!default;
+// @end dom
+
+// @dom track
+// @name 项-track-间距
+$timeline-item-track-spacing: $s-1!default;
+// @name 项-track-宽度
+$timeline-item-track-width: $border-width-1!default;
+// @name 项-track-背景色
+$timeline-item-track-bgc: $color-primary!default;
+// @end dom
+
+// @dom title
+// @name 项-标题-宽度
+$timeline-item-title-width: $s-10!default;
+// @name 项-标题-文字颜色
+$timeline-item-title-color: #666!default;
+// @name 项-标题-字号
+$timeline-item-title-font-size: $font-size-1!default;
+// @name 项-行高-标题
+$timeline-item-title-line-height: $line-height-2!default;
+// @end dom
+// @dom content
+// @name 项- 内容-上外边距
+$timeline-item-content-margin-top: -4px!default;
+// @name 项- 内容-外边距-水平
+$timeline-item-content-margin-horizontal: 10px!default;
+// @end dom
+
+// @end propsValue
+// @end category
+
+// @category type
+// @propsValue default
+// @name 项-点-尺寸
+$timeline-item-dot-size: 9px!default;
+// @name 项-点-背景色
+$timeline-item-dot-bgc: $color-primary!default;
+// @name 项-点-边框-宽度
+$timeline-item-dot-border-width: $border-width-1!default;
+// @name 项-点-边框颜色
+$timeline-item-dot-border-color: $color-primary!default;
+// @name 项-点-阴影
+$timeline-item-dot-shadow: $shadow-0!default;
+// @end propsValue
+
+// @propsValue master
+// @name 项-主要-点-尺寸
+$timeline-item-master-dot-size: 11px!default;
+// @name 项-主要-点-背景色
+$timeline-item-master-dot-bgc: $color-primary!default;
+// @name 项-主要-点-边框-宽度
+$timeline-item-master-dot-border-width: $border-width-0!default;
+// @name 项-主要-边框颜色-点
+$timeline-item-master-dot-border-color: $color-primary!default;
+// @name 项-主要-点-阴影
+$timeline-item-master-dot-shadow: 0px 0px 0px 4px rgba(78, 115, 255, 0.12)!default;
+// @end propsValue
+
+// @propsValue hollow
+// @name 项-次要-点-尺寸
+$timeline-item-hollow-dot-size: 11px!default;
+// @name 项-次要-点-背景色
+$timeline-item-hollow-dot-bgc: transparent!default;
+// @name 项-次要-点-边框-宽度
+$timeline-item-hollow-dot-border-width: $border-width-1!default;
+// @name 项-次要-边框颜色-点
+$timeline-item-hollow-dot-border-color: $color-primary!default;
+// @name 项-次要-点-阴影
+$timeline-item-hollow-dot-shadow: $shadow-0!default;
+// @end propsValue
+
+// @end category
+// @end component
