@@ -10,18 +10,18 @@ export default {
 
   staticRenderFns: __vue_staticRenderFns__,
 
-  name: 'MtdCircleProgress',
+  name: 'WtCircleProgress',
   props: {
     color: {
       type: String
     },
     strokeWidth: {
       type: Number,
-      default: 2
+      default: 5
     },
     width: {
       type: Number,
-      default: 26
+      default: 72
     },
     percentage: {
       type: Number,

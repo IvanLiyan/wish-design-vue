@@ -7,7 +7,7 @@ var __vue_render__ = function __vue_render__() {
   var _obj;
   var _vm = this;var _h = _vm.$createElement;var _c = _vm._self._c || _h;return _c('li', { directives: [{ name: "show", rawName: "v-show", value: _vm.visible, expression: "visible" }], class: (_obj = {}, _obj[_vm.dmi_p] = true, _obj[_vm.dmi_p + "-selected"] = _vm.itemSelected, _obj[_vm.dmi_p + "-disabled"] = _vm._disabled, _obj.hover = _vm.hover, _obj), on: { "mouseenter": _vm.hoverItem, "click": function click($event) {
         $event.stopPropagation();return _vm.selectOptionClick.apply(null, arguments);
-      } } }, [_vm.isCheckbox ? _c('wt-checkbox', { attrs: { "form-no-validate": true, "indeterminate": _vm.indeterminate, "checked": !!_vm.itemSelected, "disabled": _vm._disabled }, on: { "input": _vm.selectOptionClick }, nativeOn: { "click": function click($event) {
+      } } }, [_vm.isCheckbox ? _c('wt-checkbox', { attrs: { "form-no-validate": true, "checked": !!_vm.itemSelected, "disabled": _vm._disabled }, on: { "input": _vm.selectOptionClick }, nativeOn: { "click": function click($event) {
         $event.stopPropagation();
       } } }, [_vm._t("default", function () {
     return [_c('span', [_vm._v(_vm._s(_vm.currentLabel))])];
@@ -42,24 +42,29 @@ export default {
   },
 
   props: {
+    // 选项值
     value: [String, Number, Object, Boolean],
-    label: [String, Number],
+    // 选项显示内容
+    label: {
+      type: [String, Number]
+    },
+    // 禁用
     disabled: {
       type: Boolean,
       default: false
     },
-
-    created: Boolean, // 用于标记是否自动创建
-
-    isSelectAll: Boolean, // 是否全选 option
-    indeterminate: Boolean // 是否半选状态，仅用于 全选时
+    // 用于标记是否自动创建
+    created: Boolean,
+    // 是否全选 option
+    isSelectAll: Boolean
   },
 
   data: function data() {
     return {
+      // 可见状态
       visible: true,
-      hover: false,
-      hitState: false
+      // hover状态
+      hover: false
     };
   },
 
@@ -76,15 +81,21 @@ export default {
     dmi_p: function dmi_p() {
       return this.config.getPrefixCls('dropdown-menu-item');
     },
+
+    // 选项对应vlaue标识
     realValue: function realValue() {
       if (isObject(this.value) && this.select.valueKey) {
         return getValueByPath(this.value, this.select.valueKey);
       }
       return this.value;
     },
+
+    // 选项显示内容取值
     currentLabel: function currentLabel() {
       return isExist(this.label) ? this.label : isExist(this.value) ? this.value.toString() : '';
     },
+
+    // 选项是否被选中
     itemSelected: function itemSelected() {
       var _this = this;
 
@@ -99,15 +110,23 @@ export default {
         });
       }
     },
+
+    // 选项群组是否可用
     groupDisabled: function groupDisabled() {
       return this.optionGroup ? this.optionGroup.disabled : false;
     },
+
+    // 禁用状态
     _disabled: function _disabled() {
       return this.disabled || this.groupDisabled;
     },
+
+    // 是否多选
     isMultiple: function isMultiple() {
       return this.select.multiple && !this.select.showCheckbox;
     },
+
+    // 是否为checkbox
     isCheckbox: function isCheckbox() {
       return this.select.multiple && this.select.showCheckbox;
     }
@@ -122,11 +141,18 @@ export default {
 
 
   methods: {
+    /**
+     * 触发hover
+     */
     hoverItem: function hoverItem() {
       if (!this._disabled) {
         this.select.$emit('hoverItem', this);
       }
     },
+
+    /**
+     * 选项点击事件
+     */
     selectOptionClick: function selectOptionClick() {
       if (!this._disabled) {
         this.select.$emit('optionClick', this);

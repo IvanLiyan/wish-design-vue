@@ -4,8 +4,6 @@ import { withFormItem } from '@wish/wt-vue/es/components/form-item';
 var WtSelect = withFormItem('WtSelect', Select, {
   withRef: true,
   methods: {
-    // 由于暂时不支持 visible 属性，先提供手动展开方法
-    // https://ones.sankuai.com/ones/product/4348/workItem/requirement/detail/3278600
     toggle: function toggle(visible) {
       var wrappedInstance = this.$refs.wrappedInstance;
 

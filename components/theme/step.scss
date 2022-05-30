@@ -1,6 +1,7 @@
 @import './common/var.scss';
 @import './mixins/mixins.scss';
 @import './mixins/step.scss';
+@import './stepper.scss';
 
 @include c(step) {
   position: relative;

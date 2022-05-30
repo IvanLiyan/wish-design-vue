@@ -3,7 +3,7 @@ import _asyncToGenerator from 'babel-runtime/helpers/asyncToGenerator';
 import { triggerClick, waitImmediate } from '@test/util';
 
 var __vue_render__ = function __vue_render__() {
-  var _vm = this;var _h = _vm.$createElement;var _c = _vm._self._c || _h;return _c('wt-select', { ref: "select", attrs: { "multiple": "", "collapse-tags": "", "clearable": "" }, model: { value: _vm.value, callback: function callback($v) {
+  var _vm = this;var _h = _vm.$createElement;var _c = _vm._self._c || _h;return _c('wt-select', { ref: "select", attrs: { "multiple": "", "expansion-tags": "", "clearable": "" }, model: { value: _vm.value, callback: function callback($v) {
         _vm.value = $v;
       }, expression: "value" } }, _vm._l(_vm.options, function (item) {
     return _c('wt-option', { key: item.value, attrs: { "label": item.label, "value": item.value, "disabled": item.disabled } });

@@ -13,7 +13,7 @@ export default {
 
   staticRenderFns: __vue_staticRenderFns__,
 
-  name: 'MtdLineProgress',
+  name: 'WtLineProgress',
   props: {
     color: {
       type: String

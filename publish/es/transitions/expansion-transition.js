@@ -1,15 +1,9 @@
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _dom = require('../utils/dom');
+import { addClass, removeClass } from '../utils/dom';
 
 function createTransition(listeners) {
   return {
     'before-enter': function beforeEnter(el) {
-      (0, _dom.addClass)(el, 'collapse-transition');
+      addClass(el, 'expansion-transition');
       el.style.height = '0';
       var fn = listeners['before-enter'];
       fn && fn();
@@ -20,13 +14,13 @@ function createTransition(listeners) {
       } else {
         el.style.height = '';
       }
-      (0, _dom.addClass)(el, 'collapse-overflow');
+      addClass(el, 'expansion-overflow');
       var fn = listeners['enter'];
       fn && fn();
     },
     'after-enter': function afterEnter(el) {
       // for safari: remove class then reset height is necessary
-      (0, _dom.removeClass)(el, 'collapse-transition collapse-overflow');
+      removeClass(el, 'expansion-transition expansion-overflow');
       el.style.height = '';
       var fn = listeners['after-enter'];
       fn && fn();
@@ -34,7 +28,7 @@ function createTransition(listeners) {
     beforeLeave: function beforeLeave(el) {
       if (!el.dataset) el.dataset = {};
       el.style.height = el.scrollHeight + 'px';
-      (0, _dom.addClass)(el, 'collapse-overflow');
+      addClass(el, 'expansion-overflow');
       var fn = listeners['before-leave'];
       fn && fn();
     },
@@ -42,14 +36,14 @@ function createTransition(listeners) {
       if (el.scrollHeight !== 0) {
         // for safari: add class after set height,
         // or it will jump to zero height suddenly, weired
-        (0, _dom.addClass)(el, 'collapse-transition');
+        addClass(el, 'expansion-transition');
         el.style.height = 0;
       }
       var fn = listeners['leave'];
       fn && fn();
     },
     'after-leave': function afterLeave(el) {
-      (0, _dom.removeClass)(el, 'collapse-transition collapse-overflow');
+      removeClass(el, 'expansion-transition expansion-overflow');
       el.style.height = '';
       var fn = listeners['after-leave'];
       fn && fn();
@@ -57,8 +51,8 @@ function createTransition(listeners) {
   };
 }
 
-exports.default = {
-  name: 'WtCollapseTransition',
+export default {
+  name: 'WtExpansionTransition',
   functional: true,
   render: function render(h, context) {
     var children = context.children,

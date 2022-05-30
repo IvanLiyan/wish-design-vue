@@ -30,9 +30,25 @@ import Alert from './components/alert';
 import Tab from './components/tab';
 import TabDrop from './components/tab-drop';
 import TabPane from './components/tab-pane';
-import CollapseTransition from './transitions/collapse-transition';
+import Menu from './components/menu';
+import MenuItem from './components/menu-item';
+import Submenu from './components/submenu';
+import Tooltip from './components/tooltip';
+import Expansion from './components/expansion';
+import ExpansionItem from './components/expansion-item';
+import Breadcrumb from './components/breadcrumb';
+import BreadcrumbItem from './components/breadcrumb-item';
+import Table from './components/table';
+import TableColumn from './components/table-column';
+import Pagination from './components/pagination';
+import Dialog from './components/dialog';
+import Confirm from './components/confirm';
+import Stepper from './components/stepper';
+import Step from './components/step';
+import Badge from './components/badge';
+import ExpansionTransition from './transitions/expansion-transition';
 
-var components = [Button, Card, Row, Col, Icon, ButtonGroup, Input, Radio, RadioGroup, Checkbox, CheckboxGroup, Switch, Tag, Dropdown, DropdownMenu, DropdownMenuItem, Popper, Datepicker, Timepicker, Form, FormItem, Notification, Select, Option, OptionGroup, Loading, Upload, Alert, Tab, TabDrop, TabPane, CollapseTransition];
+var components = [Button, Card, Row, Col, Icon, ButtonGroup, Input, Radio, RadioGroup, Checkbox, CheckboxGroup, Switch, Tag, Dropdown, DropdownMenu, DropdownMenuItem, Popper, Datepicker, Timepicker, Form, FormItem, Notification, Select, Option, OptionGroup, Loading, Upload, Alert, Tab, TabDrop, TabPane, Menu, MenuItem, Submenu, Tooltip, Expansion, ExpansionItem, Breadcrumb, BreadcrumbItem, Table, TableColumn, Pagination, Dialog, Confirm, Stepper, Step, Badge, ExpansionTransition];
 
 export function install(Vue) {
   components.map(function (component) {
@@ -40,7 +56,7 @@ export function install(Vue) {
   });
 
   var $wt = {
-    // confirm: Confirm,
+    confirm: Confirm,
     notify: Notification
     // message: Message,
   };
@@ -54,9 +70,9 @@ if (typeof window !== 'undefined' && window.Vue) {
   install(window.Vue);
 }
 
-export { Button, Card, Row, Col, Icon, ButtonGroup, Input, Radio, RadioGroup, Checkbox, CheckboxGroup, Switch, Tag, Dropdown, DropdownMenu, DropdownMenuItem, Popper, Datepicker, Timepicker, Form, FormItem, Notification, Select, Option, OptionGroup, Loading, Upload, Alert, Tab, TabDrop, TabPane, CollapseTransition };
+export { Button, Card, Row, Col, Icon, ButtonGroup, Input, Radio, RadioGroup, Checkbox, CheckboxGroup, Switch, Tag, Dropdown, DropdownMenu, DropdownMenuItem, Popper, Datepicker, Timepicker, Form, FormItem, Notification, Select, Option, OptionGroup, Loading, Upload, Alert, Tab, TabDrop, TabPane, Menu, MenuItem, Submenu, Tooltip, Expansion, ExpansionItem, Breadcrumb, BreadcrumbItem, Table, TableColumn, Pagination, Dialog, Confirm, Stepper, Step, Badge, ExpansionTransition };
 
 export default {
-  version: '0.0.2-alpha.4',
+  version: '0.0.2-alpha.15',
   install: install
 };
