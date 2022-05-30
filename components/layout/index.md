@@ -1,6 +1,7 @@
-# 布局 / Layout
+# Layout / 布局
+<span>灵活的自适应布局</span>
 
-`<wt-Layout>`：外层容器。当子元素中包含 `<wt-header>` 或 `<wt-footer>` 时，全部子元素会垂直上下排列，否则会水平左右排列。
+`<wt-layout>`：外层容器。当子元素中包含 `<wt-header>` 或 `<wt-footer>` 时，全部子元素会垂直上下排列，否则会水平左右排列。
 
 `<wt-header>`：顶栏容器。
 
@@ -9,7 +10,7 @@
 `<wt-main>`：主要区域容器。
 
 `<wt-footer>`：底栏容器。
-## 常见页面布局
+
 :::include(src="./doc/base.vue")
 :::
 
