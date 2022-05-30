@@ -20,6 +20,11 @@
           {
             "path": "row",
             "name": "Grid",
+            "cnName": "栅格"
+          },
+          {
+            "path": "layout",
+            "name": "Layout",
             "cnName": "布局"
           }
         ]
