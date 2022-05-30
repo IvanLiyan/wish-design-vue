@@ -190,9 +190,9 @@ export default {
       return parseInt(val, 10);
     },
     // 点击图片预览功能，产品无此需求，暂时注释
-    handleClick (file) {
-      // this.handlePreview && this.handlePreview(file);
-    },
+    // handleClick (file) {
+    // this.handlePreview && this.handlePreview(file);
+    // },
     // 判断是否为非图片卡形式控件且上传文件类型为image，为item添加class
     getPictureClass (prefix, file, inputType) {
       if ((inputType !== 'picture-card') && (file.raw.type.substr(0, 5) === 'image')) {
