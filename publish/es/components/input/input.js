@@ -8,7 +8,7 @@ var __vue_render__ = function __vue_render__() {
   var _obj;
   var _vm = this;var _h = _vm.$createElement;var _c = _vm._self._c || _h;return _c('div', { class: _vm.inputPrefix + "-box", style: _vm.width && { width: _vm.width + "px" } }, [_c('fieldset', { class: (_obj = {}, _obj[_vm.inputPrefix + "-wrapper"] = true, _obj[_vm.inputPrefix + "-" + _vm.type] = _vm.type, _obj[_vm.inputPrefix + "-with-label"] = _vm.label, _obj[_vm.inputPrefix + "-disabled"] = _vm.disabled, _obj[_vm.inputPrefix + "-invalid"] = _vm.isInvalid, _obj[_vm.inputPrefix + "-focused"] = _vm.focused, _obj), style: { height: _vm.newHeight + 'px' } }, [_vm.label ? _c('legend', { class: { 'space-label': !_vm.label.trim() } }, [_vm._v(_vm._s(_vm.label))]) : _vm._e(), _vm._v(" "), _c('div', { class: _vm.inputPrefix + "-con" }, [_vm._t("prefix"), _vm._v(" "), _vm.type === 'textarea' ? _c('textarea', _vm._g(_vm._b({ ref: "input", class: _vm.inputPrefix, style: _vm.textareaCalcStyle, attrs: { "disabled": _vm.disabled }, domProps: { "value": _vm.inputValue } }, 'textarea', _vm.$attrs, false), _vm.inputLisenters)) : _c('input', _vm._g(_vm._b({ ref: "input", class: _vm.inputPrefix, attrs: { "type": _vm.type === 'password' ? 'password' : _vm.text, "disabled": _vm.disabled }, domProps: { "value": _vm.inputValue } }, 'input', _vm.$attrs, false), _vm.inputLisenters)), _vm._v(" "), _vm.showClearIcon ? _c('Icon', { attrs: { "name": "x-circle" }, on: { "click": function click($event) {
         $event.stopPropagation();return _vm.handleClear.apply(null, arguments);
-      } } }) : _vm._e(), _vm._v(" "), _vm._t("suffix")], 2)]), _vm._v(" "), _vm.type === 'textarea' && _vm.isInvalid ? _c('em', [_vm._v(" " + _vm._s(_vm.inputValue.length) + "/ " + _vm._s(_vm.maxLength))]) : _vm._e()]);
+      } } }) : _vm._e(), _vm._v(" "), _vm._t("suffix")], 2)]), _vm._v(" "), _vm.type === 'textarea' && _vm.inputValue.length > _vm.maxLength ? _c('em', { class: _vm.inputPrefix + "-tip" }, [_vm._v("\n    " + _vm._s(_vm.inputValue.length) + "/" + _vm._s(_vm.maxLength))]) : _vm._e()]);
 };
 var __vue_staticRenderFns__ = [];
 
@@ -45,13 +45,13 @@ export default {
     invalid: Boolean,
     // 宽
     width: Number,
-    // 宽
+    // 标签
     label: String,
     // 输入框的内容
     value: [String, Number],
     // 是否有清空按钮
     clearable: Boolean,
-    // 自适应内容高度
+    // textarea时 自适应内容高度
     autosize: {
       type: [Boolean, Object],
       default: false
@@ -67,8 +67,6 @@ export default {
     return {
       // 聚焦
       focused: false,
-      // hover
-      hovering: false,
       // 是否在拼音拼写中
       isComposing: false,
       // textarea自适应高度
@@ -124,6 +122,9 @@ export default {
     }
   },
   watch: {
+    /**
+     *textarea时，监听输入内容，若时autosize,变更输入框的高度
+     */
     value: function value(val) {
       this.nativeValue = val;
       if (this.type === 'textarea') {
@@ -239,7 +240,7 @@ export default {
     },
 
     /**
-     * 清楚输入框文本内容
+     * 清除输入框文本内容
      */
     handleClear: function handleClear() {
       this.handleInput({ target: { value: '' } });

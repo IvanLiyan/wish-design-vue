@@ -9,9 +9,6 @@ var WtInput = withFormItem('WtInput', Input, {
     },
     blur: function blur() {
       return this.$refs.wrappedInstance.blur();
-    },
-    select: function select() {
-      return this.$refs.wrappedInstance.select();
     }
   }
 });

@@ -755,10 +755,13 @@ function noop() {}
   },
 
 
+  // 注入
   inject: {
+    // 表单
     form: {
       default: ''
     },
+    // 配置
     config: {
       from: _utils_config__WEBPACK_IMPORTED_MODULE_2__["CONFIG_PROVIDER"],
       default: {
@@ -769,126 +772,146 @@ function noop() {}
   },
 
   props: {
+    // 上传地址
     action: {
       type: String,
       required: true
     },
+    // 控件类型
     inputType: {
       type: String,
       default: 'button'
     },
+    // 请求头
     headers: {
       type: Object,
       default: function _default() {
         return {};
       }
     },
+    // 请求方法 （默认POST）
     method: {
       type: String,
       default: 'post'
     },
+    // 附带参数
     data: Object,
+    // 是否可多选文件
     multiple: Boolean,
+    // 上传的文件字段名
     name: {
       type: String,
       default: 'file'
     },
-    drag: Boolean,
-    dragger: Boolean,
+    // 支持发送cookie凭证信息
     withCredentials: Boolean,
+    // 是否显示已上传文件列表
     showFileList: {
       type: Boolean,
       default: true
     },
-    showFileDown: {
-      type: Boolean,
-      default: false
-    },
+    // 接受的文件类型
     accept: String,
-    type: {
-      type: String,
-      default: 'select'
-    },
+    // 上传前触发
     beforeUpload: Function,
+    // 删除前触发
     beforeRemove: Function,
+    // 删除时触发
     onRemove: {
       type: Function,
       default: noop
     },
+    // 重新上传时触发
     onRetry: {
       type: Function,
       default: noop
     },
+    // 上传后触发
     onChange: {
       type: Function,
       default: noop
     },
+    // 预览
     onPreview: {
       type: Function
     },
+    // 上传成功
     onSuccess: {
       type: Function,
       default: noop
     },
+    // 上传中
     onProgress: {
       type: Function,
       default: noop
     },
+    // 上传失败
     onError: {
       type: Function,
       default: noop
     },
+    // 文件列表
     value: {
       type: Array,
       default: function _default() {
         return [];
       }
     },
+    // 是否自动上传
     autoUpload: {
       type: Boolean,
       default: true
     },
+    // 已上传列表类型
     listType: {
       type: String,
       default: 'text'
     },
-    httpRequest: Function,
+    // 禁用
     disabled: Boolean,
+    // 限制上传的个数
     limit: Number,
+    // 超出数量时触发
     onExceed: {
       type: Function,
       default: noop
     },
+    // 选择文件时触发
     onFileSelect: {
       type: Function,
       default: noop
     },
+    // 节点ID
     elementId: String
   },
 
   data: function data() {
     return {
-      uploadFiles: [],
-      dragOver: false,
-      draging: false,
+      uploadFiles: [], // 已上传文件
       tempIndex: 1
     };
   },
 
 
   computed: {
+    // 前缀class
     prefix: function prefix() {
       return this.config.getPrefixCls('upload');
     },
+
+    // 图标class
     getIconCls: function getIconCls() {
       return this.config.getIconCls;
     },
+
+    // 禁用
     uploadDisabled: function uploadDisabled() {
       return this.disabled || (this.wtForm || {}).disabled;
     }
   },
 
   watch: {
+    // 已上传文件对应表单value值
     value: {
       immediate: true, // 在最初绑定值的时候也执行函数
       handler: function handler(value) {
@@ -904,6 +927,7 @@ function noop() {}
   },
 
   beforeDestroy: function beforeDestroy() {
+    // 删除文件时操作
     this.uploadFiles.forEach(function (file) {
       if (file.url && file.url.indexOf('blob:') === 0) {
         URL.revokeObjectURL(file.url);
@@ -913,6 +937,7 @@ function noop() {}
 
 
   methods: {
+    // 选择文件
     handleStart: function handleStart(rawFile) {
       rawFile.uid = Date.now() + this.tempIndex++;
       var file = {
@@ -931,16 +956,19 @@ function noop() {}
           return;
         }
       }
-
       this.uploadFiles.push(file);
       this.onChange(file, this.uploadFiles);
     },
+
+    // 上传中-获取上传进度
     handleProgress: function handleProgress(ev, rawFile) {
       var file = this.getFile(rawFile);
       this.onProgress(ev, file, this.uploadFiles);
       file.status = 'uploading';
       file.percentage = ev.percent || 0;
     },
+
+    // 上传成功
     handleSuccess: function handleSuccess(res, rawFile) {
       var file = this.getFile(rawFile);
 
@@ -954,6 +982,8 @@ function noop() {}
         this.$emit('change', this.uploadFiles);
       }
     },
+
+    // 上传失败
     handleError: function handleError(err, rawFile) {
       var file = this.getFile(rawFile);
 
@@ -964,6 +994,8 @@ function noop() {}
       this.$emit('input', this.uploadFiles);
       this.$emit('change', this.uploadFiles);
     },
+
+    // 删除文件
     handleRemove: function handleRemove(file, raw) {
       var _this2 = this;
 
@@ -992,10 +1024,14 @@ function noop() {}
         }
       }
     },
+
+    // 重新上传
     handleRetry: function handleRetry(file) {
       file.status = 'ready';
       this.submit();
     },
+
+    // 获取文件信息
     getFile: function getFile(rawFile) {
       var value = this.uploadFiles;
       var target = void 0;
@@ -1005,12 +1041,18 @@ function noop() {}
       });
       return target;
     },
+
+    // 中止上传
     abort: function abort(file) {
       this.$refs['upload-inner'].abort(file);
     },
+
+    // 清空文件列表
     clearFiles: function clearFiles() {
       this.uploadFiles = [];
     },
+
+    // 提交
     submit: function submit() {
       var _this3 = this;
 
@@ -1020,6 +1062,8 @@ function noop() {}
         _this3.$refs['upload-inner'].upload(file.raw);
       });
     },
+
+    // 获取文件列表类型，如果是button或input就给出列表格式，picture-card给出图片卡形式
     transListType: function transListType(inputType) {
       if (inputType === 'button' || inputType === 'input') {
         return 'text';
@@ -1027,6 +1071,8 @@ function noop() {}
         return 'picture-card';
       }
     },
+
+    // 文件上传状态
     renderStatusClass: function renderStatusClass() {
       if (this.uploadFiles.length === 1 && this.uploadFiles[0].status === 'success') {
         return this.prefix + '-uploadlist-' + this.inputType + '-success';
@@ -1045,47 +1091,51 @@ function noop() {}
       uploadList = h(
         'div',
         { 'class': [this.prefix + '-uploadlist-' + this.inputType, this.inputType === 'picture-card' && this.renderStatusClass()] },
-        [h(_upload_list_vue__WEBPACK_IMPORTED_MODULE_0__["default"], {
-          attrs: {
-            prefix: this.prefix,
-            getIconCls: this.getIconCls,
-            disabled: this.uploadDisabled,
-            inputType: this.inputType,
-            listType: this.transListType(this.inputType),
-            files: this.uploadFiles,
-            showFileDown: this.showFileDown,
-
-            handlePreview: this.onPreview },
-          on: {
-            'remove': this.handleRemove,
-            'retry': this.handleRetry
-          }
-        })]
+        [h(
+          _upload_list_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
+          {
+            attrs: {
+              prefix: this.prefix // 前缀
+              , getIconCls: this.getIconCls // 图标
+              , disabled: this.uploadDisabled // 禁用
+              , inputType: this.inputType // 控件类型
+              , listType: this.transListType(this.inputType) // 文件列表类型
+              , files: this.uploadFiles // 文件列表
+              , showFileDown: this.showFileDown // 文件可下载
+              , // 重新上传
+              handlePreview: this.onPreview },
+            on: {
+              'remove': this.handleRemove,
+              'retry': this.handleRetry
+            }
+          },
+          [' // \u9884\u89C8']
+        )]
       );
     }
 
     var uploadData = {
       props: {
         id: this.elementId,
-        type: this.type,
-        drag: this.drag,
-        action: this.action,
-        inputType: this.inputType,
-        multiple: this.multiple,
+        type: this.type, // 类型
+        drag: this.drag, // 弹窗
+        action: this.action, // 上传地址
+        inputType: this.inputType, // 控件类型
+        multiple: this.multiple, // 是否可多选文件
         'before-upload': this.beforeUpload, // 上传前
-        'with-credentials': this.withCredentials,
-        headers: this.headers,
-        method: this.method,
-        name: this.name,
-        data: this.data,
-        accept: this.accept,
-        value: this.uploadFiles,
-        autoUpload: this.autoUpload,
-        listType: this.transListType(this.inputType),
-        disabled: this.uploadDisabled,
-        limit: this.limit,
-        prefix: this.prefix,
-        getIconCls: this.getIconCls,
+        'with-credentials': this.withCredentials, // 发送cookie凭证
+        headers: this.headers, // 请求头
+        method: this.method, // 请求方法
+        name: this.name, // 文件名字段
+        data: this.data, // 附加数据
+        accept: this.accept, // 接受的文件类型
+        value: this.uploadFiles, // 已上传文件
+        autoUpload: this.autoUpload, // 自动上传
+        listType: this.transListType(this.inputType), // 已上传文件列表类型
+        disabled: this.uploadDisabled, // 禁用
+        limit: this.limit, // 限制数量
+        prefix: this.prefix, // 前缀
+        getIconCls: this.getIconCls, // 图标
         'on-exceed': this.onExceed, // 超出数量限制
         'on-start': this.handleStart, // 开始上传
         'on-progress': this.handleProgress, // 上传过程
@@ -1133,7 +1183,7 @@ function noop() {}
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _upload_list_vue_vue_type_template_id_1ec50770___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(443);
+/* harmony import */ var _upload_list_vue_vue_type_template_id_3dce393b___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(443);
 /* harmony import */ var _upload_list_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(446);
 /* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(88);
 
@@ -1145,8 +1195,8 @@ __webpack_require__.r(__webpack_exports__);
 
 var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
   _upload_list_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _upload_list_vue_vue_type_template_id_1ec50770___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _upload_list_vue_vue_type_template_id_1ec50770___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _upload_list_vue_vue_type_template_id_3dce393b___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _upload_list_vue_vue_type_template_id_3dce393b___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
   null,
@@ -1163,10 +1213,10 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_upload_list_vue_vue_type_template_id_1ec50770___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(444);
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_upload_list_vue_vue_type_template_id_1ec50770___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_upload_list_vue_vue_type_template_id_3dce393b___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(444);
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_upload_list_vue_vue_type_template_id_3dce393b___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_upload_list_vue_vue_type_template_id_1ec50770___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_upload_list_vue_vue_type_template_id_3dce393b___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
@@ -1350,37 +1400,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -1404,19 +1423,25 @@ __webpack_require__.r(__webpack_exports__);
       type: Function,
       required: true
     },
+    // 文件列表
     files: {
       type: Array,
       default: function _default() {
         return [];
       }
     },
+    // 是否禁用
     disabled: {
       type: Boolean,
       default: false
     },
+    // 预览
     handlePreview: Function,
+    // 上传控件类型
     inputType: String,
+    // 已上传文件列表类型
     listType: String,
+    // 是否允许下载文件
     showFileDown: {
       type: Boolean,
       default: false
@@ -1426,8 +1451,8 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       focusing: false,
-      showBtn: [],
-      STATUS_ENUM: {
+      showBtn: [], // 展示按钮
+      STATUS_ENUM: { // 状态枚举
         ready: '准备中',
         uploading: '上传中',
         success: '',
@@ -1437,9 +1462,12 @@ __webpack_require__.r(__webpack_exports__);
   },
 
   methods: {
+    // 上传进度百分比
     parsePercentage: function parsePercentage(val) {
       return parseInt(val, 10);
     },
+
+    // 点击图片预览功能，产品无此需求，暂时注释
     handleClick: function handleClick(file) {
       // this.handlePreview && this.handlePreview(file);
     },
@@ -1460,7 +1488,7 @@ __webpack_require__.r(__webpack_exports__);
       }
     },
 
-    // 截取文件名 - 只展示
+    // 截取文件名 - 文件名超长的展示逻辑
     renderFileName: function renderFileName(fileName) {
       var pointIndex = fileName.lastIndexOf('.'); // 获取后缀的位置
       console.log('pointIndex', pointIndex);
@@ -2061,22 +2089,22 @@ __webpack_require__.r(__webpack_exports__);
     UploadDragger: _upload_dragger_vue__WEBPACK_IMPORTED_MODULE_4__["default"]
   },
   props: {
-    type: String,
-    action: {
+    type: String, // 文件类型
+    action: { // 上传地址
       type: String,
       required: true
     },
-    id: String,
-    name: {
+    id: String, // 文件id
+    name: { // 文件名字段
       type: String,
       default: 'file'
     },
-    data: Object,
-    headers: Object,
-    method: String,
-    withCredentials: Boolean,
-    multiple: Boolean,
-    accept: String,
+    data: Object, // 附加参数
+    headers: Object, // 请求头
+    method: String, // 请求方法
+    withCredentials: Boolean, // 是否附带cookie凭证信息
+    multiple: Boolean, // 是否可多选文件
+    accept: String, // 接受的文件类型
     prefix: {
       type: String,
       required: true
@@ -2086,36 +2114,36 @@ __webpack_require__.r(__webpack_exports__);
       required: false
     },
 
-    onFileSelect: Function,
-    onStart: Function,
-    onProgress: Function,
-    onSuccess: Function,
-    onError: Function,
-    beforeUpload: Function,
-    repeatUpload: Function,
-    drag: Boolean,
-    onPreview: {
+    onFileSelect: Function, // 选择文件
+    onStart: Function, // 开始上传
+    onProgress: Function, // 上传中
+    onSuccess: Function, // 上传成功
+    onError: Function, // 上传失败
+    beforeUpload: Function, // 上传前
+    repeatUpload: Function, // 重新上传
+    drag: Boolean, // 展示弹窗
+    onPreview: { // 预览文件
       type: Function,
       default: function _default() {}
     },
-    onRemove: {
+    onRemove: { // 删除已上传文件
       type: Function,
       default: function _default() {}
     },
-    onRetry: {
+    onRetry: { // 重试
       type: Function,
       default: function _default() {}
     },
-    fileList: Array,
-    autoUpload: Boolean,
-    listType: String,
-    httpRequest: {
+    fileList: Array, // 已上传文件列表
+    autoUpload: Boolean, // 自动上传
+    listType: String, // 已上传文件列表类型
+    httpRequest: { // 网络请求
       type: Function,
       default: _ajax__WEBPACK_IMPORTED_MODULE_3__["default"]
     },
-    disabled: Boolean,
-    limit: Number,
-    onExceed: Function
+    disabled: Boolean, // 禁用
+    limit: Number, // 限制数量
+    onExceed: Function // 超出数量时触发
   },
 
   data: function data() {
@@ -2127,12 +2155,15 @@ __webpack_require__.r(__webpack_exports__);
 
 
   methods: {
+    // 文件变化
     handleChange: function handleChange(ev) {
       var files = ev.target.files;
 
       if (!files) return;
       this.uploadFiles(files);
     },
+
+    // 上传过程
     uploadFiles: function uploadFiles(files) {
       var _this = this;
 
@@ -2142,11 +2173,13 @@ __webpack_require__.r(__webpack_exports__);
         return;
       }
 
+      // 拿到待上传列表
       var postFiles = Array.prototype.slice.call(files);
       if (!this.multiple) {
         postFiles = postFiles.slice(0, 1);
       }
 
+      // 无文件
       if (postFiles.length === 0) {
         return;
       }
@@ -2154,26 +2187,34 @@ __webpack_require__.r(__webpack_exports__);
       if (this.onFileSelect && this.onFileSelect(postFiles) === false) {
         return;
       }
+      // 开始走上传流程
       postFiles.forEach(function (rawFile) {
         _this.onStart(rawFile);
         if (_this.autoUpload) _this.upload(rawFile);
       });
     },
+
+    // 实际上传过程
     upload: function upload(rawFile) {
       var _this2 = this;
 
+      // 先把待上传列表清空
       this.$refs.input.value = null;
 
+      // 非上传前，则调用post
       if (!this.beforeUpload) {
         return this.post(rawFile);
       }
 
+      // 上传前拿待上传文件列表
       var before = this.beforeUpload(rawFile);
       if (before && before.then) {
         before.then(function (processedFile) {
           var fileType = Object.prototype.toString.call(processedFile);
 
+          // 文件类型是文件对象或blob对象
           if (fileType === '[object File]' || fileType === '[object Blob]') {
+            // blob对象new一个文件File
             if (fileType === '[object Blob]') {
               processedFile = new File([processedFile], rawFile.name, {
                 type: rawFile.type
@@ -2197,6 +2238,8 @@ __webpack_require__.r(__webpack_exports__);
         this.onRemove(null, rawFile);
       }
     },
+
+    // 中止上传
     abort: function abort(file) {
       var reqs = this.reqs;
 
@@ -2213,6 +2256,8 @@ __webpack_require__.r(__webpack_exports__);
         });
       }
     },
+
+    // 发送文件
     post: function post(rawFile) {
       var _this3 = this;
 
@@ -2245,12 +2290,16 @@ __webpack_require__.r(__webpack_exports__);
         req.then(options.onSuccess, options.onError);
       }
     },
+
+    // 点击文件
     handleClick: function handleClick() {
       if (!this.disabled) {
         this.$refs.input.value = null;
         this.$refs.input.click();
       }
     },
+
+    // 空格或回车等同点击文件
     handleKeydown: function handleKeydown(e) {
       if (e.target !== e.currentTarget) return;
       if (e.keyCode === 13 || e.keyCode === 32) {

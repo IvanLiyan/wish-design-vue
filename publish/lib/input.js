@@ -906,9 +906,6 @@ var WtInput = Object(_components_form_item__WEBPACK_IMPORTED_MODULE_1__["withFor
     },
     blur: function blur() {
       return this.$refs.wrappedInstance.blur();
-    },
-    select: function select() {
-      return this.$refs.wrappedInstance.select();
     }
   }
 });
@@ -924,7 +921,7 @@ WtInput.install = function (Vue) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _input_vue_vue_type_template_id_af4a07a8___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(159);
+/* harmony import */ var _input_vue_vue_type_template_id_65018c78___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(159);
 /* harmony import */ var _input_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(161);
 /* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(88);
 
@@ -936,8 +933,8 @@ __webpack_require__.r(__webpack_exports__);
 
 var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
   _input_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _input_vue_vue_type_template_id_af4a07a8___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _input_vue_vue_type_template_id_af4a07a8___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _input_vue_vue_type_template_id_65018c78___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _input_vue_vue_type_template_id_65018c78___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
   null,
@@ -953,10 +950,10 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_input_vue_vue_type_template_id_af4a07a8___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(160);
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_input_vue_vue_type_template_id_af4a07a8___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_input_vue_vue_type_template_id_65018c78___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(160);
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_input_vue_vue_type_template_id_65018c78___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_input_vue_vue_type_template_id_af4a07a8___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_input_vue_vue_type_template_id_65018c78___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
@@ -970,7 +967,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
 var render = function () {
 var _obj;
-var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{class:(_vm.inputPrefix + "-box"),style:(_vm.width && { width: (_vm.width + "px") })},[_c('fieldset',{class:( _obj = {}, _obj[(_vm.inputPrefix + "-wrapper")] = true, _obj[(_vm.inputPrefix + "-" + _vm.type)] = _vm.type, _obj[(_vm.inputPrefix + "-with-label")] = _vm.label, _obj[(_vm.inputPrefix + "-disabled")] = _vm.disabled, _obj[(_vm.inputPrefix + "-invalid")] = _vm.isInvalid, _obj[(_vm.inputPrefix + "-focused")] = _vm.focused, _obj ),style:({ height: _vm.newHeight + 'px' })},[(_vm.label)?_c('legend',{class:{ 'space-label': !_vm.label.trim() }},[_vm._v(_vm._s(_vm.label))]):_vm._e(),_c('div',{class:(_vm.inputPrefix + "-con")},[_vm._t("prefix"),(_vm.type === 'textarea')?_c('textarea',_vm._g(_vm._b({ref:"input",class:_vm.inputPrefix,style:(_vm.textareaCalcStyle),attrs:{"disabled":_vm.disabled},domProps:{"value":_vm.inputValue}},'textarea',_vm.$attrs,false),_vm.inputLisenters)):_c('input',_vm._g(_vm._b({ref:"input",class:_vm.inputPrefix,attrs:{"type":_vm.type === 'password' ? 'password' : _vm.text,"disabled":_vm.disabled},domProps:{"value":_vm.inputValue}},'input',_vm.$attrs,false),_vm.inputLisenters)),(_vm.showClearIcon)?_c('Icon',{attrs:{"name":"x-circle"},on:{"click":function($event){$event.stopPropagation();return _vm.handleClear.apply(null, arguments)}}}):_vm._e(),_vm._t("suffix")],2)]),(_vm.type === 'textarea' && _vm.isInvalid)?_c('em',[_vm._v(" "+_vm._s(_vm.inputValue.length)+"/ "+_vm._s(_vm.maxLength))]):_vm._e()])}
+var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{class:(_vm.inputPrefix + "-box"),style:(_vm.width && { width: (_vm.width + "px") })},[_c('fieldset',{class:( _obj = {}, _obj[(_vm.inputPrefix + "-wrapper")] = true, _obj[(_vm.inputPrefix + "-" + _vm.type)] = _vm.type, _obj[(_vm.inputPrefix + "-with-label")] = _vm.label, _obj[(_vm.inputPrefix + "-disabled")] = _vm.disabled, _obj[(_vm.inputPrefix + "-invalid")] = _vm.isInvalid, _obj[(_vm.inputPrefix + "-focused")] = _vm.focused, _obj ),style:({ height: _vm.newHeight + 'px' })},[(_vm.label)?_c('legend',{class:{ 'space-label': !_vm.label.trim() }},[_vm._v(_vm._s(_vm.label))]):_vm._e(),_c('div',{class:(_vm.inputPrefix + "-con")},[_vm._t("prefix"),(_vm.type === 'textarea')?_c('textarea',_vm._g(_vm._b({ref:"input",class:_vm.inputPrefix,style:(_vm.textareaCalcStyle),attrs:{"disabled":_vm.disabled},domProps:{"value":_vm.inputValue}},'textarea',_vm.$attrs,false),_vm.inputLisenters)):_c('input',_vm._g(_vm._b({ref:"input",class:_vm.inputPrefix,attrs:{"type":_vm.type === 'password' ? 'password' : _vm.text,"disabled":_vm.disabled},domProps:{"value":_vm.inputValue}},'input',_vm.$attrs,false),_vm.inputLisenters)),(_vm.showClearIcon)?_c('Icon',{attrs:{"name":"x-circle"},on:{"click":function($event){$event.stopPropagation();return _vm.handleClear.apply(null, arguments)}}}):_vm._e(),_vm._t("suffix")],2)]),(_vm.type === 'textarea' && _vm.inputValue.length > _vm.maxLength)?_c('em',{class:(_vm.inputPrefix + "-tip")},[_vm._v(" "+_vm._s(_vm.inputValue.length)+"/"+_vm._s(_vm.maxLength))]):_vm._e()])}
 var staticRenderFns = []
 
 
@@ -1000,6 +997,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _utils_key_codes__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_utils_key_codes__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _calcNodeHeight__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(164);
 
+//
+//
 //
 //
 //
@@ -1078,13 +1077,13 @@ __webpack_require__.r(__webpack_exports__);
     invalid: Boolean,
     // 宽
     width: Number,
-    // 宽
+    // 标签
     label: String,
     // 输入框的内容
     value: [String, Number],
     // 是否有清空按钮
     clearable: Boolean,
-    // 自适应内容高度
+    // textarea时 自适应内容高度
     autosize: {
       type: [Boolean, Object],
       default: false
@@ -1100,8 +1099,6 @@ __webpack_require__.r(__webpack_exports__);
     return {
       // 聚焦
       focused: false,
-      // hover
-      hovering: false,
       // 是否在拼音拼写中
       isComposing: false,
       // textarea自适应高度
@@ -1157,6 +1154,9 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   watch: {
+    /**
+     *textarea时，监听输入内容，若时autosize,变更输入框的高度
+     */
     value: function value(val) {
       this.nativeValue = val;
       if (this.type === 'textarea') {
@@ -1272,7 +1272,7 @@ __webpack_require__.r(__webpack_exports__);
     },
 
     /**
-     * 清楚输入框文本内容
+     * 清除输入框文本内容
      */
     handleClear: function handleClear() {
       this.handleInput({ target: { value: '' } });

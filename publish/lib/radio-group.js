@@ -1428,7 +1428,7 @@ HocRadioGroup.install = function (Vue) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _radio_group_vue_vue_type_template_id_14c6598f___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(179);
+/* harmony import */ var _radio_group_vue_vue_type_template_id_fb754ad4___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(179);
 /* harmony import */ var _radio_group_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(181);
 /* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(88);
 
@@ -1440,8 +1440,8 @@ __webpack_require__.r(__webpack_exports__);
 
 var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
   _radio_group_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _radio_group_vue_vue_type_template_id_14c6598f___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _radio_group_vue_vue_type_template_id_14c6598f___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _radio_group_vue_vue_type_template_id_fb754ad4___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _radio_group_vue_vue_type_template_id_fb754ad4___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
   null,
@@ -1457,10 +1457,10 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_radio_group_vue_vue_type_template_id_14c6598f___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(180);
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_radio_group_vue_vue_type_template_id_14c6598f___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_radio_group_vue_vue_type_template_id_fb754ad4___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(180);
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_radio_group_vue_vue_type_template_id_fb754ad4___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_radio_group_vue_vue_type_template_id_14c6598f___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_radio_group_vue_vue_type_template_id_fb754ad4___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
@@ -1508,9 +1508,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'WtRadioGroup',
   props: {
+    // 单选框组的值
     value: [String, Number, Boolean, Function, Object, Array, babel_runtime_core_js_symbol__WEBPACK_IMPORTED_MODULE_0___default.a],
+    // 是否禁用
     disabled: Boolean,
-    size: String,
+    // RadioGroup 下所有 input[type='radio'] 的 name 属性
     name: String,
     // 排列方式
     arrange: {
@@ -1556,7 +1558,7 @@ __webpack_require__.r(__webpack_exports__);
      */
     handleChange: function handleChange(radioValue) {
       if (this.value !== radioValue) {
-        // 顺序不能改变，必须先input后change, 若先change，formItem会去校验，此时value值还没改变
+        // 顺序不能改变，必须先input后change, 若先change，formItem会去校验，此时value值还没改变,会产生校验错误
         this.$emit('input', radioValue);
         this.$emit('change', radioValue);
       }
@@ -1617,10 +1619,11 @@ function withRadioGroup(name, Component) {
       return {
         /**
          *
-         * 监听radio的chenge事件并进行透传逻辑处理
+         * 监听radio的change事件并进行透传逻辑处理
          */
         change: function change(v) {
           if (context.radioGroup) {
+            context.$emit('change', context.value);
             context.radioGroup.$emit('radioChange', context.value);
           } else {
             context.$emit('change', v);

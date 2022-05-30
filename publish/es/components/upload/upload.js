@@ -20,10 +20,13 @@ export default {
   },
 
 
+  // 注入
   inject: {
+    // 表单
     form: {
       default: ''
     },
+    // 配置
     config: {
       from: CONFIG_PROVIDER,
       default: {
@@ -34,126 +37,146 @@ export default {
   },
 
   props: {
+    // 上传地址
     action: {
       type: String,
       required: true
     },
+    // 控件类型
     inputType: {
       type: String,
       default: 'button'
     },
+    // 请求头
     headers: {
       type: Object,
       default: function _default() {
         return {};
       }
     },
+    // 请求方法 （默认POST）
     method: {
       type: String,
       default: 'post'
     },
+    // 附带参数
     data: Object,
+    // 是否可多选文件
     multiple: Boolean,
+    // 上传的文件字段名
     name: {
       type: String,
       default: 'file'
     },
-    drag: Boolean,
-    dragger: Boolean,
+    // 支持发送cookie凭证信息
     withCredentials: Boolean,
+    // 是否显示已上传文件列表
     showFileList: {
       type: Boolean,
       default: true
     },
-    showFileDown: {
-      type: Boolean,
-      default: false
-    },
+    // 接受的文件类型
     accept: String,
-    type: {
-      type: String,
-      default: 'select'
-    },
+    // 上传前触发
     beforeUpload: Function,
+    // 删除前触发
     beforeRemove: Function,
+    // 删除时触发
     onRemove: {
       type: Function,
       default: noop
     },
+    // 重新上传时触发
     onRetry: {
       type: Function,
       default: noop
     },
+    // 上传后触发
     onChange: {
       type: Function,
       default: noop
     },
+    // 预览
     onPreview: {
       type: Function
     },
+    // 上传成功
     onSuccess: {
       type: Function,
       default: noop
     },
+    // 上传中
     onProgress: {
       type: Function,
       default: noop
     },
+    // 上传失败
     onError: {
       type: Function,
       default: noop
     },
+    // 文件列表
     value: {
       type: Array,
       default: function _default() {
         return [];
       }
     },
+    // 是否自动上传
     autoUpload: {
       type: Boolean,
       default: true
     },
+    // 已上传列表类型
     listType: {
       type: String,
       default: 'text'
     },
-    httpRequest: Function,
+    // 禁用
     disabled: Boolean,
+    // 限制上传的个数
     limit: Number,
+    // 超出数量时触发
     onExceed: {
       type: Function,
       default: noop
     },
+    // 选择文件时触发
     onFileSelect: {
       type: Function,
       default: noop
     },
+    // 节点ID
     elementId: String
   },
 
   data: function data() {
     return {
-      uploadFiles: [],
-      dragOver: false,
-      draging: false,
+      uploadFiles: [], // 已上传文件
       tempIndex: 1
     };
   },
 
 
   computed: {
+    // 前缀class
     prefix: function prefix() {
       return this.config.getPrefixCls('upload');
     },
+
+    // 图标class
     getIconCls: function getIconCls() {
       return this.config.getIconCls;
     },
+
+    // 禁用
     uploadDisabled: function uploadDisabled() {
       return this.disabled || (this.wtForm || {}).disabled;
     }
   },
 
   watch: {
+    // 已上传文件对应表单value值
     value: {
       immediate: true, // 在最初绑定值的时候也执行函数
       handler: function handler(value) {
@@ -169,6 +192,7 @@ export default {
   },
 
   beforeDestroy: function beforeDestroy() {
+    // 删除文件时操作
     this.uploadFiles.forEach(function (file) {
       if (file.url && file.url.indexOf('blob:') === 0) {
         URL.revokeObjectURL(file.url);
@@ -178,6 +202,7 @@ export default {
 
 
   methods: {
+    // 选择文件
     handleStart: function handleStart(rawFile) {
       rawFile.uid = Date.now() + this.tempIndex++;
       var file = {
@@ -196,16 +221,19 @@ export default {
           return;
         }
       }
-
       this.uploadFiles.push(file);
       this.onChange(file, this.uploadFiles);
     },
+
+    // 上传中-获取上传进度
     handleProgress: function handleProgress(ev, rawFile) {
       var file = this.getFile(rawFile);
       this.onProgress(ev, file, this.uploadFiles);
       file.status = 'uploading';
       file.percentage = ev.percent || 0;
     },
+
+    // 上传成功
     handleSuccess: function handleSuccess(res, rawFile) {
       var file = this.getFile(rawFile);
 
@@ -219,6 +247,8 @@ export default {
         this.$emit('change', this.uploadFiles);
       }
     },
+
+    // 上传失败
     handleError: function handleError(err, rawFile) {
       var file = this.getFile(rawFile);
 
@@ -229,6 +259,8 @@ export default {
       this.$emit('input', this.uploadFiles);
       this.$emit('change', this.uploadFiles);
     },
+
+    // 删除文件
     handleRemove: function handleRemove(file, raw) {
       var _this2 = this;
 
@@ -257,10 +289,14 @@ export default {
         }
       }
     },
+
+    // 重新上传
     handleRetry: function handleRetry(file) {
       file.status = 'ready';
       this.submit();
     },
+
+    // 获取文件信息
     getFile: function getFile(rawFile) {
       var value = this.uploadFiles;
       var target = void 0;
@@ -270,12 +306,18 @@ export default {
       });
       return target;
     },
+
+    // 中止上传
     abort: function abort(file) {
       this.$refs['upload-inner'].abort(file);
     },
+
+    // 清空文件列表
     clearFiles: function clearFiles() {
       this.uploadFiles = [];
     },
+
+    // 提交
     submit: function submit() {
       var _this3 = this;
 
@@ -285,6 +327,8 @@ export default {
         _this3.$refs['upload-inner'].upload(file.raw);
       });
     },
+
+    // 获取文件列表类型，如果是button或input就给出列表格式，picture-card给出图片卡形式
     transListType: function transListType(inputType) {
       if (inputType === 'button' || inputType === 'input') {
         return 'text';
@@ -292,6 +336,8 @@ export default {
         return 'picture-card';
       }
     },
+
+    // 文件上传状态
     renderStatusClass: function renderStatusClass() {
       if (this.uploadFiles.length === 1 && this.uploadFiles[0].status === 'success') {
         return this.prefix + '-uploadlist-' + this.inputType + '-success';
@@ -310,47 +356,51 @@ export default {
       uploadList = h(
         'div',
         { 'class': [this.prefix + '-uploadlist-' + this.inputType, this.inputType === 'picture-card' && this.renderStatusClass()] },
-        [h(UploadList, {
-          attrs: {
-            prefix: this.prefix,
-            getIconCls: this.getIconCls,
-            disabled: this.uploadDisabled,
-            inputType: this.inputType,
-            listType: this.transListType(this.inputType),
-            files: this.uploadFiles,
-            showFileDown: this.showFileDown,
-
-            handlePreview: this.onPreview },
-          on: {
-            'remove': this.handleRemove,
-            'retry': this.handleRetry
-          }
-        })]
+        [h(
+          UploadList,
+          {
+            attrs: {
+              prefix: this.prefix // 前缀
+              , getIconCls: this.getIconCls // 图标
+              , disabled: this.uploadDisabled // 禁用
+              , inputType: this.inputType // 控件类型
+              , listType: this.transListType(this.inputType) // 文件列表类型
+              , files: this.uploadFiles // 文件列表
+              , showFileDown: this.showFileDown // 文件可下载
+              , // 重新上传
+              handlePreview: this.onPreview },
+            on: {
+              'remove': this.handleRemove,
+              'retry': this.handleRetry
+            }
+          },
+          [' // \u9884\u89C8']
+        )]
       );
     }
 
     var uploadData = {
       props: {
         id: this.elementId,
-        type: this.type,
-        drag: this.drag,
-        action: this.action,
-        inputType: this.inputType,
-        multiple: this.multiple,
+        type: this.type, // 类型
+        drag: this.drag, // 弹窗
+        action: this.action, // 上传地址
+        inputType: this.inputType, // 控件类型
+        multiple: this.multiple, // 是否可多选文件
         'before-upload': this.beforeUpload, // 上传前
-        'with-credentials': this.withCredentials,
-        headers: this.headers,
-        method: this.method,
-        name: this.name,
-        data: this.data,
-        accept: this.accept,
-        value: this.uploadFiles,
-        autoUpload: this.autoUpload,
-        listType: this.transListType(this.inputType),
-        disabled: this.uploadDisabled,
-        limit: this.limit,
-        prefix: this.prefix,
-        getIconCls: this.getIconCls,
+        'with-credentials': this.withCredentials, // 发送cookie凭证
+        headers: this.headers, // 请求头
+        method: this.method, // 请求方法
+        name: this.name, // 文件名字段
+        data: this.data, // 附加数据
+        accept: this.accept, // 接受的文件类型
+        value: this.uploadFiles, // 已上传文件
+        autoUpload: this.autoUpload, // 自动上传
+        listType: this.transListType(this.inputType), // 已上传文件列表类型
+        disabled: this.uploadDisabled, // 禁用
+        limit: this.limit, // 限制数量
+        prefix: this.prefix, // 前缀
+        getIconCls: this.getIconCls, // 图标
         'on-exceed': this.onExceed, // 超出数量限制
         'on-start': this.handleStart, // 开始上传
         'on-progress': this.handleProgress, // 上传过程

@@ -246,7 +246,6 @@
         @input="input"
         @focus="focus"
         v-model="inputData"
-        :max-length="20"
       />
     </div>
   </div>

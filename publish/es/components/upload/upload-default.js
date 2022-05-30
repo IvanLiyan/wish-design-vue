@@ -12,22 +12,22 @@ export default {
     UploadDragger: UploadDragger
   },
   props: {
-    type: String,
-    action: {
+    type: String, // 文件类型
+    action: { // 上传地址
       type: String,
       required: true
     },
-    id: String,
-    name: {
+    id: String, // 文件id
+    name: { // 文件名字段
       type: String,
       default: 'file'
     },
-    data: Object,
-    headers: Object,
-    method: String,
-    withCredentials: Boolean,
-    multiple: Boolean,
-    accept: String,
+    data: Object, // 附加参数
+    headers: Object, // 请求头
+    method: String, // 请求方法
+    withCredentials: Boolean, // 是否附带cookie凭证信息
+    multiple: Boolean, // 是否可多选文件
+    accept: String, // 接受的文件类型
     prefix: {
       type: String,
       required: true
@@ -37,36 +37,36 @@ export default {
       required: false
     },
 
-    onFileSelect: Function,
-    onStart: Function,
-    onProgress: Function,
-    onSuccess: Function,
-    onError: Function,
-    beforeUpload: Function,
-    repeatUpload: Function,
-    drag: Boolean,
-    onPreview: {
+    onFileSelect: Function, // 选择文件
+    onStart: Function, // 开始上传
+    onProgress: Function, // 上传中
+    onSuccess: Function, // 上传成功
+    onError: Function, // 上传失败
+    beforeUpload: Function, // 上传前
+    repeatUpload: Function, // 重新上传
+    drag: Boolean, // 展示弹窗
+    onPreview: { // 预览文件
       type: Function,
       default: function _default() {}
     },
-    onRemove: {
+    onRemove: { // 删除已上传文件
       type: Function,
       default: function _default() {}
     },
-    onRetry: {
+    onRetry: { // 重试
       type: Function,
       default: function _default() {}
     },
-    fileList: Array,
-    autoUpload: Boolean,
-    listType: String,
-    httpRequest: {
+    fileList: Array, // 已上传文件列表
+    autoUpload: Boolean, // 自动上传
+    listType: String, // 已上传文件列表类型
+    httpRequest: { // 网络请求
       type: Function,
       default: ajax
     },
-    disabled: Boolean,
-    limit: Number,
-    onExceed: Function
+    disabled: Boolean, // 禁用
+    limit: Number, // 限制数量
+    onExceed: Function // 超出数量时触发
   },
 
   data: function data() {
@@ -78,12 +78,15 @@ export default {
 
 
   methods: {
+    // 文件变化
     handleChange: function handleChange(ev) {
       var files = ev.target.files;
 
       if (!files) return;
       this.uploadFiles(files);
     },
+
+    // 上传过程
     uploadFiles: function uploadFiles(files) {
       var _this = this;
 
@@ -93,11 +96,13 @@ export default {
         return;
       }
 
+      // 拿到待上传列表
       var postFiles = Array.prototype.slice.call(files);
       if (!this.multiple) {
         postFiles = postFiles.slice(0, 1);
       }
 
+      // 无文件
       if (postFiles.length === 0) {
         return;
       }
@@ -105,26 +110,34 @@ export default {
       if (this.onFileSelect && this.onFileSelect(postFiles) === false) {
         return;
       }
+      // 开始走上传流程
       postFiles.forEach(function (rawFile) {
         _this.onStart(rawFile);
         if (_this.autoUpload) _this.upload(rawFile);
       });
     },
+
+    // 实际上传过程
     upload: function upload(rawFile) {
       var _this2 = this;
 
+      // 先把待上传列表清空
       this.$refs.input.value = null;
 
+      // 非上传前，则调用post
       if (!this.beforeUpload) {
         return this.post(rawFile);
       }
 
+      // 上传前拿待上传文件列表
       var before = this.beforeUpload(rawFile);
       if (before && before.then) {
         before.then(function (processedFile) {
           var fileType = Object.prototype.toString.call(processedFile);
 
+          // 文件类型是文件对象或blob对象
           if (fileType === '[object File]' || fileType === '[object Blob]') {
+            // blob对象new一个文件File
             if (fileType === '[object Blob]') {
               processedFile = new File([processedFile], rawFile.name, {
                 type: rawFile.type
@@ -148,6 +161,8 @@ export default {
         this.onRemove(null, rawFile);
       }
     },
+
+    // 中止上传
     abort: function abort(file) {
       var reqs = this.reqs;
 
@@ -164,6 +179,8 @@ export default {
         });
       }
     },
+
+    // 发送文件
     post: function post(rawFile) {
       var _this3 = this;
 
@@ -196,12 +213,16 @@ export default {
         req.then(options.onSuccess, options.onError);
       }
     },
+
+    // 点击文件
     handleClick: function handleClick() {
       if (!this.disabled) {
         this.$refs.input.value = null;
         this.$refs.input.click();
       }
     },
+
+    // 空格或回车等同点击文件
     handleKeydown: function handleKeydown(e) {
       if (e.target !== e.currentTarget) return;
       if (e.keyCode === 13 || e.keyCode === 32) {

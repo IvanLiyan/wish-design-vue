@@ -56,19 +56,25 @@ export default {
       type: Function,
       required: true
     },
+    // 文件列表
     files: {
       type: Array,
       default: function _default() {
         return [];
       }
     },
+    // 是否禁用
     disabled: {
       type: Boolean,
       default: false
     },
+    // 预览
     handlePreview: Function,
+    // 上传控件类型
     inputType: String,
+    // 已上传文件列表类型
     listType: String,
+    // 是否允许下载文件
     showFileDown: {
       type: Boolean,
       default: false
@@ -78,8 +84,8 @@ export default {
   data: function data() {
     return {
       focusing: false,
-      showBtn: [],
-      STATUS_ENUM: {
+      showBtn: [], // 展示按钮
+      STATUS_ENUM: { // 状态枚举
         ready: '准备中',
         uploading: '上传中',
         success: '',
@@ -89,9 +95,12 @@ export default {
   },
 
   methods: {
+    // 上传进度百分比
     parsePercentage: function parsePercentage(val) {
       return parseInt(val, 10);
     },
+
+    // 点击图片预览功能，产品无此需求，暂时注释
     handleClick: function handleClick(file) {
       // this.handlePreview && this.handlePreview(file);
     },
@@ -112,7 +121,7 @@ export default {
       }
     },
 
-    // 截取文件名 - 只展示
+    // 截取文件名 - 文件名超长的展示逻辑
     renderFileName: function renderFileName(fileName) {
       var pointIndex = fileName.lastIndexOf('.'); // 获取后缀的位置
       console.log('pointIndex', pointIndex);
