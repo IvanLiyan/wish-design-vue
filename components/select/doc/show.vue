@@ -60,7 +60,7 @@
             placeholder="本地搜索"
             no-data-text="没有数据哦"
           >
-            <wt-option v-for="item in options4" :key="item.value" :value="item.value" :disabled="item.disabled" />
+            <wt-option v-for="item in options4" :key="item.value" :value="item" :disabled="item.disabled" />
           </wt-select>
         </div>
         <div class="type-and-use-size">
@@ -89,7 +89,7 @@
             multiple
             :reserve-keyword="true"
           >
-            <wt-option v-for="item in options2" :key="item.value" :value="item.value" :disabled="item.disabled" />
+            <wt-option v-for="item in options2" :key="item.value" :value="item" :disabled="item.disabled" />
           </wt-select>
         </div>
       </div>

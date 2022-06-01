@@ -45,5 +45,11 @@
   "confirm": "components/confirm",
   "stepper": "components/stepper",
   "step": "components/step",
-  "badge": "components/badge"
+  "badge": "components/badge",
+  "layout": "components/layout",
+  "header": "components/header",
+  "aside": "components/aside",
+  "main": "components/main",
+  "footer": "components/footer",
+  "cascader": "components/cascader"
 }
