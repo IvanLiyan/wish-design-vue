@@ -82,18 +82,18 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 644);
+/******/ 	return __webpack_require__(__webpack_require__.s = 649);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 644:
+/***/ 649:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _stepper_step__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(645);
-/* harmony import */ var _components_stepper__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(650);
+/* harmony import */ var _stepper_step__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(650);
+/* harmony import */ var _components_stepper__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(655);
 /* harmony import */ var _components_stepper__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_components_stepper__WEBPACK_IMPORTED_MODULE_1__);
 
 
@@ -109,13 +109,13 @@ WtStep.install = function (Vue) {
 
 /***/ }),
 
-/***/ 645:
+/***/ 650:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _step_vue_vue_type_template_id_256e0ff8___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(646);
-/* harmony import */ var _step_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(648);
+/* harmony import */ var _step_vue_vue_type_template_id_256e0ff8___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(651);
+/* harmony import */ var _step_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(653);
 /* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(88);
 
 
@@ -139,12 +139,12 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 
 /***/ }),
 
-/***/ 646:
+/***/ 651:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_step_vue_vue_type_template_id_256e0ff8___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(647);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_step_vue_vue_type_template_id_256e0ff8___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(652);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_step_vue_vue_type_template_id_256e0ff8___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_step_vue_vue_type_template_id_256e0ff8___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
@@ -153,7 +153,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 647:
+/***/ 652:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -177,17 +177,17 @@ var staticRenderFns = []
 
 /***/ }),
 
-/***/ 648:
+/***/ 653:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_step_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(649);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_step_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(654);
 /* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_step_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
-/***/ 649:
+/***/ 654:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -323,7 +323,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 650:
+/***/ 655:
 /***/ (function(module, exports) {
 
 module.exports = require("@wish/wt-vue/lib/stepper");
