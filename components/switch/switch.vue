@@ -20,26 +20,26 @@ export default {
     },
   },
   props: {
-    value: {},
+    value: {}, // 设置开关是否选中，使用 value === true-value 来判断是否打开
     trueValue: {
+      // switch 打开时的值
       default: true,
     },
     falseValue: {
+      // switch 关闭时的值
       default: false,
     },
     disabled: {
+      // 是否禁用
       type: Boolean,
       default: false,
     },
-    name: String,
-    hint: String,
+    name: String, // switch 组件的 name 属性
+    hint: String, // 注释内容
   },
   computed: {
     prefix() {
       return this.config.getPrefixCls('switch');
-    },
-    checked() {
-      return this.value === this.trueValue;
     },
     wrapperCls() {
       const { prefix } = this;
@@ -51,8 +51,17 @@ export default {
         },
       ];
     },
+    /*
+     * 判断switch是否打开
+     */
+    checked() {
+      return this.value === this.trueValue;
+    },
   },
   methods: {
+    /*
+     * 点击switch
+     */
     handleClick(e) {
       if (this.disabled || this.loading) {
         return false;

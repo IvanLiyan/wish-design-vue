@@ -15,6 +15,14 @@
       "optionalValue": "",
       "default": "",
       "version": ""
+    },
+    {
+      "name": "arrange",
+      "desc": "$t('checkbox-group.api.arrange')",
+      "type": "string",
+      "optionalValue": ["horizontal", "vertical"],
+      "default": "horizontal",
+      "version": ""
     }
   ],
   "events": [
