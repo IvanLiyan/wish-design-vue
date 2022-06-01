@@ -1,59 +1,48 @@
 <template>
   <div class="demo-timeline-wrap">
-    <mtd-timeline>
-      <mtd-timeline-item type="master" title="12月">
-        <p>
-          12:45:24
-          <mtd-tag type="unbordered" size="small" theme="green">最新</mtd-tag>
-        </p>
-        <div><b>开始发布分组</b></div>
-        <div>
-          <i class="mtdicon-success-circle demo-timeline-success"></i>
-          开始发布分组内容
-        </div>
-      </mtd-timeline-item>
-      <mtd-timeline-item>
-        12:45:24
-        <div><b>开始发布分组</b></div>
-        <div>
-          <i class="mtdicon-error-circle demo-timeline-error"></i>
-          开始发布分组内容</div>
-      </mtd-timeline-item>
-      <mtd-timeline-item type="master" title="8月">
-        12:45:24
-        <div><b>开始发布分组</b></div>
-        <div>开始发布分组内容</div>
-      </mtd-timeline-item>
-      <mtd-timeline-item>
-        12:45:24
-        <div><b>开始发布分组</b></div>
-        <div>
-          <i class="mtdicon-warning-circle demo-timeline-warning"></i>
-          开始发布分组内容</div>
-      </mtd-timeline-item>
-      <mtd-timeline-item>
-        12:45:24
-        <div><b>开始发布分组</b></div>
-        <div>
-          <i class="mtdicon-loading demo-timeline-primary"></i>
-          正在发布
-        </div>
-
-      </mtd-timeline-item>
-    </mtd-timeline>
+    <wt-timeline>
+      <wt-timeline-item type="dot" status="success" title="12月">
+        <div><b>成功</b></div>
+        <p>11:00:00</p>
+        <div>表示成功事件</div>
+      </wt-timeline-item>
+      <wt-timeline-item type="dot" status="fail" title="12月">
+        <div><b>失败</b></div>
+        <p>12:00:00</p>
+        <div>表示失败事件</div>
+      </wt-timeline-item>
+      <wt-timeline-item type="dot" status="warning" title="12月">
+        <div><b>警告</b></div>
+        <p>13:00:00</p>
+        <div>表示警告事件</div>
+      </wt-timeline-item>
+      <wt-timeline-item type="dot" status="normal" title="12月">
+        <div><b>通知</b></div>
+        <p>14:00:00</p>
+        <div>表示通知事件</div>
+      </wt-timeline-item>
+    </wt-timeline>
+    <wt-timeline>
+      <wt-timeline-item type="icon" status="success" title="12月">
+        <div><b>成功</b></div>
+        <p>11:00:00</p>
+        <div>表示成功事件</div>
+      </wt-timeline-item>
+      <wt-timeline-item type="icon" status="fail" title="12月">
+        <div><b>失败</b></div>
+        <p>12:00:00</p>
+        <div>表示失败事件</div>
+      </wt-timeline-item>
+      <wt-timeline-item type="icon" status="warning" title="12月">
+        <div><b>警告</b></div>
+        <p>13:00:00</p>
+        <div>表示警告事件</div>
+      </wt-timeline-item>
+      <wt-timeline-item type="icon" status="normal" title="12月">
+        <div><b>通知</b></div>
+        <p>14:00:00</p>
+        <div>表示通知事件</div>
+      </wt-timeline-item>
+    </wt-timeline>
   </div>
 </template>
-<style lang="scss">
-  .demo-timeline-success {
-    color: #5ABB3C;
-  }
-  .demo-timeline-error {
-    color: #FF6459
-  }
-  .demo-timeline-warning {
-    color: #FF9801;
-  }
-  .demo-timeline-primary {
-    color: #4E73FF;
-  }
-</style>

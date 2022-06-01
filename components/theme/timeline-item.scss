@@ -6,12 +6,13 @@
   display: flex;
   align-items: stretch;
   text-align: left;
+  min-width: 200px;
   &-title {
     color: $timeline-item-title-color;
     width: $timeline-item-title-width;
     text-align: right;
     flex: 0 0 auto;
-    font-size: $timeline-item-title-font-size;
+    font-size: 16px;
     line-height: $timeline-item-title-line-height;
     padding-right: $timeline-item-content-margin-horizontal;
   }
@@ -21,6 +22,10 @@
   }
   &-content-wrapper{
     padding-left: $timeline-item-content-margin-horizontal;
+    b {
+      font-size: 16px;
+      line-height: 24px;
+    }
   }
   &-content-wrapper, &-title{
     margin-top: $timeline-item-content-margin-top;
@@ -61,8 +66,8 @@
     display: inline-block;
     vertical-align: top;
   }
-  &-normal, &-solid{
-    @include timeline-item-dot(
+  &-normal, &-solid {
+    @include timeline-item-dot (
       $timeline-item-dot-size,
       $timeline-item-dot-bgc,
       $timeline-item-dot-border-width,
@@ -71,7 +76,7 @@
     );
   }
 
-  &-master{
+  &-master {
     @include timeline-item-dot(
       $timeline-item-master-dot-size,
       $timeline-item-master-dot-bgc,
@@ -81,7 +86,7 @@
     );
   }
 
-  &-hollow{
+  &-hollow {
     @include timeline-item-dot(
       $timeline-item-hollow-dot-size,
       $timeline-item-hollow-dot-bgc,

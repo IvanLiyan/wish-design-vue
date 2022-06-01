@@ -12,7 +12,19 @@
   width: $size;
   height: $size;
   border-radius: 100%;
-  background-color: $bgc;
   box-shadow: $box-shadow;
-  border: $border-width solid $border-color;
+  background-color: #0090D9;
+  border: $border-width solid #0090D9;
+  &-success {
+    background-color: #2EAA77;
+    border: $border-width solid #2EAA77;
+  }
+  &-fail {
+    background-color: #E52533;
+    border: $border-width solid #E52533;
+  }
+  &-warning {
+    background-color: #E3812B;
+    border: $border-width solid #E3812B;
+  }
 }

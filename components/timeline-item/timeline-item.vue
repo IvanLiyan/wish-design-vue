@@ -6,7 +6,7 @@
       </slot>
     </div>
     <div v-else-if="mode === 'alternate'" :class="`${prefix}-holder`"></div>
-    <timeline-item-line :prefix="prefix" :type="type">
+    <timeline-item-line :prefix="prefix" :type="type" :status="status">
       <slot name="dot" slot="dot" v-if="$slots.dot"></slot>
     </timeline-item-line>
     <div :class="`${prefix}-content-wrapper`">
@@ -22,12 +22,13 @@ import {
 } from '@/utils/config';
 
 export default {
-  name: 'MtdTimelineItem',
+  name: 'WtTimelineItem',
   components: {
     TimelineItemLine,
   },
   props: {
     type: String,
+    status: String,
     align: {
       type: String,
       validator (value) {
