@@ -51,6 +51,7 @@ import Header from 'components/header';
 import Aside from 'components/aside';
 import Main from 'components/main';
 import Footer from 'components/footer';
+import Cascader from 'components/cascader';
 import ExpansionTransition from './transitions/expansion-transition';
 
 const components = [
@@ -106,6 +107,7 @@ const components = [
   Aside,
   Main,
   Footer,
+  Cascader,
   ExpansionTransition,
 ];
 
@@ -182,6 +184,7 @@ export {
   Aside,
   Main,
   Footer,
+  Cascader,
   ExpansionTransition,
 };
 

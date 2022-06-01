@@ -48,6 +48,11 @@
             "cnName": "菜单"
           },
           {
+            "path": "cascader",
+            "name": "Cascader",
+            "cnName": "级联选择"
+          },
+          {
             "path": "tooltip",
             "name": "Tooltip",
             "cnName": "气泡"

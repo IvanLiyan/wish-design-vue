@@ -50,5 +50,6 @@
   "header": "components/header",
   "aside": "components/aside",
   "main": "components/main",
-  "footer": "components/footer"
+  "footer": "components/footer",
+  "cascader": "components/cascader"
 }
