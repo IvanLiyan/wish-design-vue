@@ -46,6 +46,7 @@
   "stepper": "components/stepper",
   "step": "components/step",
   "badge": "components/badge",
+  "progress": "components/progress",
   "layout": "components/layout",
   "header": "components/header",
   "aside": "components/aside",

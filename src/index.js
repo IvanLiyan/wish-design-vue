@@ -46,6 +46,7 @@ import Confirm from 'components/confirm';
 import Stepper from 'components/stepper';
 import Step from 'components/step';
 import Badge from 'components/badge';
+import Progress from 'components/progress';
 import Layout from 'components/layout';
 import Header from 'components/header';
 import Aside from 'components/aside';
@@ -104,6 +105,7 @@ const components = [
   Stepper,
   Step,
   Badge,
+  Progress,
   Layout,
   Header,
   Aside,
@@ -183,6 +185,7 @@ export {
   Stepper,
   Step,
   Badge,
+  Progress,
   Layout,
   Header,
   Aside,
