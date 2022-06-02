@@ -29,7 +29,7 @@ $cascader-menu-min-width: 120px !default;
 // @name 菜单-悬浮-文字颜色
 $cascader-menu-hover-color: #4f4f4f !default;
 // @name 菜单-项-高度
-$cascader-menu-item-height: $h-2 !default;
+$cascader-menu-item-height: 36px !default;
 // @name 菜单-项-竖直内边距
 $cascader-menu-item-padding-vertical: 16px !default;
 // @name 菜单-项-悬浮-背景色
@@ -152,11 +152,15 @@ $cascader-menu-loading-color: $color-text-6 !default;
   @include text-ellipsis();
   line-height: $cascader-menu-item-height;
   padding: 0px;
+  min-width: 120px;
   padding-left: $cascader-menu-item-padding-vertical;
-  padding-right: $cascader-menu-expand-icon-size + $cascader-menu-expand-margin-right;
+  padding-right: $cascader-menu-expand-margin-right;
   cursor: pointer;
   position: relative;
   user-select: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   &:hover,
   &.hover {
     color: $cascader-menu-hover-color;
@@ -164,8 +168,6 @@ $cascader-menu-loading-color: $color-text-6 !default;
   }
   &-expand-icon {
     display: inline-block;
-    width: 1em;
-    height: 1em;
     font-size: $cascader-menu-expand-icon-size;
     display: inline-flex;
     align-items: center;
