@@ -296,6 +296,9 @@ $popper-offset: 16px !default;
 // @refer shadow
 // @name popper-阴影
 $popper-shadow: 0 1px 3px 0 rgba(52, 88, 124, 0.23) !default;
+// @refer color
+// @name 蒙板-背景色
+$modal-mask-bgc: rgba(0,0,0,.5)!default;
 // @name popper-背景色
 $popper-bgc: $color-white !default;
 // @name popper-边框颜色
@@ -1122,5 +1125,61 @@ $timeline-item-hollow-dot-border-color: $color-primary!default;
 $timeline-item-hollow-dot-shadow: $shadow-0!default;
 // @end propsValue
 
+// @end category
+// @end component
+
+// @component drawer 抽屉
+// @category base
+// @propsValue default
+// @name 背景色
+$drawer-bgc: $color-white!default;
+// @name 水平内边距
+$drawer-padding-horizontal: 30px!default;
+// @dom header
+// @name 页头-竖直内边距
+$drawer-header-padding-vertical: 18px!default;
+// @name 页头-行高
+$drawer-header-line-height: 22px!default;
+// @name 页头-字号
+$drawer-header-font-size: $font-size-3!default;
+// @name 页头-文字颜色
+$drawer-header-color: $color-text-1!default;
+// @name 页头-字重
+$drawer-header-font-weight: $font-weight-medium!default;
+// @end dom
+// @name 内容-水平内边距
+$drawer-content-padding-horizontal: $s-4!default;
+// @name 关闭按钮-顶部
+$drawer-close-top: $s-4!default;
+// @name 关闭按钮-右侧
+$drawer-close-right: $s-4!default;
+// @name 关闭按钮-文字颜色
+$drawer-close-color: currentColor!default;
+// @name 关闭按钮-悬浮-文字颜色
+$drawer-close-hover-color: currentColor!default;
+// @name 关闭按钮-悬浮-背景色
+$drawer-close-hover-bgc: transparent!default;
+// @name 关闭按钮-激活-文字颜色
+$drawer-close-active-color: currentColor!default;
+// @name 关闭按钮-激活-背景色
+$drawer-close-active-bgc: transparent!default;
+// @name 关闭按钮-字号
+$drawer-close-font-size: 18px!default;
+// @name 关闭按钮-尺寸
+$drawer-close-size: 1em!default;
+// @name 关闭按钮-圆角
+$drawer-close-border-radius: 0!default;
+
+// @state hover
+// @name 关闭按钮-悬浮-文字颜色
+$drawer-close-hover-color: currentColor!default;
+// @end state
+
+// @refer shadow
+// @name 阴影
+$drawer-shadow: 0 -2px 8px 0 rgba(138,142,156,0.50)!default;
+// @name animation-动画-时长
+$drawer-animation-transition-duration: .3s!default;
+// @end propsValue
 // @end category
 // @end component

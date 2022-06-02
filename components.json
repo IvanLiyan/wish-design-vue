@@ -54,5 +54,6 @@
   "footer": "components/footer",
   "timeline": "components/timeline",
   "timeline-item": "components/timeline-item",
-  "cascader": "components/cascader"
+  "cascader": "components/cascader",
+  "drawer": "components/drawer"
 }

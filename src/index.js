@@ -55,6 +55,7 @@ import Footer from 'components/footer';
 import Timeline from 'components/timeline';
 import TimelineItem from 'components/timeline-item';
 import Cascader from 'components/cascader';
+import Drawer from 'components/drawer';
 import ExpansionTransition from './transitions/expansion-transition';
 
 const components = [
@@ -114,6 +115,7 @@ const components = [
   Timeline,
   TimelineItem,
   Cascader,
+  Drawer,
   ExpansionTransition,
 ];
 
@@ -194,6 +196,7 @@ export {
   Timeline,
   TimelineItem,
   Cascader,
+  Drawer,
   ExpansionTransition,
 };
 

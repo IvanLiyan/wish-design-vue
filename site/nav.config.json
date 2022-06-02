@@ -186,6 +186,11 @@
             "path": "timeline",
             "name": "Timeline",
             "cnName": "时间轴"
+          },
+          {
+            "path": "drawer",
+            "name": "Drawer",
+            "cnName": "抽屉"
           }
         ]
       }
