@@ -53,6 +53,7 @@ import Main from 'components/main';
 import Footer from 'components/footer';
 import Timeline from 'components/timeline';
 import TimelineItem from 'components/timeline-item';
+import Cascader from 'components/cascader';
 import ExpansionTransition from './transitions/expansion-transition';
 
 const components = [
@@ -110,6 +111,7 @@ const components = [
   Footer,
   Timeline,
   TimelineItem,
+  Cascader,
   ExpansionTransition,
 ];
 
@@ -188,6 +190,7 @@ export {
   Footer,
   Timeline,
   TimelineItem,
+  Cascader,
   ExpansionTransition,
 };
 

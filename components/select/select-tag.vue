@@ -18,7 +18,7 @@ import { CONFIG_PROVIDER, getPrefixCls } from '@/utils/config';
 import WtTag from '@components/tag';
 
 export default {
-  name: 'WtSelectChoice',
+  name: 'WtSelectTag',
   components: {
     WtTag,
   },

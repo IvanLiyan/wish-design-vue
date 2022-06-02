@@ -9,14 +9,6 @@
       "version": ""
     },
     {
-      "name": "value-key",
-      "desc": "$t('select.api.value-key')",
-      "type": "string",
-      "optionalValue": "",
-      "default": "",
-      "version": ""
-    },
-    {
       "name": "label",
       "desc": "$t('select.api.label')",
       "type": ["string"],
@@ -84,14 +76,6 @@
       "name": "no-data-text",
       "desc": "$t('select.api.no-data-text')",
       "type": "string",
-      "optionalValue": "",
-      "default": "",
-      "version": ""
-    },
-    {
-      "name": "remote",
-      "desc": "$t('select.api.remote')",
-      "type": "boolean",
       "optionalValue": "",
       "default": "",
       "version": ""

@@ -175,8 +175,6 @@ export default {
     },
     // 是否可搜索
     filterable: Boolean,
-    // 是否远程搜索
-    remote: Boolean,
     // 远程搜索的方法
     remoteMethod: Function,
     // 搜索条件无匹配时显示的文字
@@ -329,6 +327,14 @@ export default {
         return this.focused && !!(this.query || (this.options && this.options.length));
       }
       return this.focused;
+    },
+    // 是否为远程获取数据
+    remote() {
+      if (typeof this.remoteMethod === 'function') {
+        return true;
+      } else {
+        return false;
+      }
     },
   },
   watch: {
@@ -842,7 +848,14 @@ export default {
      * 获取value为对象时唯一key
      */
     getRealValue(value, valueKey) {
-      return isObject(value) && valueKey ? getValueByPath(value, valueKey) : value;
+      // return isObject(value) && valueKey ? getValueByPath(value, valueKey) : value;
+      if (isObject(value) && value.hasOwnProperty('value')) {
+        return value.value;
+      } else if (isObject(value) && valueKey) {
+        getValueByPath(value, valueKey);
+      } else if (!isObject(value)) {
+        return value;
+      }
     },
   },
 };
