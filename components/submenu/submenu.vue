@@ -1,46 +1,55 @@
 <template>
   <li
-    :class="[prefix, {
-      [`${prefix}-disabled`]: disabled,
-      [`${prefix}-expanded`]: isExpanded,
-      [`${prefix}-active`]: active || showChildActive,
-    }]"
+    :class="[
+      prefix,
+      {
+        [`${prefix}-disabled`]: disabled,
+        [`${prefix}-expanded`]: isExpanded,
+        [`${prefix}-active`]: active || showChildActive,
+      },
+    ]"
     @click="handleClickMenu"
   >
-    <wt-tooltip v-bind="tooltipProps"
-      :disabled="!enabledTip" :content="tooltip"
+    <wt-tooltip
+      v-bind="tooltipProps"
+      :disabled="!enabledTip"
+      :content="tooltip"
       :placement="tooltipPlacement"
       tag="div"
     >
-      <div :class="`${prefix}-title`" :style="style"
-        @click="handleClickTitle"
-      >
+      <div :class="`${prefix}-title`" :style="style" @click="handleClickTitle">
         <span :class="`${prefix}-icon`" v-if="icon || $slots.icon">
           <slot name="icon"><i :class="icon"></i></slot>
         </span>
         <div :class="`${prefix}-text`" v-if="level !== 0 || !isCollapse">
           <slot name="title"></slot>
         </div>
-        <Icon name="chevron-down"
-          :class="[`${prefix}-direction`, {
-            [`${prefix}-direction-expanded`]: isExpanded
-          }]"
+        <Icon
+          name="chevron-down"
+          :class="[
+            `${prefix}-direction`,
+            {
+              [`${prefix}-direction-expanded`]: isExpanded,
+            },
+          ]"
           :width="14"
           :height="14"
         />
       </div>
       <div slot="content">{{ tooltip }}</div>
     </wt-tooltip>
-    <wt-collapse-transition v-if="!isPopup"
-      @after-enter="handleAnimateEnd"
-      @after-leave="handleAnimateEnd"
-    >
+    <wt-expansion-transition v-if="!isPopup" @after-enter="handleAnimateEnd" @after-leave="handleAnimateEnd">
       <ul :class="`${prefix}-content`" v-if="isMounted" v-show="isExpanded">
         <slot></slot>
       </ul>
-    </wt-collapse-transition>
-    <dropdown-menu v-if="isPopup" :visible="isExpanded" :lazy="lazy"
-      :disabled="disabled" :placement="dropdownPlacement" :level="level"
+    </wt-expansion-transition>
+    <dropdown-menu
+      v-if="isPopup"
+      :visible="isExpanded"
+      :lazy="lazy"
+      :disabled="disabled"
+      :placement="dropdownPlacement"
+      :level="level"
       :popper-class="popperClass"
     >
       <slot></slot>
@@ -48,13 +57,11 @@
   </li>
 </template>
 <script>
-import WtCollapseTransition from '@/transitions/collapse-transition';
+import WtExpansionTransition from '@/transitions/expansion-transition';
 import DropdownMenu from './drop';
 import WtTooltip from '@components/tooltip';
 import Icon from '@components/icon';
-import { CONFIG_PROVIDER,
-  getPrefixCls,
-} from '@/utils/config';
+import { CONFIG_PROVIDER, getPrefixCls } from '@/utils/config';
 import { getProps, findVNodesFromSlot } from '@/utils/vnode';
 
 export default {
@@ -72,7 +79,7 @@ export default {
     },
   },
   components: {
-    WtCollapseTransition,
+    WtExpansionTransition,
     DropdownMenu: DropdownMenu,
     WtTooltip,
     Icon,
@@ -94,12 +101,12 @@ export default {
     tooltipProps: Object,
     popperClass: String,
   },
-  provide () {
+  provide() {
     return {
       submenu: this,
     };
   },
-  data () {
+  data() {
     return {
       dropdownData: [],
       activeChild: null,
@@ -108,93 +115,91 @@ export default {
     };
   },
   computed: {
-    prefix () {
+    prefix() {
       return this.config.getPrefixCls('submenu');
     },
-    isExpanded () {
+    isExpanded() {
       return this.menu.isExpanded(this);
     },
-    isCollapse () {
+    isCollapse() {
       return this.menu.isCollapse;
     },
-    parent () {
+    parent() {
       return this.submenu || this.menu;
     },
-    level () {
+    level() {
       return this.parent.level + 1;
     },
-    paddingLeft () {
+    paddingLeft() {
       return this.menu.baseIndent + this.level * this.menu.indent;
     },
-    style () {
+    style() {
       return this.menu.getItemStyled(this);
     },
-    active () {
-      if (this.level === 0 &&
-        (this.menu.mode !== 'inline' || this.menu.isCollapse)) {
+    active() {
+      if (this.level === 0 && (this.menu.mode !== 'inline' || this.menu.isCollapse)) {
         return this.hasChildActive;
       }
       return undefined;
     },
-    isPopup () {
+    isPopup() {
       return this.isCollapse || this.menu.mode !== 'inline';
     },
-    dropdownPlacement () {
-      return this.level === 0 && this.menu.mode === 'horizontal'
-        ? 'bottom' : 'right-start';
+    dropdownPlacement() {
+      return this.level === 0 && this.menu.mode === 'horizontal' ? 'bottom' : 'right-start';
     },
-    isClickTrigger () {
+    isClickTrigger() {
       return !this.isPopup;
     },
-    tooltipPlacement () {
+    tooltipPlacement() {
       if (!this.tooltipProps) {
         return 'right';
       }
       return this.tooltipProps.placement || 'right';
     },
-    enabledTip () {
+    enabledTip() {
       if (!this.tooltip) {
         return false;
       }
       return this.disabled ? this.enabledTooltip : this.menu.mode !== 'horizontal';
     },
-    hasChildActive () {
+    hasChildActive() {
       return !!this.activeChild;
     },
-    showChildActive () {
+    showChildActive() {
       return this.hasChildActive && (this.isPopup || (!this.isExpanded && !this.animating));
     },
-    lazy () {
+    lazy() {
       return this.menu.lazy;
     },
   },
   watch: {
     isExpanded: {
       immediate: true,
-      handler (n) {
+      handler(n) {
         n && (this.isMounted = n);
         this.animating = true;
       },
     },
   },
-  created () {
+  created() {
     this.$on('activeChange', this.handleChildActiveChange);
     this.$on('menuItemClick', this.handleMenuItemClick);
     this.$on('submenu-enter', this.handleMouseenter);
     this.$on('submenu-leave', this.handleMouseleave);
     this.$on('handleClickMenu', this.handleClickMenu);
   },
-  mounted () {
+  mounted() {
     this.computedActive();
   },
-  updated () {
+  updated() {
     this.computedActive();
   },
-  destroyed () {
+  destroyed() {
     clearTimeout(this.timer);
   },
   methods: {
-    computedActive () {
+    computedActive() {
       const { foundedActivedItem, isActive, lazy } = this.menu;
       if (lazy) {
         if (!foundedActivedItem) {
@@ -209,7 +214,7 @@ export default {
         }
       }
     },
-    handleChildActiveChange (item) {
+    handleChildActiveChange(item) {
       if (item.active) {
         this.activeChild = item;
         this.submenu && this.submenu.$emit('activeChange', item);
@@ -218,11 +223,12 @@ export default {
         this.submenu && this.submenu.$emit('activeChange', item);
       }
     },
-    handleClickTitle () {
+    handleClickTitle() {
       if (this.disabled) {
         return;
       }
-      if (this.isPopup) { // 当处于需要展开菜单的模式时;
+      if (this.isPopup) {
+        // 当处于需要展开菜单的模式时;
         if (!this.isClickTrigger) return;
         return;
       }
@@ -232,7 +238,7 @@ export default {
       }
       this.menu.toggleExpanded(this);
     },
-    handleMouseenter () {
+    handleMouseenter() {
       if (this.isClickTrigger || this.disabled) return;
       this.parent.$emit('submenu-enter');
       clearTimeout(this.timer);
@@ -242,7 +248,7 @@ export default {
         }, this.openDelay);
       }
     },
-    handleMouseleave () {
+    handleMouseleave() {
       if (this.isClickTrigger || this.disabled) return;
       this.parent.$emit('submenu-leave');
       clearTimeout(this.timer);
@@ -252,7 +258,7 @@ export default {
         }
       }, this.closeDelay);
     },
-    handleClickMenu () {
+    handleClickMenu() {
       if (this.isClickTrigger || this.disabled) return;
       clearTimeout(this.timer);
       if (!this.isExpanded) {
@@ -269,18 +275,18 @@ export default {
         }, this.closeDelay);
       }
     },
-    clearTimer () {
+    clearTimer() {
       this.parent.$emit('submenu-enter');
       this.timer && clearTimeout(this.timer);
     },
-    closePopup () {
+    closePopup() {
       this.handleMouseleave();
     },
-    handleMenuItemClick () {
+    handleMenuItemClick() {
       this.closePopup();
       this.submenu && this.submenu.$emit('menuItemClick', this);
     },
-    handleAnimateEnd () {
+    handleAnimateEnd() {
       this.animating = false;
     },
   },

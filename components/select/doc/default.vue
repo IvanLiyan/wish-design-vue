@@ -1,13 +1,7 @@
 <template>
   <div class="demo-container">
     <wt-select v-model="value" label="国家">
-      <wt-option
-        v-for="item in options"
-        :key="item.value"
-        :label="item.label"
-        :value="item.value"
-        :disabled="item.disabled"
-      />
+      <wt-option v-for="item in options" :key="item.value" :value="item.value" :disabled="item.disabled" />
     </wt-select>
   </div>
 </template>

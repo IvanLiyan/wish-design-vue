@@ -37,7 +37,7 @@ var __vue_render__ = function __vue_render__() {
         return [_vm._t("cell", function () {
           return [_vm._v(_vm._s(scope.cell.desc))];
         }, { "cell": scope.cell })];
-      } }], null, true) }, 'component', _vm.ownPickerProps, false), [_vm._t("shortcuts", null, { "slot": "shortcuts" }), _vm._v(" "), _vm._v(" "), _vm.$slots.confirm ? _c('template', { slot: "confirm" }, [_vm._t("confirm")], 2) : _vm._e()], 2)], 1)], 1);
+      } }], null, true) }, 'component', _vm.ownPickerProps, false), [_vm._t("shortcuts", null, { "slot": "shortcuts" })], 2)], 1)], 1);
 };
 var __vue_staticRenderFns__ = [];
 
@@ -53,10 +53,13 @@ export default {
     PickerInput: Input
   },
   props: {
+    // 宽度
     width: Number,
+    // 日期格式
     format: {
       type: String
     },
+    // 数值格式
     valueFormat: {
       // 如果没有配置则默认按照当前 value 属性推断
       type: String,
@@ -68,85 +71,83 @@ export default {
         return true;
       }
     },
+    // 是否只读
     readonly: {
       type: Boolean,
       default: false
     },
+    // 是否可编辑
     editable: {
       type: Boolean,
       default: true
     },
+    // 是否禁用
     disabled: {
       type: Boolean,
       default: false
     },
+    // 是否可清除
     clearable: {
       type: Boolean,
       default: false
     },
-    confirm: {
-      type: Boolean,
-      default: false
-    },
+    // 是否默认打开面板
     open: {
       type: Boolean,
       default: null
     },
+    // 是否可多选
     multiple: {
       type: Boolean,
       default: false
     },
+    // 时间控件可选项
     timePickerOptions: {
       default: function _default() {
         return {};
       },
       type: Object
     },
+    // 是否分割面板
     splitPanels: {
       type: Boolean,
       default: true
     },
-    showWeekNumbers: {
-      type: Boolean,
-      default: false
-    },
+    // 开始日期
     startDate: {
       type: Date
     },
+    // 控件尺寸
     size: {
       type: String
     },
+    // 输入框占位符
     placeholder: {
       type: String
     },
+    // 面板弹出方向
     placement: {
       type: String
     },
+    // 输入框的name属性
     name: {
       type: String
     },
+    // 选择器上方的标签
     label: {
       type: String
     },
-    elementId: {
-      type: String
-    },
-    steps: {
-      type: Array,
-      default: function _default() {
-        return [];
-      }
-    },
+    // 控件值
     value: {
       type: [Date, String, Array, Number]
     },
+    // 快捷选项
     options: {
       type: Object,
       default: function _default() {
         return {};
       }
     },
-    icon: String,
     appendToContainer: {
       type: Boolean,
       default: true

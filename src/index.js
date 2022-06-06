@@ -38,7 +38,29 @@ import Sidebar from 'components/sidebar';
 import Smenu from 'components/smenu';
 import SmenuItem from 'components/smenu-item';
 import Ssubmenu from 'components/ssubmenu';
-import CollapseTransition from './transitions/collapse-transition';
+import Expansion from 'components/expansion';
+import ExpansionItem from 'components/expansion-item';
+import Breadcrumb from 'components/breadcrumb';
+import BreadcrumbItem from 'components/breadcrumb-item';
+import Table from 'components/table';
+import TableColumn from 'components/table-column';
+import Pagination from 'components/pagination';
+import Dialog from 'components/dialog';
+import Confirm from 'components/confirm';
+import Stepper from 'components/stepper';
+import Step from 'components/step';
+import Badge from 'components/badge';
+import Progress from 'components/progress';
+import Layout from 'components/layout';
+import Header from 'components/header';
+import Aside from 'components/aside';
+import Main from 'components/main';
+import Footer from 'components/footer';
+import Timeline from 'components/timeline';
+import TimelineItem from 'components/timeline-item';
+import Cascader from 'components/cascader';
+import Drawer from 'components/drawer';
+import ExpansionTransition from './transitions/expansion-transition';
 
 const components = [
   Button,
@@ -77,10 +99,32 @@ const components = [
   Submenu,
   Tooltip,
   Sidebar,
-  CollapseTransition,
   Smenu,
   SmenuItem,
   Ssubmenu,
+  Expansion,
+  ExpansionItem,
+  Breadcrumb,
+  BreadcrumbItem,
+  Table,
+  TableColumn,
+  Pagination,
+  Dialog,
+  Confirm,
+  Stepper,
+  Step,
+  Badge,
+  Progress,
+  Layout,
+  Header,
+  Aside,
+  Main,
+  Footer,
+  Timeline,
+  TimelineItem,
+  Cascader,
+  Drawer,
+  ExpansionTransition,
 ];
 
 export function install (Vue) {
@@ -89,7 +133,7 @@ export function install (Vue) {
   });
 
   const $wt = {
-    // confirm: Confirm,
+    confirm: Confirm,
     notify: Notification,
     // message: Message,
   };
@@ -143,7 +187,29 @@ export {
   Smenu,
   SmenuItem,
   Ssubmenu,
-  CollapseTransition,
+  Expansion,
+  ExpansionItem,
+  Breadcrumb,
+  BreadcrumbItem,
+  Table,
+  TableColumn,
+  Pagination,
+  Dialog,
+  Confirm,
+  Stepper,
+  Step,
+  Badge,
+  Progress,
+  Layout,
+  Header,
+  Aside,
+  Main,
+  Footer,
+  Timeline,
+  TimelineItem,
+  Cascader,
+  Drawer,
+  ExpansionTransition,
 };
 
 export default {

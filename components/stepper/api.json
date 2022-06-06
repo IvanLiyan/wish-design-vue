@@ -1,0 +1,36 @@
+{
+  "props": [
+    {
+      "name": "space",
+      "desc": "每个 step 的宽度、高度，不填写则自适应。支持百分比。",
+      "type": ["number", "string"],
+      "optionalValue": "",
+      "default": "",
+      "version": ""
+    },
+    {
+      "name": "direction",
+      "desc": "显示方向",
+      "type": "string",
+      "optionalValue": ["vertical", "horizontal"],
+      "default": "horizontal",
+      "version": ""
+    },
+    {
+      "name": "active",
+      "desc": "设置当前激活步骤",
+      "type": "number",
+      "optionalValue": "",
+      "default": "0",
+      "version": ""
+    },
+    {
+      "name": "status",
+      "desc": "指定当前步骤的状态",
+      "type": "string",
+      "optionalValue": ["wait", "process", "finish", "error", "cancel"],
+      "default": "process",
+      "version": ""
+    }
+  ]
+}

@@ -3,8 +3,6 @@
     :style="width && { width: `${width}px` }"
     :class="{
       [prefix]: true,
-      [`${prefix}-${size}`]: size,
-      [`${prefix}-multiple-${genre}`]: genre,
       [`${prefix}-disabled`]: disabled,
       [`${prefix}-multiple`]: multiple,
       [`${prefix}-multiple-invalid`]: multiple && invalid,
@@ -17,7 +15,6 @@
       :class="[
         `${prefix}-tags`,
         {
-          [`${prefix}-tags-${size}`]: size,
           [`${prefix}-search-focus`]: opened,
         },
       ]"
@@ -25,14 +22,11 @@
       ref="tags"
     >
       <ul :class="`${prefix}-tags-ul`">
-        <template v-if="!collapseTags">
+        <template>
           <ChoiceTag
             v-for="(item, index) in filteredSelected"
             :key="index"
             :option="item"
-            theme=""
-            :size="size"
-            :closable="!item.disabled && closableFn(item)"
             :disabled="disabled"
             @close="handleClearClick"
           >
@@ -42,20 +36,6 @@
             {{ formatterOption(item) }}
           </ChoiceTag>
         </template>
-        <ChoiceTag
-          v-if="collapseTags && filteredSelected.length"
-          :option="filteredSelected[0]"
-          theme=""
-          :size="size"
-          :disabled="disabled"
-          @close="handleClearClick"
-          ref="selectedItemFirst"
-        >
-          <template slot-scope="scope" slot="tag" v-if="$scopedSlots.tag">
-            <slot name="tag" v-bind="scope"></slot>
-          </template>
-          {{ formatterOption(filteredSelected[0]) }}
-        </ChoiceTag>
         <li :class="`${prefix}-search-line`">
           <div :class="`${prefix}-search-field-wrap`">
             <input
@@ -79,23 +59,13 @@
             />
           </div>
         </li>
-        <li :class="`${prefix}-tags-li`" v-if="collapseTags && filteredSelected.length" ref="selectedItemTag"></li>
       </ul>
     </div>
-    <popper
-      :visible="opened"
-      :append-to-container="appendToContainer"
-      :get-popup-container="getPopupContainer"
-      :placement="placement"
-      ref="popper"
-      :close-delay="0"
-      :popper-options="popperOptions"
-    >
+    <popper :visible="opened" :append-to-container="true" ref="popper" :close-delay="0">
       <reference>
         <wt-input
           ref="reference"
           v-bind="$attrs"
-          :name="name"
           :label="label"
           v-model="showValue"
           :disabled="disabled"
@@ -118,14 +88,14 @@
           :class="{ [`${prefix}-search-focus`]: focused }"
         >
           <span slot="suffix" :class="`${prefix}-suffix-inner`">
-            <Icon v-if="!loading" :name="sIcon" />
+            <Icon v-if="!loading" name="chevron-down" />
             <wt-loading v-else message="" size="small" />
           </span>
         </wt-input>
       </reference>
       <drop
         ref="drop"
-        :class="[`${prefix}-dropdown`, popperClass]"
+        :class="[`${prefix}-dropdown`]"
         :use-show="true"
         :style="{
           'min-width': minWidth,
@@ -136,13 +106,11 @@
             :value="SELECT_ALL_VALUE"
             created
             is-select-all
-            :indeterminate="!isSelectAll && value && !!value.length"
             v-show="!_isEmpty && !query && !loading"
             v-if="canSelectAll"
             >全选</wt-option
           >
           <div v-show="!loading && !emptyText">
-            <wt-option v-if="showNewOption" :value="query" :label="query" created />
             <slot></slot>
           </div>
           <slot name="empty" v-if="!loading && emptyText">
@@ -165,25 +133,17 @@ import { Popper, Drop, Reference } from '@components/popper';
 import WtInput from '../input';
 import Clickoutside from '@/utils/clickoutside';
 import NavigationMixin from './navigation-mixin';
-import scrollIntoView from '@/utils/scroll-into-view';
-import WtTag from '@components/tag';
 import debounce from 'throttle-debounce/debounce';
 import { getValueByPath } from '@/utils/util';
-import { isFunction, isObject, isExist } from '@/utils/type';
+import { isObject, isExist } from '@/utils/type';
 import WtOption from '@components/option';
 import { on, off } from '@/utils/dom';
 import { subtraction } from '@/utils/array';
-import { hasProps } from '@/utils/vnode';
 import { notKeys } from '@/utils/key-codes';
 import ChoiceTag from './select-tag';
 import { CONFIG_PROVIDER, getPrefixCls, getIconCls } from '@/utils/config';
 import Icon from '@components/icon';
 
-function getRealValue(value, valueKey) {
-  return isObject(value) && valueKey ? getValueByPath(value, valueKey) : value;
-}
-
-const SELECT_ALL_VALUE = '__SELECT_ALL__';
 export default {
   name: 'WtSelect',
   components: {
@@ -191,7 +151,6 @@ export default {
     Popper,
     Drop,
     Reference,
-    WtTag,
     WtOption,
     ChoiceTag,
     Icon,
@@ -199,103 +158,56 @@ export default {
   directives: { Clickoutside },
   mixins: [NavigationMixin],
   props: {
-    icon: String,
-    name: String,
+    // select当前选中值
     value: [String, Number, Object, Array, Boolean],
+    // 设置宽度
     width: Number,
-    defaultActiveFirstOption: {
-      type: Boolean,
-      default: true,
-    },
+    // 仅当 value 值为 object、object[]时生效，作为value唯一标识的键名
     valueKey: String,
+    // select标题
     label: String,
-    size: String,
+    // 是否禁用
     disabled: Boolean,
+    // 占位符
     placeholder: {
       type: String,
-      default() {
-        return '请选择';
-      },
+      default: '请选择',
     },
-    placement: String,
+    // 是否可搜索
     filterable: Boolean,
-    autoClearQuery: {
-      type: Boolean,
-      default: false,
-    },
-    clearable: Boolean,
-    closeable: [Boolean, Function], // 兼容历史
-    closable: {
-      type: [Boolean, Function],
-      default: true,
-    },
-    debounce: {
-      type: Number,
-      default: 0,
-    },
-    filterMethod: {
-      type: Function,
-      default(query, value) {
-        const parsedQuery = String(query).replace(/(\^|\(|\)|\[|\]|\$|\*|\+|\.|\?|\\|\{|\}|\|)/g, '\\$1');
-        return new RegExp(parsedQuery, 'i').test(value);
-      },
-    },
-    remote: Boolean,
+    // 远程搜索的方法
     remoteMethod: Function,
+    // 搜索条件无匹配时显示的文字
     noMatchText: {
       type: String,
-      default() {
-        return '暂无搜索结果';
-      },
+      default: '暂无搜索结果',
     },
-
+    // 是否正在从远程获取数据
     loading: Boolean,
+    // 搜索中文案
     loadingText: {
       type: String,
-      default() {
-        return '搜索中';
-      },
+      default: '搜索中',
     },
+    // 是否校验通过，用于非空校验
     invalid: Boolean,
+    // 选项为空时显示的文字
     noDataText: {
       type: String,
-      default() {
-        return '暂无数据';
-      },
+      default: '暂无数据',
     },
+    // 是否多选
     multiple: Boolean,
-    showCheckbox: {
-      type: Boolean,
-      default: true,
-    },
-    multipleLimit: {
-      type: Number,
-      default() {
-        return 0;
-      },
-    },
-    collapseTags: Boolean,
-    popperClass: String,
-    appendToContainer: {
-      type: Boolean,
-      default: true,
-    },
-    getPopupContainer: Function,
+    // 默认可见
     defaultVisible: Boolean,
-    isEmpty: Boolean,
+    // 格式化当前输入框中显示的内容
     formatter: Function,
+    // 多选且可搜索时，是否在选中一个选项后保留当前的搜索关键词
     reserveKeyword: Boolean,
-    allowCreate: Boolean,
-    popperOptions: Object,
+    // 显示全选
     showSelectAll: {
       type: Boolean,
       default: false,
-    },
-    genre: String,
-    collapseMaxSearchWidth: {
-      // 将在 1.0 中移除
-      type: Number,
-      default: 50,
     },
   },
   inject: {
@@ -309,24 +221,26 @@ export default {
   },
   data() {
     return {
-      options: [],
-      filteredOptionsCount: 0,
-      focused: this.defaultVisible,
-      inputLength: 20,
-      showValue: '',
-      inputWidth: 0,
-      tagInputWidth: 0,
-      query: '',
-      previousQuery: null,
-      minWidth: 0,
-      isOnComposition: false,
-      selected: this.multiple ? [] : {},
-      scrollListener: false,
-      SELECT_ALL_VALUE: SELECT_ALL_VALUE,
-      isSelectAll: false,
-      isMounted: false,
-      tagsHeight: 36,
-      newHeight: this.label ? 44 : 36,
+      options: [], // 选项
+      filteredOptionsCount: 0, // 搜到选项输
+      focused: this.defaultVisible, // 是否聚焦
+      inputLength: 20, // input字符长度
+      showValue: '', // input显示值
+      inputWidth: 0, // input宽度
+      tagInputWidth: 0, // tag宽度
+      query: '', // 搜索匹配文字
+      previousQuery: null, // 上一条查询
+      minWidth: 0, // 最小宽度
+      isOnComposition: false, // 正在输入
+      selected: this.multiple ? [] : {}, // 选中值
+      scrollListener: false, // 是否滚动
+      SELECT_ALL_VALUE: '__SELECT_ALL__', // 常量 全部
+      isSelectAll: false, // 是否全选
+      isMounted: false, // 是否mounted
+      tagsHeight: 36, // tag默认高度
+      newHeight: this.label ? 44 : 36, // 计算高度
+      showCheckbox: true, // 是否显示checkbox
+      isEmpty: false, // 是否手动设置选项为空
     };
   },
   provide() {
@@ -347,32 +261,31 @@ export default {
     dropdownPrefix() {
       return this.config.getPrefixCls('dropdown');
     },
-    sIcon() {
-      return hasProps(this, 'icon') ? this.icon : 'chevron-down';
-    },
+    // 是否可以全选
     canSelectAll() {
       return this.showSelectAll && this.multiple;
     },
+    // 过滤选项
     filteredOptions() {
       if (this.canSelectAll) {
         return this.options.filter((option) => !option.isSelectAll);
       }
       return this.options;
     },
+    // 过滤选中的
     filteredSelected() {
       if (!this.canSelectAll) {
         return this.selected;
       }
       return this.selected.filter((item) => {
-        return item.value !== SELECT_ALL_VALUE;
+        return item.value !== this.SELECT_ALL_VALUE;
       });
     },
+    // 只读
     readonly() {
       return !this.filterable;
     },
-    tooltipWidth() {
-      return this.inputWidth;
-    },
+    // 是否为空
     _isEmpty() {
       if ('isEmpty' in this.$options.propsData) {
         return this.isEmpty;
@@ -381,13 +294,14 @@ export default {
       }
       return !this.filteredOptions.length;
     },
+    // 是否无匹配
     isNoMatched() {
-      return this.filterable && this.query && !this.remote && !this.allowCreate && this.filteredOptionsCount === 0;
+      return this.filterable && this.query && !this.remote && this.filteredOptionsCount === 0;
     },
+    // 空数据文案
     emptyText() {
       if (this._isEmpty) {
         if (this.filterable && this.remote) {
-          // tofix: https://ones.sankuai.com/ones/product/4348/workItem/defect/detail/40370097
           return this.query ? this.noMatchText : '';
         }
         return this.noDataText;
@@ -397,6 +311,7 @@ export default {
       }
       return '';
     },
+    // 当前占位符
     currentPlaceholder() {
       if (this.multiple) {
         if (!this.isOnComposition && !this.query && (!this.value || !this.value.length)) {
@@ -406,40 +321,24 @@ export default {
       }
       return isExist(this.value) ? this.formatterOption(this.getOption(this.value)) : this.placeholder;
     },
+    // 是否打开选项
     opened() {
       if (this.filterable && this.remote) {
         return this.focused && !!(this.query || (this.options && this.options.length));
       }
       return this.focused;
     },
-    shouldClearQuery() {
-      return this.autoClearQuery;
-    },
-    canClosed() {
-      return 'closeable' in this.$options.propsData ? this.closeable : this.closable;
-    },
-    omittedValues() {
-      if (this.multiple && this.collapseTags) {
-        // collapseTags 模式下只显示一个 tag
-        const omittedLength = this.selected.length - 1;
-        if (omittedLength > 0) {
-          return this.selected.slice(1);
-        }
-      }
-      return [];
-    },
-    showNewOption() {
-      if (!this.allowCreate || !this.filterable || !this.query) {
+    // 是否为远程获取数据
+    remote() {
+      if (typeof this.remoteMethod === 'function') {
+        return true;
+      } else {
         return false;
       }
-      const hasExistingOption = this.options.some((option) => !option.created && option.currentLabel === this.query);
-      return !hasExistingOption;
-    },
-    showClear() {
-      return this.clearable && !this.disabled && this.selected && this.selected.length && this.opened;
     },
   },
   watch: {
+    // 监听获取焦点逻辑
     focused(val) {
       if (val && !this.readonly) {
         this.$refs.tagInput && this.$refs.tagInput.focus();
@@ -450,14 +349,11 @@ export default {
         this.query = '';
         this.$emit('blur');
       } else {
-        if (this.options.length && this.defaultActiveFirstOption) {
+        if (this.options.length) {
           this.setHoverOption(this.options[0]);
         }
         if (this.filterable) {
-          if (this.shouldClearQuery) {
-            this.showValue = '';
-          } else if (!this.multiple) {
-            // tofix ones: https://ones.sankuai.com/ones/product/4348/workItem/defect/detail/3305664
+          if (!this.multiple) {
             const { __DEFAULT_OPTION__, currentLabel = '' } = this.selected;
             const { formatter } = this;
             this.showValue = __DEFAULT_OPTION__ && formatter ? formatter(this.selected) : currentLabel;
@@ -471,37 +367,39 @@ export default {
         this.addScrollListenter();
       }
     },
+    // 打开选项
     opened(val) {
       this.$emit('update:visible', val);
     },
+    // 监听选项变化
     options() {
       this.setSelected();
       if (this.opened && this.$refs.popper) {
         this.updatePopper();
-        if (this.options.length && this.defaultActiveFirstOption) {
-          const { showNewOption } = this;
-          const first = this.options.find((item) => (showNewOption ? item.created : item.visible));
+        if (this.options.length) {
+          const first = this.options.find((item) => item.visible);
           first && this.setHoverOption(first);
         }
       }
     },
+    // 监听value变化
     value() {
       this.setSelected();
     },
+    // 监听选中变化
     selected(val, old) {
       if (this.multiple) {
-        if (!this.collapseTags) {
-          this.updatePopper();
-        } else {
-        }
+        this.updatePopper();
       } else if (!this.focused) {
         this.showValue = this.formatterOption(this.selected);
         this.previousQuery = this.showValue || null;
       }
     },
+    // input宽度
     inputWidth() {
       this.minWidth = this.$refs.reference.$el.getBoundingClientRect().width + 'px';
     },
+    // tags容器高度
     tagsHeight(val, old) {
       if (val !== old) {
         this.newHeight = val;
@@ -533,9 +431,15 @@ export default {
     this.removeScrollListener();
   },
   methods: {
+    /**
+     * 添加选项
+     */
     addOption(option) {
       this.options.push(option);
     },
+    /**
+     * 处理选项数据
+     */
     formatterOption(option) {
       if (option.length) {
         return '';
@@ -546,10 +450,13 @@ export default {
         ? this.formatter({ value: option.value, label: option.currentLabel })
         : option.currentLabel || '';
     },
+    /**
+     * 设置全选
+     */
     setSelectedAll() {
       const options = this.filteredOptions.filter((o) => !o._disabled);
       if (this.canSelectAll && this.value && this.value.length && this.value.length >= options.length) {
-        const realValues = this.value.map((val) => getRealValue(val, this.realValue));
+        const realValues = this.value.map((val) => this.getRealValue(val, this.realValue));
         this.isSelectAll = options.every((option) => {
           return realValues.indexOf(option.realValue) > -1;
         });
@@ -557,22 +464,34 @@ export default {
       }
       this.isSelectAll = false;
     },
+    /**
+     * 设置选中
+     */
     setSelected() {
       this.setSelectedAll();
-      const value = this.isSelectAll ? [SELECT_ALL_VALUE, ...this.value] : this.value;
+      const value = this.isSelectAll ? [this.SELECT_ALL_VALUE, ...this.value] : this.value;
       const next = this.multiple ? (value || []).map(this.getOption) : this.getOption(value);
 
       this.selected = next;
     },
+    /**
+     * 聚焦
+     */
     handleFocus(event) {
       if (!this.disabled && this.filterable && !this.focused) {
         this.focused = true;
       }
       this.$emit('focus', event);
     },
+    /**
+     * 设置关闭
+     */
     handleClose() {
       this.focused = false;
     },
+    /**
+     * 监控按键
+     */
     handleKeydown(e) {
       if (!this.disabled && !this.focused) {
         if (notKeys(e, ['enter', 'tab', 'esc', 'delete'])) {
@@ -580,12 +499,18 @@ export default {
         }
       }
     },
+    /**
+     * 处理输入事件
+     */
     handleInputChange(e) {
       if (this.focused && this.filterable && this.query !== this.showValue) {
         this.query = this.showValue;
         this.debouncedQueryChange(this.query);
       }
     },
+    /**
+     * 处理输入拼音
+     */
     handleComposition(e) {
       const { type } = e;
       if (type === 'compositionend') {
@@ -596,22 +521,24 @@ export default {
         this.isOnComposition = true;
       }
     },
+    /**
+     * 处理多选更新选项
+     */
     handleQueryInput(e) {
       if (e && e.target) {
-        // to fix vue 2.5.22 下多选输入抖动 bug。
-        // ones: https://ones.sankuai.com/ones/product/4348/workItem/defect/detail/3016033
         this.query = e.target.value;
       }
       const { query } = this;
-      // todo: 需要修改成当前字体大小
       const length = query.length * 14 + 5;
-      this.inputLength = this.collapseTags ? Math.min(this.collapseMaxSearchWidth, length) : length;
-      this.multiple && !this.collapseTags && this.updatePopper();
+      this.inputLength = length;
+      this.multiple && this.updatePopper();
       this.debouncedQueryChange(this.query);
     },
+    /**
+     * 获取匹配选项
+     */
     getOption(value) {
-      // todo: 后续需要确认 value=null 时的处理逻辑
-      const realValue = getRealValue(value, this.valueKey);
+      const realValue = this.getRealValue(value, this.valueKey);
       const equal = (option) => {
         return realValue === option.realValue;
       };
@@ -640,7 +567,9 @@ export default {
         }
       );
     },
-
+    /**
+     * 处理选中选项
+     */
     handleOptionClick(option) {
       if (this.disabled) {
         return;
@@ -661,12 +590,12 @@ export default {
         if (this.isSelectAll) {
           // 已经全选则清空
           nextValues = subtraction(allValues, this.value, (a, b) => {
-            return a === b || getRealValue(a) === getRealValue(b);
+            return a === b || this.getRealValue(a) === this.getRealValue(b);
           });
         } else {
           // 全选
           const diffValues = subtraction(this.value, allValues, (a, b) => {
-            return a === b || getRealValue(a) === getRealValue(b);
+            return a === b || this.getRealValue(a) === this.getRealValue(b);
           });
           nextValues = [...(this.value || []), ...diffValues];
         }
@@ -676,7 +605,7 @@ export default {
       } else if (this.multiple) {
         const copyiedValue = this.value ? [...this.value] : [];
         const realValues = copyiedValue.map((val) => {
-          return getRealValue(val, this.valueKey);
+          return this.getRealValue(val, this.valueKey);
         });
 
         let index = -1;
@@ -689,7 +618,7 @@ export default {
         });
         if (index > -1) {
           copyiedValue.splice(index, 1);
-        } else if (!this.multipleLimit || copyiedValue.length < this.multipleLimit) {
+        } else {
           copyiedValue.push(optionValue);
         }
         if (!this.reserveKeyword) {
@@ -699,7 +628,7 @@ export default {
         this.$emit('input', copyiedValue);
         this.$emit('change', copyiedValue);
       } else {
-        const realValue = getRealValue(this.value, this.valueKey);
+        const realValue = this.getRealValue(this.value, this.valueKey);
         if (realValue !== optionRealValue) {
           this.$emit('input', option.value);
           this.$emit('change', option.value);
@@ -711,6 +640,9 @@ export default {
         input.focus();
       }
     },
+    /**
+     * 选项点击事件
+     */
     selectOption() {
       if (!this.opened) {
         this.toggleMenu();
@@ -718,16 +650,22 @@ export default {
         this.handleOptionClick(this.hoverOption);
       }
     },
+    /**
+     * 清空全部选项
+     */
     handleInputClear() {
       this.$emit('clear');
       this.$emit('input', this.multiple ? [] : '');
       this.$emit('change', this.multiple ? [] : '');
     },
+    /**
+     * 触发删除tag
+     */
     deletePrevTag(e) {
       if (this.disabled) {
         return;
       }
-      if (!this.collapseTags && e.target.value.length <= 0) {
+      if (e.target.value.length <= 0) {
         const { filteredSelected } = this;
         if (!filteredSelected || !filteredSelected.length) {
           return;
@@ -736,11 +674,14 @@ export default {
 
         if (!last.hitState) {
           this.$set(last, 'hitState', true);
-        } else if (!last.disabled && this.closableFn(last)) {
+        } else if (!last.disabled) {
           this.handleClearClick(last);
         }
       }
     },
+    /**
+     * 删除某个tag
+     */
     handleClearClick(tag) {
       if (this.disabled) {
         return;
@@ -754,6 +695,9 @@ export default {
         this.$emit('remove', tag.value);
       }
     },
+    /**
+     * 更新选项列表
+     */
     updatePopper() {
       this.$nextTick(() => {
         if (this.focused) {
@@ -762,6 +706,9 @@ export default {
         this.tagsHeight = this.$refs.tags.offsetHeight;
       });
     },
+    /**
+     * 处理选项变更
+     */
     handleQueryChange(val) {
       if (this.previousQuery === val || this.isOnComposition) {
         return;
@@ -769,7 +716,7 @@ export default {
       this.previousQuery = val;
       if (this.remote && typeof this.remoteMethod === 'function') {
         this.remoteMethod(val);
-      } else if (typeof this.filterMethod === 'function') {
+      } else {
         const filteredOptions = this.options.filter((item) => {
           if (item.isSelectAll) {
             item.visible = !val;
@@ -782,19 +729,17 @@ export default {
           return item.visible;
         });
         this.filteredOptionsCount = filteredOptions.length;
-        if (this.defaultActiveFirstOption) {
-          // 如果是可创建的，则自动 hover 创建的，否则找到第一个可显示的
-          if (this.showNewOption) {
-            const first = this.options.find((item) => item.created);
-            first && this.setHoverOption(first);
-          } else if (this.filteredOptionsCount) {
-            this.setHoverOption(filteredOptions[0]);
-          }
+        // 如果是可创建的，则自动 hover 创建的，否则找到第一个可显示的
+        if (this.filteredOptionsCount) {
+          this.setHoverOption(filteredOptions[0]);
         }
         this.updatePopper();
       }
       this.$emit('filter', val);
     },
+    /**
+     * 显隐选项
+     */
     toggleMenu() {
       if (!this.disabled) {
         if (!this.filterable || !this.focused) {
@@ -805,6 +750,9 @@ export default {
         }
       }
     },
+    /**
+     * 获取input宽度
+     */
     getInputWidth() {
       const { selectedItemFirst, selectedItemTag, reference } = this.$refs;
       let inputWidth = reference.$el.getBoundingClientRect().width;
@@ -818,6 +766,9 @@ export default {
       const width = inputWidth - 42; // right icon size
       this.tagInputWidth = width > 0 ? width : 0;
     },
+    /**
+     * 销毁选项
+     */
     onOptionDestroy(option) {
       const index = this.options.indexOf(option);
       if (this.hoverOption === option) {
@@ -827,18 +778,9 @@ export default {
         this.options.splice(index, 1);
       }
     },
-    scrollToOption(option) {
-      const target = Array.isArray(option) && option[0] ? option[0].$el : option.$el;
-      if (this.$refs.popper && target) {
-        const menu = this.$refs.menu;
-        scrollIntoView(menu, target);
-      }
-      // this.$refs.scrollbar && this.$refs.scrollbar.handleScroll();
-    },
-    closableFn(item) {
-      return isFunction(this.canClosed) ? this.canClosed(item) : this.canClosed;
-    },
-
+    /**
+     * 添加滚动监听
+     */
     addScrollListenter() {
       const { 'scroll-bottom': scrollBottom, scroll } = this.$listeners;
       const { dropdownPrefix } = this;
@@ -850,6 +792,9 @@ export default {
         }
       }
     },
+    /**
+     * 移除滚动监听
+     */
     removeScrollListener() {
       if (this.scrollListener) {
         const { dropdownPrefix } = this;
@@ -858,7 +803,9 @@ export default {
       }
       this.scrollListener = false;
     },
-
+    /**
+     * 滚动事件
+     */
     handleScroll(event) {
       this.$emit('scroll', event);
       const { scrollHeight, scrollTop, clientHeight } = event.target;
@@ -866,7 +813,9 @@ export default {
         this.$emit('scroll-bottom', event);
       }
     },
-
+    /**
+     * 聚焦
+     */
     focus() {
       const { reference, tagInput } = this.$refs;
       this.focused = true;
@@ -876,6 +825,9 @@ export default {
       }
       reference.focus();
     },
+    /**
+     * 失焦
+     */
     blur() {
       const { reference, tagInput } = this.$refs;
       this.focused = false;
@@ -884,6 +836,26 @@ export default {
         return;
       }
       reference.blur();
+    },
+    /**
+     * 过滤方法
+     */
+    filterMethod(query, value) {
+      const parsedQuery = String(query).replace(/(\^|\(|\)|\[|\]|\$|\*|\+|\.|\?|\\|\{|\}|\|)/g, '\\$1');
+      return new RegExp(parsedQuery, 'i').test(value);
+    },
+    /**
+     * 获取value为对象时唯一key
+     */
+    getRealValue(value, valueKey) {
+      // return isObject(value) && valueKey ? getValueByPath(value, valueKey) : value;
+      if (isObject(value) && value.hasOwnProperty('value')) {
+        return value.value;
+      } else if (isObject(value) && valueKey) {
+        getValueByPath(value, valueKey);
+      } else if (!isObject(value)) {
+        return value;
+      }
     },
   },
 };

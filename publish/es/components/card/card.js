@@ -17,16 +17,18 @@ export default {
 
   name: 'WtCard',
   props: {
-    caption: {
-      type: String
-    },
+    // 标题
     title: {
       type: String
     },
+    // 副标题
     subtitle: {
       type: String
     },
-    bodyClass: String
+    // 说明文字
+    caption: {
+      type: String
+    }
   },
   inject: {
     config: {

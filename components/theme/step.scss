@@ -1,0 +1,361 @@
+@import './common/var.scss';
+@import './mixins/mixins.scss';
+@import './mixins/step.scss';
+@import './stepper.scss';
+
+@include c(step) {
+  position: relative;
+  min-width: $stepper-min-width;
+  &-flex {
+    flex: 1 1 auto;
+  }
+  &-head {
+    position: relative;
+    width: 100%;
+    height: 26px;
+    text-align: center;
+
+    &-line {
+      height: $stepper-line-size;
+      position: absolute;
+      top: ceil(($stepper-circle-size - $stepper-line-size)/2);
+      left: -50%;
+      right: 50%;
+      padding: 0px $stepper-circle-size/2 + $stepper-line-padding-horizontal;
+      background-clip: content-box;
+    }
+
+    // 圆点比普通的圈小
+    &-line-dot {
+      margin-top: ($stepper-circle-size - $stepper-dot-size)/2;
+    }
+
+    &-number {
+      width: $stepper-circle-size;
+      height: $stepper-circle-size;
+      border-radius: 50%;
+      color: $stepper-finish-circle-bgc;
+      // border: $step-line-size solid currentColor;
+      font-weight: $stepper-circletext-font-weight;
+      font-size: $stepper-circletext-font-size;
+      line-height: $stepper-circletext-line-height;
+      // background: $stepper-default-bgc;
+      position: relative;
+      z-index: $stepper-zindex;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+
+      i {
+        font-size: 16px;
+      }
+
+      // transition: .15s ease-out;
+      .#{$prefix}-step-head-dot {
+        border-radius: 50%;
+        // border: $stepper-dot-border-width solid $step-dot-broder-color;
+        background: currentColor;
+        background-clip: content-box;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        border-width: $stepper-dot-border-width;
+        border-style: solid;
+      }
+
+      @include step-dot($stepper-dot-size);
+    }
+
+    &-icon {
+      width: 24px;
+      height: 24px;
+      position: relative;
+      z-index: $stepper-zindex;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      color: $stepper-default-bgc;
+      font-size: $stepper-icon-size;
+    }
+  }
+  &-dot {
+    .#{$prefix}-step-head-line {
+      padding: 0px $stepper-dot-size/2 + $stepper-line-padding-horizontal;
+      height: $stepper-dot-line-size;
+    }
+
+    .#{$prefix}-step-main-title {
+      padding: $stepper-horizontal-dot-margin-vertical $stepper-horizontal-dot-margin-horizontal;
+    }
+
+    > .#{$prefix}-step-head-number {
+      // width: auto;
+      // height: auto;
+      // border: none;
+      // background: none;
+    }
+  }
+  &-main {
+    text-align: center;
+
+    &-title {
+      font-size: $stepper-statustext-font-size;
+      line-height: $stepper-statustext-line-height;
+      padding: $stepper-horizontal-statustext-margin-vertical $stepper-horizontal-statustext-margin-horizontal;
+      font-weight: $stepper-statustext-font-weight;
+    }
+
+    &-description {
+      font-size: $stepper-horizontal-description-font-size;
+      line-height: $stepper-horizontal-description-line-height;
+      font-weight: $stepper-horizontal-description-font-weight;
+      color: $color-text-3;
+      padding: 0px $stepper-horizontal-description-margin-horizontal;
+    }
+  }
+  &-finish {
+    @include step-status(
+      $stepper-finish-circletext-color,
+      none,
+      none,
+      $stepper-finish-statustext-color,
+      $stepper-finish-line-color,
+      $stepper-finish-description-color,
+      $stepper-finish-icon-color
+    );
+
+    .#{$prefix}-step-main-title {
+      font-weight: $stepper-finish-circletext-font-weight;
+    }
+
+    > .#{$prefix}-step-head-number {
+      .#{$prefix}-step-head-dot {
+        background-color: $color-white;
+        border-color: $stepper-finish-dot-border-color;
+      }
+      .#{$prefix}-icon {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+  &-error {
+    @include step-status(
+      $stepper-error-circletext-color,
+      $color-white,
+      $color-white,
+      $stepper-error-statustext-color,
+      $stepper-error-line-color,
+      $stepper-error-description-color,
+      $stepper-error-icon-color
+    );
+
+    .#{$prefix}-step-main-title {
+      font-weight: $stepper-error-circletext-font-weight;
+    }
+
+    > .#{$prefix}-step-head-number {
+      .#{$prefix}-step-head-dot {
+        background-color: $stepper-error-dot-bgc;
+        border-color: $stepper-error-dot-border-color;
+      }
+      .#{$prefix}-icon {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+  &-cancel {
+    @include step-status(
+      $stepper-cancel-circletext-color,
+      $color-white,
+      $color-white,
+      $stepper-cancel-statustext-color,
+      $stepper-cancel-line-color,
+      $stepper-cancel-description-color,
+      $stepper-cancel-icon-color
+    );
+
+    .#{$prefix}-step-main-title {
+      font-weight: $stepper-cancel-circletext-font-weight;
+    }
+
+    > .#{$prefix}-step-head-number {
+      .#{$prefix}-step-head-dot {
+        background-color: $stepper-cancel-dot-bgc;
+        border-color: $stepper-cancel-dot-border-color;
+      }
+      .#{$prefix}-icon {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+  &-wait {
+    @include step-status(
+      $stepper-wait-circletext-color,
+      $stepper-wait-circle-bgc,
+      $stepper-wait-circle-border-color,
+      $stepper-wait-statustext-color,
+      $stepper-wait-line-color,
+      $stepper-wait-description-color,
+      $stepper-wait-icon-color
+    );
+
+    .#{$prefix}-step-main-title {
+      font-weight: $stepper-wait-circletext-font-weight;
+    }
+
+    > .#{$prefix}-step-head-number {
+      .#{$prefix}-step-head-dot {
+        background-color: $stepper-wait-dot-bgc;
+        border-color: $stepper-wait-dot-border-color;
+      }
+      .#{$prefix}-icon {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+  &-process {
+    @include step-status(
+      $stepper-process-circletext-color,
+      $stepper-process-circle-bgc,
+      $stepper-process-circle-border-color,
+      $color-primary,
+      $stepper-process-line-color,
+      $stepper-process-description-color,
+      $stepper-process-icon-color
+    );
+
+    .#{$prefix}-step-main-title {
+      font-weight: $font-weight-medium;
+    }
+
+    > .#{$prefix}-step-head-number {
+      @if $stepper-process-circle-shadow != none {
+        box-shadow: $stepper-process-circle-shadow;
+      }
+      .#{$prefix}-step-head-dot {
+        background-color: $stepper-process-dot-bgc;
+        border-color: $stepper-process-dot-border-color;
+      }
+      .#{$prefix}-icon {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+
+  // 隐藏第一个step的line
+  &:first-child {
+    .#{$prefix}-step-head {
+      .#{$prefix}-step-head-line {
+        display: none;
+      }
+    }
+  }
+}
+
+// 居右step的样式
+@include c(stepper-right) {
+  .#{$prefix}-step-head {
+    left: -50%;
+    margin-left: $stepper-circle-size/2;
+  }
+  .#{$prefix}-step-main {
+    position: relative;
+    margin: -(
+        $stepper-circle-size/2 + $stepper-statustext-line-height/2 + $stepper-horizontal-statustext-margin-vertical
+      ) 0 0 $stepper-circle-size;
+    // left: $stepper-circle-size;
+    // top: -($stepper-circle-size/2 + $stepper-statustext-line-height/2 + $stepper-horizontal-statustext-margin-vertical);
+    z-index: $stepper-main-zindex;
+    text-align: left;
+
+    &-title {
+      display: inline-block;
+      background: $stepper-default-bgc;
+      padding: $stepper-horizontal-statustext-margin-vertical $stepper-horizontal-right-statustext-margin-horizontal;
+    }
+
+    &-description {
+      padding: $stepper-horizontal-description-margin-vertical $stepper-horizontal-description-margin-horizontal;
+    }
+  }
+  // &:last-child {
+  //   flex:none;
+  // }
+}
+
+// 竖step的样式
+@include c(stepper-vertical) {
+  @include step-direction($stepper-circle-size, $stepper-statustext-line-height, $stepper-dot-size);
+}
+
+// small step的样式
+@include c(stepper-small) {
+  .#{$prefix}-step-head {
+    &-line {
+      top: ceil(($stepper-small-circle-size - $stepper-line-size)/2);
+      padding: 0px $stepper-small-circle-size/2 + $stepper-line-padding-horizontal;
+    }
+
+    &-line-dot {
+      margin-top: ($stepper-small-circle-size - $stepper-small-dot-size)/2;
+    }
+
+    &-number {
+      width: $stepper-small-circle-size;
+      height: $stepper-small-circle-size;
+      font-size: $stepper-small-circletext-font-size;
+      line-height: $stepper-small-circletext-line-height;
+      @include step-dot($stepper-small-dot-size);
+    }
+
+    &-icon {
+      width: $stepper-small-circle-size;
+      height: $stepper-small-circle-size;
+      font-size: $stepper-small-icon-size;
+    }
+  }
+  .#{$prefix}-step-dot {
+    .#{$prefix}-step-head-line {
+      padding: 0px $stepper-small-dot-size/2 + $stepper-line-padding-horizontal;
+    }
+  }
+  .#{$prefix}-step-main {
+    &-title {
+      font-size: $stepper-small-statustext-font-size;
+      line-height: $stepper-small-statustext-line-height;
+      padding: $stepper-small-horizontal-statustext-margin-vertical
+        $stepper-small-horizontal-statustext-margin-horizontal;
+    }
+
+    &-description {
+      font-size: $stepper-small-horizontal-description-font-size;
+      line-height: $stepper-small-horizontal-description-line-height;
+      font-weight: $stepper-horizontal-description-font-weight;
+    }
+  }
+  &.#{$prefix}-stepper-right {
+    .#{$prefix}-step-head {
+      margin-left: $stepper-small-circle-size/2;
+    }
+
+    .#{$prefix}-step-main {
+      margin: -(
+          $stepper-small-circle-size/2 + $stepper-small-statustext-line-height/2 +
+            $stepper-small-horizontal-statustext-margin-vertical
+        ) 0 0 $stepper-small-circle-size;
+
+      &-title {
+        padding: $stepper-small-horizontal-statustext-margin-vertical
+          $stepper-small-horizontal-right-statustext-margin-horizontal;
+      }
+    }
+  }
+  &.#{$prefix}-stepper-vertical {
+    @include step-direction($stepper-small-circle-size, $stepper-small-statustext-line-height, $stepper-small-dot-size);
+  }
+}

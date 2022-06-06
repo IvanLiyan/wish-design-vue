@@ -1,0 +1,20 @@
+{
+  "props": [
+    {
+      "name": "tag",
+      "desc": "动态组件名，详见<a href='https://cn.vuejs.org/v2/guide/components.html#%E5%8A%A8%E6%80%81%E7%BB%84%E4%BB%B6' target='_blank'>动态组件</a>",
+      "type": ["string", "object"],
+      "optionalValue": "",
+      "default": "span",
+      "version": ""
+    },
+    {
+      "name": "to",
+      "desc": "在tag为router-link下，编辑页面跳转路径",
+      "type": ["string"],
+      "optionalValue": "",
+      "default": "",
+      "version": ""
+    }
+  ]
+}

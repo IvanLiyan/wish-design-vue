@@ -20,6 +20,11 @@
           {
             "path": "row",
             "name": "Grid",
+            "cnName": "栅格"
+          },
+          {
+            "path": "layout",
+            "name": "Layout",
             "cnName": "布局"
           }
         ]
@@ -27,6 +32,11 @@
       {
         "groupName": "Navigation",
         "list": [
+          {
+            "path": "breadcrumb",
+            "name": "Breadcrumb",
+            "cnName": "面包屑"
+          },
           {
             "path": "dropdown",
             "name": "Dropdown",
@@ -41,6 +51,26 @@
             "path": "sidebar",
             "name": "Sidebar",
             "cnName": "侧边栏"
+          },
+          {
+            "path": "cascader",
+            "name": "Cascader",
+            "cnName": "级联选择"
+          },
+          {
+            "path": "tooltip",
+            "name": "Tooltip",
+            "cnName": "气泡"
+          },
+          {
+            "path": "pagination",
+            "name": "Pagination",
+            "cnName": "分页"
+          },
+          {
+            "path": "stepper",
+            "name": "Stepper",
+            "cnName": "步骤"
           }
         ]
       },
@@ -111,6 +141,16 @@
             "path": "alert",
             "name": "Alert",
             "cnName": "警告提示"
+          },
+          {
+            "path": "progress",
+            "name": "Progress",
+            "cnName": "进度"
+          },
+          {
+            "path": "dialog",
+            "name": "Dialog",
+            "cnName": "对话框"
           }
         ]
       },
@@ -130,12 +170,32 @@
           {
             "path": "tab",
             "name": "Tab",
-            "cnName": "分页"
+            "cnName": "标签页"
           },
           {
-            "path": "tooltip",
-            "name": "Tooltip",
-            "cnName": "气泡"
+            "path": "expansion",
+            "name": "Expansion",
+            "cnName": "伸缩框"
+          },
+          {
+            "path": "table",
+            "name": "Table",
+            "cnName": "表格"
+          },
+          {
+            "path": "badge",
+            "name": "Badge",
+            "cnName": "徽章"
+          },
+          {
+            "path": "timeline",
+            "name": "Timeline",
+            "cnName": "时间轴"
+          },
+          {
+            "path": "drawer",
+            "name": "Drawer",
+            "cnName": "抽屉"
           }
         ]
       }

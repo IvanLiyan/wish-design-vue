@@ -7,17 +7,19 @@
       :stroke-width="strokeWidth"
       stroke="currentColor"
       :class="`${prefix}-circle-outer`"
-      fill="none" />
-      <circle
-        :cx="cx"
-        :cy="cx"
-        :r="cr"
-        :stroke-width="strokeWidth"
-        :stroke="strokeColor"
-        stroke-linecap="round"
-        fill="none"
-        :transform="transform"
-        :stroke-dasharray="strokeDasharray" />
+      fill="none"
+    />
+    <circle
+      :cx="cx"
+      :cy="cx"
+      :r="cr"
+      :stroke-width="strokeWidth"
+      :stroke="strokeColor"
+      stroke-linecap="round"
+      fill="none"
+      :transform="transform"
+      :stroke-dasharray="strokeDasharray"
+    />
   </svg>
 </template>
 <script>
@@ -27,18 +29,18 @@ import {
 } from '@/utils/config';
 
 export default {
-  name: 'MtdCircleProgress',
+  name: 'WtCircleProgress',
   props: {
     color: {
       type: String,
     },
     strokeWidth: {
       type: Number,
-      default: 2,
+      default: 5,
     },
     width: {
       type: Number,
-      default: 26,
+      default: 72,
     },
     percentage: {
       type: Number,

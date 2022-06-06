@@ -296,6 +296,9 @@ $popper-offset: 16px !default;
 // @refer shadow
 // @name popper-阴影
 $popper-shadow: 0 1px 3px 0 rgba(52, 88, 124, 0.23) !default;
+// @refer color
+// @name 蒙板-背景色
+$modal-mask-bgc: rgba(0,0,0,.5)!default;
 // @name popper-背景色
 $popper-bgc: $color-white !default;
 // @name popper-边框颜色
@@ -391,7 +394,7 @@ $date-picker-icon-btn-size: $font-size-1 !default;
 // @name 图标-按钮-文字颜色
 $date-picker-icon-btn-color: #808ab1 !default;
 // @name 图标-按钮-悬浮-文字颜色
-$date-picker-icon-btn-hover-color: $color-primary !default;
+$date-picker-icon-btn-hover-color: $color-primary-1 !default;
 
 // @name 侧边栏-宽度
 $date-picker-sidebar-width: 160px !default;
@@ -595,7 +598,7 @@ $progress-text-margin-left: $s-3 !default;
 // @name 文字颜色
 $progress-text-color: $color-text-2 !default;
 // @name 文字-字号
-$progress-text-font-size: $font-size-default !default;
+$progress-text-font-size: $font-size-4 !default;
 // @name 图标-字号
 $progress-icon-font-size: $font-size-default !default;
 // @end propsValue
@@ -609,12 +612,12 @@ $progress-default-color: $color-primary !default;
 
 // @propsValue error
 // @name 错误-文字颜色
-$progress-error-color: $color-danger-1 !default;
+$progress-error-color: #E52533 !default;
 // @end propsValue
 
 // @propsValue success
 // @name 成功-文字颜色
-$progress-success-color: $color-success-1 !default;
+$progress-success-color: #2EAA77 !default;
 // @end propsValue
 
 // @end category
@@ -950,5 +953,399 @@ $smenu-dark-disabled-bgc: transparent!default;
 $smenu-dark-disabled-opacity: .45!default;
 // @end propsValue
 
+// @component table 表格
+// @category base
+// @propsValue default
+// @name 水平内边距
+$table-padding-horizontal: 10px!default;
+
+// @name 表格超长 tooltip 最大高
+$table-overflow-max-height: 40vh!default;
+
+// @name 文字颜色
+$table-color: $color-text-3!default; // td的颜色 默认字体颜色
+// @name 背景色
+$table-bgc: $color-white!default; // it use for fix table-column
+// @name 表头-文字颜色
+$table-header-color: $color-text-2!default; // header 464646
+// @name 表头-背景色
+$table-header-bgc: $color-white!default;
+
+// @dom
+// @refer color
+// @name 表头-过滤器颜色
+$table-filter-color: #909399!default;
+// @name 表头-过滤器宽度
+$table-filter-width: $s-8!default;
+// @name 表头-过滤器大小
+$table-filter-font-size: $font-size-2!default;
+// @name 表头-过滤器底部竖直内间距
+$table-filter-footer-padding-vertical: $s-2!default;
+// @name 表头-过滤器底部水平内边距
+$table-filter-footer-padding-horizontal: $s-3!default;
+// @name 表头-过滤器操作按钮间隔
+$table-filter-footer-action-offset: $s-2!default;
+// @name 表头-过滤器操作按钮颜色
+$table-filter-footer-action-color: $color-text-default!default;
+// @state hover
+// @refer color
+// @name 表头-过滤器悬浮颜色
+$table-filter-hover-color: #909399!default;
+// @refer color
+// @name 表头-过滤器悬浮背景色
+$table-filter-hover-bgc: rgba(0,0,0,0.04)!default;
+// @name 表头-过滤器操作按钮悬浮颜色
+$table-filter-footer-action-hover-color: $color-primary!default;
+// @end state
+
+// @state active
+// @refer color
+// @name 表头-过滤器激活颜色
+$table-filter-active-color: $color-primary-1!default;
+// @end state
+// @end dom
+
+// @name 表尾-背景色
+$table-footer-bgc: $color-white!default;
+// @name 表尾-字重
+$table-footer-font-weight: $font-weight-medium!default;
+// @name 空状态-高度
+$table-empty-height: 60px!default;
+
+// @name 展开-高度
+$table-expand-height: 20px!default;
+// @name 展开-字号
+$table-expand-font-size: $font-size-1!default;
+// @name 展开-外边距
+$table-expand-margin: 5px!default;
+// @name 展开- 单元格-竖直内边距
+$table-expand-cell-padding-vertical: $s-5!default;
+// @name 展开- 单元格-水平内边距
+$table-expand-cell-padding-horizontal:50px!default;
+// @name 展开-图标-文字颜色
+$table-expand-icon-color: $color-text-6!default;
+// @name 文字颜色-主要
+$table-color-primary: $color-primary!default;
+// @refer color
+// @name 文字颜色-文字-提示文案
+$table-color-text-placeholder: #c0c4cc!default;
+// @refer color
+
+// @name 边框颜色
+$table-border-color: #BFCDD4;
+// @name 边框-宽度
+$table-border-width: $border-width-1!default;
+// @refer color
+// @name row-悬浮-背景色
+$table-row-hover-bgc: #f5f7fa!default;
+// @refer color
+// @name 高亮行背景色
+$table-current-row-bgc: $color-info-1!default;
+// @refer color
+// @refer shadow
+// @name 固定的-阴影
+$table-fixed-shadow: 0 0 10px rgba(0, 0, 0, .12)!default;
+// @refer shadow
+// @name column-阴影
+$table-column-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1)!default;
+// @refer color
+// @end propsValue
+// @end category
+
+// @category striped
+// @propsValue true
+// @refer color
+// @name striped-背景色
+$table-striped-bgc: #FAFAFA!default;
+// @end propsValue
+// @end category
+
+// @category size
+
+// @propsValue default
+// @name 字号
+$table-font-size: $font-size-4!default;
+// @name 行高
+$table-line-height: $line-height-5!default;
+// @name 竖直内边距
+$table-padding-vertical: 10px!default;
+// @name 表头竖直内边距
+$table-header-padding-vertical: 10px!default;
+// @end propsValue
+
+// @propsValue small
+// @name 小号-字号
+$table-small-font-size: $font-size-1!default;
+// @name 小号-行高
+$table-small-line-height: $line-height-2!default;
+// @name 小号-竖直内边距
+$table-small-padding-vertical: $s-2!default;
+// @name 小号-表头竖直内边距
+$table-small-header-padding-vertical: $s-2!default;
+// @end propsValue
+
+// @propsValue large
+// @name 大号-字号
+$table-large-font-size: $font-size-2!default;
+// @name 大号-行高
+$table-large-line-height: $line-height-2!default;
+// @name 大号-竖直内边距
+$table-large-padding-vertical: $s-4!default;
+// @name 大号-表头竖直内边距
+$table-large-header-padding-vertical: $s-2!default;
+// @end propsValue
+
+// @end category
+// @end component
+
+// @component pagination 分页
+// @category base
+
+// @propsValue default
+// @name 文字颜色
+$pagination-color: $color-text-1!default;
+// @name 背景色
+$pagination-bgc: $color-white!default;
+// @refer color
+// @name 上一项-下一项-文字颜色
+$pagination-prev-next-color: $color-text-3!default;
+// @name 总计-文字颜色
+$pagination-total-color: $color-text-1!default;
+// @name 圆角
+$pagination-border-radius: $border-radius-2!default;
+// @name 边框-宽度
+$pagination-border-width: $border-width-1!default;
+// @name 边框颜色
+$pagination-border-color: $color-line-1!default;
+// @name 页数-内边距
+$pagination-page-padding: $s-1!default;
+// @name 额外-间距
+$pagination-addon-spacing: $s-3!default;
+// @name select-宽度
+$pagination-select-width: 100px!default;
+// @name 简洁-项-间距
+$pagination-simple-item-spacing: $s-1!default;
+
+// @state active
+// @name 激活-背景色
+$pagination-active-bgc: $color-white!default;
+// @name 激活-文字颜色
+$pagination-active-color: $color-primary!default;
+// @name 激活-边框颜色
+$pagination-active-border-color: $color-primary!default;
+// @end state
+
+// @end propsValue
+// @end category
+
+// @category size
+// @propsValue default
+// @name 字号
+$pagination-font-size: $font-size-2!default;
+// @name 图标-字号
+$pagination-icon-font-size: $font-size-1!default;
+// @name 尺寸
+$pagination-size: $s-8!default;
+// @name 页数-外边距
+$pagination-page-margin: $s-2!default;
+// @name 跳转-宽度
+$pagination-jumper-width: $s-10!default;
+// @end propsValue
+
+// @propsValue small
+// @name 小号-字号
+$pagination-small-font-size: $font-size-1!default;
+// @name 小号-图标-字号
+$pagination-small-icon-font-size: $font-size-3!default;
+// @name 小号-尺寸
+$pagination-small-size: $s-6!default;
+// @name 小号-页数-外边距
+$pagination-small-page-margin: $s-2!default;
+// @name 小号-跳转-宽度
+$pagination-small-jumper-width: $s-10!default;
+// @end propsValue
+// @end category
+
+// @category show-size-changer
+// @propsValue true
+// @name select-宽度
+$pagination-select-width: 100px!default;
+// @end propsValue
+// @end category
+
+// @end component
+
+// @component badge 徽章
+// @category base
+// @propsValue default
+// @name 高度
+$badge-height: 16px!default;
+// @name 背景色
+$badge-bgc: #E3812B!default;
+// @name 文字颜色
+$badge-text-color: $color-white!default;
+// @name 字号
+$badge-font-size: $font-size-4!default;
+// @name 字重
+$badge-font-weight: $font-weight-medium!default;
+// @name 水平内边距
+$badge-padding-horizontal: 6px!default;
+// @name 边框-宽度
+$badge-border-width: $border-width-1!default;
+// @name 圆角
+$badge-border-radius: $border-radius-round!default;
+// @name 边框颜色
+$badge-border-color: $color-white!default;
+// @end propsValue
+// @end category
+
+// @category dot
+// @propsValue true
+// @name 点-尺寸
+$badge-dot-size: $s-2!default;
+// @end propsValue
+// @end category
+
+// @end component
+
+// @component timeline 时间线
+// @category base
+// @propsValue default
+// @name 项-最小高
+$timeline-item-min-height: 70px!default;
+// @name 项-下外边距
+$timeline-item-margin-bottom: $s-5!default;
+// @name 项-custom-下外边距
+$timeline-item-custom-margin-bottom: 38px!default;
+// @dom dot
+// @name 项-点-宽度
+$timeline-item-dot-width: 17px!default;
+// @end dom
+
+// @dom track
+// @name 项-track-间距
+$timeline-item-track-spacing: $s-1!default;
+// @name 项-track-宽度
+$timeline-item-track-width: $border-width-1!default;
+// @name 项-track-背景色
+$timeline-item-track-bgc: #BFCDD4!default;
+// @end dom
+
+// @dom title
+// @name 项-标题-宽度
+$timeline-item-title-width: $s-10!default;
+// @name 项-标题-文字颜色
+$timeline-item-title-color: #666!default;
+// @name 项-标题-字号
+$timeline-item-title-font-size: $font-size-1!default;
+// @name 项-行高-标题
+$timeline-item-title-line-height: $line-height-2!default;
+// @end dom
+// @dom content
+// @name 项- 内容-上外边距
+$timeline-item-content-margin-top: -4px!default;
+// @name 项- 内容-外边距-水平
+$timeline-item-content-margin-horizontal: 10px!default;
+// @end dom
+
+// @end propsValue
+// @end category
+
+// @category type
+// @propsValue default
+// @name 项-点-尺寸
+$timeline-item-dot-size: 9px!default;
+// @name 项-点-背景色
+$timeline-item-dot-bgc: $color-primary!default;
+// @name 项-点-边框-宽度
+$timeline-item-dot-border-width: $border-width-1!default;
+// @name 项-点-边框颜色
+$timeline-item-dot-border-color: $color-primary!default;
+// @name 项-点-阴影
+$timeline-item-dot-shadow: $shadow-0!default;
+// @end propsValue
+
+// @propsValue master
+// @name 项-主要-点-尺寸
+$timeline-item-master-dot-size: 14px!default;
+// @name 项-主要-点-背景色
+$timeline-item-master-dot-bgc: $color-primary!default;
+// @name 项-主要-点-边框-宽度
+$timeline-item-master-dot-border-width: $border-width-0!default;
+// @name 项-主要-边框颜色-点
+$timeline-item-master-dot-border-color: $color-primary!default;
+// @name 项-主要-点-阴影
+$timeline-item-master-dot-shadow: 0px 0px 0px 4px rgba(78, 115, 255, 0.12)!default;
+// @end propsValue
+
+// @propsValue hollow
+// @name 项-次要-点-尺寸
+$timeline-item-hollow-dot-size: 11px!default;
+// @name 项-次要-点-背景色
+$timeline-item-hollow-dot-bgc: transparent!default;
+// @name 项-次要-点-边框-宽度
+$timeline-item-hollow-dot-border-width: $border-width-1!default;
+// @name 项-次要-边框颜色-点
+$timeline-item-hollow-dot-border-color: $color-primary!default;
+// @name 项-次要-点-阴影
+$timeline-item-hollow-dot-shadow: $shadow-0!default;
+// @end propsValue
+
+// @end category
+// @end component
+
+// @component drawer 抽屉
+// @category base
+// @propsValue default
+// @name 背景色
+$drawer-bgc: $color-white!default;
+// @name 水平内边距
+$drawer-padding-horizontal: 30px!default;
+// @dom header
+// @name 页头-竖直内边距
+$drawer-header-padding-vertical: 18px!default;
+// @name 页头-行高
+$drawer-header-line-height: 22px!default;
+// @name 页头-字号
+$drawer-header-font-size: $font-size-3!default;
+// @name 页头-文字颜色
+$drawer-header-color: $color-text-1!default;
+// @name 页头-字重
+$drawer-header-font-weight: $font-weight-medium!default;
+// @end dom
+// @name 内容-水平内边距
+$drawer-content-padding-horizontal: $s-4!default;
+// @name 关闭按钮-顶部
+$drawer-close-top: $s-4!default;
+// @name 关闭按钮-右侧
+$drawer-close-right: $s-4!default;
+// @name 关闭按钮-文字颜色
+$drawer-close-color: currentColor!default;
+// @name 关闭按钮-悬浮-文字颜色
+$drawer-close-hover-color: currentColor!default;
+// @name 关闭按钮-悬浮-背景色
+$drawer-close-hover-bgc: transparent!default;
+// @name 关闭按钮-激活-文字颜色
+$drawer-close-active-color: currentColor!default;
+// @name 关闭按钮-激活-背景色
+$drawer-close-active-bgc: transparent!default;
+// @name 关闭按钮-字号
+$drawer-close-font-size: 18px!default;
+// @name 关闭按钮-尺寸
+$drawer-close-size: 1em!default;
+// @name 关闭按钮-圆角
+$drawer-close-border-radius: 0!default;
+
+// @state hover
+// @name 关闭按钮-悬浮-文字颜色
+$drawer-close-hover-color: currentColor!default;
+// @end state
+
+// @refer shadow
+// @name 阴影
+$drawer-shadow: 0 -2px 8px 0 rgba(138,142,156,0.50)!default;
+// @name animation-动画-时长
+$drawer-animation-transition-duration: .3s!default;
+// @end propsValue
 // @end category
 // @end component

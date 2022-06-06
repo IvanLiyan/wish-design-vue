@@ -3,6 +3,7 @@
     "api": {
       "disabled": "禁用状态",
       "value": "当前选中的值，支持 v-model",
+      "arrange": "排列方式",
       "change": "在选项状态发生改变时触发，返回当前状态。"
     }
   },
@@ -10,6 +11,7 @@
     "api": {
       "disabled": "Disabled status",
       "value": "Current selected value, supports v-model",
+      "arrange": "Arrangement",
       "change": "Triggered when status change, return current status"
     }
   }

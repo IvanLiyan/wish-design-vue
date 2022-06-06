@@ -29,15 +29,15 @@
       "desc": "进度条背景色（会覆盖status状态颜色）",
       "type": "string",
       "optionalValue": "",
-      "default": "",
+      "default": "#305BEF",
       "version": ""
     },
     {
       "name": "stroke-width",
-      "desc": "进度条大小",
+      "desc": "进度条粗细",
       "type": "string",
       "optionalValue": "",
-      "default": "",
+      "default": "line: 8 / circle: 5",
       "version": ""
     },
     {
@@ -45,7 +45,7 @@
       "desc": "环形进度条画布宽度（只在type=circle时可用）",
       "type": "number",
       "optionalValue": "",
-      "default": "28",
+      "default": "72",
       "version": ""
     }
   ]

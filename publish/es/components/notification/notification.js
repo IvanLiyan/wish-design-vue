@@ -35,7 +35,7 @@ export default {
       closed: false,
       verticalOffset: 0,
       timer: null,
-      dangerouslyUseHTMLString: false,
+      useHTMLString: false,
       position: 'top-right',
       prefixCls: getPrefix()
       // iconPrefixCls: getIconPrefix(),

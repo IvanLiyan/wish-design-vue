@@ -1,0 +1,204 @@
+@import './common/var.scss';
+@import './mixins/mixins.scss';
+@import './input.scss';
+
+// @component cascader 级联
+// @include select, input, loading
+
+// @category base
+// @propsValue default
+// @refer shadow
+// @name 菜单-阴影
+$cascader-menu-shadow: 0 1px 3px 0 rgba(52, 88, 124, 0.23) !default;
+// @name 菜单-字号
+$cascader-menu-font-size: $font-size-2 !default;
+// @name 菜单-行高
+$cascader-menu-line-height: $line-height-2 !default;
+
+// @name 菜单-内边距
+$cascader-menu-padding: $s-1 !default;
+// @name 菜单-文字颜色
+$cascader-menu-color: #0e161c !default;
+// @name 菜单-高度
+$cascader-menu-height: 180px !default;
+// @name 菜单-最大宽
+$cascader-menu-max-width: 200px !default;
+// @name 菜单-最小宽
+$cascader-menu-min-width: 120px !default;
+// @refer color
+// @name 菜单-悬浮-文字颜色
+$cascader-menu-hover-color: #4f4f4f !default;
+// @name 菜单-项-高度
+$cascader-menu-item-height: 36px !default;
+// @name 菜单-项-竖直内边距
+$cascader-menu-item-padding-vertical: 16px !default;
+// @name 菜单-项-悬浮-背景色
+$cascader-menu-item-hover-bgc: #e5ecff !default;
+// @name 菜单-展开-图标-尺寸
+$cascader-menu-expand-icon-size: 20px !default;
+// @name 菜单-展开-右外边距
+$cascader-menu-expand-margin-right: 8px !default;
+// @refer color
+// @name 菜单-展开-图标-文字颜色
+$cascader-menu-expand-icon-color: #c6cddc !default;
+// @refer color
+// @name 菜单-边框颜色
+$cascader-menu-border-color: #f6f7fb !default;
+// @name 菜单-禁用-文字颜色
+$cascader-menu-disabled-color: #bfcdd4 !default;
+// @name 菜单-激活-文字颜色
+$cascader-menu-active-color: #0e161c !default;
+// @name 菜单-激活-字重
+$cascader-menu-active-font-weight: $font-weight-medium !default;
+// @name 菜单-空状态-图标-右外边距
+$cascader-menu-empty-icon-margin-right: 6px !default;
+// @name 菜单-加载中-字号
+$cascader-menu-loading-font-size: $font-size-1 !default;
+// @name 菜单-加载中-文字颜色
+$cascader-menu-loading-color: $color-text-6 !default;
+// @end propsValue
+// @end category
+// @end component
+
+@include c(cascader) {
+  display: inline-block;
+  width: 240px;
+  .#{$prefix}-input-wrapper {
+    vertical-align: top;
+    width: 100%;
+  }
+  .#{$prefix}-input {
+    cursor: pointer;
+    @include text-ellipsis();
+  }
+  // size
+  // &-large {
+  //   width: $input-large-width;
+  // }
+
+  // &-small {
+  //   width: $input-small-width;
+  // }
+  .#{$prefix}-input-suffix-inner,
+  .#{$prefix}-multiple-input-suffix-inner {
+    > i {
+      transition: transform 0.3s;
+    }
+  }
+  &.focus {
+    .#{$prefix}-input-suffix-inner,
+    .#{$prefix}-multiple-input-suffix-inner {
+      > i {
+        transform: rotate(180deg);
+      }
+    }
+  }
+}
+@include c(cascader-popper) {
+  box-shadow: $cascader-menu-shadow;
+}
+@include c(cascader-menus) {
+  white-space: nowrap;
+  height: $cascader-menu-height;
+  display: inline-block;
+  font-size: $cascader-menu-font-size;
+  line-height: $cascader-menu-line-height;
+}
+@include c(cascader-menu) {
+  text-align: left;
+  color: $cascader-menu-color;
+  padding: $cascader-menu-padding 0;
+  margin: 0;
+  list-style: none;
+  min-width: $cascader-menu-min-width;
+  // max-width: $cascader-menu-max-width;
+  height: 100%;
+  overflow: auto;
+  display: inline-block;
+  vertical-align: top;
+  &:not(:last-child) {
+    border-right: 1px solid $cascader-menu-border-color;
+  }
+  &-loading,
+  &-empty {
+    vertical-align: top;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: $cascader-menu-min-width;
+    height: 100%;
+    color: $cascader-menu-loading-color;
+    font-size: $cascader-menu-loading-font-size;
+    white-space: normal;
+  }
+  &-loading {
+    .#{$prefix}-loading-message {
+      color: $cascader-menu-loading-color;
+      font-size: $cascader-menu-loading-font-size;
+    }
+  }
+  &-empty {
+    &-item {
+      padding: 0;
+      margin: 0;
+      text-align: center;
+    }
+    &-icon {
+      margin-right: $cascader-menu-empty-icon-margin-right;
+    }
+  }
+}
+@include c(cascader-menu-item) {
+  @include text-ellipsis();
+  line-height: $cascader-menu-item-height;
+  padding: 0px;
+  min-width: 120px;
+  padding-left: $cascader-menu-item-padding-vertical;
+  padding-right: $cascader-menu-expand-margin-right;
+  cursor: pointer;
+  position: relative;
+  user-select: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &:hover,
+  &.hover {
+    color: $cascader-menu-hover-color;
+    background: $cascader-menu-item-hover-bgc;
+  }
+  &-expand-icon {
+    display: inline-block;
+    font-size: $cascader-menu-expand-icon-size;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: ($cascader-menu-item-height - $cascader-menu-expand-icon-size)/2;
+    right: $cascader-menu-expand-margin-right;
+    text-align: center;
+    color: $cascader-menu-expand-icon-color;
+  }
+  &-checkbox {
+    margin-right: 8px;
+  }
+  &-active {
+    color: $cascader-menu-active-color;
+    background: $cascader-menu-item-hover-bgc;
+    &:hover,
+    &.hover {
+      color: $cascader-menu-active-color;
+    }
+    .#{$prefix}-cascader-menu-item-selected-icon {
+      color: $cascader-menu-active-color;
+    }
+  }
+  &-disabled {
+    color: $cascader-menu-disabled-color;
+    cursor: not-allowed;
+    &:hover,
+    &.hover {
+      color: $cascader-menu-disabled-color;
+      background-color: transparent;
+    }
+  }
+}

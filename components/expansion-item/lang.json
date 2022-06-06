@@ -1,0 +1,14 @@
+{
+  "chinese": {
+    "api": {
+      "value": "当前面板值，必填",
+      "title": "面板标题"
+    }
+  },
+  "english": {
+    "api": {
+      "value": "",
+      "title": ""
+    }
+  }
+}

@@ -29,17 +29,15 @@ import { Alert } from './alert';
 import { Tab } from './tab';
 import { TabDrop } from './tab-drop';
 import { TabPane } from './tab-pane';
+import { Expansion } from './expansion';
+import { ExpansionItem } from './expansion-item';
+import { Breadcrumb } from './breadcrumb';
+import { BreadcrumbItem } from './breadcrumb-item';
 import { Confirm as WTConfirm } from './confirm';
-import {
-  Message as WTMessage,
-  MessageOptions
-} from './message';
-import {
-  Notification as WTNotification,
-  NotificationOptions
-} from './notification';
+import { Message as WTMessage, MessageOptions } from './message';
+import { Notification as WTNotification, NotificationOptions } from './notification';
 import { FormRule, FormRules } from './form';
-import CollapseTransition from './collapse-transition';
+import ExpansionTransition from './expansion-transition';
 
 export const Message: WTMessage;
 export const Notification: WTNotification;
@@ -76,11 +74,15 @@ export {
   Tab,
   TabDrop,
   TabPane,
+  Expansion,
+  ExpansionItem,
+  Breadcrumb,
+  BreadcrumbItem,
   FormRule,
   FormRules,
   NotificationOptions,
   MessageOptions,
-  CollapseTransition,
+  ExpansionTransition,
 };
 
 export declare function install(vue: any): void;
@@ -88,9 +90,9 @@ export declare function install(vue: any): void;
 declare module 'vue/types/vue' {
   interface Vue {
     $wt: {
-      confirm: WTConfirm
-      message: WTMessage
-      notify: WTNotification
-    }
+      confirm: WTConfirm;
+      message: WTMessage;
+      notify: WTNotification;
+    };
   }
 }

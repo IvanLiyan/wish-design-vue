@@ -1,0 +1,38 @@
+{
+	"props":[{
+		"name": "type",
+		"desc": "定义时间轴的类型",
+		"type": "string",
+		"optionalValue": ["dot", "icon"],
+		"default": "dot",
+		"version": ""
+	},
+	{
+		"name": "status",
+		"desc": "定义时间轴的状态",
+		"type": "string",
+		"optionalValue": ["normal", "success", "fail", "warning"],
+		"default": "normal",
+		"version": ""
+	},
+	{
+		"name": "title",
+		"desc": "侧标题",
+		"type": "string",
+		"optionalValue": "",
+		"default": "",
+		"version": ""
+	}],
+	"slots":[{
+		"name": "default",
+		"desc": "时间轴节点内容"
+	},
+	{
+		"name": "title",
+		"desc": "时间轴节点标题内容"
+	},
+	{
+		"name": "dot",
+		"desc": "时间轴分割线上点内容"
+	}]
+}

@@ -1,9 +1,8 @@
 <template>
   <li :class="`${prefix}-choice`">
-    <slot name="tag" :option="option" :size="size" :clearable="clearable" :disabled="disabled" :onClose="handleClose">
+    <slot name="tag" :option="option" :clearable="clearable" :disabled="disabled" :onClose="handleClose">
       <wt-tag
         :class="{ focus: option.hitState }"
-        :size="size"
         :clearable="clearable"
         :disabled="disabled"
         @close="handleClose"
@@ -19,20 +18,22 @@ import { CONFIG_PROVIDER, getPrefixCls } from '@/utils/config';
 import WtTag from '@components/tag';
 
 export default {
-  name: 'WtSelectChoice',
+  name: 'WtSelectTag',
   components: {
     WtTag,
   },
   props: {
-    size: String,
+    // 选中tags
     option: {
       type: Object,
       required: true,
     },
+    // 清除tag
     clearable: {
       type: Boolean,
       default: true,
     },
+    // 不可用
     disabled: Boolean,
   },
   inject: {
@@ -49,6 +50,7 @@ export default {
     },
   },
   methods: {
+    // 处理删除tag
     handleClose() {
       this.$emit('close', this.option);
     },

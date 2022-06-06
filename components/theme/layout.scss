@@ -1,0 +1,13 @@
+@import "mixins/mixins";
+
+@include c(layout) {
+  display: flex;
+  flex-direction: row;
+  flex: 1 1 auto;
+  box-sizing: border-box;
+  min-width: 0;
+
+  &-vertical {
+    flex-direction: column;
+  }
+}

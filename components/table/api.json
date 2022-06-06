@@ -1,0 +1,217 @@
+{
+  "props": [{
+      "name": "data",
+      "desc": "显示的数据",
+      "type": "Array",
+      "optionalValue": "",
+      "default": "",
+      "version": ""
+    },
+    {
+      "name": "height",
+      "desc": "Table 的高度。如果 height 为 number 类型，单位px；如果 height 为 string 类型，则这个高度会设置为 Table 的 style.height 的值，Table 的高度会受控于外部样式。",
+      "type": ["string", "number"],
+      "optionalValue": "",
+      "default": "",
+      "version": ""
+    },
+    {
+      "name": "max-height",
+      "desc": "Table 的最大高度",
+      "type": ["string", "number"],
+      "optionalValue": "",
+      "default": "",
+      "version": ""
+    },
+    {
+      "name": "row-key",
+      "desc": "行数据的 Key，用来优化 Table 的渲染；类型为 String 时，支持多层访问：user.info.id，但不支持user.info[0].id，此种情况请使用Function。",
+      "type": ["Function(row)", "String"],
+      "optionalValue": "",
+      "default": "",
+      "version": ""
+    },
+    {
+      "name": "expand-row-keys",
+      "desc": "可以通过该属性设置 Table 目前的展开行，需要设置 row-key 属性才能使用，该属性为展开行的 keys 数组。",
+      "type": "Array",
+      "optionalValue": "",
+      "default": "",
+      "version": ""
+    },
+    {
+      "name": "expandable",
+      "desc": "对 tableColumn[type=expand] 的列有效，function 的返回值用来决定这一行的是否可以展开",
+      "type": "boolean function(row)",
+      "optionalValue": "",
+      "default": "",
+      "version": ""
+    },
+    {
+      "name": "sort-order",
+      "desc": "默认的排序列的 prop 和顺序。它的 prop 属性指定默认的排序的列，order 指定默认排序的顺序",
+      "type": "Object",
+      "optionalValue": "order: ascending, descending",
+      "default": "",
+      "version": ""
+    },
+    {
+      "name": "row-col-span",
+      "desc": "合并行合并列的计算方法",
+      "type": "Function({ row,column, rowIndex, columnIndex })",
+      "optionalValue": "",
+      "default": "",
+      "version": ""
+    },
+    {
+      "name": "selection",
+      "desc": "当前表格选中的值",
+      "type": "Array",
+      "optionalValue": "[]",
+      "default": ""
+    },
+    {
+      "name": "checkboxable",
+      "desc": "仅对 tableColumn[type=selection] 的列有效，function 的返回值用来决定这一行的 Checkbox 是否可以勾选",
+      "type": "boolean function(row)",
+      "optionalValue": "",
+      "default": "",
+      "version": ""
+    },
+    {
+      "name": "reserve-selection",
+      "desc": "仅对 tableColumn[type=selection] 的列有效，当为 true 是则会在数据更新之后保留之前选中的数据（需配合 index-of-selection 来使用）",
+      "type": "boolean",
+      "optionalValue": "",
+      "default": "false",
+      "version": ""
+    },
+    {
+      "name": "index-of-selection",
+      "desc": "仅对 tableColumn[type=selection] 的列有效，返回当前 row 在 selection 中的位置，当返回值 > -1 时则表示选中，否则则表示未选中",
+      "type": "number function(row, selection)",
+      "optionalValue": "",
+      "default": "",
+      "version": ""
+    },
+    {
+      "name": "show-overflow-tooltip",
+      "desc": "当内容过长时展示省略号，hover 时是否显示 tooltip 展示全部内容，也支持配置在 table-column 上",
+      "type": "boolean",
+      "optionalValue": "",
+      "default": "",
+      "version": ""
+    },
+    {
+      "name": "tooltip-props",
+      "desc": "当内容过长时，显示 tooltip 的透传属性",
+      "type": "object",
+      "optionalValue": "",
+      "default": "",
+      "version": ""
+    },
+    {
+      "name": "highlight-current-row",
+      "desc": "是否高亮当前行",
+      "type": "boolean",
+      "optionalValue": "",
+      "default": "",
+      "version": "0.3.0"
+    },
+    {
+      "name": "current-row-key",
+      "desc": "只读属性，当前行的 row-key",
+      "type": "string",
+      "optionalValue": "",
+      "default": "",
+      "version": "0.3.0"
+    }
+  ],
+  "events": [{
+      "name": "select",
+      "desc": "当用户手动勾选数据行的 Checkbox 时触发的事件",
+      "args": "(selection: Array,row: object)"
+    },
+    {
+      "name": "select-all",
+      "desc": "当用户手动勾选全选的 Checkbox 时触发的事件",
+      "args": "(selection: Array)"
+    },
+    {
+      "name": "selection-change",
+      "desc": "当选择项发生变化时会触发该事件",
+      "args": "(selection: Array)"
+    },
+    {
+      "name": "row-click",
+      "desc": "当某一行被点击时会触发该事件",
+      "args": "({ event: Event, row: Object, column: Object })"
+    },
+    {
+      "name": "row-mouse-enter",
+      "desc": "当某一行触发 mouseenter 事件时触发",
+      "args": "({ event , row })"
+    },
+    {
+      "name": "row-mouse-leave",
+      "desc": "当某一行触发 mouseleave 事件时触发",
+      "args": "({ event, row })"
+    },
+    {
+      "name": "cell-click",
+      "desc": "当某一单元格被点击时会触发该事件",
+      "args": "({ event, row, column })"
+    },
+    {
+      "name": "cell-mouse-enter",
+      "desc": "当某一单元格触发 mouseenter 事件时触发",
+      "args": "({ event, row, column, cell })"
+    },
+    {
+      "name": "cell-mouse-leave",
+      "desc": "当某一单元格触发 mouseleave 事件时触发",
+      "args": "({ event, row, column, cell })"
+    },
+    {
+      "name": "header-click",
+      "desc": "当某一列的表头被点击时触发该事件",
+      "args": "({ event, column })"
+    },
+    {
+      "name": "sort-change",
+      "desc": "当表格的排序条件发生变化的时候触发该事件。0.1.43 版本后推荐使用 change 事件",
+      "args": "({ column, prop, order })"
+    },
+    {
+      "name": "expand-change",
+      "desc": "当用户对某一行展开或者关闭的时候会触发该事件",
+      "args": "(row, expandedRows)"
+    },
+    {
+      "name": "change",
+      "desc": "当表格的筛选条件或排序条件发生变化时会触发该事件，参数为当前过滤条件 filters，当前排序条件 sorter。当筛选、排序条件不存在时对应的参数将为空 Object",
+      "args": "(filters: { [key: columnKey]: string[] }, sorter: { prop?: string, order?: 'ascending' | 'descending' , column?: Column }) => void",
+      "version": "0.1.43"
+    }
+  ],
+  "slots": [{
+      "name": "empty",
+      "desc": "空数据时展示"
+    },
+    {
+      "name": "loading",
+      "desc": "加载中展示"
+    }
+  ],
+  "methods": [{
+    "name": "doReflow()",
+    "desc": "对 Table 进行重新布局。当 Table 或其祖先元素由隐藏切换为显示时，可能需要调用此方法",
+    "args": ""
+  }],
+  "scopedSlots": [{
+    "name": "sortIcon",
+    "desc": "自定义排序 icon 展示<br/>order 为排序方式 <br/> change 则为触发排序的响应函数，详细请查看 <a href='https://ones.sankuai.com/ones/product/4348/workItem/requirement/detail/5360202' target='_blank'>Ones</a>",
+    "args": "{ <br />order?: 'ascending' | 'descending', <br />change: function ($event) <br />}",
+    "version": "0.3.5"
+  }]
+}

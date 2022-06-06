@@ -1,0 +1,129 @@
+{
+  "props": [
+    {
+      "name": "visible",
+      "desc": "<strong>受控</strong>，非必须，是否显示下拉",
+      "type": "boolean",
+      "optionalValue": "",
+      "default": "",
+      "version": ""
+    },
+    {
+      "name": "default-visible",
+      "desc": "默认是否显示下拉",
+      "type": "boolean",
+      "optionalValue": "",
+      "default": "",
+      "version": ""
+    },
+    {
+      "name": "value",
+      "desc": "当前选中项",
+      "type": "Array",
+      "optionalValue": "",
+      "default": "",
+      "version": ""
+    },
+    {
+      "name": "data",
+      "desc": "数据源",
+      "type": "Array",
+      "optionalValue": "",
+      "default": "[]",
+      "version": ""
+    },
+    {
+      "name": "label",
+      "desc": "选择标签",
+      "type": "String",
+      "optionalValue": "",
+      "default": "",
+      "version": ""
+    },
+    {
+      "name": "no-data-text",
+      "desc": "空数据时显示文案",
+      "type": "string",
+      "optionalValue": "",
+      "default": "'暂无数据'",
+      "version": ""
+    },
+    {
+      "name": "change-on-select",
+      "desc": "是否允许选择任意一级的选项",
+      "type": "boolean",
+      "optionalValue": "",
+      "default": "false",
+      "version": ""
+    },
+    {
+      "name": "expand-trigger",
+      "desc": "展开方式",
+      "type": "string",
+      "optionalValue": ["click", "hover"],
+      "default": "click",
+      "version": ""
+    },
+    {
+      "name": "formatter",
+      "desc": "格式化输入框中显示的内容,labels 为当前匹配到的 label 数组，selectedOptions 为当前选中的option数组，vlaue为当前级联的值",
+      "type": "function(labels, selectedOptions, value): string",
+      "optionalValue": "",
+      "default": "",
+      "version": ""
+    },
+    {
+      "name": "no-match-text",
+      "desc": "搜索条件无匹配时显示的文字",
+      "type": "string",
+      "optionalValue": "",
+      "default": "暂无搜索结果",
+      "version": ""
+    },
+    {
+      "name": "disabled",
+      "desc": "是否禁用",
+      "type": "boolean",
+      "optionalValue": "",
+      "default": "",
+      "version": ""
+    },
+    {
+      "name": "placeholder",
+      "desc": "输入框占位文本",
+      "type": "string",
+      "optionalValue": "",
+      "default": "'请选择'",
+      "version": ""
+    }
+  ],
+  "events": [
+    {
+      "name": "change",
+      "desc": "绑定值发生变化时触发",
+      "args": "function(value:array,selectedOptions:array)"
+    },
+    {
+      "name": "update:visible",
+      "desc": "下拉框显示/隐藏时触发",
+      "args": "function(visible: boolean)"
+    },
+    {
+      "name": "active-item-change",
+      "desc": "当 change-on-select 为 false 时，父级选项变化时触发，参数为各父级项组成的数组",
+      "args": "function(item:array)"
+    }
+  ],
+  "methods": [
+    {
+      "name": "focus()",
+      "desc": "使 cascader 获取焦点",
+      "args": ""
+    },
+    {
+      "name": "blur()",
+      "desc": "使 cascader 失去焦点",
+      "args": ""
+    }
+  ]
+}

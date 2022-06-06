@@ -8,7 +8,7 @@
     @mouseenter="handleMouseenter"
     @mouseleave="handleMouseleave"
   >
-    <mtd-tooltip v-bind="tooltipProps"
+    <wt-tooltip v-bind="tooltipProps"
       :disabled="!enabledTip" :content="tooltip"
       :placement="tooltipPlacement"
       tag="div"
@@ -29,15 +29,15 @@
         />
       </div>
       <div slot="content">{{ tooltip }}</div>
-    </mtd-tooltip>
-    <mtd-collapse-transition v-if="!isPopup"
+    </wt-tooltip>
+    <wt-expansion-transition v-if="!isPopup"
       @after-enter="handleAnimateEnd"
       @after-leave="handleAnimateEnd"
     >
       <ul :class="`${prefix}-content`" v-if="isMounted" v-show="isExpanded">
         <slot></slot>
       </ul>
-    </mtd-collapse-transition>
+    </wt-expansion-transition>
     <dropdown-menu v-if="isPopup" :visible="isExpanded" :lazy="lazy"
       :disabled="disabled" :placement="dropdownPlacement" :level="level"
       :popper-class="popperClass"
@@ -49,9 +49,9 @@
   </li>
 </template>
 <script>
-import MtdCollapseTransition from '@/transitions/collapse-transition';
+import WtExpansionTransition from '@/transitions/expansion-transition';
 import DropdownMenu from './drop';
-import MtdTooltip from '@components/tooltip';
+import WtTooltip from '@components/tooltip';
 import Icon from '@components/icon';
 import { CONFIG_PROVIDER,
   getPrefixCls,
@@ -59,7 +59,7 @@ import { CONFIG_PROVIDER,
 import { getProps, findVNodesFromSlot } from '@/utils/vnode';
 
 export default {
-  name: 'MtdSubmenu',
+  name: 'WtSubmenu',
   inject: {
     menu: 'menu',
     submenu: {
@@ -73,9 +73,9 @@ export default {
     },
   },
   components: {
-    MtdCollapseTransition,
+    WtExpansionTransition,
     DropdownMenu: DropdownMenu,
-    MtdTooltip,
+    WtTooltip,
     Icon,
   },
   props: {

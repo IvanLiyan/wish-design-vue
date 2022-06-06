@@ -1,0 +1,20 @@
+{
+  "props": [
+    {
+      "name": "value",
+      "desc": "当前面板值，必填",
+      "type": "any",
+      "optionalValue": "",
+      "default": "",
+      "version": ""
+    },
+    {
+      "name": "title",
+      "desc": "面板标题",
+      "type": "string",
+      "optionalValue": "",
+      "default": "",
+      "version": ""
+    }
+  ]
+}

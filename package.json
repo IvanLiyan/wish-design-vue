@@ -123,6 +123,7 @@
     "debounce": "^1.2.1",
     "deepmerge": "^4.2.2",
     "js-calendar": "^1.2.3",
+    "normalize-wheel": "^1.0.1",
     "popper.js": "^1.16.0",
     "resize-observer-polyfill": "^1.5.1",
     "throttle-debounce": "^1.1.0",

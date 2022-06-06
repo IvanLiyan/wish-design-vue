@@ -1,18 +1,14 @@
-@mixin step-status(
-  $color, $bgc, $borderColor,
-  $statusColor, $lineColor,
-  $descriptionColor, $iconColor
-) {
-  > .#{$prefix}-step-head-number{
+@mixin step-status($color, $bgc, $borderColor, $statusColor, $lineColor, $descriptionColor, $iconColor) {
+  > .#{$prefix}-step-head-number {
     color: $color;
-    border: $steps-circle-border-width solid $borderColor;
+    border: $stepper-circle-border-width solid $borderColor;
     background-color: $bgc;
   }
 
-  > .#{$prefix}-step-main-title{
+  > .#{$prefix}-step-main-title {
     color: $statusColor;
   }
-  > .#{$prefix}-step-head-line{
+  > .#{$prefix}-step-head-line {
     background-color: $lineColor;
   }
   > .#{$prefix}-step-main-description {
@@ -24,7 +20,7 @@
 }
 
 @mixin step-dot($size) {
-  .#{$prefix}-step-head-dot{
+  .#{$prefix}-step-head-dot {
     width: $size;
     height: $size;
   }
@@ -33,52 +29,52 @@
 @mixin step-direction($size, $lineHeight, $dotSize) {
   display: flex;
   flex-flow: column;
-  .#{$prefix}-step-head{
+  .#{$prefix}-step-head {
     flex-grow: 0;
     width: $size;
     height: 100%;
     left: 0;
     margin: 0;
-    &-line{
+    &-line {
       position: absolute;
-      width: $steps-line-size;
-      height: calc(100% - #{$size + $steps-line-padding-horizontal*2});
+      width: $stepper-line-size;
+      height: calc(100% - #{$size + $stepper-line-padding-horizontal * 2});
       top: -100%;
       bottom: 0;
-      left: ($size - $steps-line-size)/2;
-      margin-top: $size + $steps-line-padding-horizontal;
+      left: ($size - $stepper-line-size)/2;
+      margin-top: $size + $stepper-line-padding-horizontal;
       padding: 0;
     }
   }
   .#{$prefix}-step-main {
     text-align: left;
     position: absolute;
-    top: $size/2 - $lineHeight/2 - $steps-horizontal-statustext-margin-vertical;
-    left: $size + $steps-vertical-statustext-margin-horizontal;
+    top: $size/2 - $lineHeight/2 - $stepper-horizontal-statustext-margin-vertical;
+    left: $size + $stepper-vertical-statustext-margin-horizontal;
     margin: 0;
     &-title,
-    &-description{
+    &-description {
       padding-left: 0;
       padding-right: 0;
     }
     &-description {
-      font-size: $steps-vertical-circel-description-font-size;
-      line-height: $steps-vertical-circel-description-line-height;
-      font-weight: $steps-vertical-circel-description-font-weight;
-      padding: $steps-vertical-description-margin-vertical $steps-vertical-description-margin-horizontal;
+      font-size: $stepper-vertical-circel-description-font-size;
+      line-height: $stepper-vertical-circel-description-line-height;
+      font-weight: $stepper-vertical-circel-description-font-weight;
+      padding: $stepper-vertical-description-margin-vertical $stepper-vertical-description-margin-horizontal;
     }
   }
-  .#{$prefix}-step-dot{
-    .#{$prefix}-step-head-line{
-      height: calc(100% - #{$dotSize + $steps-line-padding-horizontal*2});
-      margin-top: $dotSize + $steps-line-padding-horizontal*2;
-      width: $steps-dot-line-size;
-      left: ($size - $steps-dot-line-size)/2;
+  .#{$prefix}-step-dot {
+    .#{$prefix}-step-head-line {
+      height: calc(100% - #{$dotSize + $stepper-line-padding-horizontal * 2});
+      margin-top: $dotSize + $stepper-line-padding-horizontal * 2;
+      width: $stepper-dot-line-size;
+      left: ($size - $stepper-dot-line-size)/2;
     }
     .#{$prefix}-step-main-description {
-      font-size: $steps-vertical-dot-description-font-size;
-      line-height: $steps-vertical-dot-description-line-height;
-      font-weight: $steps-vertical-dot-description-font-weight;
+      font-size: $stepper-vertical-dot-description-font-size;
+      line-height: $stepper-vertical-dot-description-line-height;
+      font-weight: $stepper-vertical-dot-description-font-weight;
     }
   }
 }
