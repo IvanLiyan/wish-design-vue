@@ -11,8 +11,9 @@
 :::include(src="./doc/placement.vue")
 :::
 
-### 侧滑表单
-:::include(src="./doc/form.vue")
-:::
 ## API
 <api-doc name="Drawer" :doc="require('./api.json')"></api-doc>
+
+## QA测试
+:::include(src="./doc/tests.vue")
+:::
