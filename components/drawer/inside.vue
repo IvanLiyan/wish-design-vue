@@ -8,7 +8,7 @@
   >
     <div :class="`${prefix}-close`" v-if="closable"
       @click="handleClickClose">
-      <Icon name="close" />
+      <Icon name="x" />
     </div>
     <div :class="`${prefix}-header`" v-if="title || $slots.title">
       <slot name="title">

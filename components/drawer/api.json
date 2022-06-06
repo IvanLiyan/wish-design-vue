@@ -56,14 +56,6 @@
 		"version": ""
 	},
 	{
-		"name": "lock-scroll",
-		"desc": "是否在 Drawer 出现时将 body 滚动锁定",
-		"type": "boolean",
-		"optionalValue": "",
-		"default": "true",
-		"version": ""
-	},
-	{
 		"name": "destroy-on-close",
 		"desc": "是否在关闭时销毁 Drawer 里的子元素",
 		"type": "boolean",
@@ -77,22 +69,6 @@
 		"type": "string",
 		"optionalValue": ["top", "right", "bottom", "left"],
 		"default": "right",
-		"version": ""
-	},
-	{
-		"name": "get-popup-container",
-		"desc": "获取 Drawer 挂载的 HTML 节点方法，需要返回 Element 对象",
-		"type": "function (): Element",
-		"optionalValue": "",
-		"default": " document.body",
-		"version": ""
-	},
-	{
-		"name": "append-to-container",
-		"desc": " 是否将弹出框插入至 getPopupContainer 属性获取到的元素中。false 时则表示插入至当前节点",
-		"type": "boolean",
-		"optionalValue": "",
-		"default": "true",
 		"version": ""
 	}],
   "events":[{
