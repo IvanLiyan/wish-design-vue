@@ -47,7 +47,7 @@
     {
       "name": "change",
       "desc": "$t('checkbox.api.change')",
-      "args": "true/false"
+      "args": "true|false"
     }
   ]
 }
