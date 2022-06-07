@@ -1,5 +1,5 @@
 <template>
-  <mtd-tooltip v-bind="tooltipProps"
+  <wt-stooltip v-bind="tooltipProps"
     tag="li"
     :class="{
       [prefix]: true,
@@ -22,13 +22,13 @@
       <span :class="`${prefix}-text`" v-if="!isCollapse"><slot></slot></span>
     </a>
     <div slot="content">
-      <span v-if="!!tooltip">{{ tooltip }}</span>
+      <span v-if="!!stooltip">{{ stooltip }}</span>
       <slot v-else-if="isCollapse"></slot>
     </div>
-  </mtd-tooltip>
+  </wt-stooltip>
 </template>
 <script>
-import MtdTooltip from '@components/tooltip';
+import WtStooltip from '@components/stooltip';
 import Link from './link';
 import {
   CONFIG_PROVIDER,
@@ -36,13 +36,13 @@ import {
 } from '@/utils/config';
 
 export default {
-  name: 'MtdMenuItem',
+  name: 'WtSmenuItem',
   components: {
-    MtdTooltip,
+    WtStooltip,
   },
   inject: {
-    menu: 'menu',
-    submenu: {
+    smenu: 'smenu',
+    ssubmenu: {
       default: '',
     },
     config: {
@@ -62,11 +62,11 @@ export default {
       type: Object,
     },
     enabledTooltip: Boolean,
-    tooltip: String,
+    stooltip: String,
   },
   computed: {
     prefix () {
-      return this.config.getPrefixCls('menu-item');
+      return this.config.getPrefixCls('smenu-item');
     },
     listeners () {
       return {
@@ -74,29 +74,29 @@ export default {
       };
     },
     active () {
-      return this.menu.isActive(this);
+      return this.smenu.isActive(this);
     },
     isCollapse () {
-      return this.level === 0 && this.menu.isCollapse;
+      return this.level === 0 && this.smenu.isCollapse;
     },
     parent () {
-      return this.submenu || this.menu;
+      return this.ssubmenu || this.smenu;
     },
     level () {
       return this.parent.level + 1;
     },
     paddingLeft () {
-      return this.menu.baseIndent + this.level * this.menu.indent;
+      return this.smenu.baseIndent + this.level * this.smenu.indent;
     },
     router () {
-      return this.menu.router || this.route;
+      return this.smenu.router || this.route;
     },
     tag () {
       return this.router ? 'router-link' : Link;
     },
     link () {
       return this.router
-        ? (this.menu.router ? this.name : this.route)
+        ? (this.smenu.router ? this.name : this.route)
         : this.href;
     },
     others () {
@@ -107,11 +107,11 @@ export default {
       };
     },
     style () {
-      return this.menu.getItemStyled(this);
+      return this.smenu.getItemStyled(this);
     },
     enabledTip () {
-      return this.disabled ? (!!this.tooltip && this.enabledTooltip) : (this.isCollapse ||
-         (!!this.tooltip && this.menu.mode !== 'horizontal'));
+      return this.disabled ? (!!this.stooltip && this.enabledTooltip) : (this.isCollapse ||
+         (!!this.stooltip && this.smenu.mode !== 'horizontal'));
     },
     placement () {
       if (!this.tooltipProps) {
@@ -130,21 +130,21 @@ export default {
   },
   methods: {
     emitActive () {
-      this.submenu && this.submenu.$emit('activeChange', this);
-      this.menu.$emit('item-matched');
+      this.ssubmenu && this.ssubmenu.$emit('activeChange', this);
+      this.smenu.$emit('item-matched');
     },
     handleMouseenter () {
-      this.parent.$emit('submenu-enter');
+      this.parent.$emit('ssubmenu-enter');
     },
     handleMouseleave () {
-      this.parent.$emit('submenu-leave');
+      this.parent.$emit('ssubmenu-leave');
     },
     handleClick () {
       if (this.disabled) {
         return;
       }
-      this.menu.$emit('menuItemClick', this);
-      this.submenu && this.submenu.$emit('menuItemClick', this);
+      this.smenu.$emit('menuItemClick', this);
+      this.ssubmenu && this.ssubmenu.$emit('menuItemClick', this);
     },
   },
 };

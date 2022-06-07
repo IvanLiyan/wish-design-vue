@@ -1,9 +1,9 @@
 @import "./common/var.scss";
 @import "./mixins/mixins.scss";
-@import "./menu.scss";
-@import "./submenu.scss";
-@import "./menu-item.scss";
-@import "./tooltip.scss";
+@import "./smenu.scss";
+@import "./ssubmenu.scss";
+@import "./smenu-item.scss";
+@import "./stooltip.scss";
 
 @include c(sidebar){
   background: $sidebar-bgc;
@@ -55,14 +55,14 @@
   &-menus{
     height: calc(100% - #{$sidebar-header-height});
     overflow: auto;
-    > .#{$prefix}-menu{
+    > .#{$prefix}-smenu{
       background-color: transparent;
     }
   }
 
   &-dark {
-    background-color: $menu-dark-bgc;
-    color: $menu-dark-color;
+    background-color: $smenu-dark-bgc;
+    color: $smenu-dark-color;
   }
   &-dark &-header, &-dark &-header-icon {
     color: $color-white;

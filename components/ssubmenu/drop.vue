@@ -53,11 +53,11 @@ export default {
   },
   computed: {
     prefix () {
-      return this.config.getPrefixCls('menu');
+      return this.config.getPrefixCls('smenu');
     },
     dropClassName () {
       const { prefix } = this;
-      const submenu = this.config.getPrefixCls('submenu');
+      const submenu = this.config.getPrefixCls('ssubmenu');
       return [
         prefix, `${prefix}-light`, `${prefix}-vertical`,
         `${submenu}-dropdown`, this.popperClass,

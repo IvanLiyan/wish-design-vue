@@ -1,5 +1,5 @@
 <template>
-  <ul role="menu" :class="{
+  <ul role="smenu" :class="{
     [`${prefix}`]: true,
     [`${prefix}-collapse`]: isCollapse,
     [`${prefix}-${theme}`]: theme,
@@ -14,14 +14,14 @@ import { CONFIG_PROVIDER,
 } from '@/utils/config';
 
 export default {
-  name: 'MtdMenu',
+  name: 'WtSmenu',
   inheritAttrs: false,
   model: {
     prop: 'activeName',
   },
   provide () {
     return {
-      menu: this,
+      smenu: this,
     };
   },
   props: {
@@ -81,7 +81,7 @@ export default {
   },
   computed: {
     prefix () {
-      return this.config.getPrefixCls('menu');
+      return this.config.getPrefixCls('smenu');
     },
     isCollapse () {
       return this.collapse && this.mode === 'inline';
@@ -120,8 +120,8 @@ export default {
     isActive (menuItem) {
       return this.activeName === menuItem.name;
     },
-    isExpanded (submenu) {
-      return this.expanded.indexOf(submenu.name) > -1;
+    isExpanded (ssubmenu) {
+      return this.expanded.indexOf(ssubmenu.name) > -1;
     },
     getItemStyled (item) {
       if ((this.mode === 'inline' && !this.isCollapse) ||
@@ -166,10 +166,10 @@ export default {
     getParentKeys (it) {
       const keys = [];
       function flat (item) {
-        const { submenu } = item;
+        const { ssubmenu } = item;
         keys.push(item.name);
-        if (submenu) {
-          flat(submenu);
+        if (ssubmenu) {
+          flat(ssubmenu);
         }
       }
       flat(it);

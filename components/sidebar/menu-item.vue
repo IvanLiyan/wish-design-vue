@@ -1,18 +1,18 @@
 <template>
-  <wt-menu-item v-bind="rest" :tooltip-props="tooltipProps"
+  <wt-smenu-item v-bind="rest" :tooltip-props="tooltipProps"
     :tooltip="item.tooltip" :enabled-tooltip="item.enabledTooltip"
   >
-    <!-- <i v-if="item.icon" :class="item.icon" slot="icon"></i> -->
+    <i v-if="item.icon" :class="item.icon" slot="icon"></i>
     <slot :item="item">{{ item.title }}</slot>
-  </wt-menu-item>
+  </wt-smenu-item>
 </template>
 <script>
-import WtMenuItem from '@components/menu-item';
+import WtSmenuItem from '@components/smenu-item';
 
 export default {
-  name: 'MenuItem',
+  name: 'SmenuItem',
   components: {
-    WtMenuItem,
+    WtSmenuItem,
   },
   // inheritAttrs: false,
   props: {

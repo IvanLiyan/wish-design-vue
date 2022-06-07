@@ -34,10 +34,6 @@ import Menu from 'components/menu';
 import MenuItem from 'components/menu-item';
 import Submenu from 'components/submenu';
 import Tooltip from 'components/tooltip';
-import Sidebar from 'components/sidebar';
-import Smenu from 'components/smenu';
-import SmenuItem from 'components/smenu-item';
-import Ssubmenu from 'components/ssubmenu';
 import Expansion from 'components/expansion';
 import ExpansionItem from 'components/expansion-item';
 import Breadcrumb from 'components/breadcrumb';
@@ -60,6 +56,10 @@ import Timeline from 'components/timeline';
 import TimelineItem from 'components/timeline-item';
 import Cascader from 'components/cascader';
 import Drawer from 'components/drawer';
+import Sidebar from 'components/sidebar';
+import Smenu from 'components/smenu';
+import SmenuItem from 'components/smenu-item';
+import Ssubmenu from 'components/ssubmenu';
 import ExpansionTransition from './transitions/expansion-transition';
 
 const components = [
@@ -98,10 +98,6 @@ const components = [
   MenuItem,
   Submenu,
   Tooltip,
-  Sidebar,
-  Smenu,
-  SmenuItem,
-  Ssubmenu,
   Expansion,
   ExpansionItem,
   Breadcrumb,
@@ -124,6 +120,10 @@ const components = [
   TimelineItem,
   Cascader,
   Drawer,
+  Sidebar,
+  Smenu,
+  SmenuItem,
+  Ssubmenu,
   ExpansionTransition,
 ];
 
@@ -183,10 +183,6 @@ export {
   MenuItem,
   Submenu,
   Tooltip,
-  Sidebar,
-  Smenu,
-  SmenuItem,
-  Ssubmenu,
   Expansion,
   ExpansionItem,
   Breadcrumb,
@@ -209,6 +205,10 @@ export {
   TimelineItem,
   Cascader,
   Drawer,
+  Sidebar,
+  Smenu,
+  SmenuItem,
+  Ssubmenu,
   ExpansionTransition,
 };
 

@@ -5,6 +5,7 @@
   &-title {
     position: relative;
     padding: 0 $smenu-padding-horizontal;
+    padding-left: 17px !important;
     display: flex;
     align-items: center;
     cursor: pointer;
@@ -21,8 +22,10 @@
     font-size: $smenu-item-icon-size;
     min-width: $smenu-item-icon-size;
     flex: 0 0 auto;
-    display: inline-block;
-    margin-right: 8px;
+    margin-right: 9px;
+    i {
+      display: block;
+    }
   }
   &-direction {
     flex: 0 0 auto;
@@ -54,7 +57,7 @@
   .#{$prefix}-ssubmenu{
     position: relative;
     &-active {
-      >.#{$prefix}-tooltip-rel>.#{$prefix}-ssubmenu-title{
+      >.#{$prefix}-stooltip-rel>.#{$prefix}-ssubmenu-title{
         &:before{
           display: none;
         }

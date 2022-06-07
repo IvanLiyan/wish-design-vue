@@ -1,7 +1,7 @@
 @import "./common/var.scss";
 @import "./mixins/mixins.scss";
-@import "./mixins/menu.scss";
-@include c(menu){
+@import "./mixins/smenu.scss";
+@include c(smenu){
   list-style: none;
   padding: 0;
   margin: 0;
@@ -22,7 +22,7 @@
   &-horizontal {
     white-space: nowrap;
     line-height: $smenu-item-horizontal-height;
-    .#{$prefix}-menu-item,
+    .#{$prefix}-smenu-item,
     .#{$prefix}-ssubmenu {
       display: inline-block;
       vertical-align: top;
@@ -30,7 +30,7 @@
     .#{$prefix}-ssubmenu-direction{
       margin-left: 0;
     }
-    // .#{$prefix}-submenu {
+    // .#{$prefix}-ssubmenu {
     //   &-direction {
     //     position: relative;
     //     margin: 0;
@@ -46,19 +46,19 @@
   }
 }
 // theme light
-@include c(menu){
+@include c(smenu){
   &-light{
     .#{$prefix}-smenu-item-active, .#{$prefix}-ssubmenu-active >.#{$prefix}-tooltip-rel>.#{$prefix}-ssubmenu-title {
-      &::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 3px;
-        height: 100%;
-        background: $smenu-light-active-color;
-        z-index: 1;
-      }
+      // &::before {
+      //   content: '';
+      //   position: absolute;
+      //   top: 0;
+      //   left: 0;
+      //   width: 3px;
+      //   height: 100%;
+      //   background: $smenu-light-active-color;
+      //   z-index: 1;
+      // }
     }
     @include smenu-theme(
       $smenu-light-color,
@@ -95,7 +95,7 @@
 // theme dark
 @include c(smenu) {
   &-dark{
-    @include menu-theme(
+    @include smenu-theme(
       $smenu-dark-color,
       $smenu-dark-bgc,
       $smenu-dark-hover-color,
@@ -113,7 +113,7 @@
 }
 
 // collapse
-@include c(menu) {
+@include c(smenu) {
   &.#{$prefix}-smenu-collapse {
     width: $smenu-collapse-width;
   }

@@ -7,10 +7,6 @@
       <span :class="`${prefix}-header-title`">
         <slot name="title">{{ title }}</slot>
       </span>
-      <span :class="`${prefix}-header-icon`" @click="toggle">
-        <Icon :name="collapse ? 'expand' : 'collapse'"
-          :class="`${menuPrefix}-title-backward`" />
-      </span>
     </div>
     <div :class="`${prefix}-smenus`">
       <slot name="smenu">
@@ -53,10 +49,10 @@
   </div>
 </template>
 <script>
-import WtMenu from '@components/smenu';
+import WtSmenu from '@components/smenu';
 import Icon from '@components/icon';
 import Ssubmenu from './ssubmenu.vue';
-import MenuItem from './menu-item';
+import SmenuItem from './menu-item';
 import {
   CONFIG_PROVIDER,
   getPrefixCls,
@@ -65,9 +61,9 @@ import {
 export default {
   name: 'WtSidebar',
   components: {
-    WtMenu,
+    WtSmenu,
     Ssubmenu,
-    MenuItem,
+    SmenuItem,
     Icon,
   },
   inheritAttrs: false,

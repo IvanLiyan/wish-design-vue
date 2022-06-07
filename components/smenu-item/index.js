@@ -1,6 +1,6 @@
-import MenuItem from './menu-item.vue';
+import SmenuItem from './smenu-item.vue';
 /* istanbul ignore next */
-MenuItem.install = function (Vue) {
-  Vue.component(MenuItem.name, MenuItem);
+SmenuItem.install = function (Vue) {
+  Vue.component(SmenuItem.name, SmenuItem);
 };
-export default MenuItem;
+export default SmenuItem;

@@ -1,11 +1,12 @@
 @import "./common/var.scss";
 @import "./mixins/mixins.scss";
 @include c(smenu-item) {
-  // height: $menu-item-height;
+  // height: $smenu-item-height;
   position: relative;
   cursor: pointer;
   &-title{
     padding: 0 $smenu-padding-horizontal;
+    padding-left: 43px !important;
     text-decoration: none;
     display: flex;
     align-items: center;

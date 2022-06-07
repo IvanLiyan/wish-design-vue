@@ -28,16 +28,13 @@ export default {
           title: '二级菜单',
           id: '1-2',
           route: '/components/sidebar/1-2',
-        }, {
-          title: '二级菜单',
-          id: '1-3',
-          route: '/components/sidebar/1-3',
         }],
       }, {
-        icon: 'wticon wticon-cart-o',
+        icon: 'home',
         title: '一级菜单',
         id: '2',
         children: [{
+          icon: 'home',
           title: '二级菜单',
           id: '2-1',
           route: '/components/sidebar/2-1',
@@ -45,21 +42,49 @@ export default {
           title: '二级菜单',
           id: '2-2',
           route: '/components/sidebar/2-2',
-        }, {
-          title: '二级菜单',
-          id: '2-3',
-          route: '/components/sidebar/2-3',
         }],
       }, {
-        icon: 'wticon wticon-time-o',
+        icon: 'home',
         title: '一级菜单',
         id: '3',
-        route: '/components/sidebar/3',
+        children: [{
+          icon: 'home',
+          title: '二级菜单',
+          id: '3-1',
+          route: '/components/sidebar/2-1',
+        }, {
+          title: '二级菜单',
+          id: '3-2',
+          route: '/components/sidebar/2-2',
+        }],
       }, {
-        icon: 'wticon wticon-calendar-o',
+        icon: 'home',
         title: '一级菜单',
         id: '4',
-        route: '/components/sidebar/4',
+        children: [{
+          icon: 'home',
+          title: '二级菜单',
+          id: '4-1',
+          route: '/components/sidebar/2-1',
+        }, {
+          title: '二级菜单',
+          id: '4-2',
+          route: '/components/sidebar/2-2',
+        }],
+      }, {
+        icon: 'home',
+        title: '一级菜单',
+        id: '5',
+        children: [{
+          icon: 'home',
+          title: '二级菜单',
+          id: '5-1',
+          route: '/components/sidebar/2-1',
+        }, {
+          title: '二级菜单',
+          id: '5-2',
+          route: '/components/sidebar/2-2',
+        }],
       }],
     };
   },
