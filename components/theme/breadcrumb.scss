@@ -72,6 +72,8 @@ $breadcrumb-large-sepreate-spacing: $s-2 !default;
   @include clearfix;
   @include e(item) {
     float: left;
+    display: flex;
+    align-items: center;
     @include e(inner) {
       @include text-ellipsis;
       max-width: $breadcrumb-item-max-width;

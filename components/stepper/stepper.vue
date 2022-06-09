@@ -1,5 +1,5 @@
 <template>
-  <div :class="[prefix, !isCenter && `${prefix}-right`, direction && `${prefix}-${direction}`]">
+  <div :class="[prefix, `${prefix}-right`, direction && `${prefix}-${direction}`]">
     <slot></slot>
   </div>
 </template>
@@ -8,28 +8,23 @@ import { CONFIG_PROVIDER, getPrefixCls } from '@/utils/config';
 export default {
   name: 'WtStepper',
   props: {
-    dot: {
-      type: Boolean,
-      default: false,
-    },
+    // 每个step间距
     space: [String, Number],
+    // 方向
     direction: {
       type: String,
       default: 'horizontal',
     },
+    // 设置当前激活步骤
     active: {
       type: Number,
       default: 0,
     },
+    // 设置当前步骤状态
     status: {
       type: String,
       default: 'process',
     },
-    isCenter: {
-      type: Boolean,
-      default: false,
-    },
-    simple: Boolean,
   },
   provide() {
     return {
@@ -46,6 +41,7 @@ export default {
   },
   data() {
     return {
+      // 每个具体步骤
       stepper: [],
     };
   },
@@ -55,6 +51,7 @@ export default {
     },
   },
   watch: {
+    // 监听step获取index
     stepper(stepper) {
       stepper.forEach((child, index) => {
         child.index = index;
@@ -66,9 +63,15 @@ export default {
     this.$on('removeStep', this.remove);
   },
   methods: {
+    /**
+     * 添加步骤
+     */
     add(step) {
       this.stepper.push(step);
     },
+    /**
+     * 删除步骤
+     */
     remove(step) {
       const index = this.stepper.indexOf(step);
       if (index > -1) {

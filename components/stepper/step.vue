@@ -4,7 +4,6 @@
       prefix,
       {
         [`${prefix}-flex`]: !space,
-        [`${prefix}-dot`]: dot,
       },
     ]"
     :style="style"
@@ -17,19 +16,9 @@
         },
       ]"
     >
-      <div
-        :class="[
-          `${prefix}-head-line`,
-          {
-            [`${prefix}-head-line-dot`]: dot && direction === 'vertical',
-          },
-        ]"
-      ></div>
+      <div :class="[`${prefix}-head-line`]"></div>
       <div v-if="icon || $slots.icon" :class="`${prefix}-head-icon`">
         <slot name="icon"><wt-icon :name="icon" /></slot>
-      </div>
-      <div v-else-if="dot" :class="`${prefix}-head-number`" :style="{ border: 'none', background: 'none' }">
-        <div :class="`${prefix}-head-dot`"></div>
       </div>
       <div v-else :class="`${prefix}-head-number`">
         <span v-if="status === 'process' || status === 'wait'">
@@ -62,13 +51,19 @@ import { CONFIG_PROVIDER, getPrefixCls, getIconCls } from '@/utils/config';
 export default {
   name: 'Step',
   props: {
+    // 索引
     index: Number,
+    // 标题
     title: String,
+    // icon
     icon: String,
+    // 描述
     description: String,
+    // 每个步骤状态
     status: String,
+    // 方向
     direction: String,
-    dot: Boolean,
+    // 步骤间距
     space: [Number, String],
   },
   inject: {
@@ -84,9 +79,7 @@ export default {
     prefix() {
       return this.config.getPrefixCls('step');
     },
-    iconPrefix() {
-      return this.config.getIconCls;
-    },
+    // 设置步骤方向间距等样式
     style() {
       const size = this.space;
       const space = typeof size === 'number' ? size + 'px' : size;
@@ -95,6 +88,7 @@ export default {
       }
       return { width: space };
     },
+    // 不同状态icon
     currentIcon() {
       if (this.icon) {
         return this.icon;
@@ -110,6 +104,7 @@ export default {
           return 'check-circle';
       }
     },
+    // 不同icon样式
     currentIconColor() {
       switch (this.status) {
         case 'error':

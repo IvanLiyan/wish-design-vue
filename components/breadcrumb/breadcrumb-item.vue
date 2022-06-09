@@ -3,15 +3,7 @@
     <component :is="tag" v-bind="$attrs" :class="`${breadcrumbPrefix}-inner`">
       <slot></slot>
     </component>
-    <wt-icon
-      v-if="separatorClass || !separator"
-      :class="[`${breadcrumbPrefix}-separator`]"
-      name="chevron-right"
-      color="#0E161C"
-      :width="12"
-      :height="12"
-    />
-    <span v-else :class="`${breadcrumbPrefix}-separator`">{{ separator }}</span>
+    <wt-icon :class="[`${breadcrumbPrefix}-separator`]" name="chevron-right" color="#0E161C" :width="12" :height="12" />
   </span>
 </template>
 <script>
@@ -21,15 +13,11 @@ export default {
   name: 'WtBreadcrumbItem',
   inheritAttrs: false,
   props: {
+    // 动态组件名
     tag: {
       type: [String, Object],
       default: 'span',
     },
-  },
-  data() {
-    return {
-      slotText: this.$slots.default[0].text,
-    };
   },
   computed: {
     prefix() {
@@ -37,15 +25,6 @@ export default {
     },
     breadcrumbPrefix() {
       return this.config.getPrefixCls('breadcrumb');
-    },
-    getIcon() {
-      return this.config.getIconCls;
-    },
-    separator() {
-      return this.breadcrumb.separator;
-    },
-    separatorClass() {
-      return this.breadcrumb.separatorClass;
     },
   },
   inject: {
@@ -61,6 +40,9 @@ export default {
     },
   },
   methods: {
+    /**
+     * 跳转链接
+     */
     toLink(event) {
       console.log(event);
     },
