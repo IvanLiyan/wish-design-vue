@@ -1,0 +1,32 @@
+@import "./common/var.scss";
+@import "./mixins/mixins.scss";
+@import "./mixins/stooltip.scss";
+
+@include c(stooltip){
+  @include stooltip-theme(
+    $stooltip-color,
+    $stooltip-bgc,
+    $stooltip-border-width,
+    $stooltip-border-color
+  );
+  line-height: $stooltip-line-height;
+  padding: $stooltip-padding-vertical $stooltip-padding-horizontal;
+  font-size: $stooltip-font-size;
+  max-width: $stooltip-max-width;
+  border-radius: $stooltip-border-radius;
+  font-weight: $stooltip-font-weight;
+  word-wrap: break-word;
+  &-small{
+    padding: $stooltip-small-padding-vertical $stooltip-small-padding-horizontal;
+    font-size: $stooltip-small-font-size;
+    line-height: $stooltip-small-line-height;
+  }
+  &-light{
+    @include stooltip-theme(
+      $stooltip-light-color,
+      $stooltip-light-bgc,
+      $stooltip-light-border-width,
+      $stooltip-light-border-color
+    );
+  }
+}

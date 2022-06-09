@@ -1,0 +1,78 @@
+@mixin smenu-theme (
+  $color, $bgc,
+  $hover-color, $hover-bgc,
+  $active-color, $active-bgc,
+  $disabled-color, $disabled-bgc, $disabled-opacity,
+  $horizontal-hover-bgc,
+  $horizontal-active-bgc
+) {
+    color: $color;
+    background: $bgc;
+
+    .#{$prefix}-smenu-item-title, .#{$prefix}-ssubmenu-title{
+      &:hover, &.hover{
+        background: $hover-bgc;
+        color: $hover-color;
+      }
+    }
+    &.#{$prefix}-ssubmenu-dropdown .#{$prefix}-ssubmenu-expanded {
+      background: $hover-bgc;
+      color: $hover-color;
+    }
+    .#{$prefix}-smenu-item-active {
+      .#{$prefix}-smenu-item-title{
+        color: $active-color;
+        background: $active-bgc;
+        &:hover, &.hover{
+          color: $active-color;
+          background: $active-bgc;
+        }
+      }
+    }
+    .#{$prefix}-ssubmenu-active{
+      > .#{$prefix}-stooltip-rel > .#{$prefix}-ssubmenu-title{
+        color: $active-color;
+        background: $active-bgc;
+      }
+    }
+
+    .#{$prefix}-smenu-item-disabled .#{$prefix}-smenu-item-title,
+    .#{$prefix}-ssubmenu-disabled > .#{$prefix}-stooltip-rel >.#{$prefix}-ssubmenu-title
+    {
+      color: $disabled-color;
+      background: $disabled-bgc;
+      opacity: $disabled-opacity;
+      cursor: not-allowed;
+      &:hover, &.hover{
+        color: $disabled-color;
+        background: $disabled-bgc;
+      }
+    }
+    .#{$prefix}-smenu-item-active.#{$prefix}-smenu-item-disabled .#{$prefix}-smenu-item-title{
+      color: $active-color;
+      background: $active-bgc;
+      opacity: $disabled-opacity;
+    }
+
+
+    // 水平
+    &.#{$prefix}-smenu-horizontal{
+      .#{$prefix}-smenu-item-title, .#{$prefix}-ssubmenu-title{
+        &:hover, &.hover{
+          background: $horizontal-hover-bgc;
+        }
+      }
+      .#{$prefix}-smenu-item-active {
+        .#{$prefix}-smenu-item-title{
+          background: $horizontal-active-bgc;
+          &:hover, &.hover{
+            background: $horizontal-active-bgc;
+          }
+        }
+      }
+      .#{$prefix}-ssubmenu-active >.#{$prefix}-stooltip-rel .#{$prefix}-ssubmenu-title{
+        color: $active-color;
+        background: $horizontal-active-bgc;
+      }
+    }
+}

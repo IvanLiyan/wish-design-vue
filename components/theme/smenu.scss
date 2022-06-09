@@ -1,0 +1,136 @@
+@import "./common/var.scss";
+@import "./mixins/mixins.scss";
+@import "./mixins/smenu.scss";
+@include c(smenu){
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  transition: all .3s, width .3s;
+  width: 100%;
+  text-align: left;
+  line-height: $smenu-item-height;
+  font-size: 0;
+  &-vertical {
+    .#{$prefix}-ssubmenu {
+      &-direction {
+        transform: rotateZ(-90deg);
+      }
+    }
+  }
+
+  // 水平样式
+  &-horizontal {
+    white-space: nowrap;
+    line-height: $smenu-item-horizontal-height;
+    .#{$prefix}-smenu-item,
+    .#{$prefix}-ssubmenu {
+      display: inline-block;
+      vertical-align: top;
+    }
+    .#{$prefix}-ssubmenu-direction{
+      margin-left: 0;
+    }
+    // .#{$prefix}-ssubmenu {
+    //   &-direction {
+    //     position: relative;
+    //     margin: 0;
+    //   }
+    //   &-title {
+    //     padding: 0 12px;
+    //   }
+    //   &-dropdown-horizontal  {
+    //     top: 100%;
+    //     left: 0;
+    //   }
+    // }
+  }
+}
+// theme light
+@include c(smenu){
+  &-light{
+    .#{$prefix}-smenu-item-active, .#{$prefix}-ssubmenu-active >.#{$prefix}-tooltip-rel>.#{$prefix}-ssubmenu-title {
+      // &::before {
+      //   content: '';
+      //   position: absolute;
+      //   top: 0;
+      //   left: 0;
+      //   width: 3px;
+      //   height: 100%;
+      //   background: $smenu-light-active-color;
+      //   z-index: 1;
+      // }
+    }
+    @include smenu-theme(
+      $smenu-light-color,
+      $smenu-light-bgc,
+      $smenu-light-hover-color,
+      $smenu-light-hover-bgc,
+      $smenu-light-active-color,
+      $smenu-light-active-bgc,
+      $smenu-light-disabled-color,
+      $smenu-light-disabled-bgc,
+      $smenu-light-disabled-opacity,
+
+      $smenu-light-horizontal-hover-bgc,
+      $smenu-light-horizontal-active-bgc
+    );
+    &.#{$prefix}-smenu-horizontal{
+      .#{$prefix}-smenu-item-active, .#{$prefix}-ssubmenu-active>.#{$prefix}-tooltip-rel>.#{$prefix}-ssubmenu-title{
+        position: relative;
+        &:before{
+          content: '';
+          position: absolute;
+          top: auto;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          width: 100%;
+          height: 3px;
+        }
+      }
+    }
+  }
+}
+
+// theme dark
+@include c(smenu) {
+  &-dark{
+    @include smenu-theme(
+      $smenu-dark-color,
+      $smenu-dark-bgc,
+      $smenu-dark-hover-color,
+      $smenu-dark-hover-bgc,
+      $smenu-dark-active-color,
+      $smenu-dark-active-bgc,
+      $smenu-dark-disabled-color,
+      $smenu-dark-disabled-bgc,
+      $smenu-dark-disabled-opacity,
+
+      $smenu-dark-horizontal-hover-bgc,
+      $smenu-dark-horizontal-active-bgc
+    )
+  }
+}
+
+// collapse
+@include c(smenu) {
+  &.#{$prefix}-smenu-collapse {
+    width: $smenu-collapse-width;
+  }
+  &-collapse{
+    .#{$prefix}-ssubmenu-icon,
+    .#{$prefix}-smenu-item-icon {
+      width: 100%;
+      padding: 0;
+      margin: 0;
+    }
+    .#{$prefix}-smenu-item-title, .#{$prefix}-ssubmenu-title{
+      $padding: ($smenu-collapse-width - $smenu-item-icon-size) / 2;
+      padding: 0 $padding!important;
+      max-width: 100%;
+    }
+    .#{$prefix}-ssubmenu-direction{
+      display: none;
+    }
+  }
+}

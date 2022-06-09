@@ -48,6 +48,11 @@
             "cnName": "菜单"
           },
           {
+            "path": "sidebar",
+            "name": "Sidebar",
+            "cnName": "侧边栏"
+          },
+          {
             "path": "cascader",
             "name": "Cascader",
             "cnName": "级联选择"

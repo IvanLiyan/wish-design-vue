@@ -56,6 +56,10 @@ import Timeline from 'components/timeline';
 import TimelineItem from 'components/timeline-item';
 import Cascader from 'components/cascader';
 import Drawer from 'components/drawer';
+import Sidebar from 'components/sidebar';
+import Smenu from 'components/smenu';
+import SmenuItem from 'components/smenu-item';
+import Ssubmenu from 'components/ssubmenu';
 import ExpansionTransition from './transitions/expansion-transition';
 
 const components = [
@@ -116,6 +120,10 @@ const components = [
   TimelineItem,
   Cascader,
   Drawer,
+  Sidebar,
+  Smenu,
+  SmenuItem,
+  Ssubmenu,
   ExpansionTransition,
 ];
 
@@ -197,6 +205,10 @@ export {
   TimelineItem,
   Cascader,
   Drawer,
+  Sidebar,
+  Smenu,
+  SmenuItem,
+  Ssubmenu,
   ExpansionTransition,
 };
 
