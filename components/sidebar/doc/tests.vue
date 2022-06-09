@@ -2,6 +2,7 @@
   <div class="demo-sidebar-container">
     <div class="demo-sidebar-aside">
       <wt-sidebar :data="data"
+        :collapse="true"
         :active-key.sync="activeKey"
         @menu-item-click="handleItemClick"
         @menu-expand-change="handleExpandChange" />

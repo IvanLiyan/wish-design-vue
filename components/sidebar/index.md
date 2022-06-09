@@ -37,3 +37,7 @@
 | rel | 同 a 标签 rel 属性 | string | - | - |
 | children | 子菜单项 | Array | - | - |
 | enabledTooltip |  0.3.21 版本支持，在菜单项被禁用时，是否可以显示 tooltip | boolean | - | false |
+
+<!-- ## QA测试
+:::include(src="./doc/tests.vue")
+::: -->

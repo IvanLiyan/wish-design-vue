@@ -16,9 +16,9 @@
       v-on="listeners"
       @click.native="handleClick"
     >
-      <span :class="`${prefix}-icon`" v-if="icon || $slots.icon">
+      <!-- <span :class="`${prefix}-icon`" v-if="icon || $slots.icon">
         <slot name="icon"><i :class="icon"></i></slot>
-      </span>
+      </span> -->
       <span :class="`${prefix}-text`" v-if="!isCollapse"><slot></slot></span>
     </a>
     <div slot="content">
