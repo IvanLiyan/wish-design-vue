@@ -1,6 +1,6 @@
 {
   "name": "@wish/wt-vue",
-  "version": "0.0.2-alpha.20",
+  "version": "0.0.2-alpha.21",
   "description": "vue、component",
   "main": "lib/wt-vue.common.js",
   "scripts": {
