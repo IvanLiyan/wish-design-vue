@@ -87,6 +87,6 @@ if (typeof window !== 'undefined' && window.Vue) {
 export { Button, Card, Row, Col, Icon, ButtonGroup, Input, Radio, RadioGroup, Checkbox, CheckboxGroup, Switch, Tag, Dropdown, DropdownMenu, DropdownMenuItem, Popper, Datepicker, Timepicker, Form, FormItem, Notification, Select, Option, OptionGroup, Loading, Upload, Alert, Tab, TabDrop, TabPane, Menu, MenuItem, Submenu, Tooltip, Expansion, ExpansionItem, Breadcrumb, BreadcrumbItem, Table, TableColumn, Pagination, Dialog, Confirm, Stepper, Step, Badge, Progress, Layout, Header, Aside, Main, Footer, Timeline, TimelineItem, Cascader, Drawer, Sidebar, Smenu, SmenuItem, Ssubmenu, ExpansionTransition };
 
 export default {
-  version: '0.0.2-alpha.15',
+  version: '0.0.2-alpha.22',
   install: install
 };
