@@ -82,7 +82,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 642);
+/******/ 	return __webpack_require__(__webpack_require__.s = 627);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -94,13 +94,13 @@ module.exports = require("@wish/wt-vue/lib/utils/hoc");
 
 /***/ }),
 
-/***/ 642:
+/***/ 627:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _stepper_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(643);
-/* harmony import */ var _with__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(648);
+/* harmony import */ var _stepper_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(628);
+/* harmony import */ var _with__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(633);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "withStepper", function() { return _with__WEBPACK_IMPORTED_MODULE_1__["default"]; });
 
 
@@ -117,13 +117,13 @@ _stepper_vue__WEBPACK_IMPORTED_MODULE_0__["default"].install = function (Vue) {
 
 /***/ }),
 
-/***/ 643:
+/***/ 628:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _stepper_vue_vue_type_template_id_afef63de___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(644);
-/* harmony import */ var _stepper_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(646);
+/* harmony import */ var _stepper_vue_vue_type_template_id_2d682820___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(629);
+/* harmony import */ var _stepper_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(631);
 /* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(88);
 
 
@@ -134,8 +134,8 @@ __webpack_require__.r(__webpack_exports__);
 
 var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
   _stepper_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _stepper_vue_vue_type_template_id_afef63de___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _stepper_vue_vue_type_template_id_afef63de___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _stepper_vue_vue_type_template_id_2d682820___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _stepper_vue_vue_type_template_id_2d682820___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
   null,
@@ -147,45 +147,45 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 
 /***/ }),
 
-/***/ 644:
+/***/ 629:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_stepper_vue_vue_type_template_id_afef63de___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(645);
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_stepper_vue_vue_type_template_id_afef63de___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_stepper_vue_vue_type_template_id_2d682820___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(630);
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_stepper_vue_vue_type_template_id_2d682820___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_stepper_vue_vue_type_template_id_afef63de___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_stepper_vue_vue_type_template_id_2d682820___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
 /***/ }),
 
-/***/ 645:
+/***/ 630:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{class:[_vm.prefix, !_vm.isCenter && (_vm.prefix + "-right"), _vm.direction && (_vm.prefix + "-" + _vm.direction)]},[_vm._t("default")],2)}
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{class:[_vm.prefix, (_vm.prefix + "-right"), _vm.direction && (_vm.prefix + "-" + _vm.direction)]},[_vm._t("default")],2)}
 var staticRenderFns = []
 
 
 
 /***/ }),
 
-/***/ 646:
+/***/ 631:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_stepper_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(647);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_stepper_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(632);
 /* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_stepper_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
-/***/ 647:
+/***/ 632:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -202,28 +202,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'WtStepper',
   props: {
-    dot: {
-      type: Boolean,
-      default: false
-    },
+    // 每个step间距
     space: [String, Number],
+    // 方向
     direction: {
       type: String,
       default: 'horizontal'
     },
+    // 设置当前激活步骤
     active: {
       type: Number,
       default: 0
     },
+    // 设置当前步骤状态
     status: {
       type: String,
       default: 'process'
-    },
-    isCenter: {
-      type: Boolean,
-      default: false
-    },
-    simple: Boolean
+    }
   },
   provide: function provide() {
     return {
@@ -241,6 +236,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
+      // 每个具体步骤
       stepper: []
     };
   },
@@ -251,6 +247,7 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   watch: {
+    // 监听step获取index
     stepper: function stepper(_stepper) {
       _stepper.forEach(function (child, index) {
         child.index = index;
@@ -263,9 +260,16 @@ __webpack_require__.r(__webpack_exports__);
   },
 
   methods: {
+    /**
+     * 添加步骤
+     */
     add: function add(step) {
       this.stepper.push(step);
     },
+
+    /**
+     * 删除步骤
+     */
     remove: function remove(step) {
       var index = this.stepper.indexOf(step);
       if (index > -1) {
@@ -277,7 +281,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 648:
+/***/ 633:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -296,7 +300,8 @@ function withStepper(name, Components) {
     },
     data: function data() {
       return {
-        index: -1 // use in stepper component
+        // use in stepper component
+        index: -1
       };
     },
     created: function created() {
@@ -308,6 +313,7 @@ function withStepper(name, Components) {
 
 
     computed: {
+      // 判断每个step的状态
       internalStatus: function internalStatus() {
         if (this.index > -1) {
           var val = this.stepper.active;
@@ -326,12 +332,12 @@ function withStepper(name, Components) {
     }
   }, {
     mapStateToProps: function mapStateToProps(context) {
+      // 处理step的props
       return {
         index: context.index,
         status: context.currentStatus,
         space: context.stepper.space,
-        direction: context.stepper.direction,
-        dot: context.stepper.dot
+        direction: context.stepper.direction
       };
     }
   })(Components);

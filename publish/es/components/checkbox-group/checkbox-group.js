@@ -13,15 +13,19 @@ export default {
 
   name: 'WtCheckboxGroup',
   props: {
+    // 当前选中的所有checkbox的值，支持 v-model
     value: {
       type: Array
     },
+    // 多选框排列方式
     arrange: {
       type: String,
       default: 'horizontal',
       range: ['horizontal', 'vertical']
     },
+    // 禁用多选框组
     disabled: Boolean,
+    // form输入控件的name
     name: String
   },
   provide: function provide() {

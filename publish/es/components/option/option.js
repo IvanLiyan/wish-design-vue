@@ -84,15 +84,36 @@ export default {
 
     // 选项对应vlaue标识
     realValue: function realValue() {
-      if (isObject(this.value) && this.select.valueKey) {
+      // if (isObject(this.value) && this.select.valueKey) {
+      //   return getValueByPath(this.value, this.select.valueKey);
+      // }
+      if (isObject(this.value) && this.value.hasOwnProperty('value')) {
+        return this.value.value;
+      } else if (isObject(this.value) && this.select.valueKey) {
         return getValueByPath(this.value, this.select.valueKey);
+      } else if (!isObject(this.value)) {
+        return this.value;
+      } else {
+        return this.value;
       }
-      return this.value;
     },
 
     // 选项显示内容取值
     currentLabel: function currentLabel() {
-      return isExist(this.label) ? this.label : isExist(this.value) ? this.value.toString() : '';
+      // return isExist(this.label) ? this.label : isExist(this.value) ? this.value.toString() : '';
+      if (isExist(this.label)) {
+        return this.label;
+      } else {
+        if (isExist(this.value)) {
+          if (isObject(this.value) && this.value.hasOwnProperty('value')) {
+            return this.value.value;
+          } else {
+            return this.value.toString();
+          }
+        } else {
+          return '';
+        }
+      }
     },
 
     // 选项是否被选中

@@ -12,20 +12,12 @@ export default {
 
   name: 'WtBreadcrumb',
   props: {
-    separator: {
-      type: String
-    },
-    separatorClass: {
-      type: String
-    },
-    size: {
-      type: String,
-      default: ''
-    },
+    // 显示标题
     showTitle: {
       type: Boolean,
       default: false
     },
+    // 显示返回按钮
     showBackIcon: {
       type: Boolean,
       default: false
@@ -33,6 +25,7 @@ export default {
   },
   data: function data() {
     return {
+      // 获取slot的dom
       slotVNode: this.$slots.default.slice(-1)
     };
   },
@@ -41,6 +34,8 @@ export default {
     prefix: function prefix() {
       return this.config.getPrefixCls('breadcrumb');
     },
+
+    // 获取标题
     slotTitle: function slotTitle() {
       return this.slotVNode[0].componentOptions.children[0].text;
     }
@@ -61,6 +56,9 @@ export default {
     }
   },
   methods: {
+    /**
+     * 返回上一页
+     */
     goBack: function goBack() {
       window.history.go(-1);
     }

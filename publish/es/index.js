@@ -46,9 +46,23 @@ import Confirm from './components/confirm';
 import Stepper from './components/stepper';
 import Step from './components/step';
 import Badge from './components/badge';
+import Progress from './components/progress';
+import Layout from './components/layout';
+import Header from './components/header';
+import Aside from './components/aside';
+import Main from './components/main';
+import Footer from './components/footer';
+import Timeline from './components/timeline';
+import TimelineItem from './components/timeline-item';
+import Cascader from './components/cascader';
+import Drawer from './components/drawer';
+import Sidebar from './components/sidebar';
+import Smenu from './components/smenu';
+import SmenuItem from './components/smenu-item';
+import Ssubmenu from './components/ssubmenu';
 import ExpansionTransition from './transitions/expansion-transition';
 
-var components = [Button, Card, Row, Col, Icon, ButtonGroup, Input, Radio, RadioGroup, Checkbox, CheckboxGroup, Switch, Tag, Dropdown, DropdownMenu, DropdownMenuItem, Popper, Datepicker, Timepicker, Form, FormItem, Notification, Select, Option, OptionGroup, Loading, Upload, Alert, Tab, TabDrop, TabPane, Menu, MenuItem, Submenu, Tooltip, Expansion, ExpansionItem, Breadcrumb, BreadcrumbItem, Table, TableColumn, Pagination, Dialog, Confirm, Stepper, Step, Badge, ExpansionTransition];
+var components = [Button, Card, Row, Col, Icon, ButtonGroup, Input, Radio, RadioGroup, Checkbox, CheckboxGroup, Switch, Tag, Dropdown, DropdownMenu, DropdownMenuItem, Popper, Datepicker, Timepicker, Form, FormItem, Notification, Select, Option, OptionGroup, Loading, Upload, Alert, Tab, TabDrop, TabPane, Menu, MenuItem, Submenu, Tooltip, Expansion, ExpansionItem, Breadcrumb, BreadcrumbItem, Table, TableColumn, Pagination, Dialog, Confirm, Stepper, Step, Badge, Progress, Layout, Header, Aside, Main, Footer, Timeline, TimelineItem, Cascader, Drawer, Sidebar, Smenu, SmenuItem, Ssubmenu, ExpansionTransition];
 
 export function install(Vue) {
   components.map(function (component) {
@@ -70,7 +84,7 @@ if (typeof window !== 'undefined' && window.Vue) {
   install(window.Vue);
 }
 
-export { Button, Card, Row, Col, Icon, ButtonGroup, Input, Radio, RadioGroup, Checkbox, CheckboxGroup, Switch, Tag, Dropdown, DropdownMenu, DropdownMenuItem, Popper, Datepicker, Timepicker, Form, FormItem, Notification, Select, Option, OptionGroup, Loading, Upload, Alert, Tab, TabDrop, TabPane, Menu, MenuItem, Submenu, Tooltip, Expansion, ExpansionItem, Breadcrumb, BreadcrumbItem, Table, TableColumn, Pagination, Dialog, Confirm, Stepper, Step, Badge, ExpansionTransition };
+export { Button, Card, Row, Col, Icon, ButtonGroup, Input, Radio, RadioGroup, Checkbox, CheckboxGroup, Switch, Tag, Dropdown, DropdownMenu, DropdownMenuItem, Popper, Datepicker, Timepicker, Form, FormItem, Notification, Select, Option, OptionGroup, Loading, Upload, Alert, Tab, TabDrop, TabPane, Menu, MenuItem, Submenu, Tooltip, Expansion, ExpansionItem, Breadcrumb, BreadcrumbItem, Table, TableColumn, Pagination, Dialog, Confirm, Stepper, Step, Badge, Progress, Layout, Header, Aside, Main, Footer, Timeline, TimelineItem, Cascader, Drawer, Sidebar, Smenu, SmenuItem, Ssubmenu, ExpansionTransition };
 
 export default {
   version: '0.0.2-alpha.15',

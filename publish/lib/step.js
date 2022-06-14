@@ -82,18 +82,18 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 649);
+/******/ 	return __webpack_require__(__webpack_require__.s = 634);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 649:
+/***/ 634:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _stepper_step__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(650);
-/* harmony import */ var _components_stepper__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(655);
+/* harmony import */ var _stepper_step__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(635);
+/* harmony import */ var _components_stepper__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(640);
 /* harmony import */ var _components_stepper__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_components_stepper__WEBPACK_IMPORTED_MODULE_1__);
 
 
@@ -109,13 +109,13 @@ WtStep.install = function (Vue) {
 
 /***/ }),
 
-/***/ 650:
+/***/ 635:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _step_vue_vue_type_template_id_256e0ff8___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(651);
-/* harmony import */ var _step_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(653);
+/* harmony import */ var _step_vue_vue_type_template_id_6c8b874a___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(636);
+/* harmony import */ var _step_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(638);
 /* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(88);
 
 
@@ -126,8 +126,8 @@ __webpack_require__.r(__webpack_exports__);
 
 var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
   _step_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _step_vue_vue_type_template_id_256e0ff8___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _step_vue_vue_type_template_id_256e0ff8___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _step_vue_vue_type_template_id_6c8b874a___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _step_vue_vue_type_template_id_6c8b874a___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
   null,
@@ -139,21 +139,21 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 
 /***/ }),
 
-/***/ 651:
+/***/ 636:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_step_vue_vue_type_template_id_256e0ff8___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(652);
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_step_vue_vue_type_template_id_256e0ff8___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_step_vue_vue_type_template_id_6c8b874a___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(637);
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_step_vue_vue_type_template_id_6c8b874a___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_step_vue_vue_type_template_id_256e0ff8___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_step_vue_vue_type_template_id_6c8b874a___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
 /***/ }),
 
-/***/ 652:
+/***/ 637:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -161,33 +161,31 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
 var render = function () {
-var _obj, _obj$1, _obj$2, _obj$3;
+var _obj, _obj$1, _obj$2;
 var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{class:[
     _vm.prefix,
-    ( _obj = {}, _obj[(_vm.prefix + "-flex")] = !_vm.space, _obj[(_vm.prefix + "-dot")] = _vm.dot, _obj ) ],style:(_vm.style)},[_c('div',{class:[
+    ( _obj = {}, _obj[(_vm.prefix + "-flex")] = !_vm.space, _obj ) ],style:(_vm.style)},[_c('div',{class:[
       (_vm.prefix + "-head"),
-      ( _obj$1 = {}, _obj$1[(_vm.prefix + "-" + _vm.status)] = true, _obj$1 ) ]},[_c('div',{class:[
-        (_vm.prefix + "-head-line"),
-        ( _obj$2 = {}, _obj$2[(_vm.prefix + "-head-line-dot")] = _vm.dot && _vm.direction === 'vertical', _obj$2 ) ]}),(_vm.icon || _vm.$slots.icon)?_c('div',{class:(_vm.prefix + "-head-icon")},[_vm._t("icon",function(){return [_c('wt-icon',{attrs:{"name":_vm.icon}})]})],2):(_vm.dot)?_c('div',{class:(_vm.prefix + "-head-number"),style:({ border: 'none', background: 'none' })},[_c('div',{class:(_vm.prefix + "-head-dot")})]):_c('div',{class:(_vm.prefix + "-head-number")},[(_vm.status === 'process' || _vm.status === 'wait')?_c('span',[_vm._v(" "+_vm._s(_vm.index + 1)+" ")]):_c('wt-icon',{attrs:{"name":_vm.currentIcon,"width":24,"height":24,"color":_vm.currentIconColor}})],1)]),_c('div',{class:[
+      ( _obj$1 = {}, _obj$1[(_vm.prefix + "-" + _vm.status)] = true, _obj$1 ) ]},[_c('div',{class:[(_vm.prefix + "-head-line")]}),(_vm.icon || _vm.$slots.icon)?_c('div',{class:(_vm.prefix + "-head-icon")},[_vm._t("icon",function(){return [_c('wt-icon',{attrs:{"name":_vm.icon}})]})],2):_c('div',{class:(_vm.prefix + "-head-number")},[(_vm.status === 'process' || _vm.status === 'wait')?_c('span',[_vm._v(" "+_vm._s(_vm.index + 1)+" ")]):_c('wt-icon',{attrs:{"name":_vm.currentIcon,"width":24,"height":24,"color":_vm.currentIconColor}})],1)]),_c('div',{class:[
       (_vm.prefix + "-main"),
-      ( _obj$3 = {}, _obj$3[(_vm.prefix + "-" + _vm.status)] = true, _obj$3 ) ]},[_c('div',{class:(_vm.prefix + "-main-title")},[_vm._t("title",function(){return [_vm._v(_vm._s(_vm.title))]})],2),_c('div',{class:(_vm.prefix + "-main-description")},[_vm._t("description",function(){return [_vm._v(_vm._s(_vm.description))]})],2)])])}
+      ( _obj$2 = {}, _obj$2[(_vm.prefix + "-" + _vm.status)] = true, _obj$2 ) ]},[_c('div',{class:(_vm.prefix + "-main-title")},[_vm._t("title",function(){return [_vm._v(_vm._s(_vm.title))]})],2),_c('div',{class:(_vm.prefix + "-main-description")},[_vm._t("description",function(){return [_vm._v(_vm._s(_vm.description))]})],2)])])}
 var staticRenderFns = []
 
 
 
 /***/ }),
 
-/***/ 653:
+/***/ 638:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_step_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(654);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_step_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(639);
 /* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_step_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
-/***/ 654:
+/***/ 639:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -241,30 +239,25 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'Step',
   props: {
+    // 索引
     index: Number,
+    // 标题
     title: String,
+    // icon
     icon: String,
+    // 描述
     description: String,
+    // 每个步骤状态
     status: String,
+    // 方向
     direction: String,
-    dot: Boolean,
+    // 步骤间距
     space: [Number, String]
   },
   inject: {
@@ -280,9 +273,8 @@ __webpack_require__.r(__webpack_exports__);
     prefix: function prefix() {
       return this.config.getPrefixCls('step');
     },
-    iconPrefix: function iconPrefix() {
-      return this.config.getIconCls;
-    },
+
+    // 设置步骤方向间距等样式
     style: function style() {
       var size = this.space;
       var space = typeof size === 'number' ? size + 'px' : size;
@@ -291,6 +283,8 @@ __webpack_require__.r(__webpack_exports__);
       }
       return { width: space };
     },
+
+    // 不同状态icon
     currentIcon: function currentIcon() {
       if (this.icon) {
         return this.icon;
@@ -306,6 +300,8 @@ __webpack_require__.r(__webpack_exports__);
           return 'check-circle';
       }
     },
+
+    // 不同icon样式
     currentIconColor: function currentIconColor() {
       switch (this.status) {
         case 'error':
@@ -323,7 +319,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 655:
+/***/ 640:
 /***/ (function(module, exports) {
 
 module.exports = require("@wish/wt-vue/lib/stepper");

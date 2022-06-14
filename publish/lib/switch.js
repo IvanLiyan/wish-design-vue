@@ -300,7 +300,7 @@ HocSwitch.install = function (Vue) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _switch_vue_vue_type_template_id_3fdb15a9___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(190);
+/* harmony import */ var _switch_vue_vue_type_template_id_59ef41ec___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(190);
 /* harmony import */ var _switch_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(192);
 /* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(88);
 
@@ -312,8 +312,8 @@ __webpack_require__.r(__webpack_exports__);
 
 var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
   _switch_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _switch_vue_vue_type_template_id_3fdb15a9___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _switch_vue_vue_type_template_id_3fdb15a9___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _switch_vue_vue_type_template_id_59ef41ec___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _switch_vue_vue_type_template_id_59ef41ec___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
   null,
@@ -341,10 +341,10 @@ module.exports = function (it) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_switch_vue_vue_type_template_id_3fdb15a9___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(191);
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_switch_vue_vue_type_template_id_3fdb15a9___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_switch_vue_vue_type_template_id_59ef41ec___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(191);
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_switch_vue_vue_type_template_id_59ef41ec___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_switch_vue_vue_type_template_id_3fdb15a9___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_build_dependence_vue_source_doc_loader_index_js_switch_vue_vue_type_template_id_59ef41ec___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
@@ -406,26 +406,26 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   props: {
-    value: {},
+    value: {}, // 设置开关是否选中，使用 value === true-value 来判断是否打开
     trueValue: {
+      // switch 打开时的值
       default: true
     },
     falseValue: {
+      // switch 关闭时的值
       default: false
     },
     disabled: {
+      // 是否禁用
       type: Boolean,
       default: false
     },
-    name: String,
-    hint: String
+    name: String, // switch 组件的 name 属性
+    hint: String // 注释内容
   },
   computed: {
     prefix: function prefix() {
       return this.config.getPrefixCls('switch');
-    },
-    checked: function checked() {
-      return this.value === this.trueValue;
     },
     wrapperCls: function wrapperCls() {
       var _ref;
@@ -433,9 +433,19 @@ __webpack_require__.r(__webpack_exports__);
       var prefix = this.prefix;
 
       return [prefix, (_ref = {}, babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_ref, prefix + '-active', this.checked), babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0___default()(_ref, prefix + '-disabled', this.disabled), _ref)];
+    },
+
+    /*
+     * 判断switch是否打开
+     */
+    checked: function checked() {
+      return this.value === this.trueValue;
     }
   },
   methods: {
+    /*
+     * 点击switch
+     */
     handleClick: function handleClick(e) {
       if (this.disabled || this.loading) {
         return false;

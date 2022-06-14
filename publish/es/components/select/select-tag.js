@@ -13,7 +13,7 @@ export default {
 
   staticRenderFns: __vue_staticRenderFns__,
 
-  name: 'WtSelectChoice',
+  name: 'WtSelectTag',
   components: {
     WtTag: WtTag
   },

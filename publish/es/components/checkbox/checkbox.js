@@ -41,7 +41,7 @@ export default {
       type: Boolean,
       default: false
     },
-    // 禁用
+    // form输入控件checkbox的name
     name: String,
     // 注释内容
     hint: String

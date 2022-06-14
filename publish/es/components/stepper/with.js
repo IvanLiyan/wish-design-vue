@@ -9,7 +9,8 @@ export default function withStepper(name, Components) {
     },
     data: function data() {
       return {
-        index: -1 // use in stepper component
+        // use in stepper component
+        index: -1
       };
     },
     created: function created() {
@@ -21,6 +22,7 @@ export default function withStepper(name, Components) {
 
 
     computed: {
+      // 判断每个step的状态
       internalStatus: function internalStatus() {
         if (this.index > -1) {
           var val = this.stepper.active;
@@ -39,12 +41,12 @@ export default function withStepper(name, Components) {
     }
   }, {
     mapStateToProps: function mapStateToProps(context) {
+      // 处理step的props
       return {
         index: context.index,
         status: context.currentStatus,
         space: context.stepper.space,
-        direction: context.stepper.direction,
-        dot: context.stepper.dot
+        direction: context.stepper.direction
       };
     }
   })(Components);
