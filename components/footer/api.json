@@ -1,7 +1,7 @@
 {
 	"props":[{
     "name": "height",
-    "desc": "底栏高度",
+    "desc": "$t('layout.api.footer_height')",
     "type": "string",
     "optionalValue": "",
     "default": "60px",

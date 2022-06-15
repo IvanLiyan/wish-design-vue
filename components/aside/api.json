@@ -1,7 +1,7 @@
 {
 	"props":[{
     "name": "width",
-    "desc": "侧边栏宽度",
+    "desc": "$t('layout.api.aside_width')",
     "type": "string",
     "optionalValue": "",
     "default": "300px",
