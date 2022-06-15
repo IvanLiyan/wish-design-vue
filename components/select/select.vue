@@ -30,7 +30,7 @@
             :disabled="disabled"
             @close="handleClearClick"
           >
-            <template slot-scope="scope" slot="tag" v-if="$scopedSlots.tag">
+            <template v-scope:tag="scope" v-if="$scopedSlots.tag">
               <slot name="tag" v-bind="scope"></slot>
             </template>
             {{ formatterOption(item) }}

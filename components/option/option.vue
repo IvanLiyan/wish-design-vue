@@ -18,16 +18,10 @@
       :checked="!!itemSelected"
       :disabled="_disabled"
     >
-      <slot>
-        <span>{{ currentLabel }}</span>
-      </slot>
+      <span>{{ currentLabel }}</span>
     </wt-checkbox>
     <span v-else :class="`${prefix}-label-wrapper`">
-        <span>{{ currentLabel }}</span>
-      <span
-        v-if="isMultiple && itemSelected"
-        :class="`${selectPrefix}-selected-check ${iconPrefix('check-thick')}`"
-      ></span>
+      <span>{{ currentLabel }}</span>
     </span>
   </li>
 </template>
