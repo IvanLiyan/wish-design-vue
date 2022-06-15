@@ -20,13 +20,9 @@ export default {
     },
   },
   props: {
-<<<<<<< HEAD
-    value: {}, // 设置开关是否选中，使用 value === true-value 来判断是否打开
-=======
     // 设置开关是否选中，使用 value === true-value 来判断是否打开
     value: {},
     // switch 打开时的值
->>>>>>> 64caf648948e8540f0e20285e15d877defd6ddf3
     trueValue: {
       // switch 打开时的值
       default: true,
