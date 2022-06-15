@@ -31,7 +31,8 @@
             @close="handleClearClick"
           >
             <template v-scope:tag="scope" v-if="$scopedSlots.tag">
-              <slot name="tag" v-bind="scope"></slot>
+              <!-- <slot name="tag" v-bind="scope"></slot> -->
+              {{ scope }}
             </template>
             {{ formatterOption(item) }}
           </ChoiceTag>
