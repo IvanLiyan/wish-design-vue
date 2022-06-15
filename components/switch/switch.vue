@@ -38,15 +38,10 @@ export default {
       type: Boolean,
       default: false,
     },
-<<<<<<< HEAD
-    name: String, // switch 组件的 name 属性
-    hint: String, // 注释内容
-=======
     // switch 组件的 name 属性
     name: String,
     // 注释内容
     hint: String,
->>>>>>> 64caf648948e8540f0e20285e15d877defd6ddf3
   },
   computed: {
     prefix() {
