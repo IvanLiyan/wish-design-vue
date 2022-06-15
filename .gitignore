@@ -19,3 +19,7 @@ token.json
 *.njsproj
 *.sln
 /.npmrc
+publish/es
+publish/dist
+publish/lib
+

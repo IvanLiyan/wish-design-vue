@@ -29,7 +29,7 @@
     {
       "name": "change",
       "desc": "$t('checkbox-group.api.change')",
-      "args": "(value: any)"
+      "args": "(value: any[])"
     }
   ]
 }

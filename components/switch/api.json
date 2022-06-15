@@ -57,7 +57,7 @@
     {
       "name": "change",
       "desc": "$t('switch.api.change')",
-      "args": "(actived: boolean)"
+      "args": "(actived: any)"
     }
   ]
 }

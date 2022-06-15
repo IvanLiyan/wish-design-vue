@@ -1,9 +1,0 @@
-import Expansion from './expansion';
-import withExpansion from './with';
-
-export { withExpansion };
-
-Expansion.install = function (Vue) {
-  Vue.component(Expansion.name, Expansion);
-};
-export default Expansion;

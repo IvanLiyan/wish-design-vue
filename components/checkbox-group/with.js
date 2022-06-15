@@ -32,9 +32,6 @@ export default function withCheckboxGroup(name, Component) {
         inputName() {
           return this.checkboxGroup ? this.checkboxGroup.name : this.name;
         },
-        _size() {
-          return this.checkboxGroup ? this.checkboxGroup.size : this.size;
-        },
       },
     },
     {
