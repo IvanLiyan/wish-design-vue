@@ -703,7 +703,7 @@ export default {
         if (this.focused) {
           this.$refs.popper.updatePopper();
         }
-        if (this.$refs.tags !== null) {
+        if (this.multiple) {
           this.tagsHeight = this.$refs.tags.offsetHeight;
         }
       });
