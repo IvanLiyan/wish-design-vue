@@ -703,7 +703,9 @@ export default {
         if (this.focused) {
           this.$refs.popper.updatePopper();
         }
-        this.tagsHeight = this.$refs.tags.offsetHeight;
+        if (this.$refs.tags !== null) {
+          this.tagsHeight = this.$refs.tags.offsetHeight;
+        }
       });
     },
     /**
