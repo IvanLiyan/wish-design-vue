@@ -4,8 +4,8 @@
       "name": "type",
       "desc": "消息类型，用于显示图标",
       "type": "string",
-      "optionalValue": ["success", "info", "warning", "error"],
-      "default": "",
+      "optionalValue": ["default", "success", "info", "warning", "error"],
+      "default": "default",
       "version": ""
     },
     {

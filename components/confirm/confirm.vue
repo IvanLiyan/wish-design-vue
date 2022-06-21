@@ -21,10 +21,10 @@
         [`${prefix}-typed`]: type,
       }"
     >
-      <span :class="`${prefix}-icon ${prefix}-${type}`">
+      <span :class="`${prefix}-icon ${prefix}-${type}`" v-if="isConfirmType">
         <wt-icon :name="icon" :width="48" :height="48" :color="iconColor" />
       </span>
-      <div :class="`${prefix}-right`">
+      <div :class="{ [`${prefix}-content-${type}`]: type }">
         <div v-if="type && title" :class="`${prefix}-title`">
           {{ title }}
         </div>
@@ -34,18 +34,19 @@
         </slot>
       </div>
     </div>
-    <div slot="footer" :class="`${prefix}-footer`">
+    <div slot="footer" :class="{ [`${prefix}-footer`]: true, [`${prefix}-content-${type}`]: type }">
+      <wt-button v-bind="okProps" v-if="showOkButton" :loading="okButtonLoading" @click="handleOk" ref="ok">
+        {{ okButtonText }}
+      </wt-button>
       <wt-button
         v-bind="cancelButtonProps"
         v-if="showCancelButton"
         :loading="cancelButtonLoading"
         @click="handleCancel"
         ref="cancel"
+        type="secondary"
       >
         {{ cancelButtonText }}
-      </wt-button>
-      <wt-button v-bind="okProps" v-if="showOkButton" :loading="okButtonLoading" @click="handleOk" ref="ok">
-        {{ okButtonText }}
       </wt-button>
     </div>
   </wt-dialog>
@@ -85,7 +86,7 @@ export default {
   data() {
     return {
       modalVisible: true,
-      type: '',
+      type: 'default',
       title: '',
       message: '',
       width: '',
@@ -123,6 +124,13 @@ export default {
     },
     iconColor() {
       return `${ICONS[this.type].color}`;
+    },
+    isConfirmType() {
+      if (this.type === 'success' || this.type === 'info' || this.type === 'warning' || this.type === 'error') {
+        return true;
+      } else {
+        return false;
+      }
     },
   },
   watch: {
