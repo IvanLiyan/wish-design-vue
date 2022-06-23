@@ -1,5 +1,5 @@
 # Card / 卡片
-<span>{{$t('card.componnent_desc')}}</span>
+<span>{{$t('card.component_desc')}}</span>
 
 ## <span>{{$t('card.module1.title')}}</span>
 

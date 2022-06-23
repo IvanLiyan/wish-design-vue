@@ -2,15 +2,15 @@
   "props": [
     {
       "name": "percentage",
-      "desc": "百分比",
+      "desc": "$t('progress.api.percentage')",
       "type": "number",
-      "optionalValue": "type为line时，>=0；type为circle时，[0, 100]",
+      "optionalValue": "when type = 'line', >=0; when type = 'circle', [0, 100]",
       "default": "0",
       "version": ""
     },
     {
       "name": "status",
-      "desc": "状态",
+      "desc": "$t('progress.api.status')",
       "type": "string",
       "optionalValue": ["success", "error"],
       "default": "",
@@ -18,7 +18,7 @@
     },
     {
       "name": "type",
-      "desc": "类型",
+      "desc": "$t('progress.api.type')",
       "type": "string",
       "optionalValue": ["line", "circle"],
       "default": "line",
@@ -26,7 +26,7 @@
     },
     {
       "name": "color",
-      "desc": "进度条背景色（会覆盖status状态颜色）",
+      "desc": "$t('progress.api.color')",
       "type": "string",
       "optionalValue": "",
       "default": "#305BEF",
@@ -34,7 +34,7 @@
     },
     {
       "name": "stroke-width",
-      "desc": "进度条粗细",
+      "desc": "$t('progress.api.stroke-width')",
       "type": "string",
       "optionalValue": "",
       "default": "line: 8 / circle: 5",
@@ -42,7 +42,7 @@
     },
     {
       "name": "width",
-      "desc": "环形进度条画布宽度（只在type=circle时可用）",
+      "desc": "$t('progress.api.width')",
       "type": "number",
       "optionalValue": "",
       "default": "72",

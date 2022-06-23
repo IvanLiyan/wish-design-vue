@@ -1,20 +1,14 @@
 # 进度条 / Progress
 
-向用户传达特定进程的进度，告知用户当前状态和预期。
+<span>{{$t('progress.component_desc')}}</span>
 
-## 基础样式
+## <span>{{$t('progress.module1.title')}}</span>
 :::include(src="./doc/base.vue")
 :::
 
-## 类型与用法
-### 环形进度条
+## <span>{{$t('progress.module2.title')}}</span>
 :::include(src="./doc/circle.vue")
 :::
-<!-- 
-### 状态
-进度条会根据进程情况出现成功、失败两种状态。
-:::include(src="./doc/status.vue")
-::: -->
 
 ## API
 <api-doc name="Progress" :doc="require('./api.json')"></api-doc>
