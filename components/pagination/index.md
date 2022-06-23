@@ -1,32 +1,18 @@
 
 # 分页 / Pagination
-用于当数据量大时，分开页面展示和浏览数据。
+<span>{{$t('pagination.componnent_desc')}}</span>
 
-## 基础样式
+## {{$t('pagination.module1.title')}}
 :::include(src="./doc/base.vue")
 :::
-<!-- 
-## 类型与用法
-### 大小
-:::include(src="./doc/size.vue")
-:::
 
-### 类型
-:::include(src="./doc/type.vue")
-:::
- -->
-
-## 完整功能型
-可自由选择搭配：每页显示条数、快速跳转页码、总条数。
+## {{$t('pagination.module2.title')}}
+<span>{{$t('pagination.module2.desc1')}}</span>
 :::include(src="./doc/full.vue")
 :::
 
 ## API
 <api-doc name="Pagination" :doc="require('./api.json')"></api-doc>
-
-## 测试
-:::include(src="./doc/tests.vue")
-:::
 
 <style>
     .wt-pagination {

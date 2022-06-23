@@ -158,7 +158,7 @@ export default {
           class={this.selectClass || ''}
           onChange={ this.handlePageSizeChange } />}
         {this.showTotal &&
-        <span class={`${prefix}-total`}>共{this.total}条</span>}
+        <span class={`${prefix}-total`}>Total {this.total} items</span>}
       </div>
     );
   },
