@@ -9,6 +9,12 @@
 
 <script>
 export default {
+  data() {
+    return {
+      a: '物流商价格申请内容通过，从下一个工作日开始生效。',
+    };
+  },
+
   methods: {
     openConfirm() {
       this.$wt
@@ -25,10 +31,11 @@ export default {
     },
 
     openSuccessConfirm() {
+      debugger;
       this.$wt
         .confirm({
           title: '申请审核通过',
-          message: '物流商价格申请内容通过，从下一个工作日开始生效。',
+          message: `<div>{{ a }}</div>`,
           width: '430px',
           type: 'success',
           okButtonText: '确定',

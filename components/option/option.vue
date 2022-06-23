@@ -23,7 +23,7 @@
       </slot>
     </wt-checkbox>
     <span v-else :class="`${prefix}-label-wrapper`">
-      <slot name="default"><span>{{ currentLabel }}</span></slot>
+      <slot><span>{{ currentLabel }}</span></slot>
       <span
         v-if="isMultiple && itemSelected"
         :class="`${selectPrefix}-selected-check ${iconPrefix('check-thick')}`"
