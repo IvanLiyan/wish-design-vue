@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="type-and-use-size">
-      <wt-select v-model="value" class="select-width" :filterable="true" label="本地搜索" multiple>
+      <wt-select v-model="value" class="select-width" :filterable="true" label="本地搜索">
         <wt-option v-for="item in options" :key="item.value" :value="item" :disabled="item.disabled" />
       </wt-select>
     </div>

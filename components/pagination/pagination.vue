@@ -143,7 +143,7 @@ export default {
           simpleReadonly={this.simpleReadonly}
           onChange={ this.handleCurrentChange } />
         {this.showQuickJumper && <span class={`${prefix}-jumper`}>
-          <span>前往</span>
+          <span>Go to</span>
           <input
             class={`${prefix}-jumper-input`}
             type="number"
