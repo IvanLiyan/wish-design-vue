@@ -120,10 +120,18 @@ export default {
       };
     },
     icon() {
-      return `${ICONS[this.type].name}`;
+      if (this.isConfirmType) {
+        return `${ICONS[this.type].name}`;
+      } else {
+        return '';
+      }
     },
     iconColor() {
-      return `${ICONS[this.type].color}`;
+      if (this.isConfirmType) {
+        return `${ICONS[this.type].color}`;
+      } else {
+        return '';
+      }
     },
     isConfirmType() {
       if (this.type === 'success' || this.type === 'info' || this.type === 'warning' || this.type === 'error') {
