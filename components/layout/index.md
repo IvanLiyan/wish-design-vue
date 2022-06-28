@@ -1,15 +1,15 @@
 # Layout / 布局
-<span>灵活的自适应布局</span>
+<span>{{$t('layout.component_desc')}}</span>
 
-`<wt-layout>`：外层容器。当子元素中包含 `<wt-header>` 或 `<wt-footer>` 时，全部子元素会垂直上下排列，否则会水平左右排列。
+`<wt-layout>`：{{$t('layout.component_desc_layout1')}} `<wt-header>` {{$t('layout.component_desc_layout2')}} `<wt-footer>` {{$t('layout.component_desc_layout3')}}
 
-`<wt-header>`：顶栏容器。
+`<wt-header>`：{{$t('layout.component_desc_header')}}
 
-`<wt-aside>`：侧边栏容器。
+`<wt-aside>`：{{$t('layout.component_desc_aside')}}
 
-`<wt-main>`：主要区域容器。
+`<wt-main>`：{{$t('layout.component_desc_main')}}
 
-`<wt-footer>`：底栏容器。
+`<wt-footer>`：{{$t('layout.component_desc_footer')}}
 
 :::include(src="./doc/base.vue")
 :::

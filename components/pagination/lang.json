@@ -1,0 +1,46 @@
+{
+  "chinese": {
+    "componnent_desc": "用于当数据量大时，分开页面展示和浏览数据。",
+    "module1": {
+      "title": "基础样式"
+    },
+    "module2": {
+      "title": "完整功能型",
+      "desc1": "可自由选择搭配：每页显示条数、快速跳转页码、总条数。"
+    },
+    "api": {
+      "unborder": "只显示数字，不显示边框",
+      "current-page": "当前页数，支持 .sync 修饰符",
+      "page-size": "每页显示条数，支持 .sync 修饰符",
+	    "page-size-options": "每页显示个数选择器的选项设置",
+      "show-size-changer": "是否显示可以改变 page-size 的下拉",
+      "total": "总条目数",
+      "show-total": "是否显示总条目数",
+      "pager-count": "页码按钮的数量，当总页数超过该值时会折叠",
+      "show-quick-jumper": "是否显示快速跳转至某页功能",
+      "change": "当前页码或者每页条数改变时会触发"
+    }
+  },
+  "english": {
+    "componnent_desc": "It is used to display and browse data separately when there is a large amount of data.",
+    "module1": {
+      "title": "Basic Style"
+    },
+    "module2": {
+      "title": "Full Functional",
+      "desc1": "Optional collocation: display number of pages per page, quick jump page number, total number of pages."
+    },
+    "api": {
+      "unborder": "Only show numbers, hide borders",
+      "current-page": "Current page count, support the.sync modifier",
+      "page-size": "Displays the number of entries per page, support the.sync modifier",
+	    "page-size-options": "Specify the page-size options",
+      "show-size-changer": "Determine whether page-size can be changed",
+      "total": "Total number",
+      "show-total": "Whether to display the total number",
+      "pager-count": "The number of page buttons that fold when the total number of pages exceeds this value",
+      "show-quick-jumper": "Whether to display the quick jump button",
+      "change": "Triggered when the current page number or number of pages per page changes"
+    }
+  }
+}

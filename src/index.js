@@ -127,7 +127,7 @@ const components = [
   ExpansionTransition,
 ];
 
-export function install (Vue) {
+export function install(Vue) {
   components.map(function (component) {
     Vue.component(component.name, component);
   });
@@ -140,7 +140,7 @@ export function install (Vue) {
 
   if (Vue.prototype) Vue.prototype.$wt = $wt;
   if (Vue.config.globalProperties) Vue.config.globalProperties.$wt = $wt;
-};
+}
 
 /* istanbul ignore if */
 if (typeof window !== 'undefined' && window.Vue) {
@@ -213,6 +213,6 @@ export {
 };
 
 export default {
-  version: '0.0.2-alpha.30',
+  version: '0.0.2-alpha.35',
   install,
 };

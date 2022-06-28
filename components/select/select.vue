@@ -130,6 +130,7 @@
 </template>
 <script>
 import { Popper, Drop, Reference } from '@components/popper';
+import scrollIntoView from '@/utils/scroll-into-view';
 import WtInput from '../input';
 import Clickoutside from '@/utils/clickoutside';
 import NavigationMixin from './navigation-mixin';
@@ -703,7 +704,9 @@ export default {
         if (this.focused) {
           this.$refs.popper.updatePopper();
         }
-        this.tagsHeight = this.$refs.tags.offsetHeight;
+        if (this.multiple) {
+          this.tagsHeight = this.$refs.tags.offsetHeight;
+        }
       });
     },
     /**
@@ -736,6 +739,16 @@ export default {
         this.updatePopper();
       }
       this.$emit('filter', val);
+    },
+    /**
+     * 滚动到选项
+     */
+    scrollToOption(option) {
+      const target = Array.isArray(option) && option[0] ? option[0].$el : option.$el;
+      if (this.$refs.popper && target) {
+        const menu = this.$refs.menu;
+        scrollIntoView(menu, target);
+      }
     },
     /**
      * 显隐选项

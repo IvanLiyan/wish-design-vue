@@ -1,0 +1,36 @@
+{
+  "chinese": {
+    "component_desc": "向用户传达特定进程的进度，告知用户当前状态和预期。",
+    "module1": {
+      "title": "基础样式"
+    },
+    "module2": {
+      "title": "环形进度条"
+    },
+    "api": {
+      "percentage": "百分比",
+      "status": "状态",
+      "type": "类型",
+      "color": "进度条背景色（会覆盖status状态颜色）",
+      "stroke-width": "进度条粗细",
+      "width": "环形进度条画布宽度（只在type=circle时可用）"
+    }
+  },
+  "english": {
+    "component_desc": "Communicate the progress of a particular process to the user and inform the user of current status and expectations.",
+    "module1": {
+      "title": "Basic Style"
+    },
+    "module2": {
+      "title": "Circular progress bar"
+    },
+    "api": {
+      "percentage": "Percentage",
+      "status": "Status",
+      "type": "Type",
+      "color": "Progress bar background color (status status color will be overwritten)",
+      "stroke-width": "Progress bar thickness",
+      "width": "Circular progress bar canvas width (only available when type=circle)"
+    }
+  }
+}

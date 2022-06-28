@@ -2,7 +2,7 @@
   "props": [
     {
       "name": "unborder",
-      "desc": "只有数字不带边框",
+      "desc": "$t('pagination.api.unborder')",
       "type": "boolean",
       "optionalValue": "",
       "default": "false",
@@ -10,7 +10,7 @@
     },
     {
       "name": "current-page",
-      "desc": "当前页数，支持 .sync 修饰符",
+      "desc": "$t('pagination.api.current-page')",
       "type": "number",
       "optionalValue": "",
       "default": "1",
@@ -18,7 +18,7 @@
     },
     {
       "name": "page-size",
-      "desc": "每页显示条数，支持 .sync 修饰符",
+      "desc": "$t('pagination.api.page-size')",
       "type": "number",
       "optionalValue": "",
       "default": "10",
@@ -26,7 +26,7 @@
     },
     {
       "name": "page-size-options",
-      "desc": "每页显示个数选择器的选项设置",
+      "desc": "$t('pagination.api.page-size-options')",
       "type": "number[]",
       "optionalValue": "",
       "default": "[10, 20, 50, 100]",
@@ -34,7 +34,7 @@
     },
     {
       "name": "show-size-changer",
-      "desc": "是否显示可以改变 page-size 的下拉",
+      "desc": "$t('pagination.api.show-size-changer')",
       "type": "boolean",
       "optionalValue": "",
       "default": "false",
@@ -42,7 +42,7 @@
     },
     {
       "name": "total",
-      "desc": "总条目数",
+      "desc": "$t('pagination.api.total')",
       "type": "number",
       "optionalValue": "",
       "default": "",
@@ -50,7 +50,7 @@
     },
     {
       "name": "show-total",
-      "desc": "是否显示总条目数",
+      "desc": "$t('pagination.api.show-total')",
       "type": "boolean",
       "optionalValue": "",
       "default": "false",
@@ -58,15 +58,15 @@
     },
     {
       "name": "pager-count",
-      "desc": "页码按钮的数量，当总页数超过该值时会折叠",
+      "desc": "$t('pagination.api.pager-count')",
       "type": "number",
-      "optionalValue": "大于等于 5 且小于等于 21 的奇数",
+      "optionalValue": "An odd number greater than or equal to 5 and less than or equal to 21",
       "default": "7",
       "version": ""
     },
     {
       "name": "show-quick-jumper",
-      "desc": "是否显示快速跳转至某页功能",
+      "desc": "$t('pagination.api.show-quick-jumper')",
       "type": "boolean",
       "optionalValue": "",
       "default": "false",
@@ -75,7 +75,7 @@
   ],
   "events": [{
     "name": "change",
-    "desc": "当前页码或者每页条数改变时会触发",
+    "desc": "$t('pagination.api.change')",
     "args": "Function(current, size)"
   }]
 }

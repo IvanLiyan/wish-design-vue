@@ -1,0 +1,34 @@
+{
+  "chinese": {
+    "component_desc": "灵活的自定义布局。",
+    "component_desc_layout1": "外层容器。当子元素中包含",
+    "component_desc_layout2": "或",
+    "component_desc_layout3": "时，全部子元素会垂直上下排列，否则会水平左右排列。",
+    "component_desc_header": "顶栏容器。",
+    "component_desc_aside": "侧边栏容器。",
+    "component_desc_main": "主要区域容器。",
+    "component_desc_footer": "底栏容器。",
+    "api": {
+      "layout_direction": "子元素的排列方向",
+      "header_height": "顶栏高度",
+      "aside_width": "侧边栏宽度",
+      "footer_height": "底栏高度"
+    }
+  },
+  "english": {
+    "component_desc": "Flexible custom layout.",
+    "component_desc_layout1": "Out container, when a child element contains",
+    "component_desc_layout2": "or",
+    "component_desc_layout3": ",all child elements will be arranged vertically up and down, otherwise they will be arranged horizontally left and right.",
+    "component_desc_header": "Top bar container.",
+    "component_desc_aside": "Side bar container.",
+    "component_desc_main": "Main area container.",
+    "component_desc_footer": "Bottom bar container.",
+    "api": {
+      "layout_direction": "Arrangement of child elements",
+      "header_height": "Top bar height",
+      "aside_width": "Side bar width",
+      "footer_height": "Footer height"
+    }
+  }
+}

@@ -5,11 +5,11 @@
     :value="pageSize"
     :size="size"
     @input="handleChange"
-    placeholder="请选择">
+    placeholder="Please Select">
     <wt-option
       v-for="item in pageSizeOptions"
       :key="item"
-      :label="item+'条/页'"
+      :label="item+'/page'"
       :value="item" />
   </wt-select>
 </template>

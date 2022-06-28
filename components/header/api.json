@@ -1,7 +1,7 @@
 {
 	"props":[{
     "name": "height",
-    "desc": "顶栏高度",
+    "desc": "$t('layout.api.header_height')",
     "type": "string",
     "optionalValue": "",
     "default": "60px",
