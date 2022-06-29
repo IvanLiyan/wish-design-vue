@@ -53,7 +53,7 @@ const Confirm = (options) => {
             r.$$wt = true;
             return r;
           })
-          .then(reject);
+          .then(resolve);
       },
     };
     const instance = new ConfirmConstructor({

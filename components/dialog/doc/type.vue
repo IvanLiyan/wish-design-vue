@@ -25,10 +25,18 @@ export default {
           width: '430px',
           okButtonText: '确定',
           showCancelButton: true,
+          onOk: this.ok,
+          onCancel: this.cancel,
         })
         .catch((err) => {
-          console.log(err);
+          console.log('error', err);
         });
+    },
+    ok(res) {
+      console.log('ok res:', res);
+    },
+    cancel(res) {
+      console.log('cancel res:', res);
     },
     openConfirm() {
       this.$wt
@@ -52,6 +60,9 @@ export default {
           width: '430px',
           type: 'success',
           okButtonText: '确定',
+          showCancelButton: true,
+          onOk: this.ok,
+          onCancel: this.cancel,
         })
         .catch(() => {});
     },
@@ -74,8 +85,13 @@ export default {
           width: '430px',
           type: 'error',
           okButtonText: '确定',
+          showCancelButton: true,
+          onOk: this.ok,
+          onCancel: this.cancel,
         })
-        .catch(() => {});
+        .catch((err) => {
+          console.log('err', err);
+        });
     },
   },
 };

@@ -82,7 +82,7 @@
     },
     {
       "name": "onOk",
-      "desc": "点击确认按钮后的回调, 支持返回 Promise, 当其 resolve 后自动关闭",
+      "desc": "点击确认按钮后的回调, 支持返回 Promise, 返回action类型confirm",
       "type": "function",
       "optionalValue": "",
       "default": "",
@@ -90,7 +90,7 @@
     },
     {
       "name": "onCancel",
-      "desc": "点击取消按钮后的回调, 支持返回 Promise, 当其 resolve 后自动关闭",
+      "desc": "点击取消按钮或关闭按钮后的回调, 支持返回 Promise, 返回action类型cancel或close",
       "type": "function",
       "optionalValue": "",
       "default": "",
