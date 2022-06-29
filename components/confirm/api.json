@@ -69,7 +69,7 @@
       "desc": "是否显示取消按钮",
       "type": "boolean",
       "optionalValue": "",
-      "default": "false",
+      "default": "default为true，其他为false",
       "version": ""
     },
     {

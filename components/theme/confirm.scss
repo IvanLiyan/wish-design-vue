@@ -55,6 +55,7 @@ $confirm-content-padding-horizontal: 50px !default;
     width: $confirm-icon-size;
     height: $confirm-icon-size;
     font-size: $confirm-icon-size;
+    margin-bottom: 12px;
     i {
       vertical-align: top;
       line-height: $confirm-title-line-height;
@@ -84,7 +85,7 @@ $confirm-content-padding-horizontal: 50px !default;
     font-size: $h3-font-size;
     line-height: $h3-line-height;
     font-weight: $font-weight-semi-bold;
-    margin: 12px 0 8px 0;
+    margin: 0px 0 8px 0;
   }
   &-footer {
     text-align: center;

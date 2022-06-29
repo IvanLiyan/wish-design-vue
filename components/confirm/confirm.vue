@@ -40,7 +40,7 @@
       </wt-button>
       <wt-button
         v-bind="cancelButtonProps"
-        v-if="showCancelButton"
+        v-if="showCancelButtonFlag"
         :loading="cancelButtonLoading"
         @click="handleCancel"
         ref="cancel"
@@ -78,11 +78,11 @@ const ICONS = {
 
 export default {
   name: 'WtConfirm',
-
   components: {
     WtDialog: Dialog,
     WtButton: Button,
   },
+
   data() {
     return {
       modalVisible: true,
@@ -99,8 +99,8 @@ export default {
       cancelButtonProps: {},
       okButtonLoading: false,
       cancelButtonLoading: false,
+      showCancelButton: null,
       showOkButton: true,
-      showCancelButton: false,
       maskClosable: false,
       onOk: null,
       onCancel: null,
@@ -138,6 +138,19 @@ export default {
         return true;
       } else {
         return false;
+      }
+    },
+    showCancelButtonFlag() {
+      if (this.showCancelButton == null) {
+        if (this.type === 'default') {
+          return true;
+        } else {
+          return false;
+        }
+      } else if (!this.showCancelButton) {
+        return false;
+      } else {
+        return true;
       }
     },
   },

@@ -24,7 +24,6 @@ export default {
           useHTMLString: true,
           width: '430px',
           okButtonText: '确定',
-          showCancelButton: true,
           onOk: this.ok,
           onCancel: this.cancel,
         })
