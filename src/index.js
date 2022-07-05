@@ -213,6 +213,6 @@ export {
 };
 
 export default {
-  version: '0.0.2-alpha.37',
+  version: '0.0.2-alpha.39',
   install,
 };

@@ -1,32 +1,35 @@
 <template>
-<popper v-bind="$attrs" :tag="tag" :popper-disabled="disabled"
-  :class="`${prefix}-rel`" :trigger="trigger"
-  :show-arrow="showArrow"
-  :visible="!disabled && visible" @update:visible="handleVisibleChange"
-  ref="popper" :open-delay="openDelay"
-  @clickoutside="clickoutside"
->
-  <reference><slot></slot></reference>
-  <drop
-    :class="[prefix, {
-      [`${prefix}-${size}`]: size ,
-      [`${prefix}-${theme}`]: theme
-    }, popperClass]"
+  <popper
+    v-bind="$attrs"
+    :tag="tag"
+    :popper-disabled="disabled"
+    :class="`${prefix}-rel`"
+    :trigger="trigger"
+    :show-arrow="showArrow"
+    :visible="!disabled && visible"
+    @update:visible="handleVisibleChange"
+    ref="popper"
+    :open-delay="openDelay"
+    @clickoutside="clickoutside"
   >
-    <slot name="content">{{ content }}</slot>
-  </drop>
-</popper>
+    <reference><slot></slot></reference>
+    <drop
+      :class="[
+        prefix,
+        {
+          [`${prefix}-${size}`]: size,
+          [`${prefix}-${theme}`]: theme,
+        },
+        popperClass,
+      ]"
+    >
+      <span v-if="content">{{ content }}</span>
+    </drop>
+  </popper>
 </template>
 <script>
-import {
-  Popper,
-  Drop,
-  Reference,
-} from '@components/popper';
-import {
-  CONFIG_PROVIDER,
-  getPrefixCls,
-} from '@/utils/config';
+import { Popper, Drop, Reference } from '@components/popper';
+import { CONFIG_PROVIDER, getPrefixCls } from '@/utils/config';
 
 export default {
   name: 'WtTooltip',
@@ -74,18 +77,18 @@ export default {
     },
   },
   computed: {
-    prefix () {
+    prefix() {
       return this.config.getPrefixCls('tooltip');
     },
   },
   methods: {
-    clickoutside (e) {
+    clickoutside(e) {
       this.$emit('clickoutside', e);
     },
-    handleVisibleChange (v) {
+    handleVisibleChange(v) {
       this.$emit('input', v);
     },
-    updatePopper () {
+    updatePopper() {
       const { popper } = this.$refs;
       if (this.visible && popper) {
         popper.updatePopper();
