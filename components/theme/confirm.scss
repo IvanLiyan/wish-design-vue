@@ -78,7 +78,7 @@ $confirm-content-padding-horizontal: 50px !default;
     line-height: $line-height-2;
     font-weight: $font-weight-regular;
     color: $color-text-1;
-    margin-bottom: 16px;
+    margin-bottom: 20px;
   }
   &-title {
     color: $color-text-1;
@@ -104,6 +104,7 @@ $confirm-content-padding-horizontal: 50px !default;
     text-align: center;
   }
   &-content-default {
+    align-items: flex-start;
     text-align: left;
     .#{$prefix}-confirm-title {
       margin-top: 0;
