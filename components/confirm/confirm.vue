@@ -19,6 +19,7 @@
       :class="{
         [prefix]: true,
         [`${prefix}-typed`]: type,
+        [`${prefix}-content-${type}`]: type,
       }"
     >
       <span :class="`${prefix}-icon ${prefix}-${type}`" v-if="isConfirmType">
@@ -28,6 +29,7 @@
         <div v-if="type && title" :class="`${prefix}-title`">
           {{ title }}
         </div>
+        <div v-else style="height: 30px; width: 100%"></div>
         <slot>
           <div v-if="!useHTMLString" :class="`${prefix}-message`">{{ message }}</div>
           <div v-else v-html="message" :class="`${prefix}-message`"></div>
