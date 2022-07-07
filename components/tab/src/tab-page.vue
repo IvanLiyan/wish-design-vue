@@ -46,8 +46,8 @@ export default {
       >
         <Icon
           name='arrow-left'
-          width='18'
-          height='18'
+          width={18}
+          height={18}
           class={{
             [`${prefix}-action`]: true,
             [`${prefix}-action-disabled`]: !prevStatus,
@@ -56,8 +56,8 @@ export default {
         />
         <Icon
           name='arrow-right'
-          width='18'
-          height='18'
+          width={18}
+          height={18}
           class={{
             [`${prefix}-action`]: true,
             [`${prefix}-action-disabled`]: !nextStatus,

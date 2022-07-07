@@ -128,7 +128,7 @@ export default {
     const children = (
       <div class={`${prefix}-item-label`}>
         {tabMoreData && <tab-more {...tabMoreData}></tab-more>}
-        {!tabMoreData && icon && <icon name={icon} width='18' height='18'></icon>}
+        {!tabMoreData && icon && <icon name={icon} width={18} height={18}></icon>}
         {!tabMoreData && (paneLabel && paneLabel.length ? paneLabel : label)}
         {closable && <icon name='mtdicon-error-o' class={`${prefix}-tab-close`} onClick={closeClick} />}
         {number > 0 && <span class={`${prefix}-item-number`}>{number}</span>}

@@ -1,5 +1,5 @@
 <template>
-  <div class="wt-tab-pane" ></div>
+  <div class="wt-tab-pane"></div>
 </template>
 <script>
 export default {
