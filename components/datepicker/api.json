@@ -33,6 +33,14 @@
       "version": ""
     },
     {
+      "name": "value-format",
+      "desc": "绑定值的格式，如'YYYY-MM-DD'，不指定则根据当前 value 值的类型进行推断",
+      "type": "string",
+      "optionalValue": "",
+      "default": "",
+      "version": ""
+    },
+    {
       "name": "label",
       "desc": "选择器上方的标签",
       "type": "string",

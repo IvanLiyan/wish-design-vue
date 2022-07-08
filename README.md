@@ -55,3 +55,9 @@ todo: Icon 自定义组件集成支持 ,待 UI 提供设计 icon
 
 todo 未支持按需加载，若支持需要 lib 里面以组件文件夹形式存放组件相关内容
 // rate、transfer、autocomplete、color-picker、picker、popconfirm、anchor、affix、config-provider
+
+## 版本记录
+
+#### 0.0.2-alpha.40
+·修复了Tab组件的bug
+·新增了Datepicker的API - value-format
