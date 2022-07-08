@@ -1,24 +1,27 @@
 <template>
   <wt-table :data="tableData">
-    <wt-table-column label="日期" width="240">
+    <wt-table-column
+      prop="orderId"
+      label="WOSP订单ID"
+      width="240" />
+    <wt-table-column label="物流追踪单号" width="320">
       <template slot-scope="scope">
-        <wt-input v-model="scope.row.date" placeholder="具体文案" />
+        <wt-input v-model="scope.row.logId" placeholder="Plase input log_id" />
       </template>
     </wt-table-column>
-    <wt-table-column label="姓名">
+    <wt-table-column label="订单状态" width="240">
       <template slot-scope="scope">
-        <wt-popover trigger="hover" placement="top">
-          <span>{{ scope.row.name }}</span>
+        <wt-popover trigger="hover">
           <div slot="content" class="name-wrapper">
-            <wt-tag size="small">{{ scope.row.name }}</wt-tag>
+            <wt-tag size="small" :type="scope.row.orderStatus === 1 ? 'success' : 'error'">{{ scope.row.orderStatus === 1 ? '已完成' : '用户取消' }}</wt-tag>
           </div>
         </wt-popover>
       </template>
     </wt-table-column>
-    <wt-table-column label="操作" width="180">
+    <wt-table-column label="操作" width="280">
       <template slot-scope="scope">
-        <wt-button size="small" type="text-primary" @click="handleEdit(scope.$index, scope.row)">通过 </wt-button>
-        <wt-button size="small" type="text-primary" @click="handleDelete(scope.$index, scope.row)">删除 </wt-button>
+        <wt-button class="cell-control-open" size="small" type="secondary" @click="handleOpen(scope.$index, scope.row)">Open</wt-button>
+        <wt-button class="cell-control-confirm" size="small" type="success" @click="handleConfirm(scope.$index, scope.row)">Confirm</wt-button>
       </template>
     </wt-table-column>
   </wt-table>
@@ -30,35 +33,51 @@ export default {
     return {
       tableData: [
         {
-          date: '2016-05-02',
-          name: '美小团',
-          address: '北京市朝阳区望京东路四号',
+          orderId: 'WOSP021700118221DEU',
+          logId: 'WI001117700472FPL',
+          orderStatus: 1,
         },
         {
-          date: '2016-05-04',
-          name: '美小团',
-          address: '北京市朝阳区望京东路四号 1517 号',
+          orderId: 'WOSP021700118221DEU',
+          logId: 'WI001117700472FPL',
+          orderStatus: 2,
         },
         {
-          date: '2016-05-01',
-          name: '美小团',
-          address: '北京市朝阳区望京东路四号 1519 号',
+          orderId: 'WOSP021700118221DEU',
+          logId: 'WI001117700472FPL',
+          orderStatus: 1,
         },
         {
-          date: '2016-05-03',
-          name: '美小团',
-          address: '北京市朝阳区望京东路四号 1516 号',
+          orderId: 'WOSP021700118221DEU',
+          logId: 'WI001117700472FPL',
+          orderStatus: 1,
         },
       ],
     };
   },
   methods: {
-    handleEdit(index, row) {
-      console.log(index, row);
+    handleOpen(index, row) {
+      console.log('Click index:', index, ';Click row:', row);
     },
-    handleDelete(index, row) {
-      console.log(index, row);
+    handleConfirm(index, row) {
+      console.log('Click index:', index, ';Click row:', row);
     },
   },
 };
 </script>
+
+<style scoped>
+  .cell-control-open {
+    min-width: 78px !important;
+    width: 72px;
+    height: 28px;
+    font-size: 12px;
+  }
+  .cell-control-confirm {
+    min-width: 78px !important;
+    width: 72px;
+    height: 28px;
+    margin-left: 16px;
+    font-size: 12px;
+  }
+</style>

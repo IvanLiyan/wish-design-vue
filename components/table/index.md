@@ -72,6 +72,10 @@
 :::include(src="./doc/fixed-column.vue")
 :::
 
+## 自定义列模板
+:::include(src="./doc/custom.vue")
+:::
+
 <!-- 
 
 ### 样式 <design-tag></design-tag>
@@ -106,12 +110,6 @@
 :::include(src="./doc/custom-selection.vue")
 :::
 
-### 自定义列模板
-自定义列的显示内容，可组合其他组件使用。
-通过 `scoped slot` 可以获取到 row, column, $index 和 store（table 内部的状态管理）的数据，用法参考 demo。
-:::include(src="./doc/custom.vue")
-:::
-
 ### 自定义表头
 :::include(src="./doc/header.vue")
 :::
@@ -140,11 +138,6 @@
 
 ### 筛选
 :::include(src="./doc/filterable.vue")
-:::
-
-### 自定义筛选菜单
-通过设置 type="expand" 和 `scoped slot` 可以开启展开行功能，`mtd-table-column` 的模板会被渲染成为展开行的内容，展开行可访问的属性与使用自定义列模板时的 `scoped slot` 相同。
-:::include(src="./doc/custom-filter.vue")
 :::
 
 ### 可伸缩列
