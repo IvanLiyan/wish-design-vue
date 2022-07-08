@@ -58,6 +58,9 @@ todo 未支持按需加载，若支持需要 lib 里面以组件文件夹形式�
 
 ## 版本记录
 
-#### 0.0.2-alpha.40
+#### 0.0.2-alpha.41
 ·修复了Tab组件的bug
 ·新增了Datepicker的API - value-format
+
+#### 0.0.2-alpha.42
+·新增了Table的demo - 自定义单元格 CustomCell
