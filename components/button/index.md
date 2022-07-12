@@ -39,7 +39,7 @@
   
 </style>
 
-# Button / 按钮
+# 按钮 / Button
 
 <span>{{$t('button.componnent_desc')}}</span>
 
@@ -95,5 +95,5 @@
 
 <api-doc name="Button" :doc="require('./api.json')"></api-doc>
 
-:::include(src="./doc/show.vue")
-:::
+<!-- :::include(src="./doc/show.vue")
+::: -->

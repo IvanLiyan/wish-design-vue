@@ -71,9 +71,9 @@ export default {
 
 <api-doc name="Icon" :doc="require('./api.json')"></api-doc>
 
-### 图标集合
+### <span>{{$t('icon.module3.subtitle1')}}</span>
 
-**注: 查看更多 Feather 图标资源** <a href="https://feathericons.com/" target="_blank">Feather-v4.28.0</a>
+**<span>{{$t('icon.module3.desc1')}}</span>** <a href="https://feathericons.com/" target="_blank">Feather-v4.28.0</a>
 
 <ul class='icon-list'>
   <li v-for='icon in icons' :key='icon' class='icon-item'>

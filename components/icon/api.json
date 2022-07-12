@@ -4,7 +4,7 @@
       "name": "name",
       "desc": "$t('icon.api.name')",
       "type": "string",
-      "optionalValue": ["参考图标集合"],
+      "optionalValue": ["(refer to the icon collection)"],
       "default": "",
       "version": ""
     },

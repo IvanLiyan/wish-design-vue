@@ -1,4 +1,4 @@
-# Layout / 布局
+# 布局 / Layout
 <span>{{$t('layout.component_desc')}}</span>
 
 `<wt-layout>`：{{$t('layout.component_desc_layout1')}} `<wt-header>` {{$t('layout.component_desc_layout2')}} `<wt-footer>` {{$t('layout.component_desc_layout3')}}

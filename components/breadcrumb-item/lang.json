@@ -1,0 +1,14 @@
+{
+  "chinese": {
+    "api": {
+      "tag": "动态组件名，详见<a href='https://cn.vuejs.org/v2/guide/components.html#%E5%8A%A8%E6%80%81%E7%BB%84%E4%BB%B6' target='_blank'>动态组件</a>",
+      "to": "在tag为router-link下，编辑页面跳转路径"
+    }
+  },
+  "english": {
+    "api": {
+      "tag": "Dynamic component names, see <a href='https://cn.vuejs.org/v2/guide/components.html#%E5%8A%A8%E6%80%81%E7%BB%84%E4%BB%B6' target='_blank'> dynamic components</a>",
+      "to": "When the tag is router-link, edit the redirect path"
+    }
+  }
+}

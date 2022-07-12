@@ -2,7 +2,7 @@
   "props": [
     {
       "name": "showTitle",
-      "desc": "显示当前页标签，默认不显示",
+      "desc": "$t('breadcrumb.api.showTitle')",
       "type": "string",
       "optionalValue": "",
       "default": "false",
@@ -10,7 +10,7 @@
     },
     {
       "name": "showBackIcon",
-      "desc": "同时显示当前页标签及返回按钮，默认不显示",
+      "desc": "$t('breadcrumb.api.showBackIcon')",
       "type": "string",
       "optionalValue": "",
       "default": "false",

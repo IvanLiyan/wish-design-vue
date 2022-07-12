@@ -1,0 +1,34 @@
+{
+  "chinese": {
+    "componnent_desc": "用于页面层级的展示和页面跳转",
+    "module1": {
+      "title": "基础样式"
+    },
+    "module2": {
+      "title": "类型与用法",
+      "desc": "默认不展示当前页面标题和箭头。展示箭头时，点击箭头返回上一级菜单。",
+      "subtitle1": "标题",
+      "subtitle2": "返回箭头"
+    },
+    "api": {
+      "showTitle": "显示当前页标签，默认不显示",
+      "showBackIcon": "同时显示当前页标签及返回按钮，默认不显示"
+    }
+  },
+  "english": {
+    "componnent_desc": "Used for page-level display and page hopping.",
+    "module1": {
+      "title": "Basic Style"
+    },
+    "module2": {
+      "title": "Type and Use Cases",
+      "desc": "The current page title and arrow are not displayed by default. When the arrow is displayed, click the arrow to return to the upper-level menu.",
+      "subtitle1": "Title",
+      "subtitle2": "Return arrow"
+    },
+    "api": {
+      "showTitle": "Displays the current TAB. Default is not displayed",
+      "showBackIcon": "Display the current TAB and the back button at the same time. Default is not displayed"
+    }
+  }
+}

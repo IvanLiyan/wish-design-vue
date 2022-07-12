@@ -1,22 +1,22 @@
 # 面包屑 / Breadcrumb
 
-用于页面层级的展示和页面跳转
+<span>{{$t('breadcrumb.componnent_desc')}}</span>
 
-## 基础样式
+## <span>{{$t('breadcrumb.module1.title')}}</span>
 
 :::include(src="./doc/base.vue")
 :::
 
-## 类型与用法
+## <span>{{$t('breadcrumb.module2.title')}}</span>
 
-默认不展示当前页面标题和箭头。展示箭头时，点击箭头返回上一级菜单
+<span>{{$t('breadcrumb.module2.desc')}}</span>
 
-### 标题
+### <span>{{$t('breadcrumb.module2.subtitle1')}}</span>
 
 :::include(src="./doc/title.vue")
 :::
 
-### 返回箭头
+### <span>{{$t('breadcrumb.module2.subtitle2')}}</span>
 
 :::include(src="./doc/icon.vue")
 :::
