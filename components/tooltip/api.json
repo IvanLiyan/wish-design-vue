@@ -1,7 +1,7 @@
 {
 	"props": [{
 			"name": "show-arrow",
-			"desc": "是否显示箭头",
+			"desc": "$t('tooltip.api.show-arrow')",
 			"type": "boolean",
 			"optionalValue": "",
 			"default": "true",
@@ -9,7 +9,7 @@
 		},
 		{
 			"name": "default-visible",
-			"desc": "默认是否显示",
+			"desc": "$t('tooltip.api.default-visible')",
 			"type": "boolean",
 			"optionalValue": "",
 			"default": "false",
@@ -17,7 +17,7 @@
 		},
 		{
 			"name": "visible",
-			"desc": "手动控制是否显示 tooltip, 支持 v-model",
+			"desc": "$t('tooltip.api.visible')",
 			"type": "boolean",
 			"optionalValue": "",
 			"default": "false",
@@ -25,7 +25,7 @@
 		},
 		{
 			"name": "disabled",
-			"desc": "是否禁用",
+			"desc": "$t('tooltip.api.disabled')",
 			"type": "boolean",
 			"optionalValue": "",
 			"default": "false",
@@ -33,7 +33,7 @@
 		},
 		{
 			"name": "placement",
-			"desc": "显示的位置 ",
+			"desc": "$t('tooltip.api.placement')",
 			"type": "string",
 			"optionalValue": ["top", "top-start", "top-end", "bottom", "bottom-start", "bottom-end", "left", "left-start", "left-end", "right", "right-start", "right-end"],
 			"default": "bottom-start",
@@ -41,7 +41,7 @@
 		},
 		{
 			"name": "trigger",
-			"desc": "触发行为",
+			"desc": "$t('tooltip.api.trigger')",
 			"type": "string",
 			"optionalValue": ["hover", "click"],
 			"default": "hover",
@@ -49,7 +49,7 @@
 		},
 		{
 			"name": "content",
-			"desc": "显示的内容",
+			"desc": "$t('tooltip.api.content')",
 			"type": "string",
 			"optionalValue": "",
 			"default": "",
@@ -57,7 +57,7 @@
 		},
 		{
 			"name": "open-delay",
-			"desc": "hover 触发时出现的延迟，单位毫秒, 0 表示不延迟",
+			"desc": "$t('tooltip.api.open-delay')",
 			"type": "number",
 			"optionalValue": "",
 			"default": "300",
@@ -65,7 +65,7 @@
 		},
 		{
 			"name": "close-delay",
-			"desc": "hover 触发时消失的延迟，单位毫秒, 0 表示不延迟",
+			"desc": "$t('tooltip.api.close-delay')",
 			"type": "number",
 			"optionalValue": "",
 			"default": "200",
@@ -74,18 +74,18 @@
 	],
 	"events": [{
 		"name": "input",
-		"desc": "当前 visible 发生改变时触发",
+		"desc": "$t('tooltip.api.input')",
 		"signature": "function (visible: boolean)",
 		"args": ""
 	}, {
     "name": "clickoutside",
-    "desc": "当前 trigger='click' 点击外部元素关闭弹出框时触发",
+    "desc": "$t('tooltip.api.clickoutside')",
     "signature": "function (event: MouseEvent)",
     "args": "",
     "version": "0.3.11"
   }],
 	"slots": [{
 		"name": "content",
-		"desc": "内容插槽"
+		"desc": "$t('tooltip.api.slot_content')"
 	}]
 }

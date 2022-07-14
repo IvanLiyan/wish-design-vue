@@ -54,18 +54,18 @@
 }
 </style>
 # 文字提示 / Tooltip
-用于缩略信息的完整展示，不承载复杂文本和操作，通过鼠标移入显示、移出消失的方式查看。
+<span>{{ $t('tooltip.componnent_desc')}}</span>
 
-## 基础样式
+## <span>{{ $t('tooltip.module1.title1')}}</span>
 :::include(src="./doc/base.vue")
 :::
 
-## 图表类
-#### 支持出现在不同位置
+## <span>{{ $t('tooltip.module2.title1')}}</span>
+#### <span>{{ $t('tooltip.module2.subtitle1')}}</span>
 :::include(src="./doc/position.vue")
 :::
 
-#### 可以自定义内容
+#### <span>{{ $t('tooltip.module2.subtitle2')}}</span>
 :::include(src="./doc/custom.vue")
 :::
 

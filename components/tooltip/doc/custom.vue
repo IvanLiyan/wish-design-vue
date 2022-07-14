@@ -1,17 +1,17 @@
 <template>
   <div class="tooltip-wrapper">
     <wt-tooltip placement="top">
-      <span>自定义内容1</span>
+      <span>Custom Content1</span>
       <div slot="content" class="adb">
         <p>99.99%</p>
         <hr />
-        <p>盘亏产品数：10</p>
-        <p>盘盈产品数：10</p>
-        <p>系统在库数：200,000</p>
+        <p>Number of products in deficit: 10</p>
+        <p>Volume of products: 10</p>
+        <p>Number of system libraries: 200,000</p>
       </div>
     </wt-tooltip>
     <wt-tooltip placement="top">
-      <span>自定义内容2</span>
+      <span>Custom Content2</span>
       <div slot="content">
         <p>2022.05.05</p>
         <hr />

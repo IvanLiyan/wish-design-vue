@@ -1,5 +1,5 @@
 <template>
   <wt-tooltip content="2022.03" placement="top">
-    <span>鼠标移入后展示</span>
+    <span>Display after mouseover</span>
   </wt-tooltip>
 </template>

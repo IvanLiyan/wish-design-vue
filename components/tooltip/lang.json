@@ -1,0 +1,40 @@
+{
+  "chinese": {
+    "componnent_desc": "用于缩略信息的完整展示，不承载复杂文本和操作，通过鼠标移入显示、移出消失的方式查看",
+    "module1": { "title1": "基础样式" },
+    "module2": { "title1": "图表类", "subtitle1": "支持出现在不同位置", "subtitle2": "可以自定义内容" },
+    "api": {
+      "show-arrow": "是否显示箭头",
+      "default-visible": "默认是否显示",
+      "visible": "手动控制是否显示 tooltip, 支持 v-model",
+      "disabled": "是否禁用",
+      "placement": "显示的位置",
+      "trigger": "触发行为",
+      "content": "显示的内容",
+      "open-delay": "hover 触发时出现的延迟，单位毫秒, 0 表示不延迟",
+      "close-delay": "hover 触发时消失的延迟，单位毫秒, 0 表示不延迟",
+      "slot_content": "内容插槽",
+      "input": "当前 visible 发生改变时触发",
+      "clickoutside": "当前 trigger='click' 点击外部元素关闭弹出框时触发"
+    }
+  },
+  "english": {
+    "componnent_desc": "A complete display of abbreviated information, without complex text and operations, viewed by mouse in display or mouse out disappear.",
+    "module1": { "title1": "Basic Style" },
+    "module2": { "title1": "Chart Type", "subtitle1": "Support appears in different places", "subtitle2": "Custom content" },
+    "api": {
+      "show-arrow": "Whether to show arrows",
+      "default-visible": "Default display",
+      "visible": "Manually control whether to display tooltip, support v-model",
+      "disabled": "Whether to disable",
+      "placement": "Display position",
+      "trigger": "Trigger behavior",
+      "content": "Display content",
+      "open-delay": "The delay that occurs when the hover is triggered, in milliseconds, with 0 indicating no delay",
+      "close-delay": "The delay that disappears when the hover is triggered, in milliseconds, with 0 indicating no delay",
+      "slot_content": "Content slot",
+      "input": "Triggered when visible currently changes",
+      "clickoutside": "Trigger when the current trigger='click' is triggered when an external element is clicked to close the popup"
+    }
+  }
+}
