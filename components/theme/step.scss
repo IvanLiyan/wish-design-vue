@@ -129,6 +129,7 @@
     }
 
     > .#{$prefix}-step-head-number {
+      background-color: $color-white;
       .#{$prefix}-step-head-dot {
         background-color: $color-white;
         border-color: $stepper-finish-dot-border-color;
