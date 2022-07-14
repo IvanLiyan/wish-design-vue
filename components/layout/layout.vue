@@ -16,11 +16,9 @@ import {
 
 export default {
   name: 'WtLayout',
-
   componentName: 'wt-Layout',
-
   props: {
-    direction: String,
+    direction: String, // 子元素排列方向
   },
 
   inject: {
@@ -36,6 +34,7 @@ export default {
     prefix () {
       return this.config.getPrefixCls('layout');
     },
+    // 是否垂直排列
     isVertical () {
       if (this.direction === 'vertical') {
         return true;

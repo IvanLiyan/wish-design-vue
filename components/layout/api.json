@@ -4,7 +4,7 @@
     "desc": "$t('layout.api.layout_direction')",
     "type": "string",
     "optionalValue": ["horizontal", "vertical"],
-    "default": "",
+    "default": "vertical",
     "version": ""
   }]
 }

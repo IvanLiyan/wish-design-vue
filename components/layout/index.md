@@ -14,6 +14,27 @@
 :::include(src="./doc/base.vue")
 :::
 
+:::include(src="./doc/structure1.vue")
+:::
+
+:::include(src="./doc/structure2.vue")
+:::
+
+:::include(src="./doc/structure3.vue")
+:::
+
+:::include(src="./doc/structure4.vue")
+:::
+
+:::include(src="./doc/structure5.vue")
+:::
+
+:::include(src="./doc/structure6.vue")
+:::
+
+:::include(src="./doc/structure7.vue")
+:::
+
 ## API
 <api-doc name="Layout" :doc="require('./api.json')"></api-doc>
 <api-doc name="Header" :doc="require('./../header/api.json')"></api-doc>

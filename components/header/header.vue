@@ -12,6 +12,7 @@ export default {
   name: 'WtHeader',
 
   props: {
+    // 高度
     height: {
       type: String,
       default: '60px',

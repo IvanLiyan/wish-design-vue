@@ -1,6 +1,6 @@
 {
   "chinese": {
-    "component_desc": "灵活的自定义布局。",
+    "component_desc": "灵活的自定义布局",
     "component_desc_layout1": "外层容器。当子元素中包含",
     "component_desc_layout2": "或",
     "component_desc_layout3": "时，全部子元素会垂直上下排列，否则会水平左右排列。",

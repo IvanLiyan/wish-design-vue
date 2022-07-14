@@ -11,6 +11,7 @@ export default {
   name: 'WtAside',
   componentName: 'WtAside',
   props: {
+    // 宽度
     width: {
       type: String,
       default: '300px',

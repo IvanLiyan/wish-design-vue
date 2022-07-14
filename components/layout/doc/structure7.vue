@@ -1,8 +1,12 @@
 <template>
   <div class="layout-wrapper">
     <wt-layout>
-      <wt-header>Header</wt-header>
-      <wt-main>Main</wt-main>
+      <wt-aside width="200px">Aside</wt-aside>
+      <wt-layout>
+        <wt-header>Header</wt-header>
+        <wt-main>Main</wt-main>
+        <wt-footer>Footer</wt-footer>
+      </wt-layout>
     </wt-layout>
   </div>
 </template>
@@ -18,7 +22,7 @@
     background-color: #E5ECFF;
     color: #0E161C;
     text-align: center;
-    line-height: 200px;
+    line-height: 320px;
   }
 
   .wt-main {
@@ -27,10 +31,4 @@
     text-align: center;
     line-height: 160px;
   }
-
-  .layout-wrapper:nth-child(5) .wt-aside,
-  .layout-wrapper:nth-child(6) .wt-aside {
-    line-height: 260px !important;
-  }
-
 </style>
