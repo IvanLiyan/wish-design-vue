@@ -54,29 +54,37 @@ export default {
     prop: 'visible',
   },
   props: {
+    // 是否将弹出框插入至容器元素中
     appendToContainer: {
       type: Boolean,
       default: true,
     },
     getPopupContainer: Function,
+    // 是否需要遮罩层
     mask: {
       type: Boolean,
       default: true,
     },
+    // 是否显示关闭按钮，同时是否支持 esc 关闭
     closable: {
       type: Boolean,
       default: true,
     },
+    // 点击蒙层是否允许关闭
     maskClosable: {
       type: Boolean,
       default: false,
     },
+    // 是否显示，支持 v-model
     visible: Boolean,
+    // 是否在关闭时销毁 Modal 里的子元素
     destroyOnClose: Boolean,
+    // 是否在 Modal 出现时将 body 滚动锁定
     lockScroll: {
       type: Boolean,
       default: true,
     },
+    // 位置
     placement: {
       type: String,
       validator(v) {
@@ -84,6 +92,7 @@ export default {
       },
       default: 'center',
     },
+    // 宽度
     width: [String, Number],
   },
   inject: {
@@ -96,23 +105,26 @@ export default {
   },
   data() {
     return {
-      dialogVisible: true,
-      wrapVisible: this.visible,
-      zIndex: 2000,
+      dialogVisible: true, // 对话框显隐
+      wrapVisible: this.visible, // 对话框容器显隐
+      zIndex: 2000, // z-index层数
     };
   },
   computed: {
     prefix() {
       return this.config.getPrefixCls('dialog');
     },
+    // 对话框宽度
     dialogWidth() {
       return this.width ? (isNumber(this.width) ? `${this.width}px` : this.width) : undefined;
     },
+    // 获取容器元素
     getContainer() {
       return this.getPopupContainer || this.config.getPContainer || getConfig().getPopupContainer;
     },
   },
   watch: {
+    // 对话框显示隐藏
     visible(n) {
       n ? this.openDialog() : this.closeDialog();
     },
@@ -134,16 +146,25 @@ export default {
     this.destroy();
   },
   methods: {
+    /**
+     * 初始化对话框
+     */
     init() {
       if (this.visible) {
         this.openDialog();
       }
     },
+    /**
+     * 销毁对话框
+     */
     destroy() {
       this.closeDialog(this);
       const parentNode = this.$el.parentNode;
       parentNode && parentNode.removeChild(this.$el);
     },
+    /**
+     * 创建对话框
+     */
     createDialog() {
       if (this.appendToContainer) {
         const parent = this.getContainer();
@@ -151,6 +172,9 @@ export default {
       }
       return true;
     },
+    /**
+     * 显示对话框
+     */
     openDialog() {
       this.dialogVisible = true;
       this.wrapVisible = true;
@@ -164,16 +188,25 @@ export default {
       }
       this.$emit('open');
     },
+    /**
+     * 关闭对话框
+     */
     closeDialog() {
       PopupManage.close(this);
       if (this.lockScroll) {
         unlock(document.body);
       }
     },
+    /**
+     * 触发事件通知
+     */
     close() {
       this.$emit('close');
       this.$emit('input', false);
     },
+    /**
+     * 已关闭 Dialog 的回调事件
+     */
     handleAfterLeave() {
       if (this.destroyOnClose) {
         this.dialogVisible = false;
@@ -181,20 +214,35 @@ export default {
       this.wrapVisible = false;
       this.$emit('closed');
     },
+    /**
+     * 打开弹出框时触发
+     */
     handleAfterEnter() {
       this.$emit('opened');
     },
+    /**
+     * 判断蒙层是否关闭
+     */
     handleMaskClick() {
       this.maskClosable && this.visible && this.close();
     },
+    /**
+     * 对话框关闭事件
+     */
     handleClose() {
       this.visible && this.close();
     },
+    /**
+     * 蒙层点击事件
+     */
     handleWrapClick(event) {
       if (hasClass(event.target, `${this.prefix}-wrapper`)) {
         this.handleMaskClick(event);
       }
     },
+    /**
+     * 点击遮罩层或右上角叉的事件
+     */
     handleEscClose(e) {
       this.visible && this.closable && this.close();
     },

@@ -44,6 +44,9 @@ export default {
     },
   },
   methods: {
+    /**
+     * 关闭对话框
+     */
     handleClose() {
       this.$emit('close');
     },

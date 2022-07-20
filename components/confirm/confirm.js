@@ -8,6 +8,7 @@ const ConfirmConstructor = Vue.extend(confirmVue);
 export const instances = [];
 
 let seed = 0;
+// 删除指定的confirm实例
 function remove(id) {
   let index = -1;
   for (let i = 0; i < instances.length; i++) {
@@ -21,6 +22,7 @@ function remove(id) {
   }
 }
 
+// 定义confirm返回promise
 const Confirm = (options) => {
   return new Promise((resolve, reject) => {
     const id = 'confirm_' + seed++;
@@ -34,6 +36,7 @@ const Confirm = (options) => {
 
     const data = {
       ...options,
+      // 点击确认按钮后的回调
       onOk: function (params) {
         const result = options.onOk && options.onOk(params);
         const promise = isPromise(result) ? result : Promise.resolve(params);
@@ -44,6 +47,7 @@ const Confirm = (options) => {
           })
           .then(resolve);
       },
+      // 点击取消按钮或关闭按钮后的回调
       onCancel: function (params) {
         const result = options.onCancel && options.onCancel(params);
         const promise = isPromise(result) ? result : Promise.resolve(params);
@@ -56,6 +60,7 @@ const Confirm = (options) => {
           .then(resolve);
       },
     };
+    // confirm添加回调方法
     const instance = new ConfirmConstructor({
       data: data,
     });
