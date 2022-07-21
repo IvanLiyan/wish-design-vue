@@ -14,7 +14,7 @@ function defaultFindTreeColumnIndex (columns) {
   });
 }
 export default {
-  name: 'MtdTableBody',
+  name: 'WtTableBody',
 
   mixins: [LayoutObserver],
 

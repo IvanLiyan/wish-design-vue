@@ -1,6 +1,6 @@
 <template>
   <div>
-    <wt-table :data="tableData">
+    <wt-table :data="tableData" :pagination="pagination">
       <wt-table-column
         prop="orderId"
         label="WOSP订单ID"

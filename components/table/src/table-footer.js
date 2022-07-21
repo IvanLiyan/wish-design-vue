@@ -1,7 +1,7 @@
 import LayoutObserver from './layout-observer';
 
 export default {
-  name: 'MtdTableFooter',
+  name: 'WtTableFooter',
 
   mixins: [LayoutObserver],
 

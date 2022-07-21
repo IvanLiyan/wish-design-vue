@@ -235,13 +235,23 @@
       :visible="tooltipVisible"
       :content="tooltipContent"
     />
+    <!-- <wt-pagination
+      :total="pagination.total"
+      :current-page.sync="pagination.currentPage"
+      :page-size.sync="pagination.pageSize"
+      :show-quick-jumper="pagination.showQuickJumper"
+      :show-size-changer="pagination.showSizeChanger"
+      :show-total="pagination.showTotal"
+      @change="pagination.onChange"
+    /> -->
   </div>
 </template>
 
 <script>
-import MtdLoading from '@components/loading';
-import MtdTooltip from '@components/tooltip';
+import WtLoading from '@components/loading';
+import WtTooltip from '@components/tooltip';
 import debounce from 'throttle-debounce/debounce';
+import WtPagination from '@components/pagination';
 import {
   addResizeListener,
   removeResizeListener,
@@ -270,8 +280,9 @@ export default {
     TableHeader,
     TableFooter,
     TableBody,
-    MtdLoading,
-    MtdTooltip,
+    WtLoading,
+    WtTooltip,
+    WtPagination,
   },
 
   // mixins: [Locale, Migrating],
@@ -300,6 +311,21 @@ export default {
     striped: Boolean,
 
     bordered: Boolean,
+
+    pagination: {
+      type: Object,
+      default() {
+        return {
+          total: 0,
+          currentPage: 1,
+          pageSize: 10,
+          showQuickJumper: false,
+          showSizeChanger: false,
+          showTotal: false,
+          onChange: () => {},
+        };
+      },
+    },
 
     rowKey: [String, Function],
 
