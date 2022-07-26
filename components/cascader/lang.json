@@ -1,0 +1,68 @@
+{
+  "chinese": {
+    "component_desc": "将数据集合，进行分类展示和选择，建议最多展示 4 级菜单",
+    "module1": { "title": "基础样式" },
+    "module2": {
+      "title": "类型与用法",
+      "subtitle1": "可选父节点或子节点",
+      "subtitle2": "交互方式",
+      "desc2": "当层级、分类较多，选用“悬停展示下级菜单”，快速预览菜单内容",
+      "subtitle3": "状态",
+      "desc3": "下拉面板可根据场景配置 disable 状态。 在数据源中配置 disabled 为 true 来禁用选项。可以通过 props 属性来指定(详见 API)",
+      "subtitle4": "信息回显",
+      "desc4": "回显选中路径，可明确提示和告知用户选中信息的分类来源。 formatter 仅支持返回 string"
+    },
+    "api": {
+      "visible": "受控，非必须，是否显示下拉",
+      "default-visible": "默认是否显示下拉",
+      "value": "当前选中项",
+      "data": "数据源",
+      "label": "选择标签",
+      "no-data-text": "空数据时显示文案",
+      "change-on-select": "是否允许选择任意一级的选项",
+      "expand-trigger": "展开方式",
+      "formatter": "格式化输入框中显示的内容,labels 为当前匹配到的 label 数组，selectedOptions 为当前选中的option数组，vlaue为当前级联的值",
+      "no-match-text": "搜索条件无匹配时显示的文字",
+      "disabled": "是否禁用",
+      "placeholder": "输入框占位文本",
+      "change": "绑定值发生变化时触发",
+      "update:visible": "下拉框显示/隐藏时触发",
+      "active-item-change": "当 change-on-select 为 false 时，父级选项变化时触发，参数为各父级项组成的数组",
+      "focus()": "使 cascader 获取焦点",
+      "blur()": "使 cascader 失去焦点"
+    }
+  },
+  "english": {
+    "component_desc": "Display and select data sets by category. It is recommended to display a maximum of 4 menus.",
+    "module1": { "title": "Basic Style" },
+    "module2": {
+      "title": "Type and Use Cases",
+      "subtitle1": "Parent node or child node is optional",
+      "subtitle2": "Interact",
+      "desc2": "When there are many levels and categories, select 'Hover to display lower-level menu' to quickly preview menu content",
+      "subtitle3": "Status",
+      "desc3": "The disable state can be configured based on scenarios. Set disabled to true in the data source to disable options. This can be specified via the props property (see API)",
+      "subtitle4": "Information back to show",
+      "desc4": "If the selected path is displayed, you can be prompted and informed of the category source of the selected information. Formatter Only string is supported"
+    },
+    "api": {
+      "visible": "Controlled, optional, whether to display dropdown",
+      "default-visible": "Whether to display dropdown by default",
+      "value": "Currently selected item",
+      "data": "The data source",
+      "label": "The label of selected",
+      "no-data-text": "Display content when empty data",
+      "change-on-select": "Whether to allow selection of any level of options",
+      "expand-trigger": "The way to expand",
+      "formatter": "Format the contents displayed in the input box,labels as the currently matched label array, selectedOptions as the currently selectedOption array, and vlaue as the current cascading value",
+      "no-match-text": "Text that is displayed when there is no match for the search criteria",
+      "disabled": "Whether to disable",
+      "placeholder": "The field placeholder text of Input",
+      "change": "Triggered when the binding value changes",
+      "update:visible": "Trigger when the drop-down box shows/hides",
+      "active-item-change": "When change-on-select is false, it is triggered when the parent option changes and the parameter is an array of the parent items",
+      "focus()": "Make the Cascader into focus",
+      "blur()": "Make cascader out of focus"
+    }
+  }
+}

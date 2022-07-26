@@ -83,7 +83,7 @@ export default {
     },
     noDataText: {
       type: String,
-      default: '暂无数据',
+      default: 'No data',
     },
     expandTrigger: {
       type: String,
@@ -110,7 +110,7 @@ export default {
     },
     noMatchText: {
       type: String,
-      default: '暂无搜索结果',
+      default: 'No search result is available',
     },
     menuWidth: String,
     multiple: Boolean,

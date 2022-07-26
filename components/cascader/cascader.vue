@@ -129,7 +129,7 @@ export default {
     placeholder: {
       type: String,
       default() {
-        return '请选择';
+        return 'Please Select';
       },
     },
     placement: {

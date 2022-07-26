@@ -2,7 +2,7 @@
   "props": [
     {
       "name": "visible",
-      "desc": "<strong>受控</strong>，非必须，是否显示下拉",
+      "desc": "$t('cascader.api.visible')",
       "type": "boolean",
       "optionalValue": "",
       "default": "",
@@ -10,7 +10,7 @@
     },
     {
       "name": "default-visible",
-      "desc": "默认是否显示下拉",
+      "desc": "$t('cascader.api.default-visible')",
       "type": "boolean",
       "optionalValue": "",
       "default": "",
@@ -18,7 +18,7 @@
     },
     {
       "name": "value",
-      "desc": "当前选中项",
+      "desc": "$t('cascader.api.value')",
       "type": "Array",
       "optionalValue": "",
       "default": "",
@@ -26,7 +26,7 @@
     },
     {
       "name": "data",
-      "desc": "数据源",
+      "desc": "$t('cascader.api.data')",
       "type": "Array",
       "optionalValue": "",
       "default": "[]",
@@ -34,7 +34,7 @@
     },
     {
       "name": "label",
-      "desc": "选择标签",
+      "desc": "$t('cascader.api.label')",
       "type": "String",
       "optionalValue": "",
       "default": "",
@@ -42,15 +42,15 @@
     },
     {
       "name": "no-data-text",
-      "desc": "空数据时显示文案",
+      "desc": "$t('cascader.api.no-data-text')",
       "type": "string",
       "optionalValue": "",
-      "default": "'暂无数据'",
+      "default": "'No data'",
       "version": ""
     },
     {
       "name": "change-on-select",
-      "desc": "是否允许选择任意一级的选项",
+      "desc": "$t('cascader.api.change-on-select')",
       "type": "boolean",
       "optionalValue": "",
       "default": "false",
@@ -58,7 +58,7 @@
     },
     {
       "name": "expand-trigger",
-      "desc": "展开方式",
+      "desc": "$t('cascader.api.expand-trigger')",
       "type": "string",
       "optionalValue": ["click", "hover"],
       "default": "click",
@@ -66,7 +66,7 @@
     },
     {
       "name": "formatter",
-      "desc": "格式化输入框中显示的内容,labels 为当前匹配到的 label 数组，selectedOptions 为当前选中的option数组，vlaue为当前级联的值",
+      "desc": "$t('cascader.api.formatter')",
       "type": "function(labels, selectedOptions, value): string",
       "optionalValue": "",
       "default": "",
@@ -74,15 +74,15 @@
     },
     {
       "name": "no-match-text",
-      "desc": "搜索条件无匹配时显示的文字",
+      "desc": "$t('cascader.api.no-match-text')",
       "type": "string",
       "optionalValue": "",
-      "default": "暂无搜索结果",
+      "default": "No search result is available",
       "version": ""
     },
     {
       "name": "disabled",
-      "desc": "是否禁用",
+      "desc": "$t('cascader.api.disabled')",
       "type": "boolean",
       "optionalValue": "",
       "default": "",
@@ -90,7 +90,7 @@
     },
     {
       "name": "placeholder",
-      "desc": "输入框占位文本",
+      "desc": "$t('cascader.api.placeholder')",
       "type": "string",
       "optionalValue": "",
       "default": "'请选择'",
@@ -100,29 +100,29 @@
   "events": [
     {
       "name": "change",
-      "desc": "绑定值发生变化时触发",
+      "desc": "$t('cascader.api.change')",
       "args": "function(value:array,selectedOptions:array)"
     },
     {
       "name": "update:visible",
-      "desc": "下拉框显示/隐藏时触发",
+      "desc": "$t('cascader.api.update:visible')",
       "args": "function(visible: boolean)"
     },
     {
       "name": "active-item-change",
-      "desc": "当 change-on-select 为 false 时，父级选项变化时触发，参数为各父级项组成的数组",
+      "desc": "$t('cascader.api.active-item-change')",
       "args": "function(item:array)"
     }
   ],
   "methods": [
     {
       "name": "focus()",
-      "desc": "使 cascader 获取焦点",
+      "desc": "$t('cascader.api.focus()')",
       "args": ""
     },
     {
       "name": "blur()",
-      "desc": "使 cascader 失去焦点",
+      "desc": "$t('cascader.api.blur()')",
       "args": ""
     }
   ]

@@ -9,42 +9,42 @@ export default {
       options: [
         {
           value: 'zhinan',
-          label: '指南',
+          label: 'guide',
           children: [
             {
               value: 'shejiyuanze',
-              label: '设计原则',
+              label: 'design principles',
               disabled: true,
               children: [
                 {
                   value: 'yizhi',
-                  label: '一致',
+                  label: 'consistent',
                 },
                 {
                   value: 'fankui',
-                  label: '反馈',
+                  label: 'feedback',
                 },
                 {
                   value: 'xiaolv',
-                  label: '效率',
+                  label: 'efficiency',
                 },
                 {
                   value: 'kekong',
-                  label: '可控',
+                  label: 'controllable',
                 },
               ],
             },
             {
               value: 'daohang',
-              label: '导航',
+              label: 'navigation',
               children: [
                 {
                   value: 'cexiangdaohang',
-                  label: '侧向导航',
+                  label: 'lateral navigation',
                 },
                 {
                   value: 'dingbudaohang',
-                  label: '顶部导航',
+                  label: 'top navigation',
                 },
               ],
             },
@@ -52,32 +52,31 @@ export default {
         },
         {
           value: 'zujian',
-          label: '组件',
+          label: 'component',
           children: [
             {
               value: 'basic',
               label: 'Basic',
-              disabled: true,
               children: [
                 {
                   value: 'layout',
-                  label: 'Layout 布局',
+                  label: 'Layout',
                 },
                 {
                   value: 'color',
-                  label: 'Color 色彩',
+                  label: 'Color',
                 },
                 {
                   value: 'typography',
-                  label: 'Typography 字体',
+                  label: 'Typography',
                 },
                 {
                   value: 'icon',
-                  label: 'Icon 图标',
+                  label: 'Icon',
                 },
                 {
                   value: 'button',
-                  label: 'Button 按钮',
+                  label: 'Button',
                 },
               ],
             },
@@ -87,27 +86,27 @@ export default {
               children: [
                 {
                   value: 'table',
-                  label: 'Table 表格',
+                  label: 'Table',
                 },
                 {
                   value: 'tag',
-                  label: 'Tag 标签',
+                  label: 'Tag',
                 },
                 {
                   value: 'progress',
-                  label: 'Progress 进度条',
+                  label: 'Progress',
                 },
                 {
                   value: 'tree',
-                  label: 'Tree 树形控件',
+                  label: 'Tree',
                 },
                 {
                   value: 'pagination',
-                  label: 'Pagination 分页',
+                  label: 'Pagination',
                 },
                 {
                   value: 'badge',
-                  label: 'Badge 标记',
+                  label: 'Badge',
                 },
               ],
             },
@@ -117,23 +116,23 @@ export default {
               children: [
                 {
                   value: 'alert',
-                  label: 'Alert 警告',
+                  label: 'Alert',
                 },
                 {
                   value: 'loading',
-                  label: 'Loading 加载',
+                  label: 'Loading',
                 },
                 {
                   value: 'message',
-                  label: 'Message 消息提示',
+                  label: 'Message',
                 },
                 {
                   value: 'message-box',
-                  label: 'MessageBox 弹框',
+                  label: 'MessageBox',
                 },
                 {
                   value: 'notification',
-                  label: 'Notification 通知',
+                  label: 'Notification',
                 },
               ],
             },
@@ -143,23 +142,23 @@ export default {
               children: [
                 {
                   value: 'menu',
-                  label: 'NavMenu 导航菜单',
+                  label: 'NavMenu',
                 },
                 {
                   value: 'tabs',
-                  label: 'Tabs 标签页',
+                  label: 'Tabs',
                 },
                 {
                   value: 'breadcrumb',
-                  label: 'Breadcrumb 面包屑',
+                  label: 'Breadcrumb',
                 },
                 {
                   value: 'dropdown',
-                  label: 'Dropdown 下拉菜单',
+                  label: 'Dropdown',
                 },
                 {
                   value: 'steps',
-                  label: 'Steps 步骤条',
+                  label: 'Steps',
                 },
               ],
             },
@@ -169,27 +168,27 @@ export default {
               children: [
                 {
                   value: 'dialog',
-                  label: 'Dialog 对话框',
+                  label: 'Dialog',
                 },
                 {
                   value: 'tooltip',
-                  label: 'Tooltip 文字提示',
+                  label: 'Tooltip',
                 },
                 {
                   value: 'popover',
-                  label: 'Popover 弹出框',
+                  label: 'Popover',
                 },
                 {
                   value: 'card',
-                  label: 'Card 卡片',
+                  label: 'Card',
                 },
                 {
                   value: 'carousel',
-                  label: 'Carousel 走马灯',
+                  label: 'Carousel',
                 },
                 {
                   value: 'collapse',
-                  label: 'Collapse 折叠面板',
+                  label: 'Collapse',
                 },
               ],
             },
@@ -197,7 +196,7 @@ export default {
         },
         {
           value: 'ziyuan',
-          label: '资源',
+          label: 'resources',
           children: [
             {
               value: 'axure',
@@ -209,7 +208,7 @@ export default {
             },
             {
               value: 'jiaohu',
-              label: '组件交互文档',
+              label: 'Component interaction document',
             },
           ],
         },
