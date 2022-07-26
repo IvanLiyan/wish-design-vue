@@ -1,5 +1,5 @@
 <template>
-  <wt-table :data="tableData">
+  <wt-table :data="tableData" :pagination="pagination">
     <wt-table-column
       prop="orderId"
       label="WOSP订单ID"
@@ -31,6 +31,7 @@
 export default {
   data() {
     return {
+      currentPage: 1,
       tableData: [
         {
           orderId: 'WOSP021700118221DEU',
@@ -53,6 +54,14 @@ export default {
           orderStatus: 1,
         },
       ],
+      pagination: {
+        total: 60,
+        showTotal: true,
+        showQuickJumper: true,
+        showSizeChanger: true,
+        currentPage: this.currentPage,
+        onChange: this.onPageChange,
+      },
     };
   },
   methods: {
@@ -61,6 +70,9 @@ export default {
     },
     handleConfirm(index, row) {
       console.log('Click index:', index, ';Click row:', row);
+    },
+    onPageChange(current, size) {
+      console.log('current:', current, ';size:', size);
     },
   },
 };

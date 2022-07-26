@@ -235,7 +235,8 @@
       :visible="tooltipVisible"
       :content="tooltipContent"
     />
-    <!-- <wt-pagination
+    <wt-pagination
+      v-if="pagination"
       :total="pagination.total"
       :current-page.sync="pagination.currentPage"
       :page-size.sync="pagination.pageSize"
@@ -243,7 +244,7 @@
       :show-size-changer="pagination.showSizeChanger"
       :show-total="pagination.showTotal"
       @change="pagination.onChange"
-    /> -->
+    />
   </div>
 </template>
 
@@ -312,20 +313,7 @@ export default {
 
     bordered: Boolean,
 
-    pagination: {
-      type: Object,
-      default() {
-        return {
-          total: 0,
-          currentPage: 1,
-          pageSize: 10,
-          showQuickJumper: false,
-          showSizeChanger: false,
-          showTotal: false,
-          onChange: () => {},
-        };
-      },
-    },
+    pagination: Object,
 
     rowKey: [String, Function],
 
@@ -506,7 +494,7 @@ export default {
     bodyHeight () {
       if (this.height) {
         return {
-          height: this.layout.bodyHeight ? this.layout.bodyHeight + 'px' : '',
+          height: this.layout.bodyHeight ? this.layout.bodyHeight - 50 + 'px' : '',
         };
       } else if (this.maxHeight) {
         return {
