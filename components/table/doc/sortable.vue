@@ -1,6 +1,6 @@
 <template>
   <div>
-    <wt-table :data="tableData" :sort-order.sync="orderData">>
+    <wt-table :data="tableData" :sort-order.sync="orderData" :pagination="pagination">
       <wt-table-column
         prop="orderId"
         label="WOSP订单ID"
@@ -41,14 +41,6 @@
         label="操作"
         width="100" />
     </wt-table>
-    <wt-pagination
-      size="small"
-      :total="60"
-      :show-total="true"
-      :show-quick-jumper="true"
-      :show-size-changer="true"
-      :current-page.sync="currentPage"
-    />
   </div>
 </template>
 
@@ -80,11 +72,22 @@ export default {
         prop: 'orderId',
         order: 'descending',
       },
+      pagination: {
+        total: 60,
+        showTotal: true,
+        showQuickJumper: true,
+        showSizeChanger: true,
+        currentPage: this.currentPage,
+        onChange: this.onPageChange,
+      },
     };
   },
   methods: {
     sort (row1, row2) {
       return row1.date > row2.date ? 1 : -1;
+    },
+    onPageChange(current, size) {
+      console.log('current:', current, ';size:', size);
     },
   },
 };

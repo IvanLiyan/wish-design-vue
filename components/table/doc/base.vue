@@ -34,14 +34,6 @@
         prop="control"
         label="操作" />
     </wt-table>
-    <wt-pagination
-      size="small"
-      :total="60"
-      :show-total="true"
-      :show-quick-jumper="true"
-      :show-size-changer="true"
-      :current-page.sync="currentPage"
-    />
   </div>
 </template>
 
@@ -69,7 +61,20 @@ export default {
         addTime: '2020-08-25 00:00:00',
         control: <div class="control"><wt-icon name="eye" width="20" height="20" /><wt-icon name="download" width="20" height="20" /><wt-icon name="x-circle" width="20" height="20" /></div>,
       }],
+      pagination: {
+        total: 60,
+        showTotal: true,
+        showQuickJumper: true,
+        showSizeChanger: true,
+        currentPage: this.currentPage,
+        onChange: this.onPageChange,
+      },
     };
+  },
+  methods: {
+    onPageChange(current, size) {
+      console.log('current:', current, ';size:', size);
+    },
   },
 };
 </script>

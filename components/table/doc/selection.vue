@@ -3,7 +3,8 @@
     <wt-table
       :data="tableData"
       :checkboxable="checkboxable"
-      :selection="selection">
+      :selection="selection"
+      :pagination="pagination">
       <wt-table-column
         type="selection"
         width="34" />
@@ -40,14 +41,6 @@
         label="操作"
         width="100" />
     </wt-table>
-    <wt-pagination
-      size="small"
-      :total="60"
-      :show-total="true"
-      :show-quick-jumper="true"
-      :show-size-changer="true"
-      :current-page.sync="currentPage"
-    />
   </div>
 </template>
 
@@ -86,6 +79,14 @@ export default {
       }],
       checked: false,
       selection: [],
+      pagination: {
+        total: 60,
+        showTotal: true,
+        showQuickJumper: true,
+        showSizeChanger: true,
+        currentPage: this.currentPage,
+        onChange: this.onPageChange,
+      },
     };
   },
 
@@ -108,6 +109,9 @@ export default {
       } else {
         return true;
       }
+    },
+    onPageChange(current, size) {
+      console.log('current:', current, ';size:', size);
     },
   },
 };

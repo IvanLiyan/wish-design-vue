@@ -6,7 +6,8 @@
       :data="tableData5"
       :row-key="getRowKeys"
       :expandable="expandable"
-      :expand-row-keys="expands">
+      :expand-row-keys="expands"
+      :pagination="pagination">
       <wt-table-column type="expand" width="40">
         <template slot-scope="props">
           <wt-table :data="tableData" :show-header="false">
@@ -44,6 +45,7 @@
 export default {
   data () {
     return {
+      currentPage: 1,
       tableData: [{
         date: '2016-05-03',
         name: '美小团',
@@ -113,6 +115,14 @@ export default {
 
       // 要展开的行，数值的元素是row的key值
       expands: [],
+      pagination: {
+        total: 60,
+        showTotal: true,
+        showQuickJumper: true,
+        showSizeChanger: true,
+        currentPage: this.currentPage,
+        onChange: this.onPageChange,
+      },
     };
   },
   methods: {
@@ -122,6 +132,9 @@ export default {
     },
     expandable (row, index) {
       return index > 0;
+    },
+    onPageChange(current, size) {
+      console.log('current:', current, ';size:', size);
     },
   },
 };
