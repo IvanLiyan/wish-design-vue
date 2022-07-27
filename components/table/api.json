@@ -40,6 +40,14 @@
       "version": ""
     },
     {
+      "name": "pagination",
+      "desc": "分页器，参考pagination文档，设为 false 时不展示和进行分页",
+      "type": "Object",
+      "optionalValue": "",
+      "default": "false",
+      "version": ""
+    },
+    {
       "name": "expandable",
       "desc": "对 tableColumn[type=expand] 的列有效，function 的返回值用来决定这一行的是否可以展开",
       "type": "boolean function(row)",
