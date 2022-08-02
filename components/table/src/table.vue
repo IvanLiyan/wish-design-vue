@@ -313,7 +313,7 @@ export default {
 
     bordered: Boolean,
 
-    pagination: Object,
+    pagination: [Boolean, Object],
 
     rowKey: [String, Function],
 
