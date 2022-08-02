@@ -67,3 +67,6 @@ todo 未支持按需加载，若支持需要 lib 里面以组件文件夹形式�
 
 #### 0.0.2-alpha.43
 ·Pagination组件集成进Table组件 - 可通过API实现使用Table组件内的分页
+
+#### 0.0.2-alpha.45
+·Table组件内置Pagination位置设为text-right

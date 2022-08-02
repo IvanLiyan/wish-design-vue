@@ -565,6 +565,11 @@ $table-resize-width: 2px;
     z-index: 10;
   }
 
+  &-integ-pagination {
+    margin-top: 16px !important;
+    text-align: right !important;
+  }
+
   /***
     &-enable-row-transition {
       .#{$prefix}-table-body td {

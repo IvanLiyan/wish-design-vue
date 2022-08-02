@@ -236,6 +236,7 @@
       :content="tooltipContent"
     />
     <wt-pagination
+      :class="`${prefix}-integ-pagination`"
       v-if="pagination"
       :total="pagination.total"
       :current-page.sync="pagination.currentPage"
