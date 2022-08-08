@@ -17,9 +17,9 @@ import {
 export default {
   name: 'WtLayout',
   componentName: 'wt-Layout',
-  props: {
-    direction: String, // 子元素排列方向
-  },
+  // props: {
+  //   direction: String, // 子元素排列方向
+  // },
 
   inject: {
     config: {

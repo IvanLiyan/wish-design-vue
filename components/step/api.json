@@ -2,7 +2,7 @@
   "props": [
     {
       "name": "title",
-      "desc": "标题",
+      "desc": "$t('stepper.api.title')",
       "type": "string",
       "optionalValue": "",
       "default": "",
@@ -10,7 +10,7 @@
     },
     {
       "name": "description",
-      "desc": "描述性文字",
+      "desc": "$t('stepper.api.description')",
       "type": "string",
       "optionalValue": "",
       "default": "",
@@ -18,7 +18,7 @@
     },
     {
       "name": "icon",
-      "desc": "图标 传入 icon 的 class 全名来自定义 icon",
+      "desc": "$t('stepper.api.icon')",
       "type": "string",
       "optionalValue": "",
       "default": "",
@@ -26,7 +26,7 @@
     },
     {
       "name": "status",
-      "desc": "设置当前步骤的状态，不设置则根据 stepper 确定状态",
+      "desc": "$t('stepper.api.step_status')",
       "type": "string",
       "optionalValue": ["wait", "process", "finish", "error", "cancel"],
       "default": "",

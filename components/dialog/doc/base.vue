@@ -1,11 +1,11 @@
 <template>
   <div>
-    <wt-button type="primary" @click="openDialog1">预览效果</wt-button>
-    <wt-dialog title="确认提交审核？" v-model="visible1" width="400px">
-      <div>物流商价格的申请内容提交后，等待客服审核通过，可在一个工作日后查看结果。</div>
+    <wt-button type="primary" @click="openDialog1">Click</wt-button>
+    <wt-dialog title="Confirm submit?" v-model="visible1" width="400px">
+      <div>After submitting the application content of the logistics provider price, we will wait for the approval of the customer service, and the result can be viewed in one working day.</div>
       <div slot="footer" class="demo-dialog-footer">
-        <wt-button type="primary" @click="closeDialog1">确定</wt-button>
-        <wt-button type="secondary" @click="closeDialog1">取消</wt-button>
+        <wt-button type="primary" @click="closeDialog1">OK</wt-button>
+        <wt-button type="secondary" @click="closeDialog1">Cancel</wt-button>
       </div>
     </wt-dialog>
   </div>

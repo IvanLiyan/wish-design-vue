@@ -1,0 +1,46 @@
+{
+  "chinese": {
+    "module1": {
+      "subtitle": "基础样式"
+    },
+    "api": {
+      "active-name": "支持 v-model，选中菜单的 name 值",
+      "expanded-names": "受控，展开的 SubMenu 的 name 集合",
+      "default-expanded-names": "默认展开的 SubMenu 的 name 集合",
+      "router": "是否使用 vue-router 的模式，启用该模式会在激活导航时以 name 作为 path 进行路由跳转",
+      "select": "选择菜单（MenuItem）时触发",
+      "update:expandedNames": "SubMenu 展开 / 关闭的回调",
+      "submenu_name": "唯一标识",
+      "icon": "自定义图标",
+      "title": "自定义菜单标题",
+      "menuitem_name": "唯一标识",
+      "disabled": "是否禁用",
+      "route": "Vue Router",
+      "href": "同 a 标签 href 属性",
+      "target": "同 a 标签 target 属性",
+      "default": "自定义菜单标题"
+    }
+  },
+  "english": {
+    "module1": {
+      "subtitle": "Basic Style"
+    },
+    "api": {
+      "active-name": "Support V-model, the name value of the selected menu",
+      "expanded-names": "Controlled, expanded SubMenu collection of names",
+      "default-expanded-names": "The name collection of the default expanded SubMenu",
+      "router": "Specifies whether to use the Vue-router mode. If this mode is enabled, Name is used as the path for route forwarding when the navigation is activated",
+      "select": "Triggered when the menu (MenuItem) is selected",
+      "update:expandedNames": "Callbacks for SubMenu expansion/closure",
+      "submenu_name": "A unique identifier",
+      "icon": "Customize icon",
+      "title": "Customize the menu title",
+      "menuitem_name": "A unique identifier",
+      "disabled": "Whether to disable",
+      "route": "Vue Router",
+      "href": "Same as the href attribute of the <a></a> tag",
+      "target": "Same as the target attribute of the <a></a> tag",
+      "default": "Customize the menu title"
+    }
+  }
+}

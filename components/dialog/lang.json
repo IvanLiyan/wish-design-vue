@@ -1,0 +1,96 @@
+{
+  "chinese": {
+    "component_desc": "用于打断用户操作的信息提示/输入。",
+    "module1": {
+      "title": "基础样式",
+      "desc": "按照结构分为图标层，标题层，内容层，和操作层"
+    },
+    "module2": {
+      "title": "类型与用法",
+      "subtitle1": "结果提示",
+      "desc1": "用于必须打断用户操作的重要提醒，可以是成功或是失败、警告等",
+      "subtitle2": "异步关闭",
+      "desc2": "当按钮触发的操作需要和后端进行校验时会出现 loading 状态",
+      "subtitle3": "自定义内容",
+      "desc3": "可以嵌入自定义内容"
+    },
+    "api": {
+      "mask": "是否需要遮罩层",
+      "mask-closable": "点击蒙层是否允许关闭",
+      "closable": "是否显示关闭按钮，同时是否支持 esc 关闭",
+      "visible": "受控。是否显示，支持 v-model",
+      "lock-scroll": "是否在 Dialog 出现时将 body 滚动锁定",
+      "title": "Dialog 的标题，也可通过具名 slot （见下表）传入",
+      "placement": "位置",
+      "width": "宽度 (当为 string 时需要带上单位)",
+      "append-to-container": "是否将弹出框插入至容器元素中。在弹出框的定位出现问题时，可将该属性设置为 false",
+      "default": "内容区",
+      "slots_title": "标题",
+      "footer": "底部内容",
+      "input": "当用户操作触发 visible 发生改变时，可在此事件中阻止 visible 属性值变更来达到阻止 Dialog 组件关闭的效果",
+      "open": "打开弹出框时触发",
+      "close": "点击遮罩层或右上角叉的事件",
+      "closed": "已关闭 Dialog 的回调事件",
+      "type": "消息类型，用于显示图标",
+      "confirm_title": "Confirm 标题",
+      "message": "Confirm 消息正文内容",
+      "confirm_closable": "是否显示关闭按钮，同时是否支持 esc 关闭",
+      "maskClosable": "点击蒙层是否允许关闭",
+      "okButtonText": "确定按钮的文本内容",
+      "showOkButton": "是否显示确定按钮",
+      "cancelButtonText": "取消按钮的文本内容",
+      "showCancelButton": "是否显示取消按钮",
+      "confirm_width": "宽度 (当为 string 时需要带上单位)",
+      "onOk": "点击确认按钮后的回调, 支持返回 Promise, 返回action类型confirm",
+      "onCancel": "点击取消按钮或关闭按钮后的回调, 支持返回 Promise, 返回action类型cancel或close",
+      "useHTMLString": "是否将 message 属性作为 HTML 片段处理"
+    }
+  },
+  "english": {
+    "component_desc": "Information prompt/input used to interrupt a user's operation.",
+    "module1": {
+      "title": "Basic Style",
+      "desc": "According to the structure, it is divided into icon layer, title layer, content layer, and operation layer."
+    },
+    "module2": {
+      "title": "Type and Use Cases",
+      "subtitle1": "Results suggest",
+      "desc1": "An important reminder that must interrupt the user's action. It can be a success or failure, a warning, etc.",
+      "subtitle2": "Asynchronous closing",
+      "desc2": "When the operation triggered by a button needs to be verified with the backend, Loading state occurs.",
+      "subtitle3": "Custom content",
+      "desc3": "Custom content can be embedded."
+    },
+    "api": {
+      "mask": "Whether a mask layer is required",
+      "mask-closable": "Click whether the mask is allowed to close",
+      "closable": "Whether to display the close button and whether to support ESC shutdown",
+      "visible": "Controlled. Whether to display, V-model is supported",
+      "lock-scroll": "Whether to scroll lock the body when the Dialog appears",
+      "title": "The title of the Dialog, which can also be passed in through the named slot (see table below)",
+      "placement": "Placement",
+      "width": "Width (When use string, need to put the unit)",
+      "append-to-container": "Whether to insert a pop-up box into a container element. If there is a problem locating the pop-up box, set this property to false",
+      "default": "Content area",
+      "slots_title": "Title",
+      "footer": "Footer content",
+      "input": "When a user action triggers a visible change, you can prevent the visible property value from changing in this event to prevent the Dialog component from closing",
+      "open": "Triggered when a pop-up box is opened",
+      "close": "Click on the mask layer or the upper right fork of the event",
+      "closed": "Callback event for Dialog closed",
+      "type": "Message type, used to display ICONS",
+      "confirm_title": "Confirm Title",
+      "message": "Confirm Content",
+      "confirm_closable": "Whether to display the close button and whether to support ESC shutdown",
+      "maskClosable": "Whether the mask is allowed to close when click",
+      "okButtonText": "Determine the text content of the button",
+      "showOkButton": "Whether to display the OK button",
+      "cancelButtonText": "The text content of the cancel button",
+      "showCancelButton": "Whether to display the cancel button",
+      "confirm_width": "Width (When use string, need to put the unit)",
+      "onOk": "The callback after clicking the Confirm button returns a Promise and the Action type confirm",
+      "onCancel": "Callbacks after clicking the Cancel or close button can return a Promise and Action type Cancel or close",
+      "useHTMLString": "Whether to treat the Message property as an HTML fragment"
+    }
+  }
+}

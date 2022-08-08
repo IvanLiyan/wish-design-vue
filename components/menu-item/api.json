@@ -1,7 +1,7 @@
 {
 	"props":[{
 		"name": "name",
-		"desc": "唯一标识",
+		"desc": "$t('menu.api.menuitem_name')",
 		"type": "string",
 		"optionalValue": "",
 		"default": "",
@@ -9,7 +9,7 @@
 	},
 	{
 		"name": "disabled",
-		"desc": "是否禁用",
+		"desc": "$t('menu.api.disabled')",
 		"type": "boolean",
 		"optionalValue": "",
 		"default": "false",
@@ -17,7 +17,7 @@
 	},
 	{
 		"name": "route",
-		"desc": "Vue Router",
+		"desc": "$t('menu.api.route')",
 		"type": "string / object",
 		"optionalValue": "",
 		"default": "",
@@ -25,14 +25,14 @@
 	},
 	{
 		"name": "href",
-		"desc": "同 a 标签 href 属性",
+		"desc": "$t('menu.api.href')",
 		"type": "string",
 		"optionalValue": "",
 		"default": ""
 	},
 	{
 		"name": "target",
-		"desc": "同 a 标签 target 属性，详细可查看 <a href='https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/a#attr-target' target='_blank'>HTML a 元素</a>",
+		"desc": "$t('menu.api.target')",
 		"type": "string",
 		"optionalValue": "",
 		"default": ""
@@ -40,6 +40,6 @@
 	"slots":[
 	{
 		"name": "default",
-		"desc": "自定义菜单标题"
+		"desc": "$t('menu.api.default')"
 	}]
 }

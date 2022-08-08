@@ -70,3 +70,9 @@ todo 未支持按需加载，若支持需要 lib 里面以组件文件夹形式�
 
 #### 0.0.2-alpha.45
 ·Table组件内置Pagination位置设为text-right
+
+#### 0.0.2-alpha.47
+·Layout 组件去除API —— direction
+·Menu 翻译
+·Stepper 翻译
+·Dialog 翻译

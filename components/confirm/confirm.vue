@@ -91,8 +91,8 @@ export default {
       message: '', // 描述
       width: '', // 宽度
       closable: true, // 是否显示关闭按钮
-      okButtonText: '确定', // 确定按钮的文本内容
-      cancelButtonText: '取消', // 取消按钮的文本内容
+      okButtonText: 'OK', // 确定按钮的文本内容
+      cancelButtonText: 'Cancel', // 取消按钮的文本内容
       okButtonProps: {}, // 确定按钮的额外属性
       cancelButtonProps: {}, // 取消按钮的额外属性
       okButtonLoading: false, // 确定按钮是否loading

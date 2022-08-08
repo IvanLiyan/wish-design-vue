@@ -2,7 +2,7 @@
   "props": [
     {
       "name": "mask",
-      "desc": "是否需要遮罩层",
+      "desc": "$t('dialog.api.mask')",
       "type": "boolean",
       "optionalValue": "",
       "default": "true",
@@ -10,7 +10,7 @@
     },
     {
       "name": "mask-closable",
-      "desc": "点击蒙层是否允许关闭",
+      "desc": "$t('dialog.api.mask-closable')",
       "type": "boolean",
       "optionalValue": "",
       "default": "false",
@@ -18,7 +18,7 @@
     },
     {
       "name": "closable",
-      "desc": "是否显示关闭按钮，同时是否支持 esc 关闭",
+      "desc": "$t('dialog.api.closable')",
       "type": "boolean",
       "optionalValue": "",
       "default": "true",
@@ -26,7 +26,7 @@
     },
     {
       "name": "visible",
-      "desc": "<strong>受控</strong> 是否显示，支持 v-model",
+      "desc": "$t('dialog.api.visible')",
       "type": "boolean",
       "optionalValue": "",
       "default": "false",
@@ -34,7 +34,7 @@
     },
     {
       "name": "lock-scroll",
-      "desc": "是否在 Dialog 出现时将 body 滚动锁定",
+      "desc": "$t('dialog.api.lock-scroll')",
       "type": "boolean",
       "optionalValue": "",
       "default": "true",
@@ -42,7 +42,7 @@
     },
     {
       "name": "title",
-      "desc": "Dialog 的标题，也可通过具名 slot （见下表）传入",
+      "desc": "$t('dialog.api.title')",
       "type": "string",
       "optionalValue": "",
       "default": "",
@@ -50,7 +50,7 @@
     },
     {
       "name": "placement",
-      "desc": "位置",
+      "desc": "$t('dialog.api.placement')",
       "type": "string",
       "optionalValue": ["top", "center"],
       "default": "center",
@@ -58,7 +58,7 @@
     },
     {
       "name": "width",
-      "desc": "宽度 (当为 string 时需要带上单位)",
+      "desc": "$t('dialog.api.width')",
       "type": ["string", "number"],
       "optionalValue": "",
       "default": "",
@@ -66,7 +66,7 @@
     },
     {
       "name": "append-to-container",
-      "desc": "是否将弹出框插入至容器元素中。在弹出框的定位出现问题时，可将该属性设置为 false",
+      "desc": "$t('dialog.api.append-to-container')",
       "type": "boolean",
       "optionalValue": "",
       "default": "true",
@@ -76,34 +76,34 @@
   "events": [
     {
       "name": "input",
-      "desc": "当用户操作触发 visible 发生改变时，可在此事件中阻止 visible 属性值变更来达到阻止 Dialog 组件关闭的效果",
+      "desc": "$t('dialog.api.input')",
       "args": "function (visible: boolean)"
     },
     {
       "name": "open",
-      "desc": "打开弹出框时触发。",
+      "desc": "$t('dialog.api.open')",
       "args": "function()",
       "version": "0.1.40"
     },
     {
       "name": "close",
-      "desc": "点击遮罩层或右上角叉的事件",
+      "desc": "$t('dialog.api.close')",
       "args": "function()"
     },
     {
       "name": "closed",
-      "desc": "已关闭 Dialog 的回调事件",
+      "desc": "$t('dialog.api.closed')",
       "args": "function()"
     }
   ],
   "slots": [
     {
       "name": "default",
-      "desc": "内容区"
+      "desc": "$t('dialog.api.default')"
     },
     {
       "name": "title",
-      "desc": "标题"
+      "desc": "$t('dialog.api.slots_title')"
     },
     {
       "name": "footer",

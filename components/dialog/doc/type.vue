@@ -1,10 +1,10 @@
 <template>
   <div class="demo-modal-btn-groups">
-    <wt-button @click="openDefaultConfirm">默认样式</wt-button>
-    <wt-button type="success" @click="openSuccessConfirm">成功提示</wt-button>
-    <wt-button type="primary" @click="openConfirm">信息提示</wt-button>
-    <wt-button type="warning" @click="openWarningConfirm">警告提示</wt-button>
-    <wt-button type="error" @click="openDangerConfirm">失败提示</wt-button>
+    <wt-button @click="openDefaultConfirm">Primary</wt-button>
+    <wt-button type="success" @click="openSuccessConfirm">Success</wt-button>
+    <wt-button type="primary" @click="openConfirm">Notice</wt-button>
+    <wt-button type="warning" @click="openWarningConfirm">Alert</wt-button>
+    <wt-button type="error" @click="openDangerConfirm">Fail</wt-button>
   </div>
 </template>
 
@@ -12,18 +12,18 @@
 export default {
   data() {
     return {
-      msg: '这是VNode节点这是VNode节点这是VNode节点,这是VNode节点这是VNode节点.',
+      msg: 'This is a sample text.',
     };
   },
   methods: {
     openDefaultConfirm() {
       this.$wt
         .confirm({
-          title: '确认提交审核？',
+          title: 'Confirm to submit?',
           message: `<div>${this.msg}</div>`,
           useHTMLString: true,
           width: '430px',
-          okButtonText: '确定',
+          okButtonText: 'Confirm',
           onOk: this.ok,
           onCancel: this.cancel,
         })
@@ -40,11 +40,11 @@ export default {
     openConfirm() {
       this.$wt
         .confirm({
-          title: '申请审核已提交',
-          message: '请耐心等待业务审核。',
+          title: 'Application review has been submitted',
+          message: 'Please wait patiently for the service review.',
           type: 'info',
           width: '430px',
-          okButtonText: '确定',
+          okButtonText: 'OK',
         })
         .catch((err) => {
           console.log(err);
@@ -54,11 +54,11 @@ export default {
     openSuccessConfirm() {
       this.$wt
         .confirm({
-          title: '申请审核通过',
-          message: `物流商价格申请内容通过，从下一个工作日开始生效。`,
+          title: 'Approved application',
+          message: `The price application content of the logistics provider is approved, and it will take effect from the next working day.`,
           width: '430px',
           type: 'success',
-          okButtonText: '确定',
+          okButtonText: 'OK',
           showCancelButton: true,
           onOk: this.ok,
           onCancel: this.cancel,
@@ -68,22 +68,22 @@ export default {
     openWarningConfirm() {
       this.$wt
         .confirm({
-          title: '数据与预期差距较大',
-          message: '物流商价格申请内容通过，从下一个工作日开始生效。',
+          title: 'The data fell short of expectations',
+          message: 'The price application content of the logistics provider is approved, and it will take effect from the next working day.',
           width: '430px',
           type: 'warning',
-          okButtonText: '确定',
+          okButtonText: 'OK',
         })
         .catch(() => {});
     },
     openDangerConfirm() {
       this.$wt
         .confirm({
-          title: '申请审核未通过',
-          message: '物流商价格申请内容通过，从下一个工作日开始生效。',
+          title: 'The application was not approved',
+          message: 'The price application content of the logistics provider is approved, and it will take effect from the next working day.',
           width: '430px',
           type: 'error',
-          okButtonText: '确定',
+          okButtonText: 'OK',
           showCancelButton: true,
           onOk: this.ok,
           onCancel: this.cancel,

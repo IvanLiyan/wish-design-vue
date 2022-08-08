@@ -1,0 +1,54 @@
+{
+  "chinese": {
+    "component_desc": "用于展示多步任务，可根据实际应用场景设定步骤，步骤不得少于 2 步。",
+    "module1": {
+      "title": "基础样式"
+    },
+    "module2": {
+      "title": "类型与用法",
+      "subtitle1": "含状态步骤条",
+      "subtitle2": "有描述的步骤条",
+      "desc2": "每个步骤有其对应的步骤状态描述",
+      "subtitle3": "自定义步骤条的间距",
+      "desc3": "通过 space 自定义步骤条的间距",
+      "subtitle4": "纵向步骤条",
+      "desc4": "多适用于任务条数较多，状态流程较长，同时描述的信息较多等场景展示"
+    },
+    "api": {
+      "space": "每个 step 的宽度、高度，不填写则自适应。支持百分比",
+      "direction": "显示方向",
+      "active": "设置当前激活步骤",
+      "status": "指定当前步骤的状态",
+      "title": "标题",
+      "description": "描述性文字",
+      "icon": "图标 传入 icon 的 class 全名来自定义 icon",
+      "step_status": "设置当前步骤的状态，不设置则根据 stepper 确定状态"
+    }
+  },
+  "english": {
+    "component_desc": "It is used to display multi-step tasks. The steps can be set according to the actual application scenarios, the steps can be no less than two.",
+    "module1": {
+      "title": "Basic Style"
+    },
+    "module2": {
+      "title": "Type and Use Cases",
+      "subtitle1": "Contains a status step bar",
+      "subtitle2": "Step bar with description",
+      "desc2": "Each step has its corresponding step status description",
+      "subtitle3": "Customize the step bar spacing",
+      "desc3": "Use space to customize the spacing of step bars",
+      "subtitle4": "Longitudinal step bar",
+      "desc4": "It is applicable to scenarios with a large number of tasks, a long status flow, and a large amount of description information"
+    },
+    "api": {
+      "space": "The width and height of each step are self-adaptive if they are not specified. Support percentage",
+      "direction": "Direction of display",
+      "active": "Set the current activation step",
+      "status": "Specifies the status of the current step",
+      "title": "Title",
+      "description": "Descriptive text",
+      "icon": "Icon, the full class name of the icon is passed to customize the icon",
+      "step_status": "Sets the state of the current step, or determines the state according to stepper"
+    }
+  }
+}

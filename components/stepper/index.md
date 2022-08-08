@@ -1,34 +1,34 @@
 # 步骤条 / Stepper
 
-用于展示多步任务，可根据实际应用场景设定步骤，步骤不得少于 2 步。
+<span>{{$t('stepper.component_desc')}}</span>
 
-## 基础样式
+## <span>{{$t('stepper.module1.title')}}</span>
 
 :::include(src="./doc/base.vue")
 :::
 
-## 类型与用法
+## <span>{{$t('stepper.module2.title')}}</span>
 
-### 含状态步骤条
+### <span>{{$t('stepper.module2.subtitle1')}}</span>
 
 :::include(src="./doc/status.vue")
 :::
 
-### 有描述的步骤条
+### <span>{{$t('stepper.module2.subtitle2')}}</span>
 
-每个步骤有其对应的步骤状态描述。
+<span>{{$t('stepper.module2.desc2')}}</span>
 :::include(src="./doc/desc.vue")
 :::
 
-### 自定义步骤条的间距
+### <span>{{$t('stepper.module2.subtitle3')}}</span>
 
-通过 space 自定义步骤条的间距。
+<span>{{$t('stepper.module2.desc3')}}</span>
 :::include(src="./doc/space.vue")
 :::
 
-### 纵向步骤条
+### <span>{{$t('stepper.module2.subtitle4')}}</span>
 
-多适用于任务条数较多，状态流程较长，同时描述的信息较多等场景展示。
+<span>{{$t('stepper.module2.desc4')}}</span>
 :::include(src="./doc/length-wise-direction.vue")
 :::
 

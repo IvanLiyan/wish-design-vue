@@ -2,7 +2,7 @@
   "params": [
     {
       "name": "type",
-      "desc": "消息类型，用于显示图标",
+      "desc": "$t('dialog.api.type')",
       "type": "string",
       "optionalValue": ["default", "success", "info", "warning", "error"],
       "default": "default",
@@ -10,7 +10,7 @@
     },
     {
       "name": "title",
-      "desc": "Confirm 标题",
+      "desc": "$t('dialog.api.confirm_title')",
       "type": "string",
       "optionalValue": "",
       "default": "",
@@ -18,7 +18,7 @@
     },
     {
       "name": "message",
-      "desc": "Confirm 消息正文内容",
+      "desc": "$t('dialog.api.message')",
       "type": ["string", "VNode"],
       "optionalValue": "",
       "default": "",
@@ -26,7 +26,7 @@
     },
     {
       "name": "closable",
-      "desc": "是否显示关闭按钮，同时是否支持 esc 关闭",
+      "desc": "$t('dialog.api.confirm_closable')",
       "type": "boolean",
       "optionalValue": "",
       "default": "true",
@@ -34,7 +34,7 @@
     },
     {
       "name": "maskClosable",
-      "desc": "点击蒙层是否允许关闭",
+      "desc": "$t('dialog.api.maskClosable')",
       "type": "boolean",
       "optionalValue": "",
       "default": "false",
@@ -42,15 +42,15 @@
     },
     {
       "name": "okButtonText",
-      "desc": "确定按钮的文本内容",
+      "desc": "$t('dialog.api.okButtonText')",
       "type": "string",
       "optionalValue": "",
-      "default": "确定",
+      "default": "OK",
       "version": ""
     },
     {
       "name": "showOkButton",
-      "desc": "是否显示确定按钮",
+      "desc": "$t('dialog.api.showOkButton')",
       "type": "boolean",
       "optionalValue": "",
       "default": "true",
@@ -58,23 +58,23 @@
     },
     {
       "name": "cancelButtonText",
-      "desc": "取消按钮的文本内容",
+      "desc": "$t('dialog.api.cancelButtonText')",
       "type": "string",
       "optionalValue": "",
-      "default": "取消",
+      "default": "Cancel",
       "version": ""
     },
     {
       "name": "showCancelButton",
-      "desc": "是否显示取消按钮",
+      "desc": "$t('dialog.api.showCancelButton')",
       "type": "boolean",
       "optionalValue": "",
-      "default": "default为true，其他为false",
+      "default": "true",
       "version": ""
     },
     {
       "name": "width",
-      "desc": "宽度 (当为 string 时需要带上单位)",
+      "desc": "$t('dialog.api.width')",
       "type": ["string", "number"],
       "optionalValue": "",
       "default": "",
@@ -82,7 +82,7 @@
     },
     {
       "name": "onOk",
-      "desc": "点击确认按钮后的回调, 支持返回 Promise, 返回action类型confirm",
+      "desc": "$t('dialog.api.onOk')",
       "type": "function",
       "optionalValue": "",
       "default": "",
@@ -90,7 +90,7 @@
     },
     {
       "name": "onCancel",
-      "desc": "点击取消按钮或关闭按钮后的回调, 支持返回 Promise, 返回action类型cancel或close",
+      "desc": "$t('dialog.api.onCancel')",
       "type": "function",
       "optionalValue": "",
       "default": "",
@@ -98,7 +98,7 @@
     },
     {
       "name": "useHTMLString",
-      "desc": "是否将 message 属性作为 HTML 片段处理",
+      "desc": "$t('dialog.api.useHTMLString')",
       "type": "boolean",
       "optionalValue": "",
       "default": "false",

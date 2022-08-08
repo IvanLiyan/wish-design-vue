@@ -36,7 +36,7 @@
 :::
 
 ## API
-<api-doc name="Layout" :doc="require('./api.json')"></api-doc>
+<!-- <api-doc name="Layout" :doc="require('./api.json')"></api-doc> -->
 <api-doc name="Header" :doc="require('./../header/api.json')"></api-doc>
 <api-doc name="Aside" :doc="require('./../aside/api.json')"></api-doc>
 <api-doc name="Main" :doc="require('./../main/api.json')"></api-doc>

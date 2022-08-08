@@ -5,7 +5,7 @@
 </style>
 # 导航菜单 / Menu
 
-## 基础样式
+## <span>{{$t('menu.module1.subtitle')}}</span>
 :::include(src="./doc/base.vue")
 :::
 

@@ -1,33 +1,33 @@
 <template>
   <div>
     <div class="demo-dialog-btn-groups">
-      <wt-button type="primary" @click="openDialog">填写表单</wt-button>
+      <wt-button type="primary" @click="openDialog">Fill out</wt-button>
     </div>
-    <wt-dialog v-model="visible" title="企业入驻" :closable="true">
+    <wt-dialog v-model="visible" title="Enterprise Enter" :closable="true">
       <wt-form ref="form" :model="formData" :first-fields="true" class="form">
-        <div class="title">企业注册地址</div>
+        <div class="title">Business address</div>
         <wt-form-item prop="regNation" required>
-          <wt-select v-model="formData.regNation" label="国家" placeholder="请选择">
+          <wt-select v-model="formData.regNation" label="Country" placeholder="Please select">
             <wt-option v-for="item in nations" :key="item.value" :label="item.label" :value="item.value" />
           </wt-select>
         </wt-form-item>
-        <wt-form-item prop="regProvince" required>
-          <wt-select v-model="formData.regProvince" label="省" placeholder="请选择">
-            <wt-option v-for="item in provinces" :key="item.value" :label="item.label" :value="item.value" />
+        <wt-form-item prop="regType" required>
+          <wt-select v-model="formData.regType" label="Type" placeholder="Please select">
+            <wt-option v-for="item in type" :key="item.value" :label="item.label" :value="item.value" />
           </wt-select>
         </wt-form-item>
-        <wt-form-item prop="regCity" required>
-          <wt-select v-model="formData.regCity" label="市" placeholder="请选择">
-            <wt-option v-for="item in cities" :key="item.value" :label="item.label" :value="item.value" />
+        <wt-form-item prop="regNum" required>
+          <wt-select v-model="formData.regNum" label="Number of employees" placeholder="Please select">
+            <wt-option v-for="item in num" :key="item.value" :label="item.label" :value="item.value" />
           </wt-select>
         </wt-form-item>
         <wt-form-item prop="code" required>
-          <wt-input label="邮政编码" placeholder="请输入纯数字" v-model="formData.code" />
+          <wt-input label="Postal code" placeholder="Please input number" v-model="formData.code" />
         </wt-form-item>
       </wt-form>
       <div slot="footer" class="demo-modal-footer">
-        <wt-button type="primary" :loading="submitting" @click="submit">提交</wt-button>
-        <wt-button type="secondary" @click="reset">重置</wt-button>
+        <wt-button type="primary" :loading="submitting" @click="submit">Submit</wt-button>
+        <wt-button type="secondary" @click="reset">Reset</wt-button>
       </div>
     </wt-dialog>
   </div>
@@ -48,31 +48,47 @@ export default {
       nations: [
         {
           value: 'China',
-          label: '中国',
+          label: 'China',
         },
         {
           value: 'America',
-          label: '美国',
+          label: 'America',
+        },
+        {
+          value: 'India',
+          label: 'India',
         },
       ],
-      provinces: [
+      type: [
         {
-          value: 'zhejiang',
-          label: '浙江',
+          value: 'AD',
+          label: 'Aerospace & Defense',
         },
         {
-          value: 'jiangsu',
-          label: '江苏',
+          value: 'AL',
+          label: 'Airlines',
+        },
+        {
+          value: 'BM',
+          label: 'Building Materials',
+        },
+        {
+          value: 'CC',
+          label: 'Chemicals',
         },
       ],
-      cities: [
+      num: [
         {
-          value: 'shanghai',
-          label: '上海',
+          value: 'less',
+          label: '1-30',
         },
         {
-          value: 'beijing',
-          label: '北京',
+          value: 'normal',
+          label: '31-99',
+        },
+        {
+          value: 'large',
+          label: 'more than 100',
         },
       ],
     };

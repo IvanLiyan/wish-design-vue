@@ -1,7 +1,7 @@
 {
 	"props":[{
 		"name": "name",
-		"desc": "唯一标识",
+		"desc": "$t('menu.api.submenu_name')",
 		"type": ["string", "number"],
 		"optionalValue": "",
 		"default": "",
@@ -9,10 +9,10 @@
 	}],
 	"slots":[{
 		"name": "icon",
-		"desc": "自定义图标"
+		"desc": "$t('menu.api.icon')"
 	},
 	{
 		"name": "title",
-		"desc": "自定义菜单标题"
+		"desc": "$t('menu.api.title')"
 	}]
 }
