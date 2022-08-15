@@ -1,18 +1,27 @@
 # 更新日志
 
-<!-- ## 0.3.21
+## 0.0.2-alpha.47
 
-#### Bugfix
+- Layout 组件删除了一个API —— direction
+- 完成了以下组件的中英文档：`<Menu/> <Stepper/> <Dialog/>`
 
-- 调整 Select 组件在 远程搜索 & 无搜索条件 & 无数据 时不在主动显示下拉框 [Ones](https://ones.sankuai.com/ones/product/4348/workItem/defect/detail/40851428)
-- 修复 DatePicker 组件在 type='daterange' 下时用户手动输入错误的日期时间造成的组件显示错误 [Ones](https://ones.sankuai.com/ones/product/4348/workItem/defect/detail/40896819)
-- 修复 Cascader 组件在校验失败时样式错误 [TT](https://tt.sankuai.com/ticket/detail?id=40713626)
-- 修复 Select 组件 types 定义缺少 focus、blur 等函数声明 [TT](https://ones.sankuai.com/ones/product/4348/workItem/defect/detail/40707869)
-- 修复 InputNumber 组件实际显示 value 可能和传入 value 不一致的问题[Ones](https://ones.sankuai.com/ones/product/4348/workItem/defect/detail/41572963)
+## 0.0.2-alpha.45
 
-## 0.3.20
+- `<Table/>` 组件内置 `<Pagination/>` 的默认位置调整为 ```text-right```
 
-`2021-07-06`
+## 0.0.2-alpha.43
+
+- `<Table/>` 加入了内置 `<Pagination/>`，可通过API在`<Table/>`组件内使用分页功能。当然，你也可以单独使用 `<Pagination/>`来实现分页功能
+
+## 0.0.2-alpha.42
+
+- `<Table/>` 新增了一个类型demo - 自定义列模板，演示了如何通过slot插槽的形式来实现列表的某些固定列内容填充
+
+## 0.0.2-alpha.41
+
+- 修复了 `<Tab/>` 的bug
+- `<Datepicker/>` 新增了一个API —— value-format
+<!-- `2021-07-06`
 
 #### Feature
 
