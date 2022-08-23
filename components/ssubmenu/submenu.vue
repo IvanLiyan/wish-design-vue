@@ -163,7 +163,8 @@ export default {
       return !!this.activeChild;
     },
     showChildActive () {
-      return this.hasChildActive && (this.isPopup || (!this.isExpanded && !this.animating));
+      // return this.hasChildActive && (this.isPopup || (!this.isExpanded && !this.animating));
+      return this.hasChildActive;
     },
     lazy () {
       return this.smenu.lazy;

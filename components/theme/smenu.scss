@@ -48,6 +48,17 @@
 // theme light
 @include c(smenu){
   &-light{
+    .#{$prefix}-stooltip-rel {
+      margin-bottom: 2px;
+    }
+    .#{$prefix}-ssubmenu > .#{$prefix}-stooltip-rel {
+      height: 48px;
+      line-height: 48px;
+    }
+    .#{$prefix}-ssubmenu > .#{$prefix}-ssubmenu-content > .#{$prefix}-stooltip-rel {
+      height: 36px;
+      line-height: 36px;
+    }
     .#{$prefix}-smenu-item-active, .#{$prefix}-ssubmenu-active >.#{$prefix}-tooltip-rel>.#{$prefix}-ssubmenu-title {
       // &::before {
       //   content: '';
@@ -60,6 +71,14 @@
       //   z-index: 1;
       // }
     }
+    .#{$prefix}-ssubmenu-active >.#{$prefix}-ssubmenu-content >.#{$prefix}-smenu-item-active >a {
+      background: #e5ecff !important;
+    }
+    // &-smenus {
+    //   .#{$prefix}-smenu-item-active {
+    //     background: #E5ECFF !important;
+    //   }
+    // }
     @include smenu-theme(
       $smenu-light-color,
       $smenu-light-bgc,

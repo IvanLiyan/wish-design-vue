@@ -76,3 +76,6 @@ todo 未支持按需加载，若支持需要 lib 里面以组件文件夹形式�
 ·Menu 翻译
 ·Stepper 翻译
 ·Dialog 翻译
+
+#### 0.0.2-alpha.49
+·更新了Sidebar的UI

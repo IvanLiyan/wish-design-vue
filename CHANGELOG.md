@@ -1,5 +1,8 @@
 # 更新日志
 
+## 0.0.2-alpha.49
+- 更新了 Sidebar 的UI
+
 ## 0.0.2-alpha.47
 
 - Layout 组件删除了一个API —— direction
