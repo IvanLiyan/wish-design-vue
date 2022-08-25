@@ -18,70 +18,70 @@ export default {
     return {
       'data': [{
         icon: 'home',
-        title: '一级菜单',
+        title: 'Navigation One',
         id: '1',
         children: [{
-          title: '二级菜单',
+          title: 'Option 1',
           id: '1-1',
           route: '/components/sidebar/1-1',
         }, {
-          title: '二级菜单',
+          title: 'Option 2',
           id: '1-2',
           route: '/components/sidebar/1-2',
         }],
       }, {
         icon: 'home',
-        title: '一级菜单',
+        title: 'Navigation Two',
         id: '2',
         children: [{
           icon: 'home',
-          title: '二级菜单',
+          title: 'Option 3',
           id: '2-1',
           route: '/components/sidebar/2-1',
         }, {
-          title: '二级菜单',
+          title: 'Option 4',
           id: '2-2',
           route: '/components/sidebar/2-2',
         }],
       }, {
         icon: 'home',
-        title: '一级菜单',
+        title: 'Navigation Three',
         id: '3',
         children: [{
           icon: 'home',
-          title: '二级菜单',
+          title: 'Option 5',
           id: '3-1',
           route: '/components/sidebar/3-1',
         }, {
-          title: '二级菜单',
+          title: 'Option 6',
           id: '3-2',
           route: '/components/sidebar/3-2',
         }],
       }, {
         icon: 'home',
-        title: '一级菜单',
+        title: 'Navigation Four',
         id: '4',
         children: [{
           icon: 'home',
-          title: '二级菜单',
+          title: 'Option 7',
           id: '4-1',
           route: '/components/sidebar/4-1',
         }, {
-          title: '二级菜单',
+          title: 'Option 8',
           id: '4-2',
           route: '/components/sidebar/4-2',
         }],
       }, {
         icon: 'home',
-        title: '一级菜单',
+        title: 'Navigation Five',
         id: '5',
         children: [{
           icon: 'home',
-          title: '二级菜单',
+          title: 'Option 9',
           id: '5-1',
           route: '/components/sidebar/5-1',
         }, {
-          title: '二级菜单',
+          title: 'Option 10',
           id: '5-2',
           route: '/components/sidebar/5-2',
         }],

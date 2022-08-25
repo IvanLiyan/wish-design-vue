@@ -54,7 +54,7 @@
 }
 </style>
 # 文字提示 / Tooltip
-<span>{{ $t('tooltip.componnent_desc')}}</span>
+<span>{{ $t('tooltip.component_desc')}}</span>
 
 ## <span>{{ $t('tooltip.module1.title1')}}</span>
 :::include(src="./doc/base.vue")

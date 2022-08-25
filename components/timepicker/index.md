@@ -1,5 +1,5 @@
 # TimePicker / 时间选择器
-<span>{{$t('timepicker.componnent_desc')}}</span>
+<span>{{$t('timepicker.component_desc')}}</span>
 
 ## <span>{{$t('timepicker.module1.title')}}</span>
 :::include(src="./doc/base.vue")

@@ -18,7 +18,7 @@
     }
   },
   "english": {
-    "componnent_desc": "Feedback to user that the system is still working actively.",
+    "component_desc": "Feedback to user that the system is still working actively.",
     "module1": {
       "title": "Basic Style"
     },

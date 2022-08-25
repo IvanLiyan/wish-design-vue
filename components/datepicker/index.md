@@ -1,5 +1,5 @@
 # DatePicker / 日期选择器
-<span>{{$t('datepicker.componnent_desc')}}</span>
+<span>{{$t('datepicker.component_desc')}}</span>
 
 ## {{$t('datepicker.module1.title')}}
 <span>{{$t('datepicker.module1.desc1')}}</span>

@@ -1,6 +1,6 @@
 # 下拉面板 / Dropdown
 
-<span>{{$t('dropdown.componnent_desc')}}</span>
+<span>{{$t('dropdown.component_desc')}}</span>
 
 ## <span>{{$t('dropdown.module1.title')}}</span>
 

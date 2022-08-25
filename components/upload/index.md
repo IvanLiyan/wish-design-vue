@@ -1,5 +1,5 @@
 # Upload / 上传
-<span>{{$t('upload.componnent_desc')}}</span>
+<span>{{$t('upload.component_desc')}}</span>
 
 ## <span>{{$t('upload.module1.title')}}</span>
 :::include(src="./doc/base.vue")

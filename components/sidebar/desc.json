@@ -1,0 +1,95 @@
+{
+  "props": [
+    {
+      "name": "id",
+      "desc": "$t('sidebar.api.data_id')",
+      "type": "string",
+      "optionalValue": "",
+      "default": ""
+    },
+    {
+      "name": "icon",
+      "desc": "$t('sidebar.api.data_icon')",
+      "type": "string",
+      "optionalValue": "",
+      "default": ""
+    },
+    {
+      "name": "title",
+      "desc": "$t('sidebar.api.data_title')",
+      "type": "string",
+      "optionalValue": "",
+      "default": ""
+    },
+    {
+      "name": "tooltip",
+      "desc": "$t('sidebar.api.data_tooltip')",
+      "type": "string",
+      "optionalValue": "",
+      "default": ""
+    },
+    {
+      "name": "disabled",
+      "desc": "$t('sidebar.api.data_'disabled)",
+      "type": "boolean",
+      "optionalValue": "",
+      "default": "false"
+    },
+    {
+      "name": "route",
+      "desc": "$t('sidebar.api.data_route')",
+      "type": "string / object",
+      "optionalValue": "",
+      "default": ""
+    },
+    {
+      "name": "replace",
+      "desc": "$t('sidebar.api.data_replace')",
+      "type": "boolean",
+      "optionalValue": "",
+      "default": ""
+    },
+    {
+      "name": "exact",
+      "desc": "$t('sidebar.api.data_exact')",
+      "type": "boolean",
+      "optionalValue": "",
+      "default": ""
+    },
+    {
+      "name": "href",
+      "desc": "$t('sidebar.api.data_href')",
+      "type": "string",
+      "optionalValue": "",
+      "default": ""
+    },
+    {
+      "name": "target",
+      "desc": "$t('sidebar.api.data_target')",
+      "type": "string",
+      "optionalValue": "",
+      "default": ""
+    },
+    {
+      "name": "rel",
+      "desc": "$t('sidebar.api.data_rel')",
+      "type": "string",
+      "optionalValue": "",
+      "default": ""
+    },
+    {
+      "name": "children",
+      "desc": "$t('sidebar.api.data_children')",
+      "type": "Array",
+      "optionalValue": "",
+      "default": ""
+    },
+    {
+      "name": "enabledTooltip",
+      "desc": "$t('sidebar.api.data_enabledTooltip')",
+      "type": "boolean",
+      "optionalValue": "",
+      "default": ""
+    }
+  ]
+}

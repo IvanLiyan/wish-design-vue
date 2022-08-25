@@ -1,6 +1,6 @@
 {
   "chinese": {
-    "componnent_desc": "下拉选择器，用于多个选项的选择输入，状态的切换。当选项少于 5 个时，建议用 Radio 或 Checkbox。",
+    "component_desc": "下拉选择器，用于多个选项的选择输入，状态的切换。当选项少于 5 个时，建议用 Radio 或 Checkbox。",
     "module1": {
       "title": "基础样式",
       "desc1": "分为基本选择器和带标题选择器两种。"
@@ -40,7 +40,7 @@
     }
   },
   "english": {
-    "componnent_desc": "Dropdown select, used for selecting from multiple options or states. If there are no more than 5 options, please use Radio or Checkbox instead.",
+    "component_desc": "Dropdown select, used for selecting from multiple options or states. If there are no more than 5 options, please use Radio or Checkbox instead.",
     "module1": {
       "title": "Basic Style",
       "desc1": "Select with a title or pure select without title"

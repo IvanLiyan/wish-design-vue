@@ -1,0 +1,80 @@
+{
+  "chinese": {
+    "component_desc": "用于展示页面结构和层级",
+    "module1": {
+      "title": "基础样式",
+      "desc": "菜单栏由菜单栏项目组成。菜单栏项目可分为主菜单栏和次菜单栏。主菜单栏含有图标，文字和展开按钮，次菜单栏为纯文字"
+    },
+    "api": {
+      "title": "导航名称",
+      "collapse": "支持.sync，是否水平折叠收起导航",
+      "active-key": "(受控)，支持 v-model，激活菜单的key",
+      "default-active-key": "默认激活菜单的key",
+      "expand-keys": "(受控)，支持.sync，当前打开菜单的key的数组",
+      "default-expand-keys": "当前打开菜单的 key 的数组",
+      "accordion": "是否开启手风琴模式，开启后每次至多展开一个",
+      "data": "导航数据(包含一级导航、二级导航)",
+      "item-key": "唯一标识的属性名",
+      "tooltip-props": "tooltip 组件属性，详细参考 tooltip组件",
+      "theme": "主题",
+      "slot-title": "导航名称插槽",
+      "scoped-submenu": "自定义子菜单(submenu)中标题内容",
+      "scoped-item": "自定义菜单项(menu-item)中标题内容",
+      "collapse-change": "侧栏展开收起状态发生变化时触发",
+      "menu-expand-change": "菜单项展开状态发生改变时触发",
+      "menu-item-click": "点击菜单项时触发",
+      "data_id": "菜单的唯一标识，可以使用 Sidebar 组件的 item-key 属性进行更改",
+      "data_icon": "菜单的图标",
+      "data_title": "菜单的标题",
+      "data_tooltip": "tooltip 显示的内容",
+      "data_disabled": "是否禁用",
+      "data_route": "配置改属性后使用 router-link 组件进行渲染，该属性可选值同 router-link 组件 to 属性，详细请参考 router-link",
+      "data_replace": "仅当配置 route 属性生效，同 router-link replace 属性",
+      "data_exact": "仅当配置 route 属性生效，同 router-link exact 属性",
+      "data_href": "同 a 标签 href 属性",
+      "data_target": "同 a 标签 target 属性",
+      "data_rel": "同 a 标签 rel 属性",
+      "data_children": "子菜单项",
+      "data_enabledTooltip": "在菜单项被禁用时，是否可以显示 tooltip"
+    }
+  },
+  "english": {
+    "component_desc": "Used to show page structure and hierarchy",
+    "module1": {
+      "title": "Basic Style",
+      "desc": "The menu bar consists of menu bar items. Menu bar items can be divided into main menu bar and secondary menu bar. The main menu bar contains ICONS, text and expansion buttons, and the secondary menu bar is pure text"
+    },
+    "api": {
+      "title": "The name of the navigation",
+      "collapse": "Support .sync, whether to fold the navigation horizontally",
+      "active-key": "(Controlled), support V-model, activation menu key",
+      "default-active-key": "Default activation menu key",
+      "expand-keys": "(Controlled), supports .sync, an array of keys that currently open the menu",
+      "default-expand-keys": "The array of keys that currently open the menu",
+      "accordion": "Whether to enable accordion mode. After the mode is enabled, no more than one can be opened at a time",
+      "data": "Navigation data (including level 1 navigation and level 2 navigation)",
+      "item-key": "The uniquely identified attribute name",
+      "tooltip-props": "Tooltip component properties, see Tooltip Component for details",
+      "theme": "theme",
+      "slot-title": "Slot of title",
+      "scoped-submenu": "Customize the title content of the submenu",
+      "scoped-item": "Customize the title content of a menu-item",
+      "collapse-change": "Triggered when the sidebar expansion and collapse status changes",
+      "menu-expand-change": "Triggered when the expansion status of a menu item changes",
+      "menu-item-click": "Triggered when a menu item is clicked",
+      "data_id": "The unique identity of the menu, which can be changed using the item-key property of the Sidebar component",
+      "data_icon": "Icon of Menu",
+      "data_title": "Title of menu",
+      "data_tooltip": "The content of the tooltip display",
+      "data_disabled": "Whether to disable",
+      "data_route": "After configuring the modified attribute, router-link component is used for rendering. The optional value of this attribute is the same as the to attribute of the router-link component. See router-link for details",
+      "data_replace": "The router-link replace attribute takes effect only when the Route attribute is configured",
+      "data_exact": "This parameter takes effect only when the route attribute is configured, which is the same as the router-link exact attribute",
+      "data_href": "Same as the a tag href attribute",
+      "data_target": "Same as the target tag href attribute",
+      "data_rel": "Same as the rel tag href attribute",
+      "data_children": "Submenu item",
+      "data_enabledTooltip": "Whether Tooltips can be displayed when menu items are disabled"
+    }
+  }
+}

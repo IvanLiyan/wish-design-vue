@@ -1,6 +1,6 @@
 {
   "chinese": {
-    "componnent_desc": "用于页面层级的展示和页面跳转",
+    "component_desc": "用于页面层级的展示和页面跳转",
     "module1": {
       "title": "基础样式"
     },
@@ -16,7 +16,7 @@
     }
   },
   "english": {
-    "componnent_desc": "Used for page-level display and page hopping.",
+    "component_desc": "Used for page-level display and page hopping.",
     "module1": {
       "title": "Basic Style"
     },

@@ -1,6 +1,6 @@
 {
   "chinese": {
-    "componnent_desc": "用于日期和时间的选择",
+    "component_desc": "用于日期和时间的选择",
     "module1": {
       "title": "基础样式",
       "desc1": "日期选择，支持手动输入。支持格式yyyy/mm/dd, yyyymmdd, yyyy-mm-dd。"
@@ -38,7 +38,7 @@
     }
   },
   "english": {
-    "componnent_desc": "",
+    "component_desc": "",
     "module1": {
       "title": "",
       "desc1": "",

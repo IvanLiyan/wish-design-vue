@@ -1,6 +1,6 @@
 {
   "chinese": {
-    "componnent_desc": "Tetris主要使用线性图标",
+    "component_desc": "Tetris主要使用线性图标",
     "module1": {
       "title": "基础样式"
     },
@@ -22,7 +22,7 @@
     }
   },
   "english": {
-    "componnent_desc": "Tetris mainly uses line icon.",
+    "component_desc": "Tetris mainly uses line icon.",
     "module1": {
       "title": "Basic Style"
     },

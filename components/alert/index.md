@@ -1,6 +1,6 @@
 # 警告提示 / Alert
 
-<span>{{$t('alert.componnent_desc')}}</span>
+<span>{{$t('alert.component_desc')}}</span>
 
 ### {{$t('alert.module1.title')}}
 

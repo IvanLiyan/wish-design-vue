@@ -1,6 +1,6 @@
 {
   "chinese": {
-    "componnent_desc": "用于多个选项（一般一组不超过 5 个）的单选输入，状态的切换",
+    "component_desc": "用于多个选项（一般一组不超过 5 个）的单选输入，状态的切换",
     "api": {
       "value": "Radio 的 value",
       "disabled": "禁用状态,继承 RadioGroup 组件的 disabled 值",
@@ -11,7 +11,7 @@
     }
   },
   "english": {
-    "componnent_desc": "Use for Single-choice input (normally no more than 5) or change of status",
+    "component_desc": "Use for Single-choice input (normally no more than 5) or change of status",
     "api": {
       "value": "Set the radio value property",
       "disabled": "Disable property, can inherit RadioGroup component disabled property",

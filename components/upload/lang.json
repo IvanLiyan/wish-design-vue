@@ -1,6 +1,6 @@
 {
   "chinese": {
-    "componnent_desc": "将文件上传至服务端。",
+    "component_desc": "将文件上传至服务端。",
     "module1": {
       "title": "基础样式-按钮"
 	  },
@@ -20,7 +20,7 @@
     }
   },
   "english": {
-    "componnent_desc": "",
+    "component_desc": "",
     "module1": {
       "title": "",
       "desc": ""

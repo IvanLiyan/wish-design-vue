@@ -1,6 +1,6 @@
 {
   "chinese": {
-    "componnent_desc": "用于当数据量大时，分开页面展示和浏览数据。",
+    "component_desc": "用于当数据量大时，分开页面展示和浏览数据。",
     "module1": {
       "title": "基础样式"
     },
@@ -22,7 +22,7 @@
     }
   },
   "english": {
-    "componnent_desc": "It is used to display and browse data separately when there is a large amount of data.",
+    "component_desc": "It is used to display and browse data separately when there is a large amount of data.",
     "module1": {
       "title": "Basic Style"
     },

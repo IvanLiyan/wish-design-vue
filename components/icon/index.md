@@ -24,7 +24,7 @@ export default {
 
 # 图标 / Icon
 
-<span>{{$t('icon.componnent_desc')}}</span>
+<span>{{$t('icon.component_desc')}}</span>
 
 ## <span>{{$t('button.module1.title')}}</span>
 

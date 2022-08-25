@@ -17,7 +17,7 @@
 
 # 文本输入框 / Input
 
-<span>{{$t('input.componnent_desc')}}</span>
+<span>{{$t('input.component_desc')}}</span>
 
 ## <span>{{$t('input.module1.title')}}</span>
 

@@ -1,6 +1,6 @@
 # 选择器 / Select
 
-<span>{{$t('select.componnent_desc')}}</span>
+<span>{{$t('select.component_desc')}}</span>
 
 ## <span>{{$t('select.module1.title')}}</span>
 

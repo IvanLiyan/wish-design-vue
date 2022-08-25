@@ -1,6 +1,6 @@
 {
   "chinese": {
-    "componnent_desc": "用于缩略信息的完整展示，不承载复杂文本和操作，通过鼠标移入显示、移出消失的方式查看",
+    "component_desc": "用于缩略信息的完整展示，不承载复杂文本和操作，通过鼠标移入显示、移出消失的方式查看",
     "module1": { "title1": "基础样式" },
     "module2": { "title1": "图表类", "subtitle1": "支持出现在不同位置", "subtitle2": "可以自定义内容" },
     "api": {
@@ -19,7 +19,7 @@
     }
   },
   "english": {
-    "componnent_desc": "A complete display of abbreviated information, without complex text and operations, viewed by mouse in display or mouse out disappear.",
+    "component_desc": "A complete display of abbreviated information, without complex text and operations, viewed by mouse in display or mouse out disappear.",
     "module1": { "title1": "Basic Style" },
     "module2": { "title1": "Chart Type", "subtitle1": "Support appears in different places", "subtitle2": "Custom content" },
     "api": {

@@ -1,6 +1,6 @@
 {
   "chinese": {
-    "componnent_desc": "用于多个选项（一般一组不超过 5 个）的选择输入，状态的切换",
+    "component_desc": "用于多个选项（一般一组不超过 5 个）的选择输入，状态的切换",
     "api": {
       "value": "Checkbox 的 value",
       "disabled": "禁用状态，可继承 CheckboxGroup 组件的 disabled 值",
@@ -12,7 +12,7 @@
     }
   },
   "english": {
-    "componnent_desc": "Use for multi-choice input (normally no more than 5) or change of status",
+    "component_desc": "Use for multi-choice input (normally no more than 5) or change of status",
     "api": {
       "value": "Set the checkbox value property",
       "disabled": "Disable property, can inherit CheckboxGroup component disabled property",

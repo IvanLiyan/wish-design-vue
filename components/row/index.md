@@ -1,6 +1,6 @@
 # 布局 / Grid
 
-<span>{{$t('row.componnent_desc')}}</span>
+<span>{{$t('row.component_desc')}}</span>
 
 ## <span>{{$t('row.module1.title')}}</span>
 

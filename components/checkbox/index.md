@@ -1,6 +1,6 @@
 # 多选框 / Checkbox
 
-<span>{{$t('checkbox.componnent_desc')}}</span>
+<span>{{$t('checkbox.component_desc')}}</span>
 
 :::include(src="./doc/status.vue")
 :::

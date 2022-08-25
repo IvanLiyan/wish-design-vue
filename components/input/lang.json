@@ -1,6 +1,6 @@
 {
   "chinese": {
-    "componnent_desc": "用于收集用户通过鼠标或键盘提供的信息",
+    "component_desc": "用于收集用户通过鼠标或键盘提供的信息",
     "module1": {
       "title": "单行文本",
       "subtitle1": "基础样式",
@@ -36,7 +36,7 @@
     }
   },
   "english": {
-    "componnent_desc": "Use for collecting mouse/keyboard input from user.",
+    "component_desc": "Use for collecting mouse/keyboard input from user.",
     "module1": {
       "title": "Single-line Input",
       "subtitle1": "Basic Style",

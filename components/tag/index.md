@@ -1,6 +1,6 @@
 # 标签 / Tag
 
-<span>{{$t('tag.componnent_desc')}}</span>
+<span>{{$t('tag.component_desc')}}</span>
 
 ## 可操作标签
 

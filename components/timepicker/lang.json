@@ -1,6 +1,6 @@
 {
   "chinese": {
-    "componnent_desc": "用于时间的选择。",
+    "component_desc": "用于时间的选择。",
     "module1": {
       "title": "基础样式"
 	  },
@@ -20,7 +20,7 @@
     }
   },
   "english": {
-    "componnent_desc": "",
+    "component_desc": "",
     "module1": {
       "title": "",
       "desc": ""

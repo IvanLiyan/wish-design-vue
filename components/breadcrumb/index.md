@@ -1,6 +1,6 @@
 # 面包屑 / Breadcrumb
 
-<span>{{$t('breadcrumb.componnent_desc')}}</span>
+<span>{{$t('breadcrumb.component_desc')}}</span>
 
 ## <span>{{$t('breadcrumb.module1.title')}}</span>
 

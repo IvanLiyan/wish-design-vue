@@ -1,6 +1,6 @@
 {
   "chinese": {
-    "componnent_desc": "默认 5 秒自动消失，通常出现在窗口的右上角，多个同时出现时，以纵向顺序排列。用于展示即时的操作反馈，通常用于不打断用户操作的提醒",
+    "component_desc": "默认 5 秒自动消失，通常出现在窗口的右上角，多个同时出现时，以纵向顺序排列。用于展示即时的操作反馈，通常用于不打断用户操作的提醒",
     "api": {
       "desc": "你可以通过 this.$wt.notify 来直接调用组件，亦或者使用单独引用的方式调用组件",
       "message": "说明文字",
@@ -11,7 +11,7 @@
     }
   },
   "english": {
-    "componnent_desc": "By default disappear in 5 seconds,usually shown in the top right corner. If there are multipe alerts, shown one by one vertically. Used for immediately response to a user action, working as non-interrupt notifications.",
+    "component_desc": "By default disappear in 5 seconds,usually shown in the top right corner. If there are multipe alerts, shown one by one vertically. Used for immediately response to a user action, working as non-interrupt notifications.",
     "api": {
       "desc": "You can use this.$wt.notify to call this component, or call it through independent citation.",
       "message": "Description",

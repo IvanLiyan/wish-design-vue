@@ -1,6 +1,6 @@
 # 开关 / Switch
 
-<span>{{$t('switch.componnent_desc')}}</span>
+<span>{{$t('switch.component_desc')}}</span>
 
 :::include(src="./doc/status.vue")
 :::

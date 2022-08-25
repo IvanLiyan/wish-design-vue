@@ -1,6 +1,6 @@
 
 # 分页 / Pagination
-<span>{{$t('pagination.componnent_desc')}}</span>
+<span>{{$t('pagination.component_desc')}}</span>
 
 ## {{$t('pagination.module1.title')}}
 :::include(src="./doc/base.vue")

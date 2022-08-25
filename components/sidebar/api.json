@@ -2,7 +2,7 @@
   "props": [
     {
       "name": "title",
-      "desc": "导航名称",
+      "desc": "$t('sidebar.api.title')",
       "type": "string",
       "optionalValue": "",
       "default": "",
@@ -10,7 +10,7 @@
     },
     {
       "name": "collapse",
-      "desc": "支持.sync，是否水平折叠收起导航",
+      "desc": "$t('sidebar.api.collapse')",
       "type": "boolean",
       "optionalValue": "",
       "default": "false",
@@ -18,7 +18,7 @@
     },
     {
       "name": "active-key",
-      "desc": "(受控)，支持 v-model，激活菜单的key",
+      "desc": "$t('sidebar.api.active-key')",
       "type": ["string", "number"],
       "optionalValue": "",
       "default": "",
@@ -26,7 +26,7 @@
     },
     {
       "name": "default-active-key",
-      "desc": "默认激活菜单的key",
+      "desc": "$t('sidebar.api.default-active-key')",
       "type": ["string", "number"],
       "optionalValue": "",
       "default": "",
@@ -34,7 +34,7 @@
     },
     {
       "name": "expand-keys",
-      "desc": "(受控)，支持.sync，当前打开菜单的key的数组",
+      "desc": "$t('sidebar.api.expand-keys')",
       "type": "Array",
       "optionalValue": "",
       "default": "",
@@ -42,7 +42,7 @@
     },
     {
       "name": "default-expand-keys",
-      "desc": "当前打开菜单的 key 的数组",
+      "desc": "$t('sidebar.api.default-expand-keys')",
       "type": "Array",
       "optionalValue": "",
       "default": "",
@@ -50,7 +50,7 @@
     },
     {
       "name": "accordion",
-      "desc": "是否开启手风琴模式，开启后每次至多展开一个",
+      "desc": "$t('sidebar.api.accordion')",
       "type": "boolean",
       "optionalValue": "",
       "default": "",
@@ -58,7 +58,7 @@
     },
     {
       "name": "data",
-      "desc": "导航数据(包含一级导航、二级导航)",
+      "desc": "$t('sidebar.api.data')",
       "type": "Array",
       "optionalValue": "",
       "default": "",
@@ -66,7 +66,7 @@
     },
     {
       "name": "item-key",
-      "desc": "唯一标识的属性名",
+      "desc": "$t('sidebar.api.item-key')",
       "type": "string",
       "optionalValue": "",
       "default": "'id'",
@@ -74,7 +74,7 @@
     },
     {
       "name": "tooltip-props",
-      "desc": "tooltip 组件属性，详细参考 <a href='/components/tooltip#tooltip-props'>tooltip组件</a>",
+      "desc": "$t('sidebar.api.tooltip-props')",
       "type": "object",
       "optionalValue": "",
       "default": "",
@@ -82,7 +82,7 @@
     },
     {
       "name": "theme",
-      "desc": "主题",
+      "desc": "$t('sidebar.api.theme')",
       "type": "string",
       "optionalValue": ["light", "dark"],
       "default": "light",
@@ -92,37 +92,37 @@
   "events": [
     {
       "name": "collapse-change",
-      "desc": "侧栏展开收起状态发生变化时触发",
+      "desc": "$t('sidebar.api.collapse-change')",
       "args": "(collaspe: boolean)"
     },
     {
       "name": "menu-expand-change",
-      "desc": "菜单项展开状态发生改变时触发",
+      "desc": "$t('sidebar.api.menu-expand-change')",
       "args": "({ expandKeys: string[], key: string, item: data, expanded: boolean })"
     },
     {
       "name": "menu-item-click",
-      "desc": "点击菜单项时触发",
+      "desc": "$t('sidebar.api.menu-item-click')",
       "args": "({ key: string, item: data })"
     }
   ],
   "slots": [
     {
       "name": "title",
-      "desc": "导航名称插槽"
+      "desc": "$t('sidebar.api.slot-title')"
     }
   ],
   "scopedSlots": [
     {
       "name": "submenu",
-      "desc": "自定义子菜单(submenu)中标题内容",
-      "args": "{ <br />  item?: data, // 当前项对应的 data 值 <br /> }",
+      "desc": "$t('sidebar.api.scoped-submenu')",
+      "args": "{ item?: data }",
       "version": "0.3.10"
     },
     {
       "name": "item",
-      "desc": "自定义菜单项(menu-item)中标题内容",
-      "args": "{ <br />  item?: data, // 当前项对应的 data 值 <br /> }",
+      "desc": "$t('sidebar.api.scoped-item')",
+      "args": "{ item?: data }",
       "version": "0.3.10"
     }
   ]

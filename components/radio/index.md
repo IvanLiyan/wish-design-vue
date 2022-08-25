@@ -1,6 +1,6 @@
 # 单选框 / Radio
 
-<span>{{$t('radio.componnent_desc')}}</span>
+<span>{{$t('radio.component_desc')}}</span>
 
 :::include(src="./doc/status-radio.vue")
 :::

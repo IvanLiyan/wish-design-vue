@@ -1,6 +1,6 @@
 {
   "chinese": {
-    "componnent_desc": "按钮用于触发某一行为动作。按钮上显示的文案(button label)需和这一行为动作相一致",
+    "component_desc": "按钮用于触发某一行为动作。按钮上显示的文案(button label)需和这一行为动作相一致",
     "module1": { "title": "基础样式", "desc1": "根据按钮的组成，分为文字按钮，图标文字按钮，图标按钮" },
     "module2": { "title": "状态", "desc1": "根据按钮的状态，分为正常，加载中，和不可点击" },
     "module3": {
@@ -30,7 +30,7 @@
     }
   },
   "english": {
-    "componnent_desc": "Button is used for starting an action. The button label text should reflect the action.",
+    "component_desc": "Button is used for starting an action. The button label text should reflect the action.",
     "module1": {
       "title": "Basic Style",
       "desc1": "The button component includes: Text Button, Text + Icon Button, and Icon Button."

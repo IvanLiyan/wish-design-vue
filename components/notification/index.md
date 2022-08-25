@@ -1,6 +1,6 @@
 # 提示 / Notification
 
-<span>{{$t('notification.componnent_desc')}}</span>
+<span>{{$t('notification.component_desc')}}</span>
 
 :::include(src="./doc/base.vue")
 :::

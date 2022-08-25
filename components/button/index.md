@@ -41,7 +41,7 @@
 
 # 按钮 / Button
 
-<span>{{$t('button.componnent_desc')}}</span>
+<span>{{$t('button.component_desc')}}</span>
 
 ## <span>{{$t('button.module1.title')}}</span>
 
