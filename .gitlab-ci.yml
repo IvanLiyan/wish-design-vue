@@ -1,0 +1,22 @@
+stages:
+  - release
+
+publish-npm:
+  stage: release
+  image: node:12
+
+  script:
+    # setup git credentials
+    - mkdir /root/.ssh/ && touch /root/.ssh/id_rsa
+    - echo $GITHUB_DEPLOY_KEY_PHU | base64 -d > /root/.ssh/id_rsa
+    - git config --global user.email "gitlab@wish.com"
+    - git config --global user.name "Gitlab Bot"
+    - git remote set-url origin git@github.com:ContextLogic/wish-design-vue.git
+    - chmod 600 /root/.ssh/id_rsa
+    - ssh-keyscan -t rsa github.com >> /root/.ssh/known_hosts
+
+    - export WISH_DESIGN_VUE_HOME=$(pwd)
+    - npm install -g yarn@1.22.11 --force
+    - yarn clean
+    - yarn
+    - sh $WISH_DESIGN_VUE_HOME/publish.sh
