@@ -9,7 +9,7 @@ git pull --rebase origin master
 
 BUILD_NUMBER="0.0.1-$(date +%s)"
 
-yarn build
+npm run build
 cd dist
 
 # Upload javascript package to NPM

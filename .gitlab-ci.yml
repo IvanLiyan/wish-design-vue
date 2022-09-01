@@ -16,7 +16,4 @@ publish-npm:
     - ssh-keyscan -t rsa github.com >> /root/.ssh/known_hosts
 
     - export WISH_DESIGN_VUE_HOME=$(pwd)
-    - npm install -g yarn@1.22.11 --force
-    - yarn clean
-    - yarn
     - sh $WISH_DESIGN_VUE_HOME/publish.sh
