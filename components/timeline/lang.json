@@ -1,0 +1,50 @@
+{
+  "chinese": {
+    "component_desc": "用于可视化内容随时间的状态改变",
+    "module1": {
+      "title1": "基础样式",
+      "desc": "时间轴位置分为左侧、右侧及中间",
+      "subtitle1": "时间轴在左侧",
+      "subtitle2": "时间轴在右侧",
+      "subtitle3": "时间轴在中间"
+    },
+    "module2": {
+      "title1": "类型与用法",
+      "subtitle1": "组合图标和状态",
+      "desc1": "可以使用图标或指示颜色来表达时间节点事件的状态"
+    },
+    "api": {
+      "mode": "时间轴的位置",
+      "type": "定义时间轴的类型",
+      "status": "定义时间轴的状态",
+      "title": "侧标题",
+      "slot_default": "时间轴节点内容",
+      "slot_title": "时间轴节点标题内容",
+      "slot_dot": "时间轴分割线上点内容"
+    }
+  },
+  "english": {
+    "component_desc": "Used to visualize changes in the state of content over time.",
+    "module1": {
+      "title1": "Basic Style",
+      "desc": "Time axis position is divided into left, right and middle.",
+      "subtitle1": "The timeline is on the left",
+      "subtitle2": "The timeline is on the right",
+      "subtitle3": "The timeline is in the middle"
+    },
+    "module2": {
+      "title1": "Type and Use Cases",
+      "subtitle1": "Combine icons and states",
+      "desc1": "You can use icon or indicator color to express the status of events at a time node"
+    },
+    "api": {
+      "mode": "The position of the timeline",
+      "type": "Defines the type of the timeline",
+      "status": "Define the state of the timeline",
+      "title": "Aside title",
+      "slot_default": "Contents of the timeline node",
+      "slot_title": "Timeline node title content",
+      "slot_dot": "The points on the timeline's dividing line"
+    }
+  }
+}

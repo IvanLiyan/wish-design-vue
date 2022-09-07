@@ -2,29 +2,29 @@
   <div class="demo-timeline-wrap">
     <wt-timeline>
       <wt-timeline-item type="hollow">
-        <div><b>标题</b></div>
+        <div><b>Title</b></div>
         2021-01-01 08:00:00
-        <div>内容</div>
+        <div>Content</div>
       </wt-timeline-item>
       <wt-timeline-item type="hollow">
-        <div><b>标题</b></div>
+        <div><b>Title</b></div>
         2021-01-01 08:00:00
-        <div>内容</div>
+        <div>Content</div>
       </wt-timeline-item>
       <wt-timeline-item type="hollow">
-        <div><b>标题</b></div>
+        <div><b>Title</b></div>
         2021-01-01 08:00:00
-        <div>内容</div>
+        <div>Content</div>
       </wt-timeline-item>
       <wt-timeline-item type="hollow">
-        <div><b>标题</b></div>
+        <div><b>Title</b></div>
         2021-01-01 08:00:00
-        <div>内容</div>
+        <div>Content</div>
       </wt-timeline-item>
       <wt-timeline-item type="hollow">
-        <div><b>标题</b></div>
+        <div><b>Title</b></div>
         2021-01-01 08:00:00
-        <div>内容</div>
+        <div>Content</div>
       </wt-timeline-item>
     </wt-timeline>
   </div>

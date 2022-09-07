@@ -1,24 +1,24 @@
 # Timeline / 时间轴
-<span>用于可视化内容随时间的状态改变</span>
+<span>{{$t('timeline.component_desc')}}</span>
 
-## 基本样式
-<span>时间轴位置分为左侧、右侧及中间</span>
+## <span>{{$t('timeline.module1.title1')}}</span>
+<span>{{$t('timeline.module1.desc')}}</span>
 
-### 时间轴在左侧
+### <span>{{$t('timeline.module1.subtitle1')}}</span>
 :::include(src="doc/base-right.vue")
 :::
 
-### 时间轴在右侧
+### <span>{{$t('timeline.module1.subtitle2')}}</span>
 :::include(src="doc/base-left.vue")
 :::
 
-### 时间轴在中间
+### <span>{{$t('timeline.module1.subtitle3')}}</span>
 :::include(src="doc/base-around.vue")
 :::
 
-## 类型与用法
-### 组合图标和状态
-可以使用图标或指示颜色来表达时间节点事件的状态
+## <span>{{$t('timeline.module2.title1')}}</span>
+### <span>{{$t('timeline.module2.subtitle1')}}</span>
+<span>{{$t('timeline.module1.desc')}}</span>
 :::include(src="doc/status.vue")
 :::
 

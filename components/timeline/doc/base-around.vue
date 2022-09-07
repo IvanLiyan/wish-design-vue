@@ -2,29 +2,29 @@
   <div class="demo-timeline-wrap">
     <wt-timeline mode="alternate">
       <wt-timeline-item type="hollow">
-        <div><b>标题</b></div>
+        <div><b>Title</b></div>
         12:45:24
-        <div>内容</div>
+        <div>Content</div>
       </wt-timeline-item>
       <wt-timeline-item type="hollow">
-        <div><b>标题</b></div>
+        <div><b>Title</b></div>
         12:45:24
-        <div>内容</div>
+        <div>Content</div>
       </wt-timeline-item>
       <wt-timeline-item type="hollow">
-        <div><b>标题</b></div>
+        <div><b>Title</b></div>
         12:45:24
-        <div>内容</div>
+        <div>Content</div>
       </wt-timeline-item>
       <wt-timeline-item type="hollow">
-        <div><b>标题</b></div>
+        <div><b>Title</b></div>
         12:45:24
-        <div>内容</div>
+        <div>Content</div>
       </wt-timeline-item>
       <wt-timeline-item type="hollow">
-        <div><b>标题</b></div>
+        <div><b>Title</b></div>
         12:45:24
-        <div>内容</div>
+        <div>Content</div>
       </wt-timeline-item>
     </wt-timeline>
   </div>

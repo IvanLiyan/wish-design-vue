@@ -1,0 +1,22 @@
+{
+  "chinese": {
+    "api": {
+      "type": "定义时间轴的类型",
+      "status": "定义时间轴的状态",
+      "title": "侧标题",
+      "slot_default": "时间轴节点内容",
+      "slot_title": "时间轴节点标题内容",
+      "slot_dot": "时间轴分割线上点内容"
+    }
+  },
+  "english": {
+    "api": {
+      "type": "Defines the type of the timeline",
+      "status": "Define the state of the timeline",
+      "title": "Aside title",
+      "slot_default": "Contents of the timeline node",
+      "slot_title": "Timeline node title content",
+      "slot_dot": "The points on the timeline's dividing line"
+    }
+  }
+}
