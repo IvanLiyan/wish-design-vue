@@ -1,0 +1,40 @@
+{
+  "chinese": {
+    "component_desc": "用于展示提示或内容的条数的更新",
+    "module1": {
+      "title": "基础样式",
+      "desc1": "分为点状提示和数字提示",
+      "desc2": "点状提示适用于内容条数不确定或不重要的场景",
+      "desc3": "数字提示适用于内容条数确定且重要的场景"
+    },
+    "module2": {
+      "title": "类型与用法",
+      "desc1": "可以用于提醒代办事项、新消息有更新"
+    },
+    "api": {
+      "value": "显示值",
+      "max": "最大值，超过最大值会显示 '{max}+'",
+      "dot": "小圆点",
+      "hidden": "是否隐藏"
+    }
+  },
+  "english": {
+    "component_desc": "An update to the number of items used to display tips or content.",
+    "module1": {
+      "title": "Basic Style",
+      "desc1": "Divided into dot prompt and digital prompt.",
+      "desc2": "Dot tips are suitable for scenarios where the number of content items is uncertain or insignificant.",
+      "desc3": "Numeric prompts are suitable for scenarios where the number of content items is determined and important."
+    },
+    "module2": {
+      "title": "Type and Use Cases",
+      "desc1": "Can be used to alert agents, new information has been updated."
+    },
+    "api": {
+      "value": "According to the value",
+      "max": "Maximum value, beyond which '{Max}+' is displayed",
+      "dot": "Dot",
+      "hidden": "Whether to hide"
+    }
+  }
+}

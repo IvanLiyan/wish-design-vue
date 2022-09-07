@@ -1,17 +1,17 @@
 # 徽章 / Badge
-用于展示提示或内容的条数的更新
+<span>{{$t('badge.component_desc')}}</span>
 
-## 基础样式
-分为点状提示和数字提示
+## <span>{{$t('badge.module1.title')}}</span>
+<span>{{$t('badge.module1.desc1')}}</span>
 <br />
-点状提示适用于内容条数不确定或不重要的场景
+<span>{{$t('badge.module1.desc2')}}</span>
 <br />
-数字提示适用于内容条数确定且重要的场景
+<span>{{$t('badge.module1.desc3')}}</span>
 :::include(src="./doc/base.vue")
 :::
 
-## 用法
-可以用于提醒代办事项、新消息有更新
+## <span>{{$t('badge.module2.title')}}</span>
+<span>{{$t('badge.module2.desc1')}}</span>
 :::include(src="./doc/usage.vue")
 :::
 <!-- 
@@ -29,9 +29,9 @@
 ## API
 <api-doc name="Badge" :doc="require('./api.json')"></api-doc>
 
-### 测试
+<!-- ### 测试
 :::include(src="./doc/tests.vue")
-:::
+::: -->
 
 <style>
     .example-badge {

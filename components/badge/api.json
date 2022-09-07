@@ -1,7 +1,7 @@
 {
   "props": [{
       "name": "value",
-      "desc": "显示值",
+      "desc": "$t('badge.api.value')",
       "type": ["string", "number"],
       "optionalValue": "",
       "default": "",
@@ -9,7 +9,7 @@
     },
     {
       "name": "max",
-      "desc": "最大值，超过最大值会显示 '{max}+'",
+      "desc": "$t('badge.api.max')",
       "type": "number",
       "optionalValue": "",
       "default": "",
@@ -17,7 +17,7 @@
     },
     {
       "name": "dot",
-      "desc": "小圆点",
+      "desc": "$t('badge.api.dot')",
       "type": "boolean",
       "optionalValue": "",
       "default": "false",
@@ -25,7 +25,7 @@
     },
     {
       "name": "hidden",
-      "desc": "是否展示",
+      "desc": "$t('badge.api.hidden')",
       "type": "boolean",
       "optionalValue": "",
       "default": "false",
