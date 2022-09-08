@@ -1,5 +1,5 @@
 {
-  "name": "@wish/wt-vue",
+  "name": "@ContextLogic/wt-vue",
   "version": "0.0.2-alpha.49",
   "description": "vue、component",
   "main": "lib/index.js",

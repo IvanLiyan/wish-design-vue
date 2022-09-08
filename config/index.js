@@ -3,7 +3,7 @@ const isProd = process.env.NODE_ENV === 'production';
 module.exports = {
   namespace: 'wt',
   pkgName: 'wt-vue', // 包名改动可能需要手动更改代码中 import 的包名
-  fullName: '@wish/wt-vue',
+  fullName: '@ContextLogic/wt-vue',
   port: 8081,
   themes: ['theme'],
   isProd: isProd,

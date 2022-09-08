@@ -10,7 +10,7 @@
 {{$t('notification.api.desc')}}
 
 ```
-import { Notification } from '@wish/wt-vue';
+import { Notification } from '@ContextLogic/wt-vue';
 ```
 
 <api-doc name="Notification" :doc="require('./api.json')"></api-doc>

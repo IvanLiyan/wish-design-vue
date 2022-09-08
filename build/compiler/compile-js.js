@@ -30,8 +30,8 @@ function compileJs(filePath, file, option) {
   let code = fs.readFileSync(filePath, { encoding: 'utf-8' });
 
   code = replaceScriptImportExt(code, '.vue', '');
-  code = replaceScriptImportExt(code, '@/', '@wish/wt-vue/es/');
-  code = replaceScriptImportExt(code, '@components', '@wish/wt-vue/es/components');
+  code = replaceScriptImportExt(code, '@/', '@ContextLogic/wt-vue/es/');
+  code = replaceScriptImportExt(code, '@components', '@ContextLogic/wt-vue/es/components');
 
   const result = babel.transform(code, {
     filename: filePath,

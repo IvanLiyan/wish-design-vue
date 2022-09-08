@@ -40,9 +40,9 @@
         [
           "module-resolver",
           {
-            "root": ["@wish/wt-vue"],
+            "root": ["@ContextLogic/wt-vue"],
             "alias": {
-              "@": "@wish/wt-vue/lib",
+              "@": "@ContextLogic/wt-vue/lib",
               "popper.js/dist/esm/popper": "popper.js/dist/umd/popper"
             }
           }
