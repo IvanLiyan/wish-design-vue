@@ -1,26 +1,27 @@
 # 伸缩框 / Expansion
 
-## 基础样式
+<span>{{$t('expansion.component_desc')}}</span>
+
+## <span>{{$t('expansion.module1.title')}}</span>
 
 :::include(src="./doc/base.vue")
 :::
 
-## 使用
+## <span>{{$t('expansion.module2.title')}}</span>
 
-### 展开方式
+### <span>{{$t('expansion.module2.subtitle1')}}</span>
 
-只能同时展开一个面板。
+<span>{{$t('expansion.module2.desc1')}}</span>
 :::include(src="./doc/single.vue")
 :::
 
-可同时展开多个面板。
-将 `value` 值设置成数组可同时展开多个
+<span>{{$t('expansion.module2.desc2')}}</span>
 :::include(src="./doc/multi.vue")
 :::
 
-### 嵌套折叠面板
+### <span>{{$t('expansion.module2.subtitle2')}}</span>
 
-面板抽屉内可嵌套多个子级折叠面板。
+<span>{{$t('expansion.module2.desc3')}}</span>
 :::include(src="./doc/fold.vue")
 :::
 

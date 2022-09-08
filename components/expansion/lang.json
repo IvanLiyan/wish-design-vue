@@ -5,9 +5,12 @@
       "title": "基础样式"
     },
     "module2": {
-      "title": "使用",
-      "subTitle1": "展开方式",
-      "subTitle2": "嵌套折叠面板"
+      "title": "类型和用法",
+      "subtitle1": "展开方式",
+      "desc1": "只能同时展开一个面板",
+      "desc2": "可同时展开多个面板, 将 value 值设置成数组可同时展开多个",
+      "subtitle2": "嵌套折叠面板",
+      "desc3": "面板抽屉内可嵌套多个子级折叠面板"
     },
     "api": {
       "value": "当前展开的面板值，可以是数组也可以是单个值，当是数组时则表示可以同时展开多个",
@@ -15,18 +18,21 @@
     }
   },
   "english": {
-    "component_desc": "For switching in different functions or information sections",
+    "component_desc": "Use to expand and collapse information.",
     "module1": {
       "title": "Basic Style"
     },
     "module2": {
-      "title": "",
-      "subTitle1": "",
-      "subTitle2": ""
+      "title": "Type and Use Cases",
+      "subtitle1": "Expansion type",
+      "desc1": "Only one panel can be expanded at a time.",
+      "desc2": "Multiple panels can be expanded simultaneously. Setting values to an array can be expanded simultaneously.",
+      "subtitle2": "Nested collapsible panels",
+      "desc3": "Multiple sub-level folding panels can be nested in the panel drawer."
     },
     "api": {
-      "value": "",
-      "input": ""
+      "value": "The current expanded panel value can be an array or a single value. When it is an array, it means that multiple values can be expanded simultaneously.",
+      "input": "Triggered when toggles the expanded panel."
     }
   }
 }

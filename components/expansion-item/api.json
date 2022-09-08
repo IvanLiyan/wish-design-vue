@@ -2,7 +2,7 @@
   "props": [
     {
       "name": "value",
-      "desc": "当前面板值，必填",
+      "desc": "$t('expansion-item.api.value')",
       "type": "any",
       "optionalValue": "",
       "default": "",
@@ -10,7 +10,7 @@
     },
     {
       "name": "title",
-      "desc": "面板标题",
+      "desc": "$t('expansion-item.api.title')",
       "type": "string",
       "optionalValue": "",
       "default": "",

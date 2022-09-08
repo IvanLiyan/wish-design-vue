@@ -7,8 +7,8 @@
   },
   "english": {
     "api": {
-      "value": "",
-      "title": ""
+      "value": "Current panel value, mandatory.",
+      "title": "The panel title."
     }
   }
 }
