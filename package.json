@@ -4,6 +4,7 @@
   "description": "vue、component",
   "main": "lib/wt-vue.common.js",
   "scripts": {
+    "node-i": "CXXFLAGS='--std=c++14' npm install",
     "start": "npm run dev",
     "create": "node build/bin/create.js",
     "dev": "npm run build:srcIndex && npm run build:themeIndex && npm run build:lang && webpack-dev-server  --progress --config build/webpack.demo.conf.js",
@@ -127,7 +128,8 @@
     "throttle-debounce": "^1.1.0",
     "vue-feather-icons": "^5.1.0",
     "vue-fragment": "^1.5.2",
-    "vue-highlight.js": "^3.1.0"
+    "vue-highlight.js": "^3.1.0",
+    "watchman": "^1.0.0"
   },
   "peerDependencies": {
     "vue": "^2.5.2"
