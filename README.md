@@ -2,15 +2,16 @@
 
 ## 全局安装 babel-cli、webpack、webpack-cli
 
-## 开发
+## Dev
 
-### 开发步骤
+### Suggestion Dev Env
+- node.js: v16.17.0
+- npm: 8.15.0
 
-需要 Node.js 版本大于 8+,并有全局装有 NPM。
-在 clone 完仓库后，运行
+### Dev Steps
 
 ```bash
-npm # 安装项目依赖
+npm run node-i # 安装项目依赖
 ```
 
 #### 常用 NPM Script 命令
@@ -36,6 +37,8 @@ npm run create <componentName> [chineseName]
 ```
 
 其他 script 命令可查看 package.json 中 scripts 内容。
+
+#### If you get an error about `FsEvents` after running `npm start`, please run `npm install watchman`
 
 #### 目录结构
 
