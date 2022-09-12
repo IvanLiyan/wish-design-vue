@@ -1,7 +1,7 @@
 # exit when any command fails
 set -e
 
-BUILD_NUMBER="0.0.1-alpha.$(date +%s)"
+BUILD_NUMBER="0.0.1-rc.$(date +%s)"
 
 npm run node-i
 npm run build
