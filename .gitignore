@@ -22,4 +22,4 @@ token.json
 publish/es
 publish/dist
 publish/lib
-
+package-lock.json

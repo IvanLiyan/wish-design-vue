@@ -19,7 +19,7 @@
           target="_blank"
           ><span>设计</span><wt-icon name="external-link" :stroke-width="1.5" :width="14" :height="14"
         /></a>
-        <a key="wnpm" href="http://npm.bjs.i.wish.com/-/web/detail/@wish/wt-vue" target="_blank"
+        <a key="wnpm" href="http://npm.bjs.i.wish.com/-/web/detail/@ContextLogic/wt-vue" target="_blank"
           ><span>npm源</span><wt-icon name="external-link" :stroke-width="1.5" :width="14" :height="14"
         /></a>
       </div>
