@@ -40,39 +40,39 @@
 </style>
 
 # 表格 / Table
-用于展示行列数据
+<span>{{$t('table.component_desc')}}</span>
 
-## 数据表格
-### 默认
+## <span>{{$t('table.module1.title')}}</span>
+### <span>{{$t('table.module1.subtitle1')}}</span>
 :::include(src="./doc/base.vue")
 :::
 
-### 紧凑
+### <span>{{$t('table.module1.subtitle2')}}</span>
 :::include(src="./doc/size.vue")
 :::
 
-### 可排序
+### <span>{{$t('table.module1.subtitle3')}}</span>
 :::include(src="./doc/sortable.vue")
 :::
 
-### 可展开
+### <span>{{$t('table.module1.subtitle4')}}</span>
 :::include(src="./doc/custom-expand.vue")
 :::
 
-### 行选择
+### <span>{{$t('table.module1.subtitle5')}}</span>
 :::include(src="./doc/selection.vue")
 :::
 
-## 表格展示
-### 表头固定
+## <span>{{$t('table.module2.title')}}</span>
+### <span>{{$t('table.module2.subtitle1')}}</span>
 :::include(src="./doc/fixed-row.vue")
 :::
 
-### 表列固定
+### <span>{{$t('table.module2.subtitle2')}}</span>
 :::include(src="./doc/fixed-column.vue")
 :::
 
-## 自定义列模板
+## <span>{{$t('table.module3.title')}}</span>
 :::include(src="./doc/custom.vue")
 :::
 

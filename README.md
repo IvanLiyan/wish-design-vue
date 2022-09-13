@@ -82,3 +82,6 @@ todo 未支持按需加载，若支持需要 lib 里面以组件文件夹形式�
 
 #### 0.0.2-alpha.49
 ·更新了Sidebar的UI
+
+#### 0.0.2-alpha.51
+·Table Translate

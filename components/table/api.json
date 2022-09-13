@@ -1,7 +1,7 @@
 {
   "props": [{
       "name": "data",
-      "desc": "显示的数据",
+      "desc": "$t('table.api.data')",
       "type": "Array",
       "optionalValue": "",
       "default": "",
@@ -9,7 +9,7 @@
     },
     {
       "name": "height",
-      "desc": "Table 的高度。如果 height 为 number 类型，单位px；如果 height 为 string 类型，则这个高度会设置为 Table 的 style.height 的值，Table 的高度会受控于外部样式。",
+      "desc": "$t('table.api.height')",
       "type": ["string", "number"],
       "optionalValue": "",
       "default": "",
@@ -17,7 +17,7 @@
     },
     {
       "name": "max-height",
-      "desc": "Table 的最大高度",
+      "desc": "$t('table.api.max-height')",
       "type": ["string", "number"],
       "optionalValue": "",
       "default": "",
@@ -25,7 +25,7 @@
     },
     {
       "name": "row-key",
-      "desc": "行数据的 Key，用来优化 Table 的渲染；类型为 String 时，支持多层访问：user.info.id，但不支持user.info[0].id，此种情况请使用Function。",
+      "desc": "$t('table.api.row-key')",
       "type": ["Function(row)", "String"],
       "optionalValue": "",
       "default": "",
@@ -33,7 +33,7 @@
     },
     {
       "name": "expand-row-keys",
-      "desc": "可以通过该属性设置 Table 目前的展开行，需要设置 row-key 属性才能使用，该属性为展开行的 keys 数组。",
+      "desc": "$t('table.api.expand-row-keys')",
       "type": "Array",
       "optionalValue": "",
       "default": "",
@@ -41,7 +41,7 @@
     },
     {
       "name": "pagination",
-      "desc": "分页器，参考pagination文档，设为 false 时不展示和进行分页",
+      "desc": "$t('table.api.pagination')",
       "type": "Object",
       "optionalValue": "",
       "default": "false",
@@ -49,7 +49,7 @@
     },
     {
       "name": "expandable",
-      "desc": "对 tableColumn[type=expand] 的列有效，function 的返回值用来决定这一行的是否可以展开",
+      "desc": "$t('table.api.expandable')",
       "type": "boolean function(row)",
       "optionalValue": "",
       "default": "",
@@ -57,7 +57,7 @@
     },
     {
       "name": "sort-order",
-      "desc": "默认的排序列的 prop 和顺序。它的 prop 属性指定默认的排序的列，order 指定默认排序的顺序",
+      "desc": "$t('table.api.sort-order')",
       "type": "Object",
       "optionalValue": "order: ascending, descending",
       "default": "",
@@ -65,7 +65,7 @@
     },
     {
       "name": "row-col-span",
-      "desc": "合并行合并列的计算方法",
+      "desc": "$t('table.api.row-col-span')",
       "type": "Function({ row,column, rowIndex, columnIndex })",
       "optionalValue": "",
       "default": "",
@@ -73,14 +73,14 @@
     },
     {
       "name": "selection",
-      "desc": "当前表格选中的值",
+      "desc": "$t('table.api.selection')",
       "type": "Array",
       "optionalValue": "[]",
       "default": ""
     },
     {
       "name": "checkboxable",
-      "desc": "仅对 tableColumn[type=selection] 的列有效，function 的返回值用来决定这一行的 Checkbox 是否可以勾选",
+      "desc": "$t('table.api.checkboxable')",
       "type": "boolean function(row)",
       "optionalValue": "",
       "default": "",
@@ -88,7 +88,7 @@
     },
     {
       "name": "reserve-selection",
-      "desc": "仅对 tableColumn[type=selection] 的列有效，当为 true 是则会在数据更新之后保留之前选中的数据（需配合 index-of-selection 来使用）",
+      "desc": "$t('table.api.reserve-selection')",
       "type": "boolean",
       "optionalValue": "",
       "default": "false",
@@ -96,7 +96,7 @@
     },
     {
       "name": "index-of-selection",
-      "desc": "仅对 tableColumn[type=selection] 的列有效，返回当前 row 在 selection 中的位置，当返回值 > -1 时则表示选中，否则则表示未选中",
+      "desc": "$t('table.api.index-of-selection')",
       "type": "number function(row, selection)",
       "optionalValue": "",
       "default": "",
@@ -104,7 +104,7 @@
     },
     {
       "name": "show-overflow-tooltip",
-      "desc": "当内容过长时展示省略号，hover 时是否显示 tooltip 展示全部内容，也支持配置在 table-column 上",
+      "desc": "$t('table.api.show-overflow-tooltip')",
       "type": "boolean",
       "optionalValue": "",
       "default": "",
@@ -112,7 +112,7 @@
     },
     {
       "name": "tooltip-props",
-      "desc": "当内容过长时，显示 tooltip 的透传属性",
+      "desc": "$t('table.api.tooltip-props')",
       "type": "object",
       "optionalValue": "",
       "default": "",
@@ -120,7 +120,7 @@
     },
     {
       "name": "highlight-current-row",
-      "desc": "是否高亮当前行",
+      "desc": "$t('table.api.highlight-current-row')",
       "type": "boolean",
       "optionalValue": "",
       "default": "",
@@ -128,7 +128,7 @@
     },
     {
       "name": "current-row-key",
-      "desc": "只读属性，当前行的 row-key",
+      "desc": "$t('table.api.current-row-key')",
       "type": "string",
       "optionalValue": "",
       "default": "",
@@ -137,88 +137,88 @@
   ],
   "events": [{
       "name": "select",
-      "desc": "当用户手动勾选数据行的 Checkbox 时触发的事件",
+      "desc": "$t('table.api.select')",
       "args": "(selection: Array,row: object)"
     },
     {
       "name": "select-all",
-      "desc": "当用户手动勾选全选的 Checkbox 时触发的事件",
+      "desc": "$t('table.api.select-all')",
       "args": "(selection: Array)"
     },
     {
       "name": "selection-change",
-      "desc": "当选择项发生变化时会触发该事件",
+      "desc": "$t('table.api.selection-change')",
       "args": "(selection: Array)"
     },
     {
       "name": "row-click",
-      "desc": "当某一行被点击时会触发该事件",
+      "desc": "$t('table.api.row-click')",
       "args": "({ event: Event, row: Object, column: Object })"
     },
     {
       "name": "row-mouse-enter",
-      "desc": "当某一行触发 mouseenter 事件时触发",
+      "desc": "$t('table.api.row-mouse-enter')",
       "args": "({ event , row })"
     },
     {
       "name": "row-mouse-leave",
-      "desc": "当某一行触发 mouseleave 事件时触发",
+      "desc": "$t('table.api.row-mouse-leave')",
       "args": "({ event, row })"
     },
     {
       "name": "cell-click",
-      "desc": "当某一单元格被点击时会触发该事件",
+      "desc": "$t('table.api.cell-click')",
       "args": "({ event, row, column })"
     },
     {
       "name": "cell-mouse-enter",
-      "desc": "当某一单元格触发 mouseenter 事件时触发",
+      "desc": "$t('table.api.cell-mouse-enter')",
       "args": "({ event, row, column, cell })"
     },
     {
       "name": "cell-mouse-leave",
-      "desc": "当某一单元格触发 mouseleave 事件时触发",
+      "desc": "$t('table.api.cell-mouse-leave')",
       "args": "({ event, row, column, cell })"
     },
     {
       "name": "header-click",
-      "desc": "当某一列的表头被点击时触发该事件",
+      "desc": "$t('table.api.header-click')",
       "args": "({ event, column })"
     },
     {
       "name": "sort-change",
-      "desc": "当表格的排序条件发生变化的时候触发该事件。0.1.43 版本后推荐使用 change 事件",
+      "desc": "$t('table.api.sort-change')",
       "args": "({ column, prop, order })"
     },
     {
       "name": "expand-change",
-      "desc": "当用户对某一行展开或者关闭的时候会触发该事件",
+      "desc": "$t('table.api.expand-change')",
       "args": "(row, expandedRows)"
     },
     {
       "name": "change",
-      "desc": "当表格的筛选条件或排序条件发生变化时会触发该事件，参数为当前过滤条件 filters，当前排序条件 sorter。当筛选、排序条件不存在时对应的参数将为空 Object",
+      "desc": "$t('table.api.change')",
       "args": "(filters: { [key: columnKey]: string[] }, sorter: { prop?: string, order?: 'ascending' | 'descending' , column?: Column }) => void",
       "version": "0.1.43"
     }
   ],
   "slots": [{
       "name": "empty",
-      "desc": "空数据时展示"
+      "desc": "$t('table.api.empty')"
     },
     {
       "name": "loading",
-      "desc": "加载中展示"
+      "desc": "$t('table.api.loading')"
     }
   ],
   "methods": [{
     "name": "doReflow()",
-    "desc": "对 Table 进行重新布局。当 Table 或其祖先元素由隐藏切换为显示时，可能需要调用此方法",
+    "desc": "$t('table.api.doReflow')",
     "args": ""
   }],
   "scopedSlots": [{
     "name": "sortIcon",
-    "desc": "自定义排序 icon 展示<br/>order 为排序方式 <br/> change 则为触发排序的响应函数，详细请查看 <a href='https://ones.sankuai.com/ones/product/4348/workItem/requirement/detail/5360202' target='_blank'>Ones</a>",
+    "desc": "$t('table.api.sortIcon')",
     "args": "{ <br />order?: 'ascending' | 'descending', <br />change: function ($event) <br />}",
     "version": "0.3.5"
   }]
