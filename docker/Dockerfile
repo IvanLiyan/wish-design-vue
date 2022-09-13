@@ -3,7 +3,7 @@ FROM node:14.15.0 as build
 WORKDIR /tmp
 # ENV PATH /app/node_modules/.bin:$PATH
 COPY . ./
-RUN npm install
+RUN npm run node-i
 RUN npm rebuild node-sass
 RUN npm run build:deploy
 
