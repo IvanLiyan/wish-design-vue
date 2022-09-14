@@ -1,19 +1,19 @@
 # Drawer / 抽屉
-用于在同一页面弹出内容展示
+<span>{{$t('drawer.component_desc')}}</span>
 
-## 基础样式
+## <span>{{$t('drawer.module1.title')}}</span>
 :::include(src="./doc/base.vue")
 :::
 
-## 类型与用法
+## <span>{{$t('drawer.module2.title')}}</span>
 
-### 左侧滑出
+### <span>{{$t('drawer.module2.subtitle1')}}</span>
 :::include(src="./doc/placement.vue")
 :::
 
 ## API
 <api-doc name="Drawer" :doc="require('./api.json')"></api-doc>
-
+<!-- 
 ## QA测试
 :::include(src="./doc/tests.vue")
-:::
+::: -->

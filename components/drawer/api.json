@@ -1,93 +1,98 @@
 {
-	"props":[{
-		"name": "visible",
-		"desc": "<strong>受控</strong> 抽屉是否显示，可使用 v-model 双向绑定数据",
-		"type": "boolean",
-		"optionalValue": "",
-		"default": "false",
-		"version": ""
-	},
-	{
-		"name": "title",
-		"desc": "抽屉标题，如果使用 slot 自定义了页头，则 title 无效",
-		"type": "string",
-		"optionalValue": "",
-		"default": "",
-		"version": ""
-	},
-	{
-		"name": "width",
-		"desc": "抽屉宽度，number 时为像素，string 时需要带上单位",
-		"type": ["number", "string"],
-		"optionalValue": "",
-		"default": "232",
-		"version": ""
-	},
-	{
-		"name": "height",
-		"desc": "抽屉高度，在 placement 为 top 或 bottom 时使用",
-		"type": ["number", "string"],
-		"optionalValue": "",
-		"default": "232",
-		"version": ""
-	},
-	{
-		"name": "closable",
-		"desc": "是否显示右上角的关闭按钮，同时是否支持 esc 关闭",
-		"type": "boolean",
-		"optionalValue": "",
-		"default": "true",
-		"version": ""
-	},
-	{
-		"name": "mask",
-		"desc": "是否显示蒙层",
-		"type": "boolean",
-		"optionalValue": "",
-		"default": "true",
-		"version": ""
-	},
-	{
-		"name": "mask-closable",
-		"desc": "是否允许点击遮罩层关闭",
-		"type": "boolean",
-		"optionalValue": "",
-		"default": "true",
-		"version": ""
-	},
-	{
-		"name": "destroy-on-close",
-		"desc": "是否在关闭时销毁 Drawer 里的子元素",
-		"type": "boolean",
-		"optionalValue": "",
-		"default": "false",
-		"version": ""
-	},
-	{
-		"name": "placement",
-		"desc": "抽屉的方向",
-		"type": "string",
-		"optionalValue": ["top", "right", "bottom", "left"],
-		"default": "right",
-		"version": ""
-	}],
-  "events":[{
-  	"name": "close",
-  	"desc": "点击遮罩层或右上角叉的事件",
-  	"signature": "function ()",
-  	"args": ""
-  }, {
-		"name": "open",
-  	"desc": "打开抽屉时触发。",
-  	"signature": "function ()",
-  	"args": "0.3.4"
-	}],
-  "slots":[{
-  	"name": "default",
-  	"desc": "抽屉主体内容"
-  },
-	{
-  	"name": "title",
-  	"desc": "自定义标题栏"
-  }]
+	"props":[
+		{
+			"name": "visible",
+			"desc": "$t('drawer.api.visible')",
+			"type": "boolean",
+			"optionalValue": "",
+			"default": "false",
+			"version": ""
+		},
+		{
+			"name": "title",
+			"desc": "$t('drawer.api.title')",
+			"type": "string",
+			"optionalValue": "",
+			"default": "",
+			"version": ""
+		},
+		{
+			"name": "width",
+			"desc": "$t('drawer.api.width')",
+			"type": ["number", "string"],
+			"optionalValue": "",
+			"default": "232",
+			"version": ""
+		},
+		{
+			"name": "height",
+			"desc": "$t('drawer.api.height')",
+			"type": ["number", "string"],
+			"optionalValue": "",
+			"default": "232",
+			"version": ""
+		},
+		{
+			"name": "closable",
+			"desc": "$t('drawer.api.closable')",
+			"type": "boolean",
+			"optionalValue": "",
+			"default": "true",
+			"version": ""
+		},
+		{
+			"name": "mask",
+			"desc": "$t('drawer.api.mask')",
+			"type": "boolean",
+			"optionalValue": "",
+			"default": "true",
+			"version": ""
+		},
+		{
+			"name": "mask-closable",
+			"desc": "$t('drawer.api.mask-closable')",
+			"type": "boolean",
+			"optionalValue": "",
+			"default": "true",
+			"version": ""
+		},
+		{
+			"name": "destroy-on-close",
+			"desc": "$t('drawer.api.destroy-on-close')",
+			"type": "boolean",
+			"optionalValue": "",
+			"default": "false",
+			"version": ""
+		},
+		{
+			"name": "placement",
+			"desc": "$t('drawer.api.placement')",
+			"type": "string",
+			"optionalValue": ["top", "right", "bottom", "left"],
+			"default": "right",
+			"version": ""
+		}
+	],
+	"events":[
+		{
+			"name": "close",
+			"desc": "$t('drawer.api.close')",
+			"signature": "function ()",
+			"args": ""
+		}, {
+			"name": "open",
+			"desc": "$t('drawer.api.open')",
+			"signature": "function ()",
+			"args": "0.3.4"
+		}
+	],
+	"slots":[
+		{
+			"name": "default",
+			"desc": "$t('drawer.api.slot_default')"
+		}, {
+			"name": "title",
+			"desc": "$t('drawer.api.slot_title')"
+		}
+	]
 }
