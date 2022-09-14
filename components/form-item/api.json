@@ -2,7 +2,7 @@
   "props": [
     {
       "name": "prop",
-      "desc": "对应表单域 model 里的字段",
+      "desc": "$t('form-item.api.prop')",
       "type": "string",
       "optionalValue": "",
       "default": "",
@@ -10,7 +10,7 @@
     },
     {
       "name": "rules",
-      "desc": "验证规则，将覆盖Form中该项规则",
+      "desc": "$t('form-item.api.rules')",
       "type": "object",
       "optionalValue": "",
       "default": "",
@@ -18,7 +18,7 @@
     },
     {
       "name": "required",
-      "desc": "是否必填, change 时触发校验, 也可在 rules.required 属性上配置",
+      "desc": "$t('form-item.api.required')",
       "type": "boolean",
       "optionalValue": "",
       "default": "false",
@@ -26,7 +26,7 @@
     },
     {
       "name": "show-message",
-      "desc": "是否显示校验错误信息",
+      "desc": "$t('form-item.api.show-message')",
       "type": "boolean",
       "optionalValue": "",
       "default": "true",
@@ -34,7 +34,7 @@
     },
     {
       "name": "helper",
-      "desc": "帮助信息",
+      "desc": "$t('form-item.api.helper')",
       "type": "string",
       "optionalValue": "",
       "default": "-",
@@ -44,18 +44,18 @@
   "slots": [
     {
       "name": "default",
-      "desc": "默认插槽"
+      "desc": "$t('form-item.api.slot_default')"
     },
     {
       "name": "helper",
-      "desc": "帮助信息"
+      "desc": "$t('form-item.api.slot_helper')"
     }
   ],
 
   "methods": [
     {
       "name": "clearValidate()",
-      "desc": "清空表单项的校验结果",
+      "desc": "$t('form-item.api.clearValidate')",
       "args": ""
     }
   ]

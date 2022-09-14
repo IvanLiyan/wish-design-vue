@@ -2,7 +2,7 @@
   "props": [
     {
       "name": "model",
-      "desc": "表单数据对象",
+      "desc": "$t('form.api.model')",
       "type": "object",
       "optionalValue": "",
       "default": "",
@@ -10,7 +10,7 @@
     },
     {
       "name": "rules",
-      "desc": "表单验证规则，具体下方校验规则",
+      "desc": "$t('form.api.rules')",
       "type": "",
       "optionalValue": "",
       "default": "",
@@ -19,7 +19,7 @@
 
     {
       "name": "show-message",
-      "desc": "是否显示校验错误信息",
+      "desc": "$t('form.api.show-message')",
       "type": "boolean",
       "optionalValue": "",
       "default": "true",
@@ -28,7 +28,7 @@
 
     {
       "name": "validate-on-rule-change",
-      "desc": "是否在 rules 属性改变后立即触发一次验证",
+      "desc": "$t('form.api.validate-on-rule-change')",
       "type": "boolean",
       "optionalValue": "",
       "default": "true",
@@ -36,7 +36,7 @@
     },
     {
       "name": "disabled",
-      "desc": "是否禁用该表单内的所有组件",
+      "desc": "$t('form.api.disabled')",
       "type": "boolean",
       "optionalValue": "",
       "default": "false",
@@ -46,17 +46,17 @@
   "methods": [
     {
       "name": "validateFields(props?: string | string[]): boolean",
-      "desc": "对部分表单字段进行校验的方法, props 为需要校验的属性名",
+      "desc": "$t('form.api.validateFields')",
       "args": ""
     },
     {
       "name": "resetFields(props?: string | string[])",
-      "desc": "对表单进行重置，将所有字段值重置为原始值并移除校验结果",
+      "desc": "$t('form.api.resetFields')",
       "args": ""
     },
     {
       "name": "clearValidate(props?: string | string[])",
-      "desc": "移除表单项的校验结果。传入待移除的表单项的 prop 属性或者 prop 组成的数组，如不传则移除整个表单的校验结果",
+      "desc": "$t('form.api.clearValidate')",
       "args": ""
     }
   ]

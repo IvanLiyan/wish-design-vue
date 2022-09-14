@@ -1,0 +1,26 @@
+{
+  "chinese": {
+    "api": {
+      "prop": "对应表单域 model 里的字段",
+      "rules": "验证规则，将覆盖Form中该项规则",
+      "required": "是否必填, change 时触发校验, 也可在 rules.required 属性上配置",
+      "show-message": "是否显示校验错误信息",
+      "helper": "帮助信息",
+      "slot_default": "默认插槽",
+      "slot_helper": "帮助信息",
+      "clearValidate": "清空表单项的校验结果"
+    }
+  },
+  "english": {
+    "api": {
+      "prop": "Correspond to fields in the form field model.",
+      "rules": "Validates the rule that overrides the rule in the Form.",
+      "required": "Required or not. Validation is triggered with change. It can also be configured on the rules.required property.",
+      "show-message": "Whether to display verification error information.",
+      "helper": "Help information.",
+      "slot_default": "Default slot.",
+      "slot_helper": "Help information.",
+      "clearValidate": "Clears the validation result of a form item."
+    }
+  }
+}
