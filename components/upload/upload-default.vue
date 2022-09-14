@@ -243,7 +243,7 @@ export default {
         </input>
         {listType === 'picture-card' && <div class={`${prefix}-info`}>
           <Icon class={`${prefix}-info-icon`} name="plus" color="#0E161C" />
-          <span class={`${prefix}-info-text`}>点击上传</span>
+          <span class={`${prefix}-info-text`}>Upload</span>
         </div>}
       </div>
     );

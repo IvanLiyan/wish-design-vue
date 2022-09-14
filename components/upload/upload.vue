@@ -361,11 +361,11 @@ export default {
         this.inputType === 'input'
           ? <wt-button type="third" class="upload-input">
             <wt-icon class="upload-input-icon" name="paperclip" width={18} height={18} />
-            <span class="upload-input-text">点击上传</span>
+            <span class="upload-input-text">Upload</span>
           </wt-button>
           : (this.inputType === 'picture-card'
             ? ''
-            : <wt-button icon="share" type="third">点击上传</wt-button>)
+            : <wt-button icon="share" type="third">Upload</wt-button>)
       }
       {/* End---输入控件的渲染逻辑---End */}
     </UploadDefault>;
