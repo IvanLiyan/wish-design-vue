@@ -2,7 +2,7 @@
 	"props": [
 		{
 			"name": "type",
-			"desc": "显示类型",
+			"desc": "$t('timepicker.api.type')",
 			"type": "string",
 			"optionalValue": "time/timerange",
 			"default": "time",
@@ -10,7 +10,7 @@
 		},
 		{
 			"name": "readonly",
-			"desc": "是否只读",
+			"desc": "$t('timepicker.api.readonly')",
 			"type": "boolean",
 			"optionalValue": "",
 			"default": "false",
@@ -18,7 +18,7 @@
 		},
 		{
 			"name": "disabled",
-			"desc": "是否禁用",
+			"desc": "$t('timepicker.api.disabled')",
 			"type": "boolean",
 			"optionalValue": "",
 			"default": "false",
@@ -26,7 +26,7 @@
 		},
 		{
 			"name": "placeholder",
-			"desc": "空内容时的占位内容",
+			"desc": "$t('timepicker.api.placeholder')",
 			"type": "string",
 			"optionalValue": "",
 			"default": "Select Time / Start - End",
@@ -34,7 +34,7 @@
 		},
 		{
 			"name": "placement",
-			"desc": "弹出面板默认的方向",
+			"desc": "$t('timepicker.api.placement')",
 			"type": "string",
 			"optionalValue": ["top", "top-start", "top-end", "bottom", "bottom-start", "bottom-end", "left", "left-start", "left-end", "right", "right-start", "right-end"],
 			"default": "bottom-start",
@@ -42,7 +42,7 @@
 		},
 		{
 			"name": "name",
-			"desc": "输入框的 name 属性",
+			"desc": "$t('timepicker.api.name')",
 			"type": "string",
 			"optionalValue": "",
 			"default": "",
@@ -50,7 +50,7 @@
 		},
 		{
 			"name": "value",
-			"desc": "当前选中的值，当多选或者时间段时为数组",
+			"desc": "$t('timepicker.api.value')",
 			"type": ["Date", "Date[]"],
 			"optionalValue": "",
 			"default": "",
@@ -58,7 +58,7 @@
 		},
 		{
 			"name": "disabled-hours",
-			"desc": "禁用小时",
+			"desc": "$t('timepicker.api.disabled-hours')",
 			"type": "Array",
 			"optionalValue": "",
 			"default": "",
@@ -66,7 +66,7 @@
 		},
 		{
 			"name": "disabled-minutes",
-			"desc": "禁用分钟",
+			"desc": "$t('timepicker.api.disabled-minutes')",
 			"type": "Array",
 			"optionalValue": "",
 			"default": "",
@@ -74,7 +74,7 @@
 		},
 		{
 			"name": "disabled-seconds",
-			"desc": "禁用秒",
+			"desc": "$t('timepicker.api.disabled-seconds')",
 			"type": "Array",
 			"optionalValue": "",
 			"default": "",
@@ -82,7 +82,7 @@
 		},
 		{
 			"name": "invalid",
-			"desc": "是否为错误状态",
+			"desc": "$t('timepicker.api.invalid')",
 			"type": "boolean",
 			"optionalValue": "-",
 			"default": "false",
@@ -90,7 +90,7 @@
 		},
 		{
 			"name": "popper-class",
-			"desc": "下拉框的类名",
+			"desc": "$t('timepicker.api.popper-class')",
 			"type": "string",
 			"optionalValue": "",
 			"default": "",
@@ -99,13 +99,13 @@
 	],
 	"events": [{
 		"name": "update:open",
-		"desc": "当面板显示隐藏时触发",
+		"desc": "$t('timepicker.api.update-open')",
 		"signature": "function (open: boolean)",
 		"args": ""
 	},
 	{
 		"name": "input",
-		"desc": "当前 value 发生改变时触发",
+		"desc": "$t('timepicker.api.input')",
 		"signature": "function (value: date)",
 		"args": ""
 	}]
