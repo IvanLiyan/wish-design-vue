@@ -10,15 +10,15 @@
     },
     {
       "name": "size",
-      "desc": "设置输入框的大小，同 Input 组件 size 属性",
+      "desc": "$t('datepicker.api.size')",
       "type": "string",
-      "optionalValue": ["small", "不设置", "large"],
-      "default": "不设置",
+      "optionalValue": ["small", "(None)", "large"],
+      "default": "(None)",
       "version": ""
     },
     {
       "name": "type",
-      "desc": "显示类型",
+      "desc": "$t('datepicker.api.type')",
       "type": "string",
       "optionalValue": ["date", "daterange", "datetimerange", "year", "month", "monthrange"],
       "default": "date",
@@ -26,7 +26,7 @@
     },
     {
       "name": "format",
-      "desc": "展示的日期格式",
+      "desc": "$t('datepicker.api.format')",
       "type": "string",
       "optionalValue": "",
       "default": "<strong>date、daterange</strong>: <wbr/>yyyy-MM-dd; <br /> <strong>datetime、datetimerange</strong>: <wbr/>yyyy-MM-dd HH:mm:ss; <br /> <strong>year</strong>: <wbr/>yyyy; <br /><strong>month</strong>: <wbr/>yyyy-MM",
@@ -34,7 +34,7 @@
     },
     {
       "name": "value-format",
-      "desc": "绑定值的格式，如'YYYY-MM-DD'，不指定则根据当前 value 值的类型进行推断",
+      "desc": "$t('datepicker.api.value-format')",
       "type": "string",
       "optionalValue": "",
       "default": "",
@@ -42,7 +42,7 @@
     },
     {
       "name": "label",
-      "desc": "选择器上方的标签",
+      "desc": "$t('datepicker.api.label')",
       "type": "string",
       "optionalValue": "",
       "default": "",
@@ -50,7 +50,7 @@
     },
     {
       "name": "readonly",
-      "desc": "是否只读",
+      "desc": "$t('datepicker.api.readonly')",
       "type": "boolean",
       "optionalValue": "",
       "default": "false",
@@ -58,7 +58,7 @@
     },
     {
       "name": "disabled",
-      "desc": "是否禁用",
+      "desc": "$t('datepicker.api.disabled')",
       "type": "boolean",
       "optionalValue": "",
       "default": "false",
@@ -66,7 +66,7 @@
     },
     {
       "name": "multiple",
-      "desc": "是否可以多选，仅在 type = 'date' 下生效",
+      "desc": "$t('datepicker.api.multiple')",
       "type": "boolean",
       "optionalValue": "",
       "default": "false",
@@ -74,7 +74,7 @@
     },
     {
       "name": "placement",
-      "desc": "弹出面板默认的方向",
+      "desc": "$t('datepicker.api.placement')",
       "type": "string",
       "optionalValue": [
         "top",
@@ -95,7 +95,7 @@
     },
     {
       "name": "name",
-      "desc": "输入框的 name 属性",
+      "desc": "$t('datepicker.api.name')",
       "type": "string",
       "optionalValue": "",
       "default": "",
@@ -103,7 +103,7 @@
     },
     {
       "name": "value",
-      "desc": "当前选中的值，当多选或者时间段时为数组",
+      "desc": "$t('datepicker.api.value')",
       "type": ["Date", "Array", "string"],
       "optionalValue": "",
       "default": "",
@@ -111,7 +111,7 @@
     },
     {
       "name": "placeholder",
-      "desc": "输入框占位内容",
+      "desc": "$t('datepicker.api.placeholder')",
       "type": "string",
       "optionalValue": "",
       "default": "",
@@ -119,7 +119,7 @@
     },
     {
       "name": "popper-class",
-      "desc": "下拉框的类名",
+      "desc": "$t('datepicker.api.popper-class')",
       "type": "string",
       "optionalValue": "",
       "default": "",
@@ -127,7 +127,7 @@
     },
     {
       "name": "append-to-container",
-      "desc": "是否将下拉框插入至容器元素中。在下拉框的定位出现问题时，可将该属性设置为 false",
+      "desc": "$t('datepicker.api.append-to-container')",
       "type": "boolean",
       "optionalValue": "",
       "default": "true",
@@ -135,15 +135,15 @@
     },
     {
       "name": "get-popup-container",
-      "desc": "获取容器元素方法，需要返回 HTMLElement 对象",
+      "desc": "$t('datepicker.api.get-popup-container')",
       "type": "function():HTMLElement",
       "optionalValue": "",
-      "default": "默认返回 document.body",
+      "default": "default callback document.body",
       "version": ""
     },
     {
       "name": "popper-options",
-      "desc": "自定义 popper.js 的配置项，具体配置查看 <a target='_blank' href='https://popper.js.org/docs/v1/#modifiers--codeobjectcode'>popper.js 文档</a>",
+      "desc": "$t('datepicker.api.popper-options')",
       "type": "object",
       "optionalValue": "",
       "default": "",
@@ -151,7 +151,7 @@
     },
     {
       "name": "week-start",
-      "desc": "设置周起始日期",
+      "desc": "$t('datepicker.api.week-start')",
       "type": "number",
       "optionalValue": "0 ~ 6",
       "default": "1",
@@ -161,21 +161,21 @@
   "events": [
     {
       "name": "update:open",
-      "desc": "当面板显示隐藏时触发",
+      "desc": "$t('datepicker.api.update:open')",
       "signature": "function (open: boolean)",
       "args": ""
     },
     {
       "name": "input",
-      "desc": "当前 value 发生改变时触发，当为 range类型 或者 multiple 时为 date[]",
+      "desc": "$t('datepicker.api.input')",
       "signature": "function (value: date / date[])",
       "args": ""
     },
     {
       "name": "pick-range",
-      "desc": "当在日期段模式下，用户点击选择时间时触发",
+      "desc": "$t('datepicker.api.pick-range')",
       "signature": "(selection: { from: Date, selecting: boolean, to?: Date })",
-      "args": "参数 from 表示起始时间，selecting 表示是否仍在选择中，to 表示结束时间，可为空"
+      "args": "The parameter from indicates the start time, 'selecting' indicates whether the machine is still being selected, and 'to' indicates the end time, it can be null."
     }
   ]
 }

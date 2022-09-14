@@ -40,10 +40,10 @@
 <api-doc name="DatePicker" :doc="require('./api.json')"></api-doc>
 
 #### DatePicker options
-| 参数 | 说明 | 类型 | 默认值 |
+| name | desc | type | default |
 |--- |--- |--- |--- |--- |
-| shortcuts | 设置快捷选项，详细查看 **带快捷选择** demo | { text: string, value: Function, onClick: Function } | - |
-| disabledDate | 设置不可选择的日期，参数为当前的日期，需要返回 Boolean 是否禁用这天 | boolean | - |
+| shortcuts | {{$t('datepicker.api.shortcuts')}} | { text: string, value: Function, onClick: Function } | - |
+| disabledDate | {{$t('datepicker.api.disabledDate')}} | boolean | - |
 
 <style lang='scss'>
   .demo-picker-group{
@@ -54,7 +54,7 @@
     }
   }
 </style>
-
+<!-- 
 ## QA测试
 :::include(src="./doc/test.vue")
-:::
+::: -->

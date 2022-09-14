@@ -30,26 +30,85 @@
       "desc1": "可以自定义要快速选择的时间段，默认前7天、前14天、前30天、前90天"
     },
     "api": {
-      "title": "设置标题",
-      "subtitle": "设置副标题",
-      "caption": "设置说明文字",
-      "body-class": "设置card-body的class",
-      "width": "宽"
+      "width": "宽度",
+      "size": "设置输入框的大小，同 Input 组件 size 属性",
+      "type": "显示类型",
+      "format": "展示的日期格式",
+      "value-format": "绑定值的格式，如'YYYY-MM-DD'，不指定则根据当前 value 值的类型进行推断",
+      "label": "选择器上方的标签",
+      "readonly": "是否只读",
+      "disabled": "是否禁用",
+      "multiple": "是否可以多选，仅在 type = 'date' 下生效",
+      "placement": "弹出面板默认的方向",
+      "name": "输入框的 name 属性",
+      "value": "当前选中的值，当多选或者时间段时为数组",
+      "placeholder": "输入框占位内容",
+      "popper-class": "下拉框的类名",
+      "append-to-container": "是否将下拉框插入至容器元素中。在下拉框的定位出现问题时，可将该属性设置为 false",
+      "get-popup-container": "获取容器元素方法，需要返回 HTMLElement 对象",
+      "popper-options": "自定义 popper.js 的配置项，具体配置查看 popper.js 文档",
+      "week-start": "设置周起始日期",
+      "update-open": "当面板显示隐藏时触发",
+      "input": "当前 value 发生改变时触发，当为 range类型 或者 multiple 时为 date[]",
+      "pick-range": "当在日期段模式下，用户点击选择时间时触发",
+      "shortcuts": "设置快捷选项，详细查看 带快捷选择 demo",
+      "disabledDate": "设置不可选择的日期，参数为当前的日期，需要返回 Boolean 是否禁用这天"
     }
   },
   "english": {
-    "component_desc": "",
+    "component_desc": "Used for date and time selection.",
     "module1": {
-      "title": "",
-      "desc1": "",
-      "desc2": ""
+      "title": "Basic Style",
+      "desc1": "Date selection, support manual input. The format is YYYYMMDD, YYYYMMDD, and YYYY-MM-DD."
+    },
+    "module2": {
+      "title": "Select month",
+      "desc1": "The value can be manually entered. The format is YYYY/MM, YYYYMM, and YYYY-MM."
+    },
+    "module3": {
+      "title": "Select year",
+      "desc1": "Select year, support manual input."
+    },
+    "module4": {
+      "title": "Select start and end dates",
+      "desc1": "Start and end dates can be selected."
+    },
+    "module5": {
+      "title": "Select start and end months",
+      "desc1": "Start and end months can be selected."
+    },
+    "module6": {
+      "title": "Select start time and end time",
+      "desc1": "Start and end dates can be selected and specific to the time."
+    },
+    "module7": {
+      "title": "Quick select",
+      "desc1": "You can customize the first 7 days, last 14 days, last 30 days, and last 90 days by default."
     },
     "api": {
-      "title": "",
-      "subtitle": "",
-      "caption": "",
-      "body-class": "",
-      "width": "Width"
+      "width": "Width.",
+      "size": "Set the size of the Input field, the same as the Input component size property.",
+      "type": "The type of displayed.",
+      "format": "The date format displayed.",
+      "value-format": "The format of the binding value, such as YYYY-MM-DD, is not specified. The binding value is inferred based on the type of the current value.",
+      "label": "The tag above the selector.",
+      "readonly": "Whether to read-only.",
+      "disabled": "Whether to disable.",
+      "multiple": "Whether multiple options are allowed, only work when type = 'date'.",
+      "placement": "The default orientation of the panel is displayed.",
+      "name": "The name property of the input box.",
+      "value": "The currently selected value is an array when multiple selections or time periods occur.",
+      "placeholder": "Enter the placeholder content of the box.",
+      "popper-class": "The class name of the drop - down box.",
+      "append-to-container": "Whether to insert a drop-down box into a container element. If there is a problem locating the drop-down box, set this property to false.",
+      "get-popup-container": "To get a container element method, return the HTMLElement object.",
+      "popper-options": "Customize Ppopper.js configuration items. For details, see the popper.js document.",
+      "week-start": "Set the start date of a week.",
+      "update-open": "Triggered when panel is shown or hidden.",
+      "input": "Triggered when the current value is changed, or date if range or multiple [].",
+      "pick-range": "Triggered when the user clicks to select a time in Date mode.",
+      "shortcuts": "Set shortcut options, detailed view with Demo of shortcut selection.",
+      "disabledDate": "Set an unselectable date. The parameter is the current date. Boolean is required to disable this date."
     }
   }
 }
