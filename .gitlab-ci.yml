@@ -17,7 +17,7 @@ publish-npm:
 
     - export WISH_DESIGN_VUE_HOME=$(pwd)
     - sh $WISH_DESIGN_VUE_HOME/publish.sh
-  when:
-    - manual
+  # when:
+  #   - manual
   only:
     - main
