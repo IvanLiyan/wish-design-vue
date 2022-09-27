@@ -1,5 +1,6 @@
 {
   "name": "@ContextLogic/wt-vue",
+  "version": "0.0.1-rc.0",
   "description": "vue、component",
   "main": "lib/wt-vue.common.js",
   "scripts": {
@@ -146,6 +147,5 @@
       "eslint --fix",
       "git add"
     ]
-  },
-  "version": "0.0.1"
+  }
 }
