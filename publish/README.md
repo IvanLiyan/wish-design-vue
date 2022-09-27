@@ -1,4 +1,4 @@
-# @wish/wt-vue
+# @ContextLogic/wt-vue
 
 > 一套 Vue.js 的组件库. http://wt-vue.dev.bjs.i.wish.com/
 
@@ -39,7 +39,7 @@ npm i  @wish/wt-vue@alpha
 1、引入 默认主题 样式
 
 ```
-import '@wish/wt-vue/dist/wt-vue.min.css'
+import '@ContextLogic/wt-vue/dist/wt-vue.min.css'
 ```
 
 2、引入组件库
