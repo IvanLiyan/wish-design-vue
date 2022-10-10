@@ -3,42 +3,42 @@
     <wt-table :data="tableData" :sort-order.sync="orderData" :pagination="pagination">
       <wt-table-column
         prop="orderId"
-        label="WOSP订单ID"
+        label="WOSP order id"
         sortable
         width="160" />
       <wt-table-column
         prop="logId"
-        label="物流追踪单号"
+        label="Logistics tracking number"
         sortable
-        width="140" />
+        width="190" />
       <wt-table-column
         prop="logStatus"
-        label="物流状态"
+        label="Logistics status"
         sortable
         width="140" />
       <wt-table-column
         prop="orderStatus"
-        width="100"
+        width="130"
         sortable
-        label="订单状态" />
+        label="Order status" />
       <wt-table-column
         prop="channelNum"
-        width="100"
+        width="140"
         sortable
-        label="渠道号" />
+        label="Channel number" />
       <wt-table-column
         prop="name"
-        label="收件人"
+        label="Recipient"
         sortable
         width="170" />
       <wt-table-column
         prop="addTime"
-        label="创建时间"
+        label="Create time"
         sortable
         width="160" />
       <wt-table-column
         prop="control"
-        label="操作"
+        label="Control"
         width="100" />
     </wt-table>
   </div>
@@ -52,8 +52,8 @@ export default {
       tableData: [{
         orderId: 'WOSP021700118221DEU',
         logId: 'WI001117700472FPL',
-        logStatus: 'Wishpost订单已生成',
-        orderStatus: <wt-tag type="error">用户取消</wt-tag>,
+        logStatus: 'Wishpost order has been generated',
+        orderStatus: <wt-tag type="error">Cancel</wt-tag>,
         channelNum: '5301',
         name: 'F.lli Gregorio Giuseppe',
         addTime: '2020-08-25 00:00:00',
@@ -61,8 +61,8 @@ export default {
       }, {
         orderId: 'WOSP021700118221DEU',
         logId: 'WI001117700472FPL',
-        logStatus: 'Wishpost订单已生成',
-        orderStatus: <wt-tag type="success">已完成</wt-tag>,
+        logStatus: 'Wishpost order has been generated',
+        orderStatus: <wt-tag type="success">Complete</wt-tag>,
         channelNum: '5301',
         name: 'F.lli Gregorio Giuseppe',
         addTime: '2020-08-25 00:00:00',

@@ -1,6 +1,6 @@
 {
   "chinese": {
-    "component_desc": "用于时间的选择。",
+    "component_desc": "用于时间的选择",
     "module1": {
       "title": "基础样式"
 	  },
@@ -13,31 +13,50 @@
       "desc": "支持起止时刻的选择"
 	  },
     "api": {
-      "title": "设置标题",
-      "subtitle": "设置副标题",
-      "caption": "设置说明文字",
-	    "body-class": "设置card-body的class"
+      "type": "显示类型",
+      "readonly": "是否只读",
+      "disabled": "是否禁用",
+      "placeholder": "空内容时的占位内容",
+      "placement": "弹出面板默认的方向",
+      "name": "输入框的 name 属性",
+      "value": "当前选中的值，当多选或者时间段时为数组",
+      "disabled-hours": "不可选的小时",
+      "disabled-minutes": "不可选的分钟",
+      "disabled-seconds": "不可选的秒",
+      "invalid": "是否为错误状态",
+      "popper-class": "下拉框的类名",
+      "update-open": "当面板显示隐藏时触发",
+      "input": "当前 value 发生改变时触发"
     }
   },
   "english": {
-    "component_desc": "",
+    "component_desc": "Use to select time.",
     "module1": {
-      "title": "",
-      "desc": ""
+      "title": "Basic Style"
 	  },
     "module2": {
-      "title": "",
-      "desc": ""
+      "title": "Select current time",
+      "desc": "Supports quick selection of the current time."
 	  },
     "module3": {
-      "title": "",
-      "desc": ""
+      "title": "Select a time range",
+      "desc": "Support to select start time and end time."
 	  },
     "api": {
-      "title": "",
-      "subtitle": "",
-      "caption": "",
-	    "body-class": ""
+      "type": "Display type.",
+      "readonly": "Whther to read-only.",
+      "disabled": "Whther to disable.",
+      "placeholder": "Placeholder content when empty content.",
+      "placement": "The default orientation of the panel is displayed.",
+      "name": "The name property of the input box.",
+      "value": "The currently selected value is an array when multiple selections or time periods occur.",
+      "disabled-hours": "These hours are not allow to be select.",
+      "disabled-minutes": "These minutes are not allow to be select.",
+      "disabled-seconds": "These seconds are not allow to be select.",
+      "invalid": "Whether the status is error.",
+      "popper-class": "The class name of the drop - down box.",
+      "update-open": "Triggered when panel is shown or hidden.",
+      "input": "Triggered when the current value is changed."
     }
   }
 }

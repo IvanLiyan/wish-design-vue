@@ -2,12 +2,12 @@
 
 <span>{{$t('tag.component_desc')}}</span>
 
-## 可操作标签
+## <span>{{$t('tag.module1.title')}}</span>
 
 :::include(src="./doc/operate.vue")
 :::
 
-## 不可操作标签
+## <span>{{$t('tag.module2.title')}}</span>
 
 :::include(src="./doc/un-operate.vue")
 :::

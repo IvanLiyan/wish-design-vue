@@ -61,7 +61,7 @@
       "desc": "$t('select.api.placeholder')",
       "type": "string",
       "optionalValue": "",
-      "default": "请选择",
+      "default": "Please select",
       "version": ""
     },
     {

@@ -1,6 +1,12 @@
 {
   "chinese": {
     "component_desc": "用于展示分类和标记属性，可操作标签为圆角，纯展示标签为直角",
+    "module1": {
+      "title": "可操作标签"
+    },
+    "module2": {
+      "title": "不可操作标签"
+    },
     "api": {
       "size": "尺寸",
       "type": "类型",
@@ -13,6 +19,12 @@
   },
   "english": {
     "component_desc": "Use for showing/tagging category & property. The clickable tag has a rounded border while the display tag has a square border.",
+    "module1": {
+      "title": "Operational label"
+    },
+    "module2": {
+      "title": "Inoperable label"
+    },
     "api": {
       "size": "The size property",
       "type": "The type property",

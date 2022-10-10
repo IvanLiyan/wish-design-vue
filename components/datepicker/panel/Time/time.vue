@@ -25,12 +25,12 @@
         @confirm="handlePickSuccess" />
       <div :class="[panelPrefix + '-footer']">
         <span v-if="showNow" type="primary" class="select-now" @click="handleSelectNow">
-          当前时间
+          Current time
         </span>
         <span v-else></span>
         <wt-button type="primary" :class="!confirmDisabled ? 'btn' : 'btn disabled'" :disabled="confirmDisabled"
           @click="handleConfirm">
-          确认
+          Confirm
         </wt-button>
       </div>
     </div>

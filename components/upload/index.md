@@ -15,6 +15,6 @@
 
 ## API
 <api-doc name="Upload" :doc="require('./api.json')"></api-doc>
-
+<!-- 
 :::include(src="./doc/test.vue")
-:::
+::: -->

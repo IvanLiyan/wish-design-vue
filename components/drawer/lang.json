@@ -1,0 +1,52 @@
+{
+    "chinese": {
+      "component_desc": "用于在同一页面弹出内容展示",
+      "module1": {
+        "title": "基础样式"
+      },
+      "module2": {
+        "title": "类型与用法",
+        "subtitle1": "左侧滑出"
+      },
+      "api": {
+        "visible": "受控；抽屉是否显示，可使用 v-model 双向绑定数据",
+        "title": "抽屉标题，如果使用 slot 自定义了页头，则 title 无效",
+        "width": "抽屉宽度，number 时为像素，string 时需要带上单位",
+        "height": "抽屉高度，在 placement 为 top 或 bottom 时使用",
+        "closable": "是否显示右上角的关闭按钮，同时是否支持 esc 关闭",
+        "mask": "是否显示蒙层",
+        "mask-closable": "是否允许点击遮罩层关闭",
+        "destroy-on-close": "是否在关闭时销毁 Drawer 里的子元素",
+        "placement": "抽屉的方向",
+        "slot_default": "抽屉主体内容",
+        "slot_title": "自定义标题栏",
+        "close": "点击遮罩层或右上角叉的事件",
+        "open": "打开抽屉时触发"
+      }
+    },
+    "english": {
+      "component_desc": "Used to display content on the same page.",
+      "module1": {
+        "title": "Basic Style"
+      },
+      "module2": {
+        "title": "Type and Use Cases",
+        "subtitle1": "Slide out on the left"
+      },
+      "api": {
+        "visible": "Controlled; Drawer display or not, can use v-model bidirectional binding data.",
+        "title": "Drawer title, invalid if the header is customized using slot.",
+        "width": "Drawer width, pixel for Number; unit for String.",
+        "height": "Drawer height, used when placement is top or bottom.",
+        "closable": "Whether to display the close button in the upper right corner and whether to support enter ESC to close.",
+        "mask": "Whether to display mask.",
+        "mask-closable": "Whether to allow the click mask layer to close.",
+        "destroy-on-close": "Whether the child elements in the Drawer are destroyed when closed.",
+        "placement": "Direction of drawer.",
+        "slot_default": "Main contents of drawer.",
+        "slot_title": "Customize the title bar.",
+        "close": "Click on the mask layer or the upper right fork of the event.",
+        "open": "Triggered when a drawer is opened."
+      }
+    }
+  }

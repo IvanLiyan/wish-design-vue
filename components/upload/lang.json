@@ -1,6 +1,6 @@
 {
   "chinese": {
-    "component_desc": "将文件上传至服务端。",
+    "component_desc": "将文件上传至服务端",
     "module1": {
       "title": "基础样式-按钮"
 	  },
@@ -13,31 +13,72 @@
       "desc2": "头像形式"
 	  },
     "api": {
-      "title": "设置标题",
-      "subtitle": "设置副标题",
-      "caption": "设置说明文字",
-	    "body-class": "设置card-body的class"
+      "action": "必选参数，上传的地址",
+      "input-type": "上传控件的类型",
+      "headers": "设置上传的请求头部",
+      "multiple": "是否支持多选文件(只在input-type为button或input时有效)",
+      "data": "上传时附带的额外参数",
+      "name": "上传的文件字段名",
+      "with-credentials": "支持发送 cookie 凭证信息",
+      "show-file-list": "是否显示已上传文件列表(只在input-type为button或input时有效)",
+      "accept": "接受上传的 文件类型（thumbnail-mode 模式下此参数无效）, 请不要依赖该属性来做校验，必须要在服务端进行校验",
+      "on-remove": "文件列表移除文件时的钩子",
+      "on-success": "文件上传成功时的钩子",
+      "on-error": "文件上传失败时的钩子",
+      "on-progress": "文件上传时的钩子",
+      "on-change": "文件状态改变时的钩子，添加文件、上传成功和上传失败时都会被调用",
+      "before-upload": "上传文件之前的钩子，参数为上传的文件，若返回 false 或者返回 Promise 且被 reject，则停止上传",
+      "before-remove": "删除文件之前的钩子，参数为上传的文件和文件列表，若返回 false 或者返回 Promise 且被 reject，则停止上传",
+      "list-type": "文件列表的类型",
+      "value": "上传的文件列表, 例如: [{ name: 'food.jpg', url: 'https://xxx.cdn.com/xxx.jpg' }]",
+      "disabled": "是否禁用",
+      "limit": "最大允许上传个数",
+      "slot_trigger": "触发文件选择框的内容",
+      "slot_tip": "提示说明文字",
+      "clearFiles": "清空已上传的文件列表（该方法不支持在 before-upload 中调用）",
+      "abort": "取消上传请求",
+      "submit": "手动上传文件列表"
     }
   },
   "english": {
-    "component_desc": "",
+    "component_desc": "Upload the file to the server",
     "module1": {
-      "title": "",
-      "desc": ""
+      "title": "Basic Style - Button"
 	  },
     "module2": {
-      "title": "",
-      "desc": ""
+      "title": "Input Style"
 	  },
     "module3": {
-      "title": "",
-      "desc": ""
+      "title": "Image upload",
+      "desc1": "List style",
+      "desc2": "Head portrait style"
 	  },
     "api": {
-      "title": "",
-      "subtitle": "",
-      "caption": "",
-	    "body-class": ""
+      "action": "Upload address (required).",
+      "input-type": "Type of upload component.",
+      "headers": "Set the request header for the upload.",
+      "multiple": "Whether multiple file selection is supported (valid only when input-type is button or input).",
+      "data": "Additional parameters that come with the upload.",
+      "name": "Field name of the file to be uploaded.",
+      "with-credentials": "Supports sending cookie credential information.",
+      "show-file-list": "Whether to display list of uploaded files (valid only when input-type is button or input).",
+      "accept": "Accept the type of file uploaded (invalid in thumbnail-mode mode). Do not rely on this property for verification. It must be verified on the server.",
+      "on-remove": "File list Hooks for removing files.",
+      "on-success": "Hook when a file is uploaded successfully.",
+      "on-error": "Hook when a file is uploaded failed.",
+      "on-progress": "Hooks for uploading files.",
+      "on-change": "This hook is called when the file status changes. It is called when adding a file, uploading a file successfully, and uploading a file fails.",
+      "before-upload": "The hook before the file is uploaded. If it returns False or a Promise is returned reject, the upload is stopped.",
+      "before-remove": "Delete the hook before the file. Take the uploaded file and file list. If False or Promise is returned and rejected, the upload is stopped.",
+      "list-type": "Type of the file list.",
+      "value": "Upload file list, such as: [{name: 'food. JPG, url: 'https://xxx.cdn.com/xxx.jpg'}]",
+      "disabled": "Whther to disabled.",
+      "limit": "Maximum number of uploads allowed.",
+      "slot_trigger": "Triggers the contents of the file selection box.",
+      "slot_tip": "Prompt description.",
+      "clearFiles": "Empty the list of uploaded files (this method is not supported in before-upload).",
+      "abort": "Cancel upload request.",
+      "submit": "Manually upload the file list."
     }
   }
 }

@@ -1,0 +1,61 @@
+{
+    "chinese": {
+      "component_desc": "表单组件，包含数据录入样式，自带数据管理和校验",
+      "module1": {
+        "title": "应用案例",
+        "desc1": "横版满屏排列，一行内可以根据栅格放多个元素，但不建议超过 4 个",
+        "desc2": "竖版排列，一行只有 1 个元素"
+      },
+      "module2": {
+        "subtitle": "校验规则",
+        "desc": "更多用法可参考"
+      },
+      "api": {
+        "model": "表单数据对象",
+        "rules": "表单验证规则，具体下方校验规则",
+        "show-message": "是否显示校验错误信息",
+        "validate-on-rule-change": "是否在 rules 属性改变后立即触发一次验证",
+        "disabled": "是否禁用该表单内的所有组件",
+        "validateFields": "对部分表单字段进行校验的方法, props 为需要校验的属性名",
+        "resetFields": "对表单进行重置，将所有字段值重置为原始值并移除校验结果",
+        "clearValidate": "移除表单项的校验结果。传入待移除的表单项的 prop 属性或者 prop 组成的数组，如不传则移除整个表单的校验结果",
+        "trigger": "触发条件, 非必填, 可选值: 'blur'、'change',默认两者时都触发",
+        "min": "最小长度",
+        "max": "最大长度",
+        "message": "校验文案",
+        "pattern": "正则表达式校验",
+        "required": "是否必选",
+        "validator": "自定义校验（**注意 callback 必须被调用**）, 支持 source 参数，source 为当前表单 modal 属性值"
+      }
+    },
+    "english": {
+      "component_desc": "Form component, including data entry style, comes with data management and verification.",
+      "module1": {
+        "title": "Application Cases",
+        "desc1": "Horizontal layout full screen, a row can be placed according to the grid elements, but do not recommend more than 4.",
+        "desc2": "Vertical arrangement with only one element in a row."
+      },
+      "module2": {
+        "subtitle": "Validation Rules",
+        "desc": "See more at"
+      },
+      "api": {
+        "model": "Form data object.",
+        "rules": "Form verification rules, specific verification rules below.",
+        "show-message": "Whether to display verification error information.",
+        "validate-on-rule-change": "Whether to trigger validation immediately after the Rules attribute changes.",
+        "disabled": "Whether to disable all components in the form.",
+        "validateFields": "This parameter specifies the props for verifying some form fields. The props is the name of the attribute to be verified.",
+        "resetFields": "Reset the form, resetting all field values to their original values and removing validation results.",
+        "clearValidate": "Removes the validation result of a form item. Pass the prop property of the item to be removed or an array of prop. If not, remove the validation result of the entire form.",
+        "trigger": "Condition of trigger. Optional values: 'blur', 'change'. Both are triggered by default.",
+        "min": "Minimum length.",
+        "max": "Maximum length.",
+        "message": "The text of the verify.",
+        "pattern": "Regular expression verify.",
+        "required": "Whether must to be choiced.",
+        "validator": "Custom validation (** note that callback must be called **) and supports the source parameter, which is the value of the current modal attribute in the form."
+      }
+    }
+  }
+  

@@ -1,7 +1,7 @@
 <template>
   <div>
-    <wt-button type="primary" @click="visible = true">打开抽屉</wt-button>
-    <wt-drawer v-model="visible" title="基础样式">
+    <wt-button type="primary" @click="visible = true">Open Drawer</wt-button>
+    <wt-drawer v-model="visible" title="Basic Style">
       <div>
         <p>Wish is an American online e-commerce platform for transactions between sellers and buyers. </p>
         <p>Wish was founded in 2010 by Piotr Szulczewski (CEO) and Danny Zhang (former CTO).</p>

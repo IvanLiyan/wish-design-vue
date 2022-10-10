@@ -2,23 +2,23 @@
   <wt-table :data="tableData" :pagination="pagination">
     <wt-table-column
       prop="orderId"
-      label="WOSP订单ID"
+      label="WOSP order id"
       width="240" />
-    <wt-table-column label="物流追踪单号" width="320">
+    <wt-table-column label="Logistics tracking number" width="320">
       <template slot-scope="scope">
         <wt-input v-model="scope.row.logId" placeholder="Plase input log_id" />
       </template>
     </wt-table-column>
-    <wt-table-column label="订单状态" width="240">
+    <wt-table-column label="Order status" width="240">
       <template slot-scope="scope">
         <wt-popover trigger="hover">
           <div slot="content" class="name-wrapper">
-            <wt-tag size="small" :type="scope.row.orderStatus === 1 ? 'success' : 'error'">{{ scope.row.orderStatus === 1 ? '已完成' : '用户取消' }}</wt-tag>
+            <wt-tag size="small" :type="scope.row.orderStatus === 1 ? 'success' : 'error'">{{ scope.row.orderStatus === 1 ? 'Complete' : 'Cancel' }}</wt-tag>
           </div>
         </wt-popover>
       </template>
     </wt-table-column>
-    <wt-table-column label="操作" width="280">
+    <wt-table-column label="Control" width="280">
       <template slot-scope="scope">
         <wt-button class="cell-control-open" size="small" type="secondary" @click="handleOpen(scope.$index, scope.row)">Open</wt-button>
         <wt-button class="cell-control-confirm" size="small" type="success" @click="handleConfirm(scope.$index, scope.row)">Confirm</wt-button>

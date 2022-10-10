@@ -8,7 +8,7 @@ export default {
   data() {
     const rangeShortcuts = [
       {
-        text: '前7天',
+        text: 'Pre 7D',
         value() {
           const date = new Date();
           date.setTime(date.getTime() - 3600 * 1000 * 24 * 7);
@@ -16,7 +16,7 @@ export default {
         },
       },
       {
-        text: '前14天',
+        text: 'Pre 14D',
         value() {
           const date = new Date();
           date.setTime(date.getTime() - 3600 * 1000 * 24 * 14);
@@ -24,7 +24,7 @@ export default {
         },
       },
       {
-        text: '前30天',
+        text: 'Pre 30D',
         value() {
           const date = new Date();
           date.setTime(date.getTime() - 3600 * 1000 * 24 * 30);
@@ -32,7 +32,7 @@ export default {
         },
       },
       {
-        text: '前90天',
+        text: 'Pre 90D',
         value() {
           const date = new Date();
           date.setTime(date.getTime() - 3600 * 1000 * 24 * 90);

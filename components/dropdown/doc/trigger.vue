@@ -6,9 +6,9 @@
         <wt-icon name="more-vertical" :width="16" :height="16" />
       </wt-button>
       <wt-dropdown-menu slot="dropdown">
-        <wt-dropdown-menu-item disabled>删除</wt-dropdown-menu-item>
-        <wt-dropdown-menu-item>添加</wt-dropdown-menu-item>
-        <wt-dropdown-menu-item>编辑</wt-dropdown-menu-item>
+        <wt-dropdown-menu-item disabled>Delete</wt-dropdown-menu-item>
+        <wt-dropdown-menu-item>Add</wt-dropdown-menu-item>
+        <wt-dropdown-menu-item>Edit</wt-dropdown-menu-item>
       </wt-dropdown-menu>
     </wt-dropdown>
    <wt-dropdown trigger="hover">
@@ -17,9 +17,9 @@
         <wt-icon name="more-vertical" :width="16" :height="16" />
       </wt-button>
       <wt-dropdown-menu slot="dropdown">
-        <wt-dropdown-menu-item disabled>删除</wt-dropdown-menu-item>
-        <wt-dropdown-menu-item>添加</wt-dropdown-menu-item>
-        <wt-dropdown-menu-item>编辑</wt-dropdown-menu-item>
+        <wt-dropdown-menu-item disabled>Delete</wt-dropdown-menu-item>
+        <wt-dropdown-menu-item>Add</wt-dropdown-menu-item>
+        <wt-dropdown-menu-item>Edit</wt-dropdown-menu-item>
       </wt-dropdown-menu>
     </wt-dropdown>
   </div>

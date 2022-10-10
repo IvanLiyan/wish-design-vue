@@ -1,7 +1,7 @@
 {
   "props": [{
     "name": "action",
-    "desc": "必选参数，上传的地址",
+    "desc": "$t('upload.api.action')",
     "type": "string",
     "optionalValue": "",
     "default": "",
@@ -9,7 +9,7 @@
   },
   {
     "name": "input-type",
-    "desc": "上传控件的类型",
+    "desc": "$t('upload.api.input-type')",
     "type": "string",
     "optionalValue": "button / input / picture-card",
     "default": "button",
@@ -17,7 +17,7 @@
   },
   {
     "name": "headers",
-    "desc": "设置上传的请求头部",
+    "desc": "$t('upload.api.headers')",
     "type": "object",
     "optionalValue": "",
     "default": "",
@@ -25,7 +25,7 @@
   },
   {
     "name": "multiple",
-    "desc": "是否支持多选文件(只在input-type为button或input时有效)",
+    "desc": "$t('upload.api.multiple')",
     "type": "boolean",
     "optionalValue": "",
     "default": "",
@@ -33,7 +33,7 @@
   },
   {
     "name": "data",
-    "desc": "上传时附带的额外参数",
+    "desc": "$t('upload.api.data')",
     "type": "object",
     "optionalValue": "",
     "default": "",
@@ -41,7 +41,7 @@
   },
   {
     "name": "name",
-    "desc": "上传的文件字段名",
+    "desc": "$t('upload.api.name')",
     "type": "string",
     "optionalValue": "",
     "default": "file",
@@ -49,7 +49,7 @@
   },
   {
     "name": "with-credentials",
-    "desc": "支持发送 cookie 凭证信息",
+    "desc": "$t('upload.api.with-credentials')",
     "type": "boolean",
     "optionalValue": "",
     "default": "false",
@@ -57,7 +57,7 @@
   },
   {
     "name": "show-file-list",
-    "desc": "是否显示已上传文件列表(只在input-type为button或input时有效)",
+    "desc": "$t('upload.api.show-file-list')",
     "type": "boolean",
     "optionalValue": "",
     "default": "true",
@@ -65,7 +65,7 @@
   },
   {
     "name": "accept",
-    "desc": "接受上传的 <a href='https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/accept' target='_blank'>文件类型</a>（thumbnail-mode 模式下此参数无效）, <strong>请不要依赖该属性来做校验，必须要在服务端进行校验</strong>",
+    "desc": "$t('upload.api.accept')",
     "type": "string",
     "optionalValue": "",
     "default": "",
@@ -73,7 +73,7 @@
   },
   {
     "name": "on-remove",
-    "desc": "文件列表移除文件时的钩子",
+    "desc": "$t('upload.api.on-remove')",
     "type": "function(file, fileList)",
     "optionalValue": "",
     "default": "",
@@ -81,7 +81,7 @@
   },
   {
     "name": "on-success",
-    "desc": "文件上传成功时的钩子",
+    "desc": "$t('upload.api.on-success')",
     "type": "function(response, file, fileList)",
     "optionalValue": "",
     "default": "",
@@ -89,7 +89,7 @@
   },
   {
     "name": "on-error",
-    "desc": "文件上传失败时的钩子",
+    "desc": "$t('upload.api.on-error')",
     "type": "function(err, file, fileList)",
     "optionalValue": "",
     "default": "",
@@ -97,7 +97,7 @@
   },
   {
     "name": "on-progress",
-    "desc": "文件上传时的钩子",
+    "desc": "$t('upload.api.on-progress')",
     "type": "function(event, file, fileList)",
     "optionalValue": "",
     "default": "",
@@ -105,7 +105,7 @@
   },
   {
     "name": "on-change",
-    "desc": "文件状态改变时的钩子，添加文件、上传成功和上传失败时都会被调用",
+    "desc": "$t('upload.api.on-change')",
     "type": "function(file, fileList)",
     "optionalValue": "",
     "default": "",
@@ -113,7 +113,7 @@
   },
   {
     "name": "before-upload",
-    "desc": "上传文件之前的钩子，参数为上传的文件，若返回 false 或者返回 Promise 且被 reject，则停止上传。",
+    "desc": "$t('upload.api.before-upload')",
     "type": "function(file)",
     "optionalValue": "",
     "default": "",
@@ -121,7 +121,7 @@
   },
   {
     "name": "before-remove",
-    "desc": "删除文件之前的钩子，参数为上传的文件和文件列表，若返回 false 或者返回 Promise 且被 reject，则停止上传。",
+    "desc": "$t('upload.api.before-remove')",
     "type": "function(file, fileList)",
     "optionalValue": "",
     "default": "",
@@ -129,7 +129,7 @@
   },
   {
     "name": "list-type",
-    "desc": "文件列表的类型",
+    "desc": "$t('upload.api.list-type')",
     "type": "string",
     "optionalValue": "text / picture-card",
     "default": "text",
@@ -137,7 +137,7 @@
   },
   {
     "name": "value",
-    "desc": "上传的文件列表, 例如: [{ name: 'food.jpg', url: 'https://xxx.cdn.com/xxx.jpg' }]",
+    "desc": "$t('upload.api.value')",
     "type": "Array",
     "optionalValue": "",
     "default": "[]",
@@ -145,7 +145,7 @@
   },
   {
     "name": "disabled",
-    "desc": "是否禁用",
+    "desc": "$t('upload.api.disabled')",
     "type": "boolean",
     "optionalValue": "",
     "default": "false",
@@ -153,33 +153,37 @@
   },
   {
     "name": "limit",
-    "desc": "最大允许上传个数",
+    "desc": "$t('upload.api.limit')",
     "type": "number",
     "optionalValue": "",
     "default": "",
     "version": ""
   }],
-  "slots": [{
-    "name": "trigger",
-    "desc": "触发文件选择框的内容"
-  },
-  {
-    "name": "tip",
-    "desc": "提示说明文字"
-  }],
-  "methods": [{
-    "name": "clearFiles()",
-    "desc": "清空已上传的文件列表（该方法不支持在 before-upload 中调用）",
-    "args": ""
-  },
-  {
-    "name": "abort(file: fileList)",
-    "desc": "取消上传请求",
-    "args": ""
-  },
-  {
-    "name": "submit()",
-    "desc": "手动上传文件列表",
-    "args": ""
-  }]
+  "slots": [
+    {
+      "name": "trigger",
+      "desc": "$t('upload.api.slot_trigger')"
+    },
+    {
+      "name": "tip",
+      "desc": "$t('upload.api.slot_tip')"
+    }
+  ],
+  "methods": [
+    {
+      "name": "clearFiles()",
+      "desc": "$t('upload.api.clearFiles')",
+      "args": ""
+    },
+    {
+      "name": "abort(file: fileList)",
+      "desc": "$t('upload.api.abort')",
+      "args": ""
+    },
+    {
+      "name": "submit()",
+      "desc": "$t('upload.api.submit')",
+      "args": ""
+    }
+  ]
 }

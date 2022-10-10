@@ -34,8 +34,3 @@
 
 <api-doc name="Select" :doc="require('./api.json')"></api-doc>
 <api-doc name="Option" :doc="require('../option/api.json')"></api-doc>
-
-## show
-
-:::include(src="./doc/show.vue")
-:::

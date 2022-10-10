@@ -107,7 +107,7 @@
     },
     {
       "name": "footer",
-      "desc": "底部内容"
+      "desc": "$t('dialog.api.slots_footer')"
     }
   ]
 }

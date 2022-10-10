@@ -1,12 +1,12 @@
 <template>
   <div style="text-align: left; display: flex; align-items: baseline; justify-content: space-around">
-    <wt-select v-model="value1" loading label="国家" placeholder="可多选">
+    <wt-select v-model="value1" loading label="Country">
       <wt-option v-for="item in options" :key="item.value" :value="item.value" :disabled="item.disabled" />
     </wt-select>
-    <wt-select v-model="value2" disabled label="国家" placeholder="可多选">
+    <wt-select v-model="value2" disabled label="Country">
       <wt-option v-for="item in options" :key="item.value" :value="item.value" :disabled="item.disabled" />
     </wt-select>
-    <wt-select v-model="value3" :invalid="isInvalid" label="国家" placeholder="可多选">
+    <wt-select v-model="value3" :invalid="isInvalid" label="Country">
       <wt-option v-for="item in options" :key="item.value" :value="item.value" :disabled="item.disabled" />
     </wt-select>
   </div>

@@ -34,5 +34,5 @@
 ## API
 <api-doc name="TimePicker" :doc="require('./api.json')"></api-doc>
 
-:::include(src="./doc/show.vue")
-:::
+<!-- :::include(src="./doc/show.vue")
+::: -->

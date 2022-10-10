@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="type-and-use-size">
-      <wt-select v-model="value" multiple label="国家">
+      <wt-select v-model="value" multiple label="Country">
         <wt-option v-for="item in options" :key="item.value" :value="item" :disabled="item.disabled" />
       </wt-select>
     </div>

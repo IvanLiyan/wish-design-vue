@@ -72,6 +72,6 @@
 ## API
 <api-doc name="Tooltip" :doc="require('./api.json')"></api-doc>
 
-## Test
+<!-- ## Test
 :::include(src="./doc/test.vue")
-:::
+::: -->

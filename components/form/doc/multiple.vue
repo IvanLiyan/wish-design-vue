@@ -1,47 +1,47 @@
 <template>
-  <wt-form ref="form" title="企业入驻" :rules="ruleCustom" :model="formData" :first-fields="true">
+  <wt-form ref="form" title="Enterprises" :rules="ruleCustom" :model="formData" :first-fields="true">
     <wt-form-item prop="open" required>
       <wt-switch v-model="formData.open"
-        >管理功能开启<span slot="hint">请确定当前账号有相应权限后再操作否则无法过审</span>
+        >Enabling Management<span slot="hint">Please make sure that the current account has corresponding permissions before operation, otherwise it cannot be audited</span>
       </wt-switch>
     </wt-form-item>
-    <div class="title">法人本人注册或代注册</div>
+    <div class="title">Legal person / Dealer registration</div>
     <wt-form-item prop="login" required>
       <wt-radio-group v-model="formData.login" arrange="vertical">
-        <wt-radio value="faren">法人本人<span slot="hint">法人可以在提交申请后立刻参与实名认证</span></wt-radio>
-        <wt-radio value="daili">代为注册<span slot="hint">需要另外联系法人安排时间进行实名认证</span></wt-radio>
+        <wt-radio value="faren">Legal person<span slot="hint">Legal entities can participate in real-name verification immediately after submitting an application</span></wt-radio>
+        <wt-radio value="daili">Dealer registration<span slot="hint">Need to contact the legal person to arrange time for real-name authentication</span></wt-radio>
       </wt-radio-group>
     </wt-form-item>
     <wt-form-item prop="introducer" :span="12" :style="{ 'padding-right': '10px' }">
       <wt-select
         v-model="formData.introducer"
-        label="入驻介绍人（可选）"
+        label="Settled introducers (optional)"
         filterable
-        placeholder="输入介绍人姓名搜索并选择"
+        placeholder="Enter referrer to search/select"
       >
         <wt-option v-for="item in introducers" :key="item.value" :label="item.label" :value="item.value" />
       </wt-select>
     </wt-form-item>
     <wt-form-item prop="busType" required :span="12" :style="{ 'padding-left': '10px' }">
-      <wt-select multiple v-model="formData.busType" label="经营类型" placeholder="输入经营类型搜索并选择">
+      <wt-select multiple v-model="formData.busType" label="Business type" placeholder="Enter business type to search/select">
         <wt-option v-for="item in busTypes" :key="item.value" :label="item.label" :value="item.value" />
       </wt-select>
     </wt-form-item>
     <wt-form-item
       prop="name"
       :span="12"
-      helper="提现操作仅限于此真实姓名下的银行卡。"
+      helper="The withdrawal operation is limited to cards under this real name"
       required
       :style="{ 'padding-right': '10px' }"
     >
-      <wt-input label="法人代表姓名" placeholder="请输入真实姓名" v-model="formData.name" />
+      <wt-input label="Name of legal representative" placeholder="Please enter real name" v-model="formData.name" />
     </wt-form-item>
     <wt-form-item prop="idCard" required :span="12" helper=" " :style="{ 'padding-left': '10px' }">
-      <wt-input label="对公银行卡号" placeholder="企业对公账户号码" v-model="formData.idCard" />
+      <wt-input label="Public bank card number" placeholder="Business to business account number" v-model="formData.idCard" />
     </wt-form-item>
 
     <wt-form-item prop="idType" required :span="12" :style="{ 'padding-right': '10px' }">
-      <wt-select v-model="formData.idType" label="证件类型" placeholder="请选择证件类型">
+      <wt-select v-model="formData.idType" label="Certificate type" placeholder="Please select certificate type">
         <wt-option v-for="item in idTypes" :key="item.value" :label="item.label" :value="item.value" />
       </wt-select>
     </wt-form-item>
@@ -49,8 +49,8 @@
       <wt-date-picker
         type="date"
         v-model="formData.idDate"
-        label="证件有效日期"
-        placeholder="请输入证件上显示的有效起止日期"
+        label="Valid date of certificate"
+        placeholder="Please enter the valid start and end dates shown on the certificate"
       />
     </wt-form-item>
 
@@ -58,7 +58,7 @@
       prop="idFront"
       required
       :span="12"
-      helper="可接受的文件类型：jpg, png, gif, pdf。文件大小不能超过20MB。"
+      helper="Acceptable file types: JPG, PNG, GIF, PDF. The file size cannot exceed 20MB"
       :style="{ 'padding-right': '10px' }"
     >
       <wt-upload
@@ -72,7 +72,7 @@
       prop="idBack"
       required
       :span="12"
-      helper="可接受的文件类型：jpg, png, gif, pdf。文件大小不能超过20MB。"
+      helper="Acceptable file types: JPG, PNG, GIF, PDF. The file size cannot exceed 20MB"
       :style="{ 'padding-left': '10px' }"
     >
       <wt-upload
@@ -83,52 +83,52 @@
       />
     </wt-form-item>
 
-    <div class="title">企业注册地址</div>
+    <div class="title">Business registration address</div>
     <wt-form-item prop="regNation" required :span="6" :style="{ 'padding-right': '10px' }">
-      <wt-select v-model="formData.regNation" label="国家" placeholder="请选择">
+      <wt-select v-model="formData.regNation" label="Country" placeholder="Please select">
         <wt-option v-for="item in nations" :key="item.value" :label="item.label" :value="item.value" />
       </wt-select>
     </wt-form-item>
     <wt-form-item prop="regProvince" required :span="6" :style="{ 'padding-right': '10px' }">
-      <wt-select v-model="formData.regProvince" label="省" placeholder="请选择">
+      <wt-select v-model="formData.regProvince" label="Province" placeholder="Please select">
         <wt-option v-for="item in provinces" :key="item.value" :label="item.label" :value="item.value" />
       </wt-select>
     </wt-form-item>
     <wt-form-item prop="regCity" required :span="6" :style="{ 'padding-right': '10px', 'padding-left': '10px' }">
-      <wt-select v-model="formData.regCity" label="市" placeholder="请选择">
+      <wt-select v-model="formData.regCity" label="City" placeholder="Please select">
         <wt-option v-for="item in cities" :key="item.value" :label="item.label" :value="item.value" />
       </wt-select>
     </wt-form-item>
     <wt-form-item prop="code" :span="6" required :style="{ 'padding-left': '10px' }">
-      <wt-input label="邮政编码" placeholder="请输入纯数字" v-model="formData.code" />
+      <wt-input label="Zip code" placeholder="Please enter number" v-model="formData.code" />
     </wt-form-item>
-    <div class="title">其他电商平台经验</div>
+    <div class="title">Experience in other e-commerce platforms</div>
     <wt-form-item prop="experience" required>
       <wt-checkbox-group arrange="horizontal" v-model="formData.experience">
         <wt-checkbox v-for="exp in experiences" :key="exp.value" :value="exp.value">{{ exp.label }}</wt-checkbox>
       </wt-checkbox-group>
     </wt-form-item>
-    <div class="title">电话联系方式</div>
+    <div class="title">Phone number</div>
     <wt-form-item prop="telType" required :span="6">
-      <wt-select v-model="formData.telType" label="座机/手机" placeholder="请选择">
+      <wt-select v-model="formData.telType" label="Landline/Cell phone" placeholder="Please select">
         <wt-option v-for="item in telTypes" :key="item.value" :label="item.label" :value="item.value" />
       </wt-select>
     </wt-form-item>
     <wt-form-item prop="telPhone" :span="6" required :style="{ 'padding-right': '10px' }">
-      <wt-input label=" " placeholder="请输入纯数字电话号码" v-model="formData.telPhone" />
+      <wt-input label=" " placeholder="Please enter a only digital phone number" v-model="formData.telPhone" />
     </wt-form-item>
     <wt-form-item prop="telOpenTime" required :span="12" :style="{ 'padding-left': '10px' }">
       <wt-time-picker
         type="timerange"
         v-model="formData.telOpenTime"
-        label="可接听来电的时间段"
-        placeholder="请选择时间"
+        label="Period of calls are available"
+        placeholder="Please select time"
       />
     </wt-form-item>
 
     <div>
-      <wt-button @click="submit">提交</wt-button>
-      <wt-button type="text" @click="reset">重置</wt-button>
+      <wt-button @click="submit">Submit</wt-button>
+      <wt-button type="text" @click="reset">Reset</wt-button>
     </div>
   </wt-form>
 </template>
@@ -172,51 +172,51 @@ export default {
       busTypes: [
         {
           value: 'e-commerce',
-          label: '电商',
+          label: 'E-commerce',
         },
         {
           value: 'factory',
-          label: '工厂',
+          label: 'Factory',
         },
       ],
       idTypes: [
         {
           value: 'idcard',
-          label: '身份证',
+          label: 'Id card',
         },
         {
           value: 'passport',
-          label: '护照',
+          label: 'Passport',
         },
       ],
       nations: [
         {
           value: 'China',
-          label: '中国',
+          label: 'China',
         },
         {
           value: 'America',
-          label: '美国',
+          label: 'America',
         },
       ],
       provinces: [
         {
           value: 'zhejiang',
-          label: '浙江',
+          label: 'Zhejiang',
         },
         {
           value: 'jiangsu',
-          label: '江苏',
+          label: 'Jiangsu',
         },
       ],
       cities: [
         {
           value: 'shanghai',
-          label: '上海',
+          label: 'Shanghai',
         },
         {
           value: 'beijing',
-          label: '北京',
+          label: 'Beijing',
         },
       ],
       experiences: [
@@ -234,21 +234,21 @@ export default {
         },
         {
           value: 'Shopify',
-          label: 'Shopify独立站',
+          label: 'Shopify Independent Sites',
         },
         {
           value: 'NonShopify',
-          label: '非Shopify独立站',
+          label: 'Non-shopify Independent Site',
         },
       ],
       telTypes: [
         {
           value: 'landline',
-          label: '座机',
+          label: 'Landline',
         },
         {
           value: 'phone',
-          label: '手机',
+          label: 'Phone',
         },
       ],
     };

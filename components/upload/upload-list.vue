@@ -202,10 +202,10 @@ export default {
       focusing: false,
       showBtn: [],
       STATUS_ENUM: {
-        ready: '准备中',
-        uploading: '上传中',
+        ready: 'Ready',
+        uploading: 'Uploading',
         success: '',
-        fail: '上传失败',
+        fail: 'Failed',
       },
     };
   },

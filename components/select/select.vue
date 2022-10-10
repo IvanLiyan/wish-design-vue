@@ -108,7 +108,7 @@
             is-select-all
             v-show="!_isEmpty && !query && !loading"
             v-if="canSelectAll"
-            >全选</wt-option
+            >Select all</wt-option
           >
           <div v-show="!loading && !emptyText">
             <slot></slot>
@@ -172,7 +172,7 @@ export default {
     // 占位符
     placeholder: {
       type: String,
-      default: '请选择',
+      default: 'Please select',
     },
     // 是否可搜索
     filterable: Boolean,
@@ -181,21 +181,21 @@ export default {
     // 搜索条件无匹配时显示的文字
     noMatchText: {
       type: String,
-      default: '暂无搜索结果',
+      default: 'No result',
     },
     // 是否正在从远程获取数据
     loading: Boolean,
     // 搜索中文案
     loadingText: {
       type: String,
-      default: '搜索中',
+      default: 'Searching',
     },
     // 是否校验通过，用于非空校验
     invalid: Boolean,
     // 选项为空时显示的文字
     noDataText: {
       type: String,
-      default: '暂无数据',
+      default: 'No data',
     },
     // 是否多选
     multiple: Boolean,

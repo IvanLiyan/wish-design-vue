@@ -8,38 +8,38 @@
       <wt-table-column
         type="selection"
         width="34" />
-      <wt-table-column
+        <wt-table-column
         prop="orderId"
-        label="WOSP订单ID"
+        label="WOSP order id"
         width="160" />
       <wt-table-column
         prop="logId"
-        label="物流追踪单号"
-        width="140" />
+        label="Logistics tracking number"
+        width="170" />
       <wt-table-column
         prop="logStatus"
-        label="物流状态"
+        label="Logistics status"
         width="140" />
       <wt-table-column
         prop="orderStatus"
         width="90"
-        label="订单状态" />
+        label="Order status" />
       <wt-table-column
         prop="channelNum"
         width="70"
-        label="渠道号" />
+        label="Channel number" />
       <wt-table-column
         prop="name"
-        label="收件人"
+        label="Recipient"
         width="170" />
       <wt-table-column
         prop="addTime"
-        label="创建时间"
+        label="Create time"
         width="160" />
       <wt-table-column
+        fixed="right"
         prop="control"
-        label="操作"
-        width="100" />
+        label="Control" />
     </wt-table>
   </div>
 </template>
@@ -52,8 +52,8 @@ export default {
       tableData: [{
         orderId: 'WOSP021700118221DEU',
         logId: 'WI001117700472FPL',
-        logStatus: 'Wishpost订单已生成',
-        orderStatus: <wt-tag type="error">用户取消</wt-tag>,
+        logStatus: 'Wishpost order has been generated',
+        orderStatus: <wt-tag type="error">Cancel</wt-tag>,
         channelNum: '5301',
         name: 'F.lli Gregorio Giuseppe',
         addTime: '2020-08-25 00:00:00',
@@ -61,8 +61,8 @@ export default {
       }, {
         orderId: 'WOSP021700118221DEU',
         logId: 'WI001117700472FPL',
-        logStatus: 'Wishpost订单已生成',
-        orderStatus: <wt-tag type="success">已完成</wt-tag>,
+        logStatus: 'Wishpost order has been generated',
+        orderStatus: <wt-tag type="success">Complete</wt-tag>,
         channelNum: '5301',
         name: 'F.lli Gregorio Giuseppe',
         addTime: '2020-08-25 00:00:00',
@@ -70,8 +70,8 @@ export default {
       }, {
         orderId: 'WOSP021700118221DEU',
         logId: 'WI001117700472FPL',
-        logStatus: 'Wishpost订单已生成',
-        orderStatus: <wt-tag type="success">已完成</wt-tag>,
+        logStatus: 'Wishpost order has been generated',
+        orderStatus: <wt-tag type="success">Complete</wt-tag>,
         channelNum: '5301',
         name: 'F.lli Gregorio Giuseppe',
         addTime: '2020-08-25 00:00:00',

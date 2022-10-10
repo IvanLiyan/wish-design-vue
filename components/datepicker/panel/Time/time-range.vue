@@ -47,7 +47,7 @@
       <span></span>
         <wt-button type="primary" :class="!confirmDisabled ? 'btn' : 'btn disabled'" :disabled="confirmDisabled"
           @click="handleConfirm">
-          确认
+          Confirm
         </wt-button>
     </div>
   </div>
