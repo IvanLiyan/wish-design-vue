@@ -21,6 +21,7 @@
       v-if="multiple"
       ref="tags"
     >
+      <wt-input />
       <ul :class="`${prefix}-tags-ul`">
         <template>
           <ChoiceTag
@@ -36,7 +37,7 @@
             {{ formatterOption(item) }}
           </ChoiceTag>
         </template>
-        <li :class="`${prefix}-search-line`">
+        <!-- <li :class="`${prefix}-search-line`">
           <div :class="`${prefix}-search-field-wrap`">
             <input
               :class="`${prefix}-search-field`"
@@ -58,7 +59,7 @@
               ref="tagInput"
             />
           </div>
-        </li>
+        </li> -->
       </ul>
     </div>
     <popper :visible="opened" :append-to-container="true" ref="popper" :close-delay="0">
