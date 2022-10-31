@@ -14,6 +14,6 @@
 <api-doc name="SubMenu" :doc="require('./../submenu/api.json')"></api-doc>
 <api-doc name="MenuItem" :doc="require('./../menu-item/api.json')"></api-doc>
 
-## 测试
+<!-- ## 测试
 :::include(src="./doc/tests.vue")
-:::
+::: -->

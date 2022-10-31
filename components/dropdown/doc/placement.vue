@@ -6,10 +6,10 @@
           <span style="margin-right: 4px">top</span>
         </wt-button>
         <wt-dropdown-menu slot="dropdown">
-          <wt-dropdown-menu-item>网络</wt-dropdown-menu-item>
-          <wt-dropdown-menu-item>存储</wt-dropdown-menu-item>
-          <wt-dropdown-menu-item>数据库</wt-dropdown-menu-item>
-          <wt-dropdown-menu-item disabled>计算</wt-dropdown-menu-item>
+          <wt-dropdown-menu-item>Network</wt-dropdown-menu-item>
+          <wt-dropdown-menu-item>Storage</wt-dropdown-menu-item>
+          <wt-dropdown-menu-item>Database</wt-dropdown-menu-item>
+          <wt-dropdown-menu-item disabled>Calculate</wt-dropdown-menu-item>
         </wt-dropdown-menu>
       </wt-dropdown>
       <wt-dropdown placement="top-start">
@@ -17,10 +17,10 @@
           <span style="margin-right: 4px">top-start</span>
         </wt-button>
         <wt-dropdown-menu slot="dropdown">
-          <wt-dropdown-menu-item>网络</wt-dropdown-menu-item>
-          <wt-dropdown-menu-item>存储</wt-dropdown-menu-item>
-          <wt-dropdown-menu-item>数据库</wt-dropdown-menu-item>
-          <wt-dropdown-menu-item disabled>计算</wt-dropdown-menu-item>
+          <wt-dropdown-menu-item>Network</wt-dropdown-menu-item>
+          <wt-dropdown-menu-item>Storage</wt-dropdown-menu-item>
+          <wt-dropdown-menu-item>Database</wt-dropdown-menu-item>
+          <wt-dropdown-menu-item disabled>Calculate</wt-dropdown-menu-item>
         </wt-dropdown-menu>
       </wt-dropdown>
       <wt-dropdown placement="top-end">
@@ -28,10 +28,10 @@
           <span style="margin-right: 4px">top-end</span>
         </wt-button>
         <wt-dropdown-menu slot="dropdown">
-          <wt-dropdown-menu-item>网络</wt-dropdown-menu-item>
-          <wt-dropdown-menu-item>存储</wt-dropdown-menu-item>
-          <wt-dropdown-menu-item>数据库</wt-dropdown-menu-item>
-          <wt-dropdown-menu-item disabled>计算</wt-dropdown-menu-item>
+          <wt-dropdown-menu-item>Network</wt-dropdown-menu-item>
+          <wt-dropdown-menu-item>Storage</wt-dropdown-menu-item>
+          <wt-dropdown-menu-item>Database</wt-dropdown-menu-item>
+          <wt-dropdown-menu-item disabled>Calculate</wt-dropdown-menu-item>
         </wt-dropdown-menu>
       </wt-dropdown>
       <wt-dropdown placement="bottom">
@@ -39,10 +39,10 @@
           <span style="margin-right: 4px">bottom</span>
         </wt-button>
         <wt-dropdown-menu slot="dropdown">
-          <wt-dropdown-menu-item>网络</wt-dropdown-menu-item>
-          <wt-dropdown-menu-item>存储</wt-dropdown-menu-item>
-          <wt-dropdown-menu-item>数据库</wt-dropdown-menu-item>
-          <wt-dropdown-menu-item disabled>计算</wt-dropdown-menu-item>
+          <wt-dropdown-menu-item>Network</wt-dropdown-menu-item>
+          <wt-dropdown-menu-item>Storage</wt-dropdown-menu-item>
+          <wt-dropdown-menu-item>Database</wt-dropdown-menu-item>
+          <wt-dropdown-menu-item disabled>Calculate</wt-dropdown-menu-item>
         </wt-dropdown-menu>
       </wt-dropdown>
       <wt-dropdown placement="bottom-start">
@@ -50,10 +50,10 @@
           <span style="margin-right: 4px">bottom-start</span>
         </wt-button>
         <wt-dropdown-menu slot="dropdown">
-          <wt-dropdown-menu-item>网络</wt-dropdown-menu-item>
-          <wt-dropdown-menu-item>存储</wt-dropdown-menu-item>
-          <wt-dropdown-menu-item>数据库</wt-dropdown-menu-item>
-          <wt-dropdown-menu-item disabled>计算</wt-dropdown-menu-item>
+          <wt-dropdown-menu-item>Network</wt-dropdown-menu-item>
+          <wt-dropdown-menu-item>Storage</wt-dropdown-menu-item>
+          <wt-dropdown-menu-item>Database</wt-dropdown-menu-item>
+          <wt-dropdown-menu-item disabled>Calculate</wt-dropdown-menu-item>
         </wt-dropdown-menu>
       </wt-dropdown>
       <wt-dropdown placement="bottom-end">
@@ -61,10 +61,10 @@
           <span style="margin-right: 4px">bottom-end</span>
         </wt-button>
         <wt-dropdown-menu slot="dropdown">
-          <wt-dropdown-menu-item>网络</wt-dropdown-menu-item>
-          <wt-dropdown-menu-item>存储</wt-dropdown-menu-item>
-          <wt-dropdown-menu-item>数据库</wt-dropdown-menu-item>
-          <wt-dropdown-menu-item disabled>计算</wt-dropdown-menu-item>
+          <wt-dropdown-menu-item>Network</wt-dropdown-menu-item>
+          <wt-dropdown-menu-item>Storage</wt-dropdown-menu-item>
+          <wt-dropdown-menu-item>Database</wt-dropdown-menu-item>
+          <wt-dropdown-menu-item disabled>Calculate</wt-dropdown-menu-item>
         </wt-dropdown-menu>
       </wt-dropdown>
       <wt-dropdown placement="left">
@@ -72,10 +72,10 @@
           <span style="margin-right: 4px">left</span>
         </wt-button>
         <wt-dropdown-menu slot="dropdown">
-          <wt-dropdown-menu-item>网络</wt-dropdown-menu-item>
-          <wt-dropdown-menu-item>存储</wt-dropdown-menu-item>
-          <wt-dropdown-menu-item>数据库</wt-dropdown-menu-item>
-          <wt-dropdown-menu-item disabled>计算</wt-dropdown-menu-item>
+          <wt-dropdown-menu-item>Network</wt-dropdown-menu-item>
+          <wt-dropdown-menu-item>Storage</wt-dropdown-menu-item>
+          <wt-dropdown-menu-item>Database</wt-dropdown-menu-item>
+          <wt-dropdown-menu-item disabled>Calculate</wt-dropdown-menu-item>
         </wt-dropdown-menu>
       </wt-dropdown>
       <wt-dropdown placement="left-start">
@@ -83,10 +83,10 @@
           <span style="margin-right: 4px">left-start</span>
         </wt-button>
         <wt-dropdown-menu slot="dropdown">
-          <wt-dropdown-menu-item>网络</wt-dropdown-menu-item>
-          <wt-dropdown-menu-item>存储</wt-dropdown-menu-item>
-          <wt-dropdown-menu-item>数据库</wt-dropdown-menu-item>
-          <wt-dropdown-menu-item disabled>计算</wt-dropdown-menu-item>
+          <wt-dropdown-menu-item>Network</wt-dropdown-menu-item>
+          <wt-dropdown-menu-item>Storage</wt-dropdown-menu-item>
+          <wt-dropdown-menu-item>Database</wt-dropdown-menu-item>
+          <wt-dropdown-menu-item disabled>Calculate</wt-dropdown-menu-item>
         </wt-dropdown-menu>
       </wt-dropdown>
       <wt-dropdown placement="left-end">
@@ -94,10 +94,10 @@
           <span style="margin-right: 4px">left-end</span>
         </wt-button>
         <wt-dropdown-menu slot="dropdown">
-          <wt-dropdown-menu-item>网络</wt-dropdown-menu-item>
-          <wt-dropdown-menu-item>存储</wt-dropdown-menu-item>
-          <wt-dropdown-menu-item>数据库</wt-dropdown-menu-item>
-          <wt-dropdown-menu-item disabled>计算</wt-dropdown-menu-item>
+          <wt-dropdown-menu-item>Network</wt-dropdown-menu-item>
+          <wt-dropdown-menu-item>Storage</wt-dropdown-menu-item>
+          <wt-dropdown-menu-item>Database</wt-dropdown-menu-item>
+          <wt-dropdown-menu-item disabled>Calculate</wt-dropdown-menu-item>
         </wt-dropdown-menu>
       </wt-dropdown>
       <wt-dropdown placement="right">
@@ -105,10 +105,10 @@
           <span style="margin-right: 4px">right</span>
         </wt-button>
         <wt-dropdown-menu slot="dropdown">
-          <wt-dropdown-menu-item>网络</wt-dropdown-menu-item>
-          <wt-dropdown-menu-item>存储</wt-dropdown-menu-item>
-          <wt-dropdown-menu-item>数据库</wt-dropdown-menu-item>
-          <wt-dropdown-menu-item disabled>计算</wt-dropdown-menu-item>
+          <wt-dropdown-menu-item>Network</wt-dropdown-menu-item>
+          <wt-dropdown-menu-item>Storage</wt-dropdown-menu-item>
+          <wt-dropdown-menu-item>Database</wt-dropdown-menu-item>
+          <wt-dropdown-menu-item disabled>Calculate</wt-dropdown-menu-item>
         </wt-dropdown-menu>
       </wt-dropdown>
       <wt-dropdown placement="right-start">
@@ -116,10 +116,10 @@
           <span style="margin-right: 4px">right-start</span>
         </wt-button>
         <wt-dropdown-menu slot="dropdown">
-          <wt-dropdown-menu-item>网络</wt-dropdown-menu-item>
-          <wt-dropdown-menu-item>存储</wt-dropdown-menu-item>
-          <wt-dropdown-menu-item>数据库</wt-dropdown-menu-item>
-          <wt-dropdown-menu-item disabled>计算</wt-dropdown-menu-item>
+          <wt-dropdown-menu-item>Network</wt-dropdown-menu-item>
+          <wt-dropdown-menu-item>Storage</wt-dropdown-menu-item>
+          <wt-dropdown-menu-item>Database</wt-dropdown-menu-item>
+          <wt-dropdown-menu-item disabled>Calculate</wt-dropdown-menu-item>
         </wt-dropdown-menu>
       </wt-dropdown>
       <wt-dropdown placement="right-end">
@@ -127,10 +127,10 @@
           <span style="margin-right: 4px">right-end</span>
         </wt-button>
         <wt-dropdown-menu slot="dropdown">
-          <wt-dropdown-menu-item>网络</wt-dropdown-menu-item>
-          <wt-dropdown-menu-item>存储</wt-dropdown-menu-item>
-          <wt-dropdown-menu-item>数据库</wt-dropdown-menu-item>
-          <wt-dropdown-menu-item disabled>计算</wt-dropdown-menu-item>
+          <wt-dropdown-menu-item>Network</wt-dropdown-menu-item>
+          <wt-dropdown-menu-item>Storage</wt-dropdown-menu-item>
+          <wt-dropdown-menu-item>Database</wt-dropdown-menu-item>
+          <wt-dropdown-menu-item disabled>Calculate</wt-dropdown-menu-item>
         </wt-dropdown-menu>
       </wt-dropdown>
     </div>

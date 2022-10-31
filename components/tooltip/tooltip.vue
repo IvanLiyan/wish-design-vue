@@ -24,6 +24,9 @@
       ]"
     >
       <span v-if="content">{{ content }}</span>
+      <div :class="[`${prefix}-content`]" v-if="$slots.content">
+        <slot name="content">{{ content }}</slot>
+      </div>
     </drop>
   </popper>
 </template>

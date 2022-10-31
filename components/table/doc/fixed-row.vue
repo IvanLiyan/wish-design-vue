@@ -1,6 +1,6 @@
 <template>
   <div>
-    <wt-table :data="tableData" height="178px" :pagination="pagination">
+    <wt-table :data="tableData" height="180px" :pagination="pagination">
       <wt-table-column
         prop="orderId"
         label="WOSP order id"

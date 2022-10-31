@@ -12,6 +12,7 @@ const execa = require('execa');
 const versionIncrements = [
   'prerelease:alpha',
   'prerelease:beta',
+  'prerelease:rc',
   'patch',
   'minor',
   'major',

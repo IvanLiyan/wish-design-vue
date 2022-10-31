@@ -162,7 +162,3 @@
 ## API
 <api-doc name="Table" :doc="require('./api.json')"></api-doc>
 <api-doc name="TableColumn" :doc="require('../table-column/api.json')"></api-doc>
-
-## 测试
-:::include(src="./doc/tests.vue")
-:::

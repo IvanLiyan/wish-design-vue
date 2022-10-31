@@ -13,7 +13,3 @@
 
 ## API
 <api-doc name="Drawer" :doc="require('./api.json')"></api-doc>
-<!-- 
-## QA测试
-:::include(src="./doc/tests.vue")
-::: -->

@@ -13,7 +13,7 @@
       "desc": "$t('loading.api.message')",
       "type": "string",
       "optionalValue": "",
-      "default": "正在加载中",
+      "default": "loading",
       "version": ""
     },
     {

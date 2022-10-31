@@ -14,6 +14,3 @@ import { Notification } from '@ContextLogic/wt-vue';
 ```
 
 <api-doc name="Notification" :doc="require('./api.json')"></api-doc>
-
-:::include(src="./doc/show.vue")
-:::

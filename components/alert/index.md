@@ -15,8 +15,3 @@
 ### API
 
 <api-doc name="Alert" :doc="require('./api.json')"></api-doc>
-
-### show all
-
-:::include(src="./doc/show.vue")
-:::

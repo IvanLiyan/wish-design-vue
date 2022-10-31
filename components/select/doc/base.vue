@@ -1,9 +1,9 @@
 <template>
   <div class="demo-container">
-    <wt-select v-model="value" style="margin-right: 50px" label="国家">
+    <wt-select v-model="value" style="margin-right: 50px" label="Country">
       <wt-option v-for="item in options" :key="item.value" :value="item.value" :disabled="item.disabled" />
     </wt-select>
-    <wt-select v-model="value2" placeholder="选择国家">
+    <wt-select v-model="value2" placeholder="Select Country">
       <wt-option v-for="item in options" :key="item.value" :value="item" :disabled="item.disabled" />
     </wt-select>
   </div>

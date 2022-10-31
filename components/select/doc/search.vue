@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="type-and-use-size">
-      <wt-select v-model="value" class="select-width" :filterable="true" label="本地搜索">
+      <wt-select v-model="value" class="select-width" :filterable="true" label="Local search">
         <wt-option v-for="item in options" :key="item.value" :value="item" :disabled="item.disabled" />
       </wt-select>
     </div>
@@ -12,7 +12,7 @@
         :loading="loading"
         :filterable="true"
         :remote-method="remoteMethod"
-        label="异步搜索"
+        label="Async search"
         multiple
       >
         <wt-option v-for="item in options2" :key="item.value" :value="item" :disabled="item.disabled" />
