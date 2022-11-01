@@ -1,5 +1,10 @@
 # 更新日志
 
+## 0.0.2-alpha.50
+·修复了`<select />`的双层边框bug
+·修复了`<timeline />`圆点的位置
+·校准了`<timeline />`在normal状态下的圆点颜色
+
 ## 0.0.2-alpha.49
 - 更新了 Sidebar 的UI
 
