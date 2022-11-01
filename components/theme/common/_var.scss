@@ -1317,7 +1317,7 @@ $timeline-item-content-margin-horizontal: 10px!default;
 // @category type
 // @propsValue default
 // @name 项-点-尺寸
-$timeline-item-dot-size: 9px!default;
+$timeline-item-dot-size: 8px!default;
 // @name 项-点-背景色
 $timeline-item-dot-bgc: $color-primary!default;
 // @name 项-点-边框-宽度
@@ -1345,7 +1345,7 @@ $timeline-item-master-dot-shadow: 0px 0px 0px 4px rgba(78, 115, 255, 0.12)!defau
 // @name 项-次要-点-尺寸
 $timeline-item-hollow-dot-size: 11px!default;
 // @name 项-次要-点-背景色
-$timeline-item-hollow-dot-bgc: transparent!default;
+$timeline-item-hollow-dot-bgc: #305bef!default;
 // @name 项-次要-点-边框-宽度
 $timeline-item-hollow-dot-border-width: $border-width-1!default;
 // @name 项-次要-边框颜色-点
