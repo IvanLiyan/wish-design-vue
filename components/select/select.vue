@@ -21,7 +21,6 @@
       v-if="multiple"
       ref="tags"
     >
-      <wt-input />
       <ul :class="`${prefix}-tags-ul`">
         <template>
           <ChoiceTag

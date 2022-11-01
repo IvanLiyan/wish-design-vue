@@ -58,6 +58,7 @@
 @include c(timeline-item-dot) {
   display: inline-flex;
   color: $color-primary;
+  margin-top: 4px;
   // width: $timeline-item-dot-width;
   // height: $timeline-item-dot-width;
   align-items: center;

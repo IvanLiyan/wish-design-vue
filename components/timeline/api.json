@@ -3,8 +3,8 @@
 		"name": "mode",
     "desc": "$t('timeline.api.mode')",
     "type": "string",
-    "optionalValue": ["(None)", "right", "alternate"],
-    "default": "(None)",
+    "optionalValue": ["left", "right", "alternate"],
+    "default": "left",
     "version": ""
 	}]
 }
