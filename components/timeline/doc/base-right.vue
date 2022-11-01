@@ -1,27 +1,27 @@
 <template>
   <div class="demo-timeline-wrap">
-    <wt-timeline>
-      <wt-timeline-item type="hollow">
+    <wt-timeline mode="left">
+      <wt-timeline-item type="dot">
         <div><b>Title</b></div>
         2021-01-01 08:00:00
         <div>Content</div>
       </wt-timeline-item>
-      <wt-timeline-item type="hollow">
+      <wt-timeline-item type="dot">
         <div><b>Title</b></div>
         2021-01-01 08:00:00
         <div>Content</div>
       </wt-timeline-item>
-      <wt-timeline-item type="hollow">
+      <wt-timeline-item type="dot">
         <div><b>Title</b></div>
         2021-01-01 08:00:00
         <div>Content</div>
       </wt-timeline-item>
-      <wt-timeline-item type="hollow">
+      <wt-timeline-item type="dot">
         <div><b>Title</b></div>
         2021-01-01 08:00:00
         <div>Content</div>
       </wt-timeline-item>
-      <wt-timeline-item type="hollow">
+      <wt-timeline-item type="dot">
         <div><b>Title</b></div>
         2021-01-01 08:00:00
         <div>Content</div>
