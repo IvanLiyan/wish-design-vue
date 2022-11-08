@@ -1,5 +1,8 @@
 # 更新日志
 
+## 0.0.2-alpha.51
+·修复了`<wt-table />`内置pagination的api缺失问题
+
 ## 0.0.2-alpha.50
 ·修复了`<select />`的双层边框bug
 ·修复了`<timeline />`圆点的位置

@@ -245,6 +245,9 @@
       :show-size-changer="pagination.showSizeChanger"
       :show-total="pagination.showTotal"
       @change="pagination.onChange"
+      :unborder="pagination.unborder"
+      :page-size-options="pagination.pageSizeOptions"
+      :pager-count="pagination.pagerCount"
     />
   </div>
 </template>

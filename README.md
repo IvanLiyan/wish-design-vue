@@ -88,3 +88,5 @@ todo 未支持按需加载，若支持需要 lib 里面以组件文件夹形式�
 ·修复了`<timeline />`圆点的位置
 ·校准了`<timeline />`在normal状态下的圆点颜色
 
+#### 0.0.2-alpha.51
+·修复了`<wt-table />`内置pagination的api缺失问题

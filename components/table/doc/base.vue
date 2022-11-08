@@ -68,6 +68,10 @@ export default {
         showSizeChanger: true,
         currentPage: this.currentPage,
         onChange: this.onPageChange,
+        pageSize: this.pageSize,
+        unborder: false,
+        pageSizeOptions: [5, 10, 50],
+        pagerCount: 20,
       },
     };
   },
