@@ -865,7 +865,7 @@ export default {
       if (isObject(value) && value.hasOwnProperty('value')) {
         return value.value;
       } else if (isObject(value) && valueKey) {
-        getValueByPath(value, valueKey);
+        return getValueByPath(value, valueKey);
       } else if (!isObject(value)) {
         return value;
       }

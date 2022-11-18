@@ -10,7 +10,7 @@
     :width="width"
     @input="handleVisibleChange"
     :title="type ? undefined : title"
-    :append-to-container="false"
+    :append-to-container="appendToContainer"
     @closed="destroyElement"
   >
     <div
@@ -103,6 +103,7 @@ export default {
       onOk: null, // 点击确认按钮后的回调
       onCancel: null, // 击取消按钮或关闭按钮后的回调
       useHTMLString: false, // 是否将 message 属性作为 HTML 片段处理
+      appendToContainer: false,
       prefixCls: getPrefix(),
       iconPrefixCls: getIconPrefix(),
     };
