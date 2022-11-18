@@ -90,3 +90,8 @@ todo 未支持按需加载，若支持需要 lib 里面以组件文件夹形式�
 
 #### 0.0.2-alpha.51
 ·修复了`<wt-table />`内置pagination的api缺失问题
+
+#### 0.0.2-alpha.52
+·修复了`<Select />`的bug: value-key
+·修复了`<Datepicker />`和`<Timepicker />`在某些情况下确认按钮字体颜色被覆盖的bug
+·`<Table />`新增了文档说明，新的API —— loading

@@ -1,12 +1,17 @@
 # 更新日志
 
+## 0.0.2-alpha.52
+- 修复了`<Select />`的bug: value-key
+- 修复了`<Datepicker />`和`<Timepicker />`在某些情况下确认按钮字体颜色被覆盖的bug
+- `<Table />`新增了文档说明，新的API —— loading
+
 ## 0.0.2-alpha.51
-·修复了`<wt-table />`内置pagination的api缺失问题
+- 修复了`<wt-table />`内置pagination的api缺失问题
 
 ## 0.0.2-alpha.50
-·修复了`<select />`的双层边框bug
-·修复了`<timeline />`圆点的位置
-·校准了`<timeline />`在normal状态下的圆点颜色
+- 修复了`<select />`的双层边框bug
+- 修复了`<timeline />`圆点的位置
+- 校准了`<timeline />`在normal状态下的圆点颜色
 
 ## 0.0.2-alpha.49
 - 更新了 Sidebar 的UI
