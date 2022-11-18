@@ -5,8 +5,11 @@
         @click="handleClickNow">
         {{ labels.now }}
       </wt-button>
-      <wt-button size="small" type="primary"
+      <wt-button
+        size="small"
+        type="primary"
         @click="handleSuccess"
+        style="color: #fff;"
       >
         {{ labels.ok }}
       </wt-button>
