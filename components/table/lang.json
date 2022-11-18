@@ -1,113 +1,114 @@
 {
-    "chinese": {
-      "component_desc": "用于展示行列数据",
-      "module1": {
-        "title": "数据表格",
-        "subtitle1": "默认",
-        "subtitle2": "紧凑",
-        "subtitle3": "可排序",
-        "subtitle4": "可展开",
-        "subtitle5": "行选择"
-      },
-      "module2": {
-        "title": "表格展示",
-        "subtitle1": "表头固定",
-        "subtitle2": "表列固定"
-      },
-      "module3": {
-        "title": "自定义列模板"
-      },
-      "api": {
-        "data": "显示的数据",
-        "height": "Table 的高度。如果 height 为 number 类型，单位px；如果 height 为 string 类型，则这个高度会设置为 Table 的 style.height 的值，Table 的高度会受控于外部样式",
-        "max-height": "Table 的最大高度",
-        "row-key": "行数据的 Key，用来优化 Table 的渲染；类型为 String 时，支持多层访问：user.info.id，但不支持user.info[0].id，此种情况请使用Function",
-        "expand-row-keys": "可以通过该属性设置 Table 目前的展开行，需要设置 row-key 属性才能使用，该属性为展开行的 keys 数组",
-        "pagination": "分页器，参考pagination文档，设为 false 时不展示和进行分页",
-        "expandable": "对 tableColumn[type=expand] 的列有效，function 的返回值用来决定这一行的是否可以展开",
-        "sort-order": "默认的排序列的 prop 和顺序。它的 prop 属性指定默认的排序的列，order 指定默认排序的顺序",
-        "row-col-span": "合并行合并列的计算方法",
-        "selection": "当前表格选中的值",
-        "checkboxable": "仅对 tableColumn[type=selection] 的列有效，function 的返回值用来决定这一行的 Checkbox 是否可以勾选",
-        "reserve-selection": "仅对 tableColumn[type=selection] 的列有效，当为 true 是则会在数据更新之后保留之前选中的数据（需配合 index-of-selection 来使用）",
-        "index-of-selection": "仅对 tableColumn[type=selection] 的列有效，返回当前 row 在 selection 中的位置，当返回值 > -1 时则表示选中，否则则表示未选中",
-        "show-overflow-tooltip": "当内容过长时展示省略号，hover 时是否显示 tooltip 展示全部内容，也支持配置在 table-column 上",
-        "tooltip-props": "当内容过长时，显示 tooltip 的透传属性",
-        "highlight-current-row": "是否高亮当前行",
-        "current-row-key": "只读属性，当前行的 row-key",
-        "empty": "空数据时展示",
-        "loading": "加载中展示",
-        "sortIcon": "自定义排序 icon 展示, order 为排序方式, change 则为触发排序的响应函数，详细请查看 Ones",
-        "select": "当用户手动勾选数据行的 Checkbox 时触发的事件",
-        "select-all": "当用户手动勾选全选的 Checkbox 时触发的事件",
-        "selection-change": "当选择项发生变化时会触发该事件",
-        "row-click": "当某一行被点击时会触发该事件",
-        "row-mouse-enter": "当某一行触发 mouseenter 事件时触发",
-        "row-mouse-leave": "当某一行触发 mouseleave 事件时触发",
-        "cell-click": "当某一单元格被点击时会触发该事件",
-        "cell-mouse-enter": "当某一单元格触发 mouseenter 事件时触发",
-        "cell-mouse-leave": "当某一单元格触发 mouseleave 事件时触发",
-        "header-click": "当某一列的表头被点击时触发该事件",
-        "sort-change": "当表格的排序条件发生变化的时候触发该事件。0.1.43 版本后推荐使用 change 事件",
-        "expand-change": "当用户对某一行展开或者关闭的时候会触发该事件",
-        "change": "当表格的筛选条件或排序条件发生变化时会触发该事件，参数为当前过滤条件 filters，当前排序条件 sorter。当筛选、排序条件不存在时对应的参数将为空 Object",
-        "doReflow": "对 Table 进行重新布局。当 Table 或其祖先元素由隐藏切换为显示时，可能需要调用此方法"
-      }
+  "chinese": {
+    "component_desc": "用于展示行列数据",
+    "module1": {
+      "title": "数据表格",
+      "subtitle1": "默认",
+      "subtitle2": "紧凑",
+      "subtitle3": "可排序",
+      "subtitle4": "可展开",
+      "subtitle5": "行选择"
     },
-    "english": {
-      "component_desc": "Used to display column and column data",
-      "module1": {
-        "title": "Data Table",
-        "subtitle1": "Default",
-        "subtitle2": "Compact",
-        "subtitle3": "Sortable",
-        "subtitle4": "Expandable",
-        "subtitle5": "RowSelect"
-      },
-      "module2": {
-        "title": "Presentation Mode",
-        "subtitle1": "Table header fixed",
-        "subtitle2": "Table column fixed"
-      },
-      "module3": {
-        "title": "Customize column template"
-      },
-      "api": {
-        "data": "Data displayed",
-        "height": "Table height. If height is Number, the unit is px; If height is String, the height is set to the value of the Table's style.height, and the Table's height is controlled by the external style.",
-        "max-height": "Maximum height of Table.",
-        "row-key": "Key of row data, used to optimize Table rendering; If the type is String, user.info.id is supported, but user.info[0].id is not supported. In this case, please use Function.",
-        "expand-row-keys": "This property can be used to set the current expanded row of the Table. To use this property, you need to set the row-key property, which is the keys array of the expanded row.",
-        "pagination": "Pager, refer to Pagination document, set to false not to display and paginate.",
-        "expandable": "This is valid for columns of tableColumn[type=expand], and the return value of function is used to determine whether this row can be expanded.",
-        "sort-order": "Default ordination of prop and order. Its prop property specifies the default sort column, and order specifies the default sort order.",
-        "row-col-span": "The calculation method of merging rows and columns.",
-        "selection": "The value selected for the current table.",
-        "checkboxable": "This is valid only for columns of tableColumn[type=selection]. The return value of function is used to determine whether the Checkbox of this row can be checked.",
-        "reserve-selection": "This parameter is valid only for tableColumn[type=selection] columns. If true, the previously selected data will be preserved after the data is updated (use with index-of-selection).",
-        "index-of-selection": "This parameter is valid only for columns of tableColumn[type=selection] and returns the position of the current row in selection. If the value > -1, the row is selected. Otherwise, the row is not selected.",
-        "show-overflow-tooltip": "If the content is too long, ellipses are displayed. If the content is hover, whether to display tooltip to display all content can also be configured on table-column.",
-        "tooltip-props": "Displays the passthrough properties of the Tooltip when the content is too long.",
-        "highlight-current-row": "Whether to highlight the current row.",
-        "current-row-key": "Read-only property, row-key of current row.",
-        "empty": "Displayed when data is empty.",
-        "loading": "Displayed when loading.",
-        "sortIcon": "Custom sort icon display, order is the sort mode, change is the response function that triggers the sort.",
-        "select": "Event triggered when the user manually checks the Checkbox of a data row.",
-        "select-all": "Event triggered when the user manually checks a Checkbox that is all selected.",
-        "selection-change": "This event is triggered when the selection changes.",
-        "row-click": "This event is triggered when a cell is clicked.",
-        "row-mouse-enter": "Triggered when a row fires the MouseEnter event.",
-        "row-mouse-leave": "Triggered when a cell fires the Mouseleave event.",
-        "cell-click": "Triggered when cell be clicked.",
-        "cell-mouse-enter": "Triggered when a cell fires the MouseEnter event.",
-        "cell-mouse-leave": "Triggered when a cell fires the MouseOver event.",
-        "header-click": "Triggered when the header of column be clicked.",
-        "sort-change": "Triggered when the table's sorting criteria change. After 0.1.43, the change event is recommended.",
-        "expand-change": "Triggered when the user expands or closes a row.",
-        "change": "Triggered when the filter condition or sorting condition of the table changes. The parameter is the current filter condition and the current sorting condition sorter. When the filter or sort condition does not exist, the corresponding parameter is empty Object.",
-        "doReflow": "Relayout the Table. This method may need to be called when the Table or its ancestor elements are switched from hidden to displayed."
-      }
+    "module2": {
+      "title": "表格展示",
+      "subtitle1": "表头固定",
+      "subtitle2": "表列固定"
+    },
+    "module3": {
+      "title": "自定义列模板"
+    },
+    "api": {
+      "data": "显示的数据",
+      "height": "Table 的高度。如果 height 为 number 类型，单位px；如果 height 为 string 类型，则这个高度会设置为 Table 的 style.height 的值，Table 的高度会受控于外部样式",
+      "max-height": "Table 的最大高度",
+      "row-key": "行数据的 Key，用来优化 Table 的渲染；类型为 String 时，支持多层访问：user.info.id，但不支持user.info[0].id，此种情况请使用Function",
+      "expand-row-keys": "可以通过该属性设置 Table 目前的展开行，需要设置 row-key 属性才能使用，该属性为展开行的 keys 数组",
+      "pagination": "分页器，参考pagination文档，设为 false 时不展示和进行分页",
+      "expandable": "对 tableColumn[type=expand] 的列有效，function 的返回值用来决定这一行的是否可以展开",
+      "sort-order": "默认的排序列的 prop 和顺序。它的 prop 属性指定默认的排序的列，order 指定默认排序的顺序",
+      "row-col-span": "合并行合并列的计算方法",
+      "selection": "当前表格选中的值",
+      "checkboxable": "仅对 tableColumn[type=selection] 的列有效，function 的返回值用来决定这一行的 Checkbox 是否可以勾选",
+      "reserve-selection": "仅对 tableColumn[type=selection] 的列有效，当为 true 是则会在数据更新之后保留之前选中的数据（需配合 index-of-selection 来使用）",
+      "index-of-selection": "仅对 tableColumn[type=selection] 的列有效，返回当前 row 在 selection 中的位置，当返回值 > -1 时则表示选中，否则则表示未选中",
+      "show-overflow-tooltip": "当内容过长时展示省略号，hover 时是否显示 tooltip 展示全部内容，也支持配置在 table-column 上",
+      "tooltip-props": "当内容过长时，显示 tooltip 的透传属性",
+      "highlight-current-row": "是否高亮当前行",
+      "current-row-key": "只读属性，当前行的 row-key",
+      "loading": "是否正在加载中",
+      "slot_empty": "空数据时展示",
+      "slot_loading": "加载中展示",
+      "sortIcon": "自定义排序 icon 展示, order 为排序方式, change 则为触发排序的响应函数，详细请查看 Ones",
+      "select": "当用户手动勾选数据行的 Checkbox 时触发的事件",
+      "select-all": "当用户手动勾选全选的 Checkbox 时触发的事件",
+      "selection-change": "当选择项发生变化时会触发该事件",
+      "row-click": "当某一行被点击时会触发该事件",
+      "row-mouse-enter": "当某一行触发 mouseenter 事件时触发",
+      "row-mouse-leave": "当某一行触发 mouseleave 事件时触发",
+      "cell-click": "当某一单元格被点击时会触发该事件",
+      "cell-mouse-enter": "当某一单元格触发 mouseenter 事件时触发",
+      "cell-mouse-leave": "当某一单元格触发 mouseleave 事件时触发",
+      "header-click": "当某一列的表头被点击时触发该事件",
+      "sort-change": "当表格的排序条件发生变化的时候触发该事件。0.1.43 版本后推荐使用 change 事件",
+      "expand-change": "当用户对某一行展开或者关闭的时候会触发该事件",
+      "change": "当表格的筛选条件或排序条件发生变化时会触发该事件，参数为当前过滤条件 filters，当前排序条件 sorter。当筛选、排序条件不存在时对应的参数将为空 Object",
+      "doReflow": "对 Table 进行重新布局。当 Table 或其祖先元素由隐藏切换为显示时，可能需要调用此方法"
+    }
+  },
+  "english": {
+    "component_desc": "Used to display column and column data",
+    "module1": {
+      "title": "Data Table",
+      "subtitle1": "Default",
+      "subtitle2": "Compact",
+      "subtitle3": "Sortable",
+      "subtitle4": "Expandable",
+      "subtitle5": "RowSelect"
+    },
+    "module2": {
+      "title": "Presentation Mode",
+      "subtitle1": "Table header fixed",
+      "subtitle2": "Table column fixed"
+    },
+    "module3": {
+      "title": "Customize column template"
+    },
+    "api": {
+      "data": "Data displayed",
+      "height": "Table height. If height is Number, the unit is px; If height is String, the height is set to the value of the Table's style.height, and the Table's height is controlled by the external style.",
+      "max-height": "Maximum height of Table.",
+      "row-key": "Key of row data, used to optimize Table rendering; If the type is String, user.info.id is supported, but user.info[0].id is not supported. In this case, please use Function.",
+      "expand-row-keys": "This property can be used to set the current expanded row of the Table. To use this property, you need to set the row-key property, which is the keys array of the expanded row.",
+      "pagination": "Pager, refer to Pagination document, set to false not to display and paginate.",
+      "expandable": "This is valid for columns of tableColumn[type=expand], and the return value of function is used to determine whether this row can be expanded.",
+      "sort-order": "Default ordination of prop and order. Its prop property specifies the default sort column, and order specifies the default sort order.",
+      "row-col-span": "The calculation method of merging rows and columns.",
+      "selection": "The value selected for the current table.",
+      "checkboxable": "This is valid only for columns of tableColumn[type=selection]. The return value of function is used to determine whether the Checkbox of this row can be checked.",
+      "reserve-selection": "This parameter is valid only for tableColumn[type=selection] columns. If true, the previously selected data will be preserved after the data is updated (use with index-of-selection).",
+      "index-of-selection": "This parameter is valid only for columns of tableColumn[type=selection] and returns the position of the current row in selection. If the value > -1, the row is selected. Otherwise, the row is not selected.",
+      "show-overflow-tooltip": "If the content is too long, ellipses are displayed. If the content is hover, whether to display tooltip to display all content can also be configured on table-column.",
+      "tooltip-props": "Displays the passthrough properties of the Tooltip when the content is too long.",
+      "highlight-current-row": "Whether to highlight the current row.",
+      "current-row-key": "Read-only property, row-key of current row.",
+      "loading": "Whether to show loading status",
+      "slot_empty": "Displayed when data is empty.",
+      "slot_loading": "Displayed when loading.",
+      "sortIcon": "Custom sort icon display, order is the sort mode, change is the response function that triggers the sort.",
+      "select": "Event triggered when the user manually checks the Checkbox of a data row.",
+      "select-all": "Event triggered when the user manually checks a Checkbox that is all selected.",
+      "selection-change": "This event is triggered when the selection changes.",
+      "row-click": "This event is triggered when a cell is clicked.",
+      "row-mouse-enter": "Triggered when a row fires the MouseEnter event.",
+      "row-mouse-leave": "Triggered when a cell fires the Mouseleave event.",
+      "cell-click": "Triggered when cell be clicked.",
+      "cell-mouse-enter": "Triggered when a cell fires the MouseEnter event.",
+      "cell-mouse-leave": "Triggered when a cell fires the MouseOver event.",
+      "header-click": "Triggered when the header of column be clicked.",
+      "sort-change": "Triggered when the table's sorting criteria change. After 0.1.43, the change event is recommended.",
+      "expand-change": "Triggered when the user expands or closes a row.",
+      "change": "Triggered when the filter condition or sorting condition of the table changes. The parameter is the current filter condition and the current sorting condition sorter. When the filter or sort condition does not exist, the corresponding parameter is empty Object.",
+      "doReflow": "Relayout the Table. This method may need to be called when the Table or its ancestor elements are switched from hidden to displayed."
     }
   }
-  
+}

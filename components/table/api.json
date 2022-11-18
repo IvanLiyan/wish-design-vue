@@ -1,5 +1,6 @@
 {
-  "props": [{
+  "props": [
+    {
       "name": "data",
       "desc": "$t('table.api.data')",
       "type": "Array",
@@ -10,7 +11,10 @@
     {
       "name": "height",
       "desc": "$t('table.api.height')",
-      "type": ["string", "number"],
+      "type": [
+        "string",
+        "number"
+      ],
       "optionalValue": "",
       "default": "",
       "version": ""
@@ -18,7 +22,10 @@
     {
       "name": "max-height",
       "desc": "$t('table.api.max-height')",
-      "type": ["string", "number"],
+      "type": [
+        "string",
+        "number"
+      ],
       "optionalValue": "",
       "default": "",
       "version": ""
@@ -26,7 +33,10 @@
     {
       "name": "row-key",
       "desc": "$t('table.api.row-key')",
-      "type": ["Function(row)", "String"],
+      "type": [
+        "Function(row)",
+        "String"
+      ],
       "optionalValue": "",
       "default": "",
       "version": ""
@@ -44,6 +54,14 @@
       "desc": "$t('table.api.pagination')",
       "type": "Object",
       "optionalValue": "",
+      "default": "false",
+      "version": ""
+    },
+    {
+      "name": "loading",
+      "desc": "$t('table.api.loading')",
+      "type": "Boolean",
+      "optionalValue": "true / false",
       "default": "false",
       "version": ""
     },
@@ -135,7 +153,8 @@
       "version": "0.3.0"
     }
   ],
-  "events": [{
+  "events": [
+    {
       "name": "select",
       "desc": "$t('table.api.select')",
       "args": "(selection: Array,row: object)"
@@ -202,24 +221,29 @@
       "version": "0.1.43"
     }
   ],
-  "slots": [{
+  "slots": [
+    {
       "name": "empty",
-      "desc": "$t('table.api.empty')"
+      "desc": "$t('table.api.slot_empty')"
     },
     {
       "name": "loading",
-      "desc": "$t('table.api.loading')"
+      "desc": "$t('table.api.slot_loading')"
     }
   ],
-  "methods": [{
-    "name": "doReflow()",
-    "desc": "$t('table.api.doReflow')",
-    "args": ""
-  }],
-  "scopedSlots": [{
-    "name": "sortIcon",
-    "desc": "$t('table.api.sortIcon')",
-    "args": "{ <br />order?: 'ascending' | 'descending', <br />change: function ($event) <br />}",
-    "version": "0.3.5"
-  }]
+  "methods": [
+    {
+      "name": "doReflow()",
+      "desc": "$t('table.api.doReflow')",
+      "args": ""
+    }
+  ],
+  "scopedSlots": [
+    {
+      "name": "sortIcon",
+      "desc": "$t('table.api.sortIcon')",
+      "args": "{ <br />order?: 'ascending' | 'descending', <br />change: function ($event) <br />}",
+      "version": "0.3.5"
+    }
+  ]
 }
