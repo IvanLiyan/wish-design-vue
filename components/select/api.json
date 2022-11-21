@@ -25,6 +25,14 @@
       "version": ""
     },
     {
+      "name": "value-key",
+      "desc": "$t('select.api.value-key')",
+      "type": "string",
+      "optionalValue": "",
+      "default": "",
+      "version": ""
+    },
+    {
       "name": "invalid",
       "desc": "$t('select.api.invalid')",
       "type": "boolean",

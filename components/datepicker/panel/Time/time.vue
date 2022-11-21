@@ -28,8 +28,13 @@
           Current time
         </span>
         <span v-else></span>
-        <wt-button type="primary" :class="!confirmDisabled ? 'btn' : 'btn disabled'" :disabled="confirmDisabled"
-          @click="handleConfirm">
+        <wt-button
+          type="primary"
+          :class="!confirmDisabled ? 'btn' : 'btn disabled'"
+          :disabled="confirmDisabled"
+          @click="handleConfirm"
+          :style="confirmDisabled ? 'color: #bfcdd4;' : 'color: #fff;'"
+        >
           Confirm
         </wt-button>
       </div>
