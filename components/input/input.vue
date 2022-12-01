@@ -4,14 +4,17 @@
       :class="{
         [`${inputPrefix}-wrapper`]: true,
         [`${inputPrefix}-${type}`]: type,
-        [`${inputPrefix}-with-label`]: label,
+        [`${inputPrefix}-with-label`]: label || $slots.label,
         [`${inputPrefix}-disabled`]: disabled,
         [`${inputPrefix}-invalid`]: isInvalid,
         [`${inputPrefix}-focused`]: focused,
       }"
       :style="{ height: newHeight + 'px' }"
     >
-      <legend v-if="label" :class="{ 'space-label': !label.trim() }">{{ label }}</legend>
+      <!-- <legend v-if="label" :class="{ 'space-label': !label.trim() }">{{ label }}</legend> -->
+      <legend v-if="$slots.label || label">
+        <slot :class="{ 'space-label': !label.trim() }" name="label">{{ label }}</slot>
+      </legend>
       <div :class="`${inputPrefix}-con`">
         <slot name="prefix"></slot>
         <textarea

@@ -1,58 +1,100 @@
 # @ContextLogic/wt-vue
 
-> 一套 Vue.js 的组件库. http://wt-vue.dev.bjs.i.wish.com/
+## 全局安装 babel-cli、webpack、webpack-cli
 
-## 1.0 计划
+## Dev
 
-目前仍在一期组件开发中，具体组件规划安排请参考文档：https://wiki.wish.site/display/WF/wish-design-vue#wishdesignvue-Plan
+### Suggestion Dev Env
+- node.js: v16.17.0
+- npm: 8.15.0
 
-## 支持环境
+### Dev Steps
 
-现代浏览器和 IE10 及以上（包含不限于：Chrome、Firefox、搜狗高速、QQ 浏览器、IE 11.0、IE 10.0）
-
-## 安装
-
-若没有公司镜像源需先执行 1、2 步，否则直接执行 3
-
-1、安装 nrm 管理镜像源
-
-```
-npm i nrm -g
+```bash
+npm run node-i # 安装项目依赖
 ```
 
-2、使用 nrm 添加公司的镜像源 wnpm，切换至 wnpm 源并且登陆
+#### 常用 NPM Script 命令
 
-```
-nrm add wnpm http://npm.bjs.i.wish.com/
-nrm use wnpm
-nrm login     - 若还没有用账号请先添加：npm adduser
-```
+```bash
+# 启动 dev 环境服务
+npm start
 
-3、安装组件库
+# 构建完整组件库
+npm run build
 
-```
-npm i  @wish/wt-vue@alpha
-```
+# 运行单元测试
+npm run unit
 
-## 使用
+# 以 watch 方式运行单元测试
+npm run unit:watch
 
-1、引入 默认主题 样式
+# 语法检查
+npm run lint
 
-```
-import '@ContextLogic/wt-vue/dist/wt-vue.min.css'
-```
-
-2、引入组件库
-
-```
-import Vue from 'vue'
-import WT from '@wish/wt-vue'
-
-Vue.use(WT)
+# 创建新的组件
+npm run create <componentName> [chineseName]
 ```
 
-3、使用组件
+其他 script 命令可查看 package.json 中 scripts 内容。
+
+#### If you get an error about `FsEvents` after running `npm start`, please run `npm install watchman`
+
+#### 目录结构
 
 ```
-<wt-button>基础按钮</wt-button>
+├── build # 编译配置及脚本
+├── config # 项目配置
+├── site # demo 项目
+├── components # 组件源码
+├── src # 公共模块源码
+├── test # 测试相关配置及结果
+├── components.json # 组件定义
+├── types # ts 类型定义
+└── package.json
 ```
+
+todo: Icon 自定义组件集成支持 ,待 UI 提供设计 icon
+
+todo 未支持按需加载，若支持需要 lib 里面以组件文件夹形式存放组件相关内容
+// rate、transfer、autocomplete、color-picker、picker、popconfirm、anchor、affix、config-provider
+
+## 版本记录
+
+#### 0.0.2-alpha.41
+·修复了Tab组件的bug
+·新增了Datepicker的API - value-format
+
+#### 0.0.2-alpha.42
+·新增了Table的demo - 自定义单元格 CustomCell
+
+#### 0.0.2-alpha.43
+·Pagination组件集成进Table组件 - 可通过API实现使用Table组件内的分页
+
+#### 0.0.2-alpha.45
+·Table组件内置Pagination位置设为text-right
+
+#### 0.0.2-alpha.47
+·Layout 组件去除API —— direction
+·Menu 翻译
+·Stepper 翻译
+·Dialog 翻译
+
+#### 0.0.2-alpha.49
+·更新了Sidebar的UI
+
+#### 0.0.2-alpha.50
+·修复了`<select />`的双层边框bug
+·修复了`<timeline />`圆点的位置
+·校准了`<timeline />`在normal状态下的圆点颜色
+
+#### 0.0.2-alpha.51
+·修复了`<wt-table />`内置pagination的api缺失问题
+
+#### 0.0.2-alpha.52
+·修复了`<Select />`的bug: value-key
+·修复了`<Datepicker />`和`<Timepicker />`在某些情况下确认按钮字体颜色被覆盖的bug
+·`<Table />`新增了文档说明，新的API —— loading
+
+#### 0.0.2-alpha.54
+·`<Input />`和`<Select />`新增插槽`slot=label`，自定义标签内容

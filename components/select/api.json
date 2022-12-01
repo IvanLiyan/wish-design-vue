@@ -3,7 +3,12 @@
     {
       "name": "value",
       "desc": "$t('select.api.value')",
-      "type": ["string", "number", "object", "Array"],
+      "type": [
+        "string",
+        "number",
+        "object",
+        "Array"
+      ],
       "optionalValue": "",
       "default": "",
       "version": ""
@@ -11,7 +16,9 @@
     {
       "name": "label",
       "desc": "$t('select.api.label')",
-      "type": ["string"],
+      "type": [
+        "string"
+      ],
       "optionalValue": "",
       "default": "",
       "version": ""
@@ -145,6 +152,13 @@
     {
       "name": "blur()",
       "desc": "$t('select.api.blur()')",
+      "version": ""
+    }
+  ],
+  "slots": [
+    {
+      "name": "label",
+      "desc": "$t('select.api.slot_label')",
       "version": ""
     }
   ]

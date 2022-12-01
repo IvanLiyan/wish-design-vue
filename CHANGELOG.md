@@ -1,5 +1,8 @@
 # 更新日志
 
+## 0.0.2-alpha.54
+- `<Input />`和`<Select />`新增插槽`slot=label`，自定义标签内容
+
 ## 0.0.2-alpha.52
 - 修复了`<Select />`的bug: value-key
 - 修复了`<Datepicker />`和`<Timepicker />`在某些情况下确认按钮字体颜色被覆盖的bug
