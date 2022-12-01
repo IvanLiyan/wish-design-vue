@@ -12,7 +12,8 @@
       "title": "应用场景",
       "subtitle1": "单选",
       "subtitle2": "多选",
-      "subtitle3": "搜索选择"
+      "subtitle3": "搜索选择",
+      "subtitle4": "自定义标签内容"
     },
     "api": {
       "value": "select当前选中值,多选时为数组",
@@ -36,7 +37,8 @@
       "update:visible": "下拉框显示／隐藏状态变化时触发",
       "remove": "多选模式下移除 tag 时触发",
       "focus()": "使选择框获取焦点，并打开选择框",
-      "blur()": "使选择框失去焦点，并关闭选择框"
+      "blur()": "使选择框失去焦点，并关闭选择框",
+      "slot_label": "自定义标签内容"
     }
   },
   "english": {
@@ -52,7 +54,8 @@
       "title": "Applications",
       "subtitle1": "Single select",
       "subtitle2": "Multiple select",
-      "subtitle3": "Search and select"
+      "subtitle3": "Search and select",
+      "subtitle4": "Customize label content"
     },
     "api": {
       "value": "Value of selected options, use array if multiple options get selected",
@@ -76,7 +79,8 @@
       "update:visible": "Triggered when the dropdown menu show/hide changes",
       "remove": "Use for multiple select, triggered when removing one selected tag",
       "focus()": "Focus on the select and open its dropdown menu",
-      "blur()": "Select lost focus and close its dropdown menu"
+      "blur()": "Select lost focus and close its dropdown menu",
+      "slot_label": "Customize label content"
     }
   }
 }

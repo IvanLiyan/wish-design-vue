@@ -30,6 +30,11 @@
 :::include(src="./doc/search.vue")
 :::
 
+### <span>{{$t('select.module3.subtitle4')}}</span>
+
+:::include(src="./doc/custom-label.vue")
+:::
+
 ## API
 
 <api-doc name="Select" :doc="require('./api.json')"></api-doc>

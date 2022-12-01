@@ -87,6 +87,7 @@
           @keydown.tab="focused = false"
           :class="{ [`${prefix}-search-focus`]: focused }"
         >
+          <slot slot="label" name="label" v-if="$slots.label">{{ label }}</slot>
           <span slot="suffix" :class="`${prefix}-suffix-inner`">
             <Icon v-if="!loading" name="chevron-down" />
             <wt-loading v-else message="" size="small" />
@@ -239,7 +240,7 @@ export default {
       isSelectAll: false, // 是否全选
       isMounted: false, // 是否mounted
       tagsHeight: 36, // tag默认高度
-      newHeight: this.label ? 44 : 36, // 计算高度
+      newHeight: (this.label || this.$slots.label) ? 44 : 36, // 计算高度
       showCheckbox: true, // 是否显示checkbox
       isEmpty: false, // 是否手动设置选项为空
     };
