@@ -8,7 +8,7 @@ import Icon from '@components/icon';
 import LayoutObserver from './layout-observer';
 import { mapStates } from './store';
 import debounce from 'throttle-debounce/debounce';
-function defaultFindTreeColumnIndex (columns) {
+function defaultFindTreeColumnIndex(columns) {
   return columns.findIndex((column) => {
     return column.type === 'default';
   });
@@ -40,7 +40,7 @@ export default {
     disableMouseEvent: Boolean,
   },
 
-  render (h) {
+  render(h) {
     const { prefix } = this;
     const findTreeColumnIndex = this.table.findTreeColumnIndex ||
       defaultFindTreeColumnIndex;
@@ -69,7 +69,7 @@ export default {
       !hasChild && classes.push(`${prefix}-hidden`);
       expanded && classes.push(`${prefix}-expand-icon-expanded`);
       return <div class={classes.join(' ')}
-        onClick={(e) => this.handleExpandClick(e, row, $index) }
+        onClick={(e) => this.handleExpandClick(e, row, $index)}
         style={{
           marginLeft: level > 0 ? `${level * indent}px` : 0,
         }}
@@ -88,7 +88,7 @@ export default {
         border="0">
         <colgroup>
           {
-            this._l(this.columns, column => <col name={ column.id } />)
+            this._l(this.columns, column => <col name={column.id} />)
           }
         </colgroup>
         <tbody>
@@ -97,7 +97,7 @@ export default {
               [<tr
                 style={
                   this.rowStyle
-                    ? this.getRowStyle(row, $index) : null }
+                    ? this.getRowStyle(row, $index) : null}
                 key={
                   this.table.rowKey
                     ? this.getKeyOfRow(row, $index) : $index
@@ -117,7 +117,7 @@ export default {
                 on-mouseleave={
                   ($event) => this.handleMouseLeave($event, row)
                 }
-                class={ [this.getRowClass(row, $index)] }>
+                class={[this.getRowClass(row, $index)]}>
                 {
                   this._l(this.columns, (column, cellIndex) => {
                     const {
@@ -135,18 +135,18 @@ export default {
                           class={
                             this.getCellClass($index, cellIndex, row, column)
                           }
-                          rowspan={ rowspan }
-                          colspan={ colspan }
+                          rowspan={rowspan}
+                          colspan={colspan}
                           on-mouseenter={
                             ($event) => this.handleCellMouseEnter($event, row)
                           }
-                          on-mouseleave={ this.handleCellMouseLeave }>
+                          on-mouseleave={this.handleCellMouseLeave}>
                           <div class={`${prefix}-cell`}>
                             {cellIndex === treeIndentIndex &&
                               renderTreeExpaned(row, column, $index, cellIndex)}
-                            { this.hasTooltip(column)
+                            {this.hasTooltip(column)
                               ? <div class={`${prefix}-cell-tooltip`}>
-                                { renderColumn(row, column, $index, cellIndex) }
+                                {renderColumn(row, column, $index, cellIndex)}
                               </div>
                               : renderColumn(row, column, $index, cellIndex)
                             }
@@ -160,10 +160,10 @@ export default {
               !this.tree && this.store.isExpanded(row, $index)
                 ? (<tr>
                   <td
-                    colspan={ this.columns.length }
+                    colspan={this.columns.length}
                     class={`${prefix}-expanded-cell`}>
                     <div class={`${prefix}-cell`}>
-                      { this.table.renderExpanded
+                      {this.table.renderExpanded
                         ? this.table.renderExpanded(
                           h,
                           { row, $index, store: this.store },
@@ -182,7 +182,7 @@ export default {
   },
 
   watch: {
-    'store.states.hoverRow' (newVal, oldVal) {
+    'store.states.hoverRow'(newVal, oldVal) {
       if (!this.isComplex || this.$isServer) return;
       const el = this.$el;
       if (!el) return;
@@ -200,7 +200,7 @@ export default {
   },
 
   computed: {
-    table () {
+    table() {
       return this.$parent;
     },
     ...mapStates({
@@ -213,15 +213,15 @@ export default {
       leftFixedLeafCount: (states) => states.fixedLeafColumns.length,
       rightFixedLeafCount: (states) => states.rightFixedLeafColumns.length,
     }),
-    currentRow () {
+    currentRow() {
       return this.store.states.currentRow;
     },
-    tree () {
+    tree() {
       return this.table.tree;
     },
   },
 
-  data () {
+  data() {
     return {
       tooltipContent: '',
       tooltipVisible: false,
@@ -229,7 +229,7 @@ export default {
   },
 
   methods: {
-    getKeyOfRow (row, index) {
+    getKeyOfRow(row, index) {
       const rowKey = this.table.rowKey;
       if (rowKey) {
         return getRowIdentity(row, rowKey);
@@ -237,19 +237,19 @@ export default {
       return index;
     },
 
-    isColumnHidden (index) {
+    isColumnHidden(index) {
       if (this.fixed === true || this.fixed === 'left') {
         return index >= this.leftFixedLeafCount;
       } else if (this.fixed === 'right') {
         return index < this.columnsCount - this.rightFixedLeafCount;
       } else {
         return (index < this.leftFixedLeafCount) ||
-        (index >= this.columnsCount - this.rightFixedLeafCount);
+          (index >= this.columnsCount - this.rightFixedLeafCount);
       }
     },
 
     // 合并行列
-    getSpan (row, column, rowIndex, columnIndex) {
+    getSpan(row, column, rowIndex, columnIndex) {
       let rowspan = 1;
       let colspan = 1;
 
@@ -277,7 +277,7 @@ export default {
       };
     },
 
-    getRowStyle (row, rowIndex) {
+    getRowStyle(row, rowIndex) {
       const rowStyle = this.table.rowStyle;
       if (typeof rowStyle === 'function') {
         return rowStyle({
@@ -288,7 +288,7 @@ export default {
       return rowStyle;
     },
 
-    getRowClass (row, rowIndex) {
+    getRowClass(row, rowIndex) {
       const { prefix } = this;
       const classes = [`${prefix}-row`];
 
@@ -311,7 +311,7 @@ export default {
       return classes.join(' ');
     },
 
-    getCellStyle (rowIndex, columnIndex, row, column) {
+    getCellStyle(rowIndex, columnIndex, row, column) {
       const cellStyle = this.table.cellStyle;
       if (typeof cellStyle === 'function') {
         return cellStyle({
@@ -324,7 +324,7 @@ export default {
       return cellStyle;
     },
 
-    getCellClass (rowIndex, columnIndex, row, column) {
+    getCellClass(rowIndex, columnIndex, row, column) {
       const classes = [column.id, column.alignClass, column.className];
       const { prefix } = this;
       if (this.isColumnHidden(columnIndex)) {
@@ -349,7 +349,7 @@ export default {
       return classes.join(' ');
     },
 
-    handleCellMouseEnter (event, row) {
+    handleCellMouseEnter(event, row) {
       const table = this.table;
       const cell = getCell(event);
 
@@ -373,7 +373,8 @@ export default {
         if (this.disableMouseEvent) return;
         table.hoverState = hoverState;
         table.$emit(
-          'cell-mouse-enter', {
+          'cell-mouse-enter',
+          {
             event,
             ...hoverState,
           },
@@ -381,7 +382,7 @@ export default {
       }
     },
 
-    handleCellMouseLeave (event) {
+    handleCellMouseLeave(event) {
       const { table } = this;
       table.hideTooltip();
       if (this.disableMouseEvent) return;
@@ -411,15 +412,15 @@ export default {
       this.table.$emit('row-mouse-leave', { event, row });
     }),
 
-    handleContextMenu (event, row) {
+    handleContextMenu(event, row) {
       this.handleEvent(event, row, 'contextmenu');
     },
 
-    handleDoubleClick (event, row) {
+    handleDoubleClick(event, row) {
       this.handleEvent(event, row, 'dblclick');
     },
 
-    handleClick (event, row, $index) {
+    handleClick(event, row, $index) {
       if (this.highlight) {
         const { currentRow } = this;
         if (row !== currentRow) {
@@ -434,27 +435,27 @@ export default {
       this.handleEvent(event, row, 'click');
     },
 
-    handleEvent (event, row, name) {
+    handleEvent(event, row, name) {
       const table = this.table;
       const cell = getCell(event);
       let column;
       if (cell) {
         column = getColumnByCell(this.prefix, table, cell);
         if (column) {
-          table.$emit(`cell-${name}`, {event, row, column, cell});
+          table.$emit(`cell-${name}`, { event, row, column, cell });
         }
       }
-      table.$emit(`row-${name}`, {event, row, column});
+      table.$emit(`row-${name}`, { event, row, column });
     },
 
-    loadTreeData (row) {
+    loadTreeData(row) {
       const { store, table: { loadData } } = this;
       const { key } = row.$$wt;
       row.$$wt.loading = true;
       loadData(row, store.createLoadDataCallback(key, row));
     },
 
-    handleExpandClick (e, row, index) {
+    handleExpandClick(e, row, index) {
       e.stopPropagation();
       if (this.tree && row.$$wt) {
         const { hasChild, childCount, expanded, loading, loaded } = row.$$wt;
@@ -465,7 +466,7 @@ export default {
       this.store.toggleRowExpansion(row, index);
     },
 
-    hasTooltip (column) {
+    hasTooltip(column) {
       return column.showOverflowTooltip || this.table.showOverflowTooltip;
     },
   },

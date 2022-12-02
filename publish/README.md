@@ -62,39 +62,42 @@ todo 未支持按需加载，若支持需要 lib 里面以组件文件夹形式�
 ## 版本记录
 
 #### 0.0.2-alpha.41
-·修复了Tab组件的bug
-·新增了Datepicker的API - value-format
+- 修复了Tab组件的bug
+- 新增了Datepicker的API - value-format
 
 #### 0.0.2-alpha.42
-·新增了Table的demo - 自定义单元格 CustomCell
+- 新增了Table的demo - 自定义单元格 CustomCell
 
 #### 0.0.2-alpha.43
-·Pagination组件集成进Table组件 - 可通过API实现使用Table组件内的分页
+- Pagination组件集成进Table组件 - 可通过API实现使用Table组件内的分页
 
 #### 0.0.2-alpha.45
-·Table组件内置Pagination位置设为text-right
+- Table组件内置Pagination位置设为text-right
 
 #### 0.0.2-alpha.47
-·Layout 组件去除API —— direction
-·Menu 翻译
-·Stepper 翻译
-·Dialog 翻译
+- Layout 组件去除API —— direction
+- Menu 翻译
+- Stepper 翻译
+- Dialog 翻译
 
 #### 0.0.2-alpha.49
-·更新了Sidebar的UI
+- 更新了Sidebar的UI
 
 #### 0.0.2-alpha.50
-·修复了`<select />`的双层边框bug
-·修复了`<timeline />`圆点的位置
-·校准了`<timeline />`在normal状态下的圆点颜色
+- 修复了`<select />`的双层边框bug
+- 修复了`<timeline />`圆点的位置
+- 校准了`<timeline />`在normal状态下的圆点颜色
 
 #### 0.0.2-alpha.51
-·修复了`<wt-table />`内置pagination的api缺失问题
+- 修复了`<wt-table />`内置pagination的api缺失问题
 
 #### 0.0.2-alpha.52
-·修复了`<Select />`的bug: value-key
-·修复了`<Datepicker />`和`<Timepicker />`在某些情况下确认按钮字体颜色被覆盖的bug
-·`<Table />`新增了文档说明，新的API —— loading
+- 修复了`<Select />`的bug: value-key
+- 修复了`<Datepicker />`和`<Timepicker />`在某些情况下确认按钮字体颜色被覆盖的bug
+- `<Table />`新增了文档说明，新的API —— loading
 
 #### 0.0.2-alpha.54
-·`<Input />`和`<Select />`新增插槽`slot=label`，自定义标签内容
+- `<Input />`和`<Select />`新增插槽`slot=label`，自定义标签内容
+
+#### 0.0.2-alpha.55
+- `<Table />`的`可展开`类型中的前置箭头会随着展开与否而旋转

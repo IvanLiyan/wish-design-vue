@@ -1,5 +1,6 @@
 import { getPropByPath, hasOwn } from '@/utils/util';
-import { CONFIG_PROVIDER,
+import {
+  CONFIG_PROVIDER,
   getPrefixCls,
 } from '@/utils/config';
 import Icon from '@components/icon';
@@ -30,7 +31,7 @@ const defaults = {
   },
 };
 
-function DEFAULT_RENDER_CELL (h, { row, column, $index }) {
+function DEFAULT_RENDER_CELL(h, { row, column, $index }) {
   const property = column.prop;
 
   const value = property && getPropByPath(row, property).v;
@@ -40,20 +41,20 @@ function DEFAULT_RENDER_CELL (h, { row, column, $index }) {
   return value;
 };
 
-function DEFAULT_RENDER_HEADER (h, { row, column }) {
+function DEFAULT_RENDER_HEADER(h, { row, column }) {
   return column.label || '';
 };
 
 const forced = {
   default: {
-    renderHeader (h, data) {
+    renderHeader(h, data) {
       const { column } = data;
       const render = column.$scopedSlots.header
         ? (h, data) => column.$scopedSlots.header(data)
         : (column.renderHeaderFn || DEFAULT_RENDER_HEADER);
       return render(h, data);
     },
-    renderCell (h, data) {
+    renderCell(h, data) {
       const { column } = data;
       const render = column.$scopedSlots.default
         ? (h, data) => column.$scopedSlots.default(data)
@@ -66,12 +67,12 @@ const forced = {
       const { isAllSelected, hasAnySelected, data } = store.states;
 
       return <wt-checkbox on-click={(e) => e.stopPropagation()}
-        disabled={ data && data.length === 0 }
+        disabled={data && data.length === 0}
         indeterminate={
           hasAnySelected && !isAllSelected
         }
         on-input={store.toggleAllSelection}
-        checked={ isAllSelected } />;
+        checked={isAllSelected} />;
     },
     renderCell: function (h, { row, column, store, $index }) {
       const props = store.getCheckboxPropsByItem(row, $index);
@@ -91,7 +92,7 @@ const forced = {
         return selection({ props, on, row, $index });
       }
       return <wt-checkbox
-        {...{ attrs: props, on: on, nativeOn: nativeOn } } />;
+        {...{ attrs: props, on: on, nativeOn: nativeOn }} />;
     },
     sortable: false,
     resizable: false,
@@ -107,7 +108,7 @@ const forced = {
         return index({ row, index: i, $index });
       }
 
-      return <div>{ i }</div>;
+      return <div>{i}</div>;
     },
     sortable: false,
   },
@@ -128,9 +129,9 @@ const forced = {
         return expand(scope);
       }
 
-      return <div class={ `${this.prefix}-expand-icon ` +
-        (expanded ? `${this.prefix}-expand-icon-expanded` : '') }
-      onClick={toggle}>
+      return <div class={`${this.prefix}-expand-icon ` +
+        (expanded ? `${this.prefix}-expand-icon-expanded` : '')} onClick={toggle}
+      >
         <Icon name='right-thick' />
       </div>;
     },
@@ -218,10 +219,10 @@ export default {
     index: [Number, Function],
     sortOrders: {
       type: Array,
-      default () {
+      default() {
         return ['ascending', 'descending', null];
       },
-      validator (val) {
+      validator(val) {
         return val.every(order => ['ascending', 'descending', null]
           .indexOf(order) > -1);
       },
@@ -262,7 +263,7 @@ export default {
     },
   },
 
-  data () {
+  data() {
     return {
       column: {},
       sFilteredValue: this.filteredValue || [],
@@ -271,57 +272,57 @@ export default {
   },
 
   computed: {
-    prefix () {
+    prefix() {
       return this.config.getPrefixCls('table');
     },
-    owner () {
+    owner() {
       let parent = this.$parent;
       while (parent && !parent.tableId) {
         parent = parent.$parent;
       }
       return parent;
     },
-    columnOrTableParent () {
+    columnOrTableParent() {
       let parent = this.$parent;
       while (parent && !parent.tableId && !parent.columnId) {
         parent = parent.$parent;
       }
       return parent;
     },
-    isSubColumn () {
+    isSubColumn() {
       return this.owner !== this.columnOrTableParent;
     },
-    _width () {
+    _width() {
       return parseWidth(this.width);
     },
-    _minWidth () {
+    _minWidth() {
       return parseMinWidth(this.minWidth);
     },
-    _sortable () {
+    _sortable() {
       return this.sortable === '' ? true : this.sortable;
     },
-    _fixed () {
+    _fixed() {
       return this.fixed === '' ? true : this.fixed;
     },
-    _showOverflowTooltip () {
+    _showOverflowTooltip() {
       return this.showOverflowTooltip === null
         ? this.owner.showOverflowTooltip
         : this.showOverflowTooltip;
     },
-    _overflowSelector () {
+    _overflowSelector() {
       return this.overflowSelector === null
         ? this.owner.overflowSelector
         : this.overflowSelector;
     },
-    alignClass () {
+    alignClass() {
       return this.align ? `${this.prefix}-text-` + this.align : undefined;
     },
-    headerAlignClass () {
+    headerAlignClass() {
       return this.headerAlign
         ? `${this.prefix}-text-` + this.headerAlign
         : this.alignClass;
     },
-    _column () {
+    _column() {
       const { type } = this;
       const option = {
         id: this.columnId,
@@ -369,7 +370,7 @@ export default {
   watch: {
     _column: {
       immediate: true,
-      handler (n, v) {
+      handler(n, v) {
         Object.keys(n).forEach((k) => {
           const value = n[k];
           if (!v || value !== v[k]) {
@@ -382,19 +383,19 @@ export default {
         }
       },
     },
-    filteredValue (value) {
+    filteredValue(value) {
       this.sFilteredValue = value;
       this.column.filteredValue = this.value;
     },
-    filterDropdownVisible (visible) {
+    filterDropdownVisible(visible) {
       this.sFilterDropdownVisible = visible;
       this.column.filterDropdownVisible = this.visible;
     },
   },
-  created () {
+  created() {
     const parent = this.columnOrTableParent;
     this.columnId = (parent.tableId || parent.columnId) +
-    '_column_' + columnIdSeed++; // computed 时 id 为空
+      '_column_' + columnIdSeed++; // computed 时 id 为空
 
     this.column.id = this.columnId;
 
@@ -414,7 +415,7 @@ export default {
     }
   },
 
-  destroyed () {
+  destroyed() {
     if (!this.columnOrTableParent) return;
     const parent = this.columnOrTableParent;
     this.owner.store.removeColumn({
@@ -423,7 +424,7 @@ export default {
     });
   },
 
-  mounted () {
+  mounted() {
     const owner = this.owner;
     const parent = this.columnOrTableParent;
     let columnIndex;
@@ -443,20 +444,20 @@ export default {
       parent: this.isSubColumn ? parent.column : null,
     });
   },
-  render (h) {
+  render(h) {
     this.column.$scopedSlots = this.$scopedSlots; //
     return <div>{this.$slots.default}</div>;
   },
 
   methods: {
-    updateFilteredValue (filteredValue) {
+    updateFilteredValue(filteredValue) {
       this.$emit('update:filteredValue', filteredValue);
       if (!('filteredValue' in this.$options.propsData)) {
         this.sFilteredValue = filteredValue;
         this.column.filteredValue = this.sFilteredValue;
       }
     },
-    updateFilterDropdownVisible (filterDropdownVisible) {
+    updateFilterDropdownVisible(filterDropdownVisible) {
       this.$emit('update:filterDropdownVisible', filterDropdownVisible);
       if (!('filterDropdownVisible' in this.$options.propsData)) {
         this.sFilterDropdownVisible = filterDropdownVisible;

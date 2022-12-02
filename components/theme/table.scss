@@ -5,6 +5,7 @@
 @import "./dropdown-menu-item.scss";
 
 $table-resize-width: 2px;
+
 @mixin table-border-pseudo () {
   content: '';
   position: absolute;
@@ -23,6 +24,7 @@ $table-resize-width: 2px;
   font-size: $table-font-size;
   color: $table-color;
   text-align: left;
+
   th {
     color: $table-header-color;
     font-weight: $font-weight-medium;
@@ -31,13 +33,15 @@ $table-resize-width: 2px;
     white-space: nowrap;
     border-bottom: $table-border-width solid $table-border-color;
     padding: $table-header-padding-vertical 0;
-    &:hover{
-      .divider{
+
+    &:hover {
+      .divider {
         opacity: 1;
       }
     }
   }
-  .divider{
+
+  .divider {
     opacity: 0;
     position: absolute;
     top: 0;
@@ -46,21 +50,27 @@ $table-resize-width: 2px;
     transform: translateX(-1px);
     box-sizing: content-box;
     width: $table-resize-width;
-    background-color: rgba(0,0,0,0.04);
+    background-color: rgba(0, 0, 0, 0.04);
     z-index: 1;
-    &.hover{
+
+    &.hover {
       opacity: 1;
     }
-    &:hover, &.active{
+
+    &:hover,
+    &.active {
       background-color: $color-primary;
       opacity: 1;
     }
   }
-  td{
+
+  td {
     padding: $table-padding-vertical 0;
     border-bottom: $table-border-width solid $table-border-color;
   }
-  th, td {
+
+  th,
+  td {
     min-width: 0;
     box-sizing: border-box;
     text-overflow: ellipsis;
@@ -71,12 +81,13 @@ $table-resize-width: 2px;
 
   tr {
     background-color: $table-bgc;
-    &.#{$prefix}-table-current-row{
+
+    &.#{$prefix}-table-current-row {
       background-color: $table-current-row-bgc;
     }
   }
 
-  &-cell{
+  &-cell {
     position: relative;
     box-sizing: border-box;
     overflow: hidden;
@@ -87,13 +98,19 @@ $table-resize-width: 2px;
     padding-left: $table-padding-horizontal;
     padding-right: $table-padding-horizontal;
     font-size: $table-font-size; // td、th is set font-size to 0.
-    >.#{$prefix}-checkbox{
+
+    >.#{$prefix}-checkbox {
       vertical-align: top;
       display: grid;
     }
+
     .expand-wrapper {
       line-height: 100%;
       cursor: pointer;
+    }
+
+    .expanded-icon {
+      transform: rotate(90deg);
     }
   }
 
@@ -128,7 +145,8 @@ $table-resize-width: 2px;
     align-items: center;
     justify-content: center;
   }
-  &-loading-block{
+
+  &-loading-block {
     min-height: 60px;
     position: absolute;
     top: 0;
@@ -139,14 +157,17 @@ $table-resize-width: 2px;
     align-items: center;
     justify-content: center;
   }
-  &-loading{
-    .#{$prefix}-table-body{
+
+  &-loading {
+    .#{$prefix}-table-body {
       opacity: .5;
     }
-    .#{$prefix}-table-body-wrapper{
+
+    .#{$prefix}-table-body-wrapper {
       min-height: 120px;
     }
   }
+
   // 展开行
   &-expand-column {
     .#{$prefix}-table-cell {
@@ -156,7 +177,8 @@ $table-resize-width: 2px;
   }
 
 
-  &-expand-icon, &-tree-expand-icon {
+  &-expand-icon,
+  &-tree-expand-icon {
     position: relative;
     cursor: pointer;
     color: $table-expand-icon-color;
@@ -164,10 +186,12 @@ $table-resize-width: 2px;
     transition: transform 0.2s ease-in-out;
     height: $table-expand-height;
     text-align: center;
-    &.#{$prefix}-table-expand-icon-expanded{
+
+    &.#{$prefix}-table-expand-icon-expanded {
       transform: rotate(90deg);
     }
   }
+
   &-tree-expand-icon {
     display: inline-block;
     width: 1em;
@@ -176,31 +200,37 @@ $table-resize-width: 2px;
     margin-right: 8px;
     font-size: 16px;
   }
+
   &-expanded-cell {
     background-color: $table-bgc;
 
     // 纯属为了增加权重
     &[class*=#{$prefix}-table-cell] {
-      padding: $table-expand-cell-padding-vertical
-        $table-expand-cell-padding-horizontal;
+      padding: $table-expand-cell-padding-vertical $table-expand-cell-padding-horizontal;
     }
-    >.#{$prefix}-table-cell{
+
+    >.#{$prefix}-table-cell {
       padding: 0;
     }
-    &:hover, &.hover {
+
+    &:hover,
+    &.hover {
       background-color: transparent !important;
     }
   }
 
   &-large {
-    th{
+    th {
       padding: $table-large-header-padding-vertical 0;
     }
-    td{
+
+    td {
       padding: $table-large-padding-vertical 0;
     }
-    th, td {
-      .#{$prefix}-table-cell{
+
+    th,
+    td {
+      .#{$prefix}-table-cell {
         font-size: $table-large-font-size;
         line-height: $table-large-line-height;
       }
@@ -208,26 +238,33 @@ $table-resize-width: 2px;
   }
 
   &-small {
-    th{
+    th {
       padding: $table-small-header-padding-vertical 0;
     }
-    td{
+
+    td {
       padding: $table-small-padding-vertical 0;
     }
-    th, td {
-      .#{$prefix}-table-cell{
+
+    th,
+    td {
+      .#{$prefix}-table-cell {
         line-height: $table-small-line-height;
         font-size: 12px;
       }
     }
   }
-  &-border{
+
+  &-border {
     border: $table-border-width solid $table-border-color; // 会使得 js 宽度计算相差 2px
     border-right: none;
     border-bottom: none;
-    th, td {
+
+    th,
+    td {
       border-right: $table-border-width solid $table-border-color;
     }
+
     &::after {
       @include table-border-pseudo();
       top: 0;
@@ -235,6 +272,7 @@ $table-resize-width: 2px;
       width: 1px;
       height: 100%;
     }
+
     &::before {
       @include table-border-pseudo();
       left: 0;
@@ -243,8 +281,10 @@ $table-resize-width: 2px;
       height: 1px;
     }
   }
+
   // 拥有多级表头
-  &-group, &-border {
+  &-group,
+  &-border {
     // 表格右部伪 border
   }
 
@@ -257,7 +297,8 @@ $table-resize-width: 2px;
     visibility: hidden;
   }
 
-  &-fixed, &-fixed-right {
+  &-fixed,
+  &-fixed-right {
     position: absolute;
     top: 0;
     left: 0;
@@ -276,20 +317,27 @@ $table-resize-width: 2px;
     //   z-index: 4;
     // }
   }
-  &-empty{
-    > .#{$prefix}-table-fixed, > .#{$prefix}-table-fixed-right{
-      &::before{
+
+  &-empty {
+
+    >.#{$prefix}-table-fixed,
+    >.#{$prefix}-table-fixed-right {
+      &::before {
         display: none;
       }
     }
   }
-  &-border{
-    > .#{$prefix}-table-fixed, > .#{$prefix}-table-fixed-right{
-      &::before{
+
+  &-border {
+
+    >.#{$prefix}-table-fixed,
+    >.#{$prefix}-table-fixed-right {
+      &::before {
         display: inline-block;
       }
     }
   }
+
   &-fixed-right-patch {
     position: absolute;
     top: -1px;
@@ -339,12 +387,15 @@ $table-resize-width: 2px;
     z-index: 3;
   }
 
-  &-header-wrapper, &-body-wrapper, &-footer-wrapper {
+  &-header-wrapper,
+  &-body-wrapper,
+  &-footer-wrapper {
     width: 100%;
   }
 
   &-footer-wrapper {
     margin-top: -1px;
+
     td {
       border-top: $table-border-width solid $table-border-color;
       background-color: $table-footer-bgc;
@@ -358,30 +409,33 @@ $table-resize-width: 2px;
     border-top: 1px solid #BFCDD4;
   }
 
-  &-body, &-footer {
+  &-body,
+  &-footer {
     table-layout: fixed;
     border-collapse: separate;
   }
 
-  &-header-wrapper, &-footer-wrapper {
+  &-header-wrapper,
+  &-footer-wrapper {
     overflow: hidden;
   }
 
-  &-scrolling-none{
-    ~ .#{$prefix}-table-fixed,
-    ~ .#{$prefix}-table-fixed-right {
+  &-scrolling-none {
+
+    ~.#{$prefix}-table-fixed,
+    ~.#{$prefix}-table-fixed-right {
       box-shadow: none;
     }
   }
 
-  &-scrolling-left{
-    ~ .#{$prefix}-table-fixed {
+  &-scrolling-left {
+    ~.#{$prefix}-table-fixed {
       box-shadow: none;
     }
   }
 
-  &-scrolling-right{
-    ~ .#{$prefix}-table-fixed-right {
+  &-scrolling-right {
+    ~.#{$prefix}-table-fixed-right {
       box-shadow: none;
     }
   }
@@ -391,15 +445,16 @@ $table-resize-width: 2px;
     position: relative;
 
   }
+
   .#{$prefix}-table-border {
-    &.#{$prefix}-table-scrolling-right{
-      ~ .#{$prefix}-table-fixed-right {
+    &.#{$prefix}-table-scrolling-right {
+      ~.#{$prefix}-table-fixed-right {
         border-left: $table-border-width solid $table-border-color;
       }
     }
 
-    &.#{$prefix}-table-scrolling-left{
-      ~ .#{$prefix}-table-fixed {
+    &.#{$prefix}-table-scrolling-left {
+      ~.#{$prefix}-table-fixed {
         border-left: $table-border-width solid $table-border-color;
       }
     }
@@ -417,11 +472,13 @@ $table-resize-width: 2px;
     }
   }
 
-  &-is-sortable{
+  &-is-sortable {
     cursor: pointer;
-    &:hover{
-      background-color: rgba(0,0,0,0.04);
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.04);
     }
+
     // &:hover{
     //   background: $table-filter-hover-bgc;
     // }
@@ -441,6 +498,7 @@ $table-resize-width: 2px;
 
     // }
   }
+
   &-sortable {
     // sort icon
     height: 20px;
@@ -449,13 +507,15 @@ $table-resize-width: 2px;
     margin-left: 5px;
     vertical-align: text-bottom;
     position: relative;
-    &-icon{
+
+    &-icon {
       width: 0;
       height: 0;
       border: solid 5px transparent;
       position: absolute;
       left: 5px;
     }
+
     &-ascending {
       border-bottom-color: $table-color-text-placeholder;
       border-top: none;
@@ -494,14 +554,15 @@ $table-resize-width: 2px;
     }
   }
 
-  &-column-has-actions{
+  &-column-has-actions {
     user-select: none;
   }
 
-  .#{$prefix}-table-column-has-filters{
+  .#{$prefix}-table-column-has-filters {
     padding-right: 32px;
   }
-  .#{$prefix}-table-column-filter-trigger{
+
+  .#{$prefix}-table-column-filter-trigger {
     position: absolute;
     right: 0;
     top: 0;
@@ -512,48 +573,58 @@ $table-resize-width: 2px;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    i{
+
+    i {
       color: $table-filter-color;
       font-size: $table-filter-font-size;
     }
 
-    &-filtered{
-      i{
+    &-filtered {
+      i {
         color: $table-filter-active-color;
       }
     }
 
-    &:hover, &.hover{
+    &:hover,
+    &.hover {
       background: $table-filter-hover-bgc;
-      i{
+
+      i {
         color: $table-filter-hover-color;
       }
     }
   }
-  &-filter-checkbox-group{
-    >.#{$prefix}-checkbox{
+
+  &-filter-checkbox-group {
+    >.#{$prefix}-checkbox {
       display: block;
       margin-right: 0;
     }
   }
-  &-filter-footer{
+
+  &-filter-footer {
     padding: $table-filter-footer-padding-vertical $table-filter-footer-padding-horizontal;
     overflow: hidden;
-    &-clear{
+
+    &-clear {
       float: right;
     }
-    &-confirm{
+
+    &-confirm {
       margin-right: $table-filter-footer-action-offset;
     }
-    >a{
+
+    >a {
       cursor: pointer;
       text-decoration: none;
       color: $table-filter-footer-action-color;
-      &:hover{
+
+      &:hover {
         color: $table-filter-footer-action-hover-color;
       }
     }
   }
+
   &-column-resize-proxy {
     position: absolute;
     left: 200px;
@@ -577,8 +648,10 @@ $table-resize-width: 2px;
       }
     }
   ***/
-  &-body{
-    tr:hover, tr.hover {
+  &-body {
+
+    tr:hover,
+    tr.hover {
       >td {
         background-color: $table-row-hover-bgc;
       }
@@ -586,6 +659,7 @@ $table-resize-width: 2px;
   }
 
   &-fluid-height {
+
     .#{$prefix}-table-fixed,
     .#{$prefix}-table-fixed-right {
       bottom: 0;
@@ -593,44 +667,47 @@ $table-resize-width: 2px;
     }
   }
 
-  .#{$prefix}-table-expanded-cell{
+  .#{$prefix}-table-expanded-cell {
     // 增加权重
     padding: 0px;
     font-size: 1em;
   }
+
   th {
-    .drag-line{
+    .drag-line {
       position: absolute;
       right: 0px;
       top: 0;
       width: 2px;
       height: 100%;
-      background: rgba(0,0,0,0.07);
+      background: rgba(0, 0, 0, 0.07);
       // display: none;
     }
+
     &:hover {
-      .drag-line{
+      .drag-line {
         display: block;
       }
     }
   }
 
-  &-overflow-tooltip{
+  &-overflow-tooltip {
     max-height: $table-overflow-max-height;
   }
 }
 
 @include c(table-column) {
-  &-selection{
+  &-selection {
     text-align: center;
-    .#{$prefix}-table-cell{
+
+    .#{$prefix}-table-cell {
       overflow: visible; // 解决当 cell 设置小时会出现省略号问题
     }
   }
-  &-index{
+
+  &-index {
     text-align: center;
   }
 
-  &-resizable{
-  }
+  &-resizable {}
 }
