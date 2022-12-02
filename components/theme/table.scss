@@ -111,6 +111,7 @@ $table-resize-width: 2px;
 
     .expanded-icon {
       transform: rotate(90deg);
+      transition: .35s;
     }
   }
 
