@@ -10,7 +10,7 @@
       <wt-table-column type="expand">
         <template slot-scope="scope" slot="expand">
           <div @click="scope.toggle" class="expand-wrapper">
-              <wt-icon @click="testPrint(scope)" class="wticon mtdicon-right-thick" name="chevron-right" :width="20" :height="20" :stroke-width="1" />
+              <wt-icon @click="testPrint(scope)" :class="scope.expanded && 'expanded-icon'" name="chevron-right" :width="20" :height="20" :stroke-width="1" />
           </div>
         </template>
         <template slot-scope="props">
