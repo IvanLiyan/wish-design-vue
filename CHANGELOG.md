@@ -1,15 +1,18 @@
 # 更新日志
 
+## 0.0.2-alpha.57
+- `<wt-tooltip />`的`popper`层默认颜色为`#000`，修复了颜色冲突
+
 ## 0.0.2-alpha.56
-- `<Table />`的`可展开`类型中的前置箭头会随着展开与否而旋转
+- `<wt-table />`的`可展开`类型中的前置箭头会随着展开与否而旋转
 
 ## 0.0.2-alpha.54
-- `<Input />`和`<Select />`新增插槽`slot=label`，自定义标签内容
+- `<wt-input />`和`<wt-select />`新增插槽`slot=label`，自定义标签内容
 
 ## 0.0.2-alpha.52
-- 修复了`<Select />`的bug: value-key
-- 修复了`<Datepicker />`和`<Timepicker />`在某些情况下确认按钮字体颜色被覆盖的bug
-- `<Table />`新增了文档说明，新的API —— loading
+- 修复了`<wt-select />`的bug: value-key
+- 修复了`<wt-datepicker />`和`<wt-timepicker />`在某些情况下确认按钮字体颜色被覆盖的bug
+- `<wt-table />`新增了文档说明，新的API —— loading
 
 ## 0.0.2-alpha.51
 - 修复了`<wt-table />`内置pagination的api缺失问题
