@@ -22,6 +22,7 @@
         },
         popperClass,
       ]"
+      style="background: #000;"
     >
       <span v-if="content">{{ content }}</span>
       <div :class="[`${prefix}-content`]" v-if="$slots.content">
