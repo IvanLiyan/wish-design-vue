@@ -127,7 +127,7 @@ const components = [
   ExpansionTransition,
 ];
 
-export function install(Vue) {
+export function install (Vue) {
   components.map(function (component) {
     Vue.component(component.name, component);
   });

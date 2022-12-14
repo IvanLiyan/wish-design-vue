@@ -85,7 +85,7 @@ async function main() {
   const { stdout } = await execa(
     'npm',
     [
-      '--registry=http://npm.bjs.i.wish.com',
+      '--registry=https://npm.infra.wish-cn.com',
       '--cache=$HOME/.npm',
       '--userconfig=$HOME/.npmrc',
       'publish',
