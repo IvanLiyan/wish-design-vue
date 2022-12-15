@@ -17,7 +17,7 @@
     <Reference>
       <PickerInput
         :id="elementId"
-        :class="[prefix + '-editor']"
+        :class="[prefix + '-editor', type === 'datetimerange' && prefix + '-datetimerange']"
         :readonly="type === 'week' || !editable || readonly"
         :disabled="disabled"
         :size="size"

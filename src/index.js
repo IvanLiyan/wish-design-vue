@@ -127,7 +127,7 @@ const components = [
   ExpansionTransition,
 ];
 
-export function install (Vue) {
+export function install(Vue) {
   components.map(function (component) {
     Vue.component(component.name, component);
   });
@@ -213,6 +213,6 @@ export {
 };
 
 export default {
-  version: '0.0.2-alpha.58',
+  version: '0.0.2-alpha.59',
   install,
 };
