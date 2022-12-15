@@ -2,7 +2,7 @@ stages:
   - release
 
 variables:
-  NPM_REGISTRY: npm.infra.wish-cn.com/
+  NPM_REGISTRY: npm.infra.wish.com/
   NPM_PACKAGE_VERSION: ""
   MANUAL_RELEASE: ""
 
