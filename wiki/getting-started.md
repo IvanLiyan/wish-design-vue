@@ -13,7 +13,7 @@ npm i nrm -g
 2、使用 nrm 添加公司的镜像源 wnpm，切换至 wnpm 源并且登陆
 
 ```
-nrm add wnpm http://npm.bjs.i.wish.com/
+nrm add wnpm https://npm.infra.wish-cn.com/
 nrm use wnpm
 nrm login     - 若还没有用账号请先添加：npm adduser
 ```
