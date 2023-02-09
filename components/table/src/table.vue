@@ -249,6 +249,20 @@
       :page-size-options="pagination.pageSizeOptions"
       :pager-count="pagination.pagerCount"
     />
+    <wt-pagination
+      :class="`${prefix}-integ-pagination`"
+      v-if="autoPaging"
+      :total="data.length"
+      :current-page.sync="autoPagination.currentPage"
+      :page-size.sync="autoPagination.pageSize"
+      :show-quick-jumper="true"
+      :show-size-changer="true"
+      :show-total="true"
+      @change="autoPaginationChange"
+      :unborder="false"
+      :page-size-options="autoPagination.pageSizeOptions"
+      :pager-count="autoPagination.pagerCount"
+    />
   </div>
 </template>
 
@@ -421,8 +435,11 @@ export default {
       type: Boolean,
       default: true,
     },
+    autoPaging: {
+      type: Boolean,
+      default: false,
+    },
   },
-
   inject: {
     config: {
       from: CONFIG_PROVIDER,
@@ -466,6 +483,12 @@ export default {
       // use in table-body
       tooltipContent: '',
       tooltipVisible: false,
+      autoPagination: {
+        currentPage: 1,
+        pageSize: 10,
+        pagerCount: 0,
+        pageSizeOptions: [10, 20, 50, 100],
+      },
     };
   },
 
@@ -627,6 +650,11 @@ export default {
     this.tableId = `${this.prefix}_` + tableIdSeed++;
     this.debouncedUpdateLayout = debounce(50, () => this.doReflow());
     this.debounceResizeListener = debounce(50, this.resizeListener);
+    if (this.$props.autoPaging) {
+      this.autoPagination.pagerCount = Math.ceil(this.$props.data.length / this.autoPagination.pageSize); // get page count
+      const currentData = this.$props.data.slice(0, 10);
+      this.store.setData(currentData);
+    }
   },
 
   destroyed () {
@@ -802,6 +830,14 @@ export default {
     },
     hideTooltip () {
       this.tooltipVisible = false;
+    },
+    autoPaginationChange (current, size) {
+      this.autoPagination.pageSize = size;
+      this.autoPagination.currentPage = current;
+      const startIndex = (current - 1) * size;
+      const endIndex = startIndex + size;
+      const currentData = this.$props.data.slice(startIndex, endIndex);
+      this.store.setData(currentData);
     },
   },
 };

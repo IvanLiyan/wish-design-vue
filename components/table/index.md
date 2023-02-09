@@ -72,6 +72,10 @@
 :::include(src="./doc/fixed-column.vue")
 :::
 
+### <span>{{$t('table.module2.subtitle3')}}</span>
+:::include(src="./doc/autoPaging.vue")
+:::
+
 ## <span>{{$t('table.module3.title')}}</span>
 :::include(src="./doc/custom.vue")
 :::

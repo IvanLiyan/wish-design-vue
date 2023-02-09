@@ -9,6 +9,14 @@
       "version": ""
     },
     {
+      "name": "auto-paging",
+      "desc": "$t('table.api.auto-paging')",
+      "type": "Boolean",
+      "optionalValue": "true / false",
+      "default": "false",
+      "version": ""
+    },
+    {
       "name": "height",
       "desc": "$t('table.api.height')",
       "type": [
