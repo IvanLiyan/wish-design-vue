@@ -21,6 +21,7 @@
     "api": {
       "data": "显示的数据",
       "auto-paging": "是否自动分页",
+      "items-per-page": "自动分页模式下，每页默认展示的条数",
       "height": "Table 的高度。如果 height 为 number 类型，单位px；如果 height 为 string 类型，则这个高度会设置为 Table 的 style.height 的值，Table 的高度会受控于外部样式",
       "max-height": "Table 的最大高度",
       "row-key": "行数据的 Key，用来优化 Table 的渲染；类型为 String 时，支持多层访问：user.info.id，但不支持user.info[0].id，此种情况请使用Function",
@@ -79,6 +80,7 @@
     "api": {
       "data": "Data displayed",
       "auto-paging": "Whether use automatic paging",
+      "items-per-page": "The default number of items displayed per page in automatic paging mode.",
       "height": "Table height. If height is Number, the unit is px; If height is String, the height is set to the value of the Table's style.height, and the Table's height is controlled by the external style.",
       "max-height": "Maximum height of Table.",
       "row-key": "Key of row data, used to optimize Table rendering; If the type is String, user.info.id is supported, but user.info[0].id is not supported. In this case, please use Function.",
