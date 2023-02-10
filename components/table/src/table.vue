@@ -251,7 +251,7 @@
     />
     <wt-pagination
       :class="`${prefix}-integ-pagination`"
-      v-if="autoPaging"
+      v-if="autoPaging && data.length !== 0"
       :total="data.length"
       :current-page.sync="autoPagination.currentPage"
       :page-size.sync="autoPagination.pageSize"
@@ -439,6 +439,10 @@ export default {
       type: Boolean,
       default: false,
     },
+    itemsPerPage: {
+      type: Number,
+      default: 10,
+    },
   },
   inject: {
     config: {
@@ -485,9 +489,9 @@ export default {
       tooltipVisible: false,
       autoPagination: {
         currentPage: 1,
-        pageSize: 10,
-        pagerCount: 0,
-        pageSizeOptions: [10, 20, 50, 100],
+        pageSize: this.$props.itemsPerPage,
+        pagerCount: 5,
+        pageSizeOptions: [20, 50, 100],
       },
     };
   },
@@ -651,9 +655,7 @@ export default {
     this.debouncedUpdateLayout = debounce(50, () => this.doReflow());
     this.debounceResizeListener = debounce(50, this.resizeListener);
     if (this.$props.autoPaging) {
-      this.autoPagination.pagerCount = Math.ceil(this.$props.data.length / this.autoPagination.pageSize); // get page count
-      const currentData = this.$props.data.slice(0, 10);
-      this.store.setData(currentData);
+      this.store.setData(this.$props.data.slice(0, 10));
     }
   },
 

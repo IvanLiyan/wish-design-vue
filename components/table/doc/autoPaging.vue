@@ -1,6 +1,6 @@
 <template>
   <div>
-    <wt-table :data="tableData" :auto-paging="true">
+    <wt-table :data="tableData" :auto-paging="true" :items-per-page="10">
       <wt-table-column
         prop="orderId"
         label="WOSP order id"
