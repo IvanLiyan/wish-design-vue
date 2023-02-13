@@ -1,6 +1,6 @@
 {
   "name": "@ContextLogic/wt-vue",
-  "version": "0.0.2-alpha.62",
+  "version": "0.0.2-alpha.63",
   "description": "vue、component",
   "main": "lib/index.js",
   "typings": "types/index.d.ts",

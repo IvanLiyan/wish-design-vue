@@ -651,12 +651,12 @@ export default {
   },
 
   created () {
-    this.tableId = `${this.prefix}_` + tableIdSeed++;
-    this.debouncedUpdateLayout = debounce(50, () => this.doReflow());
-    this.debounceResizeListener = debounce(50, this.resizeListener);
     if (this.$props.autoPaging) {
       this.store.setData(this.$props.data.slice(0, this.$props.itemsPerPage));
     }
+    this.tableId = `${this.prefix}_` + tableIdSeed++;
+    this.debouncedUpdateLayout = debounce(50, () => this.doReflow());
+    this.debounceResizeListener = debounce(50, this.resizeListener);
   },
 
   destroyed () {
@@ -666,6 +666,9 @@ export default {
   },
 
   mounted () {
+    if (this.$props.autoPaging) {
+      this.store.setData(this.$props.data.slice(0, this.$props.itemsPerPage));
+    }
     this.bindEvents();
 
     this.$ready = true;
