@@ -1,4 +1,6 @@
 # 更新日志
+## 0.0.2-alpha.62
+- 修复`<wt-table />`设置了`items-per-page`后，在初次加载时未生效的问题
 ## 0.0.2-alpha.61
 - 新增`<wt-table />`的API —— `items-per-page`设置在自动分页模式下，默认的每页展示数量
 

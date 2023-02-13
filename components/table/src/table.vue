@@ -655,7 +655,7 @@ export default {
     this.debouncedUpdateLayout = debounce(50, () => this.doReflow());
     this.debounceResizeListener = debounce(50, this.resizeListener);
     if (this.$props.autoPaging) {
-      this.store.setData(this.$props.data.slice(0, 10));
+      this.store.setData(this.$props.data.slice(0, this.$props.itemsPerPage));
     }
   },
 
