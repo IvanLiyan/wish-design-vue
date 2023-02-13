@@ -628,7 +628,11 @@ export default {
     data: {
       immediate: true,
       handler (value) {
-        this.store.setData(this.data);
+        if (this.$props.autoPaging) {
+          this.store.setData(this.$props.data.slice(0, this.$props.itemsPerPage));
+        } else {
+          this.store.setData(this.data);
+        }
         if (this.$ready) {
           this.$nextTick(() => {
             this.doReflow();
@@ -651,9 +655,6 @@ export default {
   },
 
   created () {
-    if (this.$props.autoPaging) {
-      this.store.setData(this.$props.data.slice(0, this.$props.itemsPerPage));
-    }
     this.tableId = `${this.prefix}_` + tableIdSeed++;
     this.debouncedUpdateLayout = debounce(50, () => this.doReflow());
     this.debounceResizeListener = debounce(50, this.resizeListener);
@@ -666,9 +667,6 @@ export default {
   },
 
   mounted () {
-    if (this.$props.autoPaging) {
-      this.store.setData(this.$props.data.slice(0, this.$props.itemsPerPage));
-    }
     this.bindEvents();
 
     this.$ready = true;
