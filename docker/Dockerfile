@@ -7,7 +7,7 @@ RUN npm run node-i
 RUN npm rebuild node-sass
 RUN npm run build:deploy
 
-FROM nginx:1.19.4
+FROM harbor.infra.wish-cn.com/upstream/nginx:1.22-alpine
 COPY --from=build /tmp/dist /home/nginx/static/dist
 # new
 COPY ./docker/static.conf /etc/nginx/conf.d/static.conf
