@@ -151,7 +151,6 @@ export default {
           }
         });
       });
-      console.log('errors', errors);
       return valid;
     },
 

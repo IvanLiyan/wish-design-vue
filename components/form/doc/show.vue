@@ -131,7 +131,6 @@ export default {
   methods: {
     reset: function () {
       this.$refs.form.resetFields();
-      console.log(this.$refs.form.formCustom);
     },
     submit: async function () {
       const valid = this.$refs.form.validateFields();
@@ -141,7 +140,6 @@ export default {
           message: 'Submit success',
         });
       }
-      console.log('data', this.formCustom);
     },
   },
 };

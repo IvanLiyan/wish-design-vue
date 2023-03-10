@@ -233,14 +233,13 @@ export default {
     // 截取文件名 - 只展示
     renderFileName (fileName) {
       const pointIndex = fileName.lastIndexOf('.'); // 获取后缀的位置
-      console.log('pointIndex', pointIndex);
-      if (pointIndex <= 6) { // 如果名称长度不超过6，则直接展示
-        console.log('fileName1', fileName);
-        return fileName;
-      } else {
-        console.log(fileName.substr(0, 6) + '...' + fileName.substring(pointIndex + 1, fileName.length + 1));
+      if (pointIndex === -1 && fileName.length > 9) { // 文件名没有后缀且长度超过9
+        return fileName.substr(0, 6) + '...';
+      } else if (pointIndex > 6) { // 文件名有后缀，且后缀索引大于6
         return fileName.substr(0, 6) + '...' + fileName.substring(pointIndex + 1, fileName.length + 1);
-      };
+      } else { // 直接展示文件名
+        return fileName;
+      } ;
     },
   },
 };

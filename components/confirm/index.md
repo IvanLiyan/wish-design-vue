@@ -14,15 +14,15 @@
 
 ## API
 ### 全局引入
-你可以通过 `this.$mtd.confirm` 方法来来直接调用组件
+你可以通过 `this.$wt.confirm` 方法来来直接调用组件
 ### 单独引入
 如果是单独引入，你可以通过以下方式来引入 Confirm 并使用
 ```
-import { Confirm } from '@ss/mtd-vue';
+import { Confirm } from '@ss/wt-vue';
 Confirm(options);
 ```
 
-**注意: this.$mtd.confirm / Confirm 方法总是返回 promise，需要使用 promise.catch() 来阻止 rejected promise 报错。**
+**注意: this.$wt.confirm / Confirm 方法总是返回 promise，需要使用 promise.catch() 来阻止 rejected promise 报错。**
 
-**0.3.21 版本后，增加 $$mtd 标识在帮助在 owl 处进行过滤，详细查看：<a href="https://ones.sankuai.com/ones/product/4348/workItem/requirement/detail/40843044">Ones</a>**
+**0.3.21 版本后，增加 $$wt 标识在帮助在 owl 处进行过滤，详细查看：<a href="https://ones.sankuai.com/ones/product/4348/workItem/requirement/detail/40843044">Ones</a>**
 <api-doc name="Confirm" :doc="require('./api.json')"></api-doc>

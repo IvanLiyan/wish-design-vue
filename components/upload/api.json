@@ -158,6 +158,14 @@
     "optionalValue": "",
     "default": "",
     "version": ""
+  },
+  {
+    "name": "buttonText",
+    "desc": "$t('upload.api.buttonText')",
+    "type": "string",
+    "optionalValue": "",
+    "default": "Upload",
+    "version": ""
   }],
   "slots": [
     {

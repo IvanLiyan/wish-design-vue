@@ -110,7 +110,6 @@ export default {
             type: 'success',
             message: 'Submit success',
           });
-          console.log('data', this.formData);
           this.visible = false;
         }, 2000);
       }

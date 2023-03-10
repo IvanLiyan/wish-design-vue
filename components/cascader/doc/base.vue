@@ -223,7 +223,6 @@ export default {
   },
   methods: {
     handleChange(value, selectOptons) {
-      console.log(value, selectOptons);
     },
   },
 };
