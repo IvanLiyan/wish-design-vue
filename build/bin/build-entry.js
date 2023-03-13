@@ -67,4 +67,3 @@ export default {
 };
 `;
 fs.writeFileSync(OUTPUT_PATH, template);
-console.log('[build entry] DONE:', OUTPUT_PATH);
