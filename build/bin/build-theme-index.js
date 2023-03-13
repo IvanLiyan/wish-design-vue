@@ -39,6 +39,7 @@ themes.forEach((theme) => {
       OUTPUT_PATH,
       indexContent.join('\n') + '\n'
     );
+    console.log('[build css] DONE:', OUTPUT_PATH);
 
   } else {
     const indexContent = [
