@@ -7,7 +7,7 @@ variables:
   MANUAL_RELEASE: ""
 
 release_package_to_npm_cn:
-  image: node:12
+  image: http://harbor.infra.wish-cn.com/upstream/node:18.14.0-alpine3.17
   stage: release
   script:
     - |
