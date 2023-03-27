@@ -1,10 +1,20 @@
 stages:
   - release
+  - build
 
 variables:
   NPM_REGISTRY: npm.infra.wish-cn.com/
   NPM_PACKAGE_VERSION: ""
   MANUAL_RELEASE: ""
+
+include:
+  - project: "contextlogic/includes-cn"
+    file: "/templates/job-docker-build/default.yml"
+
+build_image:
+  extends: .docker-build
+  variables:
+    DOCKERFILE: "docker/Dockerfile"
 
 release_package_to_npm_cn:
   image: harbor.infra.wish-cn.com/upstream/node:18.14.0-alpine3.17
