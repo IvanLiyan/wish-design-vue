@@ -17,10 +17,14 @@ build_image:
     DOCKERFILE: "docker/Dockerfile"
 
 release_package_to_npm_cn:
-  image: harbor.infra.wish-cn.com/upstream/node:18.14.0-alpine3.17
+  image: harbor.infra.wish-cn.com/upstream/node:12
   stage: release
   script:
     - |
+      # Upload javascript package to NPM
+      echo "registry=https://"$NPM_REGISTRY > ~/.npmrc
+      echo "//"$NPM_REGISTRY":_authToken=\"$GITLAB_NPM_TOKEN\"" >> ~/.npmrc
+    
       set -e
       timestr=$(date +'%Y-%m-%d')
       if [[ $NPM_PACKAGE_VERSION -eq "" ]]; then
@@ -31,11 +35,7 @@ release_package_to_npm_cn:
       npm run node-i
       npm run build
       echo "build done" 
-      
-      # Upload javascript package to NPM
-      echo "registry=https://"$NPM_REGISTRY > ~/.npmrc
-      echo "//"$NPM_REGISTRY":_authToken=\"$GITLAB_NPM_TOKEN\"" >> ~/.npmrc
-    
+
       VERSION_LINE="\"version\": \""$NPM_PACKAGE_VERSION"\","
       sed -i -e 's#"version".*#'"$VERSION_LINE"'#g' package.json
       echo "before publish"
