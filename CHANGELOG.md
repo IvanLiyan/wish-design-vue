@@ -1,4 +1,6 @@
 # 更新日志
+## 0.0.2-alpha.67
+- `<wt-upload/>`的`on-error`事件兼容response的信息为`msg`而非`err`的情况
 ## 0.0.2-alpha.66
 - 修复了`<wt-upload/>`的`on-error`事件不生效的问题
 - 修复了`<wt-upload/>`的`limit`API不生效的问题
