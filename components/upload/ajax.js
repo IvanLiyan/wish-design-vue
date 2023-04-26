@@ -2,7 +2,7 @@ function getError (action, option, xhr) {
   console.log('getError');
   let msg;
   if (xhr.response) {
-    msg = `${xhr.response.error || xhr.response}`;
+    msg = `${xhr.response.error || xhr.response.msg || xhr.response}`;
   } else if (xhr.responseText) {
     msg = `${xhr.responseText}`;
   } else {
