@@ -54,7 +54,12 @@ export default {
       type: Function,
       default: function () {},
     },
-    fileList: Array,
+    fileList: {
+      type: Array,
+      default: function () {
+        return [];
+      },
+    },
     autoUpload: Boolean,
     listType: String,
     httpRequest: {
@@ -82,7 +87,7 @@ export default {
     },
     uploadFiles (files) {
       // 超出限制大小
-      if (this.limit && this.fileList.length + files.length > this.limit) {
+      if (this.limit && this.fileList && Array.isArray(this.fileList) && this.fileList.length + files.length > this.limit) {
         this.onExceed && this.onExceed(files, this.fileList);
         return;
       }
@@ -169,8 +174,7 @@ export default {
           delete this.reqs[uid];
         },
         onError: err => {
-          // this.onError(err, rawFile); // 注释
-          this.onSuccess(err, rawFile);
+          this.onError(err, rawFile);
           delete this.reqs[uid];
         },
       };

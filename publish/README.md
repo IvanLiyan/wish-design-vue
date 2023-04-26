@@ -107,3 +107,20 @@ todo 未支持按需加载，若支持需要 lib 里面以组件文件夹形式�
 
 ## 0.0.2-alpha.59
 - 修复了`<wt-datepicker />`的输入框在日期时间区间的情况下icon被遮挡的问题
+
+## 0.0.2-alpha.60
+- 新增了`<wt-table />`的自动分页功能
+
+## 0.0.2-alpha.61
+- 新增`<wt-table />`的API —— `items-per-page`设置在自动分页模式下，默认的每页展示数量
+
+## 0.0.2-alpha.64
+- 修复`<wt-table />`设置了`items-per-page`后，在初次加载时未生效的问题
+
+## 0.0.2-alpha.65
+- 优化 —— `<wt-upload/>`新增了API以支持自定义按钮文案
+- 优化 —— `<wt-upload>`文件名过长时显示省略号
+
+## 0.0.2-alpha.66
+- 修复了`<wt-upload/>`的`on-error`事件不生效的问题
+- 修复了`<wt-upload/>`的`limit`API不生效的问题

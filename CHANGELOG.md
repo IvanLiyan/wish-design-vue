@@ -1,4 +1,7 @@
 # 更新日志
+## 0.0.2-alpha.66
+- 修复了`<wt-upload/>`的`on-error`事件不生效的问题
+- 修复了`<wt-upload/>`的`limit`API不生效的问题
 ## 0.0.2-alpha.65
 - 优化 —— `<wt-upload/>`新增了API以支持自定义按钮文案
 - 优化 —— `<wt-upload>`文件名过长时显示省略号
