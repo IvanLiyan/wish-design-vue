@@ -1,5 +1,6 @@
 stages:
   - scan
+  - pre-commit
   - release
   - build
 
@@ -9,6 +10,8 @@ variables:
   MANUAL_RELEASE: ""
 
 include:
+  - project: "contextlogic/includes-cn"
+    file: "templates/job-pre-commit/placeholder.yml"
   - project: 'contextlogic/includes-cn' # this is the sonarscan job for scanning itself.
     ref: master
     file: "/templates/job-sonar/default.yml"
