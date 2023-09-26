@@ -28,6 +28,13 @@ build_image:
 release_package_to_npm_cn:
   image: harbor.infra.wish-cn.com/upstream/node:12
   stage: release
+  id_tokens:
+    VAULT_ID_TOKEN:
+      aud: ${VAULT_AUD}
+  secrets:
+    GITLAB_NPM_TOKEN:
+      vault: gitlab/prod/variables/GITLAB_NPM_TOKEN@kv
+      file: false
   script:
     - |
       # Upload javascript package to NPM
