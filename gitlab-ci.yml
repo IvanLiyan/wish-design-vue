@@ -1,8 +1,8 @@
 stages:
   - scan
   - pre-commit
-  - release
   - build
+  - release
 
 variables:
   NPM_REGISTRY: npm.infra.wish-cn.com/
@@ -27,7 +27,7 @@ build_image:
     DOCKERFILE: "docker/Dockerfile"
 
 release_package_to_npm_cn:
-  image: harbor.infra.wish-cn.com/upstream/node:12
+  image: harbor.infra.wish-cn.com/upstream/node:16
   stage: release
   id_tokens:
     VAULT_ID_TOKEN:
@@ -44,23 +44,22 @@ release_package_to_npm_cn:
     
       set -e
       timestr=$(date +'%Y-%m-%d')
-      if [[ $NPM_PACKAGE_VERSION -eq "" ]]; then
+      if [[ "$NPM_PACKAGE_VERSION" = "" ]]; then
         new_branch_name="${CI_COMMIT_BRANCH/_/-}" #use - replace _ for publish version
         NPM_PACKAGE_VERSION="0.0.2-$new_branch_name-$timestr-$CI_COMMIT_SHORT_SHA"
       fi
-
-      npm run node-i
-      npm run build
-      echo "build done" 
-
       VERSION_LINE="\"version\": \""$NPM_PACKAGE_VERSION"\","
       sed -i -e 's#"version".*#'"$VERSION_LINE"'#g' package.json
+      echo `cat package.json`
+      npm run node-i
+      npm run build
+      echo "build done"      
       echo "before publish"
-    - npm publish publish
+    - npm publish
   tags:
     - pod
   rules:
     - if: $CI_PIPELINE_SOURCE == "schedule" && $SCHEDULE_TYPE == "weekly" && $CI_COMMIT_BRANCH == "main"
       when: always
-    - if: $MANUAL_RELEASE == "true"
-      when: manual
+    - if: $MANUAL_RELEASE == "true" && $CI_COMMIT_REF_PROTECTED == "true"
+      when: always
