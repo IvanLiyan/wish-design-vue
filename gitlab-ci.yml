@@ -50,12 +50,13 @@ release_package_to_npm_cn:
       fi
       VERSION_LINE="\"version\": \""$NPM_PACKAGE_VERSION"\","
       sed -i -e 's#"version".*#'"$VERSION_LINE"'#g' package.json
+      sed -i -e 's#"version".*#'"$VERSION_LINE"'#g' publish/package.json
       echo `cat package.json`
     - npm run node-i
     - npm run build
     - echo "build done"      
     - echo "before publish"
-    - npm publish publish
+    - cd publish && npm publish
   tags:
     - pod
   rules:
